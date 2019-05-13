@@ -1,0 +1,404 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+/*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+p{margin: 0;}
+
+ul, ol{margin: 0; padding: 0; list-style: none;}
+li{margin: 0; list-style: none;}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+html,body{height: 100%; font-family: 'Noto Sans KR', sans-serif;}
+.wrap{height: 100%;}
+
+.gnb_area{overflow-y: auto; overflow-x: hidden; position: fixed; top: 0; left: 0; width: 0; height: 0; background-color: rgba(0,0,0,0); z-index: 100; -webkit-transition-property: background-color;transition-property: background-color;-webkit-transition-duration: .3s;transition-duration: .3s;-webkit-transition-timing-function: ease-in-out;transition-timing-function: ease-in-out;}
+.gnb_area.on{width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);}
+
+.gnb_area .gnb{position: absolute; left: 3000px; top: 0; margin-left: 83px; -webkit-transition-property: all;transition-property: all;-webkit-transition-duration: .3s;transition-duration: .3s;-webkit-transition-timing-function: ease-in-out;transition-timing-function: ease-in-out;}
+.gnb_area .gnb.on{left: 50%;}
+
+.container.main1{opacity: 0;}
+
+
+.intro_area{position: fixed; top:0; left:0; right: 0; bottom:0; z-index: 100;}
+.intro_area .logo{overflow: hidden; position: absolute; top: 50%; left: 50%; margin-top: -40px;  margin-left: -112px; width: 224px; height: 80px; z-index: 20; opacity: 0;}
+
+.intro{position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url(../img/main/intro.png) no-repeat 50% 50%; z-index: 10;}
+.intro1 {background-position: 0 0;}
+.intro2 {background-position: 50% 0;}
+.intro3 {background-position: 100% 0;}
+
+.intro_area .txt1 {overflow: hidden; position: absolute; bottom: 110px; left: 50%; margin-left: -400px; width: 800px; height: 154px; font-size: 110px; font-weight: 200; color: #fff; z-index: 30; text-align: center;}
+.intro_area .txt1 span{overflow: hidden; display: inline-block; position: relative; height: 154px; line-height: 154px; -webkit-transition-property: all;transition-property: all;-webkit-transition-duration: .3s;transition-duration: .3s;-webkit-transition-timing-function: ease-in-out;transition-timing-function: ease-in-out;}
+.intro_area .txt1 span{top: 150px;}
+.intro_area .txt1 span.h{font-size: 120px; font-weight: 700;}
+
+.intro_area .txt2 {overflow: hidden; position: absolute; bottom: 80px; left: 50%; margin-left: -292px; width: 584px; height: 56px; font-size: 40px; font-weight: 300; color: #fff; z-index: 30; text-align: center;}
+.intro_area .txt2 span{overflow: hidden; display: inline-block; position: relative; height: 56px; line-height: 56px; -webkit-transition-property: all;transition-property: all;-webkit-transition-duration: .3s;transition-duration: .3s;-webkit-transition-timing-function: ease-in-out;transition-timing-function: ease-in-out;}
+.intro_area .txt2 span{top: 80px;}
+
+
+
+
+.main1{overflow: hidden; position: relative; height: 897px; background: url(../img/main/main1_img1.png) no-repeat 50% 50%; -webkit-transition-property: all;transition-property: all;-webkit-transition-duration: .3s;transition-duration: .3s;-webkit-transition-timing-function: ease-in-out;transition-timing-function: ease-in-out;}
+.main1.left{background-image: url(../img/main/main1_img7.png);}
+.main1.right{background-image: url(../img/main/main1_img8.png);}
+.main1 .contents{position: relative; margin: 0 auto; width: 1000px; height: 897px; }
+.main1 .contents .logo_main{position: absolute; left: 0; top: 31px; z-index: 50;}
+.main1 .contents .btn_gnb{position: absolute; right: 0; top: 61px; z-index: 50;}
+.main1 .contents .left{position: absolute; top: 0; right: 700px; width: 100%; height: 100%; background: #ff7e11 url(../img/main/main1_img3.png) no-repeat 100% 0;
+
+    -ms-transform: skewX(-8deg); /* IE 9 */
+    -webkit-transform: skewX(-8deg); /* Safari */
+    transform: skewX(-8deg);
+
+-webkit-transition-property: all;transition-property: all;-webkit-transition-duration: .3s;transition-duration: .3s;-webkit-transition-timing-function: ease-in-out;transition-timing-function: ease-in-out;
+}
+
+.main1 .contents .left.on{right: 765px;
+    
+    -ms-transform: skewX(0deg); /* IE 9 */
+    -webkit-transform: skewX(0deg); /* Safari */
+    transform: skewX(0deg);
+}
+
+.main1 .contents .left .left_btn{position: absolute; right: 0; top: 0px;}
+.main1 .contents .btn_left{display: block; position: absolute; left: 0; top: 228px; z-index: 50;}
+.main1 .contents .btn_right{display: block; position: absolute; right: 0; top: 228px; z-index: 50;}
+
+.main1 .contents .right{position: absolute; top: 0; left: 750px; width: 100%; height: 100%; background: #01427a url(../img/main/main1_img2.png) no-repeat 0 0;
+
+    -ms-transform: skewX(-8deg); /* IE 9 */
+    -webkit-transform: skewX(-8deg); /* Safari */
+    transform: skewX(-8deg); 
+
+-webkit-transition-property: all;transition-property: all;-webkit-transition-duration: .3s;transition-duration: .3s;-webkit-transition-timing-function: ease-in-out;transition-timing-function: ease-in-out;
+}
+
+.main1 .contents .right.on{left: 765px;
+    
+    -ms-transform: skewX(0deg); /* IE 9 */
+    -webkit-transform: skewX(0deg); /* Safari */
+    transform: skewX(0deg);
+}
+
+
+.main1 .contents .left_contents{position: absolute; left: 235px; top: 105px;}
+
+
+.main2 .contents{margin: 0 auto; width: 1000px; height: 1088px;}
+.main2 .contents {position: relative; margin: 0 auto; width: 1000px; height: 1088px;}
+
+
+.main2 .contents .c1{position: absolute; top: 70px;}
+
+.main2 .contents .c2{position: absolute; top: 155px; width: 1000px;}
+
+
+.main2 .lst_c2{width: 100%;}
+.main2 .lst_c2 li{position: absolute;}
+.main2 .lst_c2 li:nth-child(1){top: 300px; left: 0px;}
+.main2 .lst_c2 li:nth-child(2){top: 300px; right: 0px;}
+.main2 .lst_c2 li:nth-child(3){top: 525px; right: 223px;}
+.main2 .lst_c2 li:nth-child(4){top: 525px; right: 0px;}
+.main2 .lst_c2 li:nth-child(5){top: 750px; left: 0px;}
+.main2 .lst_c2 li:nth-child(6){top: 750px; left: 223px;}
+.main2 .lst_c2 li:nth-child(7){top: 750px; right: 0px;}
+
+
+.main2 .contents .c3{position: absolute; top: 1165px; margin-left: -42px;}
+
+.main3{}
+.main3 {overflow: hidden; position: relative; height: 440px;}
+.main3 .bg{position: absolute; left: 50%; top: -290px; margin-left: -960px;}
+.main3 .contents {position: absolute; top: 0; left: 50%; margin-left: -500px; width: 1000px; height: 440px;}
+.main3 .contents .c1{position: absolute; top: 70px;}
+.main3 .contents .c2{position: absolute; top: 434px;}
+
+.main4 {background-color: #222528;}
+.main4 .contents{position: relative; margin: 0 auto; width: 1000px; height: 195px;}
+.main4 .contents .c1{position: absolute; top: 47px;}
+
+
+
+.sub{overflow: hidden; position: relative; height: 1273px; }
+.sub .contents{position: relative; margin: 0 auto; width: 1000px; height: 1273px; }
+.sub .contents .img{position: absolute; left: 50%; top: 0; margin-left: -960px;}
+
+
+.banner{position: fixed; left: 50%; bottom: 138px; margin-left: -800px; z-index: 60; opacity: 0; -webkit-transition-property: all;transition-property: all;-webkit-transition-duration: .3s;transition-duration: .3s;-webkit-transition-timing-function: ease-in-out;transition-timing-function: ease-in-out;}
+.banner.on{opacity: 1;}
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster */
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

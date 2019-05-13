@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>힐링카페 멘토</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <p class="main_tit">응답지 작성<sub>(총 81문항)</sub></p>
+            <ul class="poll_index">
+                <li class="current">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </header>
+        <div id="container">
+            <div class="container">
+                <form class="poll">
+                    <fieldset>
+                    <legend>설문조사 1page</legend>
+                    <table>
+                        <caption>설문조사 1page</caption>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>설문</th>
+                                <th>전혀<br>그렇지 않다(1)</th>
+                                <th>대체로<br>그렇지 않다(2)</th>
+                                <th>보통이다(3)</th>
+                                <th>대체로<br>그렇다(4)</th>
+                                <th>매우<br>그렇다(5)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>나는 공감능력이 좋은편이다.</td>
+                                <td><input type="radio" name="no01" id="poll_1_1" value="1"><label for="poll_1_1"><span></span></label></td>
+                                <td><input type="radio" name="no01" id="poll_1_2" value="2"><label for="poll_1_2"><span></span></label></td>
+                                <td><input type="radio" name="no01" id="poll_1_3" value="3"><label for="poll_1_3"><span></span></label></td>
+                                <td><input type="radio" name="no01" id="poll_1_4" value="4"><label for="poll_1_4"><span></span></label></td>
+                                <td><input type="radio" name="no01" id="poll_1_5" value="5"><label for="poll_1_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>나의 결정기준은 원리원칙이 우선이다.</td>
+                                <td><input type="radio" name="no02" id="poll_2_1" value="1"><label for="poll_2_1"><span></span></label></td>
+                                <td><input type="radio" name="no02" id="poll_2_2" value="2"><label for="poll_2_2"><span></span></label></td>
+                                <td><input type="radio" name="no02" id="poll_2_3" value="3"><label for="poll_2_3"><span></span></label></td>
+                                <td><input type="radio" name="no02" id="poll_2_4" value="4"><label for="poll_2_4"><span></span></label></td>
+                                <td><input type="radio" name="no02" id="poll_2_5" value="5"><label for="poll_2_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>나는 성취욕이 강하다.</td>
+                                <td><input type="radio" name="no03" id="poll_3_1" value="1"><label for="poll_3_1"><span></span></label></td>
+                                <td><input type="radio" name="no03" id="poll_3_2" value="2"><label for="poll_3_2"><span></span></label></td>
+                                <td><input type="radio" name="no03" id="poll_3_3" value="3"><label for="poll_3_3"><span></span></label></td>
+                                <td><input type="radio" name="no03" id="poll_3_4" value="4"><label for="poll_3_4"><span></span></label></td>
+                                <td><input type="radio" name="no03" id="poll_3_5" value="5"><label for="poll_3_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>나는 시작하기도전에 안될까봐 지레 겁먹고 포기할 때가 있다.</td>
+                                <td><input type="radio" name="no04" id="poll_4_1" value="1"><label for="poll_4_1"><span></span></label></td>
+                                <td><input type="radio" name="no04" id="poll_4_2" value="2"><label for="poll_4_2"><span></span></label></td>
+                                <td><input type="radio" name="no04" id="poll_4_3" value="3"><label for="poll_4_3"><span></span></label></td>
+                                <td><input type="radio" name="no04" id="poll_4_4" value="4"><label for="poll_4_4"><span></span></label></td>
+                                <td><input type="radio" name="no04" id="poll_4_5" value="5"><label for="poll_4_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>내가 상대를 위해 어떤 희생과 배려를 했는지 은연중에 어필하기도 한다.</td>
+                                <td><input type="radio" name="no05" id="poll_5_1" value="1"><label for="poll_5_1"><span></span></label></td>
+                                <td><input type="radio" name="no05" id="poll_5_2" value="2"><label for="poll_5_2"><span></span></label></td>
+                                <td><input type="radio" name="no05" id="poll_5_3" value="3"><label for="poll_5_3"><span></span></label></td>
+                                <td><input type="radio" name="no05" id="poll_5_4" value="4"><label for="poll_5_4"><span></span></label></td>
+                                <td><input type="radio" name="no05" id="poll_5_5" value="5"><label for="poll_5_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>나는 머리로 이해되지 않으면 잘 받아들이지 못한다.</td>
+                                <td><input type="radio" name="no06" id="poll_6_1" value="1"><label for="poll_6_1"><span></span></label></td>
+                                <td><input type="radio" name="no06" id="poll_6_2" value="2"><label for="poll_6_2"><span></span></label></td>
+                                <td><input type="radio" name="no06" id="poll_6_3" value="3"><label for="poll_6_3"><span></span></label></td>
+                                <td><input type="radio" name="no06" id="poll_6_4" value="4"><label for="poll_6_4"><span></span></label></td>
+                                <td><input type="radio" name="no06" id="poll_6_5" value="5"><label for="poll_6_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>나는 사람들을 많이 칭찬하는 편이다.</td>
+                                <td><input type="radio" name="no07" id="poll_7_1" value="1"><label for="poll_7_1"><span></span></label></td>
+                                <td><input type="radio" name="no07" id="poll_7_2" value="2"><label for="poll_7_2"><span></span></label></td>
+                                <td><input type="radio" name="no07" id="poll_7_3" value="3"><label for="poll_7_3"><span></span></label></td>
+                                <td><input type="radio" name="no07" id="poll_7_4" value="4"><label for="poll_7_4"><span></span></label></td>
+                                <td><input type="radio" name="no07" id="poll_7_5" value="5"><label for="poll_7_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>나는 쉽게 감정이입이 되어서 곧잘 눈물을 흘리기도 한다.</td>
+                                <td><input type="radio" name="no08" id="poll_8_1" value="1"><label for="poll_8_1"><span></span></label></td>
+                                <td><input type="radio" name="no08" id="poll_8_2" value="2"><label for="poll_8_2"><span></span></label></td>
+                                <td><input type="radio" name="no08" id="poll_8_3" value="3"><label for="poll_8_3"><span></span></label></td>
+                                <td><input type="radio" name="no08" id="poll_8_4" value="4"><label for="poll_8_4"><span></span></label></td>
+                                <td><input type="radio" name="no08" id="poll_8_5" value="5"><label for="poll_8_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>나는 리더로서의 기질이 있다.</td>
+                                <td><input type="radio" name="no09" id="poll_9_1" value="1"><label for="poll_9_1"><span></span></label></td>
+                                <td><input type="radio" name="no09" id="poll_9_2" value="2"><label for="poll_9_2"><span></span></label></td>
+                                <td><input type="radio" name="no09" id="poll_9_3" value="3"><label for="poll_9_3"><span></span></label></td>
+                                <td><input type="radio" name="no09" id="poll_9_4" value="4"><label for="poll_9_4"><span></span></label></td>
+                                <td><input type="radio" name="no09" id="poll_9_5" value="5"><label for="poll_9_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>나는 내성적이고 조용한 성격이지만 내가 하고싶은것은 꼭 하는 사람이다.</td>
+                                <td><input type="radio" name="no10" id="poll_10_1" value="1"><label for="poll_10_1"><span></span></label></td>
+                                <td><input type="radio" name="no10" id="poll_10_2" value="2"><label for="poll_10_2"><span></span></label></td>
+                                <td><input type="radio" name="no10" id="poll_10_3" value="3"><label for="poll_10_3"><span></span></label></td>
+                                <td><input type="radio" name="no10" id="poll_10_4" value="4"><label for="poll_10_4"><span></span></label></td>
+                                <td><input type="radio" name="no10" id="poll_10_5" value="5"><label for="poll_10_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>나는 사람들에게 다가가는 것이 두려워서 시도하기가 어렵다.</td>
+                                <td><input type="radio" name="no11" id="poll_11_1" value="1"><label for="poll_11_1"><span></span></label></td>
+                                <td><input type="radio" name="no11" id="poll_11_2" value="2"><label for="poll_11_2"><span></span></label></td>
+                                <td><input type="radio" name="no11" id="poll_11_3" value="3"><label for="poll_11_3"><span></span></label></td>
+                                <td><input type="radio" name="no11" id="poll_11_4" value="4"><label for="poll_11_4"><span></span></label></td>
+                                <td><input type="radio" name="no11" id="poll_11_5" value="5"><label for="poll_11_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>나는 나를 능력있게 보이기 위해서 주도면밀하게 준비할 줄도 아는 사람이다.</td>
+                                <td><input type="radio" name="no12" id="poll_12_1" value="1"><label for="poll_12_1"><span></span></label></td>
+                                <td><input type="radio" name="no12" id="poll_12_2" value="2"><label for="poll_12_2"><span></span></label></td>
+                                <td><input type="radio" name="no12" id="poll_12_3" value="3"><label for="poll_12_3"><span></span></label></td>
+                                <td><input type="radio" name="no12" id="poll_12_4" value="4"><label for="poll_12_4"><span></span></label></td>
+                                <td><input type="radio" name="no12" id="poll_12_5" value="5"><label for="poll_12_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>나는 원칙적이고 부지런하게 살고 있다.</td>
+                                <td><input type="radio" name="no13" id="poll_13_1" value="1"><label for="poll_13_1"><span></span></label></td>
+                                <td><input type="radio" name="no13" id="poll_13_2" value="2"><label for="poll_13_2"><span></span></label></td>
+                                <td><input type="radio" name="no13" id="poll_13_3" value="3"><label for="poll_13_3"><span></span></label></td>
+                                <td><input type="radio" name="no13" id="poll_13_4" value="4"><label for="poll_13_4"><span></span></label></td>
+                                <td><input type="radio" name="no13" id="poll_13_5" value="5"><label for="poll_13_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>나는 내 주장을 하기보다 상황에 순응하려고 한다.</td>
+                                <td><input type="radio" name="no14" id="poll_14_1" value="1"><label for="poll_14_1"><span></span></label></td>
+                                <td><input type="radio" name="no14" id="poll_14_2" value="2"><label for="poll_14_2"><span></span></label></td>
+                                <td><input type="radio" name="no14" id="poll_14_3" value="3"><label for="poll_14_3"><span></span></label></td>
+                                <td><input type="radio" name="no14" id="poll_14_4" value="4"><label for="poll_14_4"><span></span></label></td>
+                                <td><input type="radio" name="no14" id="poll_14_5" value="5"><label for="poll_14_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>나는 약한 사람을 지키고 보호하려는 기질이 있다.</td>
+                                <td><input type="radio" name="no15" id="poll_15_1" value="1"><label for="poll_15_1"><span></span></label></td>
+                                <td><input type="radio" name="no15" id="poll_15_2" value="2"><label for="poll_15_2"><span></span></label></td>
+                                <td><input type="radio" name="no15" id="poll_15_3" value="3"><label for="poll_15_3"><span></span></label></td>
+                                <td><input type="radio" name="no15" id="poll_15_4" value="4"><label for="poll_15_4"><span></span></label></td>
+                                <td><input type="radio" name="no15" id="poll_15_5" value="5"><label for="poll_15_5"><span></span></label></td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>나는 함께 일하는것보다 혼자서 집중해서 일할 때 능률이 오른다.</td>
+                                <td><input type="radio" name="no16" id="poll_16_1" value="1"><label for="poll_16_1"><span></span></label></td>
+                                <td><input type="radio" name="no16" id="poll_16_2" value="2"><label for="poll_16_2"><span></span></label></td>
+                                <td><input type="radio" name="no16" id="poll_16_3" value="3"><label for="poll_16_3"><span></span></label></td>
+                                <td><input type="radio" name="no16" id="poll_16_4" value="4"><label for="poll_16_4"><span></span></label></td>
+                                <td><input type="radio" name="no16" id="poll_16_5" value="5"><label for="poll_16_5"><span></span></label></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pollbtn_wrap">
+                        <a href="javascript:void(0);" class="btn btn-default">&lt; 이전</a>
+                        <a href="poll2.html" class="btn btn-submit">다음 &gt;</a>
+                    </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

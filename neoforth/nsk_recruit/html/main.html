@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NSK 채용사이트</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/common.js"></script>
+
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header>
+        <h1>
+            <a href="main.html">
+                <img src="../img/nsk_logo.png" alt="NSK 채용사이트">
+            </a>
+        </h1>
+        <nav>
+            <ul class="clearfix">
+                <li>
+                    <a href="company_info.html">회사소개</a>
+                    <ul class="depth">
+                        <li>
+                            <a href="company_info.html">비전</a>
+                        </li>
+                        <li>
+                            <a href="company_info.html#history_tit">연혁</a>
+                        </li>
+                        <li>
+                            <a href="company_info.html#area_tit">사업분야</a>
+                        </li>
+                        <li>
+                            <a href="company_info.html#nsk_strong">NSK의 강점</a>
+                        </li>
+                        <li>
+                            <a href="company_info.html#org">조직도</a>
+                        </li>
+                        <li>
+                            <a href="main.html#number_NSK">숫자로 보는 NSK</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="people.html">인재상</a>
+                    <ul class="depth">
+                        <li>
+                            <a href="people.html">인재상</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="hr.html">인사제도</a>
+                    <ul class="depth">
+                        <li>
+                            <a href="hr.html#hr_intro">직무소개</a>
+                        </li>
+                        <li>
+                            <a href="hr.html#hr_system">직급체계</a>
+                        </li>
+                        <li>
+                            <a href="hr.html#hr_wel">복리후생</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="recruit.html">채용정보</a>
+                    <ul class="depth">
+                        <li>
+                            <a href="recruit.html#recruit_notice">채용공고</a>
+                        </li>
+                        <li>
+                            <a href="recruit.html#recruit_step">채용절차</a>
+                        </li>
+                        <li>
+                            <a href="recruit.html#recruit_faq">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="recruit.html#recruit_apply">입사지원</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <span class="view_button">입사지원</span>
+        <input class="nav-toggle" id="nav-toggle" type="checkbox">
+        <label class="navicon all_nav" for="nav-toggle">
+            <span class="navicon-bar"></span>
+        </label>
+        <div class="all_menu">
+            <ul class="clearfix">
+                <li class="total_menu">
+                    <a href="javascript:void(0);" class="depth1">전체메뉴</a>
+                    <i class="mobile_close"></i>
+                </li>
+                <li>
+                    <p class="depth1">
+                        <a href="company_info.html">회사소개</a>
+                        <i></i>
+                    </p>
+                    <ul class="ul_depth2">
+                        <li>
+                            <a href="company_info.html">비전</a>
+                        </li>
+                        <li>
+                            <a href="company_info.html#history_tit">연혁</a>
+                        </li>
+                        <li>
+                            <a href="company_info.html#area_tit">사업분야</a>
+                        </li>
+                        <li>
+                            <a href="company_info.html#nsk_strong">NSK의 강점</a>
+                        </li>
+                        <li>
+                            <a href="company_info.html#org">조직도</a>
+                        </li>
+                        <li>
+                            <a href="main.html#number_NSK">숫자로 보는 NSK</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p class="depth1">
+                        <a href="people.html">인재상</a>
+                        <i></i>
+                    </p>
+                    <ul class="ul_depth2">
+                        <li>
+                            <a href="people.html">인재상</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p class="depth1">
+                        <a href="hr.html">인사제도</a>
+                        <i></i>
+                    </p>
+                    <ul class="ul_depth2">
+                        <li>
+                            <a href="hr.html#hr_intro">직무소개</a>
+                        </li>
+                        <li>
+                            <a href="hr.html#hr_system">직급체계</a>
+                        </li>
+                        <li>
+                            <a href="hr.html#hr_wel">복리후생</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p class="depth1">
+                        <a href="recruit.html">채용정보</a>
+                        <i></i>
+                    </p>
+                    <ul class="ul_depth2">
+                        <li>
+                            <a href="recruit.html#recruit_notice">채용공고</a>
+                        </li>
+                        <li>
+                            <a href="recruit.html#recruit_step">채용절차</a>
+                        </li>
+                        <li>
+                            <a href="recruit.html#recruit_faq">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="recruit.html#recruit_apply">입사지원</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- 모바일메뉴 -->
+        <a href="javascript:void(0);" class="mobile_menu">
+        </a>
+        <div class="dim-layer">
+            <div class="dimBg"></div>
+            <div class="pop_menu">
+                <div class="pop_menu_content">
+                </div>
+            </div>
+        </div>
+        <!-- // 모바일메뉴 -->
+    </header>
+    <!-- // 헤더 -->
+
+    <!-- 컨테이너 -->
+    <div id="container">
+        <section id="visual">
+            <div class="bg_wrap">
+                <div class="bearing_big">
+                    <img src="../img/bg_bearing_big.png">
+                </div>
+                <div class="bearing_small">
+                    <img src="../img/bg_bearing_small.png">
+                </div>
+            </div>
+            <div class="v_bg">
+                <p>MOTION &amp; CONTROL™
+                </p>
+                <p>일상에서 항공우주 산업까지, 세상을 움직이는 힘!
+                    <br>한국 NSK에서 여러분을 기다립니다</p>
+            </div>
+            <div class="scroll_area">
+                <span class="scroll_l">
+                    <img src="../img/arrow_top.png">
+                </span>
+                <span class="scroll_s">
+                    <img src="../img/arrow_bot.png">
+                </span>
+            </div>
+        </section>
+        <section id="intro" class="clearfix">
+            <div class="fl_l">
+                <div class="fadein">
+                    <p class="tit">NSK Korea 회사소개</p>
+                    <p class="det">
+                        <span>한국엔에스케이는 1987년 9월 25일 설립, </span>최상의 엔지니어링 서비스를 지향합니다</p>
+                    <a href="javascript:void(0);" class="btn_det">자세히보기 &gt;</a>
+                </div>
+            </div>
+            <div class="fl_r">
+                <div class="fadein">
+                    <p class="tit">사업소개</p>
+                    <p class="det">냉장고, 세탁기 등의 가전제품, 자동차, 비행기, 산업용기계 및 우주정거장 등 전세계 기계의 대부분에 베어링이 사용됩니다.
+                        <br> NSK는 " Responsive and Creative, MOTION &amp; CONTROL™ "이라는 슬로건 하에, 각종 베어링 뿐 아니라
+                        <br>자동차 부품, 정기 제품 등 다양한 제품을 전세계에 생산, 공급하고 있습니다.</p>
+                    <a href="javascript:void(0);" class="btn_det">자세히보기 &gt;</a>
+                </div>
+            </div>
+        </section>
+        <section id="hr">
+            <div class="container fadein">
+                <p class="tit">인사제도</p>
+                <p>We Crete Value For Future!</p>
+                <p>남보다 한발 앞선자리, 그곳엔 NSK맨이 있습니다</p>
+                <a href="javascript:void(0);" class="btn_det">자세히보기 &gt;</a>
+            </div>
+        </section>
+        <section id="hr_img">
+            <ul class="clearfix">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+        <section id="number_NSK">
+            <div class="container fade">
+                <p class="tit">숫자로 보는 NSK</p>
+                <ul class="clearfix">
+                    <li>
+                        <ol>
+                            <li>
+                                <img src="../img/bg_number1.png"> </li>
+                            <li>
+                                <span>1</span>위</li>
+                            <li>동종업계</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <ol>
+                            <li>
+                                <img src="../img/bg_number2.png"> </li>
+                            <li>
+                                <span>8,000</span>억</li>
+                            <li>연매출</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <ol>
+                            <li>
+                                <img src="../img/bg_number3.png"> </li>
+                            <li>
+                                <span>10,548</span>
+                            </li>
+                            <li>직원수</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <ol>
+                            <li>
+                                <img src="../img/bg_number4.png"> </li>
+                            <li>
+                                <span>2,541</span>
+                            </li>
+                            <li>거래처</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="recruit">
+            <div class="container fade">
+                <p class="tit">채용정보</p>
+                <div class="clearfix">
+                    <div class="fl_div">
+                        <a href="javascript:void(0);">
+                            <i></i>채용정보 자세히보기 &gt;</a>
+                    </div>
+                    <div class="fl_div">
+                        <a href="javascript:void(0);">
+                            <i></i>입사지원 자세히보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="board_wrap">
+            <div class="container clearfix">
+                <div class="fl_div">
+                    <p>채용공고</p>
+                    <ul>
+                        <li class="notice">
+                            <a href="javascript:void(0);" class="ellipsis">군포창고 물류관리 신입사원모집모집안내모집모집모집모집
+                            </a>
+                            <i>모집중</i>
+                            <span>2018-04-26</span>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="ellipsis">2017년 대졸신입사원 채용공고안내 공고 17년공공공고
+
+                            </a>
+                            <span>2018-04-26</span>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="ellipsis">2017년 영업관리직 신입사원 모집[충청남도 공장모집]
+
+                            </a>
+                            <span>2018-04-26</span>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="ellipsis">2017년 영업관리직 신입 및 경력사원 채용 정보안내
+
+                            </a>
+                            <span>2018-04-26</span>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="ellipsis">2017년 대졸신입 수시채용 모집
+
+                            </a>
+                            <span>2018-04-26</span>
+                        </li>
+                    </ul>
+                    <a href="javascript:void(0);" class="btn_add">더보기 &gt;</a>
+                </div>
+                <div class="fl_div">
+                    <p>한국 NSK News</p>
+                    <ul>
+                        <li class="notice">
+                            <a href="javascript:void(0);" class="ellipsis">엔에스케이니들베어링코리아 합병에 따른 결과 안내
+                            </a>
+                            <i>New</i>
+                            <span>2018-04-26</span>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="ellipsis">제3공장도 준공(2012.09)
+                            </a>
+                            <span>2018-04-26</span>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="ellipsis">[채용]2011 하반기 신입공채 - 서류전형 안내안내
+
+                            </a>
+                            <span>2018-04-26</span>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="ellipsis">NSK Develops New X1 Ball Screw with Seal
+
+                            </a>
+                            <span>2018-04-26</span>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="ellipsis">Financial Results for FY 2008 NSK Group
+
+                            </a>
+                            <span>2018-04-26</span>
+                        </li>
+                    </ul>
+                    <a href="javascript:void(0);" class="btn_add">더보기 &gt;</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- // 컨테이너 -->
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="container">
+            <div class="clearfix">
+                <div class="fl_l">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#layer" class="use_agree">이용약관</a>
+                        </li>
+                        <li>
+                            <a href="#layer2" class="personal_info">개인정보처리방침</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">사이트맵</a>
+                        </li>
+                    </ul>
+                    <!-- 레이어 팝업-->
+                    <div class="dim_layerpop">
+                        <div class="dimBg_layerpop"></div>
+                        <div id="layer" class="pop-layer">
+                            <div class="pop-container">
+                                <a href="javascript:void(0);" class="btn_close">X</a>
+                                <div class="pop-header">
+                                    이용약관
+                                </div>
+                                <div class="pop-conts">
+                                    레이어1 내용
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="layer2" class="pop-layer">
+                            <div class="pop-container">
+                                <a href="javascript:void(0);" class="btn_close">X</a>
+                                <div class="pop-header">
+                                   개인정보처리방침
+                                </div>
+                                <div class="pop-conts">
+                                    레이어2 내용
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--// 레이어 팝업-->
+                    <address>
+                        <span>서울본사 : 서울특별시 강남구 테헤란로 440 포스코센터 서관 9층 Tel. 02-3787-0300</span>
+                        <span>ㆍ 창원공장 : 경남 창원시 성산동 60번지 Tel. 055-287-6001 </span>
+                        <br>
+                        <span>천안공장 : 충청남도 천안시 동남구 수신면 5산단7로 11 (천안시 제5산업단지 내) Tel. 041-411-6000</span>
+                    </address>
+                    <p>COPYRIGHTS ⓒ NSK KOREA Ltd. All Rights Reserved.</p>
+                </div>
+                <div class="fl_r">
+                    <div class="family_site">
+                        <a href="javascript:void(0);">Family Site</a>
+                        <ul class="fm_list">
+                            <li>
+                                <a href="http://www.nsk.com" target="_blank" title="글로벌NSK">Global NSK</a>
+                            </li>
+                            <li class="fm_btm">
+                                <a href="http://www.kr.nsk.com" target="_blank" title="NSK KOREA">NSK KOREA</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- // 푸터 -->
+
+    <!-- gotop -->
+    <a href="javascript:void(0);" id="scroll" title="Scroll to Top"></a>
+    <!-- // gotop -->
+
+</body>
+
+</html>

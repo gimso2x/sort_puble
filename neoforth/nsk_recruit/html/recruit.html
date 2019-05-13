@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NSK 채용사이트</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/common.js"></script>
+
+</head>
+
+<body>
+<!-- 헤더 -->
+<header>
+    <h1>
+        <a href="main.html">
+            <img src="../img/nsk_logo.png" alt="NSK 채용사이트">
+        </a>
+    </h1>
+    <nav>
+        <ul class="clearfix">
+            <li>
+                <a href="company_info.html">회사소개</a>
+                <ul class="depth">
+                    <li>
+                        <a href="company_info.html">비전</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#history_tit">연혁</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#area_tit">사업분야</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#nsk_strong">NSK의 강점</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#org">조직도</a>
+                    </li>
+                    <li>
+                        <a href="main.html#number_NSK">숫자로 보는 NSK</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="people.html">인재상</a>
+                <ul class="depth">
+                    <li>
+                        <a href="people.html">인재상</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="hr.html">인사제도</a>
+                <ul class="depth">
+                    <li>
+                        <a href="hr.html#hr_intro">직무소개</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_system">직급체계</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_wel">복리후생</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="recruit.html" class="active">채용정보</a>
+                <ul class="depth">
+                    <li>
+                        <a href="recruit.html#recruit_notice">채용공고</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_step">채용절차</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_apply">입사지원</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <span class="view_button">입사지원</span>
+    <input class="nav-toggle" id="nav-toggle" type="checkbox">
+    <label class="navicon all_nav" for="nav-toggle">
+        <span class="navicon-bar"></span>
+    </label>
+    <div class="all_menu">
+        <ul class="clearfix">
+            <li class="total_menu">
+                <a href="javascript:void(0);" class="depth1">전체메뉴</a>
+                <i class="mobile_close"></i>
+            </li>
+            <li>
+                <p class="depth1"><a href="company_info.html">회사소개</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="company_info.html">비전</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#history_tit">연혁</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#area_tit">사업분야</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#nsk_strong">NSK의 강점</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#org">조직도</a>
+                    </li>
+                    <li>
+                        <a href="main.html#number_NSK">숫자로 보는 NSK</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="depth1"><a href="people.html">인재상</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="people.html">인재상</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="depth1"><a href="hr.html">인사제도</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="hr.html#hr_intro">직무소개</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_system">직급체계</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_wel">복리후생</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="depth1"><a href="recruit.html">채용정보</a>
+					<i></i>
+				</p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="recruit.html#recruit_notice">채용공고</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_step">채용절차</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_apply">입사지원</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- 모바일메뉴 -->
+    <a href="javascript:void(0);" class="mobile_menu">
+    </a>
+    <div class="dim-layer">
+        <div class="dimBg"></div>
+        <div class="pop_menu">
+            <div class="pop_menu_content">
+            </div>
+        </div>
+    </div>
+    <!-- // 모바일메뉴 -->
+</header>
+<!-- // 헤더 -->
+
+    <!-- 컨테이너 -->
+    <div id="container">
+        <section id="recruit_visual">
+            <div class="container">
+                <p class="tit">채용정보</p>
+                <p class="semi_det">한국NSK에서 유능한 인재를 모집합니다. 여러분의 많은 지원 바랍니다.</p>
+            </div>
+            <div class="recruit_menu">
+                <ul class="clearfix">
+                    <li>
+                        <a href="#recruit_notice">채용공고</a>
+                    </li>
+                    <li>
+                        <a href="#recruit_step">채용절차</a>
+                    </li>
+                    <li>
+                        <a href="#recruit_faq">채용FAQ</a>
+                    </li>
+                    <li>
+                        <a href="#recruit_apply">입사지원</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="recruit_notice">
+            <div class="container">
+                <p class="semi_tit">채용공고</p>
+                <div class="btn_wrap">
+                    <a href="javascript:void(0);">수시지원서 양식다운로드</a>
+                </div>
+                <div class="table_wrap">
+                    <ul class="thead clearfix">
+                        <li>No.</li>
+                        <li>공고명</li>
+                        <li>날짜</li>
+                        <li>파일</li>
+                        <li>조회수</li>
+                    </ul>
+                    <ul class="tbody">
+                        <li>
+                            <ul class="tr clearfix impact">
+                                <li>20</li>
+                                <li>
+                                    <a href="javascript:void(0);" class="ellipsis">군포창고 물류관리 신입사원 모집테스트 길이</a>
+                                    <span>모집중</span>
+                                </li>
+                                <li>2017-08-09</li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="ico_pdf"></i>
+                                    </a>
+                                </li>
+                                <li>93</li>
+                            </ul>
+                            <ul class="tr clearfix">
+                                <li>19</li>
+                                <li>
+                                    <a href="javascript:void(0);" class="ellipsis">2017년 대졸신입사원 채용 공고</a>
+                                </li>
+                                <li>2017-08-08</li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="ico_jpg"></i>
+                                    </a>
+                                </li>
+                                <li>1053</li>
+                            </ul>
+                            <ul class="tr clearfix">
+                                <li>18</li>
+                                <li>
+                                    <a href="javascript:void(0);" class="ellipsis">2017년 대졸신입사원 채용 공고</a>
+                                </li>
+                                <li>2017-08-08</li>
+                                <li>
+                                    <a href="javascript:void(0);"></a>
+                                </li>
+                                <li>1053</li>
+                            </ul>
+                            <ul class="tr clearfix">
+                                <li>17</li>
+                                <li>
+                                    <a href="javascript:void(0);" class="ellipsis">2017년 대졸신입사원 채용 공고</a>
+                                </li>
+                                <li>2017-08-08</li>
+                                <li>
+                                    <a href="javascript:void(0);"></a>
+                                </li>
+                                <li>1053</li>
+                            </ul>
+                            <ul class="tr clearfix">
+                                <li>16</li>
+                                <li>
+                                    <a href="javascript:void(0);" class="ellipsis">2017년 대졸신입사원 채용 공고</a>
+                                </li>
+                                <li>2017-08-08</li>
+                                <li>
+                                    <a href="javascript:void(0);"></a>
+                                </li>
+                                <li>1053</li>
+                            </ul>
+                            <ul class="tr clearfix">
+                                <li>15</li>
+                                <li>
+                                    <a href="javascript:void(0);" class="ellipsis">2017년 대졸신입사원 채용 공고</a>
+                                </li>
+                                <li>2017-08-08</li>
+                                <li>
+                                    <a href="javascript:void(0);"></a>
+                                </li>
+                                <li>1053</li>
+                            </ul>
+                            <ul class="tr clearfix">
+                                <li>14</li>
+                                <li>
+                                    <a href="javascript:void(0);" class="ellipsis">2017년 대졸신입사원 채용 공고</a>
+                                </li>
+                                <li>2017-08-08</li>
+                                <li>
+                                    <a href="javascript:void(0);"></a>
+                                </li>
+                                <li>1053</li>
+                            </ul>
+                            <ul class="tr clearfix">
+                                <li>13</li>
+                                <li>
+                                    <a href="javascript:void(0);" class="ellipsis">2017년 대졸신입사원 채용 공고</a>
+                                </li>
+                                <li>2017-08-08</li>
+                                <li>
+                                    <a href="javascript:void(0);"></a>
+                                </li>
+                                <li>1053</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="paging clearfix">
+                        <li>
+                            <a href="javascript:void(0)" class="btn prevall"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="btn prev"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="active">1</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">2</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">3</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">4</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">5</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">6</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">7</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">8</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">9</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">10</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="btn next"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="btn nextall"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="recruit_step">
+            <div class="container">
+                <p class="semi_tit">채용절차</p>
+                <div class="img_wrap">
+                    <img src="../img/recruit_step.png" alt="채용절차">
+                </div>
+            </div>
+        </section>
+        <section id="recruit_faq">
+            <div class="container">
+                <p class="semi_tit">FAQ</p>
+                <ul class="accodion">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <b>Q1.</b> 정시모집은 언제인가요?
+                            <i class="faq_arrow"></i>
+                        </a>
+                        <ul class="depth2">
+                            <li>
+                                <a href="javascript:void(0);">정시모집은 상반기, 하반기에 1회씩 진행됩니다.</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <b>Q2.</b> 학력제한이 있나요?
+                            <i class="faq_arrow"></i>
+                        </a>
+                        <ul class="depth2">
+                            <li>
+                                <a href="javascript:void(0);">관련 전공 학사 이상 지원이 가능합니다.</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <b>Q3.</b> 근무지는 선택이 가능한가요?
+                            <i class="faq_arrow"></i>
+                        </a>
+                        <ul class="depth2">
+                            <li>
+                                <a href="javascript:void(0);">모집요강에 따라 선택이 가능한 경우가 있습니다.</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="recruit_apply">
+            <div class="tri_down"></div>
+            <div class="container">
+                <p class="semi_tit">입사지원</p>
+                <p class="semi_det">한국 NSK는 우수한 인재를 정시와 수시로 모집하고 있습니다.
+                    <br>여러분의 많은 지원 바랍니다.</p>
+                <div class="btn_wrap">
+                    <a href="javascript:void(0)">정시모집 지원 &gt;</a>
+                    <a href="javascript:void(0)">수시모집 지원 &gt;</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- // 컨테이너 -->
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="container">
+            <div class="clearfix">
+                <div class="fl_l">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="javascript:void(0);">이용약관</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">개인정보처리방침</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">사이트맵</a>
+                        </li>
+                    </ul>
+                    <address>
+                        <span>서울본사 : 서울특별시 강남구 테헤란로 440 포스코센터 서관 9층 Tel. 02-3787-0300</span>
+                        <span>ㆍ 창원공장 : 경남 창원시 성산동 60번지 Tel. 055-287-6001 </span>
+                        <br>
+                        <span>천안공장 : 충청남도 천안시 동남구 수신면 5산단7로 11 (천안시 제5산업단지 내) Tel. 041-411-6000</span>
+                    </address>
+                    <p>COPYRIGHTS ⓒ NSK KOREA Ltd. All Rights Reserved.</p>
+                </div>
+                <div class="fl_r">
+                    <div class="family_site">
+                        <a href="javascript:void(0);">Family Site</a>
+                        <ul class="fm_list">
+                            <li>
+                                <a href="http://www.nsk.com" target="_blank" title="글로벌NSK">Global NSK</a>
+                            </li>
+                            <li class="fm_btm">
+                                <a href="http://www.kr.nsk.com" target="_blank" title="NSK KOREA">NSK KOREA</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- // 푸터 -->
+
+    <!-- gotop -->
+    <a href="javascript:void(0);" id="scroll" title="Scroll to Top"></a>
+    <!-- // gotop -->
+
+</body>
+
+</html>

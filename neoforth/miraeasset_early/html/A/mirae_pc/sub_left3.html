@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="container sub">
+			<div class="contents">
+				 <p class="img"><a href="main.html"><img src="img/main/left3.jpg" alt=""></a></p>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.parallax-scroll.js"></script>
+	<script src="js/main.js"></script>
+	<script>	
+			var ls = window.localStorage;
+			var receiveData = ls.getItem("style");
+			// console.log(receiveData);
+			
+			$(document).ready(function() {
+				
+			if(receiveData === "1") {
+				$('.contents .img img').attr('src','img/main/left3.jpg');
+			}else if (receiveData === "2") {
+				$('.contents .img img').attr('src','img/main/left3_2.jpg');
+			}else if (receiveData === "3") {
+				$('.contents .img img').attr('src','img/main/left3_3.jpg');
+			}
+		
+		});
+	</script>
+</body>
+
+</html>

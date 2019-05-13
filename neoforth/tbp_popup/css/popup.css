@@ -1,0 +1,100 @@
+/*all*/
+html, body{margin:0; padding:0; font-family: 'Malgun Gothic','맑은 고딕','돋움',Dotum, sans-serif; color:#666; font-size: 13px; line-height: 18px;}
+body{width: 660px;}
+*{box-sizing: border-box;}
+input:focus,button:focus{outline: none;}
+input{font-family: 'Malgun Gothic','맑은 고딕','돋움',Dotum, sans-serif; }
+.popup-content{width: 660px;position: relative;border:1px solid #555555;}
+
+/*header*/
+.popup-header{padding: 11.5px 30px 13.5px; background: #333;}
+.popup-header .close{position: absolute;top: 0; right:0;width: 50px;height: 50px;padding: 0; cursor: pointer; background: #000; border: 0; -webkit-appearance: none;float: right; font-size: 35px;line-height: 1; color: #fff; font-family: '돋움',Dotum;}
+.popup-header .close:hover{opacity: 0.7;}
+.popup-header h4{font-size: 18px; font-weight: bold;}
+.popup-header .popup-title{margin:0; line-height: 1.42857143; color:#fff;}
+
+/*body*/
+.popup-body{padding: 20px 30px 0px; position: relative;}
+.popup-body .lst_dsc{margin: 0; padding: 0; list-style: none;}
+.popup-body .lst_dsc li{padding-left: 10px; line-height: 20px; background: url(../img/bu_dot2.gif) no-repeat 0 8px; color: #666;}
+.popup-body .lst_dsc li img{vertical-align: middle; padding-bottom: 1px;}
+
+.popup-body h5{margin: 18px 0 5px; font-size: 18px; font-weight: bold; line-height: 1.2; color:#333;}
+.popup-body h5 .h5_fontl{font-size: 14px;vertical-align: 2.5px;background: url(../img/product_title.png) no-repeat 50px 4px;padding-right: 15px;}
+.colorb{color:#ea002c;}
+
+.popup-body .total_charge{background-color: #434159; color:#fff; padding: 5px 20px 8px; text-align: right; font-size: 14px; margin: 15px 0 10px;}
+.popup-body .total_charge input{text-align: right; font-weight: bold; font-size: 20px; padding: 5px; border: 0; border-bottom: 1px solid #c7c6ce; width: 165px; background: none; color:#fff;}
+.popup-body .total_charge input::-webkit-input-placeholder{ /* WebKit browsers */ color:#fff; }
+.popup-body .total_charge input:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */ color:#fff; }
+.popup-body .total_charge input::-moz-placeholder{ /* Mozilla Firefox 19+ */ color:#fff; }
+.popup-body .total_charge input:-ms-input-placeholder{ /* Internet Explorer 10+ */ color:#fff; }
+.popup-body .total_charge .total_vat{margin-top: 7px;font-size: 13px;}
+
+.popup-body .table-div{position: relative; border-top: 1px solid #777;}
+.popup-body .table-div .table{width: 100%; border-bottom: 1px solid #ddd; border-collapse: collapse; border-spacing: 0;}
+.popup-body .table-div .table thead tr th{font-weight: bold; font-size: 13px; color:#333; border-right: 1px solid #d9dade;background-color: #f0f0f2; padding: 11px 0; box-sizing: border-box;}
+.popup-body .table-div .table thead tr th:last-child{border-right:0;}
+.popup-body .table-div .table thead tr th .use_clear{background: #506cb2; border:1px solid #506cb2; color:#fff; font-size: 13px; margin:5px auto 0; display: inline-block; touch-action: manipulation; cursor: pointer; padding: 0.5px 7px 2px; margin-left: 5px; margin-top: 0;}
+.popup-body .table-div .table thead tr th .use_clear:hover{text-decoration: underline;}
+.fontwn{font-weight: normal;}
+
+.popup-body .table-div .table tbody tr td{padding: 7px 8px 6px 8px; border-right: 1px solid #d9dade; border-top: 1px solid #d9dade;color:#555;}
+.popup-body .table-div .table tbody tr td:first-child{padding-left: 20px;position: relative; background: url(../img/title_dot.png) no-repeat 9px 50%;}
+.popup-body .table-div .table tbody tr td:nth-child(2){text-align: right; font-size: 12px;}
+.popup-body .table-div .table tbody tr td:nth-child(3){font-weight: bold;}
+.popup-body .table-div .table tbody tr td:last-child{border-right:0; text-align: right; padding-right: 13px;}
+.popup-body .table-div .table tbody tr td input{color:#333; font-size: 13px; width: 131px; text-align: right; padding: 4px 6px 4px 0; background: #f4fbfd; border:1px solid #c5c6c9; font-weight:bold;}
+.popup-body .table-div .table tbody tr td input:focus::-webkit-input-placeholder{ /* WebKit browsers */ color:transparent; }
+.popup-body .table-div .table tbody tr td input:focus:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */ color:transparent; }
+.popup-body .table-div .table tbody tr td input:focus::-moz-placeholder{ /* Mozilla Firefox 19+ */ color:transparent; }
+.popup-body .table-div .table tbody tr td input:focus:-ms-input-placeholder{ /* Internet Explorer 10+ */ color:transparent; }
+.popup-body .table-div .table tbody tr td .ico_layer{position: absolute; right: 10px; top: 50%; background: url(../img/layer_off.png) no-repeat; background-size: 16px 16px; width: 16px; height: 16px; float: right; margin-top: -8px;}
+.popup-body .table-div .table tbody tr td .ico_layer.on{background: url(../img/layer_on.png) no-repeat;}
+.popup-body .table-div .table tbody tr td nobr{display: block;text-overflow:ellipsis;overflow: hidden;white-space: nowrap; width: 260px;}
+
+/*사용한도 초과일경우 css <tr class="trouble"> */
+.popup-body .table-div .table tbody tr.trouble td:nth-child(2) input{color:#dc0029; background: #fff7f9; border: 1px solid #bc0023;}
+.popup-body .table-div .table tbody tr.trouble td:nth-child(3){color:#ea002c;font-weight: bold; font-size: 12px; letter-spacing: -1.5px;}
+
+/* tbody 스크롤 생성 부분*/
+.popup-body .table-div .table thead , .popup-body .table-div .table tbody{display: block;}
+.popup-body .table-div .table tbody{height: 492px; overflow-y: auto; overflow-x: hidden; border-top: 1px solid #d9dade;}
+.popup-body .table-div .table tbody tr:nth-child(1) td{border-top: none;}
+.popup-body .table-div .table thead th:nth-child(1), .popup-body .table-div .table tbody td:nth-child(1){width: 294px !important;}
+.popup-body .table-div .table thead th:nth-child(2), .popup-body .table-div .table tbody td:nth-child(2){width: 148px;}
+.popup-body .table-div .table thead th:nth-child(3){width: 156px;}
+.popup-body .table-div .table tbody td:nth-child(3){width: 138px;}
+
+/*footer*/
+.popup-footer{text-align: center; padding: 20px 15px 20px;}
+.btn{display: inline-block; margin-bottom: 0; font-weight: 400; text-align: center; vertical-align: middle; touch-action: manipulation; cursor: pointer; background-image: none; border: 1px solid transparent; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; line-height: 1.5; font-size: 13px; padding:4px 18px 5px; color:#fff; background-color: #777; border-color: #666; min-width: 94px;}
+.btn:hover{background-color: #515151; border-color: #414141;}
+
+/*layer 부분*/
+.pop-layer {display: none; position: absolute; top: 50%; left: 50%; width: 273px; height: auto; background-color: #fff; border: 1px solid #575757; z-index: 10; padding: 0 20px; box-shadow: 0 5px 15px rgba(0,0,0,.5);}
+.pop-layer h5{margin: 0; font-size: 14px; font-weight: bold; line-height: 1.2; color:#333; padding: 20px 0 15px 0; letter-spacing: -0.5px;}
+.pop-layer h5 span{font-weight: normal; font-size: 14px;}
+.pop-layer h5 .btn-layerClose{float: right; background: url(../img/btn_close.png) no-repeat; background-size: 16px 16px; width: 16px; height: 16px; margin-right: -10px;}
+.pop-layer table{width: 100%; border-collapse: collapse; border-spacing: 0; margin-bottom: 20px;}
+.pop-layer table thead tr th{padding: 12px 12px; background: #f7f7f8; color:#333; border-top:1px solid #ddd; border-bottom: 1px solid #ddd; border-right: 1px solid #d9dade; box-sizing: border-box;}
+.pop-layer table thead tr th:last-child{border-right: 0;}
+
+.pop-layer table tbody tr td{padding: 10px 8px; border-right: 1px solid #d9dade; border-top: 1px solid #ddd; box-sizing: border-box; color:#555; text-align: right; padding-right: 18px;}
+.pop-layer table tbody tr:first-child td{border-top: 0;}
+.pop-layer table tbody tr:last-child td{border-bottom: 1px solid #ddd;}
+.pop-layer table tbody tr td:last-child{border-right: 0;}
+
+/* layer-tbody 스크롤 생성 부분*/
+.pop-layer table thead, .pop-layer table tbody{display: block;}
+.pop-layer table tbody{height: 200px; overflow-y: auto; overflow-x: hidden;}
+.pop-layer table thead th:nth-child(1), .pop-layer table tbody td:nth-child(1){width: 112px;}
+.pop-layer table thead th:nth-child(2){width: 118px;}
+.pop-layer table tbody td:nth-child(2){width: 102px;}
+
+/*layer tr <=5 일떄 td width*/
+.layer_tw{width:118px !important;}
+
+.dim-layer { display: none; position: fixed; _position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 9; }
+
+.dim-layer .dimBg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; opacity: .5; filter: alpha(opacity=50); }

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SAIM3CHON</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="../js/main.js"></script>
+</head>
+
+<body>
+    <div class="wrap login_wrap">
+        <div class="container">
+            <div class="container_login container_join">
+                <h1 class="logo_join">
+                    <img src="../img/join_header_logo.png" alt="Saip3chon">
+                </h1>
+                <div class="content">
+                    <dl>
+                        <dt>개인정보 처리방침
+                            <span class="check_bind check_join"><input type="checkbox" id="personal_agree" class="agree2"><label for="personal_agree">동의</label></span>
+                        </dt>
+                        <dd>
+                            제 1장 총 칙<br>제 1조 목적<br>본 약관은 서비스이용자가<br> 제 1장 총 칙<br>제 1조 목적<br>본 약관은 서비스이용자가<br> 제 1장 총 칙<br>제 1조 목적<br>본 약관은 서비스이용자가<br>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>서비스 이용약관
+                            <span class="check_bind check_join"><input type="checkbox" id="service_agree" class="agree2"><label for="service_agree">동의</label></span>
+                        </dt>
+                        <dd>
+                            제 1장 총 칙<br>제 1조 목적<br>본 약관은 서비스이용자가<br> 제 1장 총 칙<br>제 1조 목적<br>본 약관은 서비스이용자가<br> 제 1장 총 칙<br>제 1조 목적<br>본 약관은 서비스이용자가<br>
+                        </dd>
+                    </dl>
+                    <div class="total_agree">
+                        <span class="check_bind check_join">
+                            <input type="checkbox" id="total_agree"><label for="total_agree">모두동의</label>
+                        </span>
+                    </div>
+                    <div>
+                        <form action="" method="">
+                            <fieldset>
+                                <legend>회원가입</legend>
+                                <div class="divTable">
+                                    <div class="divTableBody">
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">
+                                                <label for="user_select">사용자 구분</label>
+                                            </div>
+                                            <div class="divTableCell">
+                                                <select name="" id="user_select">
+                                                    <option value="">선택</option>
+                                                    <option value="">도매</option>
+                                                    <option value="">소매</option>
+                                                    <option value="">사입관리자</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="divTableRow mobile_resposive">
+                                            <div class="divTableHead">
+                                                <label for="join_id">아이디</label>
+                                            </div>
+                                            <div class="divTableCell id_deco">
+                                                <input type="text" id="join_id" name="" placeholder="아이디"><a href="#n" class="table_button">중복확인</a>
+                                                <a href="#layer" class="table_button domae_pop">도매상호검색</a>
+                                                <!-- <p class="join_warning">※ 아이디 또는 비밀번호를 다시 확인하세요.</p> -->
+                                            </div>
+                                        </div>
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">
+                                                <label for="join_pw">비밀번호</label>
+                                            </div>
+                                            <div class="divTableCell">
+                                                <input type="password" id="join_pw" name="" placeholder="※ 필수 입력 항목 입니다.">
+                                            </div>
+                                        </div>
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">
+                                                <label for="join_pw2">비밀번호 확인</label>
+                                            </div>
+                                            <div class="divTableCell">
+                                                <input type="password" id="join_pw2" name="" placeholder="※ 필수 입력 항목 입니다.">
+                                            </div>
+                                        </div>
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">
+                                                <label for="join_name">이름</label>
+                                            </div>
+                                            <div class="divTableCell">
+                                                <input type="text" id="join_name" name="" placeholder="※ 필수 입력 항목 입니다.">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divTable">
+                                    <div class="divTableBody">
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">
+                                                <label for="join_brand">상호명</label>
+                                            </div>
+                                            <div class="divTableCell">
+                                                <input type="text" id="join_brand" name="" placeholder="※ 필수 입력 항목 입니다.">
+                                            </div>
+                                        </div>
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">
+                                                <label for="join_brandnum">사업자번호</label>
+                                            </div>
+                                            <div class="divTableCell">
+                                                <input type="text" id="join_brandnum" name="" placeholder="※ 필수 입력 항목 입니다.">
+                                            </div>
+                                        </div>
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">
+                                                <label for="join_addr">주소</label>
+                                            </div>
+                                            <div class="divTableCell addr">
+                                                <input type="text" id="join_addr" class="addr1" name="" placeholder=""> - <input type="text" id="join_addr2" class="addr1" name="" placeholder="" title="우편번호2"><a href="#layer2" class="table_button domae_pop">주소검색</a>
+                                                <input type="text" id="join_addr3" class="addr2" placeholder="주소" title="주소">
+                                                <input type="text" id="join_addr4" class="addr2" placeholder="상세주소" title="상세주소">
+                                            </div>
+                                        </div>
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">
+                                                <label for="join_artic">건물명</label>
+                                            </div>
+                                            <div class="divTableCell">
+                                                <select name="" id="join_artic">
+                                                    <option value="0">선택</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">
+                                                <label for="join_floor">층</label>
+                                            </div>
+                                            <div class="divTableCell">
+                                                <select name="" id="join_floor">
+                                                    <option value="0">선택</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">
+                                                <label for="join_detail">열(호)</label>
+                                            </div>
+                                            <div class="divTableCell">
+                                                <input type="text" id="join_detail" name="" placeholder="※ 필수 입력 항목 입니다.">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divTable">
+                                    <div class="divTableBody">
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">
+                                                <label for="join_cellphone">휴대폰번호</label>
+                                            </div>
+                                            <div class="divTableCell">
+                                                <input type="text" id="join_cellphone" name="" placeholder="※ 필수 입력 항목 입니다.">
+                                            </div>
+                                        </div>
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">
+                                                <label for="join_phone">전화번호</label>
+                                            </div>
+                                            <div class="divTableCell">
+                                                <input type="text" id="join_phone" name="" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="divTableRow mobile_resposive">
+                                            <div class="divTableHead">
+                                                <label for="join_email">이메일</label>
+                                            </div>
+                                            <div class="divTableCell email">
+                                                <input type="text" id="join_email" name="" placeholder=""> @
+                                                <input type="text" id="join_email2" title="이메일 도메인"> <select class="" name="" title="이메일 도메인선택">
+                                                    <option value="0">직접입력</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" title="가입하기" alt="가입하기" value="가입하기" class="input_login">
+                            </fieldset>
+                        </form>
+                        <a href="#n" class="login_linkbtn kakao">카카오 연동</a>
+                        <p class="p_info">※ 카카오톡 연동을 하시면 카카오톡 아이디로 로그인이 가능합니다.</p>
+                    </div>
+                    <div class="login_footer">
+                        <h3 class="visuallyhidden">Copyright</h3>
+                        <ul class="lst_term">
+                            <li><a href="#n" target="_blank">개인정보 취급방침</a></li>
+                            <li><a href="#n" target="_blank">서비스 이용약관</a></li>
+                        </ul>
+                        <p class="tx_copyright">Copyright ⓒ 2017 NeoForthKorea. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 레이어 팝업 도매 -->
+    <div class="dim-layer-join">
+        <div class="dimBg-join"></div>
+        <div id="layer" class="pop-layer pop-layer-domae">
+            <div class="pop-container">
+                <div class="pop-header">
+                    도매상호 검색<a class="btn_close"></a>
+                </div>
+                <div class="pop-conts">
+                    <!--content //-->
+                    <div class="input_wrap">
+                        <input type="text" title="도매상호검색">
+                        <button type="button" onclick="" class="domae_search">검색</button>
+                    </div>
+                    <ul>
+                        <li><a href="#n">언니가 간다</a></li>
+                        <li><a href="#n">언니쓰</a></li>
+                        <li><a href="#n">언니여기야</a></li>
+                        <li><a href="#n">언니여기야</a></li>
+                        <li><a href="#n">언니여기야</a></li>
+                        <li><a href="#n">언니여기야</a></li>
+                    </ul>
+                    <!--// content-->
+                </div>
+                <div class="btn-r">
+                    <a href="#" class="btn-layerClose">닫기</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="layer2" class="pop-layer pop-layer-domae juso">
+            <div class="pop-container">
+                <div class="pop-conts">
+                    <div class="input_wrap">
+                        <form name="form" id="form" method="post"  onsubmit="return false;">
+                            <fieldset>
+                                <legend>도로명주소 검색</legend>
+                                <input type="text" title="도매상호검색" name="keyword" placeholder="도로명주소, 건물명 또는 지번입력">
+                                <input type="button" onclick="getAddr();" title="주소검색하기" />
+                            </fieldset>
+                        </form>
+                    </div>
+                    <a class="btn_close" href="#n" title="창닫기"><span class="ir">닫기</span></a>
+                    <p class="search_keyword">검색어 예 : 도로명(반포대로 58), 건물명(독립기념관), 지번(삼성동 25)</p>
+                </div>
+                <!--content //-->
+                <div class="pop-juso">
+                    <!-- step1 -->
+                    <!-- <div class="guide_search">
+                        <h2 class="visuallyhidden">도로명주소 검색</h2>
+                        <p>보다 정확한 검색을 위하여 다음 권장사항을 확인하여 주시기 바랍니다. </p>
+                        <ul>
+                            <li>시·도/시·군·구 + 도로명주소 <span>예) 종로구 사직로 161</span></li>
+                            <li>시·도/시·군·구/읍·면·동 + 지번 <span>예) 종로구 관훈동 198-1</span></li>
+                            <li>시·도/시·군·구 + 건물명 <span>예) 역삼동 737</span></li>
+                        </ul>
+                    </div> -->
+                    <!-- //step1 -->
+
+                    <!-- step2 -->
+                    <div class="result_list" id="resultList">
+                        <div class="result_search">
+                            <h2>도로명주소 검색결과</h2>
+                            <p>(5건)</p>
+                        </div>
+
+                        <!-- 테이블 데이터 -->
+                        <div id="result_table">
+                            <!-- 첫번째 행 -->
+                            <div class="row">
+                                <div class="cell1">
+                                    <div class="road_name">
+                                        <p class="icon_road"><span>도로명</span></p>
+                                        <p class="address" id="roadAddrDiv1"><a href="">서울특별시 서초구 강남대로12길 6 (양재동)</a></p>
+                                    </div>
+                                    <div class="juso_name">
+                                        <p class="icon_juso"><span>지번</span></p>
+                                        <p class="address" id="jibunAddrDiv1"><a href="">서울특별시 서초구 양재동 326-1</a></p>
+                                    </div>
+                                </div>
+
+                                <div class="cell2">
+                                    <div class="zip_code" id="zipNoDiv1">06779</div>
+                                </div>
+                            </div>
+                            <!-- //첫번째 행 -->
+
+                            <!-- 두번째 행 -->
+                            <div class="row">
+                                <div class="cell1">
+                                    <div class="road_name">
+                                        <p class="icon_road"><span>도로명</span></p>
+                                        <p class="address" id="roadAddrDiv2"><a href="">서울특별시 서초구 강남대로12길 6 (양재동)</a></p>
+                                    </div>
+                                    <div class="juso_name">
+                                        <p class="icon_juso"><span>지번</span></p>
+                                        <p class="address" id="jibunAddrDiv2"><a href="">서울특별시 서초구 양재동 326-1</a></p>
+                                    </div>
+                                </div>
+
+                                <div class="cell2">
+                                    <div class="zip_code" id="zipNoDiv2">06779</div>
+                                </div>
+                            </div>
+                            <!-- //두번째 행 -->
+
+                        </div>
+                        <!-- //테이블 데이터 -->
+
+                        <!-- 페이징 -->
+                        <div class="paginate" id="pageApi">
+                            <a href="" class="skip prev10">처음으로</a>
+                            <a href="" class="skip prev">이전으로</a>
+                            <a href="" class="actpage">1</a>
+                            <a href="">2</a>
+                            <a href="" class="skip next">다음으로</a>
+                            <a href="" class="skip next10">마지막으로</a>
+                        </div>
+                        <!-- //페이징 -->
+                    </div>
+                    <!-- //step2 -->
+
+                    <!-- step3 -->
+                    <!-- <div id="address_detail">
+        				<h2>상세주소 입력</h2>
+        				<legend>상세주소 입력</legend>
+        				<span class="address_title">도로명주소</span>
+        				<div class="address_road" id="addrPart1">서울특별시 서초구 강남대로12길 15</div>
+        				<label class="address_title">상세주소입력</label>
+        				<div class="address_form">
+        					<div class="row">
+        						<div class="cell1">
+        							<input type="text" name="rtAddrDetail" id="rtAddrDetail" title="상세주소">
+        						</div>
+        						<div class="cell2">
+        							<p class="address_text" id="addrPart2"> (양재동, 경희궁)</p>
+        						</div>
+        					</div>
+        				</div>
+        				<div class="btn_address">
+        					<input type="button" value="주소 입력" onclick="" style="cursor: pointer;">
+        				</div>
+        			</div> -->
+                    <!-- //step3 -->
+                </div>
+
+                <!--// content-->
+
+            </div>
+        </div>
+    </div>
+    <!--// 레이어 팝업 도매 -->
+</body>
+
+</html>

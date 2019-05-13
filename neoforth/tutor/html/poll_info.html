@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>힐링카페 멘토</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        $(function(){
+            $('.check_wrap .btn-submit').click(function(){
+                if($('input:checkbox[id="ok_chck"]').is(":checked") == false){
+                    alert("확인체크해주십시요");
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <p class="main_tit">설문 작성 안내</p>
+        </header>
+        <div id="container">
+            <div class="container poll_info">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">                        
+                        <div class="swiper-slide">
+                            <p class="slide_tit">Mentor?</p>
+                            <div class="slide_detail">
+                                <p class="detail_tit">본인을 얼마나 이해하고 있나요?</p>
+                                <table>
+                                    <tr>
+                                        <th><span>멘토는?</span></th>
+                                        <td>멘토는 개개인의 성격유형 분석을 통해서 본인의 성향을 이해하는 것은 물론, 연인, 친구, 가족, <br>동료 등 사람들과의 관계를 건강하게 이어나갈 수 있도록 성격분석 멘토링 서비스를 제공하는 카페입니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th><span>멘토형<br>성격분석<br>검사는?</span></th>
+                                        <td>멘토에서 자체 개발한 멘토형 에니어그램에 기반을 둔 검사지로, 멘토형 성격분석 연구소에서 개발 및 보급하고 있습니다.<br>
+                                            에니어그램이라는 도구는 고대에서부터 전해진 도구로, 인간을 총 9가지 유형으로 나누고 있습니다.<br>이는 우리가 특정한 방식으로 행동하게 되는 이유를 설명해 주며, 개인이 성장해 나가야 할 방향을 구체적으로 제시해 줍니다.<br>또한 가족, 친구, 연인, 동료와의 관계를 개선하는데 중요한 도구가 되고 있습니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="slide_tit">Enneagram</p>
+                            <div class="slide_detail">
+                                <p class="detail_tit">검사를 시작하기 전 꼭 읽어주세요</p>
+                                <table>
+                                    <tr>
+                                        <th><span>편안<br>하게</span></th>
+                                        <td>이 검사는 개인의 능력을 평가하거나, 성격을 진단하는 검사가 아닙니다. <br>개인이 타고난 심리적 성향과 현재 어떤 부분을 어떻게 사용하고 있는지 알아보는 검사입니다. <br>따라서 좋고 나쁜 것을 매기는 것이 아니므로 편안하게 검사에 임해주세요.<br>검사시간이 정해져있지는 않지만 너무 오래 고민하는 것보다 처음 문항을 보았을 때 든 생각을 위주로 응답해주세요.</td>
+                                    </tr>
+                                    <tr>
+                                        <th><span>솔직<br>하게</span></th>
+                                        <td>본인이 되고 싶은 모습 혹은 예전의 모습을 기준으로 하는 것이 아니라,<br>바로 지금 현재 모습에 초점을 두고 현재 행동하는 내 모습과 가장 자연스럽게 일치되는 문항을 솔직하게 골라주세요</td>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="slide_tit">Answer Tips</p>
+                            <div class="slide_detail">
+                                <p class="detail_tit">멘토 검사 응답 요령</p>
+                                <table>
+                                    <tr>
+                                        <th colspan="2">여러분의 성격 유형을 알아보기 위한 검사입니다.<br>좋고 나쁜 평가를 하는 것이 아니므로 너무 오래 고민하지 마시고 현재 내 모습과 가장 가까운 쪽으로 응답해주세요</th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="2">
+                                            <ul>
+                                                <li>전혀 그렇지 않다면 1</li>
+                                                <li>대체로 그렇지 않다면 2</li>
+                                                <li>보통이라면 3</li>
+                                                <li>대체로 그렇다면 4</li>
+                                                <li>매우 그렇다면 5</li>
+                                            </ul>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="check_wrap">
+                    <input type="checkbox" name="ok_chck" id="ok_chck" disabled>
+                    <label for="ok_chck"><span></span>확인했습니다.</label>
+                    <a href="javascript:void(0);" class="btn btn-submit">설문작성</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            speed:500,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        swiper.on('reachEnd',function(){
+                $('.poll_info .check_wrap label').css("opacity","1");
+                $('#ok_chck').removeAttr("disabled");
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>대림</title>
+	<link rel="stylesheet" href="../css/layout.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/Chart.min.js"></script>
+
+</head>
+
+<body>
+	<div id="fullwrap" class="bg_lookup">
+		<div id="header">
+			<h1><a href="javascript:void(0)"><img src="../img/header_logo.png" alt="e편한세상"></a></h1>
+			<div class="info">
+				<p>2019.04.09 화 PM 03:58</p>
+				<button><span class="ir">홈으로</span></button>
+			</div>
+		</div>
+		<div id="contents" class="sub_contents">
+			<div class="tab">
+				<ul class="tab_menu">
+					<li class=""><a href="javascript:void(0);">에너지사용량</a></li>
+					<li class=""><a href="javascript:void(0);">실시간전기량</a></li>
+					<li class=""><a href="javascript:void(0);">입차관리</a></li>
+					<li class=""><a href="javascript:void(0);">위치인식</a></li>
+					<li class=""><a href="javascript:void(0);">관리비</a></li>
+					<li class="current"><a href="javascript:void(0);">실내대기환경</a></li>
+				</ul>
+
+				
+				<div class="tab_content_wrap">
+					<!-- 에너지사용량 탭콘텐츠 -->
+					<div class="tab_content">
+						에너지사용량
+					</div>
+					<!-- 에너지사용량 탭콘텐츠 -->
+
+					<!-- 실시간전기량 탭콘텐츠 -->
+					<div class="tab_content">
+						실시간전기량
+					</div>
+					<!-- 실시간전기량 탭콘텐츠 -->
+
+					<!-- 입차관리 탭콘텐츠 -->
+					<div class="tab_content">
+						입차관리
+					</div>
+					<!-- 입차관리 탭콘텐츠 -->
+
+					<!-- 위치인식 탭콘텐츠 -->
+					<div class="tab_content">
+						위치인식
+					</div>
+					<!-- 위치인식 탭콘텐츠 -->
+
+					<!-- 관리비 탭콘텐츠 -->
+					<div class="tab_content">
+						관리비
+					</div>
+					<!-- 관리비 탭콘텐츠 -->
+
+					<!-- 실내대기환경 탭콘텐츠 -->
+					<div class="tab_content lookupcont current">
+						<!-- 실내대기환경 요약 -->
+						<div class="indoor_summary">
+							<div class="summary_img">
+								<p>실내공기</p>
+								<p>좋음</p>
+							</div>
+							<div class="summary_temperature">
+								<dl>
+									<dt>온도</dt>
+									<dd><span>24</span>℃</dd>
+								</dl>
+								<dl>
+									<dt>습도</dt>
+									<dd><span>40</span>%</dd>
+								</dl>
+							</div>
+							<div class="summary_detail cloud">
+								<p>실외<span><em>12</em>℃</span><em>구름조금</em></p>
+								<p>최저<span>7</span>℃/최고 <span>16</span>℃</p>
+							</div>
+							
+						</div>
+						
+						<!-- 실내대기환경 종류 탭 -->
+						<div class="indoor_kinds">
+							<ul>
+								<li class="current">
+									<a href="javascript:void(0);">
+										<dl class="good">
+											<dt>미세먼지</dt>
+											<dd><span>26</span><em>µg/m³</em><i></i></dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl class="good">
+											<dt>일산화탄소(CO)</dt>
+											<dd><span>0.3</span><em>ppm</em><i></i></dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl class="bad">
+											<dt>이산화탄소(CO₂)</dt>
+											<dd><span>0.011</span><em>ppm</em><i></i></dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl class="verybad">
+											<dt>유해가스</dt>
+											<dd><span>0.002</span><em>ppm</em><i></i></dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl class="normal">
+											<dt>소음감지</dt>
+											<dd><span>55</span><em>dB</em><i></i></dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<!-- 실내대기환경 세부사항 탭콘텐츠 -->
+						<div class="indoor_detail">
+							<!-- 미세먼지 내용 -->
+							<!-- good, normal, bad, verybadd 클래스에 따라 계기판 방향 처리 -->
+							<div class="indoor_detail_cont current good">
+								<dl>
+									<dt>미세먼지(PM<sub>10</sub>)</dt>
+									<dd>
+										<p><span class="cont_status">좋음</span><span>26</span><em>µg/m³</em></p>
+										<p>실내 환기를 시켜주세요</p>
+									</dd>
+								</dl>
+								<div class="panel_div">
+									<i></i>
+								</div>
+								<div class="chart_block">
+									<canvas id="myChart" width="614" height="350"></canvas>
+								</div>
+							</div>
+							<!-- 일산화탄소 내용 -->
+							<div class="indoor_detail_cont">
+								일산화탄소
+							</div>
+							<!-- 이산화탄소 내용 -->
+							<div class="indoor_detail_cont">
+								이산화탄소
+							</div>
+							<!-- 유해가스 내용 -->
+							<div class="indoor_detail_cont">
+								유해가스
+							</div>
+							<!-- 소음감지 내용 -->
+							<div class="indoor_detail_cont">
+								소음감지
+							</div>
+						</div>
+					</div>
+					<!-- 실내대기환경 탭콘텐츠 -->
+					
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<ul>
+				<li class="active"><a href="javascript:void(0);" class="lookup on">조회</a></li>
+				<li><a href="javascript:void(0);" class="addition">부가</a></li>
+				<li><a href="javascript:void(0);" class="security">방범</a></li>
+				<li><a href="javascript:void(0);" class="notice">공지</a></li>
+				<li><a href="javascript:void(0);" class="visit">방문</a></li>
+				<li><a href="javascript:void(0);" class="control">제어</a></li>
+				<li><a href="javascript:void(0);" class="valve">가스밸브</a></li>
+				<li><a href="javascript:void(0);" class="delivery">택배</a></li>
+				<li><a href="javascript:void(0);" class="currency">통화</a></li>
+				<li><a href="javascript:void(0);" class="elevator">엘레베이터 Call</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			// 좌측 탭
+			var $tab_menu = $(this).find('ul.tab_menu>li');
+			var $tab_content = $(this).find('.tab_content_wrap');
+
+			$tab_menu.on('click', function (e) {
+				e.preventDefault();
+				var _idx = $tab_menu.index(this);
+
+				// tab_menu
+				$(this).addClass('current').siblings().removeClass('current');
+
+				//tab_content
+				$tab_content.find('.tab_content').eq(_idx).addClass('current').siblings().removeClass('current');
+
+			});
+
+			//실내대기환경 내부 탭
+			var $indoor_tab_menu = $(this).find('.indoor_kinds>ul>li');
+			var $indoor_tab_content = $(this).find('.indoor_detail');
+
+			$indoor_tab_menu.on('click', function (e) {
+				e.preventDefault();
+				var _idx = $indoor_tab_menu.index(this);
+
+				// tab_menu
+				$(this).addClass('current').siblings().removeClass('current');
+
+				//tab_content
+				$indoor_tab_content.find('.indoor_detail_cont').eq(_idx).addClass('current').siblings().removeClass('current');
+
+			});
+
+			//클래스에따라 계기판 화살표 변경
+			var $indoor_detail_cont = $(".indoor_detail_cont.current");
+			var $panel_div_i = $(".indoor_detail_cont.current .panel_div i");
+
+			if($indoor_detail_cont.hasClass('good')) {
+				$panel_div_i.addClass('direction_good');
+			} else if($indoor_detail_cont.hasClass('normal')) {
+				$panel_div_i.addClass('direction_normal');
+			} else if($indoor_detail_cont.hasClass('bad')) {
+				$panel_div_i.addClass('direction_bad');
+			} else if($indoor_detail_cont.hasClass('verybad')) {
+				$panel_div_i.addClass('direction_verybad');
+			}
+		});
+
+		
+		
+		var chartData = [69, 75, 51, 28, 80, 85, 151, 67];
+		//차트 색깔 조건설정
+		var pointBackgroundColor = function() {
+			// 미세먼지 - 0~30 좋음, 31~80 보통, 81~150 나쁨, 151~ 매우나쁨
+			var chartDataColor = [];
+			chartData.forEach(function (item, index) {
+				if(item >= 151) {
+					chartDataColor.push("rgba(255, 63, 59, 0.5)");
+				} else if(item >= 81) {
+					chartDataColor.push("rgba(255, 177, 54, 0.5)");
+				} else if(item >= 31) {
+					chartDataColor.push("rgba(4, 204, 117, 0.5)");
+				} else {
+					chartDataColor.push("rgba(50, 161, 255, 0.5)");
+				}
+			});
+			return chartDataColor;
+		}
+		// 차트
+		var ctx = document.getElementById('myChart').getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: ['06시', '12시', '18시', '24시', '06시', '12시', '18시', '24시'],
+				datasets: [{
+					data: chartData,
+					backgroundColor: 'rgba(255, 177, 54, 0.3)',
+					borderColor: [
+						'rgba(255, 177, 54, 0.3)',
+					],
+					pointRadius: 8,
+					pointBackgroundColor: pointBackgroundColor(),
+				}]
+			},
+			options: {
+				legend: {
+					display: false
+				},
+				scales: {
+					yAxes: [{
+						gridLines: {
+							color: '#000',
+						},
+						ticks: {
+							beginAtZero: true,
+							fontSize: 20,
+							fontColor: "#444",
+						}
+					}],
+					xAxes: [{
+						gridLines: false,
+						ticks: {
+							fontSize: 20,
+							fontColor: "#444",
+							lineHeight: 3
+						}
+					}]
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>

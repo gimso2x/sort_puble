@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>힐링카페 멘토</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        $(function () {
+            $(document).on('click', '.sorting', function () {
+                $this = $(this);
+                var change_sort = 'desc';
+
+                if (change_sort == 'asc') {
+                    $this.addClass('sorting_asc');
+                } else if (change_sort == 'desc') {
+                    $this.addClass('sorting_desc');
+                }
+                $this.removeClass('sorting');
+
+            });
+            $(document).on('click', '.sorting_asc, .sorting_desc', function () {
+                $this = $(this);
+                $this.removeClass('sorting_asc');
+                $this.removeClass('sorting_desc');
+                $this.addClass('sorting');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <p class="main_tit">성격 분석 리스트</p>
+            
+        </header>
+        <div id="container">
+            <div class="container">
+                <div class="clist">
+                    <div class="point_wrap">
+                        <select name="" id="" class="form-control">
+                            <option value="">지점명</option>
+                            <option value="">본점</option>
+                            <option value="">동대문</option>
+                        </select>
+                        <select name="" id="" class="form-control">
+                            <option value="">지점명</option>
+                            <option value="">본점</option>
+                            <option value="">동대문</option>
+                        </select>
+                    </div>
+                    <table>
+                        <caption>성격 분석 리스트</caption>
+                        <thead>
+                            <tr class="animate">
+                                <th>
+                                    <input type="checkbox" name="clistAll" id="clistAll">
+                                    <label for="clistAll">
+                                        <span></span>
+                                    </label>
+                                </th>
+                                <th>No</th>
+                                <th>
+                                    지점
+                                    <a href="javascript:void(0)" class="sorting"></a>
+                                </th>
+                                <th>
+                                    상담
+                                    <br>번호
+                                    <a href="javascript:void(0)" class="sorting"></a>
+                                </th>
+                                <th>테이블
+                                    <br>No</th>
+                                <th>
+                                    이름
+                                    <a href="javascript:void(0)" class="sorting_asc"></a>
+                                </th>
+                                <th>관계</th>
+                                <th>
+                                    나이
+                                    <a href="javascript:void(0)" class="sorting_desc"></a>
+                                </th>
+                                <th>성별</th>
+                                <th>재방문
+                                    <br>횟수</th>
+                                <th>출력
+                                    <br>여부</th>
+                                <th>멘토
+                                    <br>입력</th>
+                                <th>메모</th>
+                                <th>날짜</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="clist1" id="clist1" class="clist_check">
+                                    <label for="clist1">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>1</td>
+                                <td>본점</td>
+                                <td>101</td>
+                                <td>T01</td>
+                                <td>홍길동</td>
+                                <td>본인</td>
+                                <td>24</td>
+                                <td class="gender">
+                                    <img src="../img/ico_male.png" alt="남자">
+                                </td>
+                                <td>0</td>
+                                <td class="printd">출력</td>
+                                <td>홍길동</td>
+                                <td>
+                                    <span>하나둘셋넷다섯여섯일곱11111111111111</span>
+                                </td>
+                                <td>2018-08-10</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="clist2" id="clist2" class="clist_check">
+                                    <label for="clist2">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>2</td>
+                                <td>본점</td>
+                                <td>102</td>
+                                <td>T02</td>
+                                <td>소지섭</td>
+                                <td>여친</td>
+                                <td>22</td>
+                                <td class="gender">
+                                    <img src="../img/ico_male.png" alt="남자">
+                                </td>
+                                <td>1</td>
+                                <td>미출력</td>
+                                <td>김미남</td>
+                                <td>
+                                    <span>하나둘셋넷다섯여섯일곱11111111111111</span>
+                                </td>
+                                <td>2018-08-10</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="clist3" id="clist3" class="clist_check">
+                                    <label for="clist3">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>3</td>
+                                <td>건대입구점</td>
+                                <td>103</td>
+                                <td>T03</td>
+                                <td>홍길동</td>
+                                <td>본인</td>
+                                <td>24</td>
+                                <td class="gender">
+                                    <img src="../img/ico_male.png" alt="남자">
+                                </td>
+                                <td>0</td>
+                                <td>미출력</td>
+                                <td>김미남</td>
+                                <td>
+                                    <span>하나둘셋넷다섯여섯일곱11111111111111</span>
+                                </td>
+                                <td>2018-08-10</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="clist4" id="clist4" class="clist_check">
+                                    <label for="clist4">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>4</td>
+                                <td>본점</td>
+                                <td>101</td>
+                                <td>T04</td>
+                                <td>홍길동</td>
+                                <td>본인</td>
+                                <td>24</td>
+                                <td class="gender">
+                                    <img src="../img/ico_male.png" alt="남자">
+                                </td>
+                                <td>0</td>
+                                <td>미출력</td>
+                                <td>김미남</td>
+                                <td>
+                                    <span>하나둘셋넷다섯여섯일곱11111111111111</span>
+                                </td>
+                                <td>2018-08-10</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="clist5" id="clist5" class="clist_check">
+                                    <label for="clist5">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>5</td>
+                                <td>본점</td>
+                                <td>101</td>
+                                <td>T05</td>
+                                <td>홍길동</td>
+                                <td>본인</td>
+                                <td>24</td>
+                                <td class="gender">
+                                    <img src="../img/ico_female.png" alt="여자">
+                                </td>
+                                <td>0</td>
+                                <td class="printd">출력</td>
+                                <td>김미남</td>
+                                <td>
+                                    <span>하나둘셋넷다섯여섯일곱11111111111111</span>
+                                </td>
+                                <td>2018-08-10</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="clist6" id="clist6" class="clist_check">
+                                    <label for="clist6">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>6</td>
+                                <td>본점</td>
+                                <td>101</td>
+                                <td>T06</td>
+                                <td>홍길동</td>
+                                <td>본인</td>
+                                <td>24</td>
+                                <td class="gender">
+                                    <img src="../img/ico_female.png" alt="여자">
+                                </td>
+                                <td>0</td>
+                                <td>미출력</td>
+                                <td>김미남</td>
+                                <td>
+                                    <span>하나둘셋넷다섯여섯일곱11111111111111</span>
+                                </td>
+                                <td>2018-08-10</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="clist7" id="clist7" class="clist_check">
+                                    <label for="clist7">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>7</td>
+                                <td>본점</td>
+                                <td>101</td>
+                                <td>T07</td>
+                                <td>홍길동</td>
+                                <td>본인</td>
+                                <td>24</td>
+                                <td class="gender">
+                                    <img src="../img/ico_female.png" alt="여자">
+                                </td>
+                                <td>0</td>
+                                <td>미출력</td>
+                                <td>김미남</td>
+                                <td>
+                                    <span>하나둘셋넷다섯여섯일곱11111111111111</span>
+                                </td>
+                                <td>2018-08-10</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="clist8" id="clist8" class="clist_check">
+                                    <label for="clist8">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>8</td>
+                                <td>본점</td>
+                                <td>101</td>
+                                <td>T08</td>
+                                <td>홍길동</td>
+                                <td>본인</td>
+                                <td>24</td>
+                                <td class="gender">
+                                    <img src="../img/ico_female.png" alt="여자">
+                                </td>
+                                <td>0</td>
+                                <td>미출력</td>
+                                <td>김미남</td>
+                                <td>
+                                    <span>하나둘셋넷다섯여섯일곱11111111111111</span>
+                                </td>
+                                <td>2018-08-10</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="clist9" id="clist9" class="clist_check">
+                                    <label for="clist9">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>9</td>
+                                <td>본점</td>
+                                <td>101</td>
+                                <td>T09</td>
+                                <td>홍길동</td>
+                                <td>본인</td>
+                                <td>24</td>
+                                <td class="gender">
+                                    <img src="../img/ico_female.png" alt="여자">
+                                </td>
+                                <td>0</td>
+                                <td>미출력</td>
+                                <td>김미남</td>
+                                <td>
+                                    <span>하나둘셋넷다섯여섯일곱11111111111111</span>
+                                </td>
+                                <td>2018-08-10</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="clist10" id="clist10" class="clist_check">
+                                    <label for="clist10">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>10</td>
+                                <td>본점</td>
+                                <td>101</td>
+                                <td>T10</td>
+                                <td>홍길동</td>
+                                <td>본인</td>
+                                <td>24</td>
+                                <td class="gender">
+                                    <img src="../img/ico_female.png" alt="여자">
+                                </td>
+                                <td>0</td>
+                                <td>미출력</td>
+                                <td>김미남</td>
+                                <td>
+                                    <span>하나둘셋넷다섯여섯일곱11111111111111</span>
+                                </td>
+                                <td>2018-08-10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="pagination">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <img src="../img/ico_double_prev.png" alt="더 뒤로가기">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <img src="../img/ico_prev.png" alt="더 뒤로가기">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="page_active">1</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">2</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <img src="../img/ico_next.png" alt="앞으로가기">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <img src="../img/ico_double_next.png" alt="더 앞으로가기">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="search_wrap">
+                        <div>
+                            <select title="검색조건" class="form-control">
+                                <option value="">이름</option>
+                                <option value="">지점</option>
+                                <option value="">날짜</option>
+                            </select>
+                            <input type="text" name="" title="검색어" class="form-control" placeholder="검색할 단어를 입력해주세요">
+                            <a href="javascript:void(0);" class="btn btn-default">검색</a>
+                        </div>
+                        <a href="javascript:void(0);" class="btn btn-submit">그래프 출력하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

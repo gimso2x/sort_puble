@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 800;
+    src: url('./fonts/NanumSquareEB.eot');
+    src: url('./fonts/NanumSquareEB.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/NanumSquareEB.woff') format('woff'),
+        url('./fonts/NanumSquareEB.ttf') format('truetype');
+}
+
+/* Reset
+-------------------------------------------------------------- */
+*{
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+box-sizing:border-box;
+word-break:break-all;
+-webkit-text-size-adjust:none;
+}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+{margin:0;padding:0;border:0;font-size: 100%;vertical-align: baseline;}
+html,body{width:100%;min-height:100%;}
+body{font-size:12px;line-height:1;font-family:'맑은 고딕','dotum',sans-serif;color:#fff;letter-spacing: -0.5px;}
+nav,ol,ul,li{list-style:none;}
+label,input,button,select,img{vertical-align:middle}
+input,button{margin:0;padding:0;font-family:'맑은 고딕','dotum',sans-serif;font-size:1rem;}
+button{cursor:pointer;}
+img,input,select,textarea,button{vertical-align:middle;}
+textarea,select{font-family:'맑은 고딕','dotum',sans-serif;font-size:1rem;}
+select{margin:0;background-color:#fff;}
+h1,h2,h3,h4,h5,h6,b,strong{font-weight:700;}
+address,cite,em,i{font-style:normal;}
+a{text-decoration:none}
+a:hover,a:focus,a:active{color:#3399cc;background-color:transparent;}
+table{width:100%;border-collapse:collapse;border-spacing:0}
+caption,legend{position:absolute;top:0;left:0;width:1px;height:1px;font-size:1px;text-indent:-20000px;}
+
+/* ir */
+.ir{width:0;height:0;font-size:0;line-height:0;overflow:hidden;position:absolute;left:0;top:0;}
+
+/* 말줄임 */
+.ellipsis{display:inline-block;max-width:85%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;}
+
+/* skip navigation */
+#skip_nav a{position:absolute; top:-500px;font-size:15px;font-weight:600}
+#skip_nav a:focus, #skip_nav a:active{top:1px; z-index:99999; display:block; width:100%; height:40px; line-height:40px; font-weight:600; color:#fff; text-align:center; background-color:#015293}
+
+/* menu animation */
+.animate,.animate *{-webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+
+#wrap {width: 100%;min-width: 1000px;min-height: 100vh;position: relative;}
+#wrap #container {position: relative;}
+#wrap #container::after {content:'';display: block;clear: both;}
+#wrap #container h1 {background: url(../img/main_logo.png) no-repeat;width: 150px;height: 53px;position: absolute;top:5vh;left:35%;z-index: 9999;}
+#wrap #container h4 {position: absolute;top: 15vh;right: 50%;margin-right:-130px;z-index: 999;}
+#wrap #container > .contents {float:left;width:50%;height:100vh;text-align: center;position: relative;overflow: hidden;}
+#wrap #container > .left {background: #fc7d20 url(../img/main_bg1.png) no-repeat left top / 350px;}
+#wrap #container > .left .inner {left: 70%}
+#wrap #container > .right {background: #486ea1 url(../img/main_bg2.png) no-repeat 90% 90% / 350px;}
+#wrap #container > .right .inner {left: 30%;}
+#wrap #container > .contents .inner {width:500px;height: 474px;position: absolute;top: 50%;margin-left:-250px;margin-top: -232px;padding-top: 30px;}
+#wrap #container > .contents .inner h2 {font-size: 35px;font-family: "NanumSquare";font-weight: 800;margin-bottom: 80px;border-bottom: 2px solid #fff;display: inline-block;padding-bottom: 3px;}
+#wrap #container > .contents .inner > div a {font-family: Tahoma;display: inline-block;width: 30%;height: 200px;line-height: 192px;color:#fff;border:2px solid #fff;border-bottom-width:4px;font-weight: 700;font-size: 25px;}
+#wrap #container > .contents .inner > div a:hover {background: rgba(255,255,255,0.2);}
+#wrap #container > .contents .inner h3 {font-size: 20px;font-family: "NanumSquare";font-weight: 800;margin-bottom: 30px;margin-top: 30px;}
+#wrap #container > .contents .inner > a {display: inline-block;font-family: "NanumSquare";color: #fff;font-size: 17px;border: 1px solid #fff; border-radius: 100%;padding:5px;width: 29px;text-align: center;margin-right: 10px;font-weight: bold;}
+#wrap #container > .contents .inner > a.on {background: #fff;color:#486ea1}
+#wrap #container > .contents .inner .excelBtn {width: auto;padding: 10px;}
+
+@media all and (max-width:1000px) {
+    #wrap {min-width: auto;min-height:auto;}
+	#wrap #container h1 {top: 1vh;left:5%;}
+	#wrap #container h4 {top: 70px;}
+	#wrap #container > .contents {width: 100%;height: auto;padding-bottom: 30px;}
+	#wrap #container > .contents .inner {width: 100%;margin-left:0;position:relative;height: auto;}
+	#wrap #container > .right {background-size:200px;}
+	#wrap #container > .left .inner {left: 0;margin-top:150px;}
+	#wrap #container > .right .inner {left: 0;margin-top: 50px;}
+	#wrap #container > .contents .inner h2 {margin-bottom: 30px;}
+
+}

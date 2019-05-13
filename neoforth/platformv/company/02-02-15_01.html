@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=793">
+    <title>미래에셋대우</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/plugin/fullcalendar.min.css">
+    <link rel="stylesheet" href="../css/plugin/jquery-ui.css">
+    <style>
+    	/* 인쇄시 필수 css */
+    	@page {
+    		margin: 0;
+    		box-shadow: 0;
+    	}
+    </style>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/common.js"></script>
+    <!-- 캘린더 -->
+    <script src="../js/plugin/moment.min.js"></script>
+    <script src="../js/plugin/fullcalendar.min.js"></script>
+    <!-- // 캘린더 -->
+    <!-- jquery-ui -->
+    <script src="../js/plugin/jquery-ui.min.js"></script>
+    <!-- // jquery-ui -->
+</head>
+
+<body>
+	<div id="print_wrap" class="print4">
+		<div class="button_wrap">
+			<button type="button" class="btn_submit" onclick="window.print();">인쇄하기</button>
+		</div>
+	
+		<h3 class="main_title">전자투표, 전자위임장 업무이용 확인서</h3>
+		<div class="clearfix tbl_float_wrap">
+			<div class="tbl_print_wrap fl confirm_1">
+				<img src="../img/shareholder/print_th_bg.jpg" alt="프린트용 th배경이미지">
+				<table class="tbl_confirm1">
+					<caption>회사명, 주주총회일시, 발행주식총수</caption>
+					<tbody>
+						<tr>
+							<th>회사명</th>
+							<td>주식회사 삼성전자</td>
+						</tr>
+						<tr>
+							<th>주주총회일시</th>
+							<td>2019.03.23 09:00</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="tbl_print_wrap fl confirm_2">
+				<img src="../img/shareholder/print_th_bg.jpg" alt="프린트용 th배경이미지">
+				<table class="tbl_confirm1">
+					<caption>업무구분(전자투표, 전자위임장), 행사가능주식총수</caption>
+					<tbody>
+						<tr>
+							<th rowspan="2">업무구분</th>
+							<th>전자투표</th>
+							<td>이용</td>
+						</tr>
+						<tr>
+							<th>전자위임장</th>
+							<td>미이용</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div class="tbl_print_wrap">
+			<img src="../img/shareholder/print_th_bg.jpg" alt="프린트용 th배경이미지" class="type1">
+			<img src="../img/shareholder/print_th_bg.jpg" alt="프린트용 th배경이미지" class="type2">
+			<table class="tbl_confirm2">
+				<caption>구분, 진행현황, 제출일시, 제출기한</caption>
+				<thead>
+					<tr>
+						<th>구분</th>
+						<th>진행현황</th>
+						<th>제출일시</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>이용신청서 제출</td>
+						<td>제출</td>
+						<td>2019.03.10 16:10</td>
+					</tr>
+					<tr>
+						<td>주주명부 검증확인</td>
+						<td>제출</td>
+						<td>2019.03.10 16:10</td>
+					</tr>
+					<tr>
+						<td>주주총회 결과통보서</td>
+						<td>제출</td>
+						<td>2019.03.10 16:10</td>
+					</tr>
+					<tr>
+						<td>행사현황</td>
+						<td colspan="3">행사완료</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+			
+		<p class="same_check">상기 내용이 사실과 같음을 확인합니다.</p>
+		<div class="sign_wrap">
+			<p class="date">2018년 11월 27일</p>
+<!-- 			<div class="address"><p>미래에셋대우 주식회사<br><span>서울특별시 중구 을지로5길 26 (수하동, 미래에셋 센터원빌딩 이스트타워)</span></p></div> -->
+			<p class="owner"><img src="../img/shareholder/print_stamp_compelete.png" alt="미래에셋대우"></p>
+<!-- 			<div class="stamp_area"><img src="../img/shareholder/print_stamp.png" alt="미래에셋대우 도장"></div> -->
+		</div>
+	</div>
+</body>
+
+</html>

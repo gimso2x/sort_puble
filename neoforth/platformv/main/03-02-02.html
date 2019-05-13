@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>미래에셋대우</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/plugin/fullcalendar.min.css">
+	<link rel="stylesheet" href="../css/plugin/jquery-ui.css">
+	<link rel="stylesheet" href="../css/plugin/swiper.min.css">
+
+	<script src="../js/jquery-1.12.4.min.js"></script>
+	<script src="../js/common.js"></script>
+	<!-- 캘린더 -->
+	<script src="../js/plugin/moment.min.js"></script>
+	<script src="../js/plugin/fullcalendar.min.js"></script>
+	<!-- // 캘린더 -->
+	<!-- swiper - 슬라이더  플러그인 -->
+	<script src="../js/plugin/swiper.min.js"></script>
+	<!-- // swiper - 슬라이더 플러그인 -->
+	<!-- jquery-ui -->
+	<script src="../js/plugin/jquery-ui.min.js"></script>
+	<!-- // jquery-ui -->
+</head>
+
+<body>
+	<div id="skip_nav" title="스킵메뉴">
+		<a href="#header">헤더</a>
+		<a href="#container">본문</a>
+		<a href="#footer">푸터</a>
+	</div>
+	<div id="wrap">
+		<!-- 헤더 -->
+		<header id="header" class="bg_company">
+
+			<div class="container_wrap">
+				<h1 class="header_logo">
+					<a href="javascript:void(0);">
+						<img src="../img/common/header_logo.png" alt="미래에셋대우 전자투표 페이지 상단 로고">
+					</a>
+				</h1>
+				<h2></h2>
+				<div class="header_buttonwrap">
+					<div class="form_search">
+						<a href="javascript:void(0);" class="form_search_back"><span class="ir">검색부분 줄이기</span></a>
+						<label><input type="text" name="search" class="input_search" placeholder="회사번호 또는 회사명을 입력하세요"></label>
+						<a href="javascript:void(0)" class="form_search_clear"><span class="ir">검색 텍스트 입력시 클리어 버튼</span></a>
+						<a href="javascript:void(0);" class="btn_search"><span class="ir">검색 input 보여주는버튼</span></a>
+						<button type="button" class="header_btn">검색 조회 버튼</button>
+					</div>
+					<a href="javascript:void(0);" class="btn_user"><span class="ir">유저버튼</span></a>
+					<a href="javascript:void(0);" class="btn_user_logout"><span class="ir">로그아웃버튼</span></a>
+				</div>
+				<!-- gnb -->
+				<div id="gnb">
+					<a href="javascript:void(0);" class="btn_menu"><span class="ir">메뉴 오픈 버튼</span></a>
+					
+				</div>
+				<!-- // gnb -->
+			</div>
+			
+			<div class="gnb_bgwrap">
+				<ul class="gnb_1depth">
+					<li><a href="javascript:void(0);">서비스 소개</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">플랫폼 V란?</a></li>
+							<li><a href="javascript:void(0);">주주(개인,법인) 서비스 가이드</a></li>
+							<li><a href="javascript:void(0);">회사 서비스 가이드</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);">서비스 가입</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">주주(개인, 법인) 서비스 가입</a></li>
+							<li><a href="javascript:void(0);">회사 서비스 가입</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);">주주총회 전체일정</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">주주(개인, 법인) 서비스 가입</a></li>
+							<li><a href="javascript:void(0);">회사 서비스 가입</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);">기업 홍보관</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">주주(개인, 법인) 서비스 가입</a></li>
+							<li><a href="javascript:void(0);">회사 서비스 가입</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);">고객센터</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">공지사항</a></li>
+							<li><a href="javascript:void(0);">자주 묻는 질문</a></li>
+							<li><a href="javascript:void(0);">이벤트</a></li>
+							<li><a href="javascript:void(0);">1:1 문의</a></li>
+							<li><a href="javascript:void(0);">V 자료실</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="gnb_closearea">
+					<a href="javascript:void(0);" class="gnb_menu_close">메뉴닫기</a>
+				</div>
+			</div>
+			
+			<!-- 주주 01-03-01 개인정보 수정 탭 -->
+			<div class="div_header_user_menu">
+				<div class="container_wrap">
+					<a href="javascript:void(0);" class="user_menu_close"><span class="ir">주주,회사 정보메뉴 닫기</span></a>
+					<div class="row">
+						<div class="col fl">
+							<div class="personal_info">
+								<button type="button" class="personal_info_btn">개인정보 설정 버튼</button>
+								<div>
+									<ul class="personal_info_modify">
+										<li><a href="javascript:void(0);">개인정보 수정</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="personal_img_wrap">
+								<img src="../img/common/personal/ico_person_default.jpg" alt="기본프로필 사진" class="profil_person">
+								<img src="../img/common/personal/ico_company_default.jpg" alt="회사프로필 사진" class="profil_company">
+							</div>
+							<p class="personal_info_name">
+								<span>박미래</span>님의 V
+							</p>
+							<p class="personal_number">(회원번호 : 00001 )
+							</p>
+							
+						</div>
+						<div class="col fr">
+							<div class="header_ment">
+								<p>이 달의<br>주주총회</p>
+							</div>
+							<ul>
+								<li>
+									<p>주주총회 결과</p>
+									<a href="javascript:void(0);">24</a>
+								</li>
+								<li>
+									<p>투표/위임 진행</p>
+									<a href="javascript:void(0);">7</a>
+								</li>
+								<li>
+									<p>투표/위임 내역</p>
+									<a href="javascript:void(0);">2</a>
+								</li>
+							</ul>
+							<!-- 프로모션 슬라이드 -->
+							<div class="swiper-container header_promo">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<img src="../img/common/personal/header_promo_1.png">
+									</div>
+									<div class="swiper-slide">
+										<img src="../img/common/personal/header_promo_2.png">
+									</div>
+								</div>
+								<!-- Add Pagination -->
+								<div class="swiper-pagination"></div>
+							</div>
+							<!-- //프로모션 슬라이드 -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 메뉴 탭 -->
+
+			<!-- 자동완성 탭 -->
+			<div class="div_header_add_ajax">
+				<ul>
+					<li><span><a href="javascript:void(0);">00683</a></span><a href="javascript:void(0);">르노<b>삼성</b>자동차</a></li>
+					<li><span><a href="javascript:void(0);">00683</a></span><a href="javascript:void(0);">르노<b>삼성</b>자동차</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>바이오로직스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+				</ul>
+			</div>
+			<!-- // 자동완성 탭 -->
+			
+			<!-- 검색옵션 탭 -->
+			<div class="div_header_add">
+				<div class="div_search_option">
+					<span>기간</span>
+					<label for="from">From</label>
+					<input type="text" id="from" name="from" placeholder="주주총회 시작 일자" onclick="layer_popup('#pop_calendar')">
+					<span>~</span>
+					<label for="to">to</label>
+					<input type="text" id="to" name="to" placeholder="주주총회 종료 일자" onclick="layer_popup('#pop_calendar')">
+					<i class="ico_calendar" onclick="layer_popup('#pop_calendar')"><span class="ir">캘린더 안내 이미지</span></i>
+					<div class="buttonwrap">
+						<button class="btn_default">재설정</button>
+						<button class="btn_submit">조회</button>
+					</div>
+				</div>
+			</div>
+			<!-- //검색옵션 탭 -->
+			
+		</header>
+		<div id="block_allmenu"></div>
+		<!-- // E:헤더 -->
+
+	</div>
+
+	<!-- 레이어팝업 -->
+	<div class="layer_wrap">
+		<div id="pop_calendar" class="pop-layer">
+			<a href="javascript:void(0);" class="btn_close">닫기</a>
+			<div class="pop-container">
+				<div class="cal_left">
+					<p>주주총회 시작 일자</p>
+					<div id="from_calendar"></div>
+				</div>
+				<div class="cal_right">
+					<p>주주총회 종료 일자</p>
+					<div id="to_calendar"></div>
+				</div>
+			</div>
+			<div class="button_wrap">
+				<button class="btn_submit" id="cal_complete">기간 선택 완료</button>
+			</div>
+		</div>
+	</div>
+	<!-- // 레이어팝업 -->
+</body>
+
+</html>

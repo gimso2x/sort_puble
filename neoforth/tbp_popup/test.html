@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>test</title>
+  <script type="text/javascript">
+    function popupOpen() {
+      var popUrl = "charge_simulation_8p.html"; //팝업창에 출력될 페이지 URL
+      var popOption = "width=660, height=880, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
+      window.open(popUrl, "", popOption);
+    }
+    function popupOpen2() {
+      var popUrl = "charge_simulation_9p.html"; //팝업창에 출력될 페이지 URL
+      var popOption = "width=660, height=880, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
+      window.open(popUrl, "", popOption);
+    }
+  </script>
+</head>
+
+<body>
+  요금 시뮬레이션 : <a href="javascript:popupOpen();"> charge_simulation_8p.html </a><br>
+  요금 시뮬레이션_한도 : <a href="javascript:popupOpen2();"> charge_simulation_9p.html </a><br>
+</body>
+
+</html>

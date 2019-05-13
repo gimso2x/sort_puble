@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SAIM3CHON</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var idnum = 1;
+
+            // $("#addTR").click(function() {
+            $(document).on("click","#addTR",function(){
+                if (idnum < 5) {
+                    var row = "<div class='order_bx'>";
+                    row += "<ul class='direct_order'> ";
+                    row += "<li class='direct_order_li1'><input type='text' name='meip[]' value='' class='meip' id='meip' required placeholder='매입명' ></li> ";
+                    row += "<li class='direct_order_li2'><input type='text' name='pname[]' value='' class='pname' id='pname' required placeholder='상품명' /></li> ";
+                    row += "<li class='direct_order_li3'><input type='text' name='color[]' value='' class='color' id='color' required placeholder='색상' /></li> ";
+                    row += "<li class='direct_order_li4'><input type='text' name='size[]' value='' class='size' id='size' required placeholder='사이즈' /></li> ";
+                    row += "<li class='direct_order_li5'><input type='text' name='amount[]' value='' class='amount' id='amount' required placeholder='수량' /></li> ";
+                    row += "<li class='direct_order_li6'><input type='text' name='price[]' value='' class='etc' id='etc' required placeholder='가격' /></li> ";
+                    row += "<li class='direct_order_li7'> ";
+                    row += "<input type='button' name='domeName[" + idnum + "]' class='domeName domae_pop' id='domeName' value='도매업자 선택' href='#layer2'/>";
+                    row += "<input type='hidden' name='domeId[" + idnum + "]' id='domeId' value='' /></li> ";
+                    row += "<li class='direct_order_li8'>";
+                    row += "<input type='button' name='saName[" + idnum + "]' class='saName domae_pop' id='saName'  value='사입업자 선택' href='#layer'/>";
+                    row += "<input type='hidden' id='saId' name='saId[" + idnum + "]' value=''placeholder='' /></li> ";
+                    row += "<li class='direct_order_li9'><input type='hidden' id='saState' name='saState' value='A'/><a href='#n' class='btnRemove'><img src='../img/ico_minusButton.png' alt='삭제버튼'></a></li> ";
+                    row += "</ul></div>";
+                    $('.order_bx_wrap.change').append(row);
+                    idnum += 1;
+                } else {
+                    alert('5개까지 추가 가능합니다.');
+                }
+            });
+
+            $(document).on("click", ".btnRemove", function() {
+                $(this).closest(".order_bx").remove();
+                idnum -= 1;
+            });
+
+
+
+
+
+            $('.file_input .file_upload-1').change(function() {
+                var val = $(this).val().split("\\");
+                var fileName = val[val.length - 1]; //파일명 가져오기
+                // var fileName = $(this).val();
+                var fileCount = $(this).get(0).files.length;
+                if ($(this).get(0).files.length == 1) {
+                    $('.file_input .file_text-1').val(fileName);
+                }
+            });
+        }); // end ready
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="skipnavi">
+            <a href="#container">본문 바로가기</a>
+        </div>
+
+        <!-- header -->
+        <div id="header" class="clearfix">
+            <div class="container">
+                <h1 class="logo mobile">
+                    <a href="#"><img src="../img/header_logo.png" alt="로고"></a>
+                </h1>
+                <div class="mobile_header_menu">
+                    <a href="#n" class="menu_a">
+                        <img src="../img/header_menu_m.png" alt="모바일메뉴">
+                    </a>
+                    <div class="dim-layer" style="display: none;">
+                        <div class="dimBg"></div>
+                        <div class="pop_menu" style="opacity: 0; left: -320px;">
+                            <div class="pop_menu_header">
+                                전체메뉴
+                                <a href="#n" class="close"></a>
+                            </div>
+                            <div class="pop_menu_content_1">
+                                <div class="ment">
+                                    <p class="button_sm"></p>
+                                    비비오페라 님 반갑습니다.
+                                </div>
+                            </div>
+                            <ul class="pop_menu_content_2">
+                                <li><a href="#n" class="m_home">메인</a></li>
+                                <li><a href="#n" class="m_login">로그아웃</a></li>
+                                <li><a href="#n" class="m_join">마이페이지</a></li>
+                                <!-- 소매 -->
+                                <li><a href="#n" class="m_sm_o">주문하기</a></li>
+                                <li><a href="#n" class="m_sm_s">주문조회</a></li>
+                                <!--// 소매 -->
+                                <li><a href="#n" class="m_memo">메모</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="mobile_header_back">
+                    <a href="#n">
+                        <img src="../img/header_back_m.png" alt="모바일 뒤로가기">
+                    </a>
+                </div> -->
+                <!-- 비로그인시 -->
+                <!-- <div class="mobile_header_login">
+                        <a href="#n">
+                            <img src="../img/header_login_m.png" alt="모바일로그인">
+                        </a>
+                    </div>
+                    <div class="button_wrap">
+                        <a href="#n"><img src="../img/header_login.png" alt="로그인"></a>
+                        <a href="#n"><img src="../img/header_join.png" alt="회원가입"></a>
+                    </div> -->
+                <!-- //비로그인시 -->
+
+                <!-- 로그인시 -->
+                <ul class="pc_header_menu">
+                    <li><a href="#n">주문하기</a></li>
+                    <li><a href="#n">주문조회</a></li>
+                    <li><a href="#n">마이페이지</a></li>
+                </ul>
+
+                <div class="user_name">
+                    비비오페라 님 <img src="../img/header_ico_sm.png" alt="소매사용자">
+                </div>
+                <!-- //로그인시 -->
+            </div>
+        </div>
+        <!-- // header -->
+
+        <div id="container">
+            <div class="container">
+                <!-- order_header start -->
+                <div class="order_header">
+                    <p class="order_title">주문하기</p>
+                    <ul class="order_detail clearfix">
+                        <li class="clearfix">
+                            <div class="order_detail_l">
+                                <p>※ 금일 주문을 등록해주세요.</p>
+                                <p class="warning">※ 오후 10:30분 이후에는 다음날 주문으로 처리됩니다.</p>
+                            </div>
+                            <div class="order_detail_r">
+                                <a href="#n" class="form_downbutton">양식 다운로드</a>
+                            </div>
+                        </li>
+                        <li class="file_input">
+                            <form name="uploadFile" action="" method="post" enctype="multipart/form-data" id="upload-form">
+                                <fieldset>
+                                    <legend>주문서등록</legend>
+                                    <input type="text" readonly="readonly" title="file_route" id="file_route" class="file_text-1">
+                                    <label>
+                                        <input type="file" name="file_upload-1" class="file_upload-1" onchange="document.getElementById('file_route').value=this.value">
+                                    </label>
+                                    <input type="submit" class="file_input_submit" value="주문서등록">
+                                </fieldset>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <!-- order_header end -->
+
+                <form name="orderli" action="" method="post">
+                    <!-- order_contents start -->
+                    <div class="order_contents">
+                        <ul class="direct_order first">
+                            <li class="excel_order_li1">도매명</li>
+                            <li class="excel_order_li2">매입명</li>
+                            <li class="excel_order_li3">상품명</li>
+                            <li class="excel_order_li4">색상</li>
+                            <li class="excel_order_li5">사이즈</li>
+                            <li class="excel_order_li6">수량</li>
+                            <li class="excel_order_li7">담당사입자</li>
+                            <li class="excel_order_li8">상태</li>
+                            <li class="excel_order_li9">가격</li>
+                            <li class="excel_order_li10">메모</li>
+                        </ul>
+
+                        <div class="order_bx_wrap">
+                            <div class="order_bx">
+                                <ul class="direct_order">
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- order_contents end -->
+
+                    <div>
+                        <!-- order_header start -->
+                        <div class="order_header">
+                            <p class="order_title_semi">추가(단위)바로주문</p>
+                            <ul class="order_detail">
+                                <li>
+                                    <p>※ 한번에 최대 5건까지 주문 가능</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- order_header end -->
+
+                        <!-- order_contents start -->
+                        <div class="order_contents">
+                            <ul class="direct_order first">
+                                <li class="direct_order_li1">매입명</li>
+                                <li class="direct_order_li2">상품명</li>
+                                <li class="direct_order_li3">색상</li>
+                                <li class="direct_order_li4">사이즈</li>
+                                <li class="direct_order_li5">수량</li>
+                                <li class="direct_order_li6">가격</li>
+                                <li class="direct_order_li7">담당도매</li>
+                                <li class="direct_order_li8">담당사입자</li>
+                            </ul>
+
+
+
+                            <div class="order_bx_wrap change">
+                                <div class="order_bx">
+                                    <ul class="direct_order">
+                                        <li class="direct_order_li1"><input type="text" name="meip[]" value="" class="meip" id="meip" required placeholder="매입명" /></li>
+                                        <li class="direct_order_li2"><input type="text" name="pname[]" value="" class="pname" id="pname" required placeholder="상품명" /></li>
+                                        <li class="direct_order_li3"><input type="text" name="color[]" value="" class="color" id="color" required placeholder="색상" /></li>
+                                        <li class="direct_order_li4"><input type="text" name="size[]" value="" class="size" id="size" required placeholder="사이즈" /></li>
+                                        <li class="direct_order_li5"><input type="text" name="amount[]" value="" class="amount" id="amount" required placeholder="수량" /></li>
+                                        <li class="direct_order_li6"><input type="text" name="price[]" value="" class="etc" id="etc" required placeholder="가격" /></li>
+                                        <li class="direct_order_li7">
+                                            <input type="button" name="domeName[0]" class="domeName domae_pop" id="domeName" value="도매업자 선택" href="#layer2"/>
+                                            <input type="hidden" name="domeId[0]" id="domeId" value="" />
+                                        </li>
+                                        <li class="direct_order_li8">
+                                            <input type="button" name="saName[0]" class="saName domae_pop" id="saName" value="사입업자 선택" href="#layer"/>
+                                            <input type="hidden" id="saId" name="saId[0]" value="" placeholder="" />
+                                        </li>
+                                        <li class="direct_order_li9"><input type="hidden" id="saState" name="saState" value="A" placeholder="" /><a href="#n" class="btnAdd" id="addTR"><img src="../img/ico_addButton.png" alt="추가버튼"></a></li>
+                                    </ul>
+                                </div>
+                                <!-- order_bx -->
+                            </div>
+
+                            <!-- order_bx_wrap -->
+                        </div>
+                        <!-- order_contents end -->
+                    </div>
+                    <div class="order_button_wrap">
+                        <button type="submit" class="order_button">주문등록</button>
+                    </div>
+                </form>
+
+            </div>
+
+            <!-- footer -->
+            <div id="footer">
+                <div class="container">
+                    <h3 class="visuallyhidden">Copyright</h3>
+                    <ul class="lst_term">
+                        <li><a href="#">개인정보 취급방침</a></li>
+                        <li><a href="#">서비스 이용약관</a></li>
+                    </ul>
+                    <ul class="lst_phone">
+                        <li>우 : 04209 서울특별시 마포구 만리잿옛길 369(신공덕동) 3층 307호 (주)네오포스코리아</li>
+                        <li>Tel. 070-8638-2997</li>
+                        <li>Fax. 02-6280-2946</li>
+                    </ul>
+                    <ul class="lst_inquiry">
+                        <li>서비스 문의 : M. 010-4447-1965</li>
+                        <li><a href="mailto:ryan@neoforth.com">E-mail. ryan@neoforth.com</a></li>
+                    </ul>
+                    <p class="tx_copyright">Copyright ⓒ 2017 NeoForthKorea. All Rights Reserved.</p>
+                </div>
+            </div>
+            <!-- // footer -->
+        </div>
+    </div>
+
+    <!-- 레이어 팝업 -->
+    <div class="dim-layer-join">
+        <div class="dimBg-join"></div>
+        <!-- 도매 -->
+        <div id="layer2" class="pop-layer pop-layer-domae">
+            <div class="pop-container">
+                <div class="pop-header">
+                    도매업자 검색<a class="btn_close"></a>
+                </div>
+                <div class="pop-conts">
+                    <!--content //-->
+                    <div class="input_wrap">
+                        <input type="text" title="사입관리자상호검색">
+                        <button type="button" onclick="" class="domae_search">검색</button>
+                    </div>
+                    <ul>
+                        <li><a href="#n">동대문삼촌들</a></li>
+                        <li><a href="#n">동대문사입</a></li>
+                        <li><a href="#n">동대문사입전문</a></li>
+                    </ul>
+                    <!--// content-->
+                </div>
+                <div class="btn-r">
+                    <a href="#" class="btn-layerClose">닫기</a>
+                </div>
+            </div>
+        </div>
+        <!-- 도매// -->
+
+        <!-- 사입관리자 -->
+        <div id="layer" class="pop-layer pop-layer-domae">
+            <div class="pop-container">
+                <div class="pop-header">
+                    사입관리자 검색<a class="btn_close"></a>
+                </div>
+                <div class="pop-conts">
+                    <!--content //-->
+                    <div class="input_wrap">
+                        <input type="text" title="사입관리자상호검색">
+                        <button type="button" onclick="" class="domae_search">검색</button>
+                    </div>
+                    <ul>
+                        <li><a href="#n">동대문삼촌들</a></li>
+                        <li><a href="#n">동대문사입</a></li>
+                        <li><a href="#n">동대문사입전문</a></li>
+                    </ul>
+                    <!--// content-->
+                </div>
+                <div class="btn-r">
+                    <a href="#" class="btn-layerClose">닫기</a>
+                </div>
+            </div>
+        </div>
+        <!-- //사입관리자 -->
+    </div>
+    <!--// 레이어 팝업 -->
+</body>
+
+</html>

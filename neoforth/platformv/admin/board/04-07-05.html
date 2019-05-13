@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>미래에셋대우 전자투표 / 전자의결권위임 시스템 관리자모드</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/plugin/jquery-ui.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header" class="hd">
+            <h1 class="logo"><a href="javascript:void(0);">관리시스템</a></h1>
+            <div class="log_area">
+                <span class="txt_state"><strong><em>박미래</em> 관리자</strong> 님 로그인하셨습니다</span>
+                <button type="button" class="btn btn_logout">로그아웃</button>
+            </div>
+        </div>
+        <div id="container">
+            <div id="nav">
+                <h2 class="visuallyhidden">LNB</h2>
+                <ul class="lst_nav">
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_user">사용자관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth">
+                            <li><a href="javascript:void(0);" class=""><span>주주가입현황</span></a></li>
+                            <li><a href="javascript:void(0);"><span>회사가입현황</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_schedule">전체 주주총회 일정관리</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_vote">전자투표/위임관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth">
+                            <li><a href="javascript:void(0);"><span>주주총회 등록관리</span></a></li>
+                            <li><a href="javascript:void(0);"><span>투표/위임현황관리</span></a></li>
+                            <li><a href="javascript:void(0);"><span>주주총회 결과관리</span></a></li>
+                            <li><a href="javascript:void(0);" class=""><span>자산운용사DB관리</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_ib">IB컨설팅신청관리</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_board on">게시판관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth on">
+                            <li><a href="javascript:void(0);"><span>공지사항</span></a></li>
+                            <li><a href="javascript:void(0);"><span>FAQ</span></a></li>
+                            <li><a href="javascript:void(0);"><span>이벤트</span></a></li>
+                            <li><a href="javascript:void(0);"><span>1:1문의</span></a></li>
+                            <li><a href="javascript:void(0);" class="on"><span>자료실</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_donation">기부이벤트 관리</a></li>
+                </ul>
+
+            </div>
+            
+            <h2 class="titlebar">자료실</h2>
+
+            <div class="group_desc group_table">
+                <table class="table type2">
+                    <caption class="visuallyhidden">자료실 등록</caption>
+                    <colgroup>
+                        <col width="200">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">제목</th>
+                            <td class="al"><label><input type="text" class="form_control"></label></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">내용</th>
+                            <td class="al"><label><textarea name="" id="" class="form_control"></textarea></label></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">첨부파일</th>
+                            <td class="al">
+                                <div class="group_upload">
+                                    <form id="fileupload" action="https://jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data" class="file_upload">
+                                        <div class="filebox_multiple">
+                                            <input type="file" id="ex_filename" name="file[]" class="upload-hidden"> 
+                                            <label for="ex_filename" class="btn btn_outline">파일찾기</label> 
+                                        </div>
+                                        <table role="presentation" class="lst_file"><tbody class="files"></tbody></table>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+
+            <div class="submit_area">
+                <div class="left_area">
+                    <button type="button" class="btn btn_outline">삭제</button>
+                </div>
+                <div class="right_area">
+                    <label class="checkbox"><input type="checkbox"> 게시물 고정</label>
+                    <button type="button" class="btn btn_primary">목록</button>
+                </div>
+            </div>
+
+            <div class="group_desc group_table mt20">
+                <table class="table">
+                    <caption class="visuallyhidden">자료실 목록</caption>
+                    <colgroup>
+                        <col width="55">
+                        <col width="*">
+                        <col width="102">
+                        <col width="152">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">제목</th>
+                            <th scope="col">작성일</th>
+                            <th scope="col">자료</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="al">전자투표 관리업무규정 및 전자위임장 권유의 관리 등에 관한 자체규정 변경 안내</td>
+                            <td>2019.03.07</td>
+                            <td>
+                                <a href="javascript:void(0);" class="ico_file ir" title="전자투표 관리업무규정.doc">file</a>
+                                <a href="javascript:void(0);" class="ico_file ir" title="전자투표 관리업무규정.doc">file</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="al">전자투표 관리업무규정 및 전자위임장 권유의 관리 등에 관한 자체규정 변경 안내</td>
+                            <td>2019.03.07</td>
+                            <td>
+                                <a href="javascript:void(0);" class="ico_file ir" title="전자투표 관리업무규정.doc">file</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="al">전자투표 관리업무규정 및 전자위임장 권유의 관리 등에 관한 자체규정 변경 안내</td>
+                            <td>2019.03.07</td>
+                            <td>
+                                <a href="javascript:void(0);" class="ico_file ir" title="전자투표 관리업무규정.doc">file</a>
+                                <a href="javascript:void(0);" class="ico_file ir" title="전자투표 관리업무규정.doc">file</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+
+            <div class="group_page">
+                <ul class="nav_page clearfix">
+                    <li><a href="javascript:void(0);" class="ir btn_first">처음</a></li>
+                    <li><a href="javascript:void(0);" class="ir btn_prev">이전</a></li>
+                    <li><a href="javascript:void(0);" class="on">1</a></li>
+                    <li><a href="javascript:void(0);">2</a></li>
+                    <li><a href="javascript:void(0);">3</a></li>
+                    <li><a href="javascript:void(0);">4</a></li>
+                    <li><a href="javascript:void(0);">5</a></li>
+                    <li><a href="javascript:void(0);" class="ir btn_next">다음</a></li>
+                    <li><a href="javascript:void(0);" class="ir btn_last">마지막</a></li>
+                </ul>
+            </div>  <!-- // .group_page -->
+
+            
+        </div>  <!-- // #container -->
+    </div>
+
+    <!-- popup 'on' 추가/삭제 -->
+    <div class="wrap_popup popup_sm">
+        <div class="popup_container">
+            <div class="msg_area">
+                선택한 공지사항 내용을<br>삭제 하시겠습니까?
+            </div>
+            <div class="submit_area">
+                <button type="button" class="btn btn_default">아니요</button>
+                <button type="button" class="btn btn_primary">예</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- The template to display files available for upload -->
+    <script id="template-upload" type="text/x-tmpl">
+    {% for (var i=0, file; file=o.files[i]; i++) { %}
+        <tr class="template-upload fade">
+            <td>
+                <span class="preview"></span>
+            </td>
+            <td>
+                <p class="name">{%=file.name%}</p>
+                <strong class="error"></strong>
+            </td>
+            <td>
+                {% if (!i && !o.options.autoUpload) { %}
+                {% } %}
+                {% if (!i) { %}
+                    <button class="btn btn_default cancel"></button>
+                {% } %}
+            </td>
+        </tr>
+    {% } %}
+    </script>
+    <!-- The template to display files available for download -->
+    <script id="template-download" type="text/x-tmpl">
+    {% for (var i=0, file; file=o.files[i]; i++) { %}
+        <tr class="template-download fade">
+            <td>
+                <span class="preview">
+                    {% if (file.thumbnailUrl) { %}
+                        <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+                    {% } %}
+                </span>
+            </td>
+            <td>
+                <p class="name">
+                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+                </p>
+                {% if (file.error) { %}
+                    <div><span class="error">Error</span> {%=file.error%}</div>
+                {% } %}
+            </td>
+            <td>
+                <span class="size">{%=o.formatFileSize(file.size)%}</span>
+            </td>
+            <td>
+                <button class="delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>Delete</button>
+                <input type="checkbox" name="delete" value="1" class="toggle">
+            </td>
+        </tr>
+    {% } %}
+    </script>
+    
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/plugin/jquery-ui.min.js"></script>
+
+    <!-- The Templates plugin is included to render the upload/download listings -->
+    <script src="../js/plugin/tmpl.min.js"></script>
+    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+    <script src="../js/plugin/load-image.all.min.js"></script>
+    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+    <script src="../js/plugin/canvas-to-blob.min.js"></script>
+    <!-- blueimp Gallery script -->
+    <script src="../js/plugin/query.blueimp-gallery.min.js"></script>
+
+    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+    <script src="../js/plugin/jquery.iframe-transport.js"></script>
+    <!-- The basic File Upload plugin -->
+    <script src="../js/plugin/jquery.fileupload.js"></script>
+    <!-- The File Upload processing plugin -->
+    <script src="../js/plugin/jquery.fileupload-process.js"></script>
+    <!-- The File Upload image preview & resize plugin -->
+    <script src="../js/plugin/jquery.fileupload-image.js"></script>
+    <!-- The File Upload audio preview plugin -->
+    <script src="../js/plugin/jquery.fileupload-audio.js"></script>
+    <!-- The File Upload video preview plugin -->
+    <script src="../js/plugin/jquery.fileupload-video.js"></script>
+    <!-- The File Upload validation plugin -->
+    <script src="../js/plugin/jquery.fileupload-validate.js"></script>
+    <!-- The File Upload user interface plugin -->
+    <script src="../js/plugin/jquery.fileupload-ui.js"></script>
+    <!-- The File Upload jQuery UI plugin -->
+    <script src="../js/plugin/jquery.fileupload-jquery-ui.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        $( function() {
+            // multiple file upload
+            // Initialize the jQuery File Upload widget:
+            $('.file_upload').fileupload({
+                // Uncomment the following to send cross-domain cookies:
+                //xhrFields: {withCredentials: true},
+                url: 'server/php/'
+            });
+
+            // Enable iframe cross-domain access via redirect option:
+            $('.file_upload').fileupload(
+                'option',
+                'redirect',
+                window.location.href.replace(
+                    /\/[^\/]*$/,
+                    '/cors/result.html?%s'
+                )
+            );
+
+            if (window.location.hostname === 'blueimp.github.io') {
+                // Demo settings:
+                $('.file_upload').fileupload('option', {
+                    url: '//jquery-file-upload.appspot.com/',
+                    // Enable image resizing, except for Android and Opera,
+                    // which actually support image resizing, but fail to
+                    // send Blob objects via XHR requests:
+                    disableImageResize: /Android(?!.*Chrome)|Opera/
+                        .test(window.navigator.userAgent),
+                    maxFileSize: 999000,
+                    acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
+                });
+                // Upload server status check for browsers with CORS support:
+                if ($.support.cors) {
+                    $.ajax({
+                        url: '//jquery-file-upload.appspot.com/',
+                        type: 'HEAD'
+                    }).fail(function () {
+                        $('<div class="alert alert-danger"/>')
+                            .text('Upload server currently unavailable - ' +
+                                    new Date())
+                            .appendTo('.file_upload');
+                    });
+                }
+            } else {
+                // Load existing files:
+                $('.file_upload').addClass('fileupload-processing');
+                $.ajax({
+                    // Uncomment the following to send cross-domain cookies:
+                    //xhrFields: {withCredentials: true},
+                    url: $('.file_upload').fileupload('option', 'url'),
+                    dataType: 'json',
+                    context: $('.file_upload')[0]
+                }).always(function () {
+                    $(this).removeClass('fileupload-processing');
+                }).done(function (result) {
+                    $(this).fileupload('option', 'done')
+                        .call(this, $.Event('done'), {result: result});
+                });
+            }
+        } );
+    </script>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>미래에셋대우 전자투표 / 전자의결권위임 시스템 관리자모드</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header" class="hd">
+            <h1 class="logo"><a href="javascript:void(0);">관리시스템</a></h1>
+            <div class="log_area">
+                <span class="txt_state"><strong><em>박미래</em> 관리자</strong> 님 로그인하셨습니다</span>
+                <button type="button" class="btn btn_logout">로그아웃</button>
+            </div>
+        </div>
+        <div id="container">
+            <div id="nav">
+                <h2 class="visuallyhidden">LNB</h2>
+                <ul class="lst_nav">
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_user on">사용자관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth on">
+                            <li><a href="javascript:void(0);"><span>주주가입현황</span></a></li>
+                            <li><a href="javascript:void(0);" class="on"><span>회사가입현황</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_schedule">전체 주주총회 일정관리</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_vote">전자투표/위임관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth">
+                            <li><a href="javascript:void(0);"><span>주주총회 등록관리</span></a></li>
+                            <li><a href="javascript:void(0);"><span>투표/위임현황관리</span></a></li>
+                            <li><a href="javascript:void(0);"><span>주주총회 결과관리</span></a></li>
+                            <li><a href="javascript:void(0);"><span>자산운용사DB관리</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_ib">IB컨설팅신청관리</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_board">게시판관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth">
+                            <li><a href="javascript:void(0);"><span>공지사항</span></a></li>
+                            <li><a href="javascript:void(0);"><span>FAQ</span></a></li>
+                            <li><a href="javascript:void(0);"><span>이벤트</span></a></li>
+                            <li><a href="javascript:void(0);"><span>1:1문의</span></a></li>
+                            <li><a href="javascript:void(0);"><span>자료실</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_donation">기부이벤트 관리</a></li>
+                </ul>
+
+            </div>
+
+            <h2 class="titlebar">주주가입현황</h2>
+            <h3 class="stitlebar">기본정보</h2>
+            <div class="group_desc group_table">
+                <table class="table type2">
+                    <caption class="visuallyhidden">주주가입현황 상세</caption>
+                    <colgroup>
+                        <col width="200">
+                        <col width="315">
+                        <col width="200">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" rowspan="2">프로필이미지</th>
+                            <td rowspan="2">
+                                <p class="img"><img src="../img/temp.png" alt=""></p>
+                            </td>
+                            <th scope="row">성명</th>
+                            <td>박*래</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주주번호</th>
+                            <td>000000-0000-00-0000000000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주민등록번호/사업자등록번호</th>
+                            <td>770111-1******</td>
+                            <th scope="row">휴대폰</th>
+                            <td>000-****-0000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">전화번호</th>
+                            <td>000-0000-0000</td>
+                            <th scope="row">이메일</th>
+                            <td>aa@aa.com</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">휴대폰알림 수신여부 및 일시</th>
+                            <td>Y (2019.01.12 15:37)</td>
+                            <th scope="row">이메일알림 수신여부 및 일시</th>
+                            <td>N (2019.01.12 15:37)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">알림서비스 동의여부 및 일시</th>
+                            <td>Y (2019.01.12 15:37)</td>
+                            <th scope="row">서비스이용 상태</th>
+                            <td><span class="state success">정상</span></td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+
+            <h3 class="stitlebar">활동내역</h2>
+            <div class="group_desc group_table">
+                <table class="table type2">
+                    <caption class="visuallyhidden">활동내역 상세</caption>
+                    <colgroup>
+                        <col width="200">
+                        <col width="315">
+                        <col width="200">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">전자투표 이용횟수</th>
+                            <td><span class="num">03회</span><button type="button" class="btn btn_detail"><span>자세히보기</span></button></td>
+                            <th scope="row">전자위임장 이용횟수</th>
+                            <td><span class="num">03회</span><button type="button" class="btn btn_detail"><span>자세히보기</span></button></td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+
+            <div class="submit_area">
+                <button type="button" class="btn btn_default">이전</button>
+                <button type="button" class="btn btn_primary">목록</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 레이어팝업 부분 -->
+    <!-- popup 'on' 추가/삭제 -->
+    <div class="wrap_popup popup_lg popup_join on">
+        <div class="popup_container">
+            <div class="header_area">
+                <h3>전자투표 이용내역</h3>
+                <a href="javascript:void(0);" class="btn_close ir">닫기</a>
+            </div>
+            <div class="body_area elecvote">
+                <div class="scroll_y">
+                    <dl class="group_desc group6">
+                        <dt>
+                            <ul class="lst_titlebar clearfix">
+                                <li>회사명</li>
+                                <li>주주총회구분</li>
+                                <li>주주총회일</li>
+                                <li>전자투표행사일</li>
+                                <li>보유주식수</li>
+                                <li>투표</li>
+                                <li>기부내역</li>
+                            </ul>
+                        </dt>
+                        <dd>
+                            <ul class="lst_desc clearfix">
+                                <li><a href="javascript:void(0);">엘지생활건강</a></li>
+                                <li>1기 임시</li>
+                                <li>2019.03.03 15:00</li>
+                                <li>2019.03.09 15:00</li>
+                                <li><span class="txt_primary">1,000,000,000</span></li>
+                                <li>투표<i class="ico_vote_y"></i></li>
+                                <li><i class="ico_happy_y"></i></li>
+                            </ul>
+                            <ul class="lst_desc clearfix">
+                                <li><a href="javascript:void(0);">엘지생활건강</a></li>
+                                <li>1기 임시</li>
+                                <li>2019.03.03 15:00</li>
+                                <li>2019.03.09 15:00</li>
+                                <li><span class="txt_primary">1,000,000,000</span></li>
+                                <li>투표<i class="ico_vote_n"></i></li>
+                                <li><i class="ico_happy_n"></i></li>
+                            </ul>
+                            <ul class="lst_desc clearfix">
+                                <li><a href="javascript:void(0);">엘지생활건강</a></li>
+                                <li>1기 임시</li>
+                                <li>2019.03.03 15:00</li>
+                                <li>2019.03.09 15:00</li>
+                                <li><span class="txt_primary">1,000,000,000</span></li>
+                                <li>투표취소<i class="ico_vote_n"></i></li>
+                                <li><i class="ico_happy_n"></i></li>
+                            </ul>
+                            <ul class="lst_desc clearfix">
+                                <li><a href="javascript:void(0);">엘지생활건강</a></li>
+                                <li>1기 임시</li>
+                                <li>2019.03.03 15:00</li>
+                                <li>2019.03.09 15:00</li>
+                                <li><span class="txt_primary">1,000,000,000</span></li>
+                                <li>투표취소<i class="ico_vote_n"></i></li>
+                                <li><i class="ico_happy_n"></i></li>
+                            </ul>
+                            
+                            <!-- 데이터 없을때 -->
+		                    <ul class="non_body">
+		                    	<li>데이터가 없습니다.</li>
+		                    </ul>
+		                    <!-- 데이터 없을때 -->
+                        </dd>
+                    </dl>
+                    
+                    <div class="group_page">
+		                <ul class="nav_page clearfix">
+		                    <li><a href="javascript:void(0);" class="ir btn_first">처음</a></li>
+		                    <li><a href="javascript:void(0);" class="ir btn_prev">이전</a></li>
+		                    <li><a href="javascript:void(0);" class="on">1</a></li>
+		                    <li><a href="javascript:void(0);">2</a></li>
+		                    <li><a href="javascript:void(0);">3</a></li>
+		                    <li><a href="javascript:void(0);">4</a></li>
+		                    <li><a href="javascript:void(0);">5</a></li>
+		                    <li><a href="javascript:void(0);" class="ir btn_next">다음</a></li>
+		                    <li><a href="javascript:void(0);" class="ir btn_last">마지막</a></li>
+		                </ul>
+		            </div>
+                </div>  <!-- // scroll_y -->
+                
+                
+				<div class="display_onoff">
+	                <h4 class="title">투표내역</h4>
+	                <div class="group_desc pop-layer">
+	                    <!-- 카드 부분 -->
+	                	<div class="voting_excute_div endVoting">
+	                       <!-- box반복부분 -->
+	                       <!-- 아이콘 종류는 찬성(vote_yes), 반대(vote_no), 기권(vote_giveup), 불통일(vote_nosame), 집중(vote_concen) 클래스에 따라 다릅니다-->
+	                       <div class="voting_execute_box vote_concen">
+	                           <button class="voteDiv_close">투표 닫기</button>
+	                           <div class="voting_execute">
+	                               <i></i>
+	                               <p class="title"><span>1</span>재무재표의 승인</p>
+	                               <div class="copy">
+	                                   <p>행사가능 주식수</p>
+	                                   <p>170</p>
+	                                   <button class="btn_voting_open">의결권행사</button>
+	                               </div>
+	                           </div>
+	                           <!-- 비집중 & 비분리 case1, 비집중 & 분리투표 case2, 집중 & 비분리, case3 -->
+	                           <div class="voteDiv case1">
+	                               <div class="voteDiv_inner">
+	                                   <label class="input-radio" for="rdo_case1_1">
+	                                       <input type="radio" id="rdo_case1_1" name="rdo_case1">
+	                                       <span class="label-text">찬성</span>
+	                                   </label>
+	                                   <label class="input-radio" for="rdo_case1_2">
+	                                       <input type="radio" id="rdo_case1_2" name="rdo_case1">
+	                                       <span class="label-text">반대</span>
+	                                   </label>
+	                                   <label class="input-radio" for="rdo_case1_3">
+	                                       <input type="radio" id="rdo_case1_3" name="rdo_case1">
+	                                       <span class="label-text">기권</span>
+	                                   </label>
+	                                   <label class="input-radio" for="rdo_case1_4">
+	                                       <input type="radio" id="rdo_case1_4" name="rdo_case1">
+	                                       <span class="label-text">불통일</span>
+	                                   </label>
+	                               </div>
+	                               <div>
+	                                   <button class="btn_voting_execute">적용</button>
+	                               </div>
+	                           </div>
+	                           
+	                           <div class="caseby_detailview">
+			                       		<a href="javasript:void(0);">디테일뷰 닫기</a>
+				                       <ul>
+					                       <li><span>1. 장그래</span><em>찬성</em></li>
+					                       <li><span>2. 빛나리빛나래</span><em>찬성</em></li>
+					                       <li><span>3. ThomasBucovatz</span><em>찬성</em></li>
+					                       <li><span>4. Lo John Michael Jenn Hur</span><em>불통일</em></li>
+				                       </ul>
+			                       </div>
+	                       </div>
+	                       <!-- 아이콘 종류는 찬성(vote_yes), 반대(vote_no), 기권(vote_giveup), 불통일(vote_nosame), 집중(vote_concen) 클래스에 따라 다릅니다-->
+	                       <div class="voting_execute_box vote_concen">
+	                           <button class="voteDiv_close">투표 닫기</button>
+	                           <div class="voting_execute">
+	                               <i></i>
+	                               <p class="title"><span>2</span>이사의 선임<em>분리1</em></p>
+	                               <div class="copy">
+	                                   <p>행사가능 주식수</p>
+	                                   <p>170</p>
+	                                   <button class="btn_voting_open">의결권행사</button>
+	                               </div>
+	                           </div>
+	                           <!-- 비집중 & 비분리 case1, 비집중 & 분리투표 case2, 집중 & 비분리, case3 -->
+	                           <div class="voteDiv case2">
+	                               <div class="inner_wrap">
+	                                   <div class="voteDiv_inner">
+	                                       <div class="name_tab"><span>1. 김민재</span></div>
+	                                       <label class="input-radio" for="case2_1_1">
+	                                           <input type="radio" id="case2_1_1" name="case2_1">
+	                                           <span class="label-text">찬성</span>
+	                                       </label>
+	                                       <label class="input-radio" for="case2_1_2">
+	                                           <input type="radio" id="case2_1_2" name="case2_1">
+	                                           <span class="label-text">반대</span>
+	                                       </label>
+	                                       <label class="input-radio" for="case2_1_3">
+	                                           <input type="radio" id="case2_1_3" name="case2_1">
+	                                           <span class="label-text">기권</span>
+	                                       </label>
+	                                       <label class="input-radio" for="case2_1_4">
+	                                           <input type="radio" id="case2_1_4" name="case2_1">
+	                                           <span class="label-text">불통일</span>
+	                                       </label>
+	                                   </div>
+	                                   <div class="voteDiv_inner">
+	                                       <div class="name_tab"><span>2. 서아랑</span></div>
+	                                       <label class="input-radio" for="case2_2_1">
+	                                           <input type="radio" id="case2_2_1" name="case2_2">
+	                                           <span class="label-text">찬성</span>
+	                                       </label>
+	                                       <label class="input-radio" for="case2_2_2">
+	                                           <input type="radio" id="case2_2_2" name="case2_2">
+	                                           <span class="label-text">반대</span>
+	                                       </label>
+	                                       <label class="input-radio" for="case2_2_3">
+	                                           <input type="radio" id="case2_2_3" name="case2_2">
+	                                           <span class="label-text">기권</span>
+	                                       </label>
+	                                       <label class="input-radio" for="case2_2_4">
+	                                           <input type="radio" id="case2_2_4" name="case2_2">
+	                                           <span class="label-text">불통일</span>
+	                                       </label>
+	                                   </div>
+	                                   <div class="voteDiv_inner">
+	                                       <div class="name_tab"><span>3. 박정권</span></div>
+	                                       <label class="input-radio" for="case2_3_1">
+	                                           <input type="radio" id="case2_3_1" name="case2_3">
+	                                           <span class="label-text">찬성</span>
+	                                       </label>
+	                                       <label class="input-radio" for="case2_3_2">
+	                                           <input type="radio" id="case2_3_2" name="case2_3">
+	                                           <span class="label-text">반대</span>
+	                                       </label>
+	                                       <label class="input-radio" for="case2_3_3">
+	                                           <input type="radio" id="case2_3_3" name="case2_3">
+	                                           <span class="label-text">기권</span>
+	                                       </label>
+	                                       <label class="input-radio" for="case2_3_4">
+	                                           <input type="radio" id="case2_3_4" name="case2_3">
+	                                           <span class="label-text">불통일</span>
+	                                       </label>
+	                                   </div>
+	                                   <div class="voteDiv_inner">
+	                                       <div class="name_tab"><span>4. Lo John Michael Jenn Hur</span></div>
+	                                       <label class="input-radio" for="case2_4_1">
+	                                           <input type="radio" id="case2_4_1" name="case2_4">
+	                                           <span class="label-text">찬성</span>
+	                                       </label>
+	                                       <label class="input-radio" for="case2_4_2">
+	                                           <input type="radio" id="case2_4_2" name="case2_4">
+	                                           <span class="label-text">반대</span>
+	                                       </label>
+	                                       <label class="input-radio" for="case2_4_3">
+	                                           <input type="radio" id="case2_4_3" name="case2_4">
+	                                           <span class="label-text">기권</span>
+	                                       </label>
+	                                       <label class="input-radio" for="case2_4_4">
+	                                           <input type="radio" id="case2_4_4" name="case2_4">
+	                                           <span class="label-text">불통일</span>
+	                                       </label>
+	                                   </div>
+	                               </div>
+	                               <div>
+	                                   <button class="btn_voting_execute">적용</button>
+	                               </div>
+	                           </div>
+	                           <div class="caseby_detailview">
+		                       		<a href="javasript:void(0);">디테일뷰 닫기</a>
+			                       <ul>
+				                       <li><span>1. 장그래</span><em>찬성</em></li>
+				                       <li><span>2. 빛나리빛나래</span><em>찬성</em></li>
+				                       <li><span>3. ThomasBucovatz</span><em>찬성</em></li>
+				                       <li><span>4. Lo John Michael Jenn Hur</span><em>불통일</em></li>
+			                       </ul>
+		                       </div>
+	                       </div>
+	                       <!-- 아이콘 종류는 찬성(vote_yes), 반대(vote_no), 기권(vote_giveup), 불통일(vote_nosame), 집중(vote_concen) 클래스에 따라 다릅니다-->
+	                       <div class="voting_execute_box vote_concen">
+	                           <button class="voteDiv_close">투표 닫기</button>
+	                           <div class="voting_execute">
+	                               <i></i>
+	                               <p class="title"><span>3</span>감사의 승인</p>
+	                               <div class="copy">
+	                                   <p>행사가능 주식수</p>
+	                                   <p>170</p>
+	                                   <button class="btn_voting_open">의결권행사</button>
+	                               </div>
+	                           </div>
+	                           <!-- 비집중 & 비분리 case1, 비집중 & 분리투표 case2, 집중 & 비분리, case3 -->
+	                           <div class="voteDiv case3">
+	                               <div class="inner_wrap">
+	                                   <div class="voteDiv_inner">
+	                                       <div class="name_tab">1. 김민재<div><input type="text"><span>주</span></div></div>
+	                                   </div>
+	                                   <div class="voteDiv_inner">
+	                                       <div class="name_tab">2. 서아랑<div><input type="text"><span>주</span></div></div>
+	                                   </div>
+	                                   <div class="voteDiv_inner">
+	                                       <div class="name_tab">3. 박정권<div><input type="text"><span>주</span></div></div>
+	                                   </div>
+	                                   <div class="voteDiv_inner">
+	                                       <div class="name_tab">4. 권 율<div><input type="text"><span>주</span></div></div>
+	                                   </div>
+	                               </div>
+	                               <div>
+	                                   <button class="btn_voting_execute">적용</button>
+	                               </div>
+	                           </div>
+	                           <div class="caseby_detailview">
+		                       		<a href="javasript:void(0);">디테일뷰 닫기</a>
+			                       <ul>
+				                       <li><span>1. 장그래</span><em>찬성</em></li>
+				                       <li><span>2. 빛나리빛나래</span><em>찬성</em></li>
+				                       <li><span>3. ThomasBucovatz</span><em>찬성</em></li>
+				                       <li><span>4. Lo John Michael Jenn Hur</span><em>불통일</em></li>
+			                       </ul>
+		                       </div>
+	                       </div>
+	                       
+	                       <!-- 아이콘 종류는 찬성(vote_yes), 반대(vote_no), 기권(vote_giveup), 불통일(vote_nosame), 집중(vote_concen) 클래스에 따라 다릅니다-->
+	                       <div class="voting_execute_box vote_yes">
+	                           <button class="voteDiv_close">투표 닫기</button>
+	                           <div class="voting_execute">
+	                               <i></i>
+	                               <p class="title"><span>3</span>감사의 승인</p>
+	                               <div class="copy">
+	                                   <p>행사가능 주식수</p>
+	                                   <p>170</p>
+	                                   <button class="btn_voting_open">의결권행사</button>
+	                               </div>
+	                           </div>
+	                           <!-- 비집중 & 비분리 case1, 비집중 & 분리투표 case2, 집중 & 비분리, case3 -->
+	                           <div class="voteDiv case3">
+	                               <div class="inner_wrap">
+	                                   <div class="voteDiv_inner">
+	                                       <div class="name_tab">1. 김민재<div><input type="text"><span>주</span></div></div>
+	                                   </div>
+	                                   <div class="voteDiv_inner">
+	                                       <div class="name_tab">2. 서아랑<div><input type="text"><span>주</span></div></div>
+	                                   </div>
+	                                   <div class="voteDiv_inner">
+	                                       <div class="name_tab">3. 박정권<div><input type="text"><span>주</span></div></div>
+	                                   </div>
+	                                   <div class="voteDiv_inner">
+	                                       <div class="name_tab">4. 권 율<div><input type="text"><span>주</span></div></div>
+	                                   </div>
+	                               </div>
+	                               <div>
+	                                   <button class="btn_voting_execute">적용</button>
+	                               </div>
+	                           </div>
+	                           <div class="caseby_detailview">
+		                       		<a href="javasript:void(0);">디테일뷰 닫기</a>
+			                       <ul>
+				                       <li><span>1. 장그래</span><em>찬성</em></li>
+				                       <li><span>2. 빛나리빛나래</span><em>찬성</em></li>
+				                       <li><span>3. ThomasBucovatz</span><em>찬성</em></li>
+				                       <li><span>4. Lo John Michael Jenn Hur</span><em>불통일</em></li>
+			                       </ul>
+		                       </div>
+	                       </div>
+	                       
+	                       <!-- // box반복부분 -->
+	                   </div>
+	                   <!-- // 카드 부분 -->
+	                </div>  <!-- // .group_desc -->
+               </div>
+               
+            </div>
+            <div class="submit_area">
+                <button type="button" class="btn btn_primary">닫기</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 레이어팝업 부분 -->
+    
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/main.js"></script>
+    
+    <script>
+    	//회사명 클릭시 .display_onoff show
+    	$(document).ready(function() {
+    		$(document).on("click", ".group6 .lst_desc li", function() {
+    			var $item = $(this).closest("ul");
+    			
+    			if($item.hasClass("on")) {
+    				$item.removeClass("on");
+    				$(".display_onoff").stop().slideUp("fast");
+    			} else {
+    				$item.addClass("on");
+    				$(".display_onoff").stop().slideDown("fast");
+    			}
+    			
+    			$item.siblings().removeClass("on");
+    		});
+    	});
+    </script>
+</body>
+</html>

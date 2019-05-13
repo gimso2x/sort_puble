@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>힐링카페 멘토</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <p class="main_tit">고객데이터 토탈입력</p>
+        </header>
+        <div id="container">
+            <div class="container">
+                <div class="user_full_input">
+                    <form action="">
+                        <fieldset>
+                            <legend>고객데이터 토탈입력</legend>
+                            <div class="base_wrap">
+                                <!-- base 입력 -->
+                                <p class="tbl_tit">기본정보</p>
+                                <table class="table_base">
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <label for="point">지점</label>
+                                            </th>
+                                            <td>
+                                                <input type="text" id="point" name="point" class="form-control readonly" readonly>
+                                            </td>
+                                            <th>
+                                                <label for="date">날짜</label>
+                                            </th>
+                                            <td>
+                                                <input type="text" id="date" name="date" class="form-control readonly" readonly>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label for="consult_num">상담번호</label>
+                                            </th>
+                                            <td>
+                                                <input type="text" id="consult_num" name="consult_num" class="form-control">
+                                            </td>
+                                            <th>
+                                                <label for="table_num">테이블 번호</label>
+                                            </th>
+                                            <td>
+                                                <input type="text" id="table_num" name="table_num" class="form-control">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- // base 입력 -->
+
+                            <div class="customer">
+                                <!-- 고객1 -->
+                                <div class="customer_wrap">
+                                    <p class="tbl_tit">고객1</p>
+                                    <table class="writed">
+                                        <caption>기재사항</caption>
+                                        <tbody>
+                                            <tr>
+                                                <th>이름</th>
+                                                <td>
+                                                    <input type="text" class="form-control" name="user_name">
+                                                </td>
+                                                <th>나이</th>
+                                                <td>
+                                                    <input type="text" class="form-control" name="age">
+                                                </td>
+                                                <th>관계</th>
+                                                <td>
+                                                    <input type="text" class="form-control" name="relation">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>성별</th>
+                                                <td>
+                                                    <div class="checks">
+                                                        <input type="radio" id="gender1" name="gender1" value="male">
+                                                        <label for="gender1">남</label>
+                                                        <input type="radio" id="gender1_f" name="gender1" value="female">
+                                                        <label for="gender1_f" class="gender_female">여</label>
+                                                    </div>
+                                                </td>
+                                                <th>재방문횟수</th>
+                                                <td>
+                                                    <input type="text" class="form-control" name="revisit_num">
+                                                </td>
+                                                <th></th>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="sum">
+                                        <caption>설문조사 결과값</caption>
+                                        <tbody>
+                                            <tr>
+                                                <th>구분</th>
+                                                <td>가</td>
+                                                <td>나</td>
+                                                <td>다</td>
+                                                <td>라</td>
+                                                <td>마</td>
+                                                <td>바</td>
+                                                <td>사</td>
+                                                <td>아</td>
+                                                <td>자</td>
+                                            </tr>
+                                            <tr>
+                                                <th>합계</th>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- // 고객1 -->
+
+                                <!-- 고객2 -->
+                                <div class="customer_wrap">
+                                    <p class="tbl_tit">고객2</p>
+                                    <table class="writed">
+                                        <caption>기재사항</caption>
+                                        <tbody>
+                                            <tr>
+                                                <th>이름</th>
+                                                <td>
+                                                    <input type="text" class="form-control" name="user_name2">
+                                                </td>
+                                                <th>나이</th>
+                                                <td>
+                                                    <input type="text" class="form-control" name="age2">
+                                                </td>
+                                                <th>관계</th>
+                                                <td>
+                                                    <input type="text" class="form-control" name="relation2">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>성별</th>
+                                                <td>
+                                                    <div class="checks">
+                                                        <input type="radio" id="gender2" name="gender2" value="male">
+                                                        <label for="gender2">남</label>
+                                                        <input type="radio" id="gender2_f" name="gender2" value="female">
+                                                        <label for="gender2_f" class="gender_female">여</label>
+                                                    </div>
+                                                </td>
+                                                <th>재방문횟수</th>
+                                                <td>
+                                                    <input type="text" class="form-control" name="revisit_num2">
+                                                </td>
+                                                <th></th>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="sum">
+                                        <caption>설문조사 결과값</caption>
+                                        <tbody>
+                                            <tr>
+                                                <th>구분</th>
+                                                <td>가</td>
+                                                <td>나</td>
+                                                <td>다</td>
+                                                <td>라</td>
+                                                <td>마</td>
+                                                <td>바</td>
+                                                <td>사</td>
+                                                <td>아</td>
+                                                <td>자</td>
+                                            </tr>
+                                            <tr>
+                                                <th>합계</th>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" required>
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- // 고객2 -->
+                            </div>
+
+                            <div class="add_wrap">
+                                <a href="javascript:void(0)" class="btn btn-join">+ 고객 추가</a>
+                            </div>
+
+                            <!-- button_wrap -->
+                            <div class="button_wrap">
+                                <button type="submit" class="btn btn-submit">등록</button>                                
+                                <a href="javascript:void(0);" class="btn btn-default">취소</a>
+                                <a href="javascript:void(0);" class="btn btn-default">리스트</a>
+                                
+                            </div>
+                            <!-- // button_wrap -->
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

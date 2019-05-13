@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>넥스트레벨 타이어렌탈</title>
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" href="js/fullpage.css">
+
+  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/fullpage.js"></script>
+  <script>
+    $(document).ready(function() {
+      var curUrl = window.location.href; 
+      var subUrl = curUrl.split('#')[1]; 
+      if(subUrl === 'page1' || subUrl ==='page2' || subUrl === 'page3' || subUrl ==='page4'|| subUrl === 'page5' || subUrl ==='page6'){
+        $('#left_area_index #leftP1').attr('src','img/LeftMenu_02_on.png');
+      }else {
+        $('#left_area_index #leftP1').attr('src','img/LeftMenu_02.png');
+      }
+      
+      if (subUrl === 'page7' || subUrl ==='page8' || subUrl === 'page9' || subUrl ==='page10') {
+        $('#left_area_index #leftP2').attr('src','img/LeftMenu_03_on.png');
+      }else {
+        $('#left_area_index #leftP2').attr('src','img/LeftMenu_03.png');
+      }
+
+      if (subUrl === 'page11' || subUrl ==='page12') {
+        $('#left_area_index #leftP3').attr('src','img/LeftMenu_04_on.png');
+      }else {
+        $('#left_area_index #leftP3').attr('src','img/LeftMenu_04.png');
+      }
+      
+      if (subUrl === 'page13') {
+        $('#left_area_index #leftP4').attr('src','img/LeftMenu_05_on.png');
+      }else {
+        $('#left_area_index #leftP4').attr('src','img/LeftMenu_05.png');
+      }
+
+      if(subUrl === 'page14') {
+        $('#left_area_index #leftP5').attr('src','img/LeftMenu_06_on.png');
+      }else {
+        $('#left_area_index #leftP5').attr('src','img/LeftMenu_06.png');
+      }
+
+      $('#left_area_index a').on('click', 'img', function() {
+        console.log(1);
+        $('.dimBg_layerpop').fadeIn();
+        setTimeout(function() {
+          $('.dimBg_layerpop').fadeOut();
+        }, 350);
+      })
+    });
+
+    
+  </script>
+</head>
+
+<body>
+  <!-- 로고, 메뉴(왼쪽영역) 시작 { -->
+  <div id="left_area_index">
+    <div id="logo_index"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
+    <img src="img/LeftMenu_01.png"><br>
+    <a href="#page1"><img src="img/LeftMenu_02.png" id="leftP1"></a><br>
+    <a href="#page7"><img src="img/LeftMenu_03.png" id="leftP2"></a><br>
+    <a href="#page11"><img src="img/LeftMenu_04.png" id="leftP3"></a><br>
+    <a href="#page13"><img src="img/LeftMenu_05.png" id="leftP4"></a><br>
+    <a href="#page14"><img src="img/LeftMenu_06.png" id="leftP5"></a><br>
+    <img src="img/LeftMenu_07.png">
+  </div>
+  <!-- } 로고, 메뉴(왼쪽영역) 끝 -->
+
+  <div id="fullpage">
+    <div class="section" id="section0"></div>
+    <div class="section" id="section1"></div>
+    <div class="section" id="section2"></div>
+    <div class="section" id="section3"></div>
+    <div class="section" id="section4"></div>
+    <div class="section" id="section5"></div>
+    <div class="section" id="section6"></div>
+    <div class="section" id="section7"></div>
+    <div class="section" id="section8"></div>
+    <div class="section" id="section9"></div>
+    <div class="section" id="section10"></div>
+    <div class="section" id="section11"></div>
+    <div class="section" id="section12"></div>
+    <div class="section" id="section13"  style="padding-bottom:33px;">
+      <div id="RebtalTable">
+        <h1 class="retbalH1"><img src="img/nextlevel/tit_01.png" alt="타이어렌탈 온라인 신청하기"></h1>
+		<div class="agreeDiv">
+			<table border="0" cellspacing="0" cellpadding="5">
+			  <tr>
+				<td align="left"><span style="color:#F00; font-weight:bold; font-size:9pt;">[*필수]</span> 개인(신용)정보 수집 및 동의</td>
+				<td>&nbsp;</td>
+				<td class="txtS">
+					개인정보 제공에 동의합니다.
+					<input type="checkbox" name="checkbox" id="checkbox1" />
+					<label for="checkbox1"></label>
+				</td>
+			  </tr>
+			  <tr>
+				<td class="tit1">이용목적</td>
+				<td class="tit1">항목</td>
+				<td class="tit2">보유기간</td>
+			  </tr>
+			  <tr>
+				<td class="tit3">넥스트레벨 가입상담</td>
+				<td class="tit3">이름, 연락처, 주소, 차량번호</td>
+				<td class="tit4">이용목적 달성시까지</td>
+			  </tr>
+			  <tr>
+				<td colspan="3" height="20px"></td>
+			  </tr>
+			  <tr>
+				<td align="left"><span style="color:#F00; font-weight:bold; font-size:9pt;">[*필수]</span> 개인(신용)정보 제공 동의
+				</td>
+				<td>&nbsp;</td>
+				<td class="txtS">
+					개인정보 제공에 동의합니다.
+					<input type="checkbox" name="checkbox" id="checkbox2" />
+					<label for="checkbox2"></label>
+				</td>
+			  </tr>
+			  <tr>
+				<td class="tit1">이용목적</td>
+				<td class="tit1">항목</td>
+				<td class="tit2">보유기간</td>
+			  </tr>
+			  <tr>
+				<td class="tit3">넥스트레벨 가입상담</td>
+				<td class="tit3">이름, 연락처, 주소, 차량번호</td>
+				<td class="tit4">이용목적 달성시까지</td>
+			  </tr>
+
+			</table>
+		</div>
+        <div class="tableDiv" style="border-top:2px solid #802890;">
+          <table border="0" cellspacing="0" cellpadding="5">
+            <tr>
+              <td class="inA">고객명</td>
+              <td colspan="2" class="inB">
+                <label for="textfield1"></label>
+                <input type="text" name="textfield" id="textfield1" />
+              </td>
+            </tr>
+            <tr>
+              <td class="inA">연락처</td>
+              <td colspan="2" class="inB">
+                <label for="textfield2"></label>
+                <input type="text" name="textfield" id="textfield2" />
+              </td>
+            </tr>
+            <tr>
+              <td class="inA">설치지역</td>
+              <td colspan="2" class="inB">
+                <label for="textfield3"></label>
+                <input type="text" name="textfield" id="textfield3" />
+              </td>
+            </tr>
+            <tr>
+              <td class="inA">차량종류</td>
+              <td colspan="2" class="inB">
+                <label for="textfield4"></label>
+                <input type="text" name="textfield" id="textfield4" />
+              </td>
+            </tr>
+            <tr>
+              <td class="inA">렌탈상품(모델)</td>
+              <td colspan="2" class="inB">
+                <label for="textfield5"></label>
+                <input type="text" name="textfield" id="textfield5" />
+              </td>
+            </tr>
+            <tr>
+              <td class="inA">타이어규격</td>
+              <td class="inB">
+                <label for="textfield6"></label>
+                <input type="text" name="textfield" id="textfield6" />
+                <a href="javascript:void(0)" onClick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><img
+                    src="img/nextlevel/btn_size.png" alt="타이어 규격 확인하기" class="sizeBtn"/></a>
+              </td>
+              <td class="inC">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="inA">자동등록방지</td>
+              <td colspan="2" class="inB">
+                <label for="textfield7"></label>
+                <input type="text" name="textfield" id="textfield7" />
+                <img src="img/nextlevel/btn_no.png" class="countBtn"/>
+                <span style="font-size:9pt">자동등록방지 숫자를 순서대로 입력하세요.</span>
+              </td>
+            </tr>
+          </table>
+
+          <div class="wrap_btn">
+            <a class="btn" href="javascript:void(0);"><img src="img/nextlevel/btn_ok.png" /></a>
+            <a class="btn" href="javascript:void(0);"><img src="img/nextlevel/btn_cancle.png" /></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- 푸터 -->
+  <div id="copyright_copy" module="Layout_footer">
+    Copyright &copy; TIRENSHOP All rights reserved
+  </div>
+  <!-- // 푸터 -->
+
+
+  <div id="light" class="white_content"><img src="http://rental.tirenshop.co.kr/img/nextlevel/tire_size.jpg" alt="타이어 규격 확인하기" /><a
+      href="javascript:void(0)" onClick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><img
+        src="http://rental.tirenshop.co.kr/img/nextlevel/tire_size_close.jpg" alt="닫기" /></a>
+  </div>
+  <div id="fade" class="black_overlay"></div>
+  <div class="dimBg_layerpop"></div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#fullpage').fullpage({
+        continuousVertical: false,
+        anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8', 'page9', 'page10',
+          'page11', 'page12', 'page13', 'page14'
+        ],
+      })
+    });
+  </script>
+
+</body>
+
+</html>

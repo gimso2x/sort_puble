@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>미래에셋대우 전자투표 / 전자의결권위임 시스템 관리자모드</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header" class="hd">
+            <h1 class="logo"><a href="javascript:void(0);">관리시스템</a></h1>
+            <div class="log_area">
+                <span class="txt_state"><strong><em>박미래</em> 관리자</strong> 님 로그인하셨습니다</span>
+                <button type="button" class="btn btn_logout">로그아웃</button>
+            </div>
+        </div>
+        <div id="container">
+            <div id="nav">
+                <h2 class="visuallyhidden">LNB</h2>
+                <ul class="lst_nav">
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_user">사용자관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth">
+                            <li><a href="javascript:void(0);"><span>주주가입현황</span></a></li>
+                            <li><a href="javascript:void(0);"><span>회사가입현황</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_schedule">전체 주주총회 일정관리</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_vote on">전자투표/위임관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth on">
+                            <li><a href="javascript:void(0);" class="on"><span>주주총회 등록관리</span></a></li>
+                            <li><a href="javascript:void(0);"><span>투표/위임현황관리</span></a></li>
+                            <li><a href="javascript:void(0);"><span>주주총회 결과관리</span></a></li>
+                            <li><a href="javascript:void(0);"><span>자산운용사DB관리</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_ib">IB컨설팅신청관리</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_board">게시판관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth">
+                            <li><a href="javascript:void(0);"><span>공지사항</span></a></li>
+                            <li><a href="javascript:void(0);"><span>FAQ</span></a></li>
+                            <li><a href="javascript:void(0);"><span>이벤트</span></a></li>
+                            <li><a href="javascript:void(0);"><span>1:1문의</span></a></li>
+                            <li><a href="javascript:void(0);"><span>자료실</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_donation">기부이벤트 관리</a></li>
+                </ul>
+
+            </div>
+            
+            <div class="group_title">
+                <h2 class="titlebar">주주총회 등록관리</h2>
+                <div class="selectbox form_control"> 
+                    <label for="ex_select" class="placeholder">선택</label> 
+                    <select id="ex_select"> 
+                        <option selected="">선택</option>
+                        <option value="">1</option> 
+                        <option value="">2</option> 
+                        <option value="">3</option>
+                    </select> 
+                </div>
+            </div>
+
+            <h3 class="stitlebar">주주총회 정보</h2>
+            <div class="group_desc group_table">
+                <table class="table type2">
+                    <caption class="visuallyhidden">주주총회 정보 상세</caption>
+                    <colgroup>
+                        <col width="200">
+                        <col width="315">
+                        <col width="200">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">행사기간</th>
+                            <td>
+                                <div class="checks"> 
+                                    <input type="radio" id="ex_rd1" name="rd1" checked> 
+                                    <label for="ex_rd1">전자투표</label> 
+                                </div>
+                                <div class="checks"> 
+                                    <input type="radio" id="ex_rd2" name="rd1"> 
+                                    <label for="ex_rd2">전자위임장</label> 
+                                </div>
+                            </td>
+                            <th scope="row">상태</th>
+                            <td>
+                                <div class="checks"> 
+                                    <input type="radio" id="ex_rd3" name="rd2" checked> 
+                                    <label for="ex_rd3">정기</label> 
+                                </div>
+                                <div class="checks"> 
+                                    <input type="radio" id="ex_rd4" name="rd2"> 
+                                    <label for="ex_rd4">임시</label> 
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주주총회기준일</th>
+                            <td></td>
+                            <th scope="row">주주총회기수</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주주총회일시</th>
+                            <td></td>
+                            <th scope="row">주주총회장소</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">전자투표 일정</th>
+                            <td></td>
+                            <th scope="row"></th>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+
+            <h3 class="stitlebar">업무담당자정보</h2>
+            <div class="group_desc group_table">
+                <table class="table type2">
+                    <caption class="visuallyhidden">업무담당자정보 상세</caption>
+                    <colgroup>
+                        <col width="200">
+                        <col width="315">
+                        <col width="200">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">성명</th>
+                            <td>박미래</td>
+                            <th scope="row">전화번호</th>
+                            <td>000-0000-0000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">부서</th>
+                            <td></td>
+                            <th scope="row">핸드폰번호</th>
+                            <td>000-0000-0000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">직위</th>
+                            <td></td>
+                            <th scope="row">이메일</th>
+                            <td>000@0000</td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+
+            <h3 class="stitlebar">전자위임장 정보</h2>
+            <div class="group_desc group_table">
+                <table class="table type2">
+                    <caption class="visuallyhidden">전자위임장 정보 상세</caption>
+                    <colgroup>
+                        <col width="200">
+                        <col width="315">
+                        <col width="200">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">권유자</th>
+                            <td>박미래</td>
+                            <th scope="row">대리인1</th>
+                            <td>박미래</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">대리인2</th>
+                            <td>박미래</td>
+                            <th scope="row">대리인3</th>
+                            <td>박미래</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">대리인4</th>
+                            <td></td>
+                            <th scope="row">대리인5</th>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+
+            <h3 class="stitlebar">주주총회 관련자료</h2>
+            <div class="group_desc group_table">
+                <table class="table type2">
+                    <caption class="visuallyhidden">주주총회 관련자료 상세</caption>
+                    <colgroup>
+                        <col width="200">
+                        <col width="315">
+                        <col width="200">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" rowspan="2">주주총회 소집공고문</th>
+                            <td rowspan="2"><a href="javascript:void(0);" class="link">20기 주주총회소집공고문</a></td>
+                            <th scope="row">위임장용지</th>
+                            <td><a href="javascript:void(0);" class="link">위임장용지</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">참고서류</th>
+                            <td><a href="javascript:void(0);" class="link">참고서류</a></td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+
+            <h3 class="stitlebar">주주총회 안건</h2>
+            <div class="group_desc group_table">
+                <table class="table">
+                    <caption class="visuallyhidden">주주총회 안건 목록</caption>
+                    <colgroup>
+                        <col width="75">
+                        <col width="274">
+                        <col width="320">
+                        <col width="130">
+                        <col width="120">
+                        <col width="*">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">안건명</th>
+                            <th scope="col">안건상세내용</th>
+                            <th scope="col">안건분리</th>
+                            <th scope="col">투표방법</th>
+                            <th scope="col">추가자료</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>재무제표의 승인</td>
+                            <td>제 22기 재무제표 및 연결재무제표 승인</td>
+                            <td>비분리</td>
+                            <td>비집중</td>
+                            <td><a href="javascript:void(0);" class="link">추가자료.PDF</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>재무제표의 승인</td>
+                            <td>제 22기 재무제표 및 연결재무제표 승인</td>
+                            <td>비분리</td>
+                            <td>비집중</td>
+                            <td><a href="javascript:void(0);" class="link">추가자료.PDF</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>재무제표의 승인</td>
+                            <td>제 22기 재무제표 및 연결재무제표 승인</td>
+                            <td>비분리</td>
+                            <td>비집중</td>
+                            <td><a href="javascript:void(0);" class="link">추가자료.PDF</a></td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+
+            <h3 class="stitlebar">주주명부 업로드 현황</h2>
+            <div class="group_desc group_table">
+                <table class="table type2">
+                    <caption class="visuallyhidden">주주명부 업로드 현황 상세</caption>
+                    <colgroup>
+                        <col width="200">
+                        <col width="315">
+                        <col width="200">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">업로드 개시</th>
+                            <td>2019년 03월 02일 14:22:27</td>
+                            <th scope="row">업로드완료</th>
+                            <td>2019년 03월 02일 14:23:37</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주주명부총주식수</th>
+                            <td>19,000 주</td>
+                            <th scope="row">일치여부</th>
+                            <td>일치 / 불일치</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">업로드 파일명</th>
+                            <td><a href="javascript:void(0);" class="link">2018년 주주명부.xls</a></td>
+                            <th scope="row">상태</th>
+                            <td>완료</td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+            <div class="submit_area">
+                <button type="button" class="btn btn_outline btn_primary">전자투표권자지정내용</button>
+            </div>
+
+            <h3 class="stitlebar">주주총회 안건</h2>
+            <div class="group_desc group_table">
+                <table class="table">
+                    <caption class="visuallyhidden">주주총회 안건 목록</caption>
+                    <colgroup>
+                        <col width="75">
+                        <col width="224">
+                        <col width="150">
+                        <col width="150">
+                        <col width="150">
+                        <col width="150">
+                        <col width="*">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">순번</th>
+                            <th scope="col">안건</th>
+                            <th scope="col">주주명부상<br>발행주식총수</th>
+                            <th scope="col">의결권없는<br>주식수 합계</th>
+                            <th scope="col">의결권제한<br>주식수 합계</th>
+                            <th scope="col">행사가능<br>주식수 합계</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>재무제표의 승인</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td><button type="button" class="btn btn_outline btn_primary">투표권자명부</button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>재무제표의 승인</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td><button type="button" class="btn btn_outline btn_primary">투표권자명부</button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>재무제표의 승인</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td><button type="button" class="btn btn_outline btn_primary">투표권자명부</button></td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+
+            
+            <div class="submit_area">
+                <button type="button" class="btn btn_default">위로</button>
+                <button type="button" class="btn btn_primary">목록</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- popup 'on' 추가/삭제 -->
+    <div class="wrap_popup popup_lg popup_vote on">
+        <div class="popup_container">
+            <div class="header_area">
+                <h3>전자투표권자지정내용확인</h3>
+                <a href="javascript:void(0);" class="btn_close ir">닫기</a>
+            </div>
+            <div class="body_area">
+                <div class="group_desc group_table">
+                <table class="table">
+                    <caption class="visuallyhidden">전자투표권자지정내용확인 목록</caption>
+                    <colgroup>
+                        <col width="99">
+                        <col width="220">
+                        <col width="111">
+                        <col width="220">
+                        <col width="111">
+                        <col width="*">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" rowspan="2">주주번호</th>
+                            <th scope="col" colspan="2">주주</th>
+                            <th scope="col" colspan="2">전자투표권자/위임장피권유자</th>
+                            <th scope="col" rowspan="2">주주명부상<br>주식수</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">주주명</th>
+                            <th scope="col">주민/사업자번호</th>
+                            <th scope="col">주주명</th>
+                            <th scope="col">주민/사업자번호</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>000000000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td>000000000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td><span class="ico_down">국민은행(미래에셋대우자산운용)</span></td>
+                            <td>210-00-00000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td>000000000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td>000000000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td>000000000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td>000000000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="txt_warning">※ 전자투표권자 주주명에 <span class="ico_down"></span>표시가 있는 경우 DB에서 자동으로 확정되지 않은 주주입니다. 직접 선택하셔야 확인버튼이 활성화 되어 완료가 가능합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>000000000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td>000000000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td>000000000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>국민은행(미래에셋대우자산운용)</td>
+                            <td>210-00-00000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="txt_warning">※ 전자투표권자 주주명에 <span class="ico_down"></span>표시가 있는 경우 DB에서 자동으로 확정되지 않은 주주입니다. 직접 선택하셔야 확인버튼이 활성화 되어 완료가 가능합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+            </div>
+            <div class="submit_area">
+                <button type="button" class="btn btn_primary">닫기</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

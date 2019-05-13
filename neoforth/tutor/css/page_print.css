@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Jeju Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./font/JejuGothic-Regular.eot);
+  src: url(./font/JejuGothic-Regular.eot?#iefix) format('embedded-opentype'),
+       url(./font/JejuGothic-Regular.woff2) format('woff2'),
+       url(./font/JejuGothic-Regular.woff) format('woff'),
+       url(./font/JejuGothic-Regular.ttf) format('truetype');
+}
+
+/* a4 인쇄설정 */
+body,p,ul,li {margin: 0;padding: 0;}
+body {-webkit-print-color-adjust:exact;}
+ul,li{list-style: none;}
+table{width:100%;border-collapse:collapse;border-spacing:0}
+* { box-sizing: border-box; -moz-box-sizing: border-box;font-family: 'Jeju Gothic', serif;}
+.page { width: 21cm; min-height: 29.7cm; padding: 1cm; margin: 0 auto;position: relative;}
+.subpage {background: #fff; height: 277mm; position: relative;}
+
+@page { size: A4; margin: 0; }
+
+@media print {
+    html, body { width: 210mm; height: 297mm;}
+    .page { margin: 0; border: initial; width: initial; min-height: initial; box-shadow: initial; background: initial; page-break-after: always; }
+    .button_print{display: none;}
+    .button_print img{display: none;}
+}
+/* // a4 인쇄설정 */
+
+.button_print{display: inline-block;position: absolute;;top:0;right:38px;width: 100px;}
+.button_print img{max-width: 100%;}
+
+/* 일반 css */
+.detail{font-size: 12px;margin-bottom: 17px;color:#333;padding-top: 3px;}
+.detail_right{position: absolute;top: 0;right: 0;font-size: 25px;color:#828282;}
+.detail_right>span{font-size: 18px;}
+.container{position: relative;padding-top: 54px;}
+.img_wrap{position: absolute;top:0;left:50%;margin-left: -300px;z-index: 9999;}
+.chart_wrap{border: 2px solid #3FA0D5;height: 942px;z-index: 9998;padding: 60px 20px 20px;}
+.name_wrap{margin: 10px 0;font-size: 13px;line-height: 1.5;}
+.name_wrap table{width:600px;margin: 0 auto;display: block;}
+.name_wrap .name_color{border: 10px solid red;width: 20px;height: 20px;margin-left: 10px;padding: 17px 0;}
+.name_wrap th{border-left: 1px solid #ddd;width: 37px;}
+.name_wrap th:nth-of-type(1) .name_color{border-color:rgb(255, 99, 132);}
+.name_wrap th:nth-of-type(2) .name_color{border-color:rgb(255, 159, 64);}
+.name_wrap th:nth-of-type(3) .name_color{border-color:rgb(153, 102, 255);}
+.name_wrap th:nth-of-type(4) .name_color{border-color:rgb(75, 192, 192);}
+.name_wrap th:nth-of-type(5) .name_color{border-color:rgb(54, 162, 235);}
+.name_wrap td:nth-last-of-type(1) {
+  border-right: 1px solid #ddd;
+}
+.name_wrap td{width: 82px;}
+/* .name_wrap td p{padding-left: 10px;} */
+.type_ul::after,.footer_ul::after{content:'';display: block;clear: both;}
+.type_ul{position: relative;padding-left: 10px;}
+.type_ul li{display: inline-block;width: 27px;height: 27px;text-align: center;margin-right: 37px;vertical-align: bottom;}
+.type_ul li img{max-width: 100%;}
+.type_ul li:nth-of-type(1){margin-left: 18px;}
+.type_ul li:nth-of-type(9){margin-right: 18px;}
+.l_wrap, .r_wrap{display: inline-block;position: relative;vertical-align: bottom;}
+.l_wrap{left:1px;top:1px;}
+.r_wrap{right:1px;top:1px;}
+.l_wrap img, .r_wrap img{vertical-align: bottom;}
+
+/* 차트 css */
+canvas { -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;position: relative;
+  /* z-index: 2; */
+}
+.box_wrap{position: relative;}
+.box{position: absolute;top:-1px;left:45px;z-index: 1;}
+
+.chart_detail{padding-left:15px;}
+.detail2{display: inline-block;color:#3FA0D5;font-size: 13px;}
+span.button{position: relative;display: inline-block;vertical-align: middle;width: 193px;text-align: center;margin-bottom: 7px;}
+
+.type_tbl{border: 1px solid #3FA0D5;margin-bottom: 20px;}
+.type_tbl th{border-right: 1px solid #3FA0D5;font-weight: normal;color:#3FA0D5;}
+.type_tbl tr:nth-of-type(1) th,.type_tbl tr:nth-of-type(1) td{border-bottom: 1px dotted #3FA0D5;}
+.type_tbl th,.type_tbl td{padding: 5px;}
+
+/* .footer_ul{padding-right: 20px;} */
+.footer_ul li{float:left;width: 23%;text-align: center;vertical-align: top;padding-top: 7px;}
+/* .footer_ul li img{max-width: 100%;} */
+.footer_ul li:nth-of-type(2){width: 54%;font-size: 12px;padding-top: 12px;}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DID 시스템</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    
+</head>
+<body>
+    <div id="wrap">
+        <!-- 헤더 -->
+        <header>
+            <div class="headerWrap">
+                <h1>메뉴판</h1>
+                <div class="subTit">DID 관리자 시스템</div>
+                <div class="logout">
+                    <a href="javascript:void(0);">로그아웃</a>
+                </div>
+            </div>
+        </header>
+        <!-- // 헤더 -->
+
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="javascript:void(0);"><i class="fas fa-home"></i>대시보드</a></li>
+                    <li><a href="javascript:void(0);"><i class="fas fa-utensils"></i>휴게소관리</a></li>
+                    <li><a href="javascript:void(0);" class="active"><i class="fas fa-user"></i>고객관리</a></li>
+                    <li><a href="javascript:void(0);"><i class="fas fa-cog"></i>기기관리</a></li>
+                    <li><a href="javascript:void(0);"><i class="far fa-file-alt"></i>템플릿관리</a></li>
+                    <li><a href="javascript:void(0);"><i class="fas fa-database"></i>서버관리</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- 컨테이너 -->
+        <div id="container">
+            <h2 class="conTit">고객관리</h2>
+            <div class="tblWrap">
+                <div class="conHead">
+                    <h3 class="tblTit"><b>고객</b> 목록</h3>
+                    <div class="tblMenu">
+                        <input type="text" class="formControl searchField" placeholder="내용">
+                        <a href="javascrpit:void(0);" class="btnSearch">검색</a>
+                        <a href="javascript:void(0);" class="btnNew">신규</a>
+                        <a href="javascript:void(0);" class="btnModify"><i class="far fa-check-square"></i> 수정</a>
+                    </div>
+                </div>
+                <div class="conBody">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>휴게소명</th>
+                                <th>담당자명</th>
+                                <th>고객아이디</th>
+                                <th>연락처</th>
+                                <th>최종로그인</th>
+                                <th>사용여부</th>
+                                <th>선택</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="red">Y</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select20">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="red">Y</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select19">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select18">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select17">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select16">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select15">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select14">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select13">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select12">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select11">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select10">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select9">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select8">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select7">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>용인휴게소 상</td>
+                                <td>홍길동</td>
+                                <td>yong1</td>
+                                <td>010-2345-6789</td>
+                                <td>2018-10-10</td>
+                                <td class="blue">N</td>
+                                <td>
+                                    <label class="input-check">
+                                        <input type="checkbox" id="select6">
+                                        <i></i>
+                                        <span class="label-text"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="paging">
+                        <li><a href="javascript:void(0);" class="dprev">&lt;&lt;</a></li>
+                        <li><a href="javascript:void(0);" class="prev">&lt;</a></li>
+                        <li><a href="javascript:void(0);" class="active">1</a></li>
+                        <li><a href="javascript:void(0);">2</a></li>
+                        <li><a href="javascript:void(0);">3</a></li>
+                        <li><a href="javascript:void(0);">4</a></li>
+                        <li><a href="javascript:void(0);">5</a></li>
+                        <li><a href="javascript:void(0);" class="next">&gt;</a></li>
+                        <li><a href="javascript:void(0);" class="dnext">&gt;&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- // 컨테이너 -->
+    </div>
+</body>
+</html>

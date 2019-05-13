@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NSK 채용사이트</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/common.js"></script>
+
+</head>
+
+<body>
+<!-- 헤더 -->
+<header>
+    <h1>
+        <a href="main.html">
+            <img src="../img/nsk_logo.png" alt="NSK 채용사이트">
+        </a>
+    </h1>
+    <nav>
+        <ul class="clearfix">
+            <li>
+                <a href="company_info.html">회사소개</a>
+                <ul class="depth">
+                    <li>
+                        <a href="company_info.html">비전</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#history_tit">연혁</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#area_tit">사업분야</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#nsk_strong">NSK의 강점</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#org">조직도</a>
+                    </li>
+                    <li>
+                        <a href="main.html#number_NSK">숫자로 보는 NSK</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="people.html" class="active">인재상</a>
+                <ul class="depth">
+                    <li>
+                        <a href="people.html">인재상</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="hr.html">인사제도</a>
+                <ul class="depth">
+                    <li>
+                        <a href="hr.html#hr_intro">직무소개</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_system">직급체계</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_wel">복리후생</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="recruit.html">채용정보</a>
+                <ul class="depth">
+                    <li>
+                        <a href="recruit.html#recruit_notice">채용공고</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_step">채용절차</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_apply">입사지원</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <span class="view_button">입사지원</span>
+    <input class="nav-toggle" id="nav-toggle" type="checkbox">
+    <label class="navicon all_nav" for="nav-toggle">
+        <span class="navicon-bar"></span>
+    </label>
+    <div class="all_menu">
+        <ul class="clearfix">
+            <li class="total_menu">
+                <a href="javascript:void(0);" class="depth1">전체메뉴</a>
+                <i class="mobile_close"></i>
+            </li>
+            <li>
+                <p class="depth1"><a href="company_info.html">회사소개</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="company_info.html">비전</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#history_tit">연혁</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#area_tit">사업분야</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#nsk_strong">NSK의 강점</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#org">조직도</a>
+                    </li>
+                    <li>
+                        <a href="main.html#number_NSK">숫자로 보는 NSK</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="depth1"><a href="people.html">인재상</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="people.html">인재상</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="depth1"><a href="hr.html">인사제도</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="hr.html#hr_intro">직무소개</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_system">직급체계</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_wel">복리후생</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="depth1"><a href="recruit.html">채용정보</a>
+					<i></i>
+				</p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="recruit.html#recruit_notice">채용공고</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_step">채용절차</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_apply">입사지원</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- 모바일메뉴 -->
+    <a href="javascript:void(0);" class="mobile_menu">
+    </a>
+    <div class="dim-layer">
+        <div class="dimBg"></div>
+        <div class="pop_menu">
+            <div class="pop_menu_content">
+            </div>
+        </div>
+    </div>
+    <!-- // 모바일메뉴 -->
+</header>
+<!-- // 헤더 -->
+
+    <!-- 컨테이너 -->
+    <div id="container">
+        <section id="people_visual">
+            <div class="container">
+                <p class="tit">인재상</p>
+                <p class="semi_tit">We Create
+                    <span>Value for Future!</span>
+                </p>
+                <div class="inner">
+                    <p class="inner_tit">
+                        남보다 한발 앞선자리, 그곳에 NSK맨이 있습니다
+
+                    </p>
+                    <p class="inner_det">
+                        한국NSK가 추구하는 인재상은 도전과 창조정신으로 열정과 에너지가 넘치는 인재입니다. 기업의 미래는 인재를 발굴하고 육성하여 자기발전과 더불어 회사의 신사업을 찾고 주도해 나갈 주역을 만들어 가는 것에 있습니다.
+                        <br>한국 NSK는 다음 4가지 인재상을 주축으로 인재를 발굴, 육성해 가고 있습니다.
+
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="people_det">
+            <div class="container">
+                <p class="semi_tit">We want people...</p>
+                <div class="img_wrap">
+                    <img src="../img/wantpeople.png" alt="we want people">
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- // 컨테이너 -->
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="container">
+            <div class="clearfix">
+                <div class="fl_l">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="javascript:void(0);">이용약관</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">개인정보처리방침</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">사이트맵</a>
+                        </li>
+                    </ul>
+                    <address>
+                        <span>서울본사 : 서울특별시 강남구 테헤란로 440 포스코센터 서관 9층 Tel. 02-3787-0300</span>
+                        <span>ㆍ 창원공장 : 경남 창원시 성산동 60번지 Tel. 055-287-6001 </span>
+                        <br>
+                        <span>천안공장 : 충청남도 천안시 동남구 수신면 5산단7로 11 (천안시 제5산업단지 내) Tel. 041-411-6000</span>
+                    </address>
+                    <p>COPYRIGHTS ⓒ NSK KOREA Ltd. All Rights Reserved.</p>
+                </div>
+                <div class="fl_r">
+                    <div class="family_site">
+                        <a href="javascript:void(0);">Family Site</a>
+                        <ul class="fm_list">
+                            <li>
+                                <a href="http://www.nsk.com" target="_blank" title="글로벌NSK">Global NSK</a>
+                            </li>
+                            <li class="fm_btm">
+                                <a href="http://www.kr.nsk.com" target="_blank" title="NSK KOREA">NSK KOREA</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- // 푸터 -->
+    
+    <!-- gotop -->
+    <a href="javascript:void(0);" id="scroll" title="Scroll to Top"></a>
+    <!-- // gotop -->
+
+</body>
+
+</html>

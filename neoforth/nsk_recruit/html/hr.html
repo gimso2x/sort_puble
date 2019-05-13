@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NSK 채용사이트</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/common.js"></script>
+
+</head>
+
+<body>
+<!-- 헤더 -->
+<header>
+    <h1>
+        <a href="main.html">
+            <img src="../img/nsk_logo.png" alt="NSK 채용사이트">
+        </a>
+    </h1>
+    <nav>
+        <ul class="clearfix">
+            <li>
+                <a href="company_info.html">회사소개</a>
+                <ul class="depth">
+                    <li>
+                        <a href="company_info.html">비전</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#history_tit">연혁</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#area_tit">사업분야</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#nsk_strong">NSK의 강점</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#org">조직도</a>
+                    </li>
+                    <li>
+                        <a href="main.html#number_NSK">숫자로 보는 NSK</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="people.html">인재상</a>
+                <ul class="depth">
+                    <li>
+                        <a href="people.html">인재상</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="hr.html" class="active">인사제도</a>
+                <ul class="depth">
+                    <li>
+                        <a href="hr.html#hr_intro">직무소개</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_system">직급체계</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_wel">복리후생</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="recruit.html">채용정보</a>
+                <ul class="depth">
+                    <li>
+                        <a href="recruit.html#recruit_notice">채용공고</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_step">채용절차</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_apply">입사지원</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <span class="view_button">입사지원</span>
+    <input class="nav-toggle" id="nav-toggle" type="checkbox">
+    <label class="navicon all_nav" for="nav-toggle">
+        <span class="navicon-bar"></span>
+    </label>
+    <div class="all_menu">
+        <ul class="clearfix">
+            <li class="total_menu">
+                <a href="javascript:void(0);" class="depth1">전체메뉴</a>
+                <i class="mobile_close"></i>
+            </li>
+            <li>
+                <p class="depth1"><a href="company_info.html">회사소개</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="company_info.html">비전</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#history_tit">연혁</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#area_tit">사업분야</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#nsk_strong">NSK의 강점</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#org">조직도</a>
+                    </li>
+                    <li>
+                        <a href="main.html#number_NSK">숫자로 보는 NSK</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="depth1"><a href="people.html">인재상</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="people.html">인재상</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="depth1"><a href="hr.html">인사제도</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="hr.html#hr_intro">직무소개</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_system">직급체계</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_wel">복리후생</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="depth1"><a href="recruit.html">채용정보</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="recruit.html#recruit_notice">채용공고</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_step">채용절차</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_apply">입사지원</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- 모바일메뉴 -->
+    <a href="javascript:void(0);" class="mobile_menu">
+    </a>
+    <div class="dim-layer">
+        <div class="dimBg"></div>
+        <div class="pop_menu">
+            <div class="pop_menu_content">
+            </div>
+        </div>
+    </div>
+    <!-- // 모바일메뉴 -->
+</header>
+<!-- // 헤더 -->
+
+    <!-- 컨테이너 -->
+    <div id="container">
+        <section id="hr_visual">
+            <div class="container">
+                <p class="tit">인사제도</p>
+                <div class="inner">
+                    <p class="inner_det">
+                        한국 NSK는 구성원과 조직의 성과 및 목표달성을 위해 각 직무와 역량을 기반으로 인사제도를 운영하고 있습니다.
+                        <br>업무 성과뿐만 아니라 성과를 창출 프로세스를 정당하게 평가하고 적극적으로 도전하는 직원을 백업하는 것을 기본으로 하고 있습니다.
+                        <br>또한, '사람'에 최고의 가치를 두고 있으며 각 분야별 인재를 양성하고 한국NSK와 동반성장을 추구합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="hr_intro">
+            <div class="container">
+                <p class="semi_tit">직무소개</p>
+                <p class="semi_det">한국 NSK는 다음과 같은 직무로 구성되어있습니다.</p>
+                <div class="intro_wrap clearfix">
+                    <div>
+                        <p class="intro_main">R&amp;D</p>
+                        <p class="intro_sub">신기술에 대한 연구 및 개발, 설계를 담당합니다. 베어링 및 각 종 산업기계 관련
+                            <br> 전반적인 업무와 신제품에 대한 평가 및 분석 업무를 담당합니다.
+                            <br>관련전공 : 기계 공학, 재료 공학, 기계 역학
+                        </p>
+                    </div>
+                    <div>
+                        <p class="intro_main">생산</p>
+                        <p class="intro_sub">NSK에서 생산되는 모든 제품에 대한 관련업무를 담당하며 완성 또는 시판된 제품 등
+                            <br>신제품의 성능 테스트 및 결함여부를 검수합니다.
+                            <br>관련전공 : 기계 공학, 재료 공학, 기계 역학
+
+                        </p>
+                    </div>
+                    <div>
+                        <p class="intro_main">IT 시스템</p>
+                        <p class="intro_sub">홈페이지 관리, 인트라넷 구성 등 IT관련 전반적인 업무와 사내에서 사용하고 있는
+                            <br>프로그램의 개발 및 유지보수 업무를 담당합니다.
+                            <br>관련전공 : 컴퓨터공학, 전자공학
+
+                        </p>
+                    </div>
+                    <div>
+                        <p class="intro_main">기술 영업
+                        </p>
+                        <p class="intro_sub">전국의 각 대리점 및 거래처 관리, 신규 거래처 확보 등 영업 관련 전반적인 업무를
+                            <br>담당합니다.
+                            <br>관련전공 : 전공무관
+
+                        </p>
+                    </div>
+                    <div>
+                        <p class="intro_main">관리 부문</p>
+                        <p class="intro_sub">재고관리, 인사관리 등 물적, 인적 자원에 대한 관리를 담당합니다.
+                            <br>관련전공 : 회계학, 경영학
+
+                        </p>
+                    </div>
+                    <div>
+                        <p class="intro_main">경력직
+                        </p>
+                        <p class="intro_sub">모든 부문의 경력직을 상시 채용하고 있습니다.
+                            <br>* 별도 문의
+                            <br>관련전공 : 전공무관
+
+                        </p>
+                    </div>
+                </div>
+                <div class="common_wrap">
+                    <ul class="intro_common">
+                        <li>초임금(대졸):동종업계 최고 수준, 별도 성과급 지급</li>
+                        <li>근무환경:주 5일 근무, 연월차 및 휴가 별도 지급</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="hr_system">
+            <div class="container">
+                <p class="semi_tit">직급체계</p>
+                <p class="semi_det">NSK는 정해진 승진연한 외에 개인의 능력 및 성과에 따라 직급을 구분하고 있습니다.</p>
+                <div class="img_wrap">
+                    <img src="../img/hr_system.png" alt="직급체계">
+                </div>
+            </div>
+        </section>
+        <section id="hr_wel">
+            <div class="container">
+                <p class="semi_tit">복리후생</p>
+                <p class="semi_det">NSK는 MOTION&amp;CONTROL을 통하여 원활하고 안전한 사회를 이루어 나가는데 공헌하고 지구환경의 안전을 추구함과 동시에 글로벌한 활동으로 국경을 초월한 사람과 사람의 결속을
+                    강화하자는 이념아래 "경계를 초월하여, 시간을 초월하여 국제적인 안목을 가집시다" "오늘의 '나'를 뛰어 넘읍시다" "상식의 틀을 깨뜨립시다" "변화에 적극적으로 앞서 나갑시다" "미지의
+                    세계에 과감히 도전합시다" 라는 슬로건을 내세우고 급격히 변화하는 환경에 적응해 가면서 지속적으로 성장할 수 있는 인재를 육성하기 위하여 열린 기회와 동기부여, 그에 따른 교육을 아낌없이
+                    지원하고 있습니다.
+                </p>
+                <div class="img_wrap">
+                    <img src="../img/hr_wel.png" alt="복리후생">
+                </div>
+            </div>
+        </section>
+        <section id="hr_edu">
+            <div class="container">
+                <p class="semi_tit">인재육성</p>
+                <ul class="clearfix">
+                    <li>
+                        <div class="img_box">
+                            <img src="../img/hr_edu1.png" alt="국제대학원 유학">
+                        </div>
+                        <div class="img_det">국제대학원 유학</div>
+                    </li>
+                    <li>
+                        <div class="img_box">
+                            <img src="../img/hr_edu2.png" alt="해외파견 근무 및 기술 연수">
+                        </div>
+                        <div class="img_det">해외파견 근무 및 기술 연수</div>
+                    </li>
+                    <li>
+                        <div class="img_box">
+                            <img src="../img/hr_edu3.png" alt="어학수강료 지원">
+                        </div>
+                        <div class="img_det">어학수강료 지원</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- // 컨테이너 -->
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="container">
+            <div class="clearfix">
+                <div class="fl_l">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="javascript:void(0);">이용약관</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">개인정보처리방침</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">사이트맵</a>
+                        </li>
+                    </ul>
+                    <address>
+                        <span>서울본사 : 서울특별시 강남구 테헤란로 440 포스코센터 서관 9층 Tel. 02-3787-0300</span>
+                        <span>ㆍ 창원공장 : 경남 창원시 성산동 60번지 Tel. 055-287-6001 </span>
+                        <br>
+                        <span>천안공장 : 충청남도 천안시 동남구 수신면 5산단7로 11 (천안시 제5산업단지 내) Tel. 041-411-6000</span>
+                    </address>
+                    <p>COPYRIGHTS ⓒ NSK KOREA Ltd. All Rights Reserved.</p>
+                </div>
+                <div class="fl_r">
+                    <div class="family_site">
+                        <a href="javascript:void(0);">Family Site</a>
+                        <ul class="fm_list">
+                            <li>
+                                <a href="http://www.nsk.com" target="_blank" title="글로벌NSK">Global NSK</a>
+                            </li>
+                            <li class="fm_btm">
+                                <a href="http://www.kr.nsk.com" target="_blank" title="NSK KOREA">NSK KOREA</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- // 푸터 -->
+
+    <!-- gotop -->
+    <a href="javascript:void(0);" id="scroll" title="Scroll to Top"></a>
+    <!-- // gotop -->
+
+</body>
+
+</html>

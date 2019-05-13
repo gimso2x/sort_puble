@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1" />
+
+    <title>The Joeun</title>
+    <link rel="stylesheet" href="common/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="common/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="common/css/hover.css" type="text/css">
+    <link rel="stylesheet" href="common/css/layout.css" type="text/css">
+    <link rel="stylesheet" href="common/css/main.css" type="text/css">
+    <link rel="stylesheet" href="common/css/contents.css" type="text/css">
+    <link rel="stylesheet" href="common/fonts/font.css" type="text/css">
+    <link rel="stylesheet" href="common/js/navmenu/css/component.css"  type="text/css" />
+    <style media="screen">
+      .academy{width: 800px; margin: 0 auto;border-bottom: 22px solid #308EF2; overflow: hidden;}
+      .academy_title{font-family: "hanna"; font-size: 23px; text-align: left; color: #2165AE; padding-top: 3%;} .academy_line{color:#000; border-top: 4px solid #2165AE;  padding-top: 0.5%;}
+      .academy_content{text-align: left; font-size: 15px;}
+      .academy_lecture{overflow: hidden; margin: 10% 0;}
+      .academy_lecture li{float: left; width: 33%; padding: 1% 0;}
+      .academy_doctor{margin: 7% 0; float: left; width: 100%;}
+      .academy_doctor_title{float: left;width: 12%;margin-right: 2%;text-align: center; font-size: 23px; font-family: "hanna"; color:#000; } .academy_line2{border-top: 4px solid #4F87C2;  padding-top: 0.5%;}
+      .academy_doctor_content{float:left; width: 86%; overflow: hidden;}
+      .academy_doctor_content li{float: left; width: 46%; margin: 2%;}
+      .academy_doctor_content .academy_doctor_bigbox{background-color: #EBEBED; font-size: 12px; text-align: left; padding: 4%;  height: 342px;} .h210{height: 210px !important;} .h182{height: 182px !important;}
+      .academy_doctor_content .academy_doctor_smallbox{background-color: #FFFFFF; border-radius: 15px; padding: 3%;margin: 3% 0;}
+      .academy_doctor_content .academy_doctor_smallbox p{display: inline-block;}
+      .bluesu{font-family: "hanna"; font-size: 23px; color: #2165AE; line-height: 1.5;}
+      .boldsu{font-family: "notokr-bold"; font-size: 18px;}
+      .academy_college{text-align: right; width: 100%; float:left;}
+
+      @media screen and (max-width:768px){
+          .academy{width: 98%; margin-left: 2%;}
+      }
+      @media screen and (max-width:667px) {
+        .academy_content{font-size: 13px;}
+        .academy_lecture li{width: 50%;}
+        .academy_doctor_title{width: 100%;}
+        .academy_doctor_content{width: 100%;}
+        .academy_doctor_content .academy_doctor_bigbox{height: 489px;}
+        .h210{height: 234px !important;} .h182{height: 201px !important;}
+      }
+      @media screen and (max-width:667px) and (orientation:landscape){
+        .academy_content{font-size: 15px;}
+        .academy_lecture li{width: 33%;}
+
+        .academy_doctor_title{width: 12%;}
+        .academy_doctor_content{width: 86%;}
+        .academy_doctor_content .academy_doctor_bigbox{height: 441px;}
+        .h210{height: 224px !important;} .h182{height: 211px !important;}
+      }
+    </style>
+
+    <script type="text/javascript" src="common/js/jquery-3.2.1.min.js"></script>
+    <script src="common/js/navmenu/js/modernizr.custom.js"></script>
+    <script src="common/js/navmenu/js/jquery.dlmenu.js"></script>
+    <script src="common/js/main.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $( '#dl-menu' ).dlmenu({
+					animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+				});
+      });
+    </script>
+  </head>
+  <body>
+
+      <h1 class="hid">The Joeun</h1>
+      <header class="header">
+        <div class="top_bar">
+          <div class="wrap2">
+          <ul class="top_bar1">
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="join.html">회원가입</a></li>
+            <li><a href="gnb4_2.html">자주묻는질문</a></li>
+            <li><a href="footer3.html">사이트맵</a></li>
+          </ul>
+          </div>
+        </div>
+        <div class="wrap">
+          <div class="logo">
+            <a href="index.html"><img src="common/images/logo.png" alt="로고"></a>
+          </div>
+          <nav class="gnb">
+            <h2 class="hid">Navigation</h2>
+            <ul>
+              <li><a href="gnb1_1.html" class="arrow">기업소개</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb1_1.html">CEO인사말</a></li>
+                  <li><a href="gnb1_2.html">비전</a></li>
+                  <li><a href="gnb1_3.html">연혁 & CI</a></li>
+                  <li><a href="gnb1_4.html">찾아오시는길</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb2_1.html" class="arrow">건강아카데미</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb2_1.html">아카데미소개</a></li>
+                  <li><a href="gnb2_2.html">자격제도</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb3_1.html">기업부설연구소</a></li>
+              <li><a href="gnb4_1.html" class="arrow">채용인사</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb4_1.html">채용정보</a></li>
+                  <li><a href="gnb4_2.html">전형Q&A</a></li>
+                  <li><a href="gnb4_3.html">직무소개</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb5_1.html" class="arrow">더좋은소식</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb5_1.html">더좋은 NEWS</a></li>
+                  <li><a href="gnb5_2.html">더좋은 파트너</a></li>
+                  <li><a href="gnb5_3.html">각양각색 TALK</a></li>
+                  <li><a href="gnb5_4.html">더좋은 STAR</a></li>
+                  <li><a href="gnb5_5.html">더좋은 LIFE</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb6_1.html">문의라운지</a></li>
+            </ul>
+          </nav>
+          <nav class="gnb_mobile">
+            <h2 class="hid">Navigation</h2>
+            <div class="container demo-2">
+              <div class="main clearfix">
+                <div class="column">
+                  <div id="dl-menu" class="dl-menuwrapper">
+                    <button class="dl-trigger">Open Menu</button>
+                    <ul class="dl-menu">
+                      <li>
+                        <a href="#">기업소개</a>
+                            <ul class="dl-submenu">
+                              <li><a href="gnb1_1.html">CEO인사말</a></li>
+                              <li><a href="gnb1_2.html">비전</a></li>
+                              <li><a href="gnb1_3.html">연혁 & CI</a></li>
+                              <li><a href="gnb1_4.html">찾아오시는길</a></li>
+                            </ul>
+                          </li>
+                      <li>
+                        <a href="#">건강상담아카데미</a>
+                        <ul class="dl-submenu">
+                          <li><a href="gnb2_1.html">아카데미소개</a></li>
+                          <li><a href="gnb2_2.html">자격제도</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="gnb3_1.html">기업부설연구소</a>
+                      </li>
+                      <li>
+                        <a href="#">채용인사</a>
+                        <ul class="dl-submenu">
+                          <li><a href="gnb4_1.html">채용정보</a></li>
+                          <li><a href="gnb4_2.html">전형Q&A</a></li>
+                          <li><a href="gnb4_3.html">직무소개</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#">더좋은소식</a>
+                        <ul class="dl-submenu">
+                          <li><a href="gnb5_1.html">더좋은 NEWS</a></li>
+                          <li><a href="gnb5_2.html">더좋은 파트너</a></li>
+                          <li><a href="gnb5_3.html">각양각색 TALK</a></li>
+                          <li><a href="gnb5_4.html">더좋은 STAR</a></li>
+                          <li><a href="gnb5_5.html">더좋은 LIFE</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="gnb6_1.html">문의라운지</a>
+                      </li>
+                      <li class="jnh">
+        								<a href="login.html">로그인</a>
+        							</li>
+                      <li class="jnh">
+        								<a href="join.html">회원가입</a>
+        							</li>
+                    </ul>
+                  </div><!-- /dl-menuwrapper -->
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="wrap">
+          <div class="box_top">아카데미 소개</div>
+          <img src="common/images/aca_top.png" usemap="#top" alt="">
+          <map name="top">
+            <area shape="rect" coords="0,0,407,70" href="http://khcacademy.com" target="_blank">
+          </map>
+          <img src="common/images/aca_top2.png" alt="">
+          <div class="academy">
+            <p class="academy_title"><span class="academy_line">ACADEMY</span> INTRODUCE LECTURER</p>
+            <p class="academy_content">실무경험을 바탕으로 체계적인 교육을 통해 우수한 인재를 배출하는 한국건강아카데미의 강사진소개</p>
+            <ul class="academy_lecture">
+              <li><img src="common/images/aca_01.png" alt=""></li>
+              <li><img src="common/images/aca_02.png" alt=""></li>
+              <li><img src="common/images/aca_03.png" alt=""></li>
+              <li><img src="common/images/aca_04.png" alt=""></li>
+            </ul>
+            <p class="academy_title"><span class="academy_line">PROFESSIONAL</span> SCHOLASHIP CONSULTANT</p>
+            <p class="academy_content">다양한 분야의 전문가들이 학술자문을 통해서 최고의 인재를 양성합니다</p>
+            <div class="academy_doctor">
+              <p class="academy_doctor_title"><span class="academy_line2">의학자문</span></p>
+              <ul class="academy_doctor_content">
+                <li>
+                  <div class="academy_doctor_bigbox">
+                    <div class="academy_doctor_smallbox">
+                      <img src="common/images/aca_05.png" alt="">
+                      <p>
+                      <span class="bluesu">소아과</span><br>
+                      <span class="boldsu">김영훈 자문위원</span><br>
+                      의대 소아과 교수
+                      </p>
+                    </div>
+                    가톨릭대학교 의정부성모병원 소아과 교수<br>
+                    제 17·18대 가톨릭대학교 의정부성모병원 병원장<br><br>
+                    한국가톨릭의료협회 해외의료선교단 단장<br>
+                    대한소아신경학회 간행위원장<br>
+                    가톨릭대학교 의과대학 소이과학교실 교수<br>
+                    가톨릭대학교 의정부성모병원 건강증지센터 소장<br><br>
+                    가톨릭대학교 대학원 의학 박사<br>
+                    가톨릭대학교 의학 학사
+                  </div>
+                </li>
+                <li>
+                  <div class="academy_doctor_bigbox">
+                    <div class="academy_doctor_smallbox">
+                      <img src="common/images/aca_06.png" alt="">
+                      <p>
+                      <span class="bluesu">비뇨기과</span><br>
+                      <span class="boldsu">최형기 자문위원</span><br>
+                      비뇨기과전문의
+                      </p>
+                    </div>
+                    최형기성공의원 원장<br><br>
+                    아세아 발기부전 고문단 한국대표<br>
+                    아시아 태평양 임포텐츠학회 회장<br>
+                    브랜들리 스콧상 수상<br><br>
+                    연세대학교 의과대학 비뇨기과 명예교수<br>
+                    연세대학교 대학원 의학 박사<br>
+                    연세대학교 의학 학사
+                  </div>
+                </li>
+                <li>
+                  <div class="academy_doctor_bigbox">
+                    <div class="academy_doctor_smallbox">
+                      <img src="common/images/aca_07.png" alt="">
+                      <p>
+                      <span class="bluesu">신경과</span><br>
+                      <span class="boldsu">양현덕 자문위원</span><br>
+                      신경과전문의
+                      </p>
+                    </div>
+                    하버드 신경과 원장<br><br>
+                    하버드의과대학 임상강사<br>
+                    하버드의과대학 부속 맥클레인병원 신경과 임상전문임의<br>
+                    미국신경과학회 행동신경학 분과회원<br><br>
+                    대한치매학회 국제협력간사<br>
+                    대한신경과학회 국제위원<br>
+                    대한의사협회 학술이사
+                  </div>
+                </li>
+                <li>
+                  <div class="academy_doctor_bigbox">
+                    <div class="academy_doctor_smallbox">
+                      <img src="common/images/aca_08.png" alt="">
+                      <p>
+                      <span class="bluesu">소아과</span><br>
+                      <span class="boldsu">유인철 자문위원</span><br>
+                      소아과전문의
+                      </p>
+                    </div>
+                    유소아청소년과원장<br><br>
+                    순천향의과대학 졸업<br>
+                    소아청소년과 전문의
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="academy_doctor">
+              <p class="academy_doctor_title"><span class="academy_line2">식품안전</span><br>·<br>영양자문</p>
+              <ul class="academy_doctor_content">
+                <li>
+                  <div class="academy_doctor_bigbox">
+                    <div class="academy_doctor_smallbox">
+                      <img src="common/images/aca_09.png" alt="">
+                      <p>
+                      <span class="boldsu">지근억 자문위원</span><br>
+                      서울대 식품영양학과 교수
+                      </p>
+                    </div>
+                    서울대학교 식품영양학과 교수<br>
+                    한림대학교 식품영양학과 부교수<br>
+                    미국 스탠퍼드대학교 면역학과 연구원<br><br>
+                    루이지애나주립대학교 대학원 미생물학과 박사<br>
+                    서울대학교 대학원 식품공학과 석사<br>
+                    서울대학교 식품공학과 학사
+                  </div>
+                </li>
+                <li>
+                  <div class="academy_doctor_bigbox">
+                    <div class="academy_doctor_smallbox">
+                      <img src="common/images/aca_10.png" alt="">
+                      <p>
+                      <span class="boldsu">이석호 자문위원</span><br>
+                      약학박사
+                      </p>
+                    </div>
+                    Harvard Medical School Research Fellow<br>
+                    Merck Research Laboratiories,<br>
+                    Merck & Co., Inc. 선임연구원<br>
+                    식품의약품안전처 의약품평가부장<br>
+                    식품의약품안전처 국립독성연구원장<br>
+                    (현 식품의약품안전평가원장)<br><br>
+                    미국 위스콘신주립대 약학박사<br>
+                    서울대약학과 약학 학사
+                  </div>
+                </li>
+                <li>
+                  <div class="academy_doctor_bigbox h210">
+                    <div class="academy_doctor_smallbox">
+                      <img src="common/images/aca_11.png" alt="">
+                      <p>
+                      <span class="boldsu">이순희 자문위원</span><br>
+                      영양학박사
+                      </p>
+                    </div>
+                    수원여자대학교 식품영양학과 교수
+                  </div>
+                </li>
+                <li>
+                  <div class="academy_doctor_bigbox h210">
+                    <div class="academy_doctor_smallbox">
+                      <img src="common/images/aca_12.png" alt="">
+                      <p>
+                      <span class="boldsu">강주희 자문위원</span><br>
+                      영양학박사
+                      </p>
+                    </div>
+                    수원여자대학교 식품영양학과 교수
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="academy_doctor">
+              <p class="academy_doctor_title"><span class="academy_line2">약학자문</span></p>
+              <ul class="academy_doctor_content">
+                <li>
+                  <div class="academy_doctor_bigbox h182">
+                    <div class="academy_doctor_smallbox">
+                      <img src="common/images/aca_13.png" alt="">
+                      <p>
+                      <span class="boldsu">이수근 자문위원</span><br>
+                      약사
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="academy_doctor_bigbox h182">
+                    <div class="academy_doctor_smallbox">
+                      <img src="common/images/aca_14.png" alt="">
+                      <p>
+                      <span class="boldsu">권오규 자문위원</span><br>
+                      약사
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="academy_doctor_bigbox h182">
+                    <div class="academy_doctor_smallbox">
+                      <img src="common/images/aca_15.png" alt="">
+                      <p>
+                      <span class="boldsu">정국희 자문위원</span><br>
+                      약사
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="academy_doctor_bigbox h182">
+                    <div class="academy_doctor_smallbox">
+                      <img src="common/images/aca_16.png" alt="">
+                      <p>
+                      <span class="boldsu">유영한 자문위원</span><br>
+                      약사
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="academy_doctor">
+              <p class="academy_doctor_title"><span class="academy_line2">산학협력</span><br>대학</p>
+              <div class="academy_college">
+                <img src="common/images/aca_col.png" alt="">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <h2 class="hid">footer</h2>
+        <div class="wrap">
+          <div class="footer_left">
+            <h2>JOEUN SOCIAL MEDIA</h2>
+            <ul>
+              <li>
+                <a href="http://blog.naver.com/thejoeun3596" target="_blank"><img src="common/images/blog.png" alt="">
+                  NaverBlog
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/joeunvitamin" target="_blank"><img src="common/images/facebook.png" alt="">
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="http://plus.kakao.com/home/@%EB%8D%94%EC%A2%8B%EC%9D%80%EC%B1%84%EC%9A%A9" target="_blank"><img src="common/images/kakao.png" alt="">
+                  KakaoTalk
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer_right">
+            <div class="footer_nav">
+              <ul>
+                <li><a href="footer1.html">개인정보취급방침</a></li>
+                <li><a href="footer2.html">이용약관</a></li>
+                <li><a href="footer3.html">사이트맵</a></li>
+              </ul>
+            </div>
+            <div class="footer_contents">
+            (주)더좋은 대표전화 1577-3596 | 대표메일 vision@joeunvitamin.com<br>
+              통신판매업신고 제2016-용인수지-0212호 | 사업자등록번호 129-86-03767<br>
+              <strong>Copyright ⓒ THE JOEUN All rights reserved.</strong>
+            </div>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>

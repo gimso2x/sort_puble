@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="ko">
+	
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>미래에셋대우</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/plugin/jquery-ui.css">
+	<link rel="stylesheet" href="../css/plugin/swiper.min.css">
+	<link rel="stylesheet" href="../css/plugin/fullpage.css">
+
+	<script src="../js/jquery-1.12.4.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/main.js"></script>
+	<!-- fullpage - 메인 플러그인 -->
+	<script src="../js/plugin/fullpage.js"></script>
+	<!-- // fullpage - 메인 플러그인 -->
+	<!-- swiper - 슬라이더  플러그인 -->
+	<script src="../js/plugin/swiper.min.js"></script>
+	<!-- // swiper - 슬라이더 플러그인 -->
+	<!-- jquery-ui -->
+	<script src="../js/plugin/jquery-ui.min.js"></script>
+	<!-- // jquery-ui -->
+
+
+</head>
+
+<body>
+	<div id="skip_nav" title="스킵메뉴">
+		<a href="#header">헤더</a>
+		<a href="#container">본문</a>
+		<a href="#footer">푸터</a>
+	</div>
+	<div id="wrap" class="main_wrap">
+			
+		<!-- 헤더 -->
+		<header id="header">
+
+			<div class="container_wrap">
+				<h1 class="header_logo">
+					<a href="javascript:void(0);">
+						<img src="../img/common/header_logo.png" alt="미래에셋대우 전자투표 페이지 상단 로고">
+					</a>
+				</h1>
+				<h2></h2>
+				<div class="header_buttonwrap">
+					<div class="form_search">
+						<a href="javascript:void(0);" class="form_search_back"><span class="ir">검색부분 줄이기</span></a>
+						<label><input type="text" name="search" class="input_search" placeholder="회사번호 또는 회사명을 입력하세요"></label>
+						<a href="javascript:void(0)" class="form_search_clear"><span class="ir">검색 텍스트 입력시 클리어 버튼</span></a>
+						<a href="javascript:void(0);" class="btn_search"><span class="ir">검색 input 보여주는버튼</span></a>
+						<button type="button" class="header_btn">검색 조회 버튼</button>
+					</div>
+					<a href="javascript:void(0);" class="btn_user"><span class="ir">유저버튼</span></a>
+					<a href="javascript:void(0);" class="btn_user_logout"><span class="ir">로그아웃버튼</span></a>
+				</div>
+				<!-- gnb -->
+				<div id="gnb">
+					<a href="javascript:void(0);" class="btn_menu"><span class="ir">메뉴 오픈 버튼</span></a>
+					
+				</div>
+				<!-- // gnb -->
+			</div>
+			
+			<div class="gnb_bgwrap">
+				<ul class="gnb_1depth">
+					<li><a href="javascript:void(0);">서비스 소개</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">플랫폼 V란?</a></li>
+							<li><a href="javascript:void(0);">주주(개인,법인) 서비스 가이드</a></li>
+							<li><a href="javascript:void(0);">회사 서비스 가이드</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);">서비스 가입</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">주주(개인, 법인) 서비스 가입</a></li>
+							<li><a href="javascript:void(0);">회사 서비스 가입</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);">주주총회 전체일정</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">주주(개인, 법인) 서비스 가입</a></li>
+							<li><a href="javascript:void(0);">회사 서비스 가입</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);">기업 홍보관</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">주주(개인, 법인) 서비스 가입</a></li>
+							<li><a href="javascript:void(0);">회사 서비스 가입</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);">고객센터</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">공지사항</a></li>
+							<li><a href="javascript:void(0);">자주 묻는 질문</a></li>
+							<li><a href="javascript:void(0);">이벤트</a></li>
+							<li><a href="javascript:void(0);">1:1 문의</a></li>
+							<li><a href="javascript:void(0);">V 자료실</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="gnb_closearea">
+					<a href="javascript:void(0);" class="gnb_menu_close">메뉴닫기</a>
+				</div>
+			</div>
+			
+			<!-- 주주 01-03-01 개인정보 수정 탭 -->
+			<div class="div_header_user_menu">
+				<div class="container_wrap">
+					<a href="javascript:void(0);" class="user_menu_close"><span class="ir">주주,회사 정보메뉴 닫기</span></a>
+					<div class="row">
+						<div class="col fl">
+							<div class="personal_info">
+								<button type="button" class="personal_info_btn">개인정보 설정 버튼</button>
+								<div>
+									<ul class="personal_info_modify">
+										<li><a href="javascript:void(0);">개인정보 수정</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="personal_img_wrap">
+								<img src="../img/common/personal/ico_person_default.jpg" alt="기본프로필 사진" class="profil_person">
+								<img src="../img/common/personal/ico_company_default.jpg" alt="회사프로필 사진" class="profil_company">
+							</div>
+							<p class="personal_info_name">
+								<span>박미래</span>님의 V
+							</p>
+							<p class="personal_number">(회원번호 : 00001 )
+							</p>
+							
+						</div>
+						<div class="col fr">
+							<div class="header_ment">
+								<p>이 달의<br>주주총회</p>
+							</div>
+							<ul>
+								<li>
+									<p>주주총회 결과</p>
+									<a href="javascript:void(0);">24</a>
+								</li>
+								<li>
+									<p>투표/위임 진행</p>
+									<a href="javascript:void(0);">7</a>
+								</li>
+								<li>
+									<p>투표/위임 내역</p>
+									<a href="javascript:void(0);">2</a>
+								</li>
+							</ul>
+							<!-- 프로모션 슬라이드 -->
+							<div class="swiper-container header_promo">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<img src="../img/common/personal/header_promo_1.png">
+									</div>
+									<div class="swiper-slide">
+										<img src="../img/common/personal/header_promo_2.png">
+									</div>
+								</div>
+								<!-- Add Pagination -->
+								<div class="swiper-pagination"></div>
+							</div>
+							<!-- //프로모션 슬라이드 -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 메뉴 탭 -->
+
+			<!-- 자동완성 탭 -->
+			<div class="div_header_add_ajax">
+				<ul>
+					<li><span><a href="javascript:void(0);">00683</a></span><a href="javascript:void(0);">르노<b>삼성</b>자동차</a></li>
+					<li><span><a href="javascript:void(0);">00683</a></span><a href="javascript:void(0);">르노<b>삼성</b>자동차</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>바이오로직스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+				</ul>
+			</div>
+			<!-- // 자동완성 탭 -->
+			
+			<!-- 검색옵션 탭 -->
+			<div class="div_header_add">
+				<div class="div_search_option">
+					<span>기간</span>
+					<label for="from">From</label>
+					<input type="text" id="from" name="from" placeholder="주주총회 시작 일자" onclick="layer_popup('#pop_calendar')">
+					<span>~</span>
+					<label for="to">to</label>
+					<input type="text" id="to" name="to" placeholder="주주총회 종료 일자" onclick="layer_popup('#pop_calendar')">
+					<i class="ico_calendar" onclick="layer_popup('#pop_calendar')"><span class="ir">캘린더 안내 이미지</span></i>
+					<div class="buttonwrap">
+						<button class="btn_default">재설정</button>
+						<button class="btn_submit">조회</button>
+					</div>
+				</div>
+			</div>
+			<!-- //검색옵션 탭 -->
+			
+		</header>
+		<div id="block_allmenu"></div>
+		<!-- // E:헤더 -->
+
+		<!-- 컨테이너 -->
+		<div id="container" class="fullpage">
+			
+			<!-- === page1 === -->
+			<div class="section" id="section1">
+				<!-- background -->
+					<div class="section_bg"></div>
+					<div class="sectionR_bg"></div>
+				<!-- // background -->
+				
+				<!-- animation img -->
+				<img src="../img/main/shareholder_animation.png" alt="주주안내 이미지" class="shareholder_animation">
+				<img src="../img/main/company_animation.png" alt="회사안내 이미지" class="company_animation">
+				<!-- // animation img -->
+				
+				
+				<!-- container_wrap -->
+				<div class="container_wrap">
+					<p class="notice">전자투표/전자위임장 행사기간 : 주주총회일 전일까지 10일간!</p>
+					
+					<!-- section1_text_swiper -->
+					<div class="swiper-container section1_text_swiper">
+						<div class="swiper-wrapper">
+							<!-- slide1 -->
+							<div class="swiper-slide">
+								<p class="sub_p">미래에셋대우가</p>
+								<p class="main_p"><span class="c_orange">플랫폼<i class="ico_main_v">V</i></span>로 <span>전자투표/위임 서비스</span>의<br><span>새
+										지평</span>을 엽니다!</p>
+								<div class="main_count">
+									<dl>
+										<dt>활동 중인 주주</dt>
+										<dd>5.1m</dd>
+									</dl>
+									<dl>
+										<dt>주주총회 진행 회사</dt>
+										<dd>2.4k</dd>
+									</dl>
+									<dl>
+										<dt>올해의 주주총회</dt>
+										<dd>351</dd>
+									</dl>
+								</div>
+							</div>
+							<!-- //slide1 -->
+							
+							<!-- slide2 -->
+							<div class="swiper-slide">
+								<p class="main_p">당신의 소중한 <span class="c_green">한 표</span>가<br>
+								이웃과의 포근한 <span class="c_green">나눔</span>을 만듭니다<span  class="ico_happy_pointb"><i>!</i></span></p>
+								<p class="sub2_p">내 권리를 행사했을 뿐인데, 기부완료?<br>
+									V로 전자투표에 참여하면 기부가 됩니다</p>
+								<a href="https://happybean.naver.com" target="_blank" class="link_a">네이버 해피빈 바로가기</a>
+								<img src="../img/main/main_happybean.png" alt="해피빈 구조 - 해피빈, 주주, 플랫폼 V, 상장사">
+							</div>
+							<!-- // slide2 -->
+							
+							<!-- slide3 -->
+							<div class="swiper-slide">
+								<p class="main_p">
+									<span class="c_sal">모바일</span>에서도<br>
+									전자투표/위임을 <span class="c_sal">간편하게!</span><br>
+									V 모바일을 만나보세요!
+								</p>
+								<p class="sub2_p">오프라인 주주총회에 참석하지 않아도<br>
+									반드시 PC앞에 있지 않아도<br>
+									모바일로 전자투표/위임 서비스를 이용할 수 있어요</p>
+							</div>
+							<!-- // slide3 -->
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+					<!-- // section1_text_swiper -->
+					
+					<!-- dow, kosdaq, nasdaq, kospi 슬라이더 -->
+					<div class="swiper-container stock_info">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<ul>
+									<li class="stock_name">KOSDAQ</li>
+									<li class="stock_score">665.25</li>
+									<li class="stock_percent up">15.87</li>
+								</ul>
+							</div>
+							<div class="swiper-slide">
+								<ul>
+									<li class="stock_name">KOSPI</li>
+									<li class="stock_score">2,085.57</li>
+									<li class="stock_percent up">15.87</li>
+								</ul>
+							</div>
+							<div class="swiper-slide">
+								<ul>
+									<li class="stock_name">DOW</li>
+									<li class="stock_score">21,792.57</li>
+									<li class="stock_percent down">15.87</li>
+								</ul>
+							</div>
+							<div class="swiper-slide">
+								<ul>
+									<li class="stock_name">NASDAQ</li>
+									<li class="stock_score">6192.92</li>
+									<li class="stock_percent">15.87</li>
+								</ul>
+							</div>
+						</div>
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
+					<!-- // dow, kosdaq, nasdaq, kospi 슬라이더 -->
+					
+					<div class="sectionR_wrap">
+						<div class="sectionR_btnarea top">
+							<!-- 로그인전 -->
+							<div class="login_prev_status">
+								<p><b>주주</b>로그인</p>
+								<button type="button">서비스 가입</button>
+							</div>
+							<!-- 주주 로그인 후 -->
+							<div class="login_juju_status">
+								<p><b>박미래</b> 님<br>안녕하세요</p>
+								<button type="button">나의 V 바로가기</button>
+							</div>
+						</div>
+						<div class="sectionR_btnarea bottom">
+							<!-- 로그인 전 -->
+							<div class="login_prev_status">
+								<p><b>회사</b>로그인</p>
+								<button type="button">서비스 가입</button>
+							</div>
+							<!-- 회사 로그인 후 -->
+							<div class="login_company_status">
+								<p><b>미래에셋대우</b> 님<br>안녕하세요</p>
+								<button type="button">나의 V 바로가기</button>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 스크롤 area -->
+					<a class="scroll_area" href="#2">
+						<i class="scroll_l">
+						</i>
+						<i class="scroll_s">
+						</i>
+					</a>
+					<!-- //스크롤 area -->
+					
+				</div>
+				<!-- // container_wrap -->
+			</div>
+			<!-- // === page1 === -->
+			
+			<!-- === page2 === -->
+			<div class="section" id="section2">
+				<!-- background -->
+					<div class="section_bg"></div>
+					<div class="sectionR_bg step2"></div>
+				<!-- // background -->
+				
+				<!-- animation img -->
+					<img src="../img/main/shareholder_animation.png" alt="주주안내 이미지" class="shareholder_animation">
+					<img src="../img/main/company_animation.png" alt="회사안내 이미지" class="company_animation">
+				<!-- // animation img -->
+				
+				<!-- container_wrap -->
+				<div class="container_wrap">
+					<p class="notice">전자투표/전자위임장 행사기간 : 주주총회일 전일까지 10일간!</p>
+					<p class="main_p">
+						<span class="c_orange2">주주<b>는</b> 회사의 주인!</span><br>
+						나의 소중한 권리행사를 <br>
+						안전하고 편리하게 언제 어디서나
+					</p>
+					<ul class="link_img_a">
+						<li><a href="javascript:void(0);">안전하고 스마트한<br><span>전자투표</span></a></li>
+						<li><a href="javascript:void(0);">편리하고 신뢰가는<br><span>전자위임</span></a></li>
+					</ul>
+					<a href="javascript:void(0);" class="link_a">계좌 개설 페이지 바로가기</a>
+					<p class="section2_subp">* 미래에셋대우 고객에게는 주주총회 등 의결권 관련 안내 서비스가 제공되어요</p>
+					
+					<div class="sectionR_wrap step2">
+						<div class="sectionR_btnarea top">
+							<!-- 로그인전 -->
+							<div class="login_prev_status">
+								<p><b>주주</b>로그인</p>
+								<button type="button">서비스 가입</button>
+							</div>
+							<!-- 주주 로그인 후 -->
+							<div class="login_juju_status">
+								<p><b>박미래</b> 님<br>안녕하세요</p>
+								<button type="button">나의 V 바로가기</button>
+							</div>
+						</div>
+						<div class="sectionR_btnarea bottom">
+							<!-- 로그인 전 -->
+							<div class="login_prev_status">
+								<p><b>회사</b>로그인</p>
+								<button type="button">서비스 가입</button>
+							</div>
+							<!-- 회사 로그인 후 -->
+							<div class="login_company_status">
+								<p><b>미래에셋대우</b> 님<br>안녕하세요</p>
+								<button type="button">나의 V 바로가기</button>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 스크롤 area -->
+					<div class="scroll_area">
+						<div class="scroll_l">
+						</div>
+						<div class="scroll_s">
+						</div>
+					</div>
+					<!-- //스크롤 area -->
+				</div>
+				<!-- // container_wrap -->
+				
+			</div>
+			<!-- // === page2 === -->
+			
+			<!-- === page3 === -->
+			<div class="section" id="section3">
+				<!-- background -->
+					<div class="section_bg"></div>
+					<div class="sectionR_bg step3"></div>
+				<!-- // background -->
+				
+				<!-- animation img -->
+					<img src="../img/main/shareholder_animation.png" alt="주주안내 이미지" class="shareholder_animation">
+					<img src="../img/main/company_animation.png" alt="회사안내 이미지" class="company_animation">
+				<!-- // animation img -->
+				
+				<!-- container_wrap -->
+				<div class="container_wrap">
+					<p class="notice">전자투표/전자위임장 행사기간 : 주주총회일 전일까지 10일간!</p>
+					<p class="main_p">
+						<span class="c_skyblue">스마트한 기업<b>이라면</b></span><br>
+						주주의 권리를 존중하는<br>
+						안전하고 스마트한 방법!
+					</p>
+					<p class="section3_subp">자금조달 및 자금운용 등 다양한 기업 컨설팅 V가 함께 합니다.</p>
+					<ul class="link_img_a">
+						<li>
+							<a href="javascript:void(0);" class="section3juju_li">안전하고 스마트한<br><span>주총관리</span></a>
+							<a href="javascript:void(0);" class="section3company_li">안전하고 스마트한<br><span>주총관리</span></a>
+						</li>
+						<li><a href="javascript:void(0);">프리미엄 기업컨설팅<br><span>IB컨설팅</span></a></li>
+					</ul>
+					<a href="mailto:ibplatfom@miraeasset.com" class="link_a">이메일로 문의하기</a>
+					
+					<div class="sectionR_wrap step3">
+						<div class="sectionR_btnarea top">
+							<!-- 로그인전 -->
+							<div class="login_prev_status">
+								<p><b>주주</b>로그인</p>
+								<button type="button">서비스 가입</button>
+							</div>
+							<!-- 주주 로그인 후 -->
+							<div class="login_juju_status">
+								<p><b>박미래</b> 님<br>안녕하세요</p>
+								<button type="button">나의 V 바로가기</button>
+							</div>
+						</div>
+						<div class="sectionR_btnarea bottom">
+							<!-- 로그인 전 -->
+							<div class="login_prev_status">
+								<p><b>회사</b>로그인</p>
+								<button type="button">서비스 가입</button>
+							</div>
+							<!-- 회사 로그인 후 -->
+							<div class="login_company_status">
+								<p><b>미래에셋대우</b> 님<br>안녕하세요</p>
+								<button type="button">나의 V 바로가기</button>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 스크롤 area -->
+					<div class="scroll_area">
+						<div class="scroll_l">
+						</div>
+						<div class="scroll_s">
+						</div>
+					</div>
+					<!-- //스크롤 area -->
+				</div>
+				<!-- // container_wrap -->
+				
+			</div>
+			<!-- // === page3 === -->
+			
+			<!-- === page4 === -->
+			<div class="section" id="section4">
+				<!-- background -->
+					<div class="section_bg"></div>
+					<div class="sectionR_bg"></div>
+				<!-- // background -->
+				
+				<!-- animation img -->
+					<img src="../img/main/shareholder_animation.png" alt="주주안내 이미지" class="shareholder_animation">
+					<img src="../img/main/company_animation.png" alt="회사안내 이미지" class="company_animation">
+				<!-- // animation img -->
+				
+				<!-- container_wrap -->
+				<div class="container_wrap">
+					<p class="notice">전자투표/전자위임장 행사기간 : 주주총회일 전일까지 10일간!</p>
+					<div class="seciont4_div_wrap">
+						<p>주주총회 <span>임박!</span></p>
+						<div class="swiper-container section4_div_swiper">
+							<div class="swiper-wrapper">
+								<!-- 1번 슬라이드 -->
+								<div class="swiper-slide">
+									<div class="box_wrap">
+										<div class="box long none">
+											<span class="vote_dday">D-<b>30</b></span>
+											<p class="vote_status">[<span>투표/위임</span>] 진행중</p>
+											<p class="vote_companyName"><a href="javascript:void(0);">맥쿼리자산운용자산운용</a></p>
+											<p class="vote_day">2019.03.21</p>
+										</div>
+										<div class="box none">
+											<span class="vote_dday">D-<b>30</b></span>
+											<p class="vote_status">[<span>투표/위임</span>] 진행중</p>
+											<p class="vote_companyName"><a href="javascript:void(0);">삼성전자삼성전자삼성전자삼성전자</a></p>
+											<p class="vote_day">2019.03.21</p>
+										</div>
+										<div class="box">
+											<span class="vote_dday">D-<b>30</b></span>
+											<p class="vote_status">[<span>투표/위임</span>] 진행중</p>
+											<p class="vote_companyName"><a href="javascript:void(0);">엘지생활건강</a></p>
+											<p class="vote_day">2019.03.21</p>
+										</div>
+										<div class="box">
+											<span class="vote_dday">D-<b>30</b></span>
+											<p class="vote_status">[<span>투표/위임</span>] 진행중</p>
+											<p class="vote_companyName"><a href="javascript:void(0);">신한금융투자</a></p>
+											<p class="vote_day">2019.03.21</p>
+										</div>
+										<div class="box">
+											<span class="vote_dday">D-<b>30</b></span>
+											<p class="vote_status">[<span>투표/위임</span>] 진행중</p>
+											<p class="vote_companyName"><a href="javascript:void(0);">한화생명</a></p>
+											<p class="vote_day">2019.03.21</p>
+										</div>
+									</div>
+								</div>
+								<!-- // 1번 슬라이드 -->
+								
+								<!-- 2번 슬라이드 -->
+								<div class="swiper-slide">
+									<div class="box_wrap">
+										<div class="box long">
+											<span class="vote_dday">D-<b>30</b></span>
+											<p class="vote_status">[<span>투표/위임</span>] 진행중</p>
+											<p class="vote_companyName"><a href="javascript:void(0);">맥쿼리자산운용자산운용</a></p>
+											<p class="vote_day">2019.03.21</p>
+										</div>
+										<div class="box">
+											<span class="vote_dday">D-<b>30</b></span>
+											<p class="vote_status">[<span>투표/위임</span>] 진행중</p>
+											<p class="vote_companyName"><a href="javascript:void(0);">삼성전자삼성전자삼성전자삼성전자</a></p>
+											<p class="vote_day">2019.03.21</p>
+										</div>
+										<div class="box">
+											<span class="vote_dday">D-<b>30</b></span>
+											<p class="vote_status">[<span>투표/위임</span>] 진행중</p>
+											<p class="vote_companyName"><a href="javascript:void(0);">엘지생활건강</a></p>
+											<p class="vote_day">2019.03.21</p>
+										</div>
+										<div class="box">
+											<span class="vote_dday">D-<b>30</b></span>
+											<p class="vote_status">[<span>투표/위임</span>] 진행중</p>
+											<p class="vote_companyName"><a href="javascript:void(0);">신한금융투자</a></p>
+											<p class="vote_day">2019.03.21</p>
+										</div>
+										<div class="box">
+											<span class="vote_dday">D-<b>30</b></span>
+											<p class="vote_status">[<span>투표/위임</span>] 진행중</p>
+											<p class="vote_companyName"><a href="javascript:void(0);">한화생명</a></p>
+											<p class="vote_day">2019.03.21</p>
+										</div>
+									</div>
+								</div>
+								<!-- // 2번 슬라이드 -->
+							</div>
+							<div class="swiper-pagination"></div>
+							<div class="swiper-button-next swiper-button-white"></div>
+							<div class="swiper-button-prev swiper-button-white"></div>
+						</div>
+					</div>
+					<div class="sectionR_wrap">
+						<div class="sectionR_btnarea top">
+							<!-- 로그인전 -->
+							<div class="login_prev_status">
+								<p><b>주주</b>로그인</p>
+								<button type="button">서비스 가입</button>
+							</div>
+							<!-- 주주 로그인 후 -->
+							<div class="login_juju_status">
+								<p><b>박미래</b> 님<br>안녕하세요</p>
+								<button type="button">나의 V 바로가기</button>
+							</div>
+						</div>
+						<div class="sectionR_btnarea bottom">
+							<!-- 로그인 전 -->
+							<div class="login_prev_status">
+								<p><b>회사</b>로그인</p>
+								<button type="button">서비스 가입</button>
+							</div>
+							<!-- 회사 로그인 후 -->
+							<div class="login_company_status">
+								<p><b>미래에셋대우</b> 님<br>안녕하세요</p>
+								<button type="button">나의 V 바로가기</button>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 스크롤 area -->
+					<div class="scroll_area">
+						<div class="scroll_l">
+						</div>
+						<div class="scroll_s">
+						</div>
+					</div>
+					<!-- //스크롤 area -->
+				</div>
+				<!-- // container_wrap -->
+				
+			</div>
+			<!-- // === page4 === -->
+			
+			<!-- === page5 === -->
+			<div class="section fp-auto-height" id="section5">
+				<!-- 푸터 -->
+		        <footer id="footer">
+		            <div class="container_wrap">
+		                <div class="text_area">
+		                    <ul class="footer_gnb">
+		                        <li><a href="javascript:void(0);">회사소개</a></li>
+		                        <li><a href="javascript:void(0);">이용약관</a></li>
+		                        <li><a href="javascript:void(0);">개인정보취급처리방침</a></li>
+		                        <li><a href="javascript:void(0);">저작권보호방침</a></li>
+		                        <li><a href="javascript:void(0);">PC보안프로그램</a></li>
+		                        <li class="mail"><a href="mailto:ibplatform@miraeasset.com">ibplatform@miraeasset.com</a></li>
+		                    </ul>
+		                    <p class="copyright">COPYRIGHT 2018 MIRAE ASSET DAEWOO CO., LTD. ALL RIGHTS RESERVED</p>
+		                </div>
+		                <div class="footer_info">
+		                    <dl class="fl">
+		                    	<dt>고객센터</dt>
+		                    	<dd>1588-6800</dd>
+		                    </dl>
+		                    <dl class="fr">
+		                    	<dt>고객케어센터</dt>
+		                    	<dd>1644-3322</dd>
+		                    </dl>
+		                </div>
+		            </div>
+		        </footer>
+        		<!-- // E:푸터 -->
+			</div>
+			<!-- // === page5 === -->
+			
+		</div>
+		<!-- // E:컨테이너 -->
+	</div>
+	
+<!-- 	비대면 계좌 개설 이벤트 팝업 -->
+	<div class="promo_cont">
+		<div class="promo_top">
+			<a href="https://www.miraeassetdaewoo.com/hka/hka1001/n01.do" target="_blank">
+				<img src="../img/main/img_main_promo.png" alt="비대면 계좌 개설 이벤트">
+			</a>	
+		</div>
+		<div class="promo_bot">
+			<label><input type="checkbox">오늘 다시보지 않기</label>
+			<a href="javascript:void(0);" class="promo_close">닫기</a>
+		</div>
+	</div>
+<!-- // 비대면 계좌 개설 이벤트 팝업 -->
+<script>
+	<!-- 모바일 배너 -->
+	$(document).ready(function() {
+		
+		$(".promo_bot").on("click", ".promo_close", function() {
+			if($(".promo_bot input[type='checkbox']").is(":checked")) {
+				setCookieMobile( "todayCookiePc", "done" , 1);
+			}
+			$(".promo_cont").hide();//배너 hide
+		});
+		
+		$(window).on("scroll resize"), function() {
+			var offsetLeft = $(".container_wrap").offset().left + 26;
+			$(".promo_cont").css("left",offsetLeft);
+		};
+		
+	});
+	 
+	function setCookieMobile ( name, value, expiredays ) {
+	    var todayDate = new Date();
+	    todayDate.setDate( todayDate.getDate() + expiredays );
+// 	    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+	    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate + ";";
+	}
+	function getCookieMobile () {
+	    var cookiedata = document.cookie;
+	    var offsetLeft = $(".container_wrap").offset().left + 26;
+	    if ( cookiedata.indexOf("todayCookiePc=done") < 0 ){
+			$(".promo_cont").show().css("left",offsetLeft);//배너 show$()
+	    }
+	    else {
+			$(".promo_cont").hide();//배너 hide
+	    }
+	}
+	getCookieMobile();
+	<!-- 모바일 배너 -->
+</script>
+
+	<!-- 레이어팝업 -->
+	<div class="layer_wrap">
+		<div id="pop_calendar" class="pop-layer">
+			<a href="javascript:void(0);" class="btn_close">닫기</a>
+			<div class="pop-container">
+				<div class="cal_left">
+					<p>주주총회 시작 일자</p>
+					<div id="from_calendar"></div>
+				</div>
+				<div class="cal_right">
+					<p>주주총회 종료 일자</p>
+					<div id="to_calendar"></div>
+				</div>
+			</div>
+			<div class="button_wrap">
+				<button class="btn_submit" id="cal_complete">기간 선택 완료</button>
+			</div>
+		</div>
+	</div>
+	<!-- // 레이어팝업 -->
+	<script>
+		var footerflag = true;
+		// fullpage
+		$('.fullpage').fullpage({
+			continuousVertical: false,
+			scrollBar: true,
+			// resetSliders: true,
+			responsiveWidth: 1366,
+			anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+			// scrollOverflow: true,
+			navigationTooltips: ['V', '주주', '발행회사', '일정'],
+			afterLoad: function (sectionIndex) {
+				//using index
+				if (sectionIndex == "page2") {
+					if($("#header").hasClass("bg_shareholder") || $("#header").hasClass("bg_company")) {
+							
+					}else {
+						$(this).find(".shareholder_animation").slideDown("slow");
+					}
+					
+				}
+				if (sectionIndex == "page3") {
+					if($("#header").hasClass("bg_shareholder") || $("#header").hasClass("bg_company")) {
+						
+					}else {
+						var docWidth = $(window).width();
+						var docHeight = $(window).height();
+
+						var ratio = docWidth / docHeight;
+						var rightPer = "";
+						if(ratio > 2) {
+							rightPer = "19%";
+						} else if (ratio> 1.5) {
+							rightPer = "11%";
+						} else if (ratio > 1 ) {
+							rightPer = "5%";
+						} else {
+							rightPer = "0";
+						}
+						
+						$(this).find(".company_animation").animate({
+							right: rightPer,
+							opacity: 1
+						}, 1000);
+					}
+				}
+				
+				if (sectionIndex == "page5") {
+					if($("#header").hasClass("moiusein")) {
+						footerflag = false;
+					};
+					$("#header").addClass("moiusein");
+				}
+				
+				$(this).find(".main_p").addClass("text_spin");
+				$(this).find(".sub_p").addClass("text_spin");
+			},
+			onLeave: function (sectionIndex) {
+				if(sectionIndex == 5) {
+					/* 헤더 색 변경 */
+					if(!footerflag) {
+						footerflag = true;
+					}else {
+						$("#header").removeClass("moiusein");
+					}
+				}
+				
+				$(".main_p").removeClass("text_spin");
+				$(".sub_p").removeClass("text_spin");
+				
+				if($("#header").hasClass("bg_shareholder") || $("#header").hasClass("bg_company")) {
+					
+				}else {
+					$(".shareholder_animation").fadeOut();
+					$(".company_animation").animate({
+						opacity: 0,
+						right: 0
+					});
+				}
+			}
+		})
+		
+		//	dow, kosdaq, nasdaq, kospi 슬라이더
+		var stock_info = new Swiper('.stock_info', {
+			direction: 'vertical',
+			autoplay: {
+				delay: 4000,
+				disableOnInteraction: false,
+			},
+			loop: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			allowTouchMove: false
+		});
+		
+		<!-- 이벤트 배너 -->
+		$(document).ready(function() {
+			$(".mainEvent_banner").on("click", ".mainEvent_close", function() {
+				if($(".mainEvent_bot input[type='checkbox']").is(":checked")) {
+					setCookieMobile( "todayCookie", "done" , 9999);
+				}
+				$(".mainEvent_banner").hide();//배너 hide
+			});
+		});
+		 
+		function setCookieMobile ( name, value, expiredays ) {
+			var todayDate = new Date();
+			todayDate.setDate( todayDate.getDate() + expiredays );
+			document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+		}
+		function getCookieMobile () {
+			var cookiedata = document.cookie;
+			if ( cookiedata.indexOf("todayCookie=done") < 0 ){
+				if($(window).scrollTop() == 0) {
+					$(".mainEvent_banner").show();//mainEvent_banner show
+					var mainEvent_swiper = new Swiper('.mainEvent_swiper', {
+						autoplay: {
+							delay: 4000,
+							disableOnInteraction: false,
+						},
+						loop: true,
+						pagination: {
+							el: '.swiper-pagination',
+							clickable: true,
+						},
+					});
+				}else {
+					$(".mainEvent_banner").hide();//mainEvent_banner hide
+				}
+			}
+			else {
+				$(".mainEvent_banner").hide();//mainEvent_banner hide
+			}
+		}
+		getCookieMobile();
+		<!-- // 이벤트 배너 -->
+		
+// 		scrollTop
+		scrollFade();
+
+		$(window).on('scroll resize', function(){
+			scrollFade();
+		});
+
+		$('#goTop').on('click', function(){
+			$("html, body").animate({ scrollTop: 0 }, 600);
+			return false;
+		});
+
+		function scrollFade(){
+			if($(this).scrollTop() > 100){
+				$('#goTop').fadeIn();
+			}else{
+				$('#goTop').fadeOut();
+			}
+		}
+// 		scrollTop
+
+
+	</script>
+</body>
+
+</html>

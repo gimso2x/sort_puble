@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
+	<title>사입삼촌 파일경로</title>
+	<link rel="stylesheet" href="css/normalize.css">
+    	<link rel="stylesheet" href="css/filepath.css">
+
+    <style type="text/css">
+    	body{font-family:'맑은 고딕','Malgun Gothic','나눔고딕','NanumGothic','돋움',dotum, Helvetica, sans-serif;font-size:12px;line-height:1.42857143;color:#333333;background-color:#ffffff;}
+    	#container{margin:0 auto;padding:0 20px;}
+    	.page_header{font-size:14px;font-weight:normal;padding:10px;}
+    	/*.table tbody + tbody{border-top:2px solid #ddd;}*/
+
+    	#container_guide{/*margin:0 auto;*/width:650px;}
+    	.sec{padding-top:30px;}
+    	.sec.on .group_ex{display:block;}
+    	.sec.on .caret{content:"";border-top: 0;border-bottom: 4px solid;}
+
+    	.page_header{margin-bottom:15px;border-bottom:1px solid #eee}
+			.group_ex{/*display:none;*/border:1px solid #ddd;}
+			.group_ex .ex_view{padding:10px;border-bottom:1px solid #ddd;}
+			.group_ex .ex_code{padding:10px;background-color:#f7f7f9;}
+
+			.group_view{position:relative;}
+			input, textarea { color: #000; }
+			.placeholder { color: #ea0000; }
+    </style>
+</head>
+<body>
+<div id="wrap">
+	<div id="container">
+		<h2 class="page_header clearfix">
+			<strong class="pull_left">사입삼촌</strong>
+			<span class="pull_right">2017.12</span>
+		</h2>
+
+		<div role="tabpanel">
+			<ul class="nav nav_tabs clearfix" role="tablist">
+				<li role="presentation" class="active"><a href="#tab_filepath" aria-controls="tab_filepath" role="tab" data-toggle="tab">Filepath</a></li>
+				<!-- <li role="presentation"><a href="#tab_styleguide" aria-controls="tab_styleguide" role="tab" data-toggle="tab">Style guide</a></li> -->
+			</ul>
+			<div class="tab_content">
+				<div role="tabpanel" class="tab_pane active" id="tab_filepath">
+					<div class="table_wrap table_responsive mt15">
+						<table class="table table_hover table_condensed" style="min-width:1200px">
+							<caption class="sr_only">no,depth1,depth2,depth3,etc 정보제공</caption>
+							<colgroup>
+								<col width="5%">
+								<col width="10%">
+								<col width="10%">
+								<col width="10%">
+								<col width="25%">
+								<col width="*">
+								<col width="10%">
+							</colgroup>
+							<thead>
+								<tr class="">
+									<th scope="col" colspan="7">로그인, 회원가입</th>
+								</tr>
+								<tr class="">
+									<th scope="col">no</th>
+									<th scope="col">depth1</th>
+									<th scope="col">depth2</th>
+									<th scope="col">depth3</th>
+									<th scope="col" class="warning">url</th>
+									<th scope="col">etc</th>
+									<th scope="col">퍼블완료일자</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Login</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/login.html" target="_blank">login.html</a></td>
+									<td>로그인 화면</td>
+									<td>17/12/12</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Login_warning</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/login_warning.html" target="_blank">login_warning.html</a></td>
+									<td>로그인 화면 - 아이디 비밀번호 확인 문구 출력</td>
+									<td>17/12/12</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Join</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/join.html" target="_blank">join.html</a></td>
+									<td>회원가입 화면</td>
+									<td>17/12/12</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Join_warning</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/join_warning.html" target="_blank">join_warning.html</a></td>
+									<td>회원가입 화면 - 아이디 비밀번호 확인 문구 출력</td>
+									<td>17/12/12</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>Join_도매팝업</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/join_pop.html" target="_blank">join_pop.html</a></td>
+									<td>회원가입 화면 - 도매팝업</td>
+									<td>17/12/12</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>아이디찾기</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/find_id.html" target="_blank">find_id.html</a></td>
+									<td>아이디 찾기</td>
+									<td>17/12/14</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>아이디찾기</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/find_id_warning.html" target="_blank">find_id_warning.html</a></td>
+									<td>아이디 찾기 - 해당사용자 정보 존재 X문구 표시</td>
+									<td>17/12/14</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>비밀번호찾기</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/find_pwd.html" target="_blank">find_pwd.html</a></td>
+									<td>비밀번호 찾기</td>
+									<td>17/12/14</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>비밀번호찾기</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/find_pwd_warning.html" target="_blank">find_pwd_warning.html</a></td>
+									<td>비밀번호 찾기 - 해당사용자 정보 존재 X문구 표시</td>
+									<td>17/12/14</td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>아이디찾기_결과완료</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/find_id_result.html" target="_blank">find_id_result.html</a></td>
+									<td>아이디찾기_결과완료</td>
+									<td>17/12/14</td>
+								</tr>
+								<tr>
+									<td>11</td>
+									<td>비밀번호찾기_결과완료</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/find_pwd_result.html" target="_blank">find_pwd_result.html</a></td>
+									<td>비밀번호찾기_결과완료</td>
+									<td>17/12/14</td>
+								</tr>
+								<tr>
+									<td>12</td>
+									<td>마이페이지</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/mypage.html" target="_blank">mypage.html</a></td>
+									<td>마이페이지 화면</td>
+									<td>18/01/02</td>
+								</tr>
+								<tr>
+									<td>13</td>
+									<td>마이페이지_수정</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="login/mypage_modify.html" target="_blank">mypage_modify.html</a></td>
+									<td>마이페이지_수정 화면</td>
+									<td>18/01/02</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="table_wrap table_responsive mt15">
+						<table class="table table_hover table_condensed" style="min-width:1200px">
+							<caption class="sr_only">no,depth1,depth2,depth3,etc 정보제공</caption>
+							<colgroup>
+								<col width="5%">
+								<col width="10%">
+								<col width="10%">
+								<col width="10%">
+								<col width="25%">
+								<col width="*">
+								<col width="10%">
+							</colgroup>
+							<thead>
+								<tr class="">
+									<th scope="col" colspan="7">메인</th>
+								</tr>
+								<tr class="">
+									<th scope="col">no</th>
+									<th scope="col">depth1</th>
+									<th scope="col">depth2</th>
+									<th scope="col">depth3</th>
+									<th scope="col" class="warning">url</th>
+									<th scope="col">etc</th>
+									<th scope="col">퍼블완료일자</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>main</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="main/main.html" target="_blank">main.html</a></td>
+									<td>메인화면 - 비로그인 상태</td>
+									<td>17/12/12</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>main_pop</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="main/main_pop.html" target="_blank">main_pop.html</a></td>
+									<td>메인화면 - 비로그인 상태 - 전체메뉴 팝업(모바일시)</td>
+									<td>17/12/12</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>main_logout</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="main/main_logout.html" target="_blank">main_logout.html</a></td>
+									<td>메인화면 - 로그인 상태</td>
+									<td>17/12/12</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>main_logout_소매pop</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="main/main_logout_소매pop.html" target="_blank">main_logout_소매pop.html</a></td>
+									<td>메인화면 - 로그인 상태_소매회원_팝업(모바일시)</td>
+									<td>17/12/12</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>main_logout_사입관리자pop</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="main/main_logout_사입관리자pop.html" target="_blank">main_logout_사입관리자pop.html</a></td>
+									<td>메인화면 - 로그인 상태_사입관리자_팝업(모바일시)</td>
+									<td>17/12/12</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>main_logout_도매pop</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="main/main_logout_도매pop.html" target="_blank">main_logout_도매pop.html</a></td>
+									<td>메인화면 - 로그인 상태_도매_팝업(모바일시)</td>
+									<td>17/12/12</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>main_logout_사입삼촌pop</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="main/main_logout_사입삼촌pop.html" target="_blank">main_logout_사입삼촌pop.html</a></td>
+									<td>메인화면 - 로그인 상태_사입삼촌_팝업(모바일시)</td>
+									<td>17/12/12</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>공지사항_리스트</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="main/notice.html" target="_blank">notice.html</a></td>
+									<td>공지사항_리스트</td>
+									<td>17/12/14</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>공지사항_View</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="main/notice_view.html" target="_blank">notice_view.html</a></td>
+									<td>공지사항_View</td>
+									<td>17/12/14</td>
+								</tr>
+							</tbody>
+
+						</table>
+					</div>
+
+					<div class="table_wrap table_responsive mt15">
+						<table class="table table_hover table_condensed" style="min-width:1200px">
+							<caption class="sr_only">no,depth1,depth2,depth3,etc 정보제공</caption>
+							<colgroup>
+								<col width="5%">
+								<col width="10%">
+								<col width="10%">
+								<col width="10%">
+								<col width="25%">
+								<col width="*">
+								<col width="10%">
+							</colgroup>
+							<thead>
+								<tr class="">
+									<th scope="col" colspan="7">소매</th>
+								</tr>
+								<tr class="">
+									<th scope="col">no</th>
+									<th scope="col">depth1</th>
+									<th scope="col">depth2</th>
+									<th scope="col">depth3</th>
+									<th scope="col" class="warning">url</th>
+									<th scope="col">etc</th>
+									<th scope="col">퍼블완료일자</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>소매_주문하기_주문전</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="sm/소매_주문하기_주문전.html" target="_blank">소매_주문하기_주문전.html</a></td>
+									<td>소매_주문하기_주문전 화면</td>
+									<td>17/12/18</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>소매_주문하기_파일등록후</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="sm/소매_주문하기_파일등록후.html" target="_blank">소매_주문하기_파일등록후.html</a></td>
+									<td>소매_주문하기_파일등록후 화면</td>
+									<td>17/12/18</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>소매_주문하기_파일등록후_사입관리자팝업</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="sm/소매_주문하기_파일등록후_사입관리자팝업.html" target="_blank">소매_주문하기_파일등록후_사입관리자팝업.html</a></td>
+									<td>소매_주문하기_파일등록후_사입관리자팝업 화면</td>
+									<td>17/12/18</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>소매_주문하기_파일등록후_메모팝업</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="sm/소매_주문하기_파일등록후_메모팝업.html" target="_blank">소매_주문하기_파일등록후_메모팝업.html</a></td>
+									<td>소매_주문하기_파일등록후_메모팝업 화면</td>
+									<td>17/12/18</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>소매_주문하기_주문후</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="sm/소매_주문하기_주문후.html" target="_blank">소매_주문하기_주문후.html</a></td>
+									<td>소매_주문하기_주문후 화면</td>
+									<td>17/12/18</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>소매_주문하기_주문조회</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="sm/소매_주문하기_주문조회.html" target="_blank">소매_주문하기_주문조회.html</a></td>
+									<td>소매_주문하기_주문조회 화면</td>
+									<td>17/12/18</td>
+								</tr>
+							</tbody>
+
+						</table>
+					</div>
+					<div class="table_wrap table_responsive mt15">
+						<table class="table table_hover table_condensed" style="min-width:1200px">
+							<caption class="sr_only">no,depth1,depth2,depth3,etc 정보제공</caption>
+							<colgroup>
+								<col width="5%">
+								<col width="10%">
+								<col width="10%">
+								<col width="10%">
+								<col width="25%">
+								<col width="*">
+								<col width="10%">
+							</colgroup>
+							<thead>
+								<tr class="">
+									<th scope="col" colspan="7">사입관리자</th>
+								</tr>
+								<tr class="">
+									<th scope="col">no</th>
+									<th scope="col">depth1</th>
+									<th scope="col">depth2</th>
+									<th scope="col">depth3</th>
+									<th scope="col" class="warning">url</th>
+									<th scope="col">etc</th>
+									<th scope="col">퍼블완료일자</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>소매_주문하기_주문전</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="sg/사입관리자_주문관리_도매기준.html" target="_blank">사입관리자_주문관리_도매기준.html</a></td>
+									<td>사입관리자_주문관리_도매기준 화면</td>
+									<td>17/12/19</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>사입관리자_주문조회_도매기준</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="sg/사입관리자_주문조회_도매기준.html" target="_blank">사입관리자_주문조회_도매기준.html</a></td>
+									<td>사입관리자_주문조회_도매기준 화면</td>
+									<td>17/12/19</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>사입관리자_삼촌관리</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="sg/사입관리자_삼촌관리.html" target="_blank">사입관리자_삼촌관리.html</a></td>
+									<td>사입관리자_삼촌관리 화면</td>
+									<td>17/12/19</td>
+								</tr>
+
+							</tbody>
+
+						</table>
+					</div>
+					<div class="table_wrap table_responsive mt15">
+						<table class="table table_hover table_condensed" style="min-width:1200px">
+							<caption class="sr_only">no,depth1,depth2,depth3,etc 정보제공</caption>
+							<colgroup>
+								<col width="5%">
+								<col width="10%">
+								<col width="10%">
+								<col width="10%">
+								<col width="25%">
+								<col width="*">
+								<col width="10%">
+							</colgroup>
+							<thead>
+								<tr class="">
+									<th scope="col" colspan="7">도매</th>
+								</tr>
+								<tr class="">
+									<th scope="col">no</th>
+									<th scope="col">depth1</th>
+									<th scope="col">depth2</th>
+									<th scope="col">depth3</th>
+									<th scope="col" class="warning">url</th>
+									<th scope="col">etc</th>
+									<th scope="col">퍼블완료일자</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>소매_주문하기_주문전</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="dm/도매_주문관리_소매기준.html" target="_blank">도매_주문관리_소매기준.html</a></td>
+									<td>도매_주문관리_소매기준 화면</td>
+									<td>17/12/19</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>도매_주문조회</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="dm/도매_주문조회.html" target="_blank">도매_주문조회.html</a></td>
+									<td>도매_주문조회 화면</td>
+									<td>17/12/19</td>
+								</tr>
+
+
+							</tbody>
+
+						</table>
+					</div>
+					<div class="table_wrap table_responsive mt15">
+						<table class="table table_hover table_condensed" style="min-width:1200px">
+							<caption class="sr_only">no,depth1,depth2,depth3,etc 정보제공</caption>
+							<colgroup>
+								<col width="5%">
+								<col width="10%">
+								<col width="10%">
+								<col width="10%">
+								<col width="25%">
+								<col width="*">
+								<col width="10%">
+							</colgroup>
+							<thead>
+								<tr class="">
+									<th scope="col" colspan="7">삼촌</th>
+								</tr>
+								<tr class="">
+									<th scope="col">no</th>
+									<th scope="col">depth1</th>
+									<th scope="col">depth2</th>
+									<th scope="col">depth3</th>
+									<th scope="col" class="warning">url</th>
+									<th scope="col">etc</th>
+									<th scope="col">퍼블완료일자</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>삼촌_최초로그인</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="sc/삼촌_최초로그인.html" target="_blank">삼촌_최초로그인.html</a></td>
+									<td>삼촌_최초로그인 화면</td>
+									<td>17/12/19</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>삼촌_최초로그인_warning</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="sc/삼촌_최초로그인_warning.html" target="_blank">삼촌_최초로그인_warning.html</a></td>
+									<td>삼촌_최초로그인_warning 화면</td>
+									<td>17/12/19</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>삼촌_오늘의사입_도매기준</td>
+									<td></td>
+									<td></td>
+									<td class="warning"><a href="sc/삼촌_오늘의사입_도매기준.html" target="_blank">삼촌_오늘의사입_도매기준.html</a></td>
+									<td>삼촌_오늘의사입_도매기준 화면</td>
+									<td>17/12/19</td>
+								</tr>
+
+							</tbody>
+
+						</table>
+					</div>
+
+
+				</div>
+				<div role="tabpanel" class="tab_pane" id="tab_styleguide"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/vendor/jquery-1.12.0.min.js"></script>
+</body>
+</html>

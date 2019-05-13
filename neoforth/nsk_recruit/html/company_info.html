@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NSK 채용사이트</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/common.js"></script>
+
+</head>
+
+<body>
+<!-- 헤더 -->
+<header>
+    <h1>
+        <a href="main.html">
+            <img src="../img/nsk_logo.png" alt="NSK 채용사이트">
+        </a>
+    </h1>
+    <nav>
+        <ul class="clearfix">
+            <li>
+                <a href="company_info.html" class="active">회사소개</a>
+                <ul class="depth">
+                    <li>
+                        <a href="company_info.html">비전</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#history_tit">연혁</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#area_tit">사업분야</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#nsk_strong">NSK의 강점</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#org">조직도</a>
+                    </li>
+                    <li>
+                        <a href="main.html#number_NSK">숫자로 보는 NSK</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="people.html">인재상</a>
+                <ul class="depth">
+                    <li>
+                        <a href="people.html">인재상</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="hr.html">인사제도</a>
+                <ul class="depth">
+                    <li>
+                        <a href="hr.html#hr_intro">직무소개</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_system">직급체계</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_wel">복리후생</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="recruit.html">채용정보</a>
+                <ul class="depth">
+                    <li>
+                        <a href="recruit.html#recruit_notice">채용공고</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_step">채용절차</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_apply">입사지원</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <span class="view_button">입사지원</span>
+    <input class="nav-toggle" id="nav-toggle" type="checkbox">
+    <label class="navicon all_nav" for="nav-toggle">
+        <span class="navicon-bar"></span>
+    </label>
+    <div class="all_menu">
+        <ul class="clearfix">
+            <li class="total_menu">
+                <a href="javascript:void(0);" class="depth1">전체메뉴</a>
+                <i class="mobile_close"></i>
+            </li>
+            <li>
+                <p class="depth1"><a href="company_info.html">회사소개</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="company_info.html">비전</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#history_tit">연혁</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#area_tit">사업분야</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#nsk_strong">NSK의 강점</a>
+                    </li>
+                    <li>
+                        <a href="company_info.html#org">조직도</a>
+                    </li>
+                    <li>
+                        <a href="main.html#number_NSK">숫자로 보는 NSK</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="depth1"><a href="people.html">인재상</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="people.html">인재상</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="depth1"><a href="hr.html">인사제도</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="hr.html#hr_intro">직무소개</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_system">직급체계</a>
+                    </li>
+                    <li>
+                        <a href="hr.html#hr_wel">복리후생</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="depth1"><a href="recruit.html">채용정보</a>
+                    <i></i>
+                </p>
+                <ul class="ul_depth2">
+                    <li>
+                        <a href="recruit.html#recruit_notice">채용공고</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_step">채용절차</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="recruit.html#recruit_apply">입사지원</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- 모바일메뉴 -->
+    <a href="javascript:void(0);" class="mobile_menu">
+    </a>
+    <div class="dim-layer">
+        <div class="dimBg"></div>
+        <div class="pop_menu">
+            <div class="pop_menu_content">
+            </div>
+        </div>
+    </div>
+    <!-- // 모바일메뉴 -->
+</header>
+<!-- // 헤더 -->
+
+    <!-- 컨테이너 -->
+    <div id="container">
+        <section id="company_visual">
+            <div class="img_wrap">
+                <p class="tit">회사소개</p>
+                <p class="semi_tit">비전</p>
+                <p class="detail1">
+                    <span>한국NSK</span>는 베어링 산업의 미래가치를 창출하기 위해 끊임없는 외적 성장과 내적 혁신을 이루어 왔습니다.</p>
+                <p class="detail2">세계 최고의 기업을 향한 미래의 꿈을 품고, 고객과 기업, 사회 구성원 모두가 더 나은 미래의 결실을 함께 공유하는 그날까지, 한국NSK의 변화와 도전은 계속될 것입니다.</p>
+                <img src="../img/company_vision.png" alt="새로운 움직임을 만든다">
+            </div>
+        </section>
+        <section id="history_tit">
+            <div class="container">
+                <div class="semi_tit">연혁</div>
+            </div>
+        </section>
+        <section id="history">
+            <div class="container">
+                <p class="his_tit">한국 NSK의 30년 발자취</p>
+                <p class="his_det">1987년, 한국NSK는 한화기계와 일본의 NSK가 합작 투자해 만든 베어링 생산 전문 기업으로 출발했습니다. 설립 당시 수입에만 의존하던 소경정밀베어링을 국산화해 국익 창출과 기술 혁신을
+                    이루는 등 괄목할 만한 성장을 나타냈습니다. 한국NSK는 1997년 IMF 이후 한화기계가 회사 지분 절반을 NSK에 매각하면서 NSK의 자회사가 되면서 또 다른 변화를 맞이했다.
+                    국내를 넘어 세계적 베어링 생산 전문기업으로 도약하 는 발판을 마련한 것입니다. 어느덧 창립 30주년을 맞이한 한국NSK의 어제와 오늘의 발자취 입니다.
+                </p>
+            </div>
+        </section>
+        <section id="history_year">
+            <div class="container">
+                <div class="floatwrap clearfix">
+                    <div class="floatL">
+                        <table>
+                            <tbody>
+                                <tr class="topp_tr">
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="impact yy first">
+                                    <td>2017.10</td>
+                                    <td>
+                                        <span class="first">천안공장 준공식</span>
+                                    </td>
+                                </tr>
+                                <tr class="impact">
+                                    <td>09</td>
+                                    <td>
+                                        <span class="small">창립30주년</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>02</td>
+                                    <td>
+                                        <span class="small">천안공장 준공</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>2016.02</td>
+                                    <td>
+                                        <span>천안공장 착공</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>2015.05</td>
+                                    <td>
+                                        <span>충남도-NSK 투자 협약 체결</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>2012.12</td>
+                                    <td>
+                                        <span>Tapered Roller Bearing, Cage&amp;Roller Bearing 생산개시</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>09</td>
+                                    <td>
+                                        <span class="small">제3공장동 준공</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>2011.06</td>
+                                    <td>
+                                        <span>한국기술센터(KTC) 신축 및 확장 이전</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>04</td>
+                                    <td>
+                                        <span class="small">양산물류센터 확장 이전</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>2010.09</td>
+                                    <td>
+                                        <span>Linear Guide 생산 게시</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>2007.09</td>
+                                    <td>
+                                        <span>창립20주년</span>
+                                    </td>
+                                </tr>
+                                <tr class="impact yy">
+                                    <td>2006.04</td>
+                                    <td>
+                                        <span>생산설비 Overhaul 개시</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>03</td>
+                                    <td>
+                                        <span class="small">Compressor Needle Bearing 생산개시</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>2005.06</td>
+                                    <td>
+                                        <span>ISO/TS16949 인증 획득 (DNV)</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>2004.03</td>
+                                    <td>
+                                        <span>Water Pump Bearing 생산개시</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy last">
+                                    <td>2002.03</td>
+                                    <td>
+                                        <span class="last">한국기술센터(KTC) 개소</span>
+                                    </td>
+                                </tr>
+                                <tr class="botp_tr">
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="floatR">
+                        <table>
+                            <tbody>
+                                <tr class="topp_tr">
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="yy first">
+                                    <td>2001.04</td>
+                                    <td>
+                                        <span class="first">노사단합 체육대회 개최</span>
+                                    </td>
+                                </tr>
+                                <tr class="impact">
+                                    <td>03</td>
+                                    <td>
+                                        <span class="small">창원공장 내 베어링기술센터 개소</span>
+                                    </td>
+                                </tr>
+                                <tr class="impact yy">
+                                    <td>2000.05</td>
+                                    <td>
+                                        <span>일반 깊은홈 Ball Bearing 생산개시</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>1999.12</td>
+                                    <td>
+                                        <span>QS-9000인증 (DNV)</span>
+                                    </td>
+                                </tr>
+                                <tr class="impact yy">
+                                    <td>1998.03</td>
+                                    <td>
+                                        <span>한국NSK주식회사로 사명변경(NSK 100%)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>
+                                        <span class="small">NSK 50% 지분 인수(NSK 100%)</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>1997.12</td>
+                                    <td>
+                                        <span>ISO-14001인증 (KSA/QA)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>09</td>
+                                    <td>
+                                        <span class="small">창립10주년</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <span class="small">품질경쟁력최우수 100대 기업선정</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>1996.05</td>
+                                    <td>
+                                        <span>ISO-9002인증 (DNV)</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>1995.09</td>
+                                    <td>
+                                        <span>제2공장동 준공</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <span class="small">복열 Ball Bearing 생산개시</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>1994.07</td>
+                                    <td>
+                                        <span>생산성대상 국무총리상 수상</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>1993.11</td>
+                                    <td>
+                                        <span>Needle Roller Bearing 생산개시</span>
+                                    </td>
+                                </tr>
+                                <tr class="yy">
+                                    <td>1989.03</td>
+                                    <td>
+                                        <span>창원공장 준공 생산 개시</span>
+                                    </td>
+                                </tr>
+                                <tr class="impact yy last">
+                                    <td>1987.09</td>
+                                    <td>
+                                        <span class="last">한국정밀주식회사 설립(NSK 50%)</span>
+                                    </td>
+                                </tr>
+                                <tr class="botp_tr">
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="history_img">
+            <ul class="clearfix">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+        <section id="area_tit">
+            <div class="container">
+                <div class="semi_tit">사업분야</div>
+            </div>
+        </section>
+        <section id="area">
+            <div class="clearfix">
+                <div class="area_img">
+
+                </div>
+                <div class="fl_l">
+                    <div class="area_inner">
+                        <p class="inner_tit">
+                            01.자동차 사업
+                        </p>
+                        <p class="inner_det">자동차 미래 기술 중심의 NSK</p>
+                        <ul>
+                            <li>자동차 베어링</li>
+                            <li>전동식 파워스티어링</li>
+                            <li>Half Toroidal CVT POWERTOROS 유닛</li>
+                        </ul>
+                        <a href="javascript:void(0);" class="btn_det">자세히보기 &gt;</a>
+                    </div>
+                </div>
+                <div class="fl_r">
+                    <div class="area_inner">
+                        <p class="inner_tit">
+                            02.산업기계 사업
+                        </p>
+                        <p class="inner_det">모든 산업에서 활약하는 기술과 제품</p>
+                        <ul>
+                            <li>다양한 가전 제품</li>
+                            <li>대규모 산업 기계</li>
+                            <li>인프라에 관한 광범위한 산업</li>
+                        </ul>
+                        <a href="javascript:void(0);" class="btn_det">자세히보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="tech">
+            <div class="container">
+                <div class="semi_tit">4코어 기술</div>
+                <p class="p_head">
+                    NSK는 1916 년 창업 이래 100 년 동안 항상 새로운 기술의 추구와 품질 향상에 주력해 왔습니다. 베어링과 자동차 부품, 정밀 기계 제품 등 각 제품 분야에서 세계를 선도하는 NSK의 기술 기반이되고있는 것은
+                    “마찰”, “재료 기술”, “분석 기술”, “메커 트로닉스 기술”로 구성된 4 개의 핵심 기술입니다. 4 코어 기술을 바탕으로 만들어진 제품은 세계 모든 산업의 발전과 국민의 풍요로운
+                    삶에 기여하고 있습니다. NSK는 첨단 기술 개발에 착수, 시장의 요구에 맞는 고기능, 고품질의 제품을 지속적으로 제공할 것입니다.
+                </p>
+                <div class="fl_wrap clearfix">
+                    <div class="fl_l fr">
+                        <dl>
+                            <dt>
+                                <span>TECHNOLOGY-1</span>마찰</dt>
+                            <dd>운동하는 물체의 접 동면에서 일어나는 마찰 마모 윤활재료 및 표면 제어하는 NSK의 기반 기술의 하나.
+                                <br>기계의 회전 운동과 왕복 운동시에 극히 얇은 유막을 통해 전해지는 큰 힘을 독자적으로 개발한 윤활제 및 표면, 피막, 형상을 최적으로 제어하고 빠른 속도·저소음·내구성
+                                등의 성능을 극한까지 강화하는 베어링의 핵심이되는 기술입니다. 마찰 기술의 결정이라고도 할 수있는 베어링 다양한 기계의 회전 부분에 사용되어 마찰과 마찰에 의한
+                                마모를 줄이고 기계의 에너지 절약, 긴 수명, 신뢰성 향상에 기여하고 있습니다.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="fl_r fr">
+                        <img src="../img/bg_tech1.png" alt="마찰">
+                    </div>
+                    <div class="fl_l">
+                        <dl>
+                            <dt>
+                                <span>TECHNOLOGY-2</span>재료기술</dt>
+                            <dd>열악한 환경에 노출되는 베어링의 기능과 내구성을 높이는 데 “재료”의 연구 개발은 중요한 열쇠가됩니다. 베어링의 재료에 불순물이 포함되면 아주 미세하더라도 베어링이 손상
+                                원인이 됩니다. 따라서 베어링에는 불순물이 거의 포함되어 있지 않은 “베어링 강”이라는 특수 철강을 사용하고 있습니다. 또한, NSK는 높은 내구성과 신뢰성을
+                                갖춘 제품 개발을위한 다양한 성능 평가·분석 평가, 열처리 조건을 최적화 한 금속 재료 및 고분자 재료, 심지어 도자기 등 신소재를 활용하는 기술 개발에 종사함으로써
+                                기능·내구성·신뢰성을 향상시켜 진화하고 요구사항에 부응하면서 비용과 생산성의 양립을 추구하고 있습니다.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="fl_r">
+                        <img src="../img/bg_tech2.png" alt="재료기술">
+                    </div>
+                    <div class="fl_l fr fr3">
+                        <dl>
+                            <dt>
+                                <span>TECHNOLOGY-3</span>분석기술</dt>
+                            <dd>제품에 대한 요구가 점점 정교해지면서 베어링의 최적 설계 및 제품 개발에 필수적인 기술이 분석 기술입니다. 예를 들어, 조건에 응할 수 있을 것 같은 부품의 조합이 1,000
+                                가지 있다고했을 때, 어떤 조합이 가장 적합한 지 비교하기 위해서는 1,000 종류의 시제품을 만들어 동일한 환경에서 100만 가지도 실험이 필요합니다. 그러나
+                                그런 엄청난 시간과 예산을 거는 것은 불가능합니다. 이러한 난제를 해결하는 것이 컴퓨터 시뮬레이션입니다. 그것은 100 년에 달하는 베어링의 연구 개발이 뒷받침
+                                된 NSK의 정확하고 방대한 데이터가 있기 때문에 가능해진 가상 성능·평가 시험입니다. NSK의 고급 분석 기술을 구사하여 어려운 극한 상황에서의 성능 평가가
+                                가능하고, 베어링의 최적 설계 및 제품 개발의 속도를 실현하고 있습니다.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="fl_r fr fr3">
+                        <img src="../img/bg_tech3.png" alt="분석기술">
+                    </div>
+                    <div class="fl_l fr4">
+                        <dl>
+                            <dt>
+                                <span>TECHNOLOGY-4</span>메카트로닉스 기술</dt>
+                            <dd>메카트로닉스는 기계 공학과 전자 공학을 결합한 기술을 말합니다. 기계의 제어 부분을 전자 회로 센서와 액추에이터를 결합하여 복잡한 움직임을 실현하고 기계 요소의 조합만으로는
+                                어려운 기능을 제공 할 수 있습니다. NSK는 제품 개발과 생산 현장에서 축적 된 기계 분야의 기술을 기반으로 모터 센서 회로 및 이들을 통합 제어 기술을 결합한
+                                메카트로닉스 기술을 연마, 자동차를 비롯한 다양한 산업 기계 새로운 기능 및 성능을 추가하고, 신뢰성의 향상, 그리고 생활의 편의·안전에 기여하고 있습니다.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="fl_r fr4">
+                        <img src="../img/bg_tech4.png" alt="메카트로닉스 기술">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="nsk_strong">
+            <div class="strong1">
+                <div class="container">
+                    <p class="semi_tit">한국 NSK의 강점</p>
+                    <div class="fl_wrap clearfix">
+                        <div class="fl_l">
+                            <dl>
+                                <dt>다각화</dt>
+                                <dd>NSK는 1916년 일본에서 처음 베어링 (베어링)의 생산을 개시한 이래, 독자적인 기술을 가진 일류 기업으로서 항상 연구 개발에 주력하고 왔습니다. 그 결과
+                                    국내 No.1 세계 No.3의 점유율을 자랑하는 베어링 이외에도 세계 No.1 점유율 공 나사와 NSK 리니어 가이드™ 시장이 성장하고 있는 전동 파워
+                                    스티어링 (EPS) 등 다양한 제품을 전개하고 있습니다.  따라서 제조업에 관련된 다양한 제품을 원 스톱으로 제공 할 수 있습니다.  또한 제품의 저변이
+                                    넓고, 자동차 사업 및 산업 기계 사업의 두 주력 사업이 있기 때문에 만약 하나의 사업이 부진하더라도 다른 한편으로 지원하는 안정적인 경영 구조로되어 있습니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="fl_r">
+                            <img src="../img/bg_strong1.png" alt="다각화">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="strong2">
+                <div class="container">
+                    <div class="fl_wrap clearfix">
+                        <div class="fl_l fr">
+                            <dl>
+                                <dt>기업문화</dt>
+                                <dd>NSK는 "독립"부품 제조 업체입니다. 그래서 자신의 전략으로 다양한 분야에 제품 · 사업을 전개. 대형 기계에서 PC 나 프린터, 각종 가전 등 익숙한 것들에
+                                    이르기까지 모든 산업의 다양한 기업에 제품을 공급 할 수 있습니다. 그 기반은 압도적 인 기술력과 우수한 인재에 다름 아닙니다. 경쟁력있는 독자적인 기술과
+                                    "DIY (안 좋으니까 해보자)"라는 도전 정신이 넘치는 직원의 존재야말로 고정밀 · 고품질 NSK 브랜드를 실현시키고, 일본은 물론 세계 모든 기계에
+                                    채택되기에 이르고 있습니다. 그 결과 독립 부품 업체로는 일본 최대의 매출을 자랑합니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="fl_r fr">
+                            <img src="../img/bg_strong2.png" alt="기업문화">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="strong3">
+                <div class="container">
+                    <div class="fl_wrap clearfix">
+                        <div class="fl_l">
+                            <dl>
+                                <dt>해외전략</dt>
+                                <dd>NSK는 1962년이라는 이른시기부터 미국에 판매 거점을 설립한 이래 일본·미주·유럽· 아시아 4 극 체제를 기반으로 생산·판매·기술의 글로벌 네트워크 확장에
+                                    주력하고 있습니다. 그 도전 마음은 지금도 변함없이 최근에는 러시아에서의 판매 거점과 중국 12 번째 공장, 또한 일본 기업의 베어링 제조업체로는 최초로
+                                    멕시코에서의 공장 설립을 실시하고 있습니다. 또한 글로벌 다이나믹하게 변화하는 비즈니스 환경에 신속하고 유연하게 대응하기 위해 일본의 기술 개발 센터를
+                                    중심으로 일본 6 미주 2, 유럽 3, 아시아 3 글로벌 전체에서 14 거점 기술 센터 연구 개발 활동을 전개. 이러한 선진적인 해외 전략이 NSK의 힘의
+                                    비결입니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="fl_r">
+                            <img src="../img/bg_strong3.png" alt="해외전략">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="org">
+            <div class="container">
+                <p class="semi_tit">조직도</p>
+                <div class="img_wrap">
+                    <img src="../img/org.png" alt="조직도">
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- // 컨테이너 -->
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="container">
+            <div class="clearfix">
+                <div class="fl_l">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="javascript:void(0);">이용약관</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">개인정보처리방침</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">사이트맵</a>
+                        </li>
+                    </ul>
+                    <address>
+                        <span>서울본사 : 서울특별시 강남구 테헤란로 440 포스코센터 서관 9층 Tel. 02-3787-0300</span>
+                        <span>ㆍ 창원공장 : 경남 창원시 성산동 60번지 Tel. 055-287-6001 </span>
+                        <br>
+                        <span>천안공장 : 충청남도 천안시 동남구 수신면 5산단7로 11 (천안시 제5산업단지 내) Tel. 041-411-6000</span>
+                    </address>
+                    <p>COPYRIGHTS ⓒ NSK KOREA Ltd. All Rights Reserved.</p>
+                </div>
+                <div class="fl_r">
+                    <div class="family_site">
+                        <a href="javascript:void(0);">Family Site</a>
+                        <ul class="fm_list">
+                            <li>
+                                <a href="http://www.nsk.com" target="_blank" title="글로벌NSK">Global NSK</a>
+                            </li>
+                            <li class="fm_btm">
+                                <a href="http://www.kr.nsk.com" target="_blank" title="NSK KOREA">NSK KOREA</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- // 푸터 -->
+
+    <!-- gotop -->
+    <a href="javascript:void(0);" id="scroll" title="Scroll to Top"></a>
+    <!-- // gotop -->
+
+</body>
+
+</html>

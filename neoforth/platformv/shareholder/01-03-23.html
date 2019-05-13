@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>미래에셋대우</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/plugin/fullcalendar.min.css">
+    <link rel="stylesheet" href="../css/plugin/jquery-ui.css">
+    <style>
+    	/* 인쇄시 필수 css */
+    	@page {
+    		margin: 0;
+    		box-shadow: 0;
+    	}
+    </style>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/common.js"></script>
+    <!-- 캘린더 -->
+    <script src="../js/plugin/moment.min.js"></script>
+    <script src="../js/plugin/fullcalendar.min.js"></script>
+    <!-- // 캘린더 -->
+    <!-- jquery-ui -->
+    <script src="../js/plugin/jquery-ui.min.js"></script>
+    <!-- // jquery-ui -->
+</head>
+
+<body>
+	<div id="print_wrap" class="print3">
+		<div class="button_wrap">
+			<button type="button" class="btn_submit" onclick="window.print();">인쇄하기</button>
+		</div>
+	
+		<h3 class="main_title">주주총회 결과조회</h3>
+		<div class="result_pwrap">
+			<p class="result_company">회사명 : <span class="result_company_name">맥쿼리한국인프라금융투자회사</span></p>
+			<p class="result_votedate">주주총회일 : <span class="result_votedate_day">2018 년 09 월 19일 15 시 30 분</span></p>
+		</div>
+		<div class="tbl_print_wrap">
+			<img src="../img/shareholder/print_th_bg.jpg" alt="프린트용 th배경이미지" class="type2">
+			<table class="tbl_resultshow">
+				<caption>주주총회 결과조회 - 의안, 의결권있는 주식 수, 통과여부, 의결권행사내역(찬성, 반대, 기권, 참석주식수, 비고)</caption>
+				<thead>
+					<tr>
+						<th rowspan="2">의안</th>
+						<th rowspan="2">의결권있는<br>주식수</th>
+						<th rowspan="2">통과<br>여부</th>
+						<th colspan="5">의결권 행사 내역</th>
+					</tr>
+					<tr>
+						<th>찬성</th>
+						<th>반대</th>
+						<th>기권</th>
+						<th>참석주식수</th>
+						<th>비고</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>제1호의안 법인이사인 집합투자업자의 변경(변경할 법인이사인 집합투자업자 후보자:주식회사 코람코자사운용)</td>
+						<td>349,044,336</td>
+						<td>부결</td>
+						<td>108,580,486</td>
+						<td>49,203,325</td>
+						<td>416,786</td>
+						<td>258,200,597</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>

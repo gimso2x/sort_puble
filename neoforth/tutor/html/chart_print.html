@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>차트</title>
+    <link rel="stylesheet" href="../css/page_print.css">
+    <script src="../js/Chart.bundle.js"></script>
+</head>
+
+<body>
+    <div class="book">
+
+        <div class="page">
+            <a href="javascript:void(0);" class="button_print" onclick="window.print()">
+                <img src="../img/chart/print.png" alt="출력하기">
+            </a>
+            <div class="subpage">
+                <p class="detail">※ 그래프는 나가실 때 카운터에 제출해 주세요.<br>※ 사진촬영시 개인소장만 가능합니다. 온라인 배포 · 공유 금지</p>
+                <p class="detail_right">이봉이님 (1 T) / <span>2015.05.23(28세)</span></p>
+                <div class="container">
+                    <div class="img_wrap">
+                        <img src="../img/chart/title.png" alt="애니어그램 성격분석">
+                    </div>
+                    <div class="chart_wrap">
+                        <div class="name_wrap">
+                            <table>
+                                <tr>
+                                    <th>
+                                        <div class="name_color"></div>
+                                    </th>
+                                    <td>
+                                        <p>이봉이</p><p>28</p><p>2018.03.24</p>
+                                    </td>
+                                    <th>
+                                        <div class="name_color"></div>
+                                    </th>
+                                    <td>
+                                        <p>이봉이</p><p>28</p><p>2018.03.24</p>
+                                    </td>
+                                    <th>
+                                        <div class="name_color"></div>
+                                    </th>
+                                    <td>
+                                        <p>이봉이</p><p>28</p><p>2018.03.24</p>
+                                    </td>
+                                    <th>
+                                        <div class="name_color"></div>
+                                    </th>
+                                    <td>
+                                        <p>이봉이</p><p>28</p><p>2018.03.24</p>
+                                    </td>
+                                    <th>
+                                        <div class="name_color"></div>
+                                    </th>
+                                    <td>
+                                        <p>이봉이</p><p>28</p><p>2018.03.24</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <ul class="type_ul">
+                            <div class="l_wrap"><img src="../img/chart/txt_l.png" alt="유형, 점수"></div>
+                            <li><img src="../img/chart/n2.png" alt="2"></li><li><img src="../img/chart/n3.png" alt="3"></li><li><img src="../img/chart/n4.png" alt="4"></li><li><img src="../img/chart/n5.png" alt="5"></li><li><img src="../img/chart/n6.png" alt="6"></li><li><img src="../img/chart/n7.png" alt="7"></li><li><img src="../img/chart/n8.png" alt="8"></li><li><img src="../img/chart/n9.png" alt="9"></li><li><img src="../img/chart/n1.png" alt="1"></li>
+                            <div class="r_wrap"><img src="../img/chart/txt_r.png" alt="유형, 점수"></div>
+                        </ul>
+
+                        <div class="box_wrap">
+                            <canvas id="canvas" style="width:675px;height:550px;"></canvas>
+                            <div class="box"><img src="../img/chart/box.png" alt="차트테두리"></div>
+                        </div>
+
+                        <div class="chart_detail">
+                            <p class="detail2">힘의<br>중심</p>
+                            <span class="button"><img src="../img/chart/button1.png" alt="가슴형"></span>
+                            <span class="button"><img src="../img/chart/button2.png" alt="사고형"></span>
+                            <span class="button"><img src="../img/chart/button3.png" alt="본능형"></span>
+                        </div>
+                        <table class="type_tbl">
+                            <colgroup>
+                                <col style="width:150px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>기본 성격 유형</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>SUB 성격 유형</th>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul class="footer_ul">
+                            <li><img src="../img/chart/logo1.png" alt="멘토 성격분석연구소"></li>
+                            <li>주 소 : 서울특별시 강남구 강남대로96길 17. 역삼동 일우빌딩3층<br>
+                            구입 및 교육문의 : 02-553-7675 / 팩 스 : 02-336-7678<br>
+                            이메일 : senfrancisco@naver.com<br>
+                            제작·발행처 : 멘토형 성격분석연구소 / 저작권자 김화숙<br>
+                            저작권등록번호 : C-2016-019778</li>
+                            <li><img src="../img/chart/logo2.png" alt="힐링카페 멘토"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+		window.chartColors = {
+			red: 'rgb(255, 99, 132)',
+			orange: 'rgb(255, 159, 64)',
+			yellow: 'rgb(255, 205, 86)',
+			green: 'rgb(75, 192, 192)',
+			blue: 'rgb(54, 162, 235)',
+			purple: 'rgb(153, 102, 255)',
+			grey: 'rgb(201, 203, 207)'
+		};
+		var config = {
+			type: 'line',
+            /* data 부분 */
+			data: {
+				labels: ['2', '3', '4', '5', '6', '7', '8', '9', '1'],
+				datasets: [
+					{
+						label: 'Data',
+						fill: false,
+						backgroundColor: window.chartColors.red,
+						borderColor: window.chartColors.red,
+                        borderWidth: 1,
+						data: [40, 16, 15, 14, 18, 21, 25, 26, 23]
+					},
+					{
+						label: 'Data2',
+						fill: false,
+						backgroundColor: window.chartColors.orange,
+						borderColor: window.chartColors.orange,
+                        borderWidth: 1,
+						data: [13, 14, 15, 18, 11, 15, 17, 16, 14]
+					},
+					{
+						label: 'Data3',
+						fill: false,
+						backgroundColor: window.chartColors.purple,
+						borderColor: window.chartColors.purple,
+                        borderWidth: 1,
+						data: [15, 11, 25, 28, 31, 45, 37, 25, 10]
+					},
+					{
+						label: 'Data4',
+						fill: false,
+						backgroundColor: window.chartColors.green,
+						borderColor: window.chartColors.green,
+                        borderWidth: 1,
+						data: [19, 19, 19, 19, 19, 19, 19, 19, 19]
+					},
+					{
+						label: 'Data5',
+						fill: false,
+						backgroundColor: window.chartColors.blue,
+						borderColor: window.chartColors.blue,
+                        borderWidth: 1,
+						data: [33, 23, 33, 23, 33, 23, 33, 23, 33]
+					}
+				]
+			},
+            /* data 부분 End */
+			options: {
+				legend: {display:false},
+				responsive: false,
+                elements: {
+    				line: {
+    					tension: 0.000001
+                    }
+    			},
+				scales: {
+					xAxes: [{
+						display: true,
+						position: 'top',
+                        gridLines:{
+                            color: '#bbb',
+                            lineWidth: 0.5,
+                            borderDash: [2, 4],
+                            drawBorder: false
+                        },
+						ticks: {
+                            display:false,
+						}
+					}],
+					yAxes: [{
+						type: 'linear',
+                        display: true,
+						scaleLabel: {
+						   display: true,
+                           fontColor: '#3FA0D5',
+                           fontFamily: 'Jeju Gothic'
+					    },
+                        position: 'left',
+                        id: 'y-axis-0',
+                        gridLines:{
+                            color: '#bbb',
+                            tickMarkLength: 40,
+                            lineWidth: 0.4,
+                            borderDash: [2, 4],
+                            drawBorder: false
+                        },
+						ticks:{
+							max: 45,
+							min: 9,
+							stepSize: 3,
+                            fontColor: '#3FA0D5',
+                            fontFamily: 'Jeju Gothic'
+						}
+						}, {
+                        type: 'linear',
+                        display: true,
+						scaleLabel: {
+						   display: true,
+                           fontColor: '#3FA0D5',
+                           fontFamily: 'Jeju Gothic'
+					    },
+                        position: 'right',
+                        id: 'y-axis-1',
+                        gridLines:{
+                            color: '#bbb',
+                            tickMarkLength: 40,
+                            lineWidth: 0.4,
+                            borderDash: [2, 4],
+                            drawBorder: false,
+                        },
+						ticks:{
+							max: 45,
+							min: 9,
+							stepSize: 3,
+                            fontColor: '#3FA0D5',
+                            fontFamily: 'Jeju Gothic',
+						}
+					}]
+				}
+			}
+		};
+
+        // Define a plugin to provide data labels
+		// 차트 숫자 보이게 표현
+        Chart.plugins.register({
+            afterDatasetsDraw: function(chart, easing) {
+                // To only draw at the end of animation, check for easing === 1
+                var ctx = chart.ctx;
+
+                chart.data.datasets.forEach(function (dataset, i) {
+                    var meta = chart.getDatasetMeta(i);
+                    if (!meta.hidden) {
+                        meta.data.forEach(function(element, index) {
+                            // Draw the text in black, with the specified font
+                            ctx.fillStyle = 'rgb(0, 0, 0)';
+
+                            var fontSize = 9;
+                            var fontStyle = 'normal';
+                            var fontFamily = 'Jeju Gothic';
+                            ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
+
+                            // Just naively convert to string for now
+                            var dataString = dataset.data[index];
+
+                            // Make sure alignment settings are correct
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'middle';
+
+                            var padding = 5;
+                            var position = element.tooltipPosition();
+                            ctx.fillText(dataString, position.x + 12, position.y + 10 - (fontSize / 2) - padding);
+                        });
+                    }
+                });
+            }
+        });
+
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myLine = new Chart(ctx, config);
+		};
+	</script>
+</body>
+
+</html>

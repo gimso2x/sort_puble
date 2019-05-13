@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>퍼블작업물 정리</title>
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" />
+	<style type="text/css">
+		@font-face {
+			font-family: 'NanumSquareRound';
+			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+		}
+		* {box-sizing: border-box;}
+
+		body { font-family: 'NanumSquareRound', sans-serif; padding: 0 1em; }
+
+		.button-group { border-bottom: 1px solid #ddd; padding-bottom: 20px; margin-bottom: 20px; }
+		.button-group button { width: 128px; text-align: center; border-radius: 3px; padding: 15px 0; margin: 0 5px 5px 0; border: 1px solid rgba(0, 0, 0, 0.05); background: #FAFAFA; cursor: pointer; font-weight: 700; }
+		.button-group button:hover { background-color: #ededed; }
+		.button-group button.is-checked { background-color: #3E63BC; border: 1px solid #3E63BC; color: white; font-weight: bold; }
+		.button-group button.is-checked:hover { background-color: #3859a9; }
+
+		.element-item {margin-right: 20px;margin-bottom: 10px;}
+		.element-item > a { display: inline-block; border: 1px solid #ccc; cursor: pointer; text-decoration: none; color: #000; padding: 10px; width: 200px; text-align: center; transition: box-shadow .3s;}
+		.element-item > a:hover {box-shadow: 0 0 11px rgba(33,33,33,.2);}
+		.element-item > a h3 {margin: 10px 0;}
+		.element-item > a p {margin: 0;margin-top: 10px;}
+		.element-item > a span {display: inline-block;border-radius: 15px;background: #4C6ED5;padding: 3px 10px;color: #fff;margin-right: 5px;}
+	</style>
+</head>
+
+<body>
+	<h1>퍼블작업물 정리</h1>
+	<div class="button-group filters-button-group">
+		<button class="button is-checked" data-filter="*">ALL</button>
+		<button class="button" data-filter=".pc">PC</button>
+		<button class="button" data-filter=".mobile">MOBILE</button>
+		<button class="button" data-filter=".responsive">RESPONSIVE</button>
+		<button class="button" data-filter=".other">OTHER</button>
+	</div>
+
+	<div class="grid">
+		<div class="element-item pc">
+			<a href="./neoforth/tire/index.html">
+				<h3>타이어</h3>
+				<span>pc</span>
+				<p>2018.10</p>
+			</a>
+		</div>
+		<div class="element-item responsive">
+			<a href="./neoforth/seowon/filepath.html">
+				<h3>서원</h3>
+				<span>responsive</span>
+				<p>2018.02</p>
+			</a>
+		</div>
+		<div class="element-item pc">
+			<a href="./neoforth/restarea/admin/filepath.html">
+				<h3>휴게소메뉴판(관리자)</h3>
+				<span>pc</span>
+				<p>2018.11</p>
+			</a>
+		</div>
+		<div class="element-item other">
+			<a href="./neoforth/restarea/other/filepath.html">
+				<h3>휴게소메뉴판</h3>
+				<span>other</span>
+				<p>2018.11</p>
+			</a>
+		</div>
+		<div class="element-item pc">
+			<a href="./neoforth/mvp_cal/mvpcal.html">
+				<h3>MVP 계산기</h3>
+				<span>pc</span>
+				<p>2018.04</p>
+			</a>
+		</div>
+		<div class="element-item pc">
+			<a href="./neoforth/tbp_popup/test.html">
+				<h3>TBP 요금시뮬레이션</h3>
+				<span>pc</span>
+				<p>2017.10</p>
+			</a>
+		</div>
+		<div class="element-item pc">
+			<a href="./neoforth/tbp_newsletter/newsletter.html">
+				<h3>TBP 뉴스레터</h3>
+				<span>pc</span>
+				<p>2018.01</p>
+			</a>
+		</div>
+		<div class="element-item other">
+			<a href="./neoforth/darim/filepath.html">
+				<h3>대림 월패드</h3>
+				<span>other</span>
+				<p>2019.05</p>
+			</a>
+		</div>
+		<div class="element-item responsive">
+			<a href="./neoforth/tutor/filepath.html">
+				<h3>힐링카페</h3>
+				<span>responsive</span>
+				<p>2018.04</p>
+			</a>
+		</div>
+		<div class="element-item responsive">
+			<a href="./neoforth/nsk_recruit/index.html">
+				<h3>NSK채용</h3>
+				<span>responsive</span>
+				<p>2018.05</p>
+			</a>
+		</div>
+		<div class="element-item pc">
+			<a href="./neoforth/miraeasset_early/index.html">
+				<h3>미래에셋 입찰시안</h3>
+				<span>pc</span>
+				<p>2018.11</p>
+			</a>
+		</div>
+		<div class="element-item pc">
+			<a href="./neoforth/platformv/list.html">
+				<h3>플랫폼V(PC)</h3>
+				<span>pc</span>
+				<p>2019.02</p>
+			</a>
+		</div>
+		<div class="element-item mobile">
+			<a href="./neoforth/platformv/mobile/list.html">
+				<h3>플랫폼V(MOBILE)</h3>
+				<span>mobile</span>
+				<p>2019.02</p>
+			</a>
+		</div>
+		<div class="element-item pc">
+			<a href="./neoforth/platformv/admin/list.html">
+				<h3>플랫폼V(관리자)</h3>
+				<span>pc</span>
+				<p>2019.02</p>
+			</a>
+		</div>
+		<div class="element-item responsive">
+			<a href="./neoforth/saip/filepath.html">
+				<h3>사입삼촌</h3>
+				<span>responsive</span>
+				<p>2018.01</p>
+			</a>
+		</div>
+		<div class="element-item responsive">
+			<a href="./personal/joeun/index.html">
+				<h3>더조은</h3>
+				<span>responsive</span>
+				<p>2017.06</p>
+			</a>
+		</div>
+		<div class="element-item responsive">
+			<a href="./personal/pofol/index.html">
+				<h3>포트폴리오</h3>
+				<span>responsive</span>
+				<p>2017.06</p>
+			</a>
+		</div>
+	</div>
+</body>
+
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script>
+	// init Isotope
+var iso = new Isotope( '.grid', {
+	itemSelector: '.element-item',
+	layoutMode: 'fitRows'
+  });
+  
+  // filter functions
+  var filterFns = {
+	// show if name ends with -ium
+	ium: function( itemElem ) {
+	  var name = itemElem.querySelector('.name').textContent;
+	  return name.match( /ium$/ );
+	}
+  };
+  
+  // bind filter button click
+  var filtersElem = document.querySelector('.filters-button-group');
+  filtersElem.addEventListener( 'click', function( event ) {
+	// only work with buttons
+	if ( !matchesSelector( event.target, 'button' ) ) {
+	  return;
+	}
+	var filterValue = event.target.getAttribute('data-filter');
+	// use matching filter function
+	filterValue = filterFns[ filterValue ] || filterValue;
+	iso.arrange({ filter: filterValue });
+  });
+  
+  // change is-checked class on buttons
+  var buttonGroups = document.querySelectorAll('.button-group');
+  for ( var i=0, len = buttonGroups.length; i < len; i++ ) {
+	var buttonGroup = buttonGroups[i];
+	radioButtonGroup( buttonGroup );
+  }
+  
+  function radioButtonGroup( buttonGroup ) {
+	buttonGroup.addEventListener( 'click', function( event ) {
+	  // only work with buttons
+	  if ( !matchesSelector( event.target, 'button' ) ) {
+		return;
+	  }
+	  buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
+	  event.target.classList.add('is-checked');
+	});
+  }
+  
+</script>
+
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1" />
+
+    <title>The Joeun</title>
+    <link rel="stylesheet" href="common/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="common/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="common/css/hover.css" type="text/css">
+    <link rel="stylesheet" href="common/css/layout.css" type="text/css">
+    <link rel="stylesheet" href="common/css/main.css" type="text/css">
+    <link rel="stylesheet" href="common/css/contents.css" type="text/css">
+    <link rel="stylesheet" href="common/fonts/font.css" type="text/css">
+    <link rel="stylesheet" href="common/js/navmenu/css/component.css"  type="text/css" />
+    <style media="screen">
+      .talk_img{float: left; width: 100%;}
+      .talk_img img{vertical-align: bottom;}
+      .talk_wrap{background: url(common/images/talk_bg.png);background-size: 50%; width: 800px; margin: 0 auto;  overflow: hidden;
+        box-sizing: border-box; border: 1px solid rgba(0,0,0,0.1); padding-top: 3.5%; padding-left: 1%; }
+      .tr{} .td{ padding:1% 1% 1% 0;vertical-align: middle; float: left;}
+      .w17{width: 17%;} .w26{width: 26%;}
+
+      .td_top{color: white; padding: 6% 1%; font-family: "notokr-bold"; font-size: 17px;} .yellow{background-color: #FEBF34;} .green{background-color: #31AB48;} .blue{background-color: #31A2E4;}
+      .td_top_bar{height: 5px; background-color: black;}
+      .td_top_tri{width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid black; margin: 0 auto;}
+
+      .td_face{font-family: "notokr-bold"; color:#4D4D4F;}
+      .td_face p{}
+      .td_face span{font-size: 20px;}
+
+      .td_contents{font-weight: bold; padding: 5% 0; height: 208px;} .lightyellow{background-color: RGBA(253,245,226,0.6);} .lightgreen{background-color: RGBA(231,249,233,0.6);} .lightblue{background-color: RGBA(204,230,245,0.6);}
+      .td_contents .ct_title{color: #F33670; font-family: "hanna"; font-weight: normal;font-size: 20px; padding: 10% 0;} .topmargin{margin-top: 13%;}
+      .td_contents .ct_content{font-size: 12px; line-height: 2.2; padding: 0 5%;}
+
+      @media screen and (max-width:768px){
+          .talk_wrap{width: 100%;}
+      }
+      @media screen and (max-width:667px) {
+        .td_top{font-size: 10px;}
+        .w17{width: 100%;}
+        .w26{width: 32%;}
+        .td_face span{font-size: 18px;}
+
+        .td_contents{height: 201px;}
+        .td_contents .ct_title{font-size: 12px;}
+        .td_contents .ct_content{font-size: 10px; line-height: 1.7;}
+      }
+      @media screen and (max-width:667px) and (orientation:landscape){
+        .td_top{font-size: 14px;}
+        .w17{width:17%;}
+        .w26{width:26%;}
+
+        .td_face p{display: block; font-size: 12px;}
+        .td_contents .ct_title{font-size: 18px;}
+        .td_contents .ct_content{font-size: 12px;}
+      }
+    </style>
+
+    <script type="text/javascript" src="common/js/jquery-3.2.1.min.js"></script>
+    <script src="common/js/navmenu/js/modernizr.custom.js"></script>
+    <script src="common/js/navmenu/js/jquery.dlmenu.js"></script>
+    <script src="common/js/main.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $( '#dl-menu' ).dlmenu({
+					animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+				});
+      });
+    </script>
+  </head>
+  <body>
+
+      <h1 class="hid">The Joeun</h1>
+      <header class="header">
+        <div class="top_bar">
+          <div class="wrap2">
+          <ul class="top_bar1">
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="join.html">회원가입</a></li>
+            <li><a href="gnb4_2.html">자주묻는질문</a></li>
+            <li><a href="footer3.html">사이트맵</a></li>
+          </ul>
+          </div>
+        </div>
+        <div class="wrap">
+          <div class="logo">
+            <a href="index.html"><img src="common/images/logo.png" alt="로고"></a>
+          </div>
+          <nav class="gnb">
+            <h2 class="hid">Navigation</h2>
+            <ul>
+              <li><a href="gnb1_1.html" class="arrow">기업소개</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb1_1.html">CEO인사말</a></li>
+                  <li><a href="gnb1_2.html">비전</a></li>
+                  <li><a href="gnb1_3.html">연혁 & CI</a></li>
+                  <li><a href="gnb1_4.html">찾아오시는길</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb2_1.html" class="arrow">건강아카데미</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb2_1.html">아카데미소개</a></li>
+                  <li><a href="gnb2_2.html">자격제도</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb3_1.html">기업부설연구소</a></li>
+              <li><a href="gnb4_1.html" class="arrow">채용인사</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb4_1.html">채용정보</a></li>
+                  <li><a href="gnb4_2.html">전형Q&A</a></li>
+                  <li><a href="gnb4_3.html">직무소개</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb5_1.html" class="arrow">더좋은소식</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb5_1.html">더좋은 NEWS</a></li>
+                  <li><a href="gnb5_2.html">더좋은 파트너</a></li>
+                  <li><a href="gnb5_3.html">각양각색 TALK</a></li>
+                  <li><a href="gnb5_4.html">더좋은 STAR</a></li>
+                  <li><a href="gnb5_5.html">더좋은 LIFE</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb6_1.html">문의라운지</a></li>
+            </ul>
+          </nav>
+          <nav class="gnb_mobile">
+            <h2 class="hid">Navigation</h2>
+            <div class="container demo-2">
+              <div class="main clearfix">
+                <div class="column">
+                  <div id="dl-menu" class="dl-menuwrapper">
+                    <button class="dl-trigger">Open Menu</button>
+                    <ul class="dl-menu">
+                      <li>
+                        <a href="#">기업소개</a>
+                            <ul class="dl-submenu">
+                              <li><a href="gnb1_1.html">CEO인사말</a></li>
+                              <li><a href="gnb1_2.html">비전</a></li>
+                              <li><a href="gnb1_3.html">연혁 & CI</a></li>
+                              <li><a href="gnb1_4.html">찾아오시는길</a></li>
+                            </ul>
+                          </li>
+                      <li>
+                        <a href="#">건강상담아카데미</a>
+                        <ul class="dl-submenu">
+                          <li><a href="gnb2_1.html">아카데미소개</a></li>
+                          <li><a href="gnb2_2.html">자격제도</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="gnb3_1.html">기업부설연구소</a>
+                      </li>
+                      <li>
+                        <a href="#">채용인사</a>
+                        <ul class="dl-submenu">
+                          <li><a href="gnb4_1.html">채용정보</a></li>
+                          <li><a href="gnb4_2.html">전형Q&A</a></li>
+                          <li><a href="gnb4_3.html">직무소개</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#">더좋은소식</a>
+                        <ul class="dl-submenu">
+                          <li><a href="gnb5_1.html">더좋은 NEWS</a></li>
+                          <li><a href="gnb5_2.html">더좋은 파트너</a></li>
+                          <li><a href="gnb5_3.html">각양각색 TALK</a></li>
+                          <li><a href="gnb5_4.html">더좋은 STAR</a></li>
+                          <li><a href="gnb5_5.html">더좋은 LIFE</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="gnb6_1.html">문의라운지</a>
+                      </li>
+                      <li class="jnh">
+        								<a href="login.html">로그인</a>
+        							</li>
+                      <li class="jnh">
+        								<a href="join.html">회원가입</a>
+        							</li>
+                    </ul>
+                  </div><!-- /dl-menuwrapper -->
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="wrap">
+          <div class="box_top">각양각색 TALK</div>
+          <div class="talk_img"><img src="common/images/talk_img.png" alt=""></div>
+          <div class="talk_wrap">
+            <div class="tr">
+              <div class="td w17">
+
+              </div>
+              <div class="td w26">
+                <div class="td_top yellow">더좋은과 건강코디네이터 매력은?</div>
+                <div class="td_top_bar"></div>
+                <div class="td_top_tri"></div>
+              </div>
+              <div class="td w26">
+                <div class="td_top green">대단해요!!대구지역 팀워크의 비결은?</div>
+                <div class="td_top_bar"></div>
+                <div class="td_top_tri"></div>
+              </div>
+              <div class="td w26">
+                <div class="td_top blue">더좋은 안에서 꿈꿔요!당신의 꿈은 무엇인가요?</div>
+                <div class="td_top_bar"></div>
+                <div class="td_top_tri"></div>
+              </div>
+            </div>
+            <div class="tr">
+              <div class="td w17">
+                <div class="td_face">
+                  <img src="common/images/talk_face1.png" alt="">
+                  <p>건강 코디네이터</p>
+                  <span>양 옥 자</span>
+                </div>
+              </div>
+              <div class="td w26">
+                <div class="td_contents lightyellow">
+                  <p class="ct_title">내가족처럼 함께하는 기쁨</p>
+                  <p class="ct_content">건강상담받고 건강기능식품을 접한 환자들의 불편한 증상 호전과 건강을 되찾는 과정들을 함께지켜보며
+                    내가족의 일처럼 기쁨을 함께 나눌때 짜릿한 행복감을 느낍니다.</p>
+                </div>
+              </div>
+              <div class="td w26">
+                <div class="td_contents lightgreen">
+                  <p class="ct_content topmargin">아침에 단체 메신저를 통해서로에게 긍정의 기운을 주고 받으며배려와 격려로 하루를 시작합니다.때론 독려하며 개인의 발전과 회사의발전을 위해 서로에게
+                    힘이 되고희노애락을 함께 공유하며 늘 응원하는마음이 가득한 것이 비결이라면비결이겠죠 ^^</p>
+                </div>
+              </div>
+              <div class="td w26">
+                <div class="td_contents lightblue">
+                  <p class="ct_content topmargin">입사 6년차인데 시간이 지날수록애사심이 더욱더 생겨납니다^^회사가 건강기능식품 업계의 1위로,저 또한 건강코디네이터로서 건강이
+                    허락되는한 좋은후배 멋진선배와 함께오래오래 근무하고 싶습니다.</p>
+                </div>
+              </div>
+            </div>
+            <div class="tr">
+              <div class="td w17">
+                <div class="td_face">
+                  <img src="common/images/talk_face2.png" alt="">
+                  <p>건강 코디네이터</p>
+                  <span>이 미 리</span>
+                </div>
+              </div>
+              <div class="td w26">
+                <div class="td_contents lightyellow">
+                  <p class="ct_title">돈으로 살 수없는 뿌듯함</p>
+                  <p class="ct_content">무엇보다도 돈으로 살 수 없는 보람과뿌듯함, 그리고 소중한 사람들입니다!더좋은을 통해 그런 기회를 얻게 되었고
+                    건강코디네이터로서 활약할 수 있어감사하게 생각하고 있습니다.</p>
+                </div>
+              </div>
+              <div class="td w26">
+                <div class="td_contents lightgreen">
+                  <p class="ct_content topmargin">멘토님을 주축으로 기본예의와상대방을 위한 배려가 있습니다.뭉치기 좋아하는 지역적특성도 있지만더불어 각각의 개성들이 필요할 때적절히 융화가 잘되는 것 또한
+                    팀워크의 비결이라 생각합니다!</p>
+                </div>
+              </div>
+              <div class="td w26">
+                <div class="td_contents lightblue">
+                  <p class="ct_content topmargin">고객의 건강이 좋아질 수 있는최상의 처방을 할 수 있는건강코디네이터가 되는 것입니다고객들의 긍정적인 피드백이 있어야
+                    고객들은 살 맛,저는 일할 맛 나지않을까요?!</p>
+                </div>
+              </div>
+            </div>
+            <div class="tr">
+              <div class="td w17">
+                <div class="td_face">
+                  <img src="common/images/talk_face3.png" alt="">
+                  <p>건강 코디네이터</p>
+                  <span>이 지 영</span>
+                </div>
+              </div>
+              <div class="td w26">
+                <div class="td_contents lightyellow">
+                  <p class="ct_title">행복에 기여하는 큰 보람</p>
+                  <p class="ct_content">국민건강과 행복에 기여하는큰 보람을 느낄수 있는 것이가장 큰 매력이 아닐까 생각합니다.
+                    많은 분들을 만나 건강한 삶에 도움을주는 가치 있고 즐거운 일입니다^^</p>
+                </div>
+              </div>
+              <div class="td w26">
+                <div class="td_contents lightgreen">
+                  <p class="ct_content topmargin">대구지역의 기둥이신멘토님을 중심으로팀원들의 꾸준한 소통과서로를 생각하는 배려심이
+                    팀웍의 숨겨진(?) 비결인 것같습니다</p>
+                </div>
+              </div>
+              <div class="td w26">
+                <div class="td_contents lightblue">
+                  <p class="ct_content topmargin">여러가지 꿈이 있는데요,그 중에 한 가지는영어실력을 갈고 닦아 외국인에게전문적인 건강상담을 도와 드리고
+                    싶습니다. 글로벌한 모습으로더좋은에 기여하고 싶습니다^^</p>
+                </div>
+              </div>
+            </div>
+            <div class="tr">
+              <div class="td w17">
+                <div class="td_face">
+                  <img src="common/images/talk_face4.png" alt="">
+                  <p>건강 코디네이터</p>
+                  <span>진 효 경</span>
+                </div>
+              </div>
+              <div class="td w26">
+                <div class="td_contents lightyellow">
+                  <p class="ct_title">목표와 비전을 이룬 즐거움</p>
+                  <p class="ct_content">함께 발전해나가며 목표와 비전을이뤄나가는 즐거움을 느끼는것!그리고 스스로가 발전할수록
+                    다른이에게 도움을 주고 보람을 느낄 수있다는 것도 매력인 것 같습니다</p>
+                </div>
+              </div>
+              <div class="td w26">
+                <div class="td_contents lightgreen">
+                  <p class="ct_content topmargin">끌어주는 선배님들과서로 마음을 나눌수 있는 동료들,잘 따라와주는 후배님들!!다들 인성이 좋으시고 따듯하셔서소통이 잘된다고 생각합니다!
+                    </p>
+                </div>
+              </div>
+              <div class="td w26">
+                <div class="td_contents lightblue">
+                  <p class="ct_content topmargin">근속년수와 직업군 정착에스스로 부끄럽지 않도록체계적인 건강상담 뿐만 아니라이와 관련된 전반적인 업무에도
+                    믿고 신뢰할수 있는 회사의 일원이자능력있는 상사, 선후배가 되고싶습니다!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img src="common/images/talk_img2.png" alt="">
+        </div>
+      </section>
+
+      <footer class="footer">
+        <h2 class="hid">footer</h2>
+        <div class="wrap">
+          <div class="footer_left">
+            <h2>JOEUN SOCIAL MEDIA</h2>
+            <ul>
+              <li>
+                <a href="http://blog.naver.com/thejoeun3596" target="_blank"><img src="common/images/blog.png" alt="">
+                  NaverBlog
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/joeunvitamin" target="_blank"><img src="common/images/facebook.png" alt="">
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="http://plus.kakao.com/home/@%EB%8D%94%EC%A2%8B%EC%9D%80%EC%B1%84%EC%9A%A9" target="_blank"><img src="common/images/kakao.png" alt="">
+                  KakaoTalk
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer_right">
+            <div class="footer_nav">
+              <ul>
+                <li><a href="footer1.html">개인정보취급방침</a></li>
+                <li><a href="footer2.html">이용약관</a></li>
+                <li><a href="footer3.html">사이트맵</a></li>
+              </ul>
+            </div>
+            <div class="footer_contents">
+            (주)더좋은 대표전화 1577-3596 | 대표메일 vision@joeunvitamin.com<br>
+              통신판매업신고 제2016-용인수지-0212호 | 사업자등록번호 129-86-03767<br>
+              <strong>Copyright ⓒ THE JOEUN All rights reserved.</strong>
+            </div>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <title>DID 시스템</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="fullWrap">
+        <div class="bgTop"></div>
+        <div class="tit">
+            <p class="titSign">A</p>
+            <dl>
+                <dt>한식</dt>
+                <dd>(HanSik) Korea Food</dd>
+                <dd>韓国料理 / 韩国料理</dd>
+            </dl>
+        </div>
+        <ul class="menuLi">
+            <li class="soldOut">
+                <div class="ico recommend"></div>
+                <ul class="menuLiInner">
+                    <li class="menuOrder">
+                        <p>A1</p>
+                    </li>
+                    <li class="menuImg"><img src="../img/food_sm_a1_big.png" alt="오징어돌솥비빔밥"></li>
+                    <li class="menuTit">
+                        <dl>
+                            <dt>오징어돌솥비빔밥<i class="ico1 best"></i></dt>
+                            <dd class="subDd">(ojingeodolsotbibAimbap)</dd>
+                            <dd>Spicy Squid Bibimbap in a Hot Stone Pot</dd>
+                            <dd>オジンオ・ドルソッビビンパプ / 石锅鱿鱼拌饭 </dd>
+                        </dl>
+                    </li>
+                    <li class="menuPrice">
+                        <p>￦ <b>13,000</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>총열량</th>
+                                    <td>1662Kcal</td>
+                                </tr>
+                                <tr>
+                                    <th>단백질</th>
+                                    <td>29.0g(53.6%)</td>
+                                </tr>
+                                <tr>
+                                    <th>당류</th>
+                                    <td>2.47g</td>
+                                </tr>
+                                <tr>
+                                    <th>포화지방산</th>
+                                    <td>2.4g(16.1%)</td>
+                                </tr>
+                                <tr>
+                                    <th>나트륨</th>
+                                    <td>2813mg(140.6%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="ico new"></div>
+                <ul class="menuLiInner">
+                    <li class="menuOrder">
+                        <p>A1</p>
+                    </li>
+                    <li class="menuImg"><img src="../img/food_sm_a1_big.png" alt="오징어돌솥비빔밥"></li>
+                    <li class="menuTit">
+                        <dl>
+                            <dt>오징어돌솥비빔밥<i class="ico1 new"></i></dt>
+                            <dd class="subDd">(ojingeodolsotbibAimbap)</dd>
+                            <dd>Spicy Squid Bibimbap in a Hot Stone Pot</dd>
+                            <dd>オジンオ・ドルソッビビンパプ / 石锅鱿鱼拌饭 </dd>
+                        </dl>
+                    </li>
+                    <li class="menuPrice">
+                        <p>￦ <b>13,000</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>총열량</th>
+                                    <td>1662Kcal</td>
+                                </tr>
+                                <tr>
+                                    <th>단백질</th>
+                                    <td>29.0g(53.6%)</td>
+                                </tr>
+                                <tr>
+                                    <th>당류</th>
+                                    <td>2.47g</td>
+                                </tr>
+                                <tr>
+                                    <th>포화지방산</th>
+                                    <td>2.4g(16.1%)</td>
+                                </tr>
+                                <tr>
+                                    <th>나트륨</th>
+                                    <td>2813mg(140.6%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <i class="ico4 new"></i>
+                <div class="ico new2"></div>
+                <ul class="menuLiInner">
+                    <li class="menuOrder">
+                        <p>A1</p>
+                    </li>
+                    <li class="menuImg"><img src="../img/food_sm_a1_big.png" alt="오징어돌솥비빔밥"></li>
+                    <li class="menuTit">
+                        <dl>
+                            <dt>오징어돌솥비빔밥<i class="ico2 best"></i></dt>
+                            <dd class="subDd">(ojingeodolsotbibAimbap)</dd>
+                            <dd>Spicy Squid Bibimbap in a Hot Stone Pot</dd>
+                            <dd>オジンオ・ドルソッビビンパプ / 石锅鱿鱼拌饭 </dd>
+                        </dl>
+                    </li>
+                    <li class="menuPrice">
+
+                        <p>￦ <b>13,000</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>총열량</th>
+                                    <td>1662Kcal</td>
+                                </tr>
+                                <tr>
+                                    <th>단백질</th>
+                                    <td>29.0g(53.6%)</td>
+                                </tr>
+                                <tr>
+                                    <th>당류</th>
+                                    <td>2.47g</td>
+                                </tr>
+                                <tr>
+                                    <th>포화지방산</th>
+                                    <td>2.4g(16.1%)</td>
+                                </tr>
+                                <tr>
+                                    <th>나트륨</th>
+                                    <td>2813mg(140.6%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <i class="ico4 best"></i>
+                <ul class="menuLiInner">
+                    <li class="menuOrder">
+                        <p>A1</p>
+                    </li>
+                    <li class="menuImg"><img src="../img/food_sm_a1_big.png" alt="오징어돌솥비빔밥"></li>
+                    <li class="menuTit">
+                        <dl>
+                            <dt>오징어돌솥비빔밥<i class="ico3 new"></i></dt>
+                            <dd class="subDd">(ojingeodolsotbibAimbap)</dd>
+                            <dd>Spicy Squid Bibimbap in a Hot Stone Pot</dd>
+                            <dd>オジンオ・ドルソッビビンパプ / 石锅鱿鱼拌饭 </dd>
+                        </dl>
+                    </li>
+                    <li class="menuPrice">
+
+                        <p>￦ <b>13,000</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>총열량</th>
+                                    <td>1662Kcal</td>
+                                </tr>
+                                <tr>
+                                    <th>단백질</th>
+                                    <td>29.0g(53.6%)</td>
+                                </tr>
+                                <tr>
+                                    <th>당류</th>
+                                    <td>2.47g</td>
+                                </tr>
+                                <tr>
+                                    <th>포화지방산</th>
+                                    <td>2.4g(16.1%)</td>
+                                </tr>
+                                <tr>
+                                    <th>나트륨</th>
+                                    <td>2813mg(140.6%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <i class="ico4 recommend"></i>
+                <ul class="menuLiInner">
+                    <li class="menuOrder">
+                        <p>A1</p>
+                    </li>
+                    <li class="menuImg"><img src="../img/food_sm_a1_big.png" alt="오징어돌솥비빔밥"></li>
+                    <li class="menuTit">
+                        <dl>
+                            <dt>오징어돌솥비빔밥<i class="ico3 best"></i></dt>
+                            <dd class="subDd">(ojingeodolsotbibAimbap)</dd>
+                            <dd>Spicy Squid Bibimbap in a Hot Stone Pot</dd>
+                            <dd>オジンオ・ドルソッビビンパプ / 石锅鱿鱼拌饭 </dd>
+                        </dl>
+                    </li>
+                    <li class="menuPrice">
+                        <p>￦ <b>13,000</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>총열량</th>
+                                    <td>1662Kcal</td>
+                                </tr>
+                                <tr>
+                                    <th>단백질</th>
+                                    <td>29.0g(53.6%)</td>
+                                </tr>
+                                <tr>
+                                    <th>당류</th>
+                                    <td>2.47g</td>
+                                </tr>
+                                <tr>
+                                    <th>포화지방산</th>
+                                    <td>2.4g(16.1%)</td>
+                                </tr>
+                                <tr>
+                                    <th>나트륨</th>
+                                    <td>2813mg(140.6%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </li>
+            <li class="soldOut">
+                <ul class="menuLiInner">
+                    <li class="menuOrder">
+                        <p>A1</p>
+                    </li>
+                    <li class="menuImg"><img src="../img/food_sm_a1_big.png" alt="오징어돌솥비빔밥"></li>
+                    <li class="menuTit">
+                        <dl>
+                            <dt>오징어돌솥비빔밥</dt>
+                            <dd class="subDd">(ojingeodolsotbibAimbap)</dd>
+                            <dd>Spicy Squid Bibimbap in a Hot Stone Pot</dd>
+                            <dd>オジンオ・ドルソッビビンパプ / 石锅鱿鱼拌饭 </dd>
+                        </dl>
+                    </li>
+                    <li class="menuPrice">
+                        <p>￦ <b>13,000</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>총열량</th>
+                                    <td>1662Kcal</td>
+                                </tr>
+                                <tr>
+                                    <th>단백질</th>
+                                    <td>29.0g(53.6%)</td>
+                                </tr>
+                                <tr>
+                                    <th>당류</th>
+                                    <td>2.47g</td>
+                                </tr>
+                                <tr>
+                                    <th>포화지방산</th>
+                                    <td>2.4g(16.1%)</td>
+                                </tr>
+                                <tr>
+                                    <th>나트륨</th>
+                                    <td>2813mg(140.6%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <ul class="menuLiInner">
+                    <li class="menuOrder">
+                        <p>A1</p>
+                    </li>
+                    <li class="menuImg"><img src="../img/food_sm_a1_big.png" alt="오징어돌솥비빔밥"></li>
+                    <li class="menuTit">
+                        <dl>
+                            <dt>오징어돌솥비빔밥</dt>
+                            <dd class="subDd">(ojingeodolsotbibAimbap)</dd>
+                            <dd>Spicy Squid Bibimbap in a Hot Stone Pot</dd>
+                            <dd>オジンオ・ドルソッビビンパプ / 石锅鱿鱼拌饭 </dd>
+                        </dl>
+                    </li>
+                    <li class="menuPrice">
+                        <p>￦ <b>13,000</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>총열량</th>
+                                    <td>1662Kcal</td>
+                                </tr>
+                                <tr>
+                                    <th>단백질</th>
+                                    <td>29.0g(53.6%)</td>
+                                </tr>
+                                <tr>
+                                    <th>당류</th>
+                                    <td>2.47g</td>
+                                </tr>
+                                <tr>
+                                    <th>포화지방산</th>
+                                    <td>2.4g(16.1%)</td>
+                                </tr>
+                                <tr>
+                                    <th>나트륨</th>
+                                    <td>2813mg(140.6%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <ul class="menuLiInner">
+                    <li class="menuOrder">
+                        <p>A1</p>
+                    </li>
+                    <li class="menuImg"><img src="../img/food_sm_a1_big.png" alt="오징어돌솥비빔밥"></li>
+                    <li class="menuTit">
+                        <dl>
+                            <dt>오징어돌솥비빔밥</dt>
+                            <dd class="subDd">(ojingeodolsotbibAimbap)</dd>
+                            <dd>Spicy Squid Bibimbap in a Hot Stone Pot</dd>
+                            <dd>オジンオ・ドルソッビビンパプ / 石锅鱿鱼拌饭 </dd>
+                        </dl>
+                    </li>
+                    <li class="menuPrice">
+                        <p>￦ <b>13,000</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>총열량</th>
+                                    <td>1662Kcal</td>
+                                </tr>
+                                <tr>
+                                    <th>단백질</th>
+                                    <td>29.0g(53.6%)</td>
+                                </tr>
+                                <tr>
+                                    <th>당류</th>
+                                    <td>2.47g</td>
+                                </tr>
+                                <tr>
+                                    <th>포화지방산</th>
+                                    <td>2.4g(16.1%)</td>
+                                </tr>
+                                <tr>
+                                    <th>나트륨</th>
+                                    <td>2813mg(140.6%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <ul class="menuLiInner">
+                    <li class="menuOrder">
+                        <p>A1</p>
+                    </li>
+                    <li class="menuImg"><img src="../img/food_sm_a1_big.png" alt="오징어돌솥비빔밥"></li>
+                    <li class="menuTit">
+                        <dl>
+                            <dt>오징어돌솥비빔밥</dt>
+                            <dd class="subDd">(ojingeodolsotbibAimbap)</dd>
+                            <dd>Spicy Squid Bibimbap in a Hot Stone Pot</dd>
+                            <dd>オジンオ・ドルソッビビンパプ / 石锅鱿鱼拌饭 </dd>
+                        </dl>
+                    </li>
+                    <li class="menuPrice">
+                        <p>￦ <b>13,000</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>총열량</th>
+                                    <td>1662Kcal</td>
+                                </tr>
+                                <tr>
+                                    <th>단백질</th>
+                                    <td>29.0g(53.6%)</td>
+                                </tr>
+                                <tr>
+                                    <th>당류</th>
+                                    <td>2.47g</td>
+                                </tr>
+                                <tr>
+                                    <th>포화지방산</th>
+                                    <td>2.4g(16.1%)</td>
+                                </tr>
+                                <tr>
+                                    <th>나트륨</th>
+                                    <td>2813mg(140.6%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <ul class="menuLiInner">
+                    <li class="menuOrder">
+                        <p>A1</p>
+                    </li>
+                    <li class="menuImg"><img src="../img/food_sm_a1_big.png" alt="오징어돌솥비빔밥"></li>
+                    <li class="menuTit">
+                        <dl>
+                            <dt>오징어돌솥비빔밥</dt>
+                            <dd class="subDd">(ojingeodolsotbibAimbap)</dd>
+                            <dd>Spicy Squid Bibimbap in a Hot Stone Pot</dd>
+                            <dd>オジンオ・ドルソッビビンパプ / 石锅鱿鱼拌饭 </dd>
+                        </dl>
+                    </li>
+                    <li class="menuPrice">
+                        <p>￦ <b>13,000</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>총열량</th>
+                                    <td>1662Kcal</td>
+                                </tr>
+                                <tr>
+                                    <th>단백질</th>
+                                    <td>29.0g(53.6%)</td>
+                                </tr>
+                                <tr>
+                                    <th>당류</th>
+                                    <td>2.47g</td>
+                                </tr>
+                                <tr>
+                                    <th>포화지방산</th>
+                                    <td>2.4g(16.1%)</td>
+                                </tr>
+                                <tr>
+                                    <th>나트륨</th>
+                                    <td>2813mg(140.6%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <ul class="menuLiInner">
+                    <li class="menuOrder">
+                        <p>A1</p>
+                    </li>
+                    <li class="menuImg"><img src="../img/food_sm_a1_big.png" alt="오징어돌솥비빔밥"></li>
+                    <li class="menuTit">
+                        <dl>
+                            <dt>오징어돌솥비빔밥</dt>
+                            <dd class="subDd">(ojingeodolsotbibAimbap)</dd>
+                            <dd>Spicy Squid Bibimbap in a Hot Stone Pot</dd>
+                            <dd>オジンオ・ドルソッビビンパプ / 石锅鱿鱼拌饭 </dd>
+                        </dl>
+                    </li>
+                    <li class="menuPrice">
+                        <p>￦ <b>13,000</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>총열량</th>
+                                    <td>1662Kcal</td>
+                                </tr>
+                                <tr>
+                                    <th>단백질</th>
+                                    <td>29.0g(53.6%)</td>
+                                </tr>
+                                <tr>
+                                    <th>당류</th>
+                                    <td>2.47g</td>
+                                </tr>
+                                <tr>
+                                    <th>포화지방산</th>
+                                    <td>2.4g(16.1%)</td>
+                                </tr>
+                                <tr>
+                                    <th>나트륨</th>
+                                    <td>2813mg(140.6%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="bgBottom"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SAIM3CHON</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var id = 1;
+            var showId = 1;
+            $('.btnAdd').click(function() {
+
+                if (showId <= 4) {
+                    showId = showId + 1;
+                    $('.order_bx_wrap.change').append(
+                        '<div class="order_bx"> <ul class="direct_order"> <li class="samchon_add_li1"><input type="text" placeholder="이름"></li> <li class="samchon_add_li2"><input type="text" placeholder="휴대폰번호(ID)"></li> <li class="samchon_add_li3"><input type="text" placeholder="이메일"></li> <li class="samchon_add_li4"><input type="text" placeholder="삼촌소속"></li> <li class="samchon_add_li5"><a href="#n" class="btnRemove"><img src="../img/ico_minusButton.png" alt="추가버튼"></a></li> </ul> </div>'
+                    ); // end append
+                } else {
+                    return;
+                }
+            }); // end click
+            $(document).on("click", ".btnRemove", function() {
+                $(this).closest(".order_bx").remove();
+                showId = showId - 1;
+            });
+
+
+
+
+            $('.file_input .file_upload-1').change(function() {
+                var val = $(this).val().split("\\");
+                var fileName = val[val.length - 1]; //파일명 가져오기
+                // var fileName = $(this).val();
+                var fileCount = $(this).get(0).files.length;
+                if ($(this).get(0).files.length == 1) {
+                    $('.file_input .file_text-1').val(fileName);
+                }
+            });
+        }); // end ready
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="skipnavi">
+            <a href="#container">본문 바로가기</a>
+        </div>
+
+        <!-- header -->
+        <div id="header" class="clearfix">
+            <div class="container">
+                <h1 class="logo mobile">
+                    <a href="#"><img src="../img/header_logo.png" alt="로고"></a>
+                </h1>
+                <div class="mobile_header_menu">
+                    <a href="#n" class="menu_a">
+                        <img src="../img/header_menu_m.png" alt="모바일메뉴">
+                    </a>
+                    <div class="dim-layer" style="display: none;">
+                        <div class="dimBg"></div>
+                        <div class="pop_menu" style="opacity: 0; left: -320px;">
+                            <div class="pop_menu_header">
+                                전체메뉴
+                                <a href="#n" class="close"></a>
+                            </div>
+                            <div class="pop_menu_content_1">
+                                <div class="ment">
+                                    <p class="button_sg"></p>
+                                    동대문삼촌들 님 반갑습니다.
+                                </div>
+                            </div>
+                            <ul class="pop_menu_content_2">
+                                <li><a href="#n" class="m_home">메인</a></li>
+                                <li><a href="#n" class="m_login">로그아웃</a></li>
+                                <li><a href="#n" class="m_join">마이페이지</a></li>
+                                <!-- 사입관리자 -->
+                                <li><a href="#n" class="m_sg_o">주문하기</a></li>
+                                <li><a href="#n" class="m_sg_s">주문조회</a></li>
+                                <li><a href="#n" class="m_sg_m">삼촌관리</a></li>
+                                <!--// 사입관리자 -->
+                                <li><a href="#layer1" class="m_memo memo_pop">메모</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="mobile_header_back">
+                    <a href="#n">
+                        <img src="../img/header_back_m.png" alt="모바일 뒤로가기">
+                    </a>
+                </div> -->
+                <!-- 비로그인시 -->
+                <!-- <div class="mobile_header_login">
+                        <a href="#n">
+                            <img src="../img/header_login_m.png" alt="모바일로그인">
+                        </a>
+                    </div>
+                    <div class="button_wrap">
+                        <a href="#n"><img src="../img/header_login.png" alt="로그인"></a>
+                        <a href="#n"><img src="../img/header_join.png" alt="회원가입"></a>
+                    </div> -->
+                <!-- //비로그인시 -->
+
+                <!-- 로그인시 -->
+                <ul class="pc_header_menu">
+                    <li><a href="#n">주문하기</a></li>
+                    <li><a href="#n">주문조회</a></li>
+                    <li><a href="#n">마이페이지</a></li>
+                </ul>
+
+                <div class="user_name">
+                    동대문삼촌 님 <img src="../img/header_ico_sg.png" alt="사입관리자">
+                </div>
+                <!-- //로그인시 -->
+            </div>
+        </div>
+        <!-- // header -->
+
+        <div id="container">
+            <div class="container samchon_manage">
+                <!-- order_header start -->
+                <div class="order_header">
+                    <p class="order_title">삼촌관리</p>
+                    <p class="order_title_semi">삼촌목록</p>
+                    <ul class="order_detail">
+                    </ul>
+                </div>
+                <!-- order_header end -->
+
+                <form name="orderli" action="" method="post">
+                    <!-- order_contents start -->
+                    <div class="order_contents">
+                        <div class="input_div">
+                            <span class="check_bind check_join">
+                            <input type="checkbox" id="total_order">
+                            <label for="total_order"></label>
+                        </span>
+                        </div>
+                        <ul class="direct_order first input">
+                            <li class="samchon_li1">이름</li>
+                            <li class="samchon_li2">휴대폰번호(ID)</li>
+                            <li class="samchon_li3">이메일</li>
+                            <li class="samchon_li4">삼촌소속</li>
+                        </ul>
+
+                        <div class="order_bx_wrap">
+                            <div class="order_bx">
+                                <div class="input_div">
+                                    <span class="check_bind check_join">
+                                        <input type="checkbox" id="order1" class="order_checkbind">
+                                        <label for="order1"></label>
+                                    </span>
+                                </div>
+                                <ul class="direct_order input">
+                                    <li class="samchon_li1 ellipsis saipN">김삼촌</li>
+                                    <li class="samchon_li2 ellipsis ">010-2345-6789</li>
+                                    <li class="samchon_li3 ellipsis ">mail@mail.com</li>
+                                    <li class="samchon_li4 ellipsis teamN">소속A</li>
+                                </ul>
+                            </div>
+                            <div class="order_bx">
+                                <div class="input_div">
+                                    <span class="check_bind check_join">
+                                        <input type="checkbox" id="order2" class="order_checkbind">
+                                        <label for="order1"></label>
+                                    </span>
+                                </div>
+                                <ul class="direct_order input">
+                                    <li class="samchon_li1 ellipsis saipN">최삼촌</li>
+                                    <li class="samchon_li2 ellipsis ">010-2345-6789</li>
+                                    <li class="samchon_li3 ellipsis ">mail@mail.com</li>
+                                    <li class="samchon_li4 ellipsis teamN">소속B</li>
+                                </ul>
+                            </div>
+                            <div class="order_bx">
+                                <div class="input_div">
+                                    <span class="check_bind check_join">
+                                        <input type="checkbox" id="order3" class="order_checkbind">
+                                        <label for="order1"></label>
+                                    </span>
+                                </div>
+                                <ul class="direct_order input">
+                                    <li class="samchon_li1 ellipsis saipN">홍길동</li>
+                                    <li class="samchon_li2 ellipsis ">010-2345-6789</li>
+                                    <li class="samchon_li3 ellipsis ">mail@mail.com</li>
+                                    <li class="samchon_li4 ellipsis teamN">소속C</li>
+                                </ul>
+                            </div>
+                            <div class="order_bx">
+                                <div class="input_div">
+                                    <span class="check_bind check_join">
+                                        <input type="checkbox" id="order4" class="order_checkbind">
+                                        <label for="order1"></label>
+                                    </span>
+                                </div>
+                                <ul class="direct_order input">
+                                    <li class="samchon_li1 ellipsis saipN">김실장</li>
+                                    <li class="samchon_li2 ellipsis ">010-2345-6789</li>
+                                    <li class="samchon_li3 ellipsis ">mail@mail.com</li>
+                                    <li class="samchon_li4 ellipsis teamN">소속D</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- order_contents end -->
+                    <div class="saip_button_wrap">
+                        <a href="#n" class="samchon samchon_d">삼촌 삭제</a>
+                        <a href="#n" class="samchon">비밀번호 초기화</a>
+                    </div>
+
+
+                    <div>
+                        <!-- order_header start -->
+                        <div class="order_header">
+                            <p class="order_title_semi">삼촌추가</p>
+                            <ul class="order_detail">
+                            </ul>
+                        </div>
+                        <!-- order_header end -->
+
+                        <!-- order_contents start -->
+                        <div class="order_contents">
+                            <ul class="direct_order">
+                                <li class="samchon_add_li1">이름</li>
+                                <li class="samchon_add_li2">휴대폰번호(ID)</li>
+                                <li class="samchon_add_li3">이메일</li>
+                                <li class="samchon_add_li4">삼촌소속</li>
+                            </ul>
+
+                            <div class="order_bx_wrap change">
+                                <div class="order_bx">
+                                    <ul class="direct_order">
+                                        <li class="samchon_add_li1"><input type="text" placeholder="이름"></li>
+                                        <li class="samchon_add_li2"><input type="text" placeholder="휴대폰번호(ID)"></li>
+                                        <li class="samchon_add_li3"><input type="text" placeholder="이메일"></li>
+                                        <li class="samchon_add_li4"><input type="text" placeholder="삼촌소속"></li>
+                                        <li class="samchon_add_li5"><a href="#n" class="btnAdd"><img src="../img/ico_addButton_p.png" alt="추가버튼"></a></li>
+                                    </ul>
+                                </div>
+                                <!-- order_bx -->
+                            </div>
+                            <!-- order_bx_wrap -->
+                        </div>
+                        <!-- order_contents end -->
+                    </div>
+                    <div class="saip_button_wrap">
+                        <p class="warning">※ 한번에 최대 5명까지 입력 가능합니다.</p>
+                        <p class="warning">※ 등록한 삼촌의 최초 로그인 비밀번호는 12345678 입니다.</p>
+                    </div>
+                    <div class="order_button_wrap">
+                        <button type="submit" class="order_button">삼촌등록</button>
+                    </div>
+                </form>
+
+                <!-- order_header start -->
+                <div class="order_header">
+                    <p class="order_title_semi">일괄등록</p>
+                    <ul class="order_detail clearfix">
+                        <li class="clearfix">
+                            <div class="order_detail_r">
+                                <a href="#n" class="form_downbutton">양식 다운로드</a>
+                            </div>
+                        </li>
+                        <li class="file_input">
+                            <form name="uploadFile" action="" method="post" enctype="multipart/form-data" id="upload-form">
+                                <fieldset>
+                                    <legend>주문서등록</legend>
+                                    <input type="text" readonly="readonly" title="file_route" id="file_route" class="file_text-1">
+                                    <label>
+                                        <input type="file" name="file_upload-1" class="file_upload-1" onchange="document.getElementById('file_route').value=this.value">
+                                    </label>
+                                    <input type="submit" class="file_input_submit" value="파일등록">
+                                </fieldset>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <!-- order_header end -->
+
+                <!-- <form name="orderli" action="" method="post"> -->
+                <!-- order_contents start -->
+                <div class="order_contents">
+                    <ul class="direct_order first">
+                        <li class="samchon_li1">이름</li>
+                        <li class="samchon_li2">휴대폰번호(ID)</li>
+                        <li class="samchon_li3">이메일</li>
+                        <li class="samchon_li4">삼촌소속</li>
+                    </ul>
+
+                    <div class="order_bx_wrap">
+                        <div class="order_bx">
+                            <ul class="direct_order">
+                                <li class="samchon_li1 ellipsis saipN">김삼촌</li>
+                                <li class="samchon_li2 ellipsis ">010-2345-6789</li>
+                                <li class="samchon_li3 ellipsis ">mail@mail.com</li>
+                                <li class="samchon_li4 ellipsis teamN">소속A</li>
+                            </ul>
+                        </div>
+                        <div class="order_bx">
+                            <ul class="direct_order">
+                                <li class="samchon_li1 ellipsis saipN">김삼촌</li>
+                                <li class="samchon_li2 ellipsis ">010-2345-6789</li>
+                                <li class="samchon_li3 ellipsis ">mail@mail.com</li>
+                                <li class="samchon_li4 ellipsis teamN">소속A</li>
+                            </ul>
+                        </div>
+                        <div class="order_bx">
+                            <ul class="direct_order">
+                                <li class="samchon_li1 ellipsis saipN">김삼촌</li>
+                                <li class="samchon_li2 ellipsis ">010-2345-6789</li>
+                                <li class="samchon_li3 ellipsis ">mail@mail.com</li>
+                                <li class="samchon_li4 ellipsis teamN">소속A</li>
+                            </ul>
+                        </div>
+                        <div class="order_bx">
+                            <ul class="direct_order">
+                                <li class="samchon_li1 ellipsis saipN">김삼촌</li>
+                                <li class="samchon_li2 ellipsis ">010-2345-6789</li>
+                                <li class="samchon_li3 ellipsis ">mail@mail.com</li>
+                                <li class="samchon_li4 ellipsis teamN">소속A</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- order_contents end -->
+
+            </div>
+
+            <!-- footer -->
+            <div id="footer">
+                <div class="container">
+                    <h3 class="visuallyhidden">Copyright</h3>
+                    <ul class="lst_term">
+                        <li><a href="#">개인정보 취급방침</a></li>
+                        <li><a href="#">서비스 이용약관</a></li>
+                    </ul>
+                    <ul class="lst_phone">
+                        <li>우 : 04209 서울특별시 마포구 만리잿옛길 369(신공덕동) 3층 307호 (주)네오포스코리아</li>
+                        <li>Tel. 070-8638-2997</li>
+                        <li>Fax. 02-6280-2946</li>
+                    </ul>
+                    <ul class="lst_inquiry">
+                        <li>서비스 문의 : M. 010-4447-1965</li>
+                        <li><a href="mailto:ryan@neoforth.com">E-mail. ryan@neoforth.com</a></li>
+                    </ul>
+                    <p class="tx_copyright">Copyright ⓒ 2017 NeoForthKorea. All Rights Reserved.</p>
+                </div>
+            </div>
+            <!-- // footer -->
+        </div>
+    </div>
+
+
+    <!-- 레이어 팝업 메모 -->
+    <div class="dim-layer-memo">
+        <div class="dimBg-memo"></div>
+        <div id="layer1" class="pop-layer-memo">
+            <div class="pop-container">
+                <div class="pop-header">
+                    <a class="btn_close"></a>메모
+                </div>
+                <div class="pop-conts">
+                    <!--content //-->
+                    <div class="product_name">
+                        <p class="name_main">블라우스<span> (6)</span></p>
+                        <p class="name_detail">[빨강 | SS]</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="img_area type1">
+                            </div>
+                            <strong class="tx_mall">그녀옷거리 <span>[도매]</span></strong>
+                            <p class="tx_memo ellipsis">블라우스가 3개밖에 없네요 ㅠㅠ</p>
+                            <span class="tx_date">2017.11.24<br>20:39</span>
+                        </li>
+                        <li>
+                            <div class="img_area type2">
+                            </div>
+                            <strong class="tx_mall">비비오페라 <span>[소매]</span></strong>
+                            <p class="tx_memo ellipsis">우선그거라도 준비해주세요</p>
+                            <span class="tx_date">2017.11.24<br>20:39</span>
+                        </li>
+                        <li>
+                            <div class="img_area type3">
+                            </div>
+                            <strong class="tx_mall">홍길동 <span>[사입삼촌]</span></strong>
+                            <p class="tx_memo ellipsis">오늘 사입이 어려울 것 같아요</p>
+                            <span class="tx_date">2017.11.24<br>20:39</span>
+                        </li>
+                        <li>
+                            <div class="img_area type4">
+                            </div>
+                            <strong class="tx_mall">동대문삼촌들 <span>[사입관리자]</span></strong>
+                            <p class="tx_memo ellipsis">내일 취합하여 발송드리겠습니다.</p>
+                            <span class="tx_date">2017.11.24<br>20:39</span>
+                        </li>
+                    </ul>
+                    <!--// content-->
+                </div>
+                <div class="btn-r">
+                    <div class="input_wrap">
+                        <input type="text" title="메모내용 입력" placeholder="내용 입력">
+                        <button type="button" onclick="" class="memo_write">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// 레이어 팝업 메모 -->
+</body>
+
+</html>

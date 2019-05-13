@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>미래에셋대우 전자투표 / 전자의결권위임 시스템 관리자모드</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header" class="hd">
+            <h1 class="logo"><a href="javascript:void(0);">관리시스템</a></h1>
+            <div class="log_area">
+                <span class="txt_state"><strong><em>박미래</em> 관리자</strong> 님 로그인하셨습니다</span>
+                <button type="button" class="btn btn_logout">로그아웃</button>
+            </div>
+        </div>
+        <div id="container">
+            <div id="nav">
+                <h2 class="visuallyhidden">LNB</h2>
+                <ul class="lst_nav">
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_user">사용자관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth">
+                            <li><a href="javascript:void(0);"><span>주주가입현황</span></a></li>
+                            <li><a href="javascript:void(0);"><span>회사가입현황</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_schedule">전체 주주총회 일정관리</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_vote on">전자투표/위임관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth on">
+                            <li><a href="javascript:void(0);"><span>주주총회 등록관리</span></a></li>
+                            <li><a href="javascript:void(0);" class="on"><span>투표/위임현황관리</span></a></li>
+                            <li><a href="javascript:void(0);"><span>주주총회 결과관리</span></a></li>
+                            <li><a href="javascript:void(0);"><span>자산운용사DB관리</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_ib">IB컨설팅신청관리</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_board">게시판관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth">
+                            <li><a href="javascript:void(0);"><span>공지사항</span></a></li>
+                            <li><a href="javascript:void(0);"><span>FAQ</span></a></li>
+                            <li><a href="javascript:void(0);"><span>이벤트</span></a></li>
+                            <li><a href="javascript:void(0);"><span>1:1문의</span></a></li>
+                            <li><a href="javascript:void(0);"><span>자료실</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_donation">기부이벤트 관리</a></li>
+                </ul>
+
+            </div>
+            
+            <div class="group_title">
+                <h2 class="titlebar">투표/위임 현황관리</h2>
+                <div class="selectbox form_control"> 
+                    <label for="ex_select" class="placeholder">선택</label> 
+                    <select id="ex_select"> 
+                        <option selected="">선택</option>
+                        <option value="">1</option> 
+                        <option value="">2</option> 
+                        <option value="">3</option>
+                    </select> 
+                </div>
+            </div>
+            <h3 class="stitlebar">주주총회 정보</h2>
+            <div class="group_desc group_table">
+                <table class="table type2">
+                    <caption class="visuallyhidden">기본정보 상세</caption>
+                    <colgroup>
+                        <col width="200">
+                        <col width="315">
+                        <col width="200">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">행사기간</th>
+                            <td>2019.03.12 00:00 ~ 2019.03.21 17:00</td>
+                            <th scope="row">상태</th>
+                            <td>진행중</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주주총회일시</th>
+                            <td>2019.03.22 09:00</td>
+                            <th scope="row">주총기준일</th>
+                            <td>2018.12.31</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">발행주식총수</th>
+                            <td>10,000</td>
+                            <th scope="row"></th>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+
+            <h3 class="stitlebar">안건별 결과</h2>
+            <div class="group_desc group_table">
+                <table class="table">
+                    <caption class="visuallyhidden">주주가입현황 상세</caption>
+                    <colgroup>
+                        <col width="*">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" rowspan="2">안건행사</th>
+                            <th scope="col" colspan="8">전자투표, 전자위임장 집계 결과</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">행사가능주식수</th>
+                            <th scope="col">찬성</th>
+                            <th scope="col">반대</th>
+                            <th scope="col">기권</th>
+                            <th scope="col">집중</th>
+                            <th scope="col">행사주식수</th>
+                            <th scope="col">행사율(%)</th>
+                            <th scope="col">행사주주수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="al">1. 재무제표의 승인</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td class="al">2. 이사 선임</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td class="al">3. 감사 선임</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td class="al">4. 이익 배당</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+
+            <div class="group_title mt20 mb10">
+                <h3 class="stitlebar">안건별 상세 결과</h2>
+                <div class="btn_area">
+                    <button class="btn btn_outline btn_download"><span class="ico_download">파일다운로드</span></button>
+                </div>
+                <div class="searchbar">
+                    <label><input type="text" class="form_control" placeholder="주주명을 입력하세요"></label>
+                    <button type="button" class="btn btn_primary"><span class="ico_search">검색</span></button>
+                </div>  <!-- // .searchbar -->
+            </div>
+
+            <div class="group_desc group_table">
+                <table class="table">
+                    <caption class="visuallyhidden">주주가입현황 상세</caption>
+                    <colgroup>
+                        <col width="150">
+                        <col width="150">
+                        <col width="105">
+                        <col width="*">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="2">전자투표권자</th>
+                            <th scope="col" rowspan="2">소유주식수</th>
+                            <th scope="col" rowspan="2">행사가능주식수</th>
+                            <th scope="col" colspan="5">전자투표, 전자위임장 주주별행사 현황</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">이름</th>
+                            <th scope="col">주민번호/사업자번호</th>
+                            <th scope="col">찬성</th>
+                            <th scope="col">반대</th>
+                            <th scope="col">기권</th>
+                            <th scope="col">집중</th>
+                            <th scope="col">행사일시</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="al">1. 재무제표의 승인</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td class="al">2. 이사 선임</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td class="al">3. 감사 선임</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td class="al">4. 이익 배당</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                        </tr>
+                    </tbody>
+                </table>    <!-- // .table -->
+            </div>  <!-- // .group_desc -->
+            <div class="submit_area">
+                <button type="button" class="btn btn_primary">목록</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

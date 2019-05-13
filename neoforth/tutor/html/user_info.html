@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>힐링카페 멘토</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <p class="main_tit">사용자 정보 입력 화면</p>
+        </header>
+        <div id="container">
+            <div class="container">
+                <div class="user_info">
+                    <form action="">
+                        <fieldset>
+                            <legend>사용자 정보 입력 화면</legend>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th><label for="date">날짜</label></th>
+                                        <td><input type="date" id="date" name="date" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="consult_num">상담번호</label></th>
+                                        <td><input type="text" id="consult_num" name="consult_num" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="table_num">테이블 번호</label></th>
+                                        <td><input type="text" id="table_num" name="table_num" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="user_name">본인 이름</label></th>
+                                        <td><input type="text" id="user_name" name="user_name" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="nickname">함께 쓸 닉네임</label></th>
+                                        <td><input type="text" id="nickname" name="nickname" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="nickname">나이</label></th>
+                                        <td><input type="text" id="age" name="age" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="gender">성별</label></th>
+                                        <td>
+                                            <div class="checks">
+                                                <input type="radio" id="gender" name="gender" value="male"><label for="gender">남</label>
+                                                <input type="radio" id="gender1" name="gender" value="female"><label for="gender1" class="gender_female">여</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="relation">관 계</label></th>
+                                        <td><input type="text" id="relation" name="relation" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="revisit_num">재방문 횟수</label></th>
+                                        <td><input type="text" id="revisit_num" name="revisit_num" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td class="button_wrap">
+                                            <a href="javascript:void(0);" class="btn btn-default">취소</a>
+                                            <a href="javascript:void(0);" class="btn btn-submit">설문 작성으로</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                        </fieldset>
+                    </form>
+                    <div class="explain_wrap">
+                        <p class="tit">참고사항</p>
+                        <p class="detail">문장이 긴 질문의 경우, 앞의 단락이 나에게 해당 되면, 높은 숫자의 답을,
+                        앞의 단락이 나에게 해당되지 않으면, 낮은 숫자의 답을 적어주세요.</p>
+                        <p class="ex">예) <span>나의 내성적이고 조용한 성격이지만</span> / 내가 하고 싶은 것은 꼭 하는 사람이다.</p>
+                        <p class="ex2">이 부분이 나에게 해당되면 높은 숫자를, 해당되지 않으면 낮은 숫자를 적어주세요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

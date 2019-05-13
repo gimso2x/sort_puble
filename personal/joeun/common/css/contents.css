@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.content{margin: 2% 0; text-align: center;}
+.content img{max-width: 100%; height: auto;}
+.box_top{padding-bottom: 5%;}
+
+
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+  .content{margin: 5% 0;}
+}
+
+@media screen and (max-width:1024px) and (orientation:landscape){
+  .content{margin: 2% 0;}
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+}
+
+
+/* 모바일 */
+@media screen and (max-width:667px) {
+  .content{margin: 12% 0 5%;}
+}
+
+@media screen and (max-width:667px) and (orientation:landscape){
+  .content{margin: 5% 0;}
+
+}

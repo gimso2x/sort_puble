@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>미래에셋대우</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/plugin/jquery-ui.css">
+<link rel="stylesheet" href="../css/plugin/jquery.timepicker.min.css">
+<link rel="stylesheet" href="../css/plugin/swiper.min.css">
+
+
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/common.js"></script>
+<!-- swiper - 슬라이더  플러그인 -->
+<script src="../js/plugin/swiper.min.js"></script>
+<!-- // swiper - 슬라이더 플러그인 -->
+<!-- jquery-ui -->
+<script src="../js/plugin/jquery-ui.min.js"></script>
+<script src="../js/plugin/jquery.timepicker.min.js"></script>
+<!-- // jquery-ui -->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		layer_popup("#popup_realshareholder");
+		
+		var detach_value = "non_detach";
+		var concen_value = "non_concen";
+		
+		$("#detach").selectmenu({
+			change: function(event, ui) {
+				detach_value = ui.item.value;
+				// ====== 분리, 비집중 case 일경우 표시 ======
+				if(detach_value == "detach" && concen_value == "non_concen") {
+					$(".detach_nonconcen").show();
+				}else {
+					$(".detach_nonconcen").hide();
+				}
+				
+				// ====== 비분리, 집중 case 일경우 표시  ======
+				if(detach_value == "non_detach" && concen_value == "concen") {
+					$(".nonedetach_concen").show();
+				}else {
+					$(".nonedetach_concen").hide();
+				}
+			}
+		});
+			
+    	var innerTxt = '';
+    	
+    	//분리, 비집중
+		$("#separate_count").selectmenu({
+			change: function(event, ui) {
+				
+				for(var i=1;i <= ui.item.label;i++) {
+					innerTxt += '<div class="col fl">';
+					innerTxt += '	<strong class="txt_title"><span class="point point_r">분리 안건'+i+'</span></strong>';
+					innerTxt += '	<label><input type="text" id="" name="separate_agenda'+i+'" class="form_control"></label>';
+					innerTxt += '</div>';					
+				}
+				
+				$(".separate_wrap .inner_div").html(innerTxt);
+				innerTxt = '';
+			}
+		});
+		
+		$("#concen").selectmenu({
+			change: function(event, ui) {
+				var title_value = $("#ui-id-1 option:selected").text();
+				
+				if(title_value != "이사선임") {
+					alert("안건명이 '이사선임'일 경우에만 '집중'선택 가능합니다.");
+					var $myselect = $("#concen");
+					$myselect[0].selectedIndex = 0;
+					$myselect.selectmenu('refresh');
+					return false;
+				}
+				
+				concen_value = ui.item.value;
+				//분리, 비집중 case 일경우 표시
+				if(detach_value == "detach" && concen_value == "non_concen") {
+					$(".detach_nonconcen").show();
+				}else {
+					$(".detach_nonconcen").hide();
+				}
+				//비분리, 집중 case 일경우 표시
+				if(detach_value == "non_detach" && concen_value == "concen") {
+					$(".nonedetach_concen").show();
+				}else {
+					$(".nonedetach_concen").hide();
+				}
+			}
+		});
+		
+		//비분리,집중
+		$("#candidate_count").selectmenu({
+			change: function(event, ui) {				
+				console.log(ui.item.label);
+				var cnt = $("#ui-id-2 option:selected").text();
+				console.log(cnt);
+				
+				if(cnt > ui.item.label) {
+					alert("후보자수는 선임할 이사의 수보다 적을 수 없습니다.");
+					return;
+				}
+				
+				for(var i=1;i <= ui.item.label;i++) {
+					innerTxt += '<div class="col fl">';
+					innerTxt += '	<strong class="txt_title"><span class="point point_r">후보 '+i+'</span></strong>';
+					innerTxt += '	<label><input type="text" id="" name="separate_agenda'+i+'" class="form_control"></label>';
+					innerTxt += '</div>';						
+				}
+				
+				$(".candidate_wrap .inner_div").find('.col').remove();
+				$(".candidate_wrap .inner_div").append(innerTxt);
+				innerTxt = '';
+				
+			}
+		});
+		
+		$("#ui-id-1").selectmenu({
+			change:function(event, ui) {
+				var cs = $("#concen option:selected").text();
+				if(cs == "집중") {
+					var $myselect = $("#concen");
+					$myselect[0].selectedIndex = 0;
+					$myselect.selectmenu('refresh');
+					$myselect.selectmenu();
+					$(".nonedetach_concen").css("display", "none");
+				}
+			}
+		})
+		
+	});
+</script>
+</head>
+
+<body>
+	<div id="skip_nav" title="스킵메뉴">
+		<a href="#header">헤더</a> <a href="#container">본문</a> <a href="#footer">푸터</a>
+	</div>
+	<div id="wrap">
+		<!-- 헤더 -->
+		<header id="header" class="bg_company">
+			<div class="container_wrap">
+				<h1 class="header_logo">
+					<a href="javascript:void(0);">
+						<img src="../img/common/header_logo.png" alt="미래에셋대우 전자투표 페이지 상단 로고">
+					</a>
+				</h1>
+				<h2></h2>
+				<div class="header_buttonwrap">
+					<div class="form_search">
+						<a href="javascript:void(0);" class="form_search_back"><span class="ir">검색부분 줄이기</span></a>
+						<label><input type="text" name="search" class="input_search" placeholder="회사번호 또는 회사명을 입력하세요"></label>
+						<a href="javascript:void(0)" class="form_search_clear"><span class="ir">검색 텍스트 입력시 클리어 버튼</span></a>
+						<a href="javascript:void(0);" class="btn_search"><span class="ir">검색 input 보여주는버튼</span></a>
+						<button type="button" class="header_btn">검색 조회 버튼</button>
+					</div>
+					<a href="javascript:void(0);" class="btn_user"><span class="ir">유저버튼</span></a>
+					<a href="javascript:void(0);" class="btn_user_logout"><span class="ir">로그아웃버튼</span></a>
+				</div>
+				<!-- gnb -->
+				<div id="gnb">
+					<a href="javascript:void(0);" class="btn_menu"><span class="ir">메뉴 오픈 버튼</span></a>
+					
+				</div>
+				<!-- // gnb -->
+			</div>
+			
+			<div class="gnb_bgwrap">
+				<ul class="gnb_1depth">
+					<li><a href="javascript:void(0);">서비스 소개</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">플랫폼 V란?</a></li>
+							<li><a href="javascript:void(0);">주주(개인,법인) 서비스 가이드</a></li>
+							<li><a href="javascript:void(0);">회사 서비스 가이드</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);">서비스 가입</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">주주(개인, 법인) 서비스 가입</a></li>
+							<li><a href="javascript:void(0);">회사 서비스 가입</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);">주주총회 전체일정</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">주주(개인, 법인) 서비스 가입</a></li>
+							<li><a href="javascript:void(0);">회사 서비스 가입</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);">기업 홍보관</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">주주(개인, 법인) 서비스 가입</a></li>
+							<li><a href="javascript:void(0);">회사 서비스 가입</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);">고객센터</a>
+						<ul class="gnb_2depth">
+							<li><a href="javascript:void(0);">공지사항</a></li>
+							<li><a href="javascript:void(0);">자주 묻는 질문</a></li>
+							<li><a href="javascript:void(0);">이벤트</a></li>
+							<li><a href="javascript:void(0);">1:1 문의</a></li>
+							<li><a href="javascript:void(0);">V 자료실</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			
+			<!-- 주주 01-03-01 개인정보 수정 탭 -->
+			<div class="div_header_user_menu">
+				<div class="container_wrap">
+					<a href="javascript:void(0);" class="user_menu_close"><span class="ir">주주,회사 정보메뉴 닫기</span></a>
+					<div class="row">
+						<div class="col fl">
+							<div class="personal_info">
+								<button type="button" class="personal_info_btn">개인정보 설정 버튼</button>
+								<div>
+									<ul class="personal_info_modify">
+										<li><a href="javascript:void(0);">개인정보 수정</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="personal_img_wrap">
+								<img src="../img/common/personal/ico_person_default.jpg" alt="기본프로필 사진" class="profil_person">
+								<img src="../img/common/personal/ico_company_default.jpg" alt="회사프로필 사진" class="profil_company">
+							</div>
+							<p class="personal_info_name">
+								<span>박미래</span>님의 V
+							</p>
+							<p class="personal_number">(회원번호 : 00001 )
+							</p>
+							
+						</div>
+						<div class="col fr">
+							<div class="header_ment">
+								<p>이 달의<br>주주총회</p>
+							</div>
+							<ul>
+								<li>
+									<p>주주총회 결과</p>
+									<a href="javascript:void(0);">24</a>
+								</li>
+								<li>
+									<p>투표/위임 진행</p>
+									<a href="javascript:void(0);">7</a>
+								</li>
+								<li>
+									<p>투표/위임 내역</p>
+									<a href="javascript:void(0);">2</a>
+								</li>
+							</ul>
+							<!-- 프로모션 슬라이드 -->
+							<div class="swiper-container header_promo">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<img src="../img/common/personal/header_promo_1.png">
+									</div>
+									<div class="swiper-slide">
+										<img src="../img/common/personal/header_promo_2.png">
+									</div>
+								</div>
+								<!-- Add Pagination -->
+								<div class="swiper-pagination"></div>
+							</div>
+							<!-- //프로모션 슬라이드 -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 메뉴 탭 -->
+
+			<!-- 자동완성 탭 -->
+			<div class="div_header_add_ajax">
+				<ul>
+					<li><span><a href="javascript:void(0);">00683</a></span><a href="javascript:void(0);">르노<b>삼성</b>자동차</a></li>
+					<li><span><a href="javascript:void(0);">00683</a></span><a href="javascript:void(0);">르노<b>삼성</b>자동차</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>바이오로직스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+				</ul>
+			</div>
+			<!-- // 자동완성 탭 -->
+			
+			<!-- 검색옵션 탭 -->
+			<div class="div_header_add">
+				<div class="div_search_option">
+					<span>기간</span>
+					<label for="from">From</label>
+					<input type="text" id="from" name="from" placeholder="주주총회 시작 일자" onclick="layer_popup('#pop_calendar')">
+					<span>~</span>
+					<label for="to">to</label>
+					<input type="text" id="to" name="to" placeholder="주주총회 종료 일자" onclick="layer_popup('#pop_calendar')">
+					<i class="ico_calendar" onclick="layer_popup('#pop_calendar')"><span class="ir">캘린더 안내 이미지</span></i>
+					<div class="buttonwrap">
+						<button class="btn_default">재설정</button>
+						<button class="btn_submit">조회</button>
+					</div>
+				</div>
+			</div>
+			<!-- //검색옵션 탭 -->
+			
+		</header>
+		<div id="block_allmenu"></div>
+		<!-- // E:헤더 -->
+
+		<!-- 컨테이너 -->
+		<div id="container">
+			<section id="visual" class="visual_sm">
+				<h3 class="ir"></h3>
+			</section>
+			<section id="registration" class="rgst">
+				<h3 class="ir">주주총회 정보등록</h3>
+				<ul class="lst_step clearfix">
+					<li class="step1 off"><span class="ico"></span>주주총회 정보등록</li>
+					<li class="step2 on"><span class="ico"></span>주주명부 및 안건등록</li>
+					<li class="step3"><span class="ico"></span>의결권 행사 제한 등록</li>
+					<li class="step4"><span class="ico"></span>투표권자명부 확인</li>
+				</ul>
+				<p class="txt_warning">각 Step별로 필수내용 입력이 완료되어야 다음 Step으로 진행이
+					가능합니다. 다음 Step으로 진행시 이전 Step의 내용은 자동 저장됩니다.</p>
+
+				<div class="form_write">
+					<form action="">
+						<fieldset>
+							<legend>
+								안건 등록<span class="point">필수 입력사항</span>
+							</legend>
+
+							<div class="row clearfix">
+								<div class="col fl">
+									<strong class="txt_title"><span class="point point_r">안건명</span></strong>
+									<label> <select name="" id="">
+											<option value="">안건을 선택하세요.</option>
+											<option value="">이사선임</option>
+											<option value="">2</option>
+											<option value="">3</option>
+									</select>
+									</label>
+								</div>
+								<div class="col fr">
+									<strong class="txt_title"><span class="point point_r">직접입력</span></strong>
+									<label><input type="text" id="" name=""
+										class="form_control" placeholder="기타 선택시 직접 입력 가능합니다."></label>
+								</div>
+							</div>
+
+							<div class="row clearfix">
+								<strong class="txt_title"><span class="point point_r">안건
+										상세내용</span></strong> <label><input type="text" id="" name=""
+									class="form_control" placeholder=""></label>
+							</div>
+
+							<div class="row clearfix">
+								<strong class="txt_title"><a href="javascript:void(0);"
+									class="" onclick="layer_popup('#popup_guide')">IR 자료<i
+										class="ico_question2"></i>
+								</a></strong>
+
+								<div class="filebox">
+									<input class="upload-name" value="" disabled="disabled">
+									<label for="ex_filename1" tabindex="0"></label> <input
+										type="file" id="ex_filename1" class="upload-hidden">
+								</div>
+							</div>
+
+							<div class="row clearfix">
+								<strong class="txt_title"><a href="javascript:void(0);"
+									class="" onclick="layer_popup('#popup_guide')">안건 추가 자료<i
+										class="ico_question2"></i></a></strong>
+
+								<div class="filebox">
+									<input class="upload-name" value="" disabled="disabled">
+									<label for="ex_filename2" tabindex="0"></label> <input
+										type="file" id="ex_filename2" class="upload-hidden">
+								</div>
+							</div>
+
+							<div class="row clearfix">
+								<div class="col fl">
+									<strong class="txt_title"><span class="point point_r">안건
+											분리</span></strong> <label> <select name="" id="detach">
+											<option value="non_detach">비분리</option>
+											<option value="detach">분리</option>
+									</select>
+									</label>
+								</div>
+								<div class="col fr">
+									<strong class="txt_title"><span class="point point_r">안건
+											투표방법</span></strong> <label> <select name="" id="concen">
+											<option value="non_concen">비집중</option>
+											<option value="concen">집중</option>
+									</select>
+									</label>
+								</div>
+							</div>
+							
+							<!-- 분리  & 비집중 case 일 경우에만 표시됩니다. -->
+							<div class="detach_nonconcen">							
+								<div class="row clearfix">
+	                                <div class="col fl">
+	                                    <strong class="txt_title"><span class="point point_r">분리할 안건 수</span></strong>
+	                                    <label>
+	                                        <select name="" id="separate_count">
+	                                            <option value="">2</option>
+	                                            <option value="">3</option>
+	                                            <option value="">4</option>
+	                                            <option value="">5</option>
+	                                            <option value="">6</option>
+	                                            <option value="">7</option>
+	                                            <option value="">8</option>
+	                                            <option value="">9</option>
+	                                            <option value="">10</option>
+	                                        </select>
+	                                    </label>
+	                                </div>
+	                            </div>
+	                            <div class="separate_wrap">
+		                            <div class="row clearfix inner_div">
+		                                <div class="col fl">
+		                                    <strong class="txt_title"><span class="point point_r">분리 안건1</span></strong>
+		                                    <label><input type="text" id="" name="separate_agenda1"
+											class="form_control"></label>
+		                                </div>
+		                                <div class="col fl">
+		                                    <strong class="txt_title"><span class="point point_r">분리 안건2</span></strong>
+		                                    <label><input type="text" id="" name="separate_agenda2"
+											class="form_control"></label>
+		                                </div>
+		                            </div>
+	                            </div>
+                            </div>
+                            <!-- // 분리  & 비집중 case -->
+                            
+                            <!-- 비분리 & 집중 case 일경우에만 표시됩니다.-->
+                            <div class="nonedetach_concen">	
+	                            <div class="row clearfix">
+	                                <div class="col fl">
+	                                    <strong class="txt_title"><span class="point point_r">선임할 이사의 수</span></strong>
+	                                    <label>
+	                                        <select name="" id="">
+	                                            <option value="">1</option>
+	                                            <option value="">2</option>
+	                                            <option value="">3</option>
+	                                        </select>
+	                                    </label>
+	                                </div>
+	                                <div class="col fr">
+	                                    <strong class="txt_title"><span class="point point_r">후보자 수</span></strong>
+	                                    <label>
+	                                        <select name="" id="candidate_count">
+	                                            <option value="">1</option>
+	                                            <option value="">2</option>
+	                                            <option value="">3</option>
+	                                            <option value="">4</option>
+	                                        </select>
+	                                    </label>
+	                                </div>
+	                            </div>
+
+								<div class="candidate_wrap">
+		                            <div class="row clearfix inner_div">
+		                                <div class="col fl">
+		                                    <strong class="txt_title"><span class="point point_r">후보 1</span></strong>
+		                                    <label><input type="text" id="" name=""
+												class="form_control"></label>
+		                                </div>
+		                            </div>
+	                            </div>
+                            </div>
+                            <!-- // 비분리 & 집중 case -->
+
+							<ul class="lst_warning">
+								<li class="txt_warning">이사 선임 안건의 경우에만 안건투표방법이 활성화됩니다.
+									집중투표제 선택시 선임할 이사의 수를 입력하고 후보자 수를 입력하고 후보자 이름을 입력해야 집중투표가 가능합니다.</li>
+								<li class="txt_warning">내용 입력 후 추가버튼을 누르시면 하단 영역에 입력한 안건이
+									추가됩니다.</li>
+							</ul>
+
+							<div class="row clearfix row_upload">
+								<button type="button" class="btn btn_refresh">
+									<span>초기화</span>
+								</button>
+								<button type="button" class="btn btn_plus">
+									<span>추가</span>
+								</button>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<dl class="group_detail group1">
+								<dt>
+									<ul class="lst_titlebar clearfix">
+										<li><label><input type="checkbox"></label></li>
+										<li><span>No</span></li>
+										<li><span>안건명</span></li>
+										<li><span>안건상세내용</span></li>
+										<li><span>안건분리</span></li>
+										<li><span>투표방법</span></li>
+										<li><span>추가자료</span></li>
+									</ul>
+								</dt>
+								<dd>
+									<ul class="lst_desc clearfix">
+										<li><label><input type="checkbox"></label></li>
+										<li>1</li>
+										<li>재무제표의 승인</li>
+										<li>제 22기 재무제표 및 연결재무제표 승인</li>
+										<li>비분리</li>
+										<li>비집중</li>
+										<li>추가자료.PDF</li>
+									</ul>
+									<ul class="lst_desc clearfix">
+										<li><label><input type="checkbox"></label></li>
+										<li>2</li>
+										<li>재무제표의 승인</li>
+										<li>제 22기 재무제표 및 연결재무제표 승인</li>
+										<li>비분리</li>
+										<li>비집중</li>
+										<li>추가자료.PDF</li>
+									</ul>
+									<ul class="lst_desc clearfix">
+										<li><label><input type="checkbox"></label></li>
+										<li>3</li>
+										<li>재무제표의 승인</li>
+										<li>제 22기 재무제표 및 연결재무제표 승인</li>
+										<li>비분리</li>
+										<li>비집중</li>
+										<li>추가자료.PDF</li>
+									</ul>
+									<ul class="lst_desc clearfix">
+										<li><label><input type="checkbox"></label></li>
+										<li>4</li>
+										<li>재무제표의 승인</li>
+										<li>제 22기 재무제표 및 연결재무제표 승인</li>
+										<li>비분리</li>
+										<li>비집중</li>
+										<li>추가자료.PDF</li>
+									</ul>
+								</dd>
+							</dl>
+							<div class="row clearfix row_edit">
+								<button type="button" class="btn btn_edit"
+									onclick="layer_popup('#popup_edit')">
+									<span>수정</span>
+								</button>
+								<button type="button" class="btn btn_del"
+									onclick="layer_popup('#popup_remove')">
+									<span>삭제</span>
+								</button>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<legend>주주총회 관련자료 등록</legend>
+							<div class="row clearfix">
+								<strong class="txt_title">주주총회 소집공고문</strong>
+
+								<div class="filebox">
+									<input class="upload-name" value="" disabled="disabled">
+									<label for="ex_filename3" tabindex="0"></label> <input
+										type="file" id="ex_filename3" class="upload-hidden">
+								</div>
+							</div>
+
+							<div class="row clearfix">
+								<strong class="txt_title">위임장 용지</strong>
+
+								<div class="filebox">
+									<input class="upload-name" value="" disabled="disabled">
+									<label for="ex_filename4" tabindex="0"></label> <input
+										type="file" id="ex_filename4" class="upload-hidden">
+								</div>
+							</div>
+
+							<div class="row clearfix">
+								<strong class="txt_title">참고서류</strong>
+
+								<div class="filebox">
+									<input class="upload-name" value="" disabled="disabled">
+									<label for="ex_filename5" tabindex="0"></label> <input
+										type="file" id="ex_filename5" class="upload-hidden">
+								</div>
+							</div>
+
+							<ul class="lst_warning">
+								<li class="txt_warning">주주총회 소집공고문 PDF파일을 첨부해 주십시오. Dart파일로
+									첨부할 경우 주주가 파일을 열어볼 수 없습니다.</li>
+								<li class="txt_warning">전자위임장 이용 신청시 위임장 용지 및 참고서류를 반드시
+									첨부하여야 합니다. PDF파일로 첨부해 주십시오.</li>
+								<li class="txt_warning">위임장 용지 및 참고서류는 최소 2일 전에 금융위원회와 거래서에
+									제출된 것이어야 합니다.</li>
+							</ul>
+						</fieldset>
+
+						<fieldset>
+							<legend>주주명부 업로드</legend>
+
+							<div class="row clearfix">
+								<div class="col fl">
+									<strong class="txt_title"><span class="point point_r">주주총회
+											기수</span></strong>
+									<div class="form_txt">22기 정기 주주총회</div>
+								</div>
+								<div class="col fr">
+									<strong class="txt_title"><span class="">주주총회
+											일시</span></strong>
+									<div class="form_txt">2019년 3월 22일 09:00</div>
+								</div>
+							</div>
+
+							<div class="row clearfix">
+								<div class="col fl">
+									<strong class="txt_title"><span class="">총 발행
+											주식수</span></strong> <label><input type="text" id="" name=""
+										class="form_control" placeholder=""><span
+										class="txt_right">주</span></label>
+								</div>
+								<div class="col fr clearfix">
+									<strong class="txt_title"><span class="">명의개서
+											대행사</span></strong>
+									<div class="fl col">
+										<label> <select name="" id="">
+												<option value="">하나은행</option>
+												<option value="">KSD</option>
+												<option value="">국민은행</option>
+												<option value="">직접관리</option>
+										</select>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="row clearfix">
+								<strong class="txt_title"><span class="">주주총회 장소</span></strong>
+								<div class="form_txt">경기도 성남시 분당구 정자동 정자일로 24</div>
+							</div>
+
+							<div class="row clearfix">
+								<strong class="txt_title"><span class="">주주명부 파일</span></strong>
+								<div class="filebox">
+									<input class="upload-name" value="" disabled="disabled">
+									<label for="ex_filename6" tabindex="0"></label> <input
+										type="file" id="ex_filename6" class="upload-hidden">
+								</div>
+							</div>
+
+							<ul class="lst_warning">
+								<li class="txt_warning">명의개서 대행사가 하나은행 또는 KSD일 경우 주주명부에
+									KSD의 수량이 포함되어 있음. 이는 실질주주와 중복되는 수량이므로 KSD를 행삭제 후 총 발행 주식수 일치여부
+									확인 후 업로드</li>
+								<li class="txt_warning">주주명부 업로드 전 파일에 암호가 설정된 경우 암호 해제 후
+									업로드</li>
+							</ul>
+
+							<div class="row clearfix row_upload">
+								<button type="button" class="btn btn_refresh">
+									<span>초기화</span>
+								</button>
+								<button type="button" class="btn btn_upload">
+									<span>업로드</span>
+								</button>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<legend>주주명부 업로드 현황</legend>
+
+							<div class="row clearfix">
+								<div class="col fl">
+									<strong class="txt_title"><span class="">업로드 개시</span></strong>
+									<div class="form_txt">2019년 3월 22일 09:00</div>
+								</div>
+								<div class="col fr">
+									<strong class="txt_title"><span class="">업로드 완료</span></strong>
+									<div class="form_txt">2019년 3월 22일 09:00</div>
+								</div>
+							</div>
+
+							<div class="row clearfix">
+								<div class="col fl">
+									<strong class="txt_title"><span class="">주주명부 총
+											주식수</span></strong>
+									<div class="form_txt">
+										19,000<span class="txt_etc">주</span>
+									</div>
+								</div>
+								<div class="col fr">
+									<strong class="txt_title"><span class="">일치 여부</span></strong>
+									<div class="form_txt">일치 / 불일치</div>
+								</div>
+							</div>
+
+							<div class="row clearfix">
+								<div class="col fl">
+									<strong class="txt_title"><span class="">업로드
+											파일명</span></strong>
+									<div class="form_txt">2018년 주주명부.xls</div>
+								</div>
+								<div class="col fr">
+									<strong class="txt_title"><span class="">상태</span></strong>
+									<div class="form_txt">오류 / 완료</div>
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<legend>오류 내용</legend>
+							<dl class="group_detail group2">
+								<dt>
+									<ul class="lst_titlebar clearfix">
+										<li><span>No</span></li>
+										<li><span>오류행</span></li>
+										<li><span>오류내용</span></li>
+									</ul>
+								</dt>
+								<dd>
+									<ul class="lst_desc clearfix">
+										<li>1</li>
+										<li>23행</li>
+										<li>23번째 주주 5번째 열이 레이아웃이 맞지 않습니다.</li>
+									</ul>
+									<ul class="lst_desc clearfix">
+										<li>2</li>
+										<li>23행</li>
+										<li>23번째 주주 5번째 열이 레이아웃이 맞지 않습니다.</li>
+									</ul>
+								</dd>
+							</dl>
+						</fieldset>
+
+						<fieldset>
+							<div class="row clearfix row_etc">
+								<legend class="fl">투표권자지정</legend>
+								<p class="txt_warning fl">
+									전자투표 명부 관리를 위해서 자산운용사의 실질주주를 확인하여 투표권자를 확인하고자 합니다.<br>버튼을
+									클릭하시어 해당 내용에 대한 확인을 진행하여 주세요.
+								</p>
+								<button type="button" class="btn btn_confirm fr">확인</button>
+							</div>
+							<div class="submit_area">
+								<button type="button" class="btn btn_prev">이전</button>
+								<button type="submit" class="btn btn_next">다음</button>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+
+			</section>
+		</div>
+		<!-- // E:컨테이너 -->
+
+		<!-- 푸터 -->
+		<footer id="footer">
+			<div class="container_wrap">
+				<div class="text_area">
+					<ul class="footer_gnb">
+						<li><a href="javascript:void(0);">회사소개</a></li>
+						<li><a href="javascript:void(0);">이용약관</a></li>
+						<li><a href="javascript:void(0);">개인정보취급처리방침</a></li>
+						<li><a href="javascript:void(0);">저작권보호방침</a></li>
+						<li><a href="javascript:void(0);">PC보안프로그램</a></li>
+						<li class="mail"><a href="mailto:ibplatform@miraeasset.com">ibplatform@miraeasset.com</a></li>
+					</ul>
+					<p class="copyright">COPYRIGHT ⓒ MIRAE ASSET DAEWOO CO., LTD. ALL RIGHTS RESERVED</p>
+				</div>
+				<div class="footer_info">
+					<dl class="fl">
+						<dt>고객센터</dt>
+						<dd>1588-6800</dd>
+					</dl>
+					<dl class="fr">
+						<dt>고객케어센터</dt>
+						<dd>1644-3322</dd>
+					</dl>
+				</div>
+			</div>
+		</footer>
+		<!-- // E:푸터 -->
+	</div>
+
+	<div class="layer_wrap">
+		<div id="pop_calendar" class="pop-layer">
+			<a href="javascript:void(0);" class="btn_close">닫기</a>
+			<div class="pop-container">
+				<div class="cal_left">
+					<p>주주총회 시작 일자</p>
+					<div id="from_calendar"></div>
+				</div>
+				<div class="cal_right">
+					<p>주주총회 종료 일자</p>
+					<div id="to_calendar"></div>
+				</div>
+			</div>
+			<div class="button_wrap">
+				<button class="btn_submit" id="cal_complete">기간 선택 완료</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="layer_wrap">
+		<div id="popup_edit" class="pop-layer alert-pop">
+			<div class="pop-header">
+				알림 <a href="javascript:void(0);" class="btn_close">닫기</a>
+			</div>
+			<div class="pop-body">
+				입력창에 입력해둔 내용이 사라집니다.<br>수정을 진행하시겠습니까?
+				<div class="button_wrap">
+					<button class="btn_default" onclick="pop_close($('#popup_edit'));">아니요</button>
+					<button class="btn_submit" onclick="pop_close($('#popup_edit'));">예</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="layer_wrap">
+		<div id="popup_remove" class="pop-layer alert-pop">
+			<div class="pop-header">
+				알림 <a href="javascript:void(0);" class="btn_close">닫기</a>
+			</div>
+			<div class="pop-body">
+				입력한 내용을 삭제하시겠습니까?
+				<div class="button_wrap">
+					<button class="btn_default"
+						onclick="pop_close($('#popup_remove'));">아니요</button>
+					<button class="btn_submit" onclick="pop_close($('#popup_remove'));">예</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="layer_wrap">
+		<div id="popup_guide" class="pop-layer alert-pop popup_guide">
+			<div class="pop-header">
+				알림 <a href="javascript:void(0);" class="btn_close">닫기</a>
+			</div>
+			<div class="pop-body">
+				IR자료 및 안건별 추가자료가 있다면 파일을 업로드 하실 수 있습니다.<br> 다만, IR자료 및 안건추가자료는
+				V의 프리미엄 서비스 입니다.<br> 부가서비스 신청에서 신청이 완료되어야 주주들에게 자료가 노출됩니다.
+
+				<div class="button_wrap">
+					<button class="btn_submit" onclick="pop_close($('#popup_guide'));">예</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 투표권자 지정 (실질주주 등록) -->
+	<div class="layer_wrap">
+		<div id="popup_realshareholder" class="pop-layer alert-pop lg">
+			<div class="pop-header">
+				투표권자 지정 (실질주주 등록) <a href="javascript:void(0);" class="btn_close">닫기</a>
+			</div>
+			<div class="pop-body">
+				<div class="rgst">
+					<div class="form_write">
+						<!-- <div class="row clearfix">
+							<div class="col fl">
+								<strong class="txt_title">주주명</strong>
+								<div class="form_txt">22</div>
+							</div>
+							<div class="col fr">
+								<strong class="txt_title">주민/사업자번호</strong>
+								<label><input type="text" id="" name="" class="form_control">
+									<a href="javascript:void(0);" class="btn_search ir">주민/사업자번호 검색</a>
+								</label>
+							</div>
+						</div>
+						<div class="row clearfix">
+							<div class="col fl">
+								<strong class="txt_title">주주번호</strong>
+								<div class="form_txt">22</div>
+							</div>
+							<div class="col fr">
+								<strong class="txt_title">주주명부상 보유주식수</strong>
+								<div class="form_txt">22</div>
+							</div>
+						</div>
+						<div class="row clearfix">
+							<div class="col fl">
+								<strong class="txt_title">투표권자명</strong>
+								<label><input type="text" id="" name="" class="form_control"></label>
+							</div>
+							<div class="col fr">
+								<strong class="txt_title">투표권자 주민/사업자번호</strong>
+								<label><input type="text" id="" name="" class="form_control"></label>
+							</div>
+						</div>
+						<div class="row clearfix row_edit">
+							<button type="button" class="btn btn_edit"><span>수정</span></button>
+							<button type="button" class="btn btn_del"><span>추가</span></button>
+						</div> -->
+						<dl class="group_detail table_1">
+	                        <dt>
+	                            <ul class="lst_titlebar type2 clearfix">
+	                                <li><span>No</span></li>
+	                                <li>
+	                                    <p class="tb_row"><span>주주</span></p>
+	                                    <p class="tb_row clearfix">
+	                                        <span class="tb_col">주주명</span>
+	                                        <span class="tb_col">주민등록번호/사업자번호</span>
+	                                    </p>
+	                                </li>
+	                                <li>
+	                                    <p class="tb_row"><span>전자투표권자/위임장피권유자</span></p>
+	                                    <p class="tb_row clearfix">
+	                                        <span class="tb_col">주주명</span>
+	                                        <span class="tb_col">주민등록번호/사업자번호</span>
+	                                    </p>
+	                                </li>
+	                                <li><span>주주명부상 주식수</span></li>
+	                            </ul>
+	                        </dt>
+	                        <dd>
+	                            <ul class="lst_desc clearfix">
+	                                <li>1</li>
+	                                <li>국민은행 (미래에셋대우자사운용)</li>
+	                                <li>801023-2083829</li>
+	                                <li>
+		                                <select class="test-select">
+		                                	<option>미래에셋대우자사운용</option>
+		                                	<option>미래에셋대우자사운용</option>
+		                                </select>
+	                                </li>
+	                                <li>801023-2083829</li>
+	                                <li class="ar">1,000,000,000 주</li>
+	                            </ul>
+	                            <ul class="lst_desc clearfix">
+	                                <li>2</li>
+	                                <li>국민은행<br>(미래에셋대우자사운용)</li>
+	                                <li>801023-2083829</li>
+	                                <li>
+		                                <select>
+		                                	<option>미래에셋대우자사운용</option>
+		                                	<option>미래에셋대우자사운용</option>
+		                                </select>
+	                                </li>
+	                                <li>801023-2083829</li>
+	                                <li class="ar">1,000,000,000 주</li>
+	                            </ul>
+	                            <ul class="lst_desc clearfix">
+	                                <li>3</li>
+	                                <li>국민은행<br>(미래에셋대우자사운용)</li>
+	                                <li>801023-2083829</li>
+	                                <li>
+	                                	미래에셋대우자사운용미래에셋대우자사운용
+	                                </li>
+	                                <li>801023-2083829</li>
+	                                <li class="ar">1,000,000,000 주</li>
+	                            </ul>
+	                            <ul class="lst_desc clearfix">
+	                                <li>4</li>
+	                                <li>국민은행<br>(미래에셋대우자사운용)</li>
+	                                <li>801023-2083829</li>
+	                                <li>
+		                                <select>
+		                                	<option>미래에셋대우자사운용</option>
+		                                	<option>미래에셋대우자사운용</option>
+		                                </select>
+	                                </li>
+	                                <li>801023-2083829</li>
+	                                <li class="ar">1,000,000,000 주</li>
+	                            </ul>
+	                        </dd>
+	                    </dl>
+	                    <p class="txt_warning">전자투표권자 주주명에 ▼표시가 있는 경우 DB에서 자동으로 확정되지 않은 주주입니다. 직접 선택하셔야 확인버튼이 활성화 되어 완료가 가능합니다</p>
+	                    
+                        <div class="row clearfix row_edit">
+							<!-- <button type="button" class="btn btn_edit">
+								<span>삭제</span>
+							</button> -->
+							<button type="button" class="btn btn_del">
+								<span>완료</span>
+							</button>
+						</div>
+						
+						<div class="row clearfix">
+						<ul class="tabs clearfix">
+                                <li><a href="#tabs-1" class="on">자산운용사</a></li>
+                                <li><a href="#tabs-2">수탁은행</a></li>
+                            </ul>
+                            
+                            <div id="tabs-1" class="tab_contents on">
+                                <p>자산운용사 연락처</p>
+								<dl class="group_detail table_2">
+			                        <dt>
+			                            <ul class="lst_titlebar type2 clearfix">
+			                                <li><span>자산운용사</span></li>
+			                                <li>
+			                                    <p class="tb_row"><span>담당자</span></p>
+			                                    <p class="tb_row clearfix">
+			                                        <span class="tb_col">이름</span>
+			                                        <span class="tb_col">연락처</span>
+			                                    </p>
+			                                </li>
+			                            </ul>
+			                        </dt>
+			                        <dd>
+			                            <ul class="lst_desc clearfix">
+			                                <li>국민은행<br>(미래에셋대우자사운용)</li>
+			                                <li>박정권</li>
+			                                <li>02-0000-0000</li>
+			                            </ul>
+			                        </dd>
+			                        <dd>
+			                            <ul class="lst_desc clearfix">
+			                                <li>국민은행<br>(미래에셋대우자사운용)</li>
+			                                <li>박정권</li>
+			                                <li>02-0000-0000</li>
+			                            </ul>
+			                        </dd>
+			                        <dd>
+			                            <ul class="lst_desc clearfix">
+			                                <li>국민은행<br>(미래에셋대우자사운용)</li>
+			                                <li>박정권</li>
+			                                <li>02-0000-0000</li>
+			                            </ul>
+			                        </dd>
+			                    </dl>
+                            </div>
+
+                            <div id="tabs-2" class="tab_contents">
+                                <p>수탁은행 연락처</p>
+								<dl class="group_detail table_2">
+			                        <dt>
+			                            <ul class="lst_titlebar type2 clearfix">
+			                                <li><span>자산운용사</span></li>
+			                                <li>
+			                                    <p class="tb_row"><span>담당자</span></p>
+			                                    <p class="tb_row clearfix">
+			                                        <span class="tb_col">이름</span>
+			                                        <span class="tb_col">연락처</span>
+			                                    </p>
+			                                </li>
+			                            </ul>
+			                        </dt>
+			                        <dd>
+			                            <ul class="lst_desc clearfix">
+			                                <li>국민은행<br>(미래에셋대우자사운용)</li>
+			                                <li>박정권</li>
+			                                <li>02-0000-0000</li>
+			                            </ul>
+			                        </dd>
+			                        <dd>
+			                            <ul class="lst_desc clearfix">
+			                                <li>국민은행<br>(미래에셋대우자사운용)</li>
+			                                <li>박정권</li>
+			                                <li>02-0000-0000</li>
+			                            </ul>
+			                        </dd>
+			                        <dd>
+			                            <ul class="lst_desc clearfix">
+			                                <li>국민은행<br>(미래에셋대우자사운용)</li>
+			                                <li>박정권</li>
+			                                <li>02-0000-0000</li>
+			                            </ul>
+			                        </dd>
+			                    </dl>
+                            </div>
+                            
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // 투표권자 지정 (실질주주 등록) -->
+	
+	<script>
+        $(function () {
+            // input date time
+            var input_date = $('.input_date');
+            var btn_calendar = $('.btn_calendar');
+            var btn_time = $('.btn_time');
+            input_date.datepicker({
+                dateFormat: "yy/mm/dd",
+                dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+                monthNames: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+                showMonthAfterYear: true,
+            });
+            btn_calendar.click(function () {
+                var tg = $(this);
+                tg.prev().datepicker("show");
+            });
+            btn_time.timepicker();
+
+            // input file
+            var fileTarget = $('.filebox .upload-hidden');
+            fileTarget.on('change', function () { // 값이 변경되면 
+                if (window.FileReader) { // modern browser 
+                    var filename = $(this)[0].files[0].name;
+                } else { // old IE 
+                    var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+                }
+                // 추출한 파일명 삽입 
+                $(this).siblings('.upload-name').val(filename);
+            });
+
+        });
+    </script>
+     <script>
+        $( function() {
+            var tabs = $('.tabs li a');
+            var tab_ct = $('.tab_contents');
+            tabs.each(function(){
+                var tg = $(this);
+                tg.click(function(){
+                    tabs.removeClass('on');
+                    $(this).addClass('on');
+                });
+            });
+            tabs.each(function(i){
+                var tg = $(this);
+                tg.click(function(e){
+                    e.preventDefault();
+                    var url = $(this).attr('href');
+                    tab_ct.removeClass('on');
+                    $(url).addClass('on');
+                });
+            });
+            
+            
+            $(".test-select").selectmenu("destroy");
+        } );
+    </script>
+</body>
+
+</html>

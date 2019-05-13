@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>미래에셋대우 전자투표 / 전자의결권위임 시스템 관리자모드</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/plugin/jquery-ui.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header" class="hd">
+            <h1 class="logo"><a href="javascript:void(0);">관리시스템</a></h1>
+            <div class="log_area">
+                <span class="txt_state"><strong><em>박미래</em> 관리자</strong> 님 로그인하셨습니다</span>
+                <button type="button" class="btn btn_logout">로그아웃</button>
+            </div>
+        </div>
+        <div id="container">
+            <div id="nav">
+                <h2 class="visuallyhidden">LNB</h2>
+                <ul class="lst_nav">
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_user">사용자관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth">
+                            <li><a href="javascript:void(0);" class=""><span>주주가입현황</span></a></li>
+                            <li><a href="javascript:void(0);"><span>회사가입현황</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_schedule">전체 주주총회 일정관리</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_vote on">전자투표/위임관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth on">
+                            <li><a href="javascript:void(0);"><span>주주총회 등록관리</span></a></li>
+                            <li><a href="javascript:void(0);"><span>투표/위임현황관리</span></a></li>
+                            <li><a href="javascript:void(0);" class="on"><span>주주총회 결과관리</span></a></li>
+                            <li><a href="javascript:void(0);"><span>자산운용사DB관리</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_ib">IB컨설팅신청관리</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="ico ico_board">게시판관리<span class="arrow"></span></a>
+                        <ul class="lst_2depth">
+                            <li><a href="javascript:void(0);"><span>공지사항</span></a></li>
+                            <li><a href="javascript:void(0);"><span>FAQ</span></a></li>
+                            <li><a href="javascript:void(0);"><span>이벤트</span></a></li>
+                            <li><a href="javascript:void(0);"><span>1:1문의</span></a></li>
+                            <li><a href="javascript:void(0);"><span>자료실</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="ico ico_donation">기부이벤트 관리</a></li>
+                </ul>
+
+            </div>
+            
+            <div class="group_title">
+                <h2 class="titlebar">주주총회 결과관리</h2>
+
+                <div class="searchbar">
+                    <div class="selectbox form_control"> 
+                        <label for="ex_select" class="placeholder">선택</label> 
+                        <select id="ex_select"> 
+                            <option selected>선택</option>
+                            <option value="">1</option> 
+                            <option value="">2</option> 
+                            <option value="">3</option>
+                        </select> 
+                    </div>
+                    <label><input type="text" class="form_control"></label>
+                    <button type="button" class="btn btn_primary"><span class="ico_search">검색</span></button>
+                </div>  <!-- // .searchbar -->
+            </div>
+
+            <dl class="group_desc group4">
+                <dt>
+                    <ul class="lst_titlebar clearfix">
+                        <li><a href="javascript:void(0);">시장구분</a></li>
+                        <li><a href="javascript:void(0);">회사명</a></li>
+                        <li>기준일</li>
+                        <li>결산월</li>
+                        <li>주총구분</li>
+                        <li><a href="javascript:void(0);">주총일</a></li>
+                        <li><a href="javascript:void(0);">투표/위임<br>이용여부</a></li>
+                        <li><a href="javascript:void(0);">추가자료<br>게시여부</a></li>
+                    </ul>
+                </dt>
+                <dd>
+                    <ul class="lst_desc clearfix">
+                        <li><p class="img"><img src="../img/img_konex.png" alt=""></p></li>
+                        <li>엘지생활건강</li>
+                        <li>2018.12.05</li>
+                        <li>12월</li>
+                        <li>임시</li>
+                        <li>2019.03.09  15:00</li>
+                        <li>전자투표</li>
+                        <li><span class="state success">게시</span></li>
+                    </ul>
+                    <ul class="lst_desc clearfix">
+                        <li><p class="img"><img src="../img/img_kosdaq.png" alt=""></p></li>
+                        <li>엘지생활건강</li>
+                        <li>2018.12.05</li>
+                        <li>12월</li>
+                        <li>임시</li>
+                        <li>2019.03.09  15:00</li>
+                        <li>전자투표</li>
+                        <li><span class="state fail">비게시</span></li>
+                    </ul>
+                    <ul class="lst_desc clearfix">
+                        <li><p class="img"><img src="../img/img_kospi.png" alt=""></p></li>
+                        <li>엘지생활건강</li>
+                        <li>2018.12.05</li>
+                        <li>12월</li>
+                        <li>임시</li>
+                        <li>2019.03.09  15:00</li>
+                        <li>전자투표</li>
+                        <li><span class="state success">게시</span></li>
+                    </ul>
+                    <ul class="lst_desc clearfix">
+                        <li><p class="img"><img src="../img/img_etc.png" alt=""></p></li>
+                        <li>엘지생활건강</li>
+                        <li>2018.12.05</li>
+                        <li>12월</li>
+                        <li>임시</li>
+                        <li>2019.03.09  15:00</li>
+                        <li>전자투표</li>
+                        <li><span class="state success">게시</span></li>
+                    </ul>
+                    <ul class="lst_desc clearfix">
+                        <li><p class="img"><img src="../img/img_konex.png" alt=""></p></li>
+                        <li>엘지생활건강</li>
+                        <li>2018.12.05</li>
+                        <li>12월</li>
+                        <li>임시</li>
+                        <li>2019.03.09  15:00</li>
+                        <li>전자투표</li>
+                        <li><span class="state success">게시</span></li>
+                    </ul>
+                    
+                    <!-- 데이터 없을때 -->
+                    <ul class="non_body">
+                    	<li>데이터가 없습니다.</li>
+                    </ul>
+                    <!-- 데이터 없을때 -->
+                </dd>
+            </dl>
+
+            <div class="group_page">
+                <ul class="nav_page clearfix">
+                    <li><a href="javascript:void(0);" class="ir btn_first">처음</a></li>
+                    <li><a href="javascript:void(0);" class="ir btn_prev">이전</a></li>
+                    <li><a href="javascript:void(0);" class="on">1</a></li>
+                    <li><a href="javascript:void(0);">2</a></li>
+                    <li><a href="javascript:void(0);">3</a></li>
+                    <li><a href="javascript:void(0);">4</a></li>
+                    <li><a href="javascript:void(0);">5</a></li>
+                    <li><a href="javascript:void(0);" class="ir btn_next">다음</a></li>
+                    <li><a href="javascript:void(0);" class="ir btn_last">마지막</a></li>
+                </ul>
+            </div>  <!-- // .group_page -->
+        </div>  <!-- // #container -->
+    </div>
+
+    <!-- popup 'on' 추가/삭제 -->
+    <div class="wrap_popup popup_sm">
+        <div class="popup_container">
+            <div class="msg_area">
+                선택한 회사의 주주총회 등록내용을<br>
+                삭제하시겠습니까?
+            </div>
+            <div class="submit_area">
+                <button type="button" class="btn btn_default">아니요</button>
+                <button type="button" class="btn btn_primary">예</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/plugin/jquery-ui.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        $( function() {
+            // input date time
+            var input_date = $('.input_date');
+            var btn_calendar = $('.btn_calendar');
+            var btn_time = $('.btn_time');
+            input_date.datepicker({
+                dateFormat: "yy/mm/dd",
+                dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+                monthNames: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+                showMonthAfterYear: true,
+            });
+            btn_calendar.click(function(){
+                var tg = $(this);
+                tg.prev().datepicker( "show" );
+            });
+        } );
+    </script>
+</body>
+</html>

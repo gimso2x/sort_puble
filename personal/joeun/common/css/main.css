@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+.main{overflow: hidden; width: 100%; float:left;z-index: -2; max-height: 868px;}
+.main .bg{position: fixed; z-index: -3;float:left; width: 100%;height: 0; padding-bottom: 56.26%; background:center center / cover; background-repeat: no-repeat; background-image: url('../images/background.jpg'); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
+background-attachment: fixed;}
+.main .main_contents{position: relative; z-index: -2;width: 100%; height: 0; overflow: hidden;	padding-bottom: 50%;
+background-color: rgba(40,47,58,.2);}
+.quotes {display: none; position: absolute; left: 50%; bottom:28%; text-align: center; color:white;
+  font-family: 'notokr-bold'; font-size: 30px; transform:translate(-50%, -50%)}
+h3.quotes{ color:#FDBF56;}
+.line{position: absolute; left: 50%; bottom:30%; width:0px; margin-top:20px; border-bottom:1px solid #FFF; transform:translate(-50%, -50%)}
+
+.box{float:left; width: 100%; height: auto; background-color: #FFFFFF; padding-bottom: 4%; box-sizing: border-box;}
+.box_top{float: left; width: 100%; font-size: 40px;padding-top: 9%; padding-bottom: 1%; text-align: center;font-family: 'Hanna', serif;}
+.box_top::before{display: inline-block; background: #b49759; content: " "; margin-top: -3px; vertical-align: middle; margin-right: 30px;
+                  width: 43px;height: 1px;}
+.box_top::after{margin-left: 25px; margin-right: 0px; display: inline-block; background: #b49759; content: " "; margin-top: -3px; vertical-align: middle;
+                  width: 43px;height: 1px;}
+.box_top2{float: left; width: 100%; font-size: 14px; padding-bottom: 4%; text-align: center; font-family: 'notokr-regular';}
+.box .box_left{float:left; width: 50%;}
+.box .box_left .academy{float:left; width: 50%;}
+.box .box_left .rnd{float:left; width: 50%;}
+.box .box_left .recruit{float:left; width: 50%;}
+.box .box_left .qna{float:left; width: 50%;}
+.box .brandstory{float:left; width: 50%;}
+
+.news{width: 100%; height: auto;float:left;  background-color: #FFFFFF; padding-top: 1%; padding-bottom: 7%;}
+.news_detail, .joeun_star{width: 100%; height: auto; float: left;}
+.news_detail_left, .joeun_star_left{float: left; width: 24%;padding-left: 1%; color: black;font-size: 40px;font-family: 'Hanna', serif;padding-top: 2%; padding-bottom: 2%;}
+.news_detail_right, .joeun_star_right{float: left; width:75%;}
+.detail_wrap{height: auto; overflow: hidden;padding:1.5% 0; border-top:1px solid #999;}
+.detail_wrap:nth-of-type(3){border-bottom: 1px solid #ff2e2e;}
+.joeun_star_right .detail_wrap:nth-of-type(1){border-top:none;}
+.subject{float: left;width: 20%; font-size: 15px; color:#4E2801;}
+.contents{float: left; width: 80%; font-size: 14px;}
+
+.mv{float:left; width: 100%; background-color: #F5F4F2; text-align: center;  padding-bottom: 7%; box-sizing: border-box;}
+.mv video{max-width: 100%; height: auto;}
+
+.banner{float: left; width: 100%; text-align: center; background: url(http://thejoeunmall.com/innoy/images/hole_bg_2.jpg) 50% 50% no-repeat;
+  background-attachment: fixed; background-size: cover; color: #FFF;}
+.banner h2{font-size: 40px; font-family: "notokr-bold"; padding-top: 8%;}
+.banner h3{font-size: 20px; font-family: "notokr-bold"; padding-top: 2%;}
+.banner p{font-size:14px; padding-top: 1%;}
+.banner .button{padding-top: 4%; padding-bottom: 8%; text-align: center; display: inline-block;}
+.banner .button a{display: block;border:1px solid #FFFFFF; background: #fff; color:#555; width: 150px; height: 33px;
+  font-size: 13px; line-height: 32px; font-family: "notokr-bold"; text-decoration: none;}
+.banner .button a:hover{background: none; color:#FFF;}
+
+.gallery{float: left; width: 100%; text-align: center; background: #EDE5DA; padding-bottom: 7%;}
+.gallery ul li{display:inline-block;width: 24%; margin-right: 1%;}
+.gallery ul li:last-child{margin-right: 0;}
+.gallery img{max-width: 100%; height: auto;}
+.gallery ul li a{display: block; background-color: #3E4E99;}
+.gallery ul li:nth-of-type(2) a{background-color: #3A3941;}
+.gallery ul li:nth-of-type(3) a{background-color: #DD545B;}
+.gallery ul li:nth-of-type(4) a{background-color: #DBD4CA;}
+.gallery ul li a:hover{text-decoration: none;}
+.gallery .thum_detail{position: relative;}
+.gallery .thum_detail .thum{overflow: hidden; display: inline-block;}
+.gallery ul li a .thum_detail img{opacity: 0;}
+.gallery ul li a:hover .thum_detail  img{
+-webkit-transiton: all 1s;
+-moz-transition: all 1s;
+transition: all 1s; opacity: 1;}
+.gallery strong{position: absolute; left: 50%; top: 50%; width: 100%; color: white; font-family: "notokr-bold";  transform:translate(-50%, -50%);}
+.gallery ul li a:hover strong{visibility: hidden;}
+
+
+      /* 일반 pc */
+      @media screen and (max-width:1280px) {
+
+      }
+
+      /* 테블릿 */
+      @media screen and (max-width:1024px) {
+
+        .quotes{bottom:18%;}
+        .line{bottom:25%;}
+
+        .news_detail_left, .joeun_star_left{width: 100%;font-size: 32px;}
+        .joeun_star{padding-top: 1%;}
+        .news_detail_right, .joeun_star_right{width: 100%; padding-left: 1%; }
+        .detail_wrap{padding-left: 1%;}
+        .subject{font-size: 13px;}
+        .contents{font-size: 11px; line-height: 1.7;}
+
+        .box .box_left{width: 100%;}
+        .box .box_left .recruit{display: none;}
+        .box .box_left .qna{display: none;}
+        .box .box_left .academy{width: 100%;}
+        .box .box_left .rnd{width: 100%;}
+        .box .brandstory{width: 100%;}
+
+        figure h2 span{font-size: 30px;}
+        .box figure{padding-bottom:20%;}
+        figure.effect-oscar h2{margin-top:3%;}
+        figure.effect-oscar p{display: none;}
+
+        .gallery ul li{display:inline-block; width: 40%; margin-right: 2%; margin-bottom: 1%;}
+        .gallery ul li:nth-child(even){margin-right: 0%;}
+      }
+
+      @media screen and (max-width:1024px) and (orientation:landscape){
+        .box figure{padding-bottom:15%;}
+        figure.effect-oscar h2{margin-top:2%;}
+      }
+
+      /* 소형 테블릿 */
+      @media screen and (max-width:768px) {
+      }
+
+
+      /* 모바일 */
+      @media screen and (max-width:667px) {
+
+        .main .bg{padding-bottom: 80%;}
+        .main .main_contents{padding-bottom: 80%;}
+        .quotes {bottom:20%;font-size: 15px;}
+        .line{bottom:20%;}
+
+        .joeun_star{padding-top: 3%;}
+        .detail_wrap{padding-top: 3%; padding-bottom: 3%;}
+        .contents{margin-left: 2%; width: 78%;}
+
+        .box_top{padding: 10% 0; font-size: 30px;}
+        .box_top2{display: none;}
+        .box .box_left{width: 100%;}
+        .box .box_left .recruit{display: none;}
+        .box .box_left .qna{display: none;}
+        .box .box_left .academy{width: 100%;}
+        .box .box_left .rnd{width: 100%;}
+        .box .brandstory{width: 100%;}
+
+        figure h2 span{font-size: 20px;}
+        .box figure{padding-bottom:30%;}
+        figure.effect-oscar h2{margin-top:4%;}
+        figure.effect-oscar p{display: none;}
+
+        .banner h2{font-size: 20px;}
+        .banner h3{font-size: 10px;}
+        .banner p{font-size:10px;}
+        .banner .button a{width: 100px; height: 24px; line-height: 23px; font-size: 11px;}
+
+        .gallery strong{font-size:10px;}
+      }
+
+      @media screen and (max-width:667px) and (orientation:landscape){
+        .main .bg{padding-bottom: 50%;}
+        .main .main_contents{padding-bottom: 50%;}
+
+        figure h2 span{font-size: 24px;}
+        .box figure{padding-bottom:15%;}
+        figure.effect-oscar h2{margin-top:-1%;}
+
+        .box_top{padding: 8% 0;}
+
+        .gallery strong{font-size:16px;}
+      }
+
+
+      /* 최소 사이즈 처리 */
+      @media screen and (max-width:480px) {
+
+      }

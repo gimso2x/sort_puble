@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>미래에셋대우</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var ls = window.localStorage;
+            if(ls.getItem('style') === ''){
+                ls.setItem('style', '1');
+            }else {
+                $('.inner > a').eq(ls.getItem('style') - 1).addClass('on').siblings().removeClass('on');
+            }
+            $('.inner > a').click(function() {
+                $(this).addClass('on').siblings().removeClass('on');
+                ls.setItem('style', $(this).text());
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="container" class="animate">
+            <h1><span class="ir">미래에셋대우 로고</span></h1>
+            <h4><img src="./img/main_logodet.png"></h4>
+            <div class="contents left">
+                <div class="inner">
+                    <h2>시안 1</h2>
+                    <div>
+                        <a href="./html/A/mirae_pc/main.html" target="_blank">PC</a>
+                        <a href="./html/A/mirae_mobile/main.html" target="_blank">Mobile</a>
+                    </div>
+                    <h3>스타일</h3>
+                    <a href="javascript:void(0);">1</a>
+                    <a href="javascript:void(0);">2</a>
+                    <a href="javascript:void(0);">3</a>
+                    <h3>엑셀 업로드 예제</h3>
+                    <a href="javascript:void(0);" class="excelBtn">페이지 이동</a>
+                </div>
+            </div>
+            <div class="contents right">
+                <div class="inner">
+                    <h2>시안 2</h2>
+                    <div>
+                        <a href="./html/B/main.html" target="_blank">PC</a>
+                        <a href="./html/B/main_mobile.html" target="_blank">Mobile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

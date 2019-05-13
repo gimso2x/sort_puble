@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>미래에셋대우</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/plugin/jquery-ui.css">
+    <link rel="stylesheet" href="../css/plugin/jquery.timepicker.min.css">
+    
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/common.js"></script>
+    <!-- swiper - 슬라이더  플러그인 -->
+	<script src="../js/plugin/swiper.min.js"></script>
+	<!-- // swiper - 슬라이더 플러그인 -->
+    <!-- jquery-ui -->
+    <script src="../js/plugin/jquery-ui.min.js"></script>
+    <script src="../js/plugin/jquery.timepicker.min.js"></script>
+    <!-- // jquery-ui -->
+</head>
+
+<body>
+    <div id="skip_nav" title="스킵메뉴">
+        <a href="#header">헤더</a>
+        <a href="#container">본문</a>
+        <a href="#footer">본문</a>
+    </div>
+    <div id="wrap">
+        <!-- 헤더 -->
+		<header id="header" class="bg_company">
+			<div class="container_wrap">
+				<h1 class="header_logo">
+					<a href="javascript:void(0);">
+						<img src="../img/common/header_logo.png" alt="미래에셋대우 전자투표 페이지 상단 로고">
+					</a>
+				</h1>
+				<h2>주주총회 일정</h2>
+				<div class="header_buttonwrap">
+					<div class="form_search">
+						<a href="javascript:void(0);" class="form_search_back"><span class="ir">검색부분 줄이기</span></a>
+						<label><input type="text" name="search" class="input_search" placeholder="회사번호 또는 회사명을 입력하세요"></label>
+						<a href="javascript:void(0)" class="form_search_clear"><span class="ir">검색 텍스트 입력시 클리어 버튼</span></a>
+						<a href="javascript:void(0);" class="btn_search"><span class="ir">검색 input 보여주는버튼</span></a>
+						<button type="button" class="header_btn">검색 조회 버튼</button>
+					</div>
+					<a href="javascript:void(0);" class="btn_notice"><span class="ir">알림버튼</span></a>
+					<!-- <a href="javascript:void(0);" class="btn_notice_new"><span class="ir">새소식 있는 알림버튼</span></a> -->
+					<a href="javascript:void(0);" class="btn_user"><span class="ir">유저버튼</span></a>
+				</div>
+				<!-- gnb -->
+				<div id="gnb">
+					<a href="javascript:void(0);" class="btn_menu"><span class="ir">메뉴 오픈 버튼</span></a>
+					<ul class="gnb_1depth">
+						<li><a href="javascript:void(0);">서비스 소개</a>
+							<ul class="gnb_2depth">
+								<li><a href="javascript:void(0);">플랫폼 V란?</a></li>
+								<li><a href="javascript:void(0);">주주(개인,법인) 서비스 가이드</a></li>
+								<li><a href="javascript:void(0);">회사 서비스 가이드</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:void(0);">서비스 가입</a>
+							<ul class="gnb_2depth">
+								<li><a href="javascript:void(0);">주주(개인, 법인) 서비스 가입</a></li>
+								<li><a href="javascript:void(0);">회사 서비스 가입</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:void(0);">주주총회 전체일정</a>
+							<ul class="gnb_2depth">
+								<li><a href="javascript:void(0);">주주(개인, 법인) 서비스 가입</a></li>
+								<li><a href="javascript:void(0);">회사 서비스 가입</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:void(0);">기업 홍보관</a>
+							<ul class="gnb_2depth">
+								<li><a href="javascript:void(0);">주주(개인, 법인) 서비스 가입</a></li>
+								<li><a href="javascript:void(0);">회사 서비스 가입</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:void(0);">고객센터</a>
+							<ul class="gnb_2depth">
+								<li><a href="javascript:void(0);">공지사항</a></li>
+								<li><a href="javascript:void(0);">자주 묻는 질문</a></li>
+								<li><a href="javascript:void(0);">이벤트</a></li>
+								<li><a href="javascript:void(0);">1:1 문의</a></li>
+								<li><a href="javascript:void(0);">V 자료실</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- // gnb -->
+			</div>
+			
+			<!-- 주주 01-03-01 개인정보 수정 탭 -->
+			<div class="div_header_user_menu">
+				<div class="container_wrap">
+					<a href="javascript:void(0);" class="user_menu_close"><span class="ir">주주,회사 정보메뉴 닫기</span></a>
+					<div class="row">
+						<div class="col fl">
+							<div class="personal_info">
+								<button type="button" class="personal_info_btn">개인정보 설정 버튼</button>
+								<div>
+									<ul class="personal_info_modify">
+										<li><a href="javascript:void(0);">개인정보 수정</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="personal_img_wrap">
+								<img src="../img/common/personal/ico_person_default.jpg" alt="기본프로필 사진">
+							</div>
+							<p class="persopnal_info_name">
+								<span>박미래</span>님의 V
+							</p>
+							<p class="logout_wrap">
+								<button type="button">로그아웃</button>
+							</p>
+							
+						</div>
+						<div class="col fr">
+							<div class="header_ment">
+								<p>우리회사<br>히스토리</p>
+							</div>
+							<ul>
+								<li>
+									<p>주주총회 결과</p>
+									<a href="javascript:void(0);">24</a>
+								</li>
+								<li>
+									<p>정기 주주총회</p>
+									<a href="javascript:void(0);">7</a>
+								</li>
+								<li>
+									<p>임시 주주총회</p>
+									<a href="javascript:void(0);">2</a>
+								</li>
+							</ul>
+							<!-- 프로모션 슬라이드 -->
+							<div class="swiper-container header_promo">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<img src="../img/common/personal/header_promo_1.png">
+									</div>
+									<div class="swiper-slide">
+										<img src="../img/common/personal/header_promo_2.png">
+									</div>
+								</div>
+								<!-- Add Pagination -->
+								<div class="swiper-pagination"></div>
+							</div>
+							<!-- //프로모션 슬라이드 -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 메뉴 탭 -->
+
+			<!-- 자동완성 탭 -->
+			<div class="div_header_add_ajax">
+				<ul>
+					<li><span><a href="javascript:void(0);">00683</a></span><a href="javascript:void(0);">르노<b>삼성</b>자동차</a></li>
+					<li><span><a href="javascript:void(0);">00683</a></span><a href="javascript:void(0);">르노<b>삼성</b>자동차</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>바이오로직스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>삼성</b>에스디에스</a></li>
+				</ul>
+			</div>
+			<!-- // 자동완성 탭 -->
+			
+			<!-- 검색옵션 탭 -->
+			<div class="div_header_add">
+				<div class="div_search_option">
+					<span>기간</span>
+					<label for="from">From</label>
+					<input type="text" id="from" name="from" placeholder="주주총회 시작 일자" onclick="layer_popup('#pop_calendar')">
+					<span>~</span>
+					<label for="to">to</label>
+					<input type="text" id="to" name="to" placeholder="주주총회 종료 일자" onclick="layer_popup('#pop_calendar')">
+					<i class="ico_calendar" onclick="layer_popup('#pop_calendar')"><span class="ir">캘린더 안내 이미지</span></i>
+					<div class="buttonwrap">
+						<button class="btn_default">재설정</button>
+						<button class="btn_submit">조회</button>
+					</div>
+				</div>
+			</div>
+			<!-- //검색옵션 탭 -->
+			
+		</header>
+		<div id="block_allmenu"></div>
+		<!-- // E:헤더 -->
+
+        <!-- 컨테이너 -->
+        <div id="container">
+            <section id="registration" class="rgst">
+                <div class="form_write type2">
+                    <h3 class="pd0">프리미엄 서비스란?</h3>
+                    <div class="row row_desc clearfix">
+                        <p class="txt_desc">
+                            V 프리미엄 서비스는 주주의결권 확보를 위한 서비스로 유료로 제공됩니다. 서비스를 신청하시면 수수료를 산정하여 알려드리며, 수수료 납부 후 이용이 시작됩니다.<br>
+                            (이용을 원하시거나 구체적인 상담을 원하신다면 하기 이메일 또는 유선으로 연락주시기 바랍니다.<br>
+                            이메일 : ibplatform@miraeasset.com,  전화 : 02 - 3774 - 0803 / 7009)<br>
+                            또한 주주들에게 자세한 설명이 필요한 안건이 있거나, 의결정족수 등을 위해 주주 의결권 확보 방안을 협의하고자 하시는 회사는 자문서비스를 신청해 주시기 바랍니다.
+                        </p>
+                    </div>
+                    
+                    <h3 class="pb0">프리미엄 서비스 신청</h3>
+                    <form action="">
+                        <fieldset>
+                            <legend class="tit_sm"><label><input type="checkbox">1. IR 자료 게시 및 발송<span>(해당 주주총회 전자투표, 전자위임 화면에서 주주들에게 노출되며, IR자료실에 등록됩니다)</span></label></legend>
+                            
+                            <div class="group_droupdown">
+                                <div class="row clearfix">
+                                    <div class="col fl">
+                                        <strong class="txt_title"><span class="point point_r">회사명</span></strong>
+                                        <label>
+                                            <input type="text" class="form_control">
+                                        </label>
+                                    </div>
+                                    <div class="col fr">
+                                        <strong class="txt_title"><span class="point point_r">시장구분</span></strong>
+                                        <label>
+                                            <select name="" id="">
+                                                <option value=""></option>
+                                                <option value="">1</option>
+                                                <option value="">2</option>
+                                                <option value="">3</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col fl">
+                                        <strong class="txt_title"><span class="point point_r">IR 장소</span></strong>
+                                        <label><input type="text" id="" name="" class="form_control"><a href="javascript:void(0);" class="btn_map ir">장소선택</a></label>
+                                    </div>
+                                    <div class="col fr col_datetime">
+                                        <strong class="txt_title"><span class="point point_r">일시</span></strong>
+                                        <label><input type="text" id="" name="" class="form_control input_date input_datetime"><a href="javascript:void(0);" class="btn_calendar ir">날짜선택</a></label>
+                                        <a href="javascript:void(0);" class="btn_time">시간등록<input type="text" id="input_time1" class="input_time"></a>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col fl">
+                                        <strong class="txt_title"><span class="point point_r">제목</span></strong>
+                                        <label><input type="text" class="form_control"></label>
+                                    </div>
+                                    <div class="col fr">
+                                        <strong class="txt_title"><span class="point point_r">내용</span></strong>
+                                        <label><input type="text" class="form_control"></label>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <strong class="txt_title"><span class="point point_r">첨부파일</span></strong>
+                                    <div class="filebox"> 
+                                        <input class="upload-name" value="" disabled="disabled">
+                                        <label for="ex_filename" tabindex="0"></label> 
+                                        <input type="file" id="ex_filename" class="upload-hidden"> 
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend class="tit_sm"><label><input type="checkbox">2. 주요 안건 상세 설명자료 게시 및 발송<span>(해당 주주총회 전자투표, 전자위임 화면에서 주주들에게 노출되며, IR자료실에 등록됩니다)</span></label></legend>
+                            
+                            <div class="group_droupdown">
+                                <div class="row clearfix">
+                                    <div class="col fl">
+                                        <strong class="txt_title"><span class="point point_r">주주총회 선택</span></strong>
+                                        <label>
+                                            <select name="" id="">
+                                                <option value=""></option>
+                                                <option value="">1</option>
+                                                <option value="">2</option>
+                                                <option value="">3</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col fl">
+                                        <strong class="txt_title"><span class="point point_r">안건</span></strong>
+                                        <label><input type="text" class="form_control"></label>
+                                    </div>
+                                    <div class="col fr">
+                                        <strong class="txt_title"><span class="point point_r">내용</span></strong>
+                                        <label><input type="text" class="form_control"></label>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <strong class="txt_title"><span class="point point_r">추가 상세자료</span></strong>
+                                    <div class="filebox"> 
+                                        <input class="upload-name" value="" disabled="disabled">
+                                        <label for="ex_filename2" tabindex="0"></label> 
+                                        <input type="file" id="ex_filename2" class="upload-hidden"> 
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col fl">
+                                        <strong class="txt_title"><span class="point point_r">안건</span></strong>
+                                        <label><input type="text" class="form_control"></label>
+                                    </div>
+                                    <div class="col fr">
+                                        <strong class="txt_title"><span class="point point_r">내용</span></strong>
+                                        <label><input type="text" class="form_control"></label>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <strong class="txt_title"><span class="point point_r">추가 상세자료</span></strong>
+                                    <div class="filebox"> 
+                                        <input class="upload-name" value="" disabled="disabled">
+                                        <label for="ex_filename3" tabindex="0"></label> 
+                                        <input type="file" id="ex_filename3" class="upload-hidden"> 
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend class="tit_sm"><label><input type="checkbox">3. 자문 서비스</label></legend>
+
+                            <div class="group_droupdown">
+                                <div class="row clearfix">
+                                    <strong class="txt_title"><span class="point point_r">자문신청 주요내용</span></strong>
+                                    <label><textarea name="" id="" class="form_control"></textarea></label>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col fl col_datetime">
+                                        <strong class="txt_title"><span class="point point_r">미팅 요청 일시</span></strong>
+                                        <label><input type="text" id="" name="" class="form_control input_date input_datetime"><a href="javascript:void(0);" class="btn_calendar ir">날짜선택</a></label>
+                                        <a href="javascript:void(0);" class="btn_time">시간등록<input type="text" id="input_time2" class="input_time"></a>
+                                    </div>
+                                </div>
+                                
+                                <h5 class="tit_ss">업무담당자 정보<span>서비스 가입시 입력하신 담당자 정보가 디폴트로 입력됩니다. 수정을 원하시면 바로 수정하시면 됩니다.</span></h5>
+                                <div class="row clearfix">
+                                    <div class="col fl">
+                                        <strong class="txt_title"><span class="point point_r">성명</span></strong>
+                                        <label><input type="text" class="form_control" placeholder="성명을 입력해 주세요."></label>
+                                    </div>
+                                    <div class="col fr">
+                                        <strong class="txt_title"><span class="point point_r">전화번호</span></strong>
+                                        <label><input type="text" class="form_control"></label>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col fl">
+                                        <strong class="txt_title"><span class="point point_r">부서</span></strong>
+                                        <label><input type="text" class="form_control" placeholder=""></label>
+                                    </div>
+                                    <div class="col fr">
+                                        <strong class="txt_title"><span class="point point_r">휴대폰 번호</span></strong>
+                                        <label><input type="text" class="form_control"></label>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col fl">
+                                        <strong class="txt_title"><span class="point point_r">직위</span></strong>
+                                        <label><input type="text" class="form_control" placeholder=""></label>
+                                    </div>
+                                    <div class="col fr">
+                                        <strong class="txt_title"><span class="point point_r">이메일</span></strong>
+                                        <label><input type="text" class="form_control"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="submit_area">
+                            <button type="button" class="btn btn_cancel">취소</button>
+                            <button type="button" class="btn btn_next">신청</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <!-- // E:컨테이너 -->
+
+        <!-- 푸터 -->
+        <footer id="footer">
+            <div class="container_wrap">
+                <div class="text_area">
+                    <ul class="footer_gnb">
+                        <li><a href="javascript:void(0);">회사소개</a></li>
+                        <li><a href="javascript:void(0);">이용약관</a></li>
+                        <li><a href="javascript:void(0);">개인정보취급처리방침</a></li>
+                        <li><a href="javascript:void(0);">저작권보호방침</a></li>
+                    </ul>
+                    <p class="copyright">COPYRIGHT 2018 MIRAE ASSET DAEWOO CO., LTD. ALL RIGHTS RESERVED</p>
+                </div>
+                <div class="footer_info">
+                    <p>고객센터</p>
+                    <p>1588-6800</p>
+                    <p><a href="mailto:ibplatfom@miraeasset.com">ibplatfom@miraeasset.com</a></p>
+                </div>
+            </div>
+        </footer>
+        <!-- // E:푸터 -->
+    </div>
+
+    <div class="layer_wrap">
+        <div id="popup_write" class="pop-layer alert-pop">
+            <div class="pop-header">
+                알림
+                <a href="javascript:void(0);" class="btn_close">닫기</a>
+            </div>
+            <div class="pop-body">
+                새 주주총회 등록 내용을 등록 하시겠습니까?<br>
+                임시저장 상태에서만 수정이 가능합니다.
+                <div class="button_wrap">
+                    <button class="btn_default" onclick="pop_close($('#popup_write'));">취소</button>
+                    <button class="btn_submit" onclick="pop_close($('#popup_write'));">제출</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layer_wrap">
+        <div id="popup_remove" class="pop-layer alert-pop">
+            <div class="pop-header">
+                알림
+                <a href="javascript:void(0);" class="btn_close">닫기</a>
+            </div>
+            <div class="pop-body">
+                입력한 내용을 삭제하시겠습니까?
+                <div class="button_wrap">
+                    <button class="btn_default" onclick="pop_close($('#popup_remove'));">아니요</button>
+                    <button class="btn_submit" onclick="pop_close($('#popup_remove'));">예</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $( function() {
+            $('.group_droupdown').css('display', 'none');
+            $('.form_write input[type="checkbox"]').change(function(){
+                if($(this).is(":checked")){
+                    $(this).parent().parent().next().slideDown();
+                }else{
+                    $(this).parent().parent().next().slideUp();
+                }
+            });
+
+            // input date time
+            var input_date = $('.input_date');
+            var btn_calendar = $('.btn_calendar');
+            var btn_time = $('.btn_time');
+            input_date.datepicker({
+                dateFormat: "yy/mm/dd",
+                dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+                monthNames: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+                showMonthAfterYear: true,
+            });
+            btn_calendar.click(function(){
+                var tg = $(this);
+                tg.prev().datepicker( "show" );
+            });
+            $('#input_time1').timepicker();
+            $('#input_time1').on('changeTime', function() {
+                var time = $(this).val();
+                var date = $(this).parent().prev().find('.input_datetime').val().substring(0,10);
+                $(this).parent().prev().find('.input_datetime').val(date + ' ' + time);
+            });
+             $('#input_time2').timepicker();
+            $('#input_time2').on('changeTime', function() {
+                var time = $(this).val();
+                var date = $(this).parent().prev().find('.input_datetime').val().substring(0,10);
+                $(this).parent().prev().find('.input_datetime').val(date + ' ' + time);
+            });
+
+            btn_time.click(function(){
+                $(this).find('.input_time').timepicker('show');
+            });
+
+            // input file
+            var fileTarget = $('.filebox .upload-hidden'); 
+            fileTarget.on('change', function(){  // 값이 변경되면 
+                if(window.FileReader){ // modern browser 
+                    var filename = $(this)[0].files[0].name; } else { // old IE 
+                    var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+                } 
+                // 추출한 파일명 삽입 
+                $(this).siblings('.upload-name').val(filename); 
+            }); 
+        } );
+    </script>
+</body>
+
+</html>

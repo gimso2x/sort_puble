@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+
+/* Reset
+-------------------------------------------------------------- */
+*{
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+box-sizing:border-box;
+word-break:break-all;
+-webkit-text-size-adjust:none;
+}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+{margin:0;padding:0;border:0;font-size: 100%;vertical-align: baseline;}
+html,body{width:100%;min-height:100%;}
+body{font-size:12px;line-height:1;font-family:'맑은 고딕','dotum',sans-serif;color:#666;letter-spacing: -0.5px;}
+nav,ol,ul,li{list-style:none;}
+label,input,button,select,img{vertical-align:middle}
+input,button{margin:0;padding:0;font-family:'맑은 고딕','dotum',sans-serif;font-size:1rem;}
+button{cursor:pointer;}
+img,input,select,textarea,button{vertical-align:middle;}
+textarea,select{font-family:'맑은 고딕','dotum',sans-serif;font-size:1rem;}
+select{margin:0;background-color:#fff;}
+h1,h2,h3,h4,h5,h6,b,strong{font-weight:700;}
+address,cite,em,i{font-style:normal;}
+a{text-decoration:none}
+a:hover,a:focus,a:active{color:#3399cc;background-color:transparent;}
+table{width:100%;border-collapse:collapse;border-spacing:0}
+caption,legend{position:absolute;top:0;left:0;width:1px;height:1px;font-size:1px;text-indent:-20000px;}
+
+/* ir */
+.ir{width:0;height:0;font-size:0;line-height:0;overflow:hidden;position:absolute;left:0;top:0;}
+
+/* 말줄임 */
+.ellipsis{display:inline-block;max-width:85%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;}
+
+/* skip navigation */
+#skip_nav a{position:absolute; top:-500px;font-size:15px;font-weight:600}
+#skip_nav a:focus, #skip_nav a:active{top:1px; z-index:99999; display:block; width:100%; height:40px; line-height:40px; font-weight:600; color:#fff; text-align:center; background-color:#015293}
+
+/* menu animation */
+.animate,.animate *{-webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+
+#container{width: 1200px; margin: 0 auto;text-align: center;position: relative;}
+h1{font-size: 25px;padding: 20px 0;color:#333;text-align: left;}
+thead,tbody,tfoot{border-top: 2px solid #777;}
+th,td{border: 1px solid #ddd;text-align: center;padding: 8px 0;vertical-align: middle;}
+th{background-color: #f0f0f2;color:#333;min-width: 155px;border-left: 0;text-align: left;padding-left: 10px;position: relative;}
+th.standard{text-align: center;padding-left: 0;}
+td{padding-left:5px;padding-right:5px;position: relative;}
+textarea{resize: none;height: 100px;}
+input[type="text"],input[type="number"],textarea{width: 100%;padding: 3px 12px; font-size: 12px; color: #555; border: 1px solid #ccc; border-radius: 4px; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s; -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;}
+.btn_control{display: inline-block; padding: 10px 20px; font-size: 14px;background: #337ab7; border: 1px solid #2e6da4; border-radius: 4px; text-decoration: none;font-weight: bold;color:#fff;}
+.btn_control:hover,.btn_control:focus{background: #286090; border-color: #204d74;color:#fff;}
+
+.btn_control.white{background: #fff;color:#555;border:1px solid #ccc;}
+.btn_control.white:hover,.btn_control.white:focus{background: #e6e6e6; border-color: #adadad;outline: none;}
+.button_wrap{margin: 20px 0 30px;}
+.button_wrap button{height: 36px;vertical-align: top;padding: 8px 20px;}
+.btn_add{background: #FF7F27;color:#fff;cursor: pointer;}
+.new_tr th{padding-left: 0;text-align: center;padding: 2px 0;}
+.new_tr th input[type="text"]{width: 140px;font-size: 12px;padding: 2px;}
+.new_tr .btn_minus{background: url(../img/ico_minusButton.png) no-repeat;background-size: 18px;
+width: 18px;height: 18px;float: right;margin-right: 5px;}
+.calculate input[type="text"]{text-align: center;width: 100px;}
+.calculate input[type="number"]{text-align: center;width: 100px;padding-right: 0;}
+
+/* 레이어팝업 */
+.dim_layerpop { display: none; position: fixed; _position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; }
+.dim_layerpop .dimBg_layerpop { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; opacity: .5; filter: alpha(opacity=50); }
+
+.pop-layer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #3a3f4c;
+  z-index: 10;
+}
+
+.pop-layer{padding: 20px;}
+.pop-layer .pop-header{text-align: left;font-size: 15px;font-weight: bold;color:#333;padding-bottom: 15px;}
+.pop-layer .btn_close{float: right;
+    background: url(../img/btn_close.png) no-repeat;
+    background-size: 16px 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: -10px;}
+.pop-layer tbody{border-top: 0;}
+.pop-layer tbody th{min-width: 0;width: 150px;padding: 10px;}
+.pop-layer tbody td{width: 140px;text-align: right;padding: 10px;padding-right: 20px;}
+.pop-layer .pop-footer{margin-top: 10px;}
+.pop-layer .btn_control{padding: 7px 12px;}
+
+/* 우측 상단 개인정보 입력 */
+.write_info{position: absolute;right: 0;top: 32px;}
+.write_info label{font-weight: bold;font-size: 13px;color:#333;padding-top: 4px;}
+.write_info input{width:80px;margin-left: 10px;margin-right: 10px;padding: 3px 5px;}
+.write_info label:nth-of-type(1) input{width:130px;}
+.write_info label:nth-of-type(4) input{margin-right: 0;width:180px;}
+
+/* 툴팁 */
+.tooltip {
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  margin-top: -7px;
+  width: 14px;
+  height: 14px;
+  background: url(../img/layer_off.png) no-repeat;
+  background-size: 14px;
+}
+
+/* Tooltip text */
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+  -moz-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+  box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+  color: #fff;
+  text-align: left;
+  line-height: 14px;
+  padding: 5px;
+  border-radius: 6px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  top:12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  -webkit-transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+  -moz-transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+  transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+
+.tooltip:hover {
+  background: url(../img/layer_on.png) no-repeat;
+  background-size: 14px;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.explain{font-size: 12px;color: #333;text-align: left;font-weight: bold;display: inline-block;margin: 20px auto 0;line-height: 15px;}
+.explain li::before {
+  content: '';
+  margin-right: 5px;
+  margin-bottom: 1px;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #333;
+}

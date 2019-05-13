@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1" />
+
+    <title>The Joeun</title>
+    <link rel="stylesheet" href="common/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="common/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="common/css/hover.css" type="text/css">
+    <link rel="stylesheet" href="common/css/layout.css" type="text/css">
+    <link rel="stylesheet" href="common/css/main.css" type="text/css">
+    <link rel="stylesheet" href="common/css/contents.css" type="text/css">
+    <link rel="stylesheet" href="common/fonts/font.css" type="text/css">
+    <link rel="stylesheet" href="common/js/navmenu/css/component.css"  type="text/css" />
+    <style>
+    .customer_contents {width: 800px;overflow: hidden; margin: 0 auto;}
+    .customer_contents ul {display:block; width:100%; font-size:0; line-height:0;}
+    .customer_contents ul:after {content:''; display:block; clear:both;}
+    .customer_contents ul li {float:left;width: 33%;position:relative; margin: 0;z-index:1; font-size:9pt; line-height:110%; box-sizing: border-box; border:1px #DDD solid; text-align:center;}
+
+    .customer_contents ul li a {display:block;  background:#FFF; text-decoration: none;}
+    .customer_contents ul li a h3 {text-align:center; padding:9%; font-size:20pt;}
+    .customer_contents ul li a p {text-align:left; padding:3% 14%; font-size:9pt; line-height:150%;}
+    /*.customer_contents ul li a span {display:block; background:#F2F2F2;}*/
+    .customer_contents ul li a input {  background:#4a291a; color:#FFF; width:120px; padding:10px;
+    line-height:1.5; margin-bottom: 5%;}
+
+    .customer_contents ul li a:hover {}
+    .customer_contents ul li a:hover h3 {color:navy;}
+    .customer_contents ul li a:hover p {}
+    .customer_contents ul li a:hover span {}
+    .customer_contents ul li a:hover input {}
+
+      @media screen and (max-width:768px){
+        .customer_contents {width: 100%;}
+      }
+
+      @media screen and (max-width:667px) {
+        .customer_contents ul li a p, .customer_contents ul li a h3 {display: none;}
+      }
+    </style>
+
+
+    <script type="text/javascript" src="common/js/jquery-3.2.1.min.js"></script>
+    <script src="common/js/navmenu/js/modernizr.custom.js"></script>
+    <script src="common/js/navmenu/js/jquery.dlmenu.js"></script>
+    <script src="common/js/main.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $( '#dl-menu' ).dlmenu({
+					animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+				});
+      });
+    </script>
+  </head>
+  <body>
+
+      <h1 class="hid">The Joeun</h1>
+      <header class="header">
+        <div class="top_bar">
+          <div class="wrap2">
+          <ul class="top_bar1">
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="join.html">회원가입</a></li>
+            <li><a href="gnb4_2.html">자주묻는질문</a></li>
+            <li><a href="footer3.html">사이트맵</a></li>
+          </ul>
+          </div>
+        </div>
+        <div class="wrap">
+          <div class="logo">
+            <a href="index.html"><img src="common/images/logo.png" alt="로고"></a>
+          </div>
+          <nav class="gnb">
+            <h2 class="hid">Navigation</h2>
+            <ul>
+              <li><a href="gnb1_1.html" class="arrow">기업소개</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb1_1.html">CEO인사말</a></li>
+                  <li><a href="gnb1_2.html">비전</a></li>
+                  <li><a href="gnb1_3.html">연혁 & CI</a></li>
+                  <li><a href="gnb1_4.html">찾아오시는길</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb2_1.html" class="arrow">건강아카데미</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb2_1.html">아카데미소개</a></li>
+                  <li><a href="gnb2_2.html">자격제도</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb3_1.html">기업부설연구소</a></li>
+              <li><a href="gnb4_1.html" class="arrow">채용인사</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb4_1.html">채용정보</a></li>
+                  <li><a href="gnb4_2.html">전형Q&A</a></li>
+                  <li><a href="gnb4_3.html">직무소개</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb5_1.html" class="arrow">더좋은소식</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb5_1.html">더좋은 NEWS</a></li>
+                  <li><a href="gnb5_2.html">더좋은 파트너</a></li>
+                  <li><a href="gnb5_3.html">각양각색 TALK</a></li>
+                  <li><a href="gnb5_4.html">더좋은 STAR</a></li>
+                  <li><a href="gnb5_5.html">더좋은 LIFE</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb6_1.html">문의라운지</a></li>
+            </ul>
+          </nav>
+          <nav class="gnb_mobile">
+            <h2 class="hid">Navigation</h2>
+            <div class="container demo-2">
+              <div class="main clearfix">
+                <div class="column">
+                  <div id="dl-menu" class="dl-menuwrapper">
+                    <button class="dl-trigger">Open Menu</button>
+                    <ul class="dl-menu">
+                      <li>
+                        <a href="#">기업소개</a>
+                            <ul class="dl-submenu">
+                              <li><a href="gnb1_1.html">CEO인사말</a></li>
+                              <li><a href="gnb1_2.html">비전</a></li>
+                              <li><a href="gnb1_3.html">연혁 & CI</a></li>
+                              <li><a href="gnb1_4.html">찾아오시는길</a></li>
+                            </ul>
+                          </li>
+                      <li>
+                        <a href="#">건강상담아카데미</a>
+                        <ul class="dl-submenu">
+                          <li><a href="gnb2_1.html">아카데미소개</a></li>
+                          <li><a href="gnb2_2.html">자격제도</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="gnb3_1.html">기업부설연구소</a>
+                      </li>
+                      <li>
+                        <a href="#">채용인사</a>
+                        <ul class="dl-submenu">
+                          <li><a href="gnb4_1.html">채용정보</a></li>
+                          <li><a href="gnb4_2.html">전형Q&A</a></li>
+                          <li><a href="gnb4_3.html">직무소개</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#">더좋은소식</a>
+                        <ul class="dl-submenu">
+                          <li><a href="gnb5_1.html">더좋은 NEWS</a></li>
+                          <li><a href="gnb5_2.html">더좋은 파트너</a></li>
+                          <li><a href="gnb5_3.html">각양각색 TALK</a></li>
+                          <li><a href="gnb5_4.html">더좋은 STAR</a></li>
+                          <li><a href="gnb5_5.html">더좋은 LIFE</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="gnb6_1.html">문의라운지</a>
+                      </li>
+                      <li class="jnh">
+        								<a href="login.html">로그인</a>
+        							</li>
+                      <li class="jnh">
+        								<a href="join.html">회원가입</a>
+        							</li>
+                    </ul>
+                  </div><!-- /dl-menuwrapper -->
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="wrap">
+          <div class="box_top">문의라운지</div>
+
+
+		<div class="customer_contents">
+
+			<ul>
+				<li class="first">
+					<a href="javascript:;" onclick="alert( '로그인 후 고객상담이 가능합니다.' )">
+						<h3>채용문의</h3>
+						<span><img src="http://www.joeunvitamin.com/shop/data/skin/joeunvitamin/img/counseling_recruit.jpg"></span>
+						<p>더좋은의 채용에 대한 문의를 남겨주시면 채용담당자가 신속하고 친절하게 답변해 드립니다.</p>
+						<input type="submit" value="채용문의" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" onclick="alert( '로그인 후 고객상담이 가능합니다.' )">
+					<h3>제품문의</h3>
+						<span><img src="http://www.joeunvitamin.com/shop/data/skin/joeunvitamin/img/counseling_product.jpg"></span>
+						<p>더좋은의 제품에 대한 문의를 남겨주시면 채용담당자가 신속하고 친절하게 답변해 드립니다.</p>
+						<input type="submit" value="제품문의" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" onclick="alert( '로그인 후 고객상담이 가능합니다.' )">
+					<h3>기타문의</h3>
+						<span><img src="http://www.joeunvitamin.com/shop/data/skin/joeunvitamin/img/counseling_etc.jpg"></span>
+						<p>기타문의 사항 또는 건의사항을 남겨주세요. 신속하고 친절하게 답변해 드립니다.</p>
+						<input type="submit" value="교육문의" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" onclick="alert( '로그인 후 고객상담이 가능합니다.' )">
+					<h3>교육문의</h3>
+						<span><img src="http://www.joeunvitamin.com/shop/data/skin/joeunvitamin/img/counseling_education.jpg"></span>
+						<p>더좋은의 교육에 대한 문의를 남겨주시면 교육담당자가 신속하고 친절하게 답변해 드립니다.</p>
+						<input type="submit" value="교육문의" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" onclick="alert( '로그인 후 고객상담이 가능합니다.' )">
+					<h3>가맹문의</h3>
+						<span><img src="http://www.joeunvitamin.com/shop/data/skin/joeunvitamin/img/counseling_join.jpg"></span>
+						<p>좋은비타민 입점 및 가맹에 대한 문의를 남겨주시면 담당자가 신속하고 친절하게 답변해 드립니다.</p>
+						<input type="submit" value="가맹문의" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" onclick="alert( '로그인 후 고객상담이 가능합니다.' )">
+            <h3>매장위탁문의</h3>
+						<span><img src="http://www.joeunvitamin.com/shop/data/skin/joeunvitamin/img/counseling_btc.jpg"></span>
+						<p>더좋은 매장위탁에 대한 문의를 남겨주시면 담당자가 신속하고 친절하게 답변해 드립니다.</p>
+						<input type="submit" value="위탁문의" />
+					</a>
+				</li>
+			</ul>
+		</div>
+</div>
+      </section>
+
+      <footer class="footer">
+        <h2 class="hid">footer</h2>
+        <div class="wrap">
+          <div class="footer_left">
+            <h2>JOEUN SOCIAL MEDIA</h2>
+            <ul>
+              <li>
+                <a href="http://blog.naver.com/thejoeun3596" target="_blank"><img src="common/images/blog.png" alt="">
+                  NaverBlog
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/joeunvitamin" target="_blank"><img src="common/images/facebook.png" alt="">
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="http://plus.kakao.com/home/@%EB%8D%94%EC%A2%8B%EC%9D%80%EC%B1%84%EC%9A%A9" target="_blank"><img src="common/images/kakao.png" alt="">
+                  KakaoTalk
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer_right">
+            <div class="footer_nav">
+              <ul>
+                <li><a href="footer1.html">개인정보취급방침</a></li>
+                <li><a href="footer2.html">이용약관</a></li>
+                <li><a href="footer3.html">사이트맵</a></li>
+              </ul>
+            </div>
+            <div class="footer_contents">
+            (주)더좋은 대표전화 1577-3596 | 대표메일 vision@joeunvitamin.com<br>
+              통신판매업신고 제2016-용인수지-0212호 | 사업자등록번호 129-86-03767<br>
+              <strong>Copyright ⓒ THE JOEUN All rights reserved.</strong>
+            </div>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>

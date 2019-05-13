@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SAIM3CHON</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="../js/vendor/jquery.bxslider.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        $(function() {
+            $('.slide_top').bxSlider({
+                pager: false
+            });
+             $('.menu_a').trigger('click');
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="skipnavi">
+            <a href="#container">본문 바로가기</a>
+        </div>
+
+        <!-- header -->
+        <div id="header" class="clearfix">
+            <div class="container">
+                <h1 class="logo">
+                    <a href="#"><img src="../img/header_logo.png" alt="로고"></a>
+                </h1>
+                <div class="mobile_header_menu">
+                    <a href="#n"  class="menu_a">
+                        <img src="../img/header_menu_m.png" alt="모바일메뉴">
+                    </a>
+                    <div class="dim-layer" style="display: none;">
+                        <div class="dimBg"></div>
+                        <div class="pop_menu" style="opacity: 0; left: -320px;">
+                            <div class="pop_menu_header">
+                                전체메뉴
+                                <a href="#n" class="close"></a>
+                            </div>
+                            <div class="pop_menu_content_1">
+                                <div class="ment">
+                                    로그인 후 이용해주세요.
+                                </div>
+                            </div>
+                            <ul class="pop_menu_content_2">
+                                <li><a href="#n" class="m_home">메인</a></li>
+                                <li><a href="#n" class="m_login">로그인</a></li>
+                                <li><a href="#n" class="m_join">회원가입</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile_header_login">
+                    <a href="#n">
+                        <img src="../img/header_login_m.png" alt="모바일로그인">
+                    </a>
+                </div>
+                <div class="button_wrap">
+                    <a href="#n"><img src="../img/header_login.png" alt="로그인"></a>
+                    <a href="#n"><img src="../img/header_join.png" alt="회원가입"></a>
+                </div>
+            </div>
+        </div>
+        <!-- // header -->
+
+        <div id="container">
+            <div class="main_slide">
+                <h2 class="visuallyhidden">사입삼촌 서비스 소개</h2>
+                <ul class="slide_top">
+                    <li>
+                        <img class="banner_web" src="../img/main/img_slide.png" />
+                        <img class="banner_mobile" style="display:none;" src="../img/main/img_slide_m.png" />
+                    </li>
+                    <li>
+                        <img class="banner_web" src="../img/main/img_slide.png" />
+                        <img class="banner_mobile" style="display:none;" src="../img/main/img_slide_m.png" />
+                    </li>
+                    <li>
+                        <img class="banner_web" src="../img/main/img_slide.png" />
+                        <img class="banner_mobile" style="display:none;" src="../img/main/img_slide_m.png" />
+                    </li>
+                </ul>
+            </div>
+
+            <!-- group_intro -->
+            <div class="group_intro">
+                <div class="container">
+                    <p class="section_title">INTRODUCTION</p>
+                    <p class="section_detail">설명을 입력합니다</p>
+                    <img src="../img/main/main_intro.png" alt="사입삼촌 설명화면">
+                </div>
+                <!-- // container -->
+            </div>
+            <!-- // group_intro -->
+
+            <div class="nnc">
+                <div class="nnc_left">
+                    <div class="content_ul">
+                        <p class="section_title">NOTICE</p>
+                        <ul>
+                            <li><a href="#n">[공지] 11월 07일(화) 서비스 점검안내
+                                <span>2017.11.01</span></a></li>
+                            <li><a href="#n">[공지] 10월 31일(화) 서비스 점검안내
+                                <span>2017.10.25</span></a></li>
+                            <li><a href="#n">[이벤트] 오픈기념 이벤트 결과발표
+                                <span>2017.09.16</span></a></li>
+                            <li><a href="#n">[공지] 09월 18일(월) 서비스 점검 안내
+                                <span>2017.09.13</span></a></li>
+                            <li><a href="#n">[이벤트] 오픈기념 이벤트 공지
+                                <span>2017.08.30</span></a></li>
+                        </ul>
+                        <a href="#n" class="notice_button">더보기 &gt;</a>
+                    </div>
+                </div>
+                <div class="nnc_right">
+                    <div class="content_ul">
+                        <p class="section_title">CONTACT US</p>
+                        <form class="" action="" method="post">
+                            <fieldset>
+                                <legend>Contact 보내기</legend>
+                                <ul>
+                                    <li>
+                                        <span class="warning">* 필수 입력 항목입니다.</span>
+                                    </li>
+                                    <li>
+                                        <label for="email"></label>
+                                        <input type="text" id="email" name="" placeholder="이메일" required title="이메일">
+                                    </li>
+                                    <li>
+                                        <label for="title"></label>
+                                        <input type="text" id="title" name="" placeholder="제목" required title="제목">
+                                    </li>
+                                    <li>
+                                        <label for="subject"></label>
+                                        <textarea name="name" id="subject" placeholder="내용" required></textarea>
+                                    </li>
+                                </ul>
+                                <input type="submit" title="보내기" alt="보내기" value="보내기" class="input_submit">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div id="footer" class="mainfooter">
+            <div class="container">
+                <h3 class="visuallyhidden">Copyright</h3>
+                <ul class="lst_term">
+                    <li><a href="#">개인정보 취급방침</a></li>
+                    <li><a href="#">서비스 이용약관</a></li>
+                </ul>
+                <ul class="lst_phone">
+                    <li>우 : 04209 서울특별시 마포구 만리잿옛길 369(신공덕동) 3층 307호 (주)네오포스코리아</li>
+                    <li>Tel. 070-8638-2997</li>
+                    <li>Fax. 02-6280-2946</li>
+                </ul>
+                <ul class="lst_inquiry">
+                    <li>서비스 문의 : M. 010-4447-1965</li>
+                    <li><a href="mailto:ryan@neoforth.com">E-mail. ryan@neoforth.com</a></li>
+                </ul>
+                <p class="tx_copyright">Copyright ⓒ 2017 NeoForthKorea. All Rights Reserved.</p>
+            </div>
+        </div>
+        <!-- // footer -->
+    </div>
+</body>
+
+</html>

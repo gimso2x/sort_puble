@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+/* font
+------------------------------------------------------------------------------*/
+@font-face {
+    font-family: '서울남산M';
+    src: url('../font/seoulnamsanjangm.eot');
+    src: url('../font/seoulnamsanjangm.eot?#iefix') format('embedded-opentype'),
+         url('../font/seoulnamsanjangm.woff2') format('woff2'),
+         url('../font/seoulnamsanjangm.woff') format('woff'),
+         url('../font/seoulnamsanjangm.ttf') format('truetype'),
+         url('../font/seoulnamsanjangm.svg#seoul-namsan-jang-m') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '서울남산L';
+    src: url('../font/seoulnamsanjangl.eot');
+    src: url('../font/seoulnamsanjangl.eot?#iefix') format('embedded-opentype'),
+         url('../font/seoulnamsanjangl.woff2') format('woff2'),
+         url('../font/seoulnamsanjangl.woff') format('woff'),
+         url('../font/seoulnamsanjangl.ttf') format('truetype'),
+         url('../font/seoulnamsanjangl.svg#seoul-namsan-jang-l') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '서울남산B';
+    src: url('../font/seoulnamsanjangb.eot');
+    src: url('../font/seoulnamsanjangb.eot?#iefix') format('embedded-opentype'),
+         url('../font/seoulnamsanjangb.woff2') format('woff2'),
+         url('../font/seoulnamsanjangb.woff') format('woff'),
+         url('../font/seoulnamsanjangb.ttf') format('truetype'),
+         url('../font/seoulnamsanjangb.svg#seoul-namsan-jang-b') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '서울남산EB';
+    src: url('../font/seoulnamsanjangeb.eot');
+    src: url('../font/seoulnamsanjangeb.eot?#iefix') format('embedded-opentype'),
+         url('../font/seoulnamsanjangeb.woff2') format('woff2'),
+         url('../font/seoulnamsanjangeb.woff') format('woff'),
+         url('../font/seoulnamsanjangeb.ttf') format('truetype'),
+         url('../font/seoulnamsanjangeb.svg#seoul-namsan-jang-eb') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* layout
+------------------------------------------------------------------------------*/
+#wrap{width: 100%; height: auto;}
+  header{width: 100%; padding: 1%; box-shadow : 2px 2px 10px #333; position: fixed; background:rgba(255, 255, 255, 0.24); z-index: 999;}
+    header .logo{float: left; background-image: url(../images/logo.png); background-size: 50px 50px;}
+      header .logo a{display: block; width: 50px; height: 50px;}
+    header .gnb{ float: right; width: 80%;  position: relative; margin-right: 25px;}
+      header .gnb ul{width: auto; float: right;}
+      header .gnb ul li{float: left; width: 136px;text-align: center; transition: all 0.2s ease;}
+      header .gnb ul li.active{border:3px solid #fff; border-radius: 15px;}
+      header .gnb ul li a{display: block; width: 136px; height: 50px; color:#fff; font-size: 1.8em;font-family: "서울남산EB"; line-height: 1.8em;}
+      header .gnb ul li a:hover{text-decoration: none;}
+
+  header.active .logo{background-image: url(../images/logo_blue.png);}
+  header.active .gnb ul li a{color:#384259;}
+  header.active .gnb ul li.active{border-color:#384259;}
+
+  .container_bg{width: 100%; float:left;  background:center center / cover; background-repeat: no-repeat; background-image: url('../images/main_bg.jpg'); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;}
+  .container_bg2{width: 100%; float:left; background-color: #FFFFFF;}
+  .container_bg3{width: 100%; float:left;  background:center center / cover; background-repeat: no-repeat; background-image: url('../images/about_bg.jpg'); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;}
+  .container_bg4{width: 100%; float: left; background-image: url('../images/contact_bg.jpg'); background-repeat:repeat; }
+  .container{max-width: 100%; margin-left:auto; margin-right: auto; position: relative; padding: 0 10px;}
+
+  .subject{text-align: center; padding-top: 10%;}
+  .title{font:bold 2.25em "서울남산EB"; color:#384259;}
+  .title_white{font:bold 2.25em "서울남산EB"; color:#ffffff;}
+  .title_bar{padding-top: 2%; padding-bottom: 5%;height:18px;background:url(../images/title_bar.jpg) center 35% no-repeat;}
+
+    #main{}
+      #main .main_portfolio{padding-top:20%;}
+      #main .main_portfolio img{width: 70%;}
+      #main ul{width: 80%; padding-top:20%; padding-bottom: 30%; margin: 0 auto;}
+        #main ul li{float: left; width: 33.3%; text-align: center;}
+        #main ul li img{visibility: hidden; width: 75%;}
+        #main ul li a{display: block; width: 100%;transition: all 0.5s ease;}
+        #main ul li:nth-child(1) a{background: url('../images/main_1.png') no-repeat;background-size: 75%;background-position: top center;}
+        #main ul li:nth-child(2) a{background: url('../images/main_2.png') no-repeat;background-size: 75%;background-position: top center;}
+        #main ul li:nth-child(3) a{background: url('../images/main_3.png') no-repeat;background-size: 75%;background-position: top center;}
+        #main ul li:nth-child(1) a:hover{background: url('../images/main_1_hover.png') no-repeat; background-size: 75%;background-position: top center;}
+        #main ul li:nth-child(2) a:hover{background: url('../images/main_2_hover.png') no-repeat; background-size: 75%;background-position: top center;}
+        #main ul li:nth-child(3) a:hover{background: url('../images/main_3_hover.png') no-repeat; background-size: 75%;background-position: top center;}
+
+    #portfolio{overflow:hidden; height:auto; padding-bottom: 5%;}
+    #portfolio .pofol_menu{text-align: center;padding-bottom: 20px;}
+    #portfolio .pofol_menu a{display: inline-block;padding: 6px 12px;font-size: 14px;color:#333;border:1px solid #ccc;border-radius: 4px;text-decoration: none;font-family: "서울남산EB";}
+    #portfolio .pofol_menu a:hover{background: #e6e6e6;border-color: #adadad;}
+    #portfolio .pofol_menu a.current{color: #fff; background-color: #337ab7; border-color: #2e6da4;font-weight: 600;}
+    #portfolio .pofol_menu a.current:hover{background-color: #286090; border-color: #204d74;}
+    #portfolio .pofol_contents>div{width: 100%;}
+    #portfolio .pofol_contents>div .pofol_innr{position: relative;margin: 5px;border: 1px solid #d9dade;box-sizing: border-box;overflow: hidden;}
+    #portfolio .pofol_contents>div img{width: 100%;}
+    #portfolio .pofol_contents .thum_area{height: 187px;overflow:hidden;}
+    #portfolio .pofol_contents dl{padding: 15px;height: 168px;}
+    #portfolio .pofol_contents dl dt{font: bold 1.3em/1em "서울남산B";color: #384259;padding:15px 0 10px;border-top: 1px solid #d9dade;}
+    #portfolio .pofol_contents dl dt span.date{float:right;color:#7b7b7b;font-size: 0.8em;}
+    #portfolio .pofol_contents dl dd{font: 1em/1em "서울남산M";color: #7b7b7b;}
+    #portfolio .pofol_contents dl dd>p{padding-bottom: 10px;}
+    #portfolio .pofol_contents dl dd span{background-color: #eef2fc;
+    border: 1px solid #506cb2;font-size: 12px;padding: 3px 10px 3px;margin-right: 3px;color:#555;font-weight: bold;}
+    #portfolio .pofol_contents .pofol_innr .over{position: absolute; top: 0; left: -250px; }
+    #portfolio .pofol_contents .pofol_innr:hover .over{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);transition: all 1s ease;}
+    #portfolio .pofol_contents .pofol_innr .over.exception .pop_button {top: 30%;}
+    #portfolio .pofol_contents .pofol_innr .over.exception .pop_button2 {top: 70%;}
+    #portfolio .pofol_contents .over a{color:#fff;display: inline-block;position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);font-family: "서울남산EB";font-size: 20px;text-decoration: none;}
+    #portfolio .pofol_contents .over a::before{content: '';display: inline-block;position: absolute;top:5px;left:-40px;width: 32px;height: 32px;background: url(../images/pageMove.png) no-repeat;}
+
+
+    #about{overflow:hidden; height:auto; padding-bottom: 27%;}
+      #about .about_left{width: 50%; float: left;}
+        #about .about_left p{font:bold 1.7em/1.3em "서울남산L";color: #384259;}
+        #about .about_left p em{font-family: "서울남산EB";}
+        #about .about_left p:nth-child(2){color:#11aabe;}
+
+        #about .about_detail{margin-top: 2%; margin-left: 5%; color:#384259;}
+        #about .about_detail dt{font:bold 2.0em/1.5em "서울남산EB";padding-left:28px;background:url(../images/about_menu.jpg) left center no-repeat;}
+        /* #about .about_detail dt img{height: 0.75em;margin-right: 1%;} */
+        #about .about_detail dd{font:1.35em "서울남산M";margin-left: 5%;}
+        #about .about_detail dd tr{height: 2.1em;border-bottom: 1px solid #888888; }
+        #about .about_detail dd td{vertical-align: middle;}
+        #about .about_detail dd td:first-child{color: #888888;width: 25%;}
+      #about .about_right{width: 50%; float: left;}
+
+    #contact{overflow:hidden; height:auto; padding-bottom: 10%;}
+      #contact .contact_left{width: 50%; float: left; color: #999999; font-size: 24px; font-weight: bold; font-family: "서울남산M"; line-height: 1.5em;padding-top: 5%;}
+      #contact .contact_left p{margin-bottom: 5%;}
+      #contact .contact_left dl{font-size: 27px;}
+      #contact .contact_left dt{float: left; margin-right: 10%; color: white;}
+      #contact .contact_right{width: 50%; float: left; color:white; padding-top: 5%;}
+      #contact .contact_right dd{margin-bottom: 25px; text-align: center;}
+      #contact .contact_right dd input{width: 80%; background-color: #FFFFFF;border: none; border-radius: 3px;  padding: 1.25em 0.5em 1.25em 0.5em; font:14px "서울남산B";}
+      #contact .contact_right dd textarea{width: 80%; background-color: #FFFFFF;border: none; border-radius: 3px; padding:8px; font:14px/20px "서울남산B"; height: 170px;}
+      #contact .contact_right dd:last-child input{background-color: #D9534F; width: 50%; color: #FFFFFF; cursor: pointer; transition: all .5s ease;}
+      #contact .contact_right dd:last-child input:hover{background-color: #C9302C}
+
+    footer{width: 100%; background: #888888; float: left;padding-top:1.3%; padding-bottom: 1.3%;}
+    footer .logo2{margin-left: 5%; float:left; width: 50px; height: 50px; background: url('../images/logo_gray.png') no-repeat; background-size: 50px 50px;}
+    footer .footer_detail{color:white; font:bold 1.4em "서울남산B"; line-height: 2em;}
+    footer .copyright{float: left; margin-left: 1%;padding-top:0.5%;}
+
+    /* goTop */
+    /* BackToTop button css */
+    #scroll {
+        position:fixed;
+        right:10px;
+        bottom:10px;
+        cursor:pointer;
+        width:50px;
+        height:50px;
+        background-color:#272727;
+        text-indent:-9999px;
+        display:none;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        border-radius:5px;
+    }
+    #scroll span {
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin-left:-8px;
+        margin-top:-12px;
+        height:0;
+        width:0;
+        border:8px solid transparent;
+        border-bottom-color:#ffffff
+    }
+
+/* media query
+------------------------------------------------------------------------------*/
+
+@media only screen and (max-width:767px){
+  header{background-color: #384259;}
+  header .logo{background-size: 25px 25px; background-image: url(../images/logo.png) !important;}
+  header .logo a{width: 25px; height: 25px; }
+  header .gnb{margin-right: 15px;}
+  header .gnb ul li{width: 60px; height: 25px; border: 0 !important;}
+  header .gnb ul li a{width: 60px; height: 25px; font-size: 0.9em; color: white !important;}
+
+  .subject{text-align: center; padding-top: 14%;}
+  .title, .title_white{font-size: 1.5em;}
+  .title_bar{padding-bottom: 4%;}
+
+
+
+  .container_bg3{background-color: #F5EFDD; background-image:none;}
+  #about{padding-bottom: 7%;}
+  #about .about_left{float: none; width: 100%;}
+  #about .about_left p{font:bold 1.1em/1.3em "서울남산L"; text-align: center;}
+  #about .about_detail dt{font:bold 1.3em/1.7em "서울남산EB";}
+  #about .about_detail dd{font:0.9em/1.5em "서울남산M";margin-left: 5%;}
+  #about .about_right{float: none; width: 100%;padding-top: 2%;}
+
+  #contact{text-align: center; padding-bottom: 4%;}
+  #contact .contact_left{float:none; padding-left: 0; padding-top: 0; padding-bottom: 5%; width: 100%; font-size: 1em;line-height: 1.4em;}
+  #contact .contact_left dl{font-size: 1.1em; margin-bottom: 2%;}
+  #contact .contact_left dt{margin-right: 0; float:none;}
+  #contact .contact_right{float: none; width: 100%; padding-top: 0;}
+  #contact .contact_right dd{margin-bottom: 25px;}
+  #contact .contact_right dd input{padding: 0.7em;}
+  #contact .contact_right dd textarea{height: 50px; padding: 0.7em;}
+
+  footer .logo2{width: 25px; height: 25px; background-size: 25px 25px; margin-right: 1%;}
+  footer .footer_detail{font-size: 0.6em;}
+}
+
+@media only screen and (max-width:767px) and (orientation: landscape){
+  #main .main_portfolio{padding-top:15%;}
+  #main ul{padding-top: 10%; padding-bottom: 25%;}
+  #portfolio .pofol_contents>div{width:50%;}
+  .subject{padding-top: 6.5%;}
+  .title_bar{padding-top:0;padding-bottom: 2%;}
+  #about .about_left, #about .about_right,
+  #contact .contact_left, #contact .contact_right{width: 50%; float: left;}
+}
+@media only screen and (max-width:767px) and (min-height:737px){
+  .subject{padding-top: 6.5%;}
+  #about .about_left, #about .about_right,
+  #contact .contact_left, #contact .contact_right{width: 50%; float: left;}
+}
+
+@media only screen and (min-width:768px) and (max-width:991px){
+  .container{width: 750px;}
+  #portfolio .pofol_contents>div{width:50%;}
+  #contact .contact_left, #contact .contact_left dl{font-size: 21px;}
+}
+
+@media only screen and (min-width:992px) and (max-width:1199px){
+  .container{width: 970px;}
+  #portfolio .pofol_contents>div{width:33.3333%;}
+  #contact .contact_left{padding-left: 5%; width: 45%;}
+}
+@media only screen and (min-width:1200px){
+  .container{width: 1170px;}
+  #portfolio .pofol_contents>div{width:25%;}
+  #contact .contact_left{padding-left: 10%; width: 40%;}
+}
+
+
+/*레이어팝업*/
+.pop-layer {display: none; position: fixed; top: 50%; left: 50%; width: auto;background-color: #fff;border-radius: 10px;z-index: 10001;box-shadow:0px 0px 5px #ddd}
+.ov-hidden {overflow:hidden;}
+.pop-layer .pop-container{padding: 15px;}
+.pop-layer .padding-wrap{overflow-x: auto;overflow-y: hidden;text-align: center;white-space: nowrap;}
+.pop-layer .padding-wrap img {max-width: 320px;vertical-align: middle;box-shadow:0px 0px 10px rgba(0,0,0,0.3);}
+.pop-layer .padding-wrap img + img {margin-left: 30px;}
+
+@media only screen and (max-width:1600px) {
+.pop-layer {width: 80%;}
+}
+
+@media only screen and (max-width:767px) {
+.pop-layer {width: 90%;}
+.pop-layer .padding-wrap img {max-width: 160px;}
+.pop-layer .padding-wrap img + img {margin-left: 10px;}
+}

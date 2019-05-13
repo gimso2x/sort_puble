@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lnag="ko">
+
+<head>
+  <meta http-equiv="Expires" content="-1">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="No-Cache">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>요금 시뮬레이션</title>
+
+  <link href="css/popup.css" rel="stylesheet">
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <script src="js/jquery.number.min.js"></script>
+</head>
+
+<body>
+  <!-- popup-content -->
+  <div class="popup-content">
+    <!-- header -->
+    <div class="popup-header">
+        <button type="button" class="close" aria-hidden="true" title="팝업 닫기">×</button>
+      <h4 class="popup-title">요금 시뮬레이션</h4>
+    </div>
+    <!-- //header -->
+
+    <!-- body -->
+    <form name="" id="" class="popup-form">
+      <div class="popup-body">
+        <ul class="lst_dsc">
+          <li>카테고리별 사용량을 입력하시면 예상 요금을 확인할 수 있습니다. </li>
+          <li>예상 요금은 실제 청구 금액과는 상이할 수 있습니다.</li>
+          <li><img src="img/layer_off.png" alt="카테고리 버튼"> 를 누르시면 카테고리 구간별 이용료를 확인할 수 있습니다.</li>
+        </ul>
+        <h5><span class="h5_fontl">상품명</span> T map (종량제)</h5>
+        <div class="total_charge">
+         ※ 예상 요금 총 <input type="text" name="" value="" placeholder="0" numberonly> 원
+            <div class="total_vat">(VAT포함 1,100,066,000원)</div>
+        </div>
+
+        <div class="table-div">
+          <table class="table" border="0" cellspacing="0" cellpadding="0">
+            <thead>
+              <tr>
+                <th>카테고리 구분 <span class="colorb">(총 N개)</span></th>
+                <th>사용량<span class="fontwn">(건)</span><button type="button" name="button" class="use_clear">초기화</button></th>
+                <th>예상 요금<span class="fontwn">(원/VAT 별도)</span></th>
+              </tr>
+            </thead>
+            <tbody>
+            <!-- 카테고리내용 -->
+              <tr>
+                <td><nobr title="지도보기 지도보기 지도보기 지도보기 지도보기">지도보기 지도보기 지도보기 지도보기 지도보기</nobr><a href="#layer1" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><nobr title="POI 검색">POI 검색</nobr><a href="#layer2" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><nobr title="지오코딩">지오코딩</nobr><a href="#layer3" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><nobr title="지오펜싱">지오펜싱</nobr><a href="#layer3" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><nobr title="교통정보">교통정보</nobr><a href="#layer3" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><nobr title="경로안내">경로안내</nobr><a href="#layer3" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><nobr title="교통정보">교통정보</nobr><a href="#layer3" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><nobr title="다중 경유지안내">다중 경유지안내</nobr><a href="#layer3" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><nobr title="경유지최적화10">경유지최적화10</nobr><a href="#layer3" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><nobr title="경유지최적화20">경유지최적화20</nobr><a href="#layer3" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><nobr title="경유지최적화30">경유지최적화30</nobr><a href="#layer3" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><nobr title="경유지최적화100">경유지최적화100</nobr><a href="#layer3" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><nobr title="T map 연동">T map 연동</nobr><a href="#layer3" class="ico_layer btn-layer"></a></td>
+                <td><input type="text" name="" value="" placeholder="0" numberonly maxlength="15"></td>
+                <td>0</td>
+              </tr>
+              <!-- //카테고리내용 -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </form>
+    <!-- //body -->
+
+    <!-- footer -->
+    <div class="popup-footer">
+      <button id="button_close" type="button" class="btn">닫기</button>
+    </div>
+    <!-- //footer -->
+  </div>
+  <!-- //popup-content -->
+
+  <!--  레이어 부분  -->
+  <div class="dim-layer">
+    <!-- <div class="dimBg"></div> -->
+    <!-- 레이어1 -content -->
+    <div id="layer1" class="pop-layer">
+      <div class="layer-container">
+        <div class="layer-conts">
+          <!--content //-->
+          <h5>카테고리 구간별 이용료 <span>(일 기준)</span><a href="" class="btn-layerClose"></a></h5>
+
+          <table border="0" cellspacing="0" cellpadding="0">
+            <thead>
+              <tr>
+                <th>API 사용(건)</th>
+                <th>단가(원)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>~5,000</td><td>Free</td></tr>
+              <tr><td>~10,000</td><td>100</td></tr>
+              <tr><td>~50,000</td><td>80</td></tr>
+              <tr><td>~200,000</td><td>60</td></tr>
+              <tr><td>~10,000,000</td><td>40</td></tr>
+              <tr><td>~10,000,000</td><td>40</td></tr>
+            </tbody>
+          </table>
+          <!--// content-->
+        </div>
+      </div>
+    </div>
+    <!-- //레이어1 -content -->
+    <!-- 레이어2 -content -->
+    <div id="layer2" class="pop-layer">
+      <div class="layer-container">
+        <div class="layer-conts">
+          <!--content //-->
+          <h5>카테고리 구간별 이용료 <span>(일 기준)</span><a href="" class="btn-layerClose"></a></h5>
+
+          <table border="0" cellspacing="0" cellpadding="0">
+            <thead>
+              <tr>
+                <th>API 사용(건)</th>
+                <th>단가(원)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>~5,000</td><td>Free</td></tr>
+            </tbody>
+          </table>
+          <!--// content-->
+        </div>
+      </div>
+    </div>
+    <!-- //레이어2 -content -->
+    <!-- 레이어3 -content -->
+    <div id="layer3" class="pop-layer">
+      <div class="layer-container">
+        <div class="layer-conts">
+          <!--content //-->
+          <h5>카테고리 구간별 이용료 <span>(일 기준)</span><a href="" class="btn-layerClose"></a></h5>
+
+          <table border="0" cellspacing="0" cellpadding="0">
+            <thead>
+              <tr>
+                <th>API 사용(건)</th>
+                <th>단가(원)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>~5,000</td><td>Free</td></tr>
+            </tbody>
+          </table>
+          <!--// content-->
+        </div>
+      </div>
+    </div>
+    <!-- //레이어3 -content -->
+  </div>
+
+
+
+
+  <script src="js/popup.js"></script>
+</body>
+
+</html>

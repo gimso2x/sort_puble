@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://www.seowoninfo.com/mvp/ -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MVP(Minimum Viable Product) 깨산기</title>
+    <link rel="stylesheet" href="./MVP/common.css">
+    <script src="./MVP/jquery-3.3.1.min.js"></script>
+    <script src="./MVP/jquery.form.js"></script>
+    <script src="./MVP/common.js"></script>
+    <script src="./MVP/calculate.js"></script>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="container">
+            <h1>MVP(Minimum Viable Product)</h1>
+            <form name="mvpform" method="post" id="mvpform">
+                <fieldset>
+                    <div class="write_info">
+                        <label>소속
+                            <input type="text" name="team">
+                        </label>
+                        <label>직책
+                            <input type="text" name="team_position">
+                        </label>
+                        <label>이름
+                            <input type="text" name="team_name">
+                        </label>
+                        <label>이메일
+                            <input type="text" name="team_email">
+                        </label>
+                    </div>
+                    <legend>MVP(Minimum Viable Product) 계산기</legend>
+                    <table class="input_table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">프로젝트 가제목</th>
+                                <td colspan="5">
+                                    <input type="text" name="pj_tit" id="pj_tit">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">프로젝트 내용(간단히)</th>
+                                <td colspan="5">
+                                    <textarea name="pj_detail"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">고객 요구사항 입력</th>
+                                <td colspan="5">
+                                    <textarea name="required"></textarea>
+                                </td>
+                            </tr>
+                            <tr class="calculate">
+                                <th>매체선택</th>
+                                <th>앱, 웹, 앱+웹, 하이브리드</th>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="m_select" value="1"> 웹</label> |
+                                    <label>
+                                        <input type="checkbox" name="m_select" value="1.2"> 관리자</label>
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="m_select" value="1.5"> Android</label>
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="m_select" value="2"> ios</label>
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="m_select" value="2.5"> hybrid</label>
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="m_select" value="2.5"> webapp</label>
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th colspan="2">구분</th>
+                                <th class="standard">최상</th>
+                                <th class="standard">상</th>
+                                <th class="standard">중</th>
+                                <th class="standard">하</th>
+                                <th class="standard">최하</th>
+                            </tr>
+
+                            <tr class="calculate big">
+                                <th>화면기획</th>
+                                <th>기획 품질 입력
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input type="radio" name="d_plan" value="15">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="d_plan" value="10">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="d_plan" value="5">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="d_plan" value="3">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="d_plan" value="2">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="calculate big">
+                                <th>화면설계</th>
+                                <th>화면설계서의 상중하 입력</th>
+                                <td>
+                                    <input type="radio" name="d_print" value="15">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="d_print" value="10">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="d_print" value="5">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="d_print" value="3">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="d_print" value="2">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="calculate big">
+                                <th>산출물 작성</th>
+                                <th>작성 / 필요 산출물 입력</th>
+                                <td>
+                                    <input type="radio" name="output" value="15">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="output" value="10">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="output" value="5">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="output" value="3">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="output" value="2">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="calculate design">
+                                <th>화면디자인</th>
+                                <th>품질 / 수량 입력</th>
+                                <td>
+                                    <input type="number" name="d_design1" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" name="d_design2" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" name="d_design3" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" name="d_design4" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" name="d_design5" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="calculate puble">
+                                <th>화면퍼블리싱</th>
+                                <th>기능별 품질 / 수량 입력</th>
+                                <td>
+                                    <input type="number" name="d_puble1" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" name="d_puble2" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" name="d_puble3" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" name="d_puble4" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" name="d_puble5" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="calculate develope">
+                                <th>개발화면</th>
+                                <th>난이도 및 수량 입력</th>
+                                <td>
+                                    <input type="number" name="d_display1" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" name="d_display2" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" name="d_display3" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" name="d_display4" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" name="d_display5" min="0" max="20" value="0">
+                                    <div class="tooltip">
+                                        <span class="tooltiptext">웹화면과 관리자화면이 필요시 선택하는 메뉴입니다</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="calculate small">
+                                <th>기능선택</th>
+                                <th>로그인</th>
+                                <td>
+                                    <input type="radio" name="login" value="15">
+                                </td>
+                                <td>
+                                    <input type="radio" name="login" value="10">
+                                </td>
+                                <td>
+                                    <input type="radio" name="login" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="login" value="2">
+                                </td>
+                                <td>
+                                    <input type="radio" name="login" value="1">
+                                </td>
+                            </tr>
+                            <tr class="calculate small">
+                                <th></th>
+                                <th>API 연동</th>
+                                <td>
+                                    <input type="radio" name="api_connect" value="10">
+                                </td>
+                                <td>
+                                    <input type="radio" name="api_connect" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="api_connect" value="3">
+                                </td>
+                                <td>
+                                    <input type="radio" name="api_connect" value="2">
+                                </td>
+                                <td>
+                                    <input type="radio" name="api_connect" value="1">
+                                </td>
+                            </tr>
+                            <tr class="calculate small">
+                                <th></th>
+                                <th>PUSH</th>
+                                <td>
+                                    <input type="radio" name="push" value="10">
+                                </td>
+                                <td>
+                                    <input type="radio" name="push" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="push" value="3">
+                                </td>
+                                <td>
+                                    <input type="radio" name="push" value="2">
+                                </td>
+                                <td>
+                                    <input type="radio" name="push" value="1">
+                                </td>
+                            </tr>
+                            <tr class="calculate small">
+                                <th></th>
+                                <th>실시간연동</th>
+                                <td>
+                                    <input type="radio" name="realtime" value="10">
+                                </td>
+                                <td>
+                                    <input type="radio" name="realtime" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="realtime" value="3">
+                                </td>
+                                <td>
+                                    <input type="radio" name="realtime" value="2">
+                                </td>
+                                <td>
+                                    <input type="radio" name="realtime" value="1">
+                                </td>
+                            </tr>
+                            <tr class="calculate small">
+                                <th></th>
+                                <th>SMS</th>
+                                <td>
+                                    <input type="radio" name="sms" value="10">
+                                </td>
+                                <td>
+                                    <input type="radio" name="sms" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="sms" value="3">
+                                </td>
+                                <td>
+                                    <input type="radio" name="sms" value="2">
+                                </td>
+                                <td>
+                                    <input type="radio" name="sms" value="1">
+                                </td>
+                            </tr>
+                            <tr class="calculate small">
+                                <th></th>
+                                <th>SNS</th>
+                                <td>
+                                    <input type="radio" name="sns" value="10">
+                                </td>
+                                <td>
+                                    <input type="radio" name="sns" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="sns" value="3">
+                                </td>
+                                <td>
+                                    <input type="radio" name="sns" value="2">
+                                </td>
+                                <td>
+                                    <input type="radio" name="sns" value="1">
+                                </td>
+                            </tr>
+                            <tr class="calculate small">
+                                <th></th>
+                                <th>위치기반</th>
+                                <td>
+                                    <input type="radio" name="location" value="10">
+                                </td>
+                                <td>
+                                    <input type="radio" name="location" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="location" value="3">
+                                </td>
+                                <td>
+                                    <input type="radio" name="location" value="2">
+                                </td>
+                                <td>
+                                    <input type="radio" name="location" value="1">
+                                </td>
+                            </tr>
+                            <tr class="calculate small">
+                                <th></th>
+                                <th>블루투스</th>
+                                <td>
+                                    <input type="radio" name="bluetooth" value="10">
+                                </td>
+                                <td>
+                                    <input type="radio" name="bluetooth" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="bluetooth" value="3">
+                                </td>
+                                <td>
+                                    <input type="radio" name="bluetooth" value="2">
+                                </td>
+                                <td>
+                                    <input type="radio" name="bluetooth" value="1">
+                                </td>
+                            </tr>
+                            <tr class="calculate small">
+                                <th></th>
+                                <th>NFC</th>
+                                <td>
+                                    <input type="radio" name="nfc" value="10">
+                                </td>
+                                <td>
+                                    <input type="radio" name="nfc" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="nfc" value="3">
+                                </td>
+                                <td>
+                                    <input type="radio" name="nfc" value="2">
+                                </td>
+                                <td>
+                                    <input type="radio" name="nfc" value="1">
+                                </td>
+                            </tr>
+                            <tr class="calculate small">
+                                <th></th>
+                                <th>결제기능</th>
+                                <td>
+                                    <input type="radio" name="payment" value="15">
+                                </td>
+                                <td>
+                                    <input type="radio" name="payment" value="10">
+                                </td>
+                                <td>
+                                    <input type="radio" name="payment" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="payment" value="3">
+                                </td>
+                                <td>
+                                    <input type="radio" name="payment" value="2">
+                                </td>
+                            </tr>
+                            <tr class="calculate small">
+                                <th></th>
+                                <th>보안모듈연동</th>
+                                <td>
+                                    <input type="radio" name="secure" value="10">
+                                </td>
+                                <td>
+                                    <input type="radio" name="secure" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="secure" value="3">
+                                </td>
+                                <td>
+                                    <input type="radio" name="secure" value="2">
+                                </td>
+                                <td>
+                                    <input type="radio" name="secure" value="1">
+                                </td>
+                            </tr>
+                            <tr class="tr_add">
+                                <th></th>
+                                <th class="btn_add">기능 추가 +</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="calculate section_test">
+                                <th>단위테스트</th>
+                                <th>테스트 레벨 입력</th>
+                                <td>
+                                    <input type="number" name="section_test1" id="d_display1" disabled="">
+                                </td>
+                                <td>
+                                    <input type="number" name="section_test2" id="d_display2" disabled="">
+                                </td>
+                                <td>
+                                    <input type="number" name="section_test3" id="d_display3" disabled="">
+                                </td>
+                                <td>
+                                    <input type="number" name="section_test4" id="d_display4" disabled="">
+                                </td>
+                                <td>
+                                    <input type="number" name="section_test5" id="d_display5" disabled="">
+                                </td>
+                            </tr>
+                            <tr class="calculate">
+                                <th>통합테스트</th>
+                                <th>테스트 레벨 입력</th>
+                                <td>
+                                    <input type="radio" name="all_test" value="15">
+                                </td>
+                                <td>
+                                    <input type="radio" name="all_test" value="10">
+                                </td>
+                                <td>
+                                    <input type="radio" name="all_test" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="all_test" value="3">
+                                </td>
+                                <td>
+                                    <input type="radio" name="all_test" value="2">
+                                </td>
+                            </tr>
+                            <tr class="calculate">
+                                <th>최종완성도</th>
+                                <th>완성도의 레벨 입력</th>
+                                <td>
+                                    <input type="radio" name="final_complete" value="5">
+                                </td>
+                                <td>
+                                    <input type="radio" name="final_complete" value="4">
+                                </td>
+                                <td>
+                                    <input type="radio" name="final_complete" value="3">
+                                </td>
+                                <td>
+                                    <input type="radio" name="final_complete" value="2">
+                                </td>
+                                <td>
+                                    <input type="radio" name="final_complete" value="1">
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <ul class="explain">
+                        <li>MVP 특성상 화면 개발은 40개 화면을 초과 할 수 없고 총 개발 기간은 6개월을 넘기지 않도록 하고 있습니다. 이점 고려해서 선택 및 작성 해주십시요. 좀 더 명확한 견적은 MVP의뢰하기를 통해서 받아 보실 수 있습니다.</li>
+                        <li>사용방법 안내서는 제작 중에 있습니다. 각 기준에 대한 정량적인 부분에 대해서도 함게 작성중입니다. MVP 의뢰 하시면 별도 DB에 저장은 되고 있습니다.</li>
+                    </ul>                    
+                    <div class="button_wrap">
+                        <button type="reset" class="btn_control white">초기화</button>
+                        <a href="http://www.seowoninfo.com/mvp/#layer" class="animate btn_control pop_button">예상 결과 보기</a>
+                    </div>
+
+                    <!-- 레이어 팝업-->
+                    <div class="dim_layerpop">
+                        <div class="dimBg_layerpop"></div>
+                        <div id="layer" class="pop-layer">
+                            <div class="pop-container">
+                                <a href="javascript:void(0);" class="btn_close"></a>
+                                <div class="pop-header">
+                                </div>
+                                <div class="pop-conts">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <th>예상 개월 수</th>
+                                                <td>약
+                                                    <span class="value_sum"></span> 개월</td>
+                                                <input type="hidden" name="value_sum" id="value_sum">
+                                            </tr>
+                                            <tr>
+                                                <th>예상 월 비용</th>
+                                                <td>월
+                                                    <span class="value_monthmony"></span> 원 예상</td>
+                                                <input type="hidden" name="value_monthmony" id="value_monthmony">
+                                            </tr>
+                                            <tr>
+                                                <th>총 개발 비용</th>
+                                                <td>총
+                                                    <span class="value_totalmony"></span> 원 예상</td>
+                                                <input type="hidden" name="value_totalmony" id="value_totalmony">
+                                            </tr>
+                                            <input type="hidden" name="value_mm" id="value_mm">
+                                        </tbody>
+                                    </table>
+                                    MVP 의뢰하기 실행하시고 잠시만 기다려주세요.
+                                </div>
+                                <div class="pop-footer animate">
+                                    <a href="javascript:void(0);" class="btn_control white">수정하기</a>
+                                    <a href="javascript:void(0);" class="btn_control" id="mvpsubmit">MVP 의뢰하기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--// 레이어 팝업-->
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#mvpsubmit").click(function () {
+                var obj = $("#mvpform").serialize();
+                $.ajax({
+                    url: "http://121.126.197.116:9090/test",
+                    type: "post",
+                    crossdomain: true,
+                    data: obj,
+                    dataType: "json"
+                }).then(function (res) {
+                    alert(res.message);
+                    location.replace('./index.html');
+                    console.log("successfully");
+                }, function (error) {
+                    console.log(error);
+                    alert(error.data);
+                });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

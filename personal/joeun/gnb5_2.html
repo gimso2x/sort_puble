@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1" />
+
+    <title>The Joeun</title>
+    <link rel="stylesheet" href="common/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="common/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="common/css/hover.css" type="text/css">
+    <link rel="stylesheet" href="common/css/layout.css" type="text/css">
+    <link rel="stylesheet" href="common/css/main.css" type="text/css">
+    <link rel="stylesheet" href="common/css/contents.css" type="text/css">
+    <link rel="stylesheet" href="common/fonts/font.css" type="text/css">
+    <link rel="stylesheet" href="common/js/navmenu/css/component.css"  type="text/css" />
+    <style media="screen">
+    .table_top{
+      width: 100%;
+      float: left;
+      text-align: right;
+      background-color: #FBFBFB;
+      border-top: 1px solid #DDDDDD;
+      border-bottom: 1px solid #DDDDDD;
+      margin-bottom: 1%;
+    }
+    .table_top select{margin: 0.5%; padding: 0.3%;}
+    .table_top input,button{padding: 0.3%;}
+
+    .gall{width: 100%; overflow: hidden;}
+    .gall ul{width: 90%; margin: 0 auto; overflow: hidden;}
+    .gall ul li{float: left; width: 30%;margin-top: 3%; margin-right: 3%;border: 1px solid #f4f4f4;}
+    .gall ul li:nth-child(3){margin-right: 0;}
+    .gall ul li:nth-child(6){margin-right: 0;}
+    .gall ul li a{text-decoration: none; color:black; text-align: left; text-indent: 5%;}
+    .gall ul li a:hover .ga_box{box-shadow: 1px 1px 1px 1px #ccc; }
+    .gall ul li .ga1,.ga2,.ga3,.ga4,.ga5,.ga6{height: 220px;}
+    .ga1{background: url(http://www.joeunvitamin.com/shop/data/board/jvbestpharmacy/t/340fbefe51b1d1c4) no-repeat 50% 50%;background-size: cover;}
+    .ga2{background: url(http://www.joeunvitamin.com/shop/data/board/jvbestpharmacy/t/9b7c70b4da3a8050) no-repeat 50% 50%;background-size: cover;}
+    .ga3{background: url(http://www.joeunvitamin.com/shop/data/board/jvbestpharmacy/t/d91d998c400933ad) no-repeat 50% 50%;background-size: cover;}
+    .ga4{background: url(http://www.joeunvitamin.com/shop/data/board/jvbestpharmacy/t/1f9187cbf892f12c) no-repeat 50% 50%;background-size: cover;}
+    .ga5{background: url(http://www.joeunvitamin.com/shop/data/board/jvbestpharmacy/t/aee26166e1a4aa0d) no-repeat 50% 50%;background-size: cover;}
+    .ga6{background: url(http://www.joeunvitamin.com/shop/data/board/jvbestpharmacy/t/734ee570bbb9d1f3) no-repeat 50% 50%;background-size: cover;}
+
+    .gall ul li span{padding-top:3%; display: block;font-weight: bold; font-size: 15px; color: #2167A8;}
+    .gall ul li .sub{font-size:13px; padding-bottom: 3%;}
+    .gall ul li .ga_bot{border-top: 1px dotted #E2E2E2; overflow: hidden;}
+    .gall ul li .ga_bot span{color:black; font-weight: normal; font-size: 12px; float:left;padding-bottom: 3%;}
+    .gall ul li .ga_bot img{float: right; padding-top: 2%;}
+
+    .paging{padding-top: 2%; padding-bottom: 1%;}
+    .paging li{border: 1px solid rgba(0,0,0,0.1); width: 20px; padding: 0.5%; margin: 0 auto; display: inline-block;}
+    .paging li:first-child{color: white; background-color: #2167A8;}
+    .paging li:hover{color: white; background-color: #2167A8;}
+
+    @media screen and (max-width:667px) {
+
+      .table_top input{width: 30%;}
+      .gall ul{width: 99%;}
+      .gall ul li{float: left; width: 48.5%; margin-right: 1%;}
+      .gall ul li:nth-child(2), .gall ul li:nth-child(4), .gall ul li:nth-child(6){margin-right: 0;}
+      .gall ul li:nth-child(3){margin-right: 1%;}
+    }
+    @media screen and (max-width:667px) and (orientation:landscape){
+
+    }
+
+    </style>
+
+    <script type="text/javascript" src="common/js/jquery-3.2.1.min.js"></script>
+    <script src="common/js/navmenu/js/modernizr.custom.js"></script>
+    <script src="common/js/navmenu/js/jquery.dlmenu.js"></script>
+    <script src="common/js/main.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $( '#dl-menu' ).dlmenu({
+					animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+				});
+      });
+    </script>
+  </head>
+  <body>
+
+      <h1 class="hid">The Joeun</h1>
+      <header class="header">
+        <div class="top_bar">
+          <div class="wrap2">
+          <ul class="top_bar1">
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="join.html">회원가입</a></li>
+            <li><a href="gnb4_2.html">자주묻는질문</a></li>
+            <li><a href="footer3.html">사이트맵</a></li>
+          </ul>
+          </div>
+        </div>
+        <div class="wrap">
+          <div class="logo">
+            <a href="index.html"><img src="common/images/logo.png" alt="로고"></a>
+          </div>
+          <nav class="gnb">
+            <h2 class="hid">Navigation</h2>
+            <ul>
+              <li><a href="gnb1_1.html" class="arrow">기업소개</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb1_1.html">CEO인사말</a></li>
+                  <li><a href="gnb1_2.html">비전</a></li>
+                  <li><a href="gnb1_3.html">연혁 & CI</a></li>
+                  <li><a href="gnb1_4.html">찾아오시는길</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb2_1.html" class="arrow">건강아카데미</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb2_1.html">아카데미소개</a></li>
+                  <li><a href="gnb2_2.html">자격제도</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb3_1.html">기업부설연구소</a></li>
+              <li><a href="gnb4_1.html" class="arrow">채용인사</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb4_1.html">채용정보</a></li>
+                  <li><a href="gnb4_2.html">전형Q&A</a></li>
+                  <li><a href="gnb4_3.html">직무소개</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb5_1.html" class="arrow">더좋은소식</a>
+                <ul class="sub-menu">
+                  <li><a href="gnb5_1.html">더좋은 NEWS</a></li>
+                  <li><a href="gnb5_2.html">더좋은 파트너</a></li>
+                  <li><a href="gnb5_3.html">각양각색 TALK</a></li>
+                  <li><a href="gnb5_4.html">더좋은 STAR</a></li>
+                  <li><a href="gnb5_5.html">더좋은 LIFE</a></li>
+                </ul>
+              </li>
+              <li><a href="gnb6_1.html">문의라운지</a></li>
+            </ul>
+          </nav>
+          <nav class="gnb_mobile">
+            <h2 class="hid">Navigation</h2>
+            <div class="container demo-2">
+              <div class="main clearfix">
+                <div class="column">
+                  <div id="dl-menu" class="dl-menuwrapper">
+                    <button class="dl-trigger">Open Menu</button>
+                    <ul class="dl-menu">
+                      <li>
+                        <a href="#">기업소개</a>
+                            <ul class="dl-submenu">
+                              <li><a href="gnb1_1.html">CEO인사말</a></li>
+                              <li><a href="gnb1_2.html">비전</a></li>
+                              <li><a href="gnb1_3.html">연혁 & CI</a></li>
+                              <li><a href="gnb1_4.html">찾아오시는길</a></li>
+                            </ul>
+                          </li>
+                      <li>
+                        <a href="#">건강상담아카데미</a>
+                        <ul class="dl-submenu">
+                          <li><a href="gnb2_1.html">아카데미소개</a></li>
+                          <li><a href="gnb2_2.html">자격제도</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="gnb3_1.html">기업부설연구소</a>
+                      </li>
+                      <li>
+                        <a href="#">채용인사</a>
+                        <ul class="dl-submenu">
+                          <li><a href="gnb4_1.html">채용정보</a></li>
+                          <li><a href="gnb4_2.html">전형Q&A</a></li>
+                          <li><a href="gnb4_3.html">직무소개</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#">더좋은소식</a>
+                        <ul class="dl-submenu">
+                          <li><a href="gnb5_1.html">더좋은 NEWS</a></li>
+                          <li><a href="gnb5_2.html">더좋은 파트너</a></li>
+                          <li><a href="gnb5_3.html">각양각색 TALK</a></li>
+                          <li><a href="gnb5_4.html">더좋은 STAR</a></li>
+                          <li><a href="gnb5_5.html">더좋은 LIFE</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="gnb6_1.html">문의라운지</a>
+                      </li>
+                      <li class="jnh">
+        								<a href="login.html">로그인</a>
+        							</li>
+                      <li class="jnh">
+        								<a href="join.html">회원가입</a>
+        							</li>
+                    </ul>
+                  </div><!-- /dl-menuwrapper -->
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="wrap">
+          <div class="box_top">더좋은 파트너</div>
+          <div class="table_top">
+            <select class="" name="">
+              <option value="">전체글</option>
+              <option value="">제목</option>
+              <option value="">내용</option>
+              <option value="">작성자</option>
+            </select>
+            <select class="" name="">
+              <option value="">기간선택</option>
+              <option value="">3일전</option>
+              <option value="">7일전</option>
+              <option value="">1개월전</option>
+              <option value="">6개월전</option>
+            </select>
+            <input type="text" name="" value="">
+            <button type="button" name="button">검색</button>
+          </div>
+          <div class="gall">
+            <ul>
+              <li><a href="#"><div class="ga_box">
+                  <div class="ga1"></div><span>광산아이사랑약국</span><p class="sub">미래아동병원1층</p>
+                  <div class="ga_bot"><span>16/04/22</span><img src="http://www.joeunvitamin.com/shop/data/skin/joeunvitamin/admin.gif" alt=""></div>
+                </div></a>
+              </li>
+              <li><a href="#"><div class="ga_box">
+                <div class="ga2"></div><span>누가약국</span><p class="sub">전남대학교병원 문전</p>
+                <div class="ga_bot"><span>16/04/06</span><img src="http://www.joeunvitamin.com/shop/data/skin/joeunvitamin/admin.gif" alt=""></div>
+              </div></a>
+              </li>
+              <li><a href="#"><div class="ga_box">
+                <div class="ga3"></div><span>위드팜만보약국</span><p class="sub">중앙보훈병원 문전</p>
+                <div class="ga_bot"><span>15/10/08</span><img src="http://www.joeunvitamin.com/shop/data/skin/joeunvitamin/admin.gif" alt=""></div>
+                </div></a>
+              </li>
+              <li><a href="#"><div class="ga_box">
+                <div class="ga4"></div><span>대구 성심약국</span><p class="sub">대구파티마병원 문전</p>
+                <div class="ga_bot"><span>15/08/12</span><img src="http://www.joeunvitamin.com/shop/data/skin/joeunvitamin/admin.gif" alt=""></div>
+                </div></a>
+              </li>
+              <li><a href="#"><div class="ga_box">
+                <div class="ga5"></div><span>천사약국</span><p class="sub">카톨릭대 서울성모병원 문전</p>
+                <div class="ga_bot"><span>15/06/09</span><img src="http://www.joeunvitamin.com/shop/data/skin/joeunvitamin/admin.gif" alt=""></div>
+                </div></a>
+              </li>
+              <li><a href="#"><div class="ga_box">
+                <div class="ga6"></div><span>대구 온누리대학 약국</span><p class="sub">대구카톨릭대학병원 문전</p>
+                <div class="ga_bot"><span>14/10/10</span><img src="http://www.joeunvitamin.com/shop/data/skin/joeunvitamin/admin.gif" alt=""></div>
+                </div></a>
+              </li>
+              </ul>
+          </div>
+          <ul class="paging">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <h2 class="hid">footer</h2>
+        <div class="wrap">
+          <div class="footer_left">
+            <h2>JOEUN SOCIAL MEDIA</h2>
+            <ul>
+              <li>
+                <a href="http://blog.naver.com/thejoeun3596" target="_blank"><img src="common/images/blog.png" alt="">
+                  NaverBlog
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/joeunvitamin" target="_blank"><img src="common/images/facebook.png" alt="">
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="http://plus.kakao.com/home/@%EB%8D%94%EC%A2%8B%EC%9D%80%EC%B1%84%EC%9A%A9" target="_blank"><img src="common/images/kakao.png" alt="">
+                  KakaoTalk
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer_right">
+            <div class="footer_nav">
+              <ul>
+                <li><a href="footer1.html">개인정보취급방침</a></li>
+                <li><a href="footer2.html">이용약관</a></li>
+                <li><a href="footer3.html">사이트맵</a></li>
+              </ul>
+            </div>
+            <div class="footer_contents">
+            (주)더좋은 대표전화 1577-3596 | 대표메일 vision@joeunvitamin.com<br>
+              통신판매업신고 제2016-용인수지-0212호 | 사업자등록번호 129-86-03767<br>
+              <strong>Copyright ⓒ THE JOEUN All rights reserved.</strong>
+            </div>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>
