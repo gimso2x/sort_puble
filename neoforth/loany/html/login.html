@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ERP</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+</head>
+
+<body>
+	<div id="login_wrap">
+		<form id="loginForm" action="#" role="form">
+			<div class="login_box">
+				<div id="box_top">
+					<h1>론니(Loany)</h1>
+					<p class="text1">아이디와 암호 입력후 로그인하세요.</p>
+				</div>
+				<div id="content">
+					<div>
+						<label for="companyDb">업체명 입력</label>
+						<select id="companyDb" class="form-control input-sm" title="업체 선택" name="companyDb">
+							<option value="">선택</option>
+							<option values="{banky_neo=Neo Forth Korea, jone=J.ONE, lkloan=LK 대부}" value="banky_neo">Neo
+								Forth Korea</option>
+							<option values="{banky_neo=Neo Forth Korea, jone=J.ONE, lkloan=LK 대부}" value="jone">J.ONE
+							</option>
+							<option values="{banky_neo=Neo Forth Korea, jone=J.ONE, lkloan=LK 대부}" value="lkloan">LK 대부
+							</option>
+						</select>
+					</div>
+					<div class="input_wrap">
+						<label for="input_emplId">아이디</label>
+						<span><input type="text" class="form-control" value="" id="emplId" name="emplId"></span>
+					</div>
+					<div class="input_wrap">
+						<label for="emplPwd">비밀번호</label>
+						<span><input type="password" class="form-control" value="" id="emplPwd" name="emplPwd"
+								onkeyup="javascript:f_enter();"></span>
+					</div>
+					<div class="btn_wrap">
+						<button type="button" class="btn btn-primary" id="start" name="start">로그인</button>
+					</div>
+					<div class="btn_member">
+						<button type="button" onclick="goJoin()"
+							class="btn pull-right btn_join btn-default">회원가입</button>
+						<p>
+							<a href="idfind.html" class="srch_id">아이디 찾기</a> |
+							<a href="pwfind.html" class="srch_pw">비밀번호 찾기</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div id="ft" class="container">
+		<p class="tx_copy">Copyright &copy; NeoForthKorea CO., LTD All rights reserved.</p>
+		<a href="http://www.neoforth.com" class="btn_link" target="_blank"><span>네오포스코리아</span></a>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ERP</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/flat-ui.css">
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/jquery.number.min.js"></script>
+	<script type="text/javascript" src="../js/excellentexport.js"></script>
+	<script>
+		/* $(document).ready(function() {
+		   $('#tbl_repay').addClass("cell-border display compact nowrap");
+		   $('#tbl_repay').dataTable({
+			   "scrollX": true,
+			   scrollY: '350px',
+			   // scrollCollapse: true,
+			   paging: false,
+			   "autoWidth": false,
+			   "info":false
+		   });
+	   });  */
+		$(function () {
+			//excel down
+			$("#exlBtn").on("click", function () {
+				return ExcellentExport.excel(this, 'tbl_repay', 'sheet1', '상환스케줄 ' + f_today() + '.xls');
+			});
+		})
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- header -->
+		<!-- S:FILE:header.jsp -->
+
+		<!-- header -->
+		<div id="header">
+			<h1 class="logo">
+				<a href="/common/main.do">론니(Loany)</a>
+			</h1>
+			<p class="dt">대출관리시스템</p>
+			<div class="header_login">
+				<dl>
+					<dt>Neo Forth Korea</dt>
+					<dd><span>김정현 님</span>
+						<button onclick="javscript:f_logout();" id="logout" class="btn_logout">로그아웃</button>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- // header // -->
+
+		<!-- E:FILE:header.jsp -->
+		<div id="container">
+			<!-- S:FILE:left.jsp -->
+
+			<script>
+				$(function () {
+					// 레프트메뉴 active 설정
+					$("#sub05_5").addClass("active");
+				});
+
+				function f_logout() {
+					$.post("/front/logout.do").done(function (data) {
+						alert("로그아웃되었습니다. 메인 화면으로 이동합니다.");
+						location.href = "/";
+					}).fail(function () {
+						alert("falil 서버에 이상이 있습니다.");
+					});
+				}
+			</script>
+
+			<!-- lnb -->
+			<div id="lnb">
+				<ul>
+					<li><a href="/common/main.do" id="sub0"><i class="dashboard"></i>대시보드</a></li>
+					<li><a href="/totallist/totalinfolist.do" id="sub02_2"><i class="totallist"></i>종합정보리스트</a></li>
+					<li><a href="/customer/totalInformation.do" id="sub01_1"><i class="total"></i>종합정보</a></li>
+					<li><a href="/interest/interestview.do" id="sub04_4"><i class="interest"></i>이자수납관리</a></li>
+					<li><a href="/receipt/receiptAdmin.do" id="sub03_3"><i class="re"></i>상환처리</a></li>
+					<li><a href="/repayment/schedule.do" id="sub05_5"><i class="resch"></i>상환스케줄</a></li>
+					<li><a href="/repayment/hschedule.do" id="sub05_6"><i class="interestsch"></i>이자납부스케줄</a></li>
+					<li><a href="/sms/smsmanager.do" id="sub06_6"><i class="sms"></i>이자문자발송관리</a></li>
+					<li><a href="/defaulter/defaulter.do" id="sub07_7"><i class="latemanage"></i>연체자 관리</a></li>
+					<li><a href="/front/memberJoin.do" id="sub08_8"><i class="join"></i>회원가입</a></li>
+					<li><a href="/info/infoSet.do" id="sub09_9"><i class="config"></i>설정관리</a></li>
+				</ul>
+			</div>
+			<!-- // lnb // -->
+			<!-- // header // -->
+
+			<!-- contents -->
+			<div id="contents">
+				<div class="contents">
+					<h3 class="cont_tit">상환스케줄&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-search pop_button"
+							type="button" onclick="common_help();" style="vertical-align: middle;">도움말</button></h3>
+					<!-- cont_inr  -->
+					<div class="cont_inr">
+
+						<div class="inr loan_lst">
+							<div class="lst_bottom nonhead">
+								<table>
+									<caption>대출현황</caption>
+									<tbody>
+										<tr>
+											<th class="impact">고객번호</th>
+											<td class="cnum">
+												<input type="text" class="form-control layer_csearch cnum" name="cnum"
+													id="cnum" onclick="cList();" readonly value="">
+												<button class="btn btn-default small layer_csearch pop_button"
+													type="button" onclick="cList();"> 검색</button>
+											</td>
+											<th class="impact">성명</th>
+											<td class="cnum">
+												<input type="text" class="form-control" name="cname" id="cnameSel"
+													disabled="disabled">
+											</td>
+											<td class="cbtnwrap" colspan="4">
+												<a class="btn btn-default" id="exlBtn">Excel</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="inr_head">대출 리스트
+						</div>
+						<div class="inr loan_lst ovrxh">
+							<div class="tbl_grid_header"></div>
+							<div class="lst_top fifth">
+								<table class="tbl_schedule tbl_grid">
+									<colgroup>
+										<col width="4.2%" />
+										<col width="9.5%" />
+										<col width="8.2%" />
+										<col width="22%" />
+										<col width="18%" />
+										<col width="18%" />
+										<col width="20%" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">No</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">대출번호</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">상태</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">대출금액</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">기표일</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">만기일자</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">상환방식</div>
+												</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr onclick="location.href='javascript:getData(1126,5150)'" class="click-bge5">
+											<td>1</td>
+											<td>5150</td>
+											<td>활동</td>
+											<td class="txr">10,000,000원</td>
+											<td>2019-02-15</td>
+											<td>2019-02-15</td>
+											<td>만기일시상환</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="inr_head">대출 상환 스케줄표
+						</div>
+						<div class="inr loan_lst ovrxh">
+							<div class="tbl_grid_header"></div>
+							<div class="lst_top fourth">
+								<table id="tbl_repay" class="tbl_grid">
+									<colgroup>
+										<col width="6%" />
+										<col width="15.5%" />
+										<col width="7.2%" />
+										<col width="7.2%" />
+										<col width="6.8%" />
+										<col width="7.3%" />
+										<col width="10%" />
+										<col width="11.7%" />
+										<col width="11.7%" />
+										<col width="4.8%" />
+										<col width="11.8%" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">납입회차</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">계산기간</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">계산일수</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">납입일자</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">금리</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">연체금리</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">정상이자</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">납부원금</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">납부할총금액</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">상태</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">대출잔액</div>
+												</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody id="paymentList">
+										<tr class="">
+											<td>1회</td>
+											<td>2019-02-16 ~ 2019-03-10</td>
+											<td>23일</td>
+											<td>10일</td>
+											<td>15.00%</td>
+											<td>24.00%</td>
+											<td class="txr">94,520원</td>
+											<td class="txr">0원</td>
+											<td class="txr">94,520원</td>
+											<td>활동</td>
+											<td class="txr">10,000,000원</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+
+					</div>
+					<!-- // cont_inr //-->
+					<!-- 레이어 팝업-->
+					<div class="dim_layerpop">
+						<div class="dimBg_layerpop"></div>
+						<!-- 공통 도움말 팝업  class=contents 안쪽에 있어야 한다.-->
+
+
+						<!-- 도움말 팝업 -->
+						<div id="layer_common_help" class="pop-layer_help section-layer">
+							<div class="inr_head">도움말
+								<div class="tcr">
+									<table>
+										<caption>도움말</caption>
+										<tbody>
+											<tr>
+												<td colspan="2" class="cbtnwrap">
+													<button class="btn btn-submit" type="button"
+														onclick="common_help_save()">
+														저장</button>
+													<button class="btn btn-default btn_close" type="button"
+														onclick="common_help_close()">
+														<i class="fui-cross"></i> 닫기</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="inr company_info">
+								<table>
+									<caption>도움말</caption>
+									<tbody>
+										<tr>
+											<th style="width:10px">화면명</th>
+											<td><input type="text" class="form-control" id="common_help_title"></td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<textarea id="common_help_content" class="form-control"
+													style="overflow-y: scroll;height:500px"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- // 도움말 팝업 // -->
+						<script>
+							/**
+							 * 공통 도움말
+							 */
+
+							function common_help() {
+								var pageId = "";
+								var tempPageName = window.location.href;
+								var strPageName = tempPageName.split("/");
+								pageId = strPageName[strPageName.length - 1].split("?")[0];
+								$("#layer_common_help").show();
+
+								var obj = new Object();
+								obj.common_help_id = pageId;
+								obj.common_help_title = $("#common_help_title").val();
+								obj.common_help_content = $("#common_help_content").val();
+
+								obj = JSON.stringify(obj);
+								// 수정
+
+
+							}
+
+							function common_help_save() {
+								var pageId = "";
+								var tempPageName = window.location.href;
+								var strPageName = tempPageName.split("/");
+								pageId = strPageName[strPageName.length - 1].split("?")[0];
+
+								var obj = new Object();
+								obj.common_help_id = pageId;
+								obj.common_help_title = $("#common_help_title").val();
+								obj.common_help_content = $("#common_help_content").val();
+
+								obj = JSON.stringify(obj);
+
+
+							}
+
+							/**
+							 * 도움말 닫기
+							 */
+							function common_help_close() {
+								$('.dim_layerpop').fadeOut();
+								$('.pop-layer').fadeOut();
+								$('body').css({
+									overflow: 'visible',
+									position: 'static'
+								});
+								$("#layer_common_help").hide();
+							} 
+						</script>
+						<div id="layer_csearch" class="pop-layer search_popup">
+							<div class="pop-container">
+								<div class="pop-header">
+									<i class="fui-list-numbered"></i>고객 검색
+									<a href="javascript:void(0);" class="btn_close">
+										<span class="ir">닫기</span>
+									</a>
+								</div>
+								<div class="pop-conts">
+									<ul>
+										<li>
+											<select name="condition" id="condition" class="form-control">
+												<option value="1">고객번호</option>
+												<option value="2">성명</option>
+												<option value="3">전화번호</option>
+											</select>
+										</li>
+										<li>
+											<input type="text" class="form-control" name="keyword" id="keyword"
+												onkeyup="enterkey();">
+										</li>
+										<li>
+											<button class="btn btn-submit" onclick="cList()">검색</button>
+										</li>
+									</ul>
+								</div>
+								<div class="pop-footer">
+									<ul class="ul_thead">
+										<li>No</li>
+										<li>고객번호</li>
+										<li>성명</li>
+										<li>생년월일</li>
+										<li>전화번호</li>
+									</ul>
+									<ul class="ul_tbody" id="cus_body">
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // contents //-->
+		</div>
+		<!-- // container // -->
+	</div>
+
+	<script type="text/javascript">
+		//검색 input에서 엔터눌렀을 경우
+		function enterkey() {
+			if (window.event.keyCode == 13) {
+				cList();
+			}
+		}
+
+		function loanList(cnum) {
+			var obj = new Object();
+			obj.cnum = cnum;
+			obj = JSON.stringify(obj);
+
+
+		};
+		function getData(data1, data2) {
+			var obj = new Object();
+			obj.cnum = data1;
+			if (data2) {
+				obj.loan_num = data2;
+			} else {
+				obj.loan_num = "";
+			}
+			obj = JSON.stringify(obj);
+			var htmls = "";
+			var reCost = 0;
+		};
+	</script>
+</body>
+
+</html>

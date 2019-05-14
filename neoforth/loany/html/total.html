@@ -1,0 +1,2894 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ERP</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/flat-ui.css">
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/jquery.number.min.js"></script>
+	<!-- <script type="text/javascript" src="../js/paymentCal.js"></script> -->
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- header -->
+		<!-- S:FILE:header.jsp -->
+
+		<!-- header -->
+		<div id="header">
+			<h1 class="logo">
+				<a href="/common/main.do">론니(Loany)</a>
+			</h1>
+			<p class="dt">대출관리시스템</p>
+			<div class="header_login">
+				<dl>
+					<dt>Neo Forth Korea</dt>
+					<dd><span>김정현 님</span>
+						<button onclick="javscript:f_logout();" id="logout" class="btn_logout">로그아웃</button>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- // header // -->
+
+		<!-- E:FILE:header.jsp -->
+		<div id="container">
+			<!-- S:FILE:left.jsp -->
+
+			<script>
+				$(function () {
+					// 레프트메뉴 active 설정
+					$("#sub01_1").addClass("active");
+				});
+			</script>
+
+			<!-- lnb -->
+			<div id="lnb">
+				<ul>
+					<li><a href="/common/main.do" id="sub0"><i class="dashboard"></i>대시보드</a></li>
+					<li><a href="/totallist/totalinfolist.do" id="sub02_2"><i class="totallist"></i>종합정보리스트</a></li>
+					<li><a href="/customer/totalInformation.do" id="sub01_1"><i class="total"></i>종합정보</a></li>
+					<li><a href="/interest/interestview.do" id="sub04_4"><i class="interest"></i>이자수납관리</a></li>
+					<li><a href="/receipt/receiptAdmin.do" id="sub03_3"><i class="re"></i>상환처리</a></li>
+					<li><a href="/repayment/schedule.do" id="sub05_5"><i class="resch"></i>상환스케줄</a></li>
+					<li><a href="/repayment/hschedule.do" id="sub05_6"><i class="interestsch"></i>이자납부스케줄</a></li>
+					<li><a href="/sms/smsmanager.do" id="sub06_6"><i class="sms"></i>이자문자발송관리</a></li>
+					<li><a href="/defaulter/defaulter.do" id="sub07_7"><i class="latemanage"></i>연체자 관리</a></li>
+					<li><a href="/front/memberJoin.do" id="sub08_8"><i class="join"></i>회원가입</a></li>
+					<li><a href="/info/infoSet.do" id="sub09_9"><i class="config"></i>설정관리</a></li>
+				</ul>
+			</div>
+			<!-- // lnb // -->
+
+
+			<!-- contents -->
+			<div id="contents">
+				<div class="contents">
+					<h3 class="cont_tit">종합정보&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-search pop_button" type="button"
+							onclick="common_help();" style="vertical-align: middle;">도움말</button></h3>
+					<!-- cont_inr - 종합정보 -->
+					<div class="cont_inr">
+						<!-- 채무자정보탭  -->
+						<form method="post" id="cForm">
+							<div class="inr_head title">채무자
+								<div class="tcr">
+									<table>
+										<caption>고객번호 신규 저장 조회 버튼</caption>
+										<tbody>
+											<tr>
+												<th style="text-align:right;">고객번호</th>
+												<td class="cnum" style="width:auto;">
+													<input type="hidden" name="saveChoice" id="saveChoice" value="N">
+													<input type="text" class="form-control layer_csearch cnum"
+														name="cnum" id="cnum" onclick="cList();" readonly value=""
+														style="height:30px;width:120px;" />
+													<button class="btn-search layer_csearch pop_button" type="button"
+														onclick="cList();"> 검색</button>
+												</td>
+												<td colspan="1" class="cbtnwrap">
+													<a href="totalInformation.do" class="btn-add">신규</a>
+													<button class="btn-save" type="button" id="cBtn"
+														onclick="javascript:custCheck();">
+														<i class="fui-check-circle"></i> 저장</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="inr company_info mb20">
+								<table>
+									<caption>채무자</caption>
+									<tbody>
+										<tr>
+											<th>고객상태</th>
+											<td>
+												<select id="cstatus" class="form-control input-sm" title="고객상태 선택"
+													name="cstatus">
+													<option values="{=고객상태선택, 2=자서예정, 3=자서완료, 4=활동, 5=부결, 6=보류, 7=완납}"
+														value="">고객상태선택</option>
+													<option values="{=고객상태선택, 2=자서예정, 3=자서완료, 4=활동, 5=부결, 6=보류, 7=완납}"
+														value="2">자서예정</option>
+													<option values="{=고객상태선택, 2=자서예정, 3=자서완료, 4=활동, 5=부결, 6=보류, 7=완납}"
+														value="3">자서완료</option>
+													<option values="{=고객상태선택, 2=자서예정, 3=자서완료, 4=활동, 5=부결, 6=보류, 7=완납}"
+														value="4">활동</option>
+													<option values="{=고객상태선택, 2=자서예정, 3=자서완료, 4=활동, 5=부결, 6=보류, 7=완납}"
+														value="5">부결</option>
+													<option values="{=고객상태선택, 2=자서예정, 3=자서완료, 4=활동, 5=부결, 6=보류, 7=완납}"
+														value="6">보류</option>
+													<option values="{=고객상태선택, 2=자서예정, 3=자서완료, 4=활동, 5=부결, 6=보류, 7=완납}"
+														value="7">완납</option>
+												</select>
+											</td>
+											<td>
+												<label id="loan_status"></label>
+											</td>
+										</tr>
+										<tr>
+											<th>성명</th>
+											<td>
+												<input type="text" class="form-control" name="cname" id="cname"
+													style="ime-mode:active">
+											</td>
+											<th>주민번호</th>
+											<td class="ssnum">
+												<input type="text" class="form-control" name="crrn" id="crrn"
+													maxlength="6">
+												<input type="text" class="form-control" name="crrn2" id="crrn2"
+													maxlength="7">
+											</td>
+											<th>성별</th>
+											<td>
+												<label>남자 &nbsp;&nbsp;
+													<input type="radio" name="sex" value="1" id="male">
+												</label>&nbsp;&nbsp;&nbsp;&nbsp;
+												<label>여자 &nbsp;&nbsp;
+													<input type="radio" name="sex" value="2" id="female">
+												</label>
+											</td>
+											<th>결혼여부</th>
+											<td>
+												<select id="marry" class="form-control input-sm" title="결혼여부 선택"
+													name="marry">
+													<option values="{=선택, 2=기혼, 3=미혼, 4=이혼, 5=동거, 6=사별}" value="">선택
+													</option>
+													<option values="{=선택, 2=기혼, 3=미혼, 4=이혼, 5=동거, 6=사별}" value="2">기혼
+													</option>
+													<option values="{=선택, 2=기혼, 3=미혼, 4=이혼, 5=동거, 6=사별}" value="3">미혼
+													</option>
+													<option values="{=선택, 2=기혼, 3=미혼, 4=이혼, 5=동거, 6=사별}" value="4">이혼
+													</option>
+													<option values="{=선택, 2=기혼, 3=미혼, 4=이혼, 5=동거, 6=사별}" value="5">동거
+													</option>
+													<option values="{=선택, 2=기혼, 3=미혼, 4=이혼, 5=동거, 6=사별}" value="6">사별
+													</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<th>등급</th>
+											<td>
+												<input type="text" class="form-control" name="grade" id="grade">
+											</td>
+											<th>등급상태</th>
+											<td>
+												<select id="grade_status" class="form-control input-sm" title="등급상태 선택"
+													name="grade_status">
+													<option values="{=선택, 2=정상, 3=신용회복, 4=개인회생, 5=파산}" value="">선택
+													</option>
+													<option values="{=선택, 2=정상, 3=신용회복, 4=개인회생, 5=파산}" value="2">정상
+													</option>
+													<option values="{=선택, 2=정상, 3=신용회복, 4=개인회생, 5=파산}" value="3">신용회복
+													</option>
+													<option values="{=선택, 2=정상, 3=신용회복, 4=개인회생, 5=파산}" value="4">개인회생
+													</option>
+													<option values="{=선택, 2=정상, 3=신용회복, 4=개인회생, 5=파산}" value="5">파산
+													</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<th>현주소</th>
+											<td class="ssnum" colspan="2">
+												<select id="haddr1" class="form-control input-sm addrSel"
+													title="주소(시,도) 선택" name="haddr1">
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="1">선택</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="2">서울</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="3">부산</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="4">대구</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="5">인천</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="6">광주</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="7">대전</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="8">울산</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="9">강원</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="10">경기</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="11">경남</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="12">경북</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="13">전남</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="14">전북</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="15">제주</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="16">충남</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="17">충북</option>
+												</select>
+												<select class="form-control input-sm" title="주소(구,군) 선택" name="haddr1_1"
+													id="haddr1_1">
+													<option value="">선택</option>
+												</select>
+											</td>
+											<td colspan="3">
+												<input type="text" class="form-control" name="haddr2" id="haddr2">
+											</td>
+										</tr>
+										<tr>
+											<th>통신사</th>
+											<td>
+												<select id="ctel_div" class="form-control input-sm" title="통신사 선택"
+													name="ctel_div">
+													<option
+														values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+														value="">선택</option>
+													<option
+														values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+														value="2">SKT</option>
+													<option
+														values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+														value="3">KT</option>
+													<option
+														values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+														value="4">LG</option>
+													<option
+														values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+														value="5">SKT 알뜰폰</option>
+													<option
+														values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+														value="6">KT 알뜰폰</option>
+													<option
+														values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+														value="7">LG 알뜰폰</option>
+													<option
+														values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+														value="8">없음</option>
+												</select>
+											</td>
+											<th>휴대폰</th>
+											<td>
+												<input type="text" class="form-control" name="ctel" id="ctel"
+													maxlength="13" />
+											</td>
+											<th>일반전화</th>
+											<td>
+												<input type="text" class="form-control" name="htel" id="htel"
+													maxlength="11">
+											</td>
+											<th>이메일</th>
+											<td>
+												<input type="text" class="form-control" name="email" id="email">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="inr_head"> 직장정보 </div>
+							<div class="inr company_info mb20">
+								<table>
+									<caption>채무자</caption>
+									<tbody>
+										<tr>
+											<th>직업구분</th>
+											<td>
+												<select id="company_occup" class="form-control input-sm" title="직업구분 선택"
+													name="company_occup">
+													<option values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+														value="">선택</option>
+													<option values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+														value="2">회사원</option>
+													<option values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+														value="3">프리랜서</option>
+													<option values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+														value="4">주부</option>
+													<option values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+														value="5">개인사업자</option>
+													<option values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+														value="6">법인사업자</option>
+													<option values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+														value="7">기타</option>
+												</select>
+											</td>
+											<th>직장명</th>
+											<td>
+												<input type="text" class="form-control" name="company_name"
+													id="company_name">
+											</td>
+											<th>직위</th>
+											<td>
+												<input type="text" class="form-control" name="company_position"
+													id="company_position">
+											</td>
+											<th>직장연락처</th>
+											<td>
+												<input type="text" class="form-control" name="company_tel"
+													id="company_tel" maxlength="11">
+											</td>
+										</tr>
+										<tr>
+											<th>연봉</th>
+											<td>
+												<div class="input_tbl">
+													<div class="input_col">
+														<input type="text" class="form-control comma-cost" name="salary"
+															id="salary" maxlength="12">
+													</div>
+													<div class="input_col col_aside">원</div>
+												</div>
+											</td>
+											<th>직장주소</th>
+											<td class="ssnum" colspan="2">
+												<select id="company_addr1" class="form-control input-sm addrSel"
+													title="주소(시,도) 선택" name="company_addr1">
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="1">선택</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="2">서울</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="3">부산</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="4">대구</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="5">인천</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="6">광주</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="7">대전</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="8">울산</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="9">강원</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="10">경기</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="11">경남</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="12">경북</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="13">전남</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="14">전북</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="15">제주</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="16">충남</option>
+													<option
+														values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+														value="17">충북</option>
+												</select>
+												<select class="form-control input-sm" title="주소(구,군) 선택"
+													name="company_addr1_1" id="company_addr1_1">
+													<option value="">선택</option>
+												</select>
+											</td>
+											<td colspan="3">
+												<input type="text" class="form-control" name="company_addr2"
+													id="company_addr2">
+											</td>
+										</tr>
+										<tr>
+											<th>대리인 성명</th>
+											<td>
+												<input type="text" class="form-control" name="cdname" id="cdname">
+											</td>
+											<th>연락처</th>
+											<td>
+												<input type="text" class="form-control" name="cdtel" id="cdtel"
+													maxlength="11">
+											</td>
+											<th>관계</th>
+											<td class="ssnum">
+												<select id="cdrel" class="form-control input-sm" title="관계 선택"
+													name="cdrel">
+													<option values="{=선택, 2=부, 3=모}" value="">선택</option>
+													<option values="{=선택, 2=부, 3=모}" value="2">부</option>
+													<option values="{=선택, 2=부, 3=모}" value="3">모</option>
+												</select>
+											</td>
+										</tr>
+
+										<tr>
+											<th>메모</th>
+											<td colspan="7">
+												<textarea name="memo" class="form-control" id="memo"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</form>
+						<!-- // 채무자정보탭  // -->
+
+						<!-- 대출정보탭  -->
+						<div class="inr_head">대출 정보
+							<div class="tcr">
+								<table>
+									<caption>대출번호 신규 저장 조회 버튼</caption>
+									<tbody>
+										<tr>
+											<td colspan="2" class="cbtnwrap">
+												<button class="btn-save" type="button"
+													onclick="javascript:common_history();">
+													<i class="fui-check-circle"></i> 대출 history</button>
+												<a href="javascript:clear();" class="btn-add layer_loanInfo" id="a">
+													신규 대출
+												</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="inr loan_lst ovrxh mb20">
+							<div class="tbl_grid_header"></div>
+							<div class="lst_top second">
+								<table class="tbl_grid tbl_layer_loanInfo">
+									<colgroup>
+										<col width="70px">
+										<col width="*">
+										<col width="*">
+										<col width="*">
+										<col width="*">
+										<col width="*">
+										<col width="*">
+										<col width="*">
+										<col width="35px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">No</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">대출금액</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">대출상태</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">금리</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">이자일</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">연체금리</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">상환방식</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">기표일</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner"></div>
+												</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody id="loanListB">
+										<tr>
+											<td class="hover-bgf" colspan="8">조회된 내용이 없습니다.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- // 대출정보탭 // -->
+
+						<!-- 담보제공자정보탭  -->
+						<div class="inr_head">담보제공자
+							<div class="tcr">
+								<table>
+									<tbody>
+										<tr>
+											<td class="cbtnwrap">
+												<a href="javascript:clear();" class="btn-add layer_guarInfo">신규담보제공자
+												</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="inr loan_lst ovrxh mb20">
+							<div class="tbl_grid_header"></div>
+							<div class="lst_top second">
+								<table class="tbl_grid tbl_layer_guarInfo">
+									<colgroup>
+										<col width="*" />
+										<col width="*" />
+										<col width="*" />
+										<col width="*" />
+										<col width="*" />
+										<col width="*" />
+										<col width="35px" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">No</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">성명</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">관계</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">등급</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">등급상태</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">휴대폰번호</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner"></div>
+												</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody id="offerListB">
+										<tr>
+											<td class="hover-bgf" colspan="7">조회된 내용이 없습니다.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- // 담보제공자정보탭 //  -->
+
+						<!-- 물건지정보탭  -->
+						<div class="inr_head">물건지 정보
+							<div class="tcr">
+								<table>
+									<tbody>
+										<tr>
+											<td class="cbtnwrap" id="secuTd">
+												<a href="javascript:clear();" class="btn-add layer_rubInfo">신규물건지</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="inr loan_lst ovrxh mb20">
+							<div class="tbl_grid_header"></div>
+							<div class="lst_top second">
+								<table class="tbl_grid tbl_layer_rubInfo">
+									<colgroup>
+										<col width="70px" />
+										<col width="200px" />
+										<col width="*" />
+										<col width="*" />
+										<col width="*" />
+										<col width="300px" />
+										<col width="35px" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">No</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">종류</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">등기번호</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">심사기준가</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">등기부원금</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">전산원금</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner"></div>
+												</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody id="secuListB">
+										<tr>
+											<td class="hover-bgf" colspan="7">조회된 내용이 없습니다.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- // 물건지정보탭 //  -->
+
+						<!-- 질권대출정보탭  -->
+						<div class="inr_head">질권대출 정보
+							<div class="tcr">
+								<table>
+									<tbody>
+										<tr>
+											<td class="cbtnwrap">
+												<a href="javascript:clear();" class="btn-add layer_pleInfo">신규질권대출</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="inr loan_lst ovrxh mb20">
+							<div class="tbl_grid_header"></div>
+							<div class="lst_top second">
+								<table class="tbl_grid tbl_layer_pleInfo">
+									<colgroup>
+										<col width="70px" />
+										<col width="200px" />
+										<col width="*" />
+										<col width="*" />
+										<col width="*" />
+										<col width="*" />
+										<col width="*" />
+										<col width="35px" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">No</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">질권대출금액</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">질권금리</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">질권금융기관</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">기표일</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">만기일</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner">상환일</div>
+												</div>
+											</th>
+											<th>
+												<div class="th-ouinner">
+													<div class="th-inner"></div>
+												</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody id="pledgeListB">
+										<tr>
+											<td class="hover-bgf" colspan="8">조회된 내용이 없습니다.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- // 질권대출정보탭  // -->
+
+
+					</div>
+					<!-- // cont_inr - 종합정보 //-->
+
+					<!-- 레이어 팝업-->
+					<div class="dim_layerpop">
+						<div class="dimBg_layerpop"></div>
+						<div id="layer_csearch" class="pop-layer search_popup">
+							<div class="pop-container">
+								<div class="pop-header">
+									<i class="fui-list-numbered"></i>고객 검색
+									<a href="javascript:void(0);" class="btn_close">
+										<span class="ir">닫기</span>
+									</a>
+								</div>
+								<div class="pop-conts">
+									<ul>
+										<li>
+											<select id="condition" class="form-control input-sm" title="검색 선택"
+												name="condition">
+												<option values="{2=성명, 0=검색조건선택, 3=전화번호}" value="2">성명</option>
+												<option values="{2=성명, 0=검색조건선택, 3=전화번호}" value="0">검색조건선택</option>
+												<option values="{2=성명, 0=검색조건선택, 3=전화번호}" value="3">전화번호</option>
+											</select>
+										</li>
+										<li>
+											<input type="text" class="form-control" name="keyword" id="keyword"
+												autofocus onkeyup="enterkey();">
+										</li>
+										<li>
+											<button class="btn btn-submit" onclick="cList();">검색</button>
+										</li>
+									</ul>
+								</div>
+								<div class="pop-footer">
+									<ul class="ul_thead">
+										<li>No</li>
+										<li>고객번호</li>
+										<li>성명</li>
+										<li>생년월일</li>
+										<li>전화번호</li>
+									</ul>
+									<ul class="ul_tbody" id="cus_body">
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- 대출정보팝업 -->
+						<div id="layer_loanInfo" class="pop-layer section-layer">
+							<form method="post" id="loanForm">
+								<input type="hidden" name="loan_num" id="loan_num" />
+								<div class="inr_head">대출 정보
+									<div class="tcr">
+										<table>
+											<caption>대출번호 신규 저장 조회 버튼</caption>
+											<tbody>
+												<tr>
+													<td colspan="2" class="cbtnwrap">
+														<button class="btn btn-submit" type="button"
+															onclick="loanCheck('u');">
+															<i class="fui-checkbox-unchecked"></i> 변경일 이후 적용</button>
+														<button class="btn btn-submit saveBtn" type="button"
+															onclick="loanCheck('s');">
+															<i class="fui-check-circle"></i> 전체적용</button>
+														<button class="btn btn-default btn_close" type="button" id="">
+															<i class="fui-cross"></i> 닫기</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+
+								<div class="inr company_info">
+									<table>
+										<caption>대출 정보</caption>
+										<tbody>
+											<tr>
+												<th>대출구분</th>
+												<td>
+													<select id="loan_div" class="form-control input-sm" title="대출구분 선택"
+														name="loan_div">
+														<option
+															values="{=대출종류선택, 2=신규, 3=추가, 4=재대출, 5=연장, 6=완납, 7=재대출로인한완납처리}"
+															value="">대출종류선택</option>
+														<option
+															values="{=대출종류선택, 2=신규, 3=추가, 4=재대출, 5=연장, 6=완납, 7=재대출로인한완납처리}"
+															value="2">신규</option>
+														<option
+															values="{=대출종류선택, 2=신규, 3=추가, 4=재대출, 5=연장, 6=완납, 7=재대출로인한완납처리}"
+															value="3">추가</option>
+														<option
+															values="{=대출종류선택, 2=신규, 3=추가, 4=재대출, 5=연장, 6=완납, 7=재대출로인한완납처리}"
+															value="4">재대출</option>
+														<option
+															values="{=대출종류선택, 2=신규, 3=추가, 4=재대출, 5=연장, 6=완납, 7=재대출로인한완납처리}"
+															value="5">연장</option>
+														<option
+															values="{=대출종류선택, 2=신규, 3=추가, 4=재대출, 5=연장, 6=완납, 7=재대출로인한완납처리}"
+															value="6">완납</option>
+														<option
+															values="{=대출종류선택, 2=신규, 3=추가, 4=재대출, 5=연장, 6=완납, 7=재대출로인한완납처리}"
+															value="7">재대출로인한완납처리</option>
+													</select>
+
+												</td>
+												<th>연결대출번호</th>
+												<td><input type="text" size="7" id="sub_loan_num" name="sub_loan_num"
+														readonly="true"><button type="button" class="btn btn-default"
+														id="brigeBtn" name="brigeBtn" onclick="brigeShow()"
+														style="margin-right: 10px;">검색</button></td>
+												<td colspan="4"></td>
+												<th id="up_day" disabled="disabled">변경일</th>
+												<td>
+													<input type="text" class="form-control datepicker cal_i"
+														name="update_day" id="update_day">
+
+													<!-- 이전 저장 변수 추가 -->
+													<input type="hidden" name="previous_loan_handday"
+														id="previous_loan_handday">
+													<input type="hidden" name="previous_loan_sday"
+														id="previous_loan_sday">
+													<input type="hidden" name="previous_loan_rday"
+														id="previous_loan_rday">
+													<input type="hidden" name="previous_loan_eday"
+														id="previous_loan_eday">
+													<input type="hidden" name="previous_loan_cost"
+														id="previous_loan_cost">
+													<input type="hidden" name="previous_loan_overdue_irt"
+														id="previous_loan_overdue_irt">
+													<input type="hidden" name="previous_loan_irt"
+														id="previous_loan_irt">
+
+												</td>
+											</tr>
+											<tr>
+												<th>대출금액</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control comma-cost"
+																name="loan_cost" id="loan_cost" maxlength="12">
+														</div>
+														<div class="input_col col_aside">원</div>
+													</div>
+												</td>
+												<th>금리</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control" name="loan_irt"
+																id="loan_irt">
+														</div>
+														<div class="input_col col_aside">%</div>
+													</div>
+												</td>
+												<th>연체금리</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control"
+																name="loan_overdue_irt" id="loan_overdue_irt">
+														</div>
+														<div class="input_col col_aside">%</div>
+													</div>
+												</td>
+
+												<th>이자일</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control" name="irt_day"
+																id="irt_day" maxlength="2">
+														</div>
+														<div class="input_col col_aside">일</div>
+													</div>
+												</td>
+												<th>상환방식</th>
+												<td>
+													<select id="loan_repay" class="form-control input-sm"
+														title="상환방식 선택" name="loan_repay">
+														<option values="{=선택, 2=만기일시상환, 3=원리금균등분할상환, 4=원금분할}" value="">
+															선택</option>
+														<option values="{=선택, 2=만기일시상환, 3=원리금균등분할상환, 4=원금분할}" value="2">
+															만기일시상환</option>
+														<option values="{=선택, 2=만기일시상환, 3=원리금균등분할상환, 4=원금분할}" value="3">
+															원리금균등분할상환</option>
+														<option values="{=선택, 2=만기일시상환, 3=원리금균등분할상환, 4=원금분할}" value="4">
+															원금분할</option>
+													</select>
+												</td>
+											</tr>
+											<tr>
+
+												<th>거래유형</th>
+												<td>
+													<select id="trading" class="form-control input-sm" title="거래유형 선택"
+														name="trading">
+														<option values="{=선택, 2=매매, 3=대환, 4=단독, 5=기타}" value="">선택
+														</option>
+														<option values="{=선택, 2=매매, 3=대환, 4=단독, 5=기타}" value="2">매매
+														</option>
+														<option values="{=선택, 2=매매, 3=대환, 4=단독, 5=기타}" value="3">대환
+														</option>
+														<option values="{=선택, 2=매매, 3=대환, 4=단독, 5=기타}" value="4">단독
+														</option>
+														<option values="{=선택, 2=매매, 3=대환, 4=단독, 5=기타}" value="5">기타
+														</option>
+													</select>
+												</td>
+												<th>동시진행</th>
+												<td>
+													<label>유&nbsp;&nbsp;
+														<input type="radio" name="re_boolen" id="rt_tr" value="1">
+													</label>&nbsp;&nbsp;&nbsp;&nbsp;
+													<label>무&nbsp;&nbsp;
+														<input type="radio" name="re_boolen" id="rt_fa" value="2">
+													</label>
+												</td>
+												<th>담당자</th>
+												<td>
+													<input type="text" class="form-control" name="manager" id="manager">
+												</td>
+												<th>거래처</th>
+												<td>
+													<input type="text" class="form-control" name="account" id="account">
+												</td>
+												<th>수당</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control comma-cost"
+																name="extra_pay" id="extra_pay" maxlength="12">
+														</div>
+														<div class="input_col col_aside">원</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>자서일</th>
+												<td>
+													<input type="text" class="form-control datepicker cal_i"
+														name="loan_handday" id="loan_handday">
+												</td>
+												<th>기표일</th>
+												<td>
+													<input type="text" class="form-control datepicker cal_i"
+														name="loan_sday" id="loan_sday">
+												</td>
+												<th>대출기간</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control" name="loan_term"
+																id="loan_term" maxlength="2">
+														</div>
+														<div class="input_col col_aside">개월</div>
+													</div>
+												</td>
+												<th>만기일</th>
+												<td>
+													<input type="text" class="form-control datepicker cal_i"
+														name="loan_eday" id="loan_eday">
+												</td>
+												<th>상환일</th>
+												<td>
+													<input type="text" class="form-control datepicker cal_i"
+														name="loan_rday" id="loan_rday">
+												</td>
+											</tr>
+											<tr>
+												<th>중도상환<br>수수료</th>
+												<td>
+													<!-- <input type="text" class="form-control" name="commission_kbn" id="commission_kbn"> -->
+													<select id="commission_kbn" class="form-control input-sm"
+														title="중도상환수수료 선택" name="commission_kbn">
+														<option values="{=선택, kbn1=혼합형, kbn2=일수차감형, kbn3=고정형}" value="">
+															선택</option>
+														<option values="{=선택, kbn1=혼합형, kbn2=일수차감형, kbn3=고정형}"
+															value="kbn1">혼합형</option>
+														<option values="{=선택, kbn1=혼합형, kbn2=일수차감형, kbn3=고정형}"
+															value="kbn2">일수차감형</option>
+														<option values="{=선택, kbn1=혼합형, kbn2=일수차감형, kbn3=고정형}"
+															value="kbn3">고정형</option>
+													</select>
+												</td>
+												<td colspan="8">
+													<div id="commission" style="text-align:left;padding-left: 20px;">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>메모</th>
+												<td colspan="9">
+													<textarea name="loan_memo" class="form-control"
+														id="loan_memo"></textarea>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</form>
+
+						</div>
+						<!-- // 대출정보팝업 // -->
+
+						<!-- 연결대출번호 팝업 -->
+						<div id="layer_brige_loanInfo" class="pop-layer3 section-layer">
+							<div class="inr_head">추가 대출 정보
+								<div class="tcr">
+									<table>
+										<caption>연결대출번호</caption>
+										<tbody>
+											<tr>
+												<td colspan="2" class="cbtnwrap">
+													<button class="btn btn-default btn_close" type="button" id=""
+														onclick="brigeClose();">
+														<i class="fui-cross"></i> 닫기</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="inr loan_lst ovrxh mb20">
+								<div class="tbl_grid_header"></div>
+								<div class="lst_top second">
+									<table class="tbl_grid tbl_layer_loanInfo">
+										<colgroup>
+											<col width="70px">
+											<col width="*">
+											<col width="*">
+											<col width="*">
+											<col width="*">
+											<col width="*">
+											<col width="*">
+											<col width="*">
+											<col width="35px">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">No</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">대출금액</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">대출상태</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">금리</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">이자일</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">연체금리</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">상환방식</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">기표일</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner"></div>
+													</div>
+												</th>
+											</tr>
+										</thead>
+										<tbody id="brigeLoanListC">
+											<tr>
+												<td class="hover-bgf" colspan="8">조회된 내용이 없습니다.</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- 연결대출번호 팝업 -->
+
+
+						<!-- 담보정보팝업 -->
+						<div id="layer_guarInfo" class="pop-layer section-layer">
+							<form method="post" id="guForm">
+								<input type="hidden" name="gu_num" id="gu_num" />
+								<div class="contra">
+									<div class="inr_head">담보제공자
+										<div class="tcr">
+											<table>
+												<tbody>
+													<tr>
+														<td class="cbtnwrap">
+															<label>단독명의
+																<input type="radio" name="name_kinds" value="1"
+																	id="solo">
+															</label>
+															<label>공동명의
+																<input type="radio" name="name_kinds" value="2"
+																	id="public">
+															</label>
+															<label>제3자명의
+																<input type="radio" name="name_kinds" value="3"
+																	id="other">
+															</label>
+															<button class="btn btn-submit" type="button" id="guBtn"
+																onclick="offerCheck();">
+																<i class="fui-check-circle"></i> 저장</button>
+															<button class="btn btn-default btn_close" type="button"
+																id="">
+																<i class="fui-cross"></i> 닫기</button>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="inr company_info mb20">
+										<table class="contra_table">
+											<caption>담보제공자</caption>
+											<tbody>
+												<tr>
+													<th>담보제공자</th>
+													<td>
+													</td>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr>
+													<th>성&nbsp;&nbsp;명</th>
+													<td>
+														<input type="text" class="form-control" name="gu_cname"
+															id="gu_cname" style="ime-mode:active">
+													</td>
+													<th>주민번호</th>
+													<td class="ssnum">
+														<input type="text" class="form-control" name="gu_crrn"
+															id="gu_crrn" maxlength="6">
+														<input type="text" class="form-control" name="gu_crrn2"
+															id="gu_crrn2" maxlength="7">
+													</td>
+													<th>성별</th>
+													<td>
+														<label>남자&nbsp;&nbsp;
+															<input type="radio" name="gu_sex" value="1" id="gu_m">
+														</label>&nbsp;&nbsp;&nbsp;&nbsp;
+														<label>여자&nbsp;&nbsp;
+															<input type="radio" name="gu_sex" value="2" id="gu_fm">
+														</label>
+													</td>
+													<th>채무자와의 관계</th>
+													<td>
+														<select id="gu_rel" class="form-control input-sm"
+															title="채무자와의관계 선택" name="gu_rel">
+															<option values="{=선택, 2=배우자, 3=부, 4=모, 5=형제, 6=지인, 7=본인}"
+																value="">선택</option>
+															<option values="{=선택, 2=배우자, 3=부, 4=모, 5=형제, 6=지인, 7=본인}"
+																value="2">배우자</option>
+															<option values="{=선택, 2=배우자, 3=부, 4=모, 5=형제, 6=지인, 7=본인}"
+																value="3">부</option>
+															<option values="{=선택, 2=배우자, 3=부, 4=모, 5=형제, 6=지인, 7=본인}"
+																value="4">모</option>
+															<option values="{=선택, 2=배우자, 3=부, 4=모, 5=형제, 6=지인, 7=본인}"
+																value="5">형제</option>
+															<option values="{=선택, 2=배우자, 3=부, 4=모, 5=형제, 6=지인, 7=본인}"
+																value="6">지인</option>
+															<option values="{=선택, 2=배우자, 3=부, 4=모, 5=형제, 6=지인, 7=본인}"
+																value="7">본인</option>
+														</select>
+													</td>
+												</tr>
+												<tr>
+													<th>등급</th>
+													<td>
+														<input type="text" class="form-control" name="gu_grade"
+															id="gu_grade">
+													</td>
+													<th>등급상태</th>
+													<td>
+														<select id="gu_grade_status" class="form-control input-sm"
+															title="등급 선택" name="gu_grade_status">
+															<option values="{=선택, 2=정상, 3=신용회복, 4=개인회생, 5=파산}" value="">
+																선택</option>
+															<option values="{=선택, 2=정상, 3=신용회복, 4=개인회생, 5=파산}"
+																value="2">정상</option>
+															<option values="{=선택, 2=정상, 3=신용회복, 4=개인회생, 5=파산}"
+																value="3">신용회복</option>
+															<option values="{=선택, 2=정상, 3=신용회복, 4=개인회생, 5=파산}"
+																value="4">개인회생</option>
+															<option values="{=선택, 2=정상, 3=신용회복, 4=개인회생, 5=파산}"
+																value="5">파산</option>
+														</select>
+													</td>
+												</tr>
+												<tr>
+													<th>현주소</th>
+													<td class="ssnum" colspan="2">
+														<select id="gu_addr1" class="form-control input-sm addrSel"
+															title="주소(시,도) 선택" name="gu_addr1">
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="1">선택</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="2">서울</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="3">부산</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="4">대구</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="5">인천</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="6">광주</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="7">대전</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="8">울산</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="9">강원</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="10">경기</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="11">경남</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="12">경북</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="13">전남</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="14">전북</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="15">제주</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="16">충남</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="17">충북</option>
+														</select>
+														<select class="form-control input-sm" title="주소(구,군) 선택"
+															name="gu_addr1_1" id="gu_addr1_1">
+															<option value="">선택</option>
+														</select>
+													</td>
+													<td colspan="3">
+														<input type="text" class="form-control" name="gu_addr2"
+															id="gu_addr2">
+													</td>
+
+												</tr>
+												<tr>
+													<th>통신사</th>
+													<td>
+														<select id="gu_ctel_div" class="form-control input-sm"
+															title="통신사 선택" name="gu_ctel_div">
+															<option
+																values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+																value="">선택</option>
+															<option
+																values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+																value="2">SKT</option>
+															<option
+																values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+																value="3">KT</option>
+															<option
+																values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+																value="4">LG</option>
+															<option
+																values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+																value="5">SKT 알뜰폰</option>
+															<option
+																values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+																value="6">KT 알뜰폰</option>
+															<option
+																values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+																value="7">LG 알뜰폰</option>
+															<option
+																values="{=선택, 2=SKT, 3=KT, 4=LG, 5=SKT 알뜰폰, 6=KT 알뜰폰, 7=LG 알뜰폰, 8=없음}"
+																value="8">없음</option>
+														</select>
+													</td>
+													<th>휴대폰</th>
+													<td>
+														<input type="text" class="form-control" name="gu_ctel"
+															id="gu_ctel" maxlength="13">
+													</td>
+
+													<th>일반전화</th>
+													<td>
+														<input type="text" class="form-control" name="gu_htel"
+															id="gu_htel" maxlength="11">
+													</td>
+													<th>이메일</th>
+													<td>
+														<input type="text" class="form-control" name="gu_email"
+															id="gu_email">
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="inr_head"> 직장정보</div>
+									<div class="inr company_info">
+										<table>
+											<caption>담보제공자</caption>
+											<tbody>
+												<tr>
+													<th>직업구분</th>
+													<td>
+														<select id="gu_company_occup" class="form-control input-sm"
+															title="직업구분 선택" name="gu_company_occup">
+															<option
+																values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+																value="">선택</option>
+															<option
+																values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+																value="2">회사원</option>
+															<option
+																values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+																value="3">프리랜서</option>
+															<option
+																values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+																value="4">주부</option>
+															<option
+																values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+																value="5">개인사업자</option>
+															<option
+																values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+																value="6">법인사업자</option>
+															<option
+																values="{=선택, 2=회사원, 3=프리랜서, 4=주부, 5=개인사업자, 6=법인사업자, 7=기타}"
+																value="7">기타</option>
+														</select>
+													</td>
+													<th>직장명</th>
+													<td>
+														<input type="text" class="form-control" name="gu_company_name"
+															id="gu_company_name">
+													</td>
+													<th>직위</th>
+													<td>
+														<input type="text" class="form-control"
+															name="gu_company_position" id="gu_company_position">
+													</td>
+													<th>직장연락처</th>
+													<td>
+														<input type="text" class="form-control" name="gu_company_tel"
+															id="gu_company_tel" maxlength="11">
+													</td>
+												</tr>
+												<tr>
+													<th>직장주소</th>
+													<td class="ssnum" colspan="2">
+														<select id="gu_company_addr1"
+															class="form-control input-sm addrSel" title="주소(시,도) 선택"
+															name="gu_company_addr1">
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="1">선택</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="2">서울</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="3">부산</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="4">대구</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="5">인천</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="6">광주</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="7">대전</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="8">울산</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="9">강원</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="10">경기</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="11">경남</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="12">경북</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="13">전남</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="14">전북</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="15">제주</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="16">충남</option>
+															<option
+																values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+																value="17">충북</option>
+														</select>
+														<select class="form-control input-sm" title="주소(구,군) 선택"
+															name="gu_company_addr1_1" id="gu_company_addr1_1">
+															<option value="">선택</option>
+														</select>
+													</td>
+													<td colspan="3">
+														<input type="text" class="form-control" name="gu_company_addr2"
+															id="gu_company_addr2">
+													</td>
+												</tr>
+												<tr>
+													<th>메모</th>
+													<td colspan="7">
+														<textarea name="gu_memo" class="form-control"
+															id="gu_memo"></textarea>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- // 담보정보팝업 // -->
+
+						<!-- 물건지정보팝업 -->
+						<div id="layer_rubInfo" class="pop-layer section-layer">
+							<form method="post" id="secuForm">
+								<input type="hidden" name="secu_num" id="secu_num" />
+								<input type="hidden" name="loan_cost" id="loanCost" />
+								<div class="inr_head">물건지 정보
+									<div class="tcr">
+										<table>
+											<tbody>
+												<tr>
+													<td class="cbtnwrap">
+														<button class="btn btn-submit" type="button" id="rubEq">
+															<i class="fui-export"></i> 상동</button>
+														<button class="btn btn-submit saveBtn" type="button"
+															onclick="secuSave();">
+															<i class="fui-check-circle"></i> 저장</button>
+														<button class="btn btn-default btn_close" type="button" id="">
+															<i class="fui-cross"></i> 닫기</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="inr company_info">
+									<table>
+										<caption>물건지 정보</caption>
+										<tbody>
+											<tr>
+												<th>물건지 종류</th>
+												<td>
+													<select id="building" class="form-control input-sm" title="물건지종류 선택"
+														name="building">
+														<option
+															values="{=선택, 2=아파트, 3=다세대, 4=다가구, 5=단독주택, 6=근린생활시설, 7=토지}"
+															value="">선택</option>
+														<option
+															values="{=선택, 2=아파트, 3=다세대, 4=다가구, 5=단독주택, 6=근린생활시설, 7=토지}"
+															value="2">아파트</option>
+														<option
+															values="{=선택, 2=아파트, 3=다세대, 4=다가구, 5=단독주택, 6=근린생활시설, 7=토지}"
+															value="3">다세대</option>
+														<option
+															values="{=선택, 2=아파트, 3=다세대, 4=다가구, 5=단독주택, 6=근린생활시설, 7=토지}"
+															value="4">다가구</option>
+														<option
+															values="{=선택, 2=아파트, 3=다세대, 4=다가구, 5=단독주택, 6=근린생활시설, 7=토지}"
+															value="5">단독주택</option>
+														<option
+															values="{=선택, 2=아파트, 3=다세대, 4=다가구, 5=단독주택, 6=근린생활시설, 7=토지}"
+															value="6">근린생활시설</option>
+														<option
+															values="{=선택, 2=아파트, 3=다세대, 4=다가구, 5=단독주택, 6=근린생활시설, 7=토지}"
+															value="7">토지</option>
+													</select>
+												</td>
+												<th>등기번호</th>
+												<td>
+													<input type="text" class="form-control" name="regi_num"
+														id="regi_num">
+												</td>
+												<th>공급면적</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control" name="su_area"
+																id="su_area">
+														</div>
+														<div class="input_col col_aside">㎡</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>물건지 주소</th>
+												<td class="ssnum">
+													<select id="rubb_addr1" class="form-control input-sm addrSel"
+														title="주소(시,도) 선택" name="rubb_addr1">
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="1">선택</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="2">서울</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="3">부산</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="4">대구</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="5">인천</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="6">광주</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="7">대전</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="8">울산</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="9">강원</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="10">경기</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="11">경남</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="12">경북</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="13">전남</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="14">전북</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="15">제주</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="16">충남</option>
+														<option
+															values="{1=선택, 2=서울, 3=부산, 4=대구, 5=인천, 6=광주, 7=대전, 8=울산, 9=강원, 10=경기, 11=경남, 12=경북, 13=전남, 14=전북, 15=제주, 16=충남, 17=충북}"
+															value="17">충북</option>
+													</select>
+													<select class="form-control input-sm" title="주소(구,군) 선택"
+														name="rubb_addr1_1" id="rubb_addr1_1">
+														<option value="">선택</option>
+													</select>
+												</td>
+												<td colspan="2">
+													<input type="text" class="form-control" name="rubb_addr2"
+														id="rubb_addr2">
+												</td>
+												<th>전용면적</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control" name="ex_area"
+																id="ex_area">
+														</div>
+														<div class="input_col col_aside">㎡</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<select id="market_price" class="form-control input-sm"
+														title="시세 선택" name="market_price">
+														<option values="{=기준시세 선택, 2=KB시세, 3=Tech시세, 4=외부감정가, 5=자체감정가}"
+															value="">기준시세 선택</option>
+														<option values="{=기준시세 선택, 2=KB시세, 3=Tech시세, 4=외부감정가, 5=자체감정가}"
+															value="2">KB시세</option>
+														<option values="{=기준시세 선택, 2=KB시세, 3=Tech시세, 4=외부감정가, 5=자체감정가}"
+															value="3">Tech시세</option>
+														<option values="{=기준시세 선택, 2=KB시세, 3=Tech시세, 4=외부감정가, 5=자체감정가}"
+															value="4">외부감정가</option>
+														<option values="{=기준시세 선택, 2=KB시세, 3=Tech시세, 4=외부감정가, 5=자체감정가}"
+															value="5">자체감정가</option>
+													</select>
+												</td>
+												<td>
+													<select id="deal" class="form-control input-sm" title="거래가종류 선택"
+														name="deal">
+														<option values="{=선택, 2=일반거래가, 3=하한가}" value="">선택</option>
+														<option values="{=선택, 2=일반거래가, 3=하한가}" value="2">일반거래가</option>
+														<option values="{=선택, 2=일반거래가, 3=하한가}" value="3">하한가</option>
+													</select>
+												</td>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control comma-cost"
+																name="deal_cost" id="deal_cost" maxlength="12">
+														</div>
+														<div class="input_col col_aside">원</div>
+													</div>
+												</td>
+												<th>심사기준가</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control comma-cost"
+																name="judge_cost" id="judge_cost" maxlength="12">
+														</div>
+														<div class="input_col col_aside">원</div>
+													</div>
+												</td>
+												<th>매매가</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control comma-cost"
+																name="contra_cost" id="contra_cost" maxlength="12">
+														</div>
+														<div class="input_col col_aside">원</div>
+													</div>
+												</td>
+
+											</tr>
+											<tr>
+												<th>선순위 금융기관</th>
+												<td>
+													<input type="text" class="form-control" name="finance_inst"
+														id="finance_inst">
+												</td>
+												<th>채권최고액</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control comma-cost"
+																name="bondmax_cost" id="bondmax_cost" maxlength="12">
+														</div>
+														<div class="input_col col_aside">원</div>
+													</div>
+												</td>
+												<th>등기부 원금</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control comma-cost"
+																name="principal_cost" id="principal_cost"
+																maxlength="12">
+														</div>
+														<div class="input_col col_aside">원</div>
+													</div>
+												</td>
+												<th>전산 원금</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control comma-cost"
+																name="comprincipal_cost" id="comprincipal_cost"
+																maxlength="12">
+														</div>
+														<div class="input_col col_aside">원</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2">시세 기준 LTV
+
+												</td>
+												<th>채권최고액 대비</th>
+												<td>
+													<input type="hidden" name="ltv_bondmax" value="0" />
+													<label id="ltv_bondmax"></label>
+												</td>
+												<th>등기부 원금 대비</th>
+												<td>
+													<input type="hidden" name="rubb_ltv_principal" value="0" />
+													<label id="rubb_ltv_principal"></label>
+												</td>
+												<th>전산 원금 대비</th>
+												<td>
+													<input type="hidden" name="rubb_ltv_comprincipal" value="0" />
+													<label id="rubb_ltv_comprincipal"></label>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2">심사 기준 LTV</td>
+												<th>채권최고액 대비</th>
+												<td>
+													<input type="hidden" name="st_ltv_bondmax" value="0" />
+													<label id="st_ltv_bondmax"></label>
+												</td>
+												<th>등기부 원금 대비</th>
+												<td>
+													<input type="hidden" name="st_ltv_principal" value="0" />
+													<label id="st_ltv_principal"></label>
+												</td>
+												<th>전산 원금 대비</th>
+												<td>
+													<input type="hidden" name="st_ltv_comprincipal" value="0" />
+													<label id="st_ltv_comprincipal"></label>
+												</td>
+											</tr>
+											<tr>
+												<th>메모</th>
+												<td colspan="7">
+													<textarea name="rubb_memo" id="rubb_memo"
+														class="form-control"></textarea>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</form>
+
+						</div>
+						<!-- // 물건지정보팝업 // -->
+
+						<!-- 질권대출팝업 -->
+						<div id="layer_pleInfo" class="pop-layer section-layer">
+							<form method="post" id="pledgeForm">
+								<input type="hidden" name="pled_num" id="pled_num" />
+								<div class="inr_head">질권대출 정보
+									<div class="tcr">
+										<table>
+											<tbody>
+												<tr>
+													<td class="cbtnwrap">
+														<button class="btn btn-submit saveBtn" type="button"
+															onclick="pledgeSave();">
+															<i class="fui-check-circle"></i> 저장</button>
+														<button class="btn btn-default btn_close" type="button" id="">
+															<i class="fui-cross"></i> 닫기</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="inr company_info">
+									<table>
+										<caption>질권대출 정보</caption>
+										<tbody>
+											<tr>
+												<th>질권대출금액</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control comma-cost"
+																name="pledge_cost" id="pledge_cost" maxlength="12">
+														</div>
+														<div class="input_col col_aside">원</div>
+													</div>
+												</td>
+												<th>질권금리</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control" name="pledge_irt"
+																id="pledge_irt">
+														</div>
+														<div class="input_col col_aside">%</div>
+													</div>
+												</td>
+												<th>이자일</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control"
+																name="pledge_irt_day" id="pledge_irt_day" maxlength="2">
+														</div>
+														<div class="input_col col_aside">일</div>
+													</div>
+												</td>
+												<th>질권금융기관</th>
+												<td>
+													<input type="text" class="form-control" name="pledge_finance_inst"
+														id="pledge_finance_inst" readonly="true">
+												</td>
+												<td><button type="button" class="btn btn-submit"
+														onclick="brige_pledge_finance_show();">검색</button></td>
+											</tr>
+											<tr>
+												<th>질권기표일</th>
+												<td>
+													<input type="text" class="form-control datepicker cal_i"
+														name="pledge_sday" id="pledge_sday">
+												</td>
+												<th>질권대출기간</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control" name="pledge_term"
+																id="pledge_term" maxlength="2">
+														</div>
+														<div class="input_col col_aside">개월</div>
+													</div>
+												</td>
+												<th>질권만기일</th>
+												<td>
+													<input type="text" class="form-control datepicker cal_i"
+														name="pledge_eday" id="pledge_eday">
+												</td>
+												<th>질권상환일</th>
+												<td colspan="2">
+													<input type="text" class="form-control datepicker cal_i"
+														name="pledge_rday" id="pledge_rday">
+												</td>
+											</tr>
+											<tr>
+												<th>중도상환수수료</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control"
+																name="pledge_commission_charge"
+																id="pledge_commission_charge">
+														</div>
+														<div class="input_col col_aside">%</div>
+													</div>
+												</td>
+												<th>질권 LTV</th>
+												<td>
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control" name="pledge_ltv"
+																id="pledge_ltv">
+														</div>
+														<div class="input_col col_aside">%</div>
+													</div>
+												</td>
+												<th>질권미회수금액</th>
+												<td colspan="2">
+													<div class="input_tbl">
+														<div class="input_col">
+															<input type="text" class="form-control comma-cost"
+																name="pledge_unpaid_cost" id="pledge_unpaid_cost"
+																maxlength="12">
+														</div>
+														<div class="input_col col_aside">원</div>
+													</div>
+												</td>
+
+											</tr>
+											<tr>
+												<th>메모</th>
+												<td colspan="8">
+													<textarea name="pledge_memo" class="form-control"
+														id="pledge_memo"></textarea>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</form>
+
+						</div>
+						<!-- // 질권대출팝업  // -->
+						<!-- 질권금융기관 조회/등록 팝업 -->
+						<div id="layer_brige_pledge_finance_inst" class="pop-layer2 section-layer"
+							style="width:820px;height:620;">
+							<div class="inr_head">질권금융기관
+								<div class="tcr">
+									<table>
+										<caption>질권금융기관</caption>
+										<tbody>
+											<tr>
+
+												<td colspan="2" class="cbtnwrap">
+													<button type="button" class="btn btn-submit"
+														onclick="brige_pledge_finance_search();">검색</button>
+													<input type="text" id="pledge_finance_name"
+														name="pledge_finance_name">
+													<button class="btn btn-submit saveBtn" type="button" id=""
+														onclick="pledgeFinanceInsert()">
+														<i class="fui-check-circle"></i> 등록</button>
+												</td>
+												<td colspan="2" class="cbtnwrap">
+													<button class="btn btn-default btn_close" type="button"
+														onclick="brige_pledge_finance_hide();">
+														<i class="fui-cross"></i> 닫기</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="inr loan_lst ovrxh mb20">
+								<div class="tbl_grid_header"></div>
+								<div class="lst_top second" style="height:550px">
+									<table class="tbl_grid tbl_layer_loanInfo">
+										<colgroup>
+											<col width="70px">
+											<col width="*">
+											<col width="*">
+											<col width="*">
+											<col width="*">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">선택</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">순서</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">질권금융기관명</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">수정</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">삭제</div>
+													</div>
+												</th>
+											</tr>
+										</thead>
+										<tbody id="pledge_finance_inst_listB">
+											<tr>
+												<td class="hover-bgf" colspan="5">조회된 내용이 없습니다.</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- 공통 도움말 팝업 -->
+
+
+						<!-- 도움말 팝업 -->
+						<div id="layer_common_history" class="pop-layer_history section-layer">
+							<div class="inr_head">대출history
+								<div class="tcr">
+									<table>
+										<tbody>
+											<tr>
+												<td class="cbtnwrap">
+													<button class="btn btn-default btn_close" type="button"
+														onclick="javascript:common_history_close()">
+														<i class="fui-cross"></i> 닫기</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="inr loan_lst ovrxh mb20">
+								<div class="tbl_grid_header"></div>
+								<div class="lst_top second" style="height:550px">
+									<table class="tbl_grid tbl_layer_pleInfo">
+										<colgroup>
+											<col width="30px" />
+											<col width="50px" />
+											<col width="*" />
+											<col width="*" />
+											<col width="*" />
+											<col width="*" />
+										</colgroup>
+										<thead>
+											<tr>
+												<th>
+													<div class="th-ouinner" style="width:20px">
+														<div class="th-inner">No</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner" style="width:60px">
+														<div class="th-inner">상태명</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner" style="width:20px">
+														<div class="th-inner">거래일자</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner" style="width:10px">
+														<div class="th-inner">취소</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner" style="width:63px">
+														<div class="th-inner">거래일시</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">비고</div>
+													</div>
+												</th>
+											</tr>
+										</thead>
+										<tbody id="commonhistory_tbody">
+											<tr>
+												<td class="hover-bgf" colspan="6">조회된 내용이 없습니다.</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- // 도움말 팝업 // -->
+						<script>
+							/**
+							 * 공통 도움말
+							 */
+
+							function common_history() {
+								var obj = new Object();
+								obj.loan_num = $("#loan_num").val();
+								obj.cnum = $("#cnum").val();
+
+								if ($("#loan_num").val() == null ||
+									$("#loan_num").val() == "" ||
+									$("#cnum").val() == null ||
+									$("#cnum").val() == ""
+								) {
+									alert("고객번호 조회후 대출번호 선택후에 조회가 가능합니다.");
+									return false;
+								}
+
+								obj = JSON.stringify(obj);
+								$(".dim_layerpop").show();
+								$("#layer_common_history").show();
+								// 수정
+								var firstNcheck = "true";
+
+
+								$.ajax({
+									url: "/common/loanHistorySelect.do",
+									method: "post",
+									dataType: "json",
+									contentType: 'application/json; charset=UTF-8',
+									data: obj,
+									success: function (data) {
+										var commonhistory_tbody = "";
+										$.each(data.history, function (key, value) {
+											commonhistory_tbody += "<tr>"
+											commonhistory_tbody += "<td>" + value.no + "</td>";
+											if (value.del_fig == "N") {
+												commonhistory_tbody += "<td>" + value.transaction_type_code_nm + "</td>";
+											} else {
+												commonhistory_tbody += "<td><font color='red'>" + value.transaction_type_code_nm + "</font></td>";
+											}
+											commonhistory_tbody += "<td>" + value.loan_history_day + "</td>";
+											if (value.del_fig == "N" && firstNcheck == "true") {
+												commonhistory_tbody += "<td onClick='javascript:common_history_cancle(" + value.loan_history_id + "," + value.transaction_type_code + ")'><font color='blue'>가능</font></td>";
+												firstNcheck = "false";
+											} else {
+												commonhistory_tbody += "<td>불가</td>";
+											}
+											/* commonhistory_tbody += "<td><button class='btn btn-default btn_close' type='button'></td>"; */
+											commonhistory_tbody += "<td>" + value.createDate + "</td>";
+											if (value.del_fig == "N") {
+												commonhistory_tbody += "<td style='text-align:left !important;'>" + value.transaction_type_note + "</td>";
+											} else {
+												commonhistory_tbody += "<td style='text-align:left !important;'><font color='red'>" + value.transaction_type_note + "</font></td>";
+											}
+											commonhistory_tbody += "</tr>";
+											$("#commonhistory_tbody").html(commonhistory_tbody);
+										});
+									}
+									, error: function (e) {
+										alert('관리자에게 문의 바랍니다.\n' + e);
+									}, complete: function () {
+										if ($("#common_history_title").val() == null ||
+											$("#common_history_title").val() == ""
+										) {
+											$("#common_history_title").val($(".cont_tit").text().replace(/도움말/gi, '').trim());//화면 title 삽입
+										}
+									}
+								});
+
+							}
+
+							function common_history_cancle(loan_history_id, transaction_type_code) {
+								if (!confirm("해당 작업 이전으로 돌아갑니다. 취소하시겠습니까?")) {
+									alert("요청이 취소 되었습니다.");
+									return false;
+								}
+
+
+								var pageId = "";
+								var tempPageName = window.location.href;
+								var strPageName = tempPageName.split("/");
+								pageId = strPageName[strPageName.length - 1].split("?")[0];
+
+								var obj = new Object();
+								obj.loan_history_id = loan_history_id + ""
+								obj.transaction_type_code = transaction_type_code + "";
+								obj.cnum = $("#cnum").val();
+								obj.loan_num = $("#loan_num").val();
+
+								obj = JSON.stringify(obj);
+
+								// 저장,수정
+								$.ajax({
+									url: "/common/common_history_cancle.do",
+									method: "post",
+									dataType: "json",
+									contentType: 'application/json; charset=UTF-8',
+									data: obj,
+									success: function (data) {
+										alert("처리되었습니다.");
+										common_history();
+									}
+									, error: function (e) {
+										alert('관리자에게 문의 바랍니다.\n' + e);
+									}
+								});
+							}
+
+							/**
+							 * 도움말 닫기
+							 */
+							function common_history_close() {
+								$('.dim_layerpop').fadeOut();
+								$('.pop-layer').fadeOut();
+								$('body').css({
+									overflow: 'visible',
+									position: 'static'
+								});
+								$("#layer_common_history").hide();
+							} 
+						</script>
+
+
+						<!-- 도움말 팝업 -->
+						<div id="layer_common_help" class="pop-layer_help section-layer">
+							<div class="inr_head">도움말
+								<div class="tcr">
+									<table>
+										<caption>도움말</caption>
+										<tbody>
+											<tr>
+												<td colspan="2" class="cbtnwrap">
+													<button class="btn btn-submit" type="button"
+														onclick="common_help_save()">
+														저장</button>
+													<button class="btn btn-default btn_close" type="button"
+														onclick="common_help_close()">
+														<i class="fui-cross"></i> 닫기</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="inr company_info">
+								<table>
+									<caption>도움말</caption>
+									<tbody>
+										<tr>
+											<th style="width:10px">화면명</th>
+											<td><input type="text" class="form-control" id="common_help_title"></td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<textarea id="common_help_content" class="form-control"
+													style="overflow-y: scroll;height:500px"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- // 도움말 팝업 // -->
+						<script>
+							/**
+							 * 공통 도움말
+							 */
+
+							function common_help() {
+								var pageId = "";
+								var tempPageName = window.location.href;
+								var strPageName = tempPageName.split("/");
+								pageId = strPageName[strPageName.length - 1].split("?")[0];
+								$("#layer_common_help").show();
+
+								var obj = new Object();
+								obj.common_help_id = pageId;
+								obj.common_help_title = $("#common_help_title").val();
+								obj.common_help_content = $("#common_help_content").val();
+
+								obj = JSON.stringify(obj);
+								// 수정
+
+							}
+
+							/**
+							 * 도움말 닫기
+							 */
+							function common_help_close() {
+								$('.dim_layerpop').fadeOut();
+								$('.pop-layer').fadeOut();
+								$('body').css({
+									overflow: 'visible',
+									position: 'static'
+								});
+								$("#layer_common_help").hide();
+							} 
+						</script>
+					</div>
+					<!--// 레이어 팝업-->
+				</div>
+			</div>
+			<!-- // contents //-->
+		</div>
+		<!-- // container // -->
+	</div>
+
+	<script>
+
+		//시세 select box 선택시 ltv select box 같이 변경 되게 해주는 부분
+		$('#market_price').change(function () {
+			var value = $('#market_price').val();
+			if (value == "1") {
+				$('#market_price_ltv option[value="1"]').prop('selected', true);
+			} else if (value == "2") {
+				$('#market_price_ltv option[value="2"]').prop('selected', true);
+			} else if (value == "3") {
+				$('#market_price_ltv option[value="3"]').prop('selected', true);
+			} else if (value == "4") {
+				$('#market_price_ltv option[value="4"]').prop('selected', true);
+			}
+		});
+
+		$('#loan_div').change(function () {
+			var value = $('#market_price').val();
+			if (value != "3") {//추가
+				$("#sub_loan_num").val("");
+			}
+		});
+
+
+
+		//담보제공자 단독명의 radio box 선택시 채무자 정보 그대로 채워주는 부분
+		$('#solo').click(function () {
+			$('#gu_cname').val($('#cname').val()); //담보제공자 성명
+			$('#gu_crrn').val($('#crrn').val()); //담보제공자 주민번호 앞자리
+			$('#gu_crrn2').val($('#crrn2').val()); //담보제공자 주민번호 뒷자리
+			//담보제공자 성별
+			if ($('#male').prop('checked')) { //남자면
+				$('#gu_m').prop('checked', true); //남자로 check
+			} else if ($('#female').prop('checked')) { //여자면
+				$('#gu_fm').prop('checked', true); //여자로 check
+			}
+			$('#gu_rel option[value="7"]').prop('selected', true); //채무자와의 관계 select box를 본인으로 설정해주시기
+			$('#gu_grade').val($('#grade').val()); //등급
+			if ($('#grade_status').val() != null && $('#grade_status').val() != "") {
+				$('#gu_grade_status option[value=' + $('#grade_status').val() + ']').prop('selected', true); //등급상태
+			}
+			$('#gu_hpost').val($('#hpost').val()); //우편번호
+			if ($('#haddr1').val() != null && $('#haddr1').val() != "") {
+				$('#gu_addr1 option[value="' + $('#haddr1').val() + '"]').prop('selected', true); //주소(시,도)
+				$('#gu_addr1').change();
+			}
+			if ($('#haddr1_1').val() != null && $('#haddr1_1').val() != "") {
+				$('#gu_addr1_1 option[value="' + $('#haddr1_1').val() + '"]').prop('selected', true); //주소(구,군)
+			}
+			$('#gu_addr2').val($('#haddr2').val()); //상세주소
+			if ($('#ctel_div').val() != null && $('#ctel_div').val() != "") {
+				$('#gu_ctel_div option[value=' + $('#ctel_div').val() + ']').prop('selected', true);//통신사
+			}
+			$('#gu_ctel').val($('#ctel').val()); //휴대폰 번호
+			$('#gu_htel').val($('#htel').val()); //일반전화 번호
+			$('#gu_email').val($('#email').val()); //이메일
+			if ($('#company_occup').val() != null && $('#company_occup').val() != "") {
+				$('#gu_company_occup option[value=' + $('#company_occup').val() + ']').prop('selected', true); //직업구분
+			}
+			$('#gu_company_name').val($('#company_name').val()); //직장명
+			$('#gu_company_position').val($('#company_position').val()); //직장 직위
+			$('#gu_company_tel').val($('#company_tel').val()); //직장연락처
+			$('#gu_company_post').val($('#company_post').val()); //직장 우편번호
+			if ($('#company_addr1').val() != null && $('#company_addr1').val() != "") {
+				$('#gu_company_addr1 option[value="' + $('#company_addr1').val() + '"]').prop('selected', true); //직장 주소(시,도)
+				$('#gu_company_addr1').change();
+			}
+			if ($('#company_addr1_1').val() != null && $('#company_addr1_1').val() != "") {
+				$('#gu_company_addr1_1 option[value="' + $('#company_addr1_1').val() + '"]').prop('selected', true); //직장 주소(구,군)
+			}
+			$('#gu_company_addr2').val($('#company_addr2').val()); //직장 상세주소
+		});
+
+		$('#rubEq').click(function () {
+			if ($('#haddr1').val() != null && $('#haddr1').val() != "") {
+				$('#rubb_addr1 option[value="' + $('#haddr1').val() + '"]').prop('selected', true); //물건지 주소(시,도)
+				$('#rubb_addr1').change();
+			}
+			if ($('#haddr1_1').val() != null && $('#haddr1_1').val() != "") {
+				$('#rubb_addr1_1 option[value="' + $('#haddr1_1').val() + '"]').prop('selected', true); //물건지 주소(구,군)
+			}
+			$('#rubb_addr2').val($('#haddr2').val()); //물건지 상세주소				
+		});
+
+		//실행 버튼 누를 경우 확인
+		function activeCheck() {
+			var check = confirm("대출 실행 하시겠습니까?");
+			if (check) {
+				paymentCal();
+				alert("실행 되었습니다.");
+			}
+		}
+
+
+		//에러메시지
+		var errorTxt = "";
+		//저장메시지
+		var result = "";
+
+		//종합정보 리스트 다 만들어지면 한번 더 손보기!!!
+		//종합정보리스트에서 종합정보화면으로 넘어올 경우 정보 값 셋팅 해주는 부분
+		var cnum = $('#cnum').val();
+		if (cnum != null && cnum != "") {
+			getData(cnum);
+		}
+
+		//고객 정보가 있는지를 확인하기 위한 채무자번호 변수
+		var cnumCheck = "";
+		function custCheck() { //채무자 필수 체크 확인
+			//$('#saveChoice').val("Y");
+
+			if (!$('#cstatus').val() || !$('#crrn').val() || !$('#cname').val() || !$('#ctel_div').val()
+				|| !$('#ctel').val() || !($('#male').prop('checked') || $('#female').prop('checked'))) {
+				errorTxt += "채무자 입력정보 중 \n ";
+				if (!$('#cstatus').val()) {
+					errorTxt += "[고객상태]";
+				}
+				if (!$('#cname').val()) {
+					errorTxt += "[성명]";
+				}
+				if (!$('#crrn').val()) {
+					errorTxt += "[주민번호 앞자리]";
+				}
+				if (!($('#male').prop('checked') || $('#female').prop('checked'))) {
+					errorTxt += "[성별]";
+				}
+				if (!$('#ctel_div').val()) {
+					errorTxt += "[통신사]";
+				}
+				if (!$('#ctel').val()) {
+					errorTxt += "[휴대폰 번호]";
+				}
+			}
+
+			if (errorTxt) {
+				alert(errorTxt + " 은(는) 필수 정보입니다.");
+				errorTxt = '';
+			} else {
+				//고객 정보가 있는지 확인
+				var cnum = $('#cnum').val();
+				if (!cnum) {
+					checkCust(); //확인하는 함수
+
+					if (cnumCheck) {
+						getData(cnumCheck); //있다면 정보 불러오기
+						alert("고객 정보가 있습니다.");
+					} else {
+						custSave(); //없다면 저장
+					}
+
+				} else {
+					custSave(); //수정할 경우 저장하는 함수로 넘어가지
+				}
+			}
+
+		}
+
+		//대출정보 필수 체크 function
+		function loanCheck(flg) {
+
+			if ($("#loan_div").val() == "" ||
+				$("#loan_div").val() == null
+			) {
+				alert("대출구분을 선택하세요");
+				return false;
+			}
+
+			if ($('#commission_kbn').val() == "" ||
+				$('#commission_kbn').val() == null
+			) {
+				alert("중도상환수수료을 선택하세요");
+				return false;
+			}
+
+			//추가 건은 연결대출번호가 필수 입력이다.
+			if ($("#loan_div").val() == "3") {
+				if ($("#sub_loan_num").val() == null ||
+					$("#sub_loan_num").val() == ""
+				) {
+					alert("연결전표번호는 필수입력입니다.\n검색 버튼을 클릭하여 재대출건을 선택하세요");
+					return false;
+				}
+			}
+
+			//변경 버튼을 클릭했을때  변경일자의 값이 존재하지 않으면
+			if (flg == "u" && $("#update_day").val() == "") {
+				alert("해당일자 이후를 변경하기 위해서는 [변경일]정보가 필요 합니다.");
+				return false;
+			}
+
+			//저장 버튼을 클릭했을때  변경일자의 값이 존재하면
+			if (flg == "s" && $("#update_day").val() != "") {
+				alert("전체를 재계산하기 위해서는 [변경일]을 정보가 없어야 합니다.");
+				$("#update_day").val("");
+				return false;
+			}
+
+			if (flg == "u" &&
+				$("#update_day").val() <= $("#loan_sday").val() &&
+				$("#update_day").val() != ""
+			) {
+				alert("[변경일]은 기표일 보다 이후여야 합니다.");
+				return false;
+			}
+
+
+			if (!$('#cnum').val()) {
+				alert("채무자 정보가 있어야 대출 정보 저장가능합니다.");
+			} else {
+				//2. 대출 정보 저장
+				//고객 번호 확인 -> 필수정보 체크 있다면 저장/ 없다면 alert
+				if ($('#cnum').val() != null || $('#cnum').val() != "") {
+					//필수정보
+					if (!$('#loan_cost').val() || !$('#loan_repay').val()) {
+						errorTxt += "대출 입력정보 중 \n";
+						if (!$('#loan_cost').val()) {
+							errorTxt += "[대출금액]";
+						}
+						if (!$('#loan_repay').val()) {
+							errorTxt += "[상환방식]";
+						}
+						if (!$('#commission_kbn').val()) {
+							errorTxt += "[대출구분]";
+						}
+					}
+
+					if (errorTxt) {
+						alert(errorTxt + "은(는) 필수 정보입니다.");
+						errorTxt = '';
+					} else {
+						loanSave(flg);
+
+					}
+				}
+			}
+		}
+
+		//대출 날짜 확인
+		$('#loan_sday, #loan_handday, #loan_eday, #loan_rday').on('change', function () {
+			//자서일
+			var loan_handday = $('#loan_handday').val();
+			loan_handday = loan_handday.split('-').join('');
+			loan_handday = parseInt(loan_handday);
+			//기표일
+			var loan_sday = $('#loan_sday').val();
+			loan_sday = loan_sday.split('-').join('');
+			loan_sday = parseInt(loan_sday);
+			//만기일
+			var loan_eday = $('#loan_eday').val();
+			loan_eday = loan_eday.split('-').join('');
+			loan_eday = parseInt(loan_eday);
+			//상환일
+			var loan_rday = $('#loan_rday').val();
+			loan_rday = loan_rday.split('-').join('');
+			loan_rday = parseInt(loan_rday);
+
+			if (loan_handday > loan_sday) {
+				alert("기표일은 자서일보다 작을 수 없습니다.");
+				$('#loan_sday').val('').focus();
+				return false;
+			}
+
+			if (loan_sday > loan_eday) {
+				alert("만기일은 기표일보다 작을 수 없습니다.");
+				$('#loan_eday').val('').focus();
+				return false;
+			}
+
+			if (loan_sday > loan_rday) {
+				alert("상환일은 기표일보다 작을 수 없습니다.");
+				$('#loan_rday').val('').focus();
+				return false;
+			}
+		});
+
+		$('#loan_term').on('keyup change', function () {
+			if ($('#loan_sday').val() != null &&
+				$('#loan_sday').val() != "" &&
+				$('#loan_sday').val().length == 10
+			) {
+				var loan_sday = $('#loan_sday').val();
+				var arr1 = loan_sday.split('-');
+				var new_sday = new Date(arr1[0], arr1[1], arr1[2]);
+				var loan_term = parseInt($('#loan_term').val()) - 1;
+				new_sday.setMonth(new_sday.getMonth() + loan_term);
+				$('#loan_eday').val((getFormatDate(new_sday)));
+				$('#loan_rday').val((getFormatDate(new_sday)));
+			}
+		});
+
+		$('#loan_sday').on('keyup change', function () {
+			if ($('#loan_sday').val() != null &&
+				$('#loan_sday').val() != "" &&
+				$('#loan_sday').val().length == 10
+			) {
+				var loan_sday = $('#loan_sday').val();
+				var arr1 = loan_sday.split('-');
+				var new_sday = new Date(arr1[0], arr1[1], arr1[2]);
+				var loan_term = parseInt($('#loan_term').val()) - 1;
+				new_sday.setMonth(new_sday.getMonth() + loan_term);
+				$('#loan_eday').val((getFormatDate(new_sday)));
+				$('#loan_rday').val((getFormatDate(new_sday)));
+			}
+		});
+
+
+		//담보제공자 필수 체크 function
+		function offerCheck() {
+			if (!$('#loan_num').val()) {
+				alert("대출 정보가 있어야 담보제공자 정보 저장 가능합니다.");
+			} else {
+				//3. 담보제공자 정보 저장
+				//고객번호 및 대출번호 확인 -> 필수정보 체크 있다면 저장/ 없다면 alert
+				if ($('#cnum').val() && $('#loan_num').val()) {
+					//필수정보
+					if (!$('#gu_cname').val() || !$('#gu_crrn').val() || !($('#solo').prop('checked') || $('#public').prop('checked'))) {
+						errorTxt += "담보제공자1 정보 중\n";
+						if (!$('#gu_cname').val()) {
+							errorTxt += "[성명]";
+						}
+						if (!$('#gu_crrn').val()) {
+							errorTxt += "[주민번호 앞자리]";
+						}
+						if (!($('#solo').prop('checked') || $('#public').prop('checked'))) {
+							errorTxt += "[명의]";
+						}
+					}
+				}
+
+				if (errorTxt) {
+					alert(errorTxt + "은(는) 필수 정보입니다.");
+					errorTxt = '';
+				} else {
+					offerSave();
+				}
+			}
+		}
+
+		//대출 날짜 확인
+		$('#pledge_sday, #pledge_eday, #pledge_rday').on('change', function () {
+			//기표일
+			var pledge_sday = $('#pledge_sday').val();
+			pledge_sday = pledge_sday.split('-').join('');
+			pledge_sday = parseInt(pledge_sday);
+			//만기일
+			var pledge_eday = $('#pledge_eday').val();
+			pledge_eday = pledge_eday.split('-').join('');
+			pledge_eday = parseInt(pledge_eday);
+			//상환일
+			var pledge_rday = $('#pledge_rday').val();
+			pledge_rday = pledge_rday.split('-').join('');
+			pledge_rday = parseInt(pledge_rday);
+
+			if (pledge_sday > pledge_eday) {
+				alert("만기일은 기표일보다 작을 수 없습니다.");
+				$('#pledge_eday').val('').focus();
+				return false;
+			}
+
+			if (pledge_sday > pledge_rday) {
+				alert("상환일은 기표일보다 작을 수 없습니다.");
+				$('#pledge_rday').val('').focus();
+				return false;
+			}
+		});
+
+		//검색 input에서 엔터눌렀을 경우
+		function enterkey() {
+			if (window.event.keyCode == 13) {
+				cList();
+			}
+		}
+
+
+		var numCheck = '';
+		$('.layer_loanInfo').click(function () {
+			numCheck = $(this).hasClass('layer_loanInfo');
+			console.log(numCheck);
+		});
+
+		function clear() {
+			if (numCheck) {
+				$('#loan_num').val('');
+				numCheck = false;
+			}
+
+			//대출 팝업
+			//$('#loan_num').val("");
+			$('#up_day').attr('disabled', 'disabled');
+			$('#update_day').attr('disabled', 'disabled');
+			$('#loanForm input[type="text"]').val("");
+			$('#loanForm textarea').val("");
+			$('#loanForm input:radio').prop('checked', false);
+			$('#loanForm select').find('option:first').prop('selected', true);
+			$('#loan_status').text("").css("color", "black");
+			$('#commission').text("");
+
+			//물건지팝업
+			$('#secuForm input[type="text"]').val("");
+			$('#secu_num').val("");
+			$('#secuForm label').text('');
+			$('#secuForm textarea').val("");
+			$('#secuForm input:radio').prop('checked', false);
+			$('#secuForm select').find('option:first').prop('selected', true);
+
+			//질권대출 팝업
+			$('#pledgeForm input[type="text"]').val("");
+			$('#pled_num').val("");
+			$('#pledgeForm textarea').val("");
+			$('#pledgeForm input:radio').prop('checked', false);
+			$('#pledgeForm select').find('option:first').prop('selected', true);
+
+			//담보제공자 팝업
+			$('#gu_num').val("");
+			$('#guForm input[type="text"]').val("");
+			$('#guForm textarea').val("");
+			$('#guForm input:radio').prop('checked', false);
+			$('#guForm select').find('option:first').prop('selected', true);
+		}
+
+
+		/*조회된 데이터중 대출번호를 클릭하면 동작하는 popup function*/
+		function popupCall(num) {
+			var pop_title = "interestPop";
+			var x = window.open("/interest/interestPop.do", pop_title, "width=1300px, height=600px");
+			var form = document.createElement("form");
+			form.setAttribute("charset", "UTF-8");
+			form.setAttribute("method", "Post"); // Get 또는 Post 입력
+			form.setAttribute("action", "/interest/interestPop.do");
+			form.setAttribute("target", pop_title);
+			var hiddenField = document.createElement("input");
+			hiddenField.setAttribute("type", "hidden");
+			hiddenField.setAttribute("name", "cnum");
+			hiddenField.setAttribute("value", $("#cnum").val());
+			form.appendChild(hiddenField);
+			hiddenField = document.createElement("input");
+			hiddenField.setAttribute("type", "hidden");
+			hiddenField.setAttribute("name", "loan_num");
+			hiddenField.setAttribute("value", num);
+			form.appendChild(hiddenField);
+			document.body.appendChild(form);
+			form.submit();
+		}
+
+		$(document).ready(function () {
+			$('#ctel').on('keyup change', function () {
+				var str = $('#ctel').val();
+				var phone = hpRepalce(str);
+				$('#ctel').val(phone);
+			});
+		});
+
+		function hpRepalce(str) {
+			str = str.replace(/-/gi, "");
+			var phone = str.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/, "$1-$2-$3");
+			return phone;
+		}
+
+		$(document).ready(function () {
+			$('#pledge_sday').on("keyup change", function () {
+				pledge_monthBetween();
+			});
+
+			$('#pledge_term').on("keyup change", function () {
+				pledge_monthBetween();
+			});
+		});
+
+
+		function pledge_monthBetween() {
+			//질권대출기간이 입력되어 있으면
+			if ($("#pledge_sday").val() != "" &&
+				$("#pledge_term").val() != ""
+			) {
+				//$('#loan_term').on('keyup change', function(){
+				var pledge_sday = $('#pledge_sday').val();
+				var arr1 = pledge_sday.split('-');
+				var new_sday = new Date(arr1[0], arr1[1], arr1[2]);
+				var loan_term = parseInt($('#pledge_term').val()) - 1;
+				new_sday.setMonth(new_sday.getMonth() + loan_term);
+				$('#pledge_eday').val((getFormatDate(new_sday)));
+			}
+			if ($("#pledge_sday").val() == "" &&
+				$("#pledge_term").val() == "") {
+				$("#pledge_eday").val("");
+			}
+		}
+
+		/*연결대출번호(loan_div [재대출] 4 인 대상 조회)*/
+		function brigeShow() {
+
+			//추가인 대상이 아니면
+			if ($("#loan_div").val() != "3") {
+				alert("대출구분이 [추가]인 대상만 연결대출번호를 연결할수 있습니다.");
+				return false;
+			}
+
+			getBrigeData();//대출상태 재대출인 대상 조회
+			$("#layer_brige_loanInfo").show();
+		}
+
+		/*연결 대출번호 팝업 열기*/
+		function brigeBtnClick(loan_num) {
+			$("#sub_loan_num").val(loan_num);//연결대출번호 삽입
+			$("#layer_brige_loanInfo").hide();
+		}
+
+		/*연결 대출번호 팝업 닫기*/
+		function brigeClose() {
+			$("#layer_brige_loanInfo").hide();
+		}
+
+
+		/*질권대출 금융기관 팝업 열기*/
+		function brige_pledge_finance_show() {
+			$("#pledge_finance_name").val("");//초기화
+			brige_pledge_finance_search();	  //조회
+			$("#layer_brige_pledge_finance_inst").show();//보이기
+		}
+
+		/*질권대출 금융기관 팝업 닫기*/
+		function brige_pledge_finance_hide() {
+			$("#layer_brige_pledge_finance_inst").hide();//감추기
+		}
+
+		/*질권금융기관 팝업 내리기*/
+		function pledgeFinanceChoice(seq) {
+
+			$("#pledge_finance_inst").val($("#pledgeFinance_cdname_" + seq).val());
+			brige_pledge_finance_hide();
+		}
+
+	</script>
+
+</body>
+
+</html>

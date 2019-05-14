@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<title>ERP</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/flat-ui.css">
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.number.min.js"></script>
+	<script type="text/javascript" src="../js/excellentexport.js"></script>
+	<script type="text/javascript" src="../js/tableHeadFixer.js"></script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- S:FILE:header.jsp -->
+
+		<!-- header -->
+		<div id="header">
+			<h1 class="logo">
+				<a href="/common/main.do">론니(Loany)</a>
+			</h1>
+			<p class="dt">대출관리시스템</p>
+			<div class="header_login">
+				<dl>
+					<dt>Neo Forth Korea</dt>
+					<dd><span>김정현 님</span>
+						<button onclick="javscript:f_logout();" id="logout" class="btn_logout">로그아웃</button>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- // header // -->
+
+		<!-- E:FILE:header.jsp -->
+
+		<div id="container">
+
+			<!-- S:FILE:left.jsp -->
+
+			<script>
+				$(function () {
+					// 레프트메뉴 active 설정
+					$("#sub04_4").addClass("active");
+					$("#tbl_interStorage").tableHeadFixer({ "left": 8, 'z-index': 2 });
+
+				});
+			</script>
+
+			<!-- lnb -->
+			<div id="lnb">
+				<ul>
+					<li><a href="/common/main.do" id="sub0"><i class="dashboard"></i>대시보드</a></li>
+					<li><a href="/totallist/totalinfolist.do" id="sub02_2"><i class="totallist"></i>종합정보리스트</a></li>
+					<li><a href="/customer/totalInformation.do" id="sub01_1"><i class="total"></i>종합정보</a></li>
+					<li><a href="/interest/interestview.do" id="sub04_4"><i class="interest"></i>이자수납관리</a></li>
+					<li><a href="/receipt/receiptAdmin.do" id="sub03_3"><i class="re"></i>상환처리</a></li>
+					<li><a href="/repayment/schedule.do" id="sub05_5"><i class="resch"></i>상환스케줄</a></li>
+					<li><a href="/repayment/hschedule.do" id="sub05_6"><i class="interestsch"></i>이자납부스케줄</a></li>
+					<li><a href="/sms/smsmanager.do" id="sub06_6"><i class="sms"></i>이자문자발송관리</a></li>
+					<li><a href="/defaulter/defaulter.do" id="sub07_7"><i class="latemanage"></i>연체자 관리</a></li>
+					<li><a href="/front/memberJoin.do" id="sub08_8"><i class="join"></i>회원가입</a></li>
+					<li><a href="/info/infoSet.do" id="sub09_9"><i class="config"></i>설정관리</a></li>
+				</ul>
+			</div>
+			<!-- // lnb // -->
+			<!-- E:FILE:left.jsp -->
+
+			<form method="post" id="aForm">
+				<!-- contents -->
+				<div id="contents">
+					<div class="contents autosize">
+						<h3 class="cont_tit">이자수납관리&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-search pop_button"
+								type="button" onclick="common_help();" style="vertical-align: middle;">도움말</button></h3>
+						<!-- cont_inr  -->
+						<div class="cont_inr">
+							<div class="inr loan_lst">
+								<div class="lst_bottom nonhead">
+
+									<table id="infoList" class="interestview">
+										<caption>연체현황조회</caption>
+										<colgroup>
+											<col width="80px">
+											<col width="100px">
+											<col width="80px">
+											<col width="*">
+											<col width="80px">
+											<col width="100px">
+											<col width="80px">
+											<col width="100px">
+											<col width="70px">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th class="impact">조회월</th>
+												<td><input type="text" name="searchDate" id="searchDate"
+														class="form-control datepicker_month" autocomplete="off"
+														maxlength="7"></td>
+												<th class="impact">조회일</th>
+												<td class="tl" colspan="5">
+													<input type="hidden" id="day" name="day">
+													<input type="hidden" id="datacnt" name="datacnt">
+													<button class="btn btn-default"
+														onclick="interestSelect('05');return false">5일</button>
+													<button class="btn btn-default"
+														onclick="interestSelect('10');return false">10일</button>
+													<button class="btn btn-default"
+														onclick="interestSelect('15');return false">15일</button>
+													<button class="btn btn-default"
+														onclick="interestSelect('20');return false">20일</button>
+													<button class="btn btn-default"
+														onclick="interestSelect('25');return false">25일</button>
+													<button class="btn btn-default"
+														onclick="interestSelect('');return false">전체</button></td>
+
+												<th class="impact">고객번호</th>
+												<td class="cnum">
+													<input type="hidden" id="no" name="no">
+													<input type="text" class="form-control layer_csearch cnum"
+														name="cnumsearch" id="cnumsearch" onclick="cList();"
+														readonly="readonly">
+													<button class="btn btn-default small layer_csearch pop_button"
+														type="button" onclick="cList();"> 검색</button>
+												</td>
+												<th class="impact">성명</th>
+												<td class="cnum">
+													<input type="text" class="form-control layer_csearch cname"
+														name="cname" id="cname" disabled="disabled">
+													<input type="hidden" class="form-control layer_lsearch loan"
+														name="loan_num" id="loan_num" onclick="loanList();">
+												</td>
+
+												<td class="txr"><button class="btn btn-default"
+														onclick="f_save();return false">저장</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="lst_top third h600">
+									<table id="tbl_interStorage" class="tbl_grid">
+										<thead>
+											<tr>
+												<th></th>
+												<th>성명</th>
+												<th>전화번호</th>
+												<th>납입<br>회차</th>
+												<th>이자일</th>
+												<th>연체<br>일수</th>
+												<th>금리
+												</th>
+												<th>정상<br>금액</th>
+												<th>연체<br>금리</th>
+												<th>연체금액
+												</th>
+												<th>합계</th>
+												<th>입금액</th>
+												<th width="40">입금일</th>
+												<th>차액</th>
+												<th>상태</th>
+												<th>연체시작일자</th>
+												<th>메모</th>
+												<th>대출금액</th>
+												<th>기표일자</th>
+												<th>담당자</th>
+											</tr>
+										</thead>
+										<tbody id="loanlist">
+											<!-- <tr>
+												<td colspan="24">조회된 데이터가 없습니다.</td>
+											</tr> -->
+											<tr class="">
+												<td style="position: relative; z-index: 2; left: 0px;"><input
+														type="checkbox" name="check1" id="check1"><input type="hidden"
+														name="cnum1" id="cnum1" value="1125"><input type="hidden"
+														name="re_id1" id="re_id1" value="8831"><input type="hidden"
+														name="loan_num1" id="loan_num1" value="5149"><input
+														type="hidden" name="repay_count1" id="repay_count1"
+														value="4"><input type="hidden" name="ori_rec_info1"
+														id="ori_rec_info1" value="undefined"><input type="hidden"
+														name="re_normal_irt1" id="re_normal_irt1" value="12"><input
+														type="hidden" name="re_overdue_irt1" id="re_overdue_irt1"
+														value="24"><input type="hidden" name="loan_cost1"
+														id="loan_cost1" value="5000000"><input type="hidden"
+														name="re_normal_cost1" id="re_normal_cost1" value="49315"><input
+														type="hidden" name="re_calterm_eday1" id="re_calterm_eday1"
+														value="20190505"><input type="hidden" name="ov_exem_cost1"
+														id="ov_exem_cost1" value="undefined"><input type="hidden"
+														name="re_calterm_sday1" id="re_calterm_sday1"
+														value="20190406"><input type="hidden" name="irt_day1"
+														id="irt_day1" value="5"><input type="hidden" name="loan_repay1"
+														id="loan_repay1" value="2"><input type="hidden"
+														name="loan_eday1" id="loan_eday1" value="20200104"><input
+														type="hidden" name="irt_day1" id="irt_day1" value="5"><input
+														type="hidden" name="loan_sday1" id="loan_sday1"
+														value="20190104"></td>
+												<td class="section1 linkShow" onclick="popupCall(1)"
+													style="position: relative; z-index: 2; left: 0px;">박보현</td>
+												<td onclick="popupCall(1)"
+													style="position: relative; z-index: 2; left: 0px;">010-2402-5099
+												</td>
+												<td onclick="popupCall(1)"
+													style="position: relative; z-index: 2; left: 0px;">4/12</td>
+												<td onclick="popupCall(1)"
+													style="position: relative; z-index: 2; left: 0px;">2019-05-05</td>
+												<td style="position: relative; z-index: 2; left: 0px;">
+													<div class="input_col"><input type="text" size="3" value="0"
+															name="overdueChkDay1" id="overdueChkDay1"
+															readonly="readonly" class="form-control"></div>
+												</td>
+												<td style="position: relative; z-index: 2; left: 0px;">12%</td>
+												<td class="txr" style="position: relative; z-index: 2; left: 0px;">
+													49,315</td>
+												<td>24%</td>
+												<td>
+													<div class="input_col"><input type="text" size="12" value="0"
+															name="loan_overdue_cost1" id="loan_overdue_cost1"
+															readonly="readonly" class="form-control">
+														<div></div>
+													</div>
+												</td>
+												<td>
+													<div class="input_col"><input type="text" size="12" value="49,315"
+															name="total_cost1" id="total_cost1" readonly="readonly"
+															class="form-control"></div>
+												</td>
+												<td>
+													<div class="input_col"><input type="text"
+															class="form-control comma-cost" size="12" value="0"
+															name="rec_deposit_cost1" id="rec_deposit_cost1"
+															onchange="f_overdueInterestCal(1);"
+															onkeyup="javascript:f_calDifference(1,'rec_deposit_cost1','rec_pay_day1')"
+															style="border-color: #2ecc71;"></div>
+												</td>
+												<td><input type="text" size="10" value="" name="rec_pay_day1"
+														id="rec_pay_day1" class="form-control cal_i datepicker"
+														onkeyup="javascript:f_check('check1','rec_deposit_cost1','rec_pay_day1');"
+														onchange="f_overdueInterestCal(1);"
+														style="border-color: #2ecc71;"></td>
+												<td>
+													<div class="input_col"><input type="text" size="14" value="-49,315"
+															name="difference_price1" id="difference_price1"
+															readonly="readonly" class="form-control"></div>
+												</td>
+												<td width="40"><select class="form-control"
+														style="border-color: #2ecc71;" id="rec_info1" name="rec_info1"
+														onchange="javascript:f_comboBoxChk('1')">
+														<option value="1" selected="selected">미납</option>
+														<option value="2">입금</option>
+														<option value="6">연체</option>
+														<option value="4">연체후입금</option>
+													</select></td>
+												<td><input type="text" size="10" value="" name="ov_overdue_sday1"
+														id="ov_overdue_sday1" readonly="readonly"
+														class="form-control overdue_day_chk"></td>
+												<td id="memo1" onclick="memo('1')" class="section1_memo ellipsis"
+													title="ttttttttttt">ttttttttttt</td>
+												<td class="txr">5,000,000</td>
+												<td>2019-01-04</td>
+												<td>ttt</td>
+											</tr>
+											<tr class="">
+												<td style="position: relative; z-index: 2; left: 0px;"><input
+														type="checkbox" name="check2" id="check2"><input type="hidden"
+														name="cnum2" id="cnum2" value="1124"><input type="hidden"
+														name="re_id2" id="re_id2" value="8721"><input type="hidden"
+														name="loan_num2" id="loan_num2" value="5148"><input
+														type="hidden" name="repay_count2" id="repay_count2"
+														value="2"><input type="hidden" name="ori_rec_info2"
+														id="ori_rec_info2" value="undefined"><input type="hidden"
+														name="re_normal_irt2" id="re_normal_irt2" value="6"><input
+														type="hidden" name="re_overdue_irt2" id="re_overdue_irt2"
+														value="12"><input type="hidden" name="loan_cost2"
+														id="loan_cost2" value="88888"><input type="hidden"
+														name="re_normal_cost2" id="re_normal_cost2" value="438"><input
+														type="hidden" name="re_calterm_eday2" id="re_calterm_eday2"
+														value="20190505"><input type="hidden" name="ov_exem_cost2"
+														id="ov_exem_cost2" value="undefined"><input type="hidden"
+														name="re_calterm_sday2" id="re_calterm_sday2"
+														value="20190406"><input type="hidden" name="irt_day2"
+														id="irt_day2" value="5"><input type="hidden" name="loan_repay2"
+														id="loan_repay2" value="2"><input type="hidden"
+														name="loan_eday2" id="loan_eday2" value="20210301"><input
+														type="hidden" name="irt_day2" id="irt_day2" value="5"><input
+														type="hidden" name="loan_sday2" id="loan_sday2"
+														value="20190301"></td>
+												<td class="section1 linkShow" onclick="popupCall(2)"
+													style="position: relative; z-index: 2; left: 0px;">조건테스트</td>
+												<td onclick="popupCall(2)"
+													style="position: relative; z-index: 2; left: 0px;">010-2402-5099
+												</td>
+												<td onclick="popupCall(2)"
+													style="position: relative; z-index: 2; left: 0px;">2/24</td>
+												<td onclick="popupCall(2)"
+													style="position: relative; z-index: 2; left: 0px;">2019-05-05</td>
+												<td style="position: relative; z-index: 2; left: 0px;">
+													<div class="input_col"><input type="text" size="3" value="0"
+															name="overdueChkDay2" id="overdueChkDay2"
+															readonly="readonly" class="form-control"></div>
+												</td>
+												<td style="position: relative; z-index: 2; left: 0px;">6%</td>
+												<td class="txr" style="position: relative; z-index: 2; left: 0px;">438
+												</td>
+												<td>12%</td>
+												<td>
+													<div class="input_col"><input type="text" size="12" value="0"
+															name="loan_overdue_cost2" id="loan_overdue_cost2"
+															readonly="readonly" class="form-control">
+														<div></div>
+													</div>
+												</td>
+												<td>
+													<div class="input_col"><input type="text" size="12" value="438"
+															name="total_cost2" id="total_cost2" readonly="readonly"
+															class="form-control"></div>
+												</td>
+												<td>
+													<div class="input_col"><input type="text"
+															class="form-control comma-cost" size="12" value="0"
+															name="rec_deposit_cost2" id="rec_deposit_cost2"
+															onchange="f_overdueInterestCal(2);"
+															onkeyup="javascript:f_calDifference(2,'rec_deposit_cost2','rec_pay_day2')"
+															style="border-color: #2ecc71;"></div>
+												</td>
+												<td><input type="text" size="10" value="" name="rec_pay_day2"
+														id="rec_pay_day2" class="form-control cal_i datepicker"
+														onkeyup="javascript:f_check('check2','rec_deposit_cost2','rec_pay_day2');"
+														onchange="f_overdueInterestCal(2);"
+														style="border-color: #2ecc71;"></td>
+												<td>
+													<div class="input_col"><input type="text" size="14" value="-438"
+															name="difference_price2" id="difference_price2"
+															readonly="readonly" class="form-control"></div>
+												</td>
+												<td width="40"><select class="form-control"
+														style="border-color: #2ecc71;" id="rec_info2" name="rec_info2"
+														onchange="javascript:f_comboBoxChk('2')">
+														<option value="1" selected="selected">미납</option>
+														<option value="2">입금</option>
+														<option value="6">연체</option>
+														<option value="4">연체후입금</option>
+													</select></td>
+												<td><input type="text" size="10" value="" name="ov_overdue_sday2"
+														id="ov_overdue_sday2" readonly="readonly"
+														class="form-control overdue_day_chk"></td>
+												<td id="memo2" onclick="memo('2')" class="section1_memo ellipsis"
+													title="test">test</td>
+												<td class="txr">88,888</td>
+												<td>2019-03-01</td>
+												<td>테스트</td>
+											</tr>
+											<tr class="">
+												<td style="position: relative; z-index: 2; left: 0px;"><input
+														type="checkbox" name="check3" id="check3"><input type="hidden"
+														name="cnum3" id="cnum3" value="1126"><input type="hidden"
+														name="re_id3" id="re_id3" value="8866"><input type="hidden"
+														name="loan_num3" id="loan_num3" value="5150"><input
+														type="hidden" name="repay_count3" id="repay_count3"
+														value="3"><input type="hidden" name="ori_rec_info3"
+														id="ori_rec_info3" value="undefined"><input type="hidden"
+														name="re_normal_irt3" id="re_normal_irt3" value="15"><input
+														type="hidden" name="re_overdue_irt3" id="re_overdue_irt3"
+														value="24"><input type="hidden" name="loan_cost3"
+														id="loan_cost3" value="10000000"><input type="hidden"
+														name="re_normal_cost3" id="re_normal_cost3"
+														value="123287"><input type="hidden" name="re_calterm_eday3"
+														id="re_calterm_eday3" value="20190510"><input type="hidden"
+														name="ov_exem_cost3" id="ov_exem_cost3" value="undefined"><input
+														type="hidden" name="re_calterm_sday3" id="re_calterm_sday3"
+														value="20190411"><input type="hidden" name="irt_day3"
+														id="irt_day3" value="10"><input type="hidden" name="loan_repay3"
+														id="loan_repay3" value="2"><input type="hidden"
+														name="loan_eday3" id="loan_eday3" value="20200215"><input
+														type="hidden" name="irt_day3" id="irt_day3" value="10"><input
+														type="hidden" name="loan_sday3" id="loan_sday3"
+														value="20190215"></td>
+												<td class="section1 linkShow" onclick="popupCall(3)"
+													style="position: relative; z-index: 2; left: 0px;">홍길남</td>
+												<td onclick="popupCall(3)"
+													style="position: relative; z-index: 2; left: 0px;">010-1111-1111
+												</td>
+												<td onclick="popupCall(3)"
+													style="position: relative; z-index: 2; left: 0px;">3/12</td>
+												<td onclick="popupCall(3)"
+													style="position: relative; z-index: 2; left: 0px;">2019-05-10</td>
+												<td style="position: relative; z-index: 2; left: 0px;">
+													<div class="input_col"><input type="text" size="3" value="0"
+															name="overdueChkDay3" id="overdueChkDay3"
+															readonly="readonly" class="form-control"></div>
+												</td>
+												<td style="position: relative; z-index: 2; left: 0px;">15%</td>
+												<td class="txr" style="position: relative; z-index: 2; left: 0px;">
+													123,287</td>
+												<td>24%</td>
+												<td>
+													<div class="input_col"><input type="text" size="12" value="0"
+															name="loan_overdue_cost3" id="loan_overdue_cost3"
+															readonly="readonly" class="form-control">
+														<div></div>
+													</div>
+												</td>
+												<td>
+													<div class="input_col"><input type="text" size="12" value="123,287"
+															name="total_cost3" id="total_cost3" readonly="readonly"
+															class="form-control"></div>
+												</td>
+												<td>
+													<div class="input_col"><input type="text"
+															class="form-control comma-cost" size="12" value="0"
+															name="rec_deposit_cost3" id="rec_deposit_cost3"
+															onchange="f_overdueInterestCal(3);"
+															onkeyup="javascript:f_calDifference(3,'rec_deposit_cost3','rec_pay_day3')"
+															style="border-color: #2ecc71;"></div>
+												</td>
+												<td><input type="text" size="10" value="" name="rec_pay_day3"
+														id="rec_pay_day3" class="form-control cal_i datepicker"
+														onkeyup="javascript:f_check('check3','rec_deposit_cost3','rec_pay_day3');"
+														onchange="f_overdueInterestCal(3);"
+														style="border-color: #2ecc71;"></td>
+												<td>
+													<div class="input_col"><input type="text" size="14" value="-123,287"
+															name="difference_price3" id="difference_price3"
+															readonly="readonly" class="form-control"></div>
+												</td>
+												<td width="40"><select class="form-control"
+														style="border-color: #2ecc71;" id="rec_info3" name="rec_info3"
+														onchange="javascript:f_comboBoxChk('3')">
+														<option value="1" selected="selected">미납</option>
+														<option value="2">입금</option>
+														<option value="6">연체</option>
+														<option value="4">연체후입금</option>
+													</select></td>
+												<td><input type="text" size="10" value="" name="ov_overdue_sday3"
+														id="ov_overdue_sday3" readonly="readonly"
+														class="form-control overdue_day_chk"></td>
+												<td id="memo3" onclick="memo('3')" class="section1_memo ellipsis"
+													title=""></td>
+												<td class="txr">10,000,000</td>
+												<td>2019-02-15</td>
+												<td></td>
+											</tr>
+											<tr class="">
+												<td style="position: relative; z-index: 2; left: 0px;"><input
+														type="checkbox" name="check4" id="check4"><input type="hidden"
+														name="cnum4" id="cnum4" value="1127"><input type="hidden"
+														name="re_id4" id="re_id4" value="8960"><input type="hidden"
+														name="loan_num4" id="loan_num4" value="5151"><input
+														type="hidden" name="repay_count4" id="repay_count4"
+														value="4"><input type="hidden" name="ori_rec_info4"
+														id="ori_rec_info4" value="undefined"><input type="hidden"
+														name="re_normal_irt4" id="re_normal_irt4" value="10"><input
+														type="hidden" name="re_overdue_irt4" id="re_overdue_irt4"
+														value="30"><input type="hidden" name="loan_cost4"
+														id="loan_cost4" value="5000000"><input type="hidden"
+														name="re_normal_cost4" id="re_normal_cost4" value="41095"><input
+														type="hidden" name="re_calterm_eday4" id="re_calterm_eday4"
+														value="20190510"><input type="hidden" name="ov_exem_cost4"
+														id="ov_exem_cost4" value="undefined"><input type="hidden"
+														name="re_calterm_sday4" id="re_calterm_sday4"
+														value="20190411"><input type="hidden" name="irt_day4"
+														id="irt_day4" value="10"><input type="hidden" name="loan_repay4"
+														id="loan_repay4" value="2"><input type="hidden"
+														name="loan_eday4" id="loan_eday4" value="20210101"><input
+														type="hidden" name="irt_day4" id="irt_day4" value="10"><input
+														type="hidden" name="loan_sday4" id="loan_sday4"
+														value="20190101"></td>
+												<td class="section1 linkShow" onclick="popupCall(4)"
+													style="position: relative; z-index: 2; left: 0px;">히츠</td>
+												<td onclick="popupCall(4)"
+													style="position: relative; z-index: 2; left: 0px;">010-1234-5678
+												</td>
+												<td onclick="popupCall(4)"
+													style="position: relative; z-index: 2; left: 0px;">4/24</td>
+												<td onclick="popupCall(4)"
+													style="position: relative; z-index: 2; left: 0px;">2019-05-10</td>
+												<td style="position: relative; z-index: 2; left: 0px;">
+													<div class="input_col"><input type="text" size="3" value="0"
+															name="overdueChkDay4" id="overdueChkDay4"
+															readonly="readonly" class="form-control"></div>
+												</td>
+												<td style="position: relative; z-index: 2; left: 0px;">10%</td>
+												<td class="txr" style="position: relative; z-index: 2; left: 0px;">
+													41,095</td>
+												<td>30%</td>
+												<td>
+													<div class="input_col"><input type="text" size="12" value="0"
+															name="loan_overdue_cost4" id="loan_overdue_cost4"
+															readonly="readonly" class="form-control">
+														<div></div>
+													</div>
+												</td>
+												<td>
+													<div class="input_col"><input type="text" size="12" value="41,095"
+															name="total_cost4" id="total_cost4" readonly="readonly"
+															class="form-control"></div>
+												</td>
+												<td>
+													<div class="input_col"><input type="text"
+															class="form-control comma-cost" size="12" value="0"
+															name="rec_deposit_cost4" id="rec_deposit_cost4"
+															onchange="f_overdueInterestCal(4);"
+															onkeyup="javascript:f_calDifference(4,'rec_deposit_cost4','rec_pay_day4')"
+															style="border-color: #2ecc71;"></div>
+												</td>
+												<td><input type="text" size="10" value="" name="rec_pay_day4"
+														id="rec_pay_day4" class="form-control cal_i datepicker"
+														onkeyup="javascript:f_check('check4','rec_deposit_cost4','rec_pay_day4');"
+														onchange="f_overdueInterestCal(4);"
+														style="border-color: #2ecc71;"></td>
+												<td>
+													<div class="input_col"><input type="text" size="14" value="-41,095"
+															name="difference_price4" id="difference_price4"
+															readonly="readonly" class="form-control"></div>
+												</td>
+												<td width="40"><select class="form-control"
+														style="border-color: #2ecc71;" id="rec_info4" name="rec_info4"
+														onchange="javascript:f_comboBoxChk('4')">
+														<option value="1" selected="selected">미납</option>
+														<option value="2">입금</option>
+														<option value="6">연체</option>
+														<option value="4">연체후입금</option>
+													</select></td>
+												<td><input type="text" size="10" value="" name="ov_overdue_sday4"
+														id="ov_overdue_sday4" readonly="readonly"
+														class="form-control overdue_day_chk"></td>
+												<td id="memo4" onclick="memo('4')" class="section1_memo ellipsis"
+													title=""></td>
+												<td class="txr">5,000,000</td>
+												<td>2019-01-01</td>
+												<td>담당자</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+							</div>
+						</div>
+						<!-- // cont_inr //-->
+						<!-- // section1_memo 채무자 메모-->
+						<div class="dim_layerpop">
+							<div class="dimBg_layerpop"></div>
+							<!-- 공통 도움말 팝업  class=contents 안쪽에 있어야 한다.-->
+
+
+							<!-- 도움말 팝업 -->
+							<div id="layer_common_help" class="pop-layer_help section-layer">
+								<div class="inr_head">도움말
+									<div class="tcr">
+										<table>
+											<caption>도움말</caption>
+											<tbody>
+												<tr>
+													<td colspan="2" class="cbtnwrap">
+														<button class="btn btn-submit" type="button"
+															onclick="common_help_save()">
+															저장</button>
+														<button class="btn btn-default btn_close" type="button"
+															onclick="common_help_close()">
+															<i class="fui-cross"></i> 닫기</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+
+								<div class="inr company_info">
+									<table>
+										<caption>도움말</caption>
+										<tbody>
+											<tr>
+												<th style="width:10px">화면명</th>
+												<td><input type="text" class="form-control" id="common_help_title"></td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<textarea id="common_help_content" class="form-control"
+														style="overflow-y: scroll;height:500px"></textarea>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- // 도움말 팝업 // -->
+							<script>
+								/**
+								 * 공통 도움말
+								 */
+
+								function common_help() {
+									var pageId = "";
+									var tempPageName = window.location.href;
+									var strPageName = tempPageName.split("/");
+									pageId = strPageName[strPageName.length - 1].split("?")[0];
+									$("#layer_common_help").show();
+
+									var obj = new Object();
+									obj.common_help_id = pageId;
+									obj.common_help_title = $("#common_help_title").val();
+									obj.common_help_content = $("#common_help_content").val();
+
+									obj = JSON.stringify(obj);
+									// 수정
+								}
+
+								function common_help_save() {
+									var pageId = "";
+									var tempPageName = window.location.href;
+									var strPageName = tempPageName.split("/");
+									pageId = strPageName[strPageName.length - 1].split("?")[0];
+
+									var obj = new Object();
+									obj.common_help_id = pageId;
+									obj.common_help_title = $("#common_help_title").val();
+									obj.common_help_content = $("#common_help_content").val();
+
+									obj = JSON.stringify(obj);
+
+									// 저장,수정
+									$.ajax({
+										url: "/common/common_help_save.do",
+										method: "post",
+										dataType: "json",
+										contentType: 'application/json; charset=UTF-8',
+										data: obj,
+										success: function (data) {
+											alert("처리되었습니다.");
+											common_help();
+										}
+										, error: function (e) {
+											alert('관리자에게 문의 바랍니다.\n' + e);
+										}
+									});
+								}
+
+								/**
+								 * 도움말 닫기
+								 */
+								function common_help_close() {
+									$('.dim_layerpop').fadeOut();
+									$('.pop-layer').fadeOut();
+									$('body').css({
+										overflow: 'visible',
+										position: 'static'
+									});
+									$("#layer_common_help").hide();
+								} 
+							</script>
+							<div id="layer_csearch" class="pop-layer search_popup">
+								<div class="pop-container">
+									<div class="pop-header">
+										<i class="fui-list-numbered"></i>고객 검색
+										<a href="javascript:void(0);" class="btn_close">
+											<span class="ir">닫기</span>
+										</a>
+									</div>
+
+									<div class="pop-conts">
+										<ul>
+											<li>
+												<select name="condition" id="condition" class="form-control">
+													<option value="2">성명</option>
+													<option value="3">전화번호</option>
+												</select>
+											</li>
+											<li>
+												<input type="text" class="form-control" name="keyword" id="keyword"
+													onkeyup="enterkey();">
+											</li>
+											<li>
+												<button class="btn btn-submit" onclick="cList()">검색</button>
+											</li>
+										</ul>
+									</div>
+									<div class="pop-footer">
+										<ul class="ul_thead">
+											<li>No</li>
+											<li>고객번호</li>
+											<li>성명</li>
+											<li>생년월일</li>
+											<li>전화번호</li>
+										</ul>
+										<ul class="ul_tbody" id="cus_body">
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<!-- 메모팝업 -->
+							<div id="layer_section1" class="pop-layer section-layer">
+								<div class="pop-container">
+									<div class="pop-conts">
+										<div class="contents cont_inr">
+											<div class="inr_head">
+												<i class="fui-user"></i> 채무자 메모
+												<div class="tcr">
+													<table>
+														<caption>수정 취소</caption>
+														<tbody>
+															<tr>
+																<td colspan="2" class="cbtnwrap">
+																	<button class="btn btn-submit" type="button"
+																		onclick="javascript:f_memo_modi()">
+																		<i class="fui-plus-circle"></i> 수정
+																	</button>
+																	<button class="btn btn-default btn_close"
+																		type="button" id="memocancle">
+																		<i class="fui-cross"></i> 취소
+																	</button>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+											<div class="inr">
+												<table>
+													<caption>채무자 메모</caption>
+													<tbody>
+														<tr>
+															<th>메모</th>
+															<td colspan="7"><input type="hidden" id="memory"
+																	name="memory"> <textarea id="memo" name="memo"
+																	class="form-control memo"></textarea></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 메모팝업 종료 -->
+						</div>
+						★ 연체이자 계산은 조회 시 연체일자로부터 오늘날짜로 계산됩니다. 입금일을 입력하는 경우 연체이자는 재계산 됩니다.
+					</div>
+				</div>
+			</form>
+			<form id="interestPop" name="interestPop">
+				<input type="hidden" name="cnum" id="cnum">
+				<input type="hidden" name="loan_num">
+				<input type="hidden" name="msgyn" id="msgyn"><!-- 메세지여부 -->
+			</form>
+			<!-- // contents //-->
+		</div>
+		<!-- // container // -->
+		<!-- 레이어 팝업-->
+	</div>
+	<script>
+
+		//자동 width 조절
+		var widthAuto = screen.width - 350;
+		$('.autosize').css('width', widthAuto);
+//width: 1400px;
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ERP</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/flat-ui.css">
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/Chart.bundle.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+
+</head>
+<script>
+	/*조회월 기본셋팅 (당월)*/
+	$(document).ready(function () {
+		$("#searchDate").val(f_yearMonth());
+	});
+
+
+</script>
+
+<body>
+	<div id="wrap">
+		<!-- container -->
+		<div id="container">
+
+
+			<!-- S:FILE:header.jsp -->
+
+			<!-- header -->
+			<div id="header">
+				<h1 class="logo">
+					<a href="/common/main.do">론니(Loany)</a>
+				</h1>
+				<p class="dt">대출관리시스템</p>
+				<div class="header_login">
+					<dl>
+						<dt>Neo Forth Korea</dt>
+						<dd><span>김정현 님</span>
+							<button onclick="javscript:f_logout();" id="logout" class="btn_logout">로그아웃</button>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<!-- // header // -->
+
+			<!-- E:FILE:header.jsp -->
+
+			<!-- lnb -->
+
+			<script>
+				$(function () {
+					// 레프트메뉴 active 설정
+					$("#sub0").addClass("active");
+				});
+
+				function f_logout() {
+					$.post("/front/logout.do").done(function (data) {
+						alert("로그아웃되었습니다. 메인 화면으로 이동합니다.");
+						location.href = "/";
+					}).fail(function () {
+						alert("falil 서버에 이상이 있습니다.");
+					});
+				}
+			</script>
+
+			<!-- lnb -->
+			<div id="lnb">
+				<ul>
+					<li><a href="/common/main.do" id="sub0"><i class="dashboard"></i>대시보드</a></li>
+					<li><a href="/totallist/totalinfolist.do" id="sub02_2"><i class="totallist"></i>종합정보리스트</a></li>
+					<li><a href="/customer/totalInformation.do" id="sub01_1"><i class="total"></i>종합정보</a></li>
+					<li><a href="/interest/interestview.do" id="sub04_4"><i class="interest"></i>이자수납관리</a></li>
+					<li><a href="/receipt/receiptAdmin.do" id="sub03_3"><i class="re"></i>상환처리</a></li>
+					<li><a href="/repayment/schedule.do" id="sub05_5"><i class="resch"></i>상환스케줄</a></li>
+					<li><a href="/repayment/hschedule.do" id="sub05_6"><i class="interestsch"></i>이자납부스케줄</a></li>
+					<li><a href="/sms/smsmanager.do" id="sub06_6"><i class="sms"></i>이자문자발송관리</a></li>
+					<li><a href="/defaulter/defaulter.do" id="sub07_7"><i class="latemanage"></i>연체자 관리</a></li>
+					<li><a href="/front/memberJoin.do" id="sub08_8"><i class="join"></i>회원가입</a></li>
+					<li><a href="/info/infoSet.do" id="sub09_9"><i class="config"></i>설정관리</a></li>
+				</ul>
+			</div>
+			<!-- // lnb // -->
+			<!-- // lnb // -->
+
+
+			<!-- contents -->
+			<div id="contents">
+				<div class="contents dashboard">
+					<h3 class="cont_tit">대시보드&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-search pop_button" type="button"
+							onclick="common_help();" style="vertical-align: middle;">도움말</button></h3>
+					<table style="width:195px">
+						<tr>
+							<th class="impact">조회월</th>
+							<td>
+								<input type="text" name="searchDate" id="searchDate"
+									class="form-control datepicker_month" autocomplete="off" maxlength="7">
+							</td>
+							<td style="width:90px">
+								<button class="btn-save" type="button" id="cBtn">조회</button>
+							</td>
+						</tr>
+					</table>
+					<div class="dashBoxWrap">
+						<div class="dashBox dashBox50">
+							<dl>
+								<dt><i class="fui-list-thumbnailed"></i>종합현황</dt>
+								<dd>
+									<table class="dashTbl">
+										<colgroup>
+											<col width="140px" />
+											<col width="112px" />
+											<col width="143px" />
+											<col width="143px" />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>총인원</th>
+												<td>0명</td>
+												<th>기간(일)</th>
+												<td>0일</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class="dashTbl">
+										<colgroup>
+											<col width="140px" />
+											<col width="112px" />
+											<col width="286px" />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>대부 대출금<span class="spanI">A</span></th>
+												<th>대부 평균금리</th>
+												<th colspan="2">대부월이자<span class="spanI">B</span></th>
+											</tr>
+											<tr>
+												<td>979,965,584원</td>
+
+												<td>11.48%</td>
+												<td colspan="2">9,375,746원</td>
+											</tr>
+
+											<tr>
+												<th>질권 대출금<span class="spanI">C</span></th>
+												<th>질권 평균금리</th>
+												<th colspan="2">질권월이자<span class="spanI">D</span></th>
+											</tr>
+											<tr>
+												<td>110,611,210원</td>
+												<td>8.67%</td>
+												<td colspan="2">798,859원</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<table class="dashTbl">
+										<colgroup>
+											<col width="290px" />
+											<col width="248px/">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>질권 미회수<span class="spanI long">A - C</span></th>
+												<td>869,354,374원</td>
+											</tr>
+											<tr>
+												<th>이자수익<span class="spanI long">B - D</span></th>
+												<td>8,576,888원</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<table class="dashTbl">
+										<colgroup>
+											<col width="140px" />
+											<col width="112px" />
+											<col width="110px" />
+											<col width="176px" />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>월실적</th>
+												<th>월대출건수</th>
+												<th>월상환금</th>
+												<th>월상환건수</th>
+											</tr>
+											<tr>
+												<td>0원</td>
+												<td>0건</td>
+												<td>0원</td>
+												<td>0건</td>
+											</tr>
+										</tbody>
+									</table>
+								</dd>
+							</dl>
+						</div>
+						<div class="dashBox dashBox50">
+							<dl>
+								<dt><i class="fui-list-numbered"></i>지역현황</dt>
+								<dd>
+									<canvas id="canvas"></canvas>
+								</dd>
+							</dl>
+						</div>
+
+					</div>
+					<div class="dashBoxWrap">
+						<div class="dashBox dashBox50">
+							<dl>
+								<dt><i class="fui-list-numbered"></i>LTV현황</dt>
+								<dd>
+									<canvas id="canvas2"></canvas>
+								</dd>
+							</dl>
+						</div>
+						<div class="dashBox dashBox50">
+							<dl>
+								<dt><i class="fui-list-numbered"></i>금리현황</dt>
+								<dd>
+									<canvas id="canvas3"></canvas>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<!-- 레이어 팝업-->
+					<div class="dim_layerpop">
+						<div class="dimBg_layerpop"></div>
+						<!-- 공통 도움말 팝업  class=contents 안쪽에 있어야 한다.-->
+
+
+						<!-- 도움말 팝업 -->
+						<div id="layer_common_help" class="pop-layer_help section-layer">
+							<div class="inr_head">도움말
+								<div class="tcr">
+									<table>
+										<caption>도움말</caption>
+										<tbody>
+											<tr>
+												<td colspan="2" class="cbtnwrap">
+													<button class="btn btn-submit" type="button"
+														onclick="common_help_save()">
+														저장</button>
+													<button class="btn btn-default btn_close" type="button"
+														onclick="common_help_close()">
+														<i class="fui-cross"></i> 닫기</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="inr company_info">
+								<table>
+									<caption>도움말</caption>
+									<tbody>
+										<tr>
+											<th style="width:10px">화면명</th>
+											<td><input type="text" class="form-control" id="common_help_title"></td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<textarea id="common_help_content" class="form-control"
+													style="overflow-y: scroll;height:500px"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- // 도움말 팝업 // -->
+						<script>
+							/**
+							 * 공통 도움말
+							 */
+
+							function common_help() {
+								var pageId = "";
+								var tempPageName = window.location.href;
+								var strPageName = tempPageName.split("/");
+								pageId = strPageName[strPageName.length - 1].split("?")[0];
+								$("#layer_common_help").show();
+
+								var obj = new Object();
+								obj.common_help_id = pageId;
+								obj.common_help_title = $("#common_help_title").val();
+								obj.common_help_content = $("#common_help_content").val();
+
+								obj = JSON.stringify(obj);
+								// 수정
+							}
+
+							/**
+							 * 도움말 닫기
+							 */
+							function common_help_close() {
+								$('.dim_layerpop').fadeOut();
+								$('.pop-layer').fadeOut();
+								$('body').css({
+									overflow: 'visible',
+									position: 'static'
+								});
+								$("#layer_common_help").hide();
+							} 
+						</script>
+					</div>
+				</div>
+			</div>
+			<!-- // contents //-->
+		</div>
+		<!-- // container // -->
+	</div>
+	<!-- 차트 스크립트 -->
+	<script>
+		window.chartColors = {
+			red: 'rgb(255, 99, 132)',
+			orange: 'rgb(255, 159, 64)',
+			green: 'rgb(75, 192, 192)',
+			blue: 'rgb(54, 162, 235)',
+			purple: 'rgb(153, 102, 255)',
+			grey: 'rgb(223, 230, 233)',
+			addred: 'rgb(250, 177, 160)',
+			addblue: 'rgb(116, 185, 255)',
+			addyellow: 'rgb(255, 234, 167)'
+		};
+
+		/* 지역현황 */
+		var config = {
+			type: 'pie',
+			data: {
+				labels: ['경기', '서울', '인천', '기타'],
+				datasets: [
+					{
+						label: ['경기', '서울', '인천', '기타'],
+						backgroundColor: [window.chartColors.red, window.chartColors.green, window.chartColors.blue],
+						data: [2, 6, 1, 1],
+
+					}
+				]
+			},
+			options: {
+				responsive: true,
+				legend: { display: false, },
+				tooltips: { enabled: false, }
+			}
+		};
+
+		/* LTV 현황 */
+		var config2 = {
+			type: 'pie',
+			data: {
+				labels: ['80%이하', '85%이하', '85%이상'],
+				datasets: [
+					{
+						label: ['80% 이하', '85%이하', '85%이상'],
+						backgroundColor: [window.chartColors.orange, window.chartColors.purple, window.chartColors.grey],
+						data: [2, 1, 1],
+
+					}
+				]
+			},
+			options: {
+				responsive: true,
+				legend: { display: false, },
+				tooltips: { enabled: false, }
+			}
+		};
+
+		/* 금리현황 */
+		var config3 = {
+			type: 'pie',
+			data: {
+				labels: ['12%이하', '15%이하', '15%이상'],
+				datasets: [
+					{
+						label: ['12%이하', '15%이하', '15%이상'],
+						backgroundColor: [window.chartColors.addred, window.chartColors.addblue, window.chartColors.addyellow],
+						data: [26, 3, 3],
+
+					}
+				]
+			},
+			options: {
+				responsive: true,
+				legend: { display: false, },
+				tooltips: { enabled: false, }
+			}
+		};
+
+		// 차트 위에 텍스트 표시
+		Chart.plugins.register({
+			afterDatasetsDraw: function (chart) {
+				var ctx = chart.ctx;
+				/* console.log(chart) */
+				chart.data.datasets.forEach(function (dataset, i) {
+					var meta = chart.getDatasetMeta(i);
+					if (!meta.hidden) {
+						meta.data.forEach(function (element, index) {
+							// Draw the text in black, with the specified font
+							ctx.fillStyle = 'rgb(0, 0, 0)';
+
+							var fontSize = 14;
+							var fontStyle = 'bold';
+							var fontFamily = 'NotoKrR';
+							ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
+
+							// 데이터가 0건이면 그래프 글씨 표시 X
+							if (dataset.data[index] === 0) {
+								var dataString = "";
+							}
+							// 일반적인경우
+							else {
+								var dataString = dataset.label[index].toString().concat("(" + dataset.data[index].toString() + "건)");
+							}
+
+							// Make sure alignment settings are correct
+							ctx.textAlign = 'center';
+							ctx.textBaseline = 'middle';
+
+							var padding = 5;
+							var position = element.tooltipPosition();
+							ctx.fillText(dataString, position.x, position.y - (fontSize / 2) - padding);
+						});
+					}
+				});
+			}
+		});
+
+		window.onload = function () {
+			//지역현황
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myLine = new Chart(ctx, config);
+
+			//LTV 현황
+			var ctx2 = document.getElementById('canvas2').getContext('2d');
+			window.myLine2 = new Chart(ctx2, config2);
+
+			//금리현황
+			var ctx3 = document.getElementById('canvas3').getContext('2d');
+			window.myLine3 = new Chart(ctx3, config3);
+		};
+	</script>
+	<!-- // 차트 스크립트 -->
+
+</body>
+
+</html>

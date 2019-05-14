@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --><title>퍼블리싱 가이드 | 미래에셋 전자투표</title><style>/* Reset-------------------------------------------------------------- */* {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;word-break: break-all;-webkit-text-size-adjust: none;-webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all 0.3s ease;}html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {margin: 0;padding: 0;border: 0;font-size: 100%;vertical-align: baseline;}html,body {width: 100%;min-height: 100%;}body {font-size: 12px;line-height: 1;font-family: '맑은 고딕', 'dotum', sans-serif;color: #000;letter-spacing: -0.5px;}nav,ol,ul,li {list-style: none;}label,input,button,select,img {vertical-align: middle}input,button {margin: 0;padding: 0;font-family: '맑은 고딕', 'dotum', sans-serif;font-size: 1rem;}button {cursor: pointer;}img,input,select,textarea,button {vertical-align: middle;}textarea,select {font-family: '맑은 고딕', 'dotum', sans-serif;font-size: 1rem;}select {margin: 0;background-color: #fff;}h1,h2,h3,h4,h5,h6,b,strong {font-weight: 700;}address,cite,em,i {font-style: normal;}a {text-decoration: none}a:hover,a:focus,a:active {color: #3399cc;background-color: transparent;}table {width: 100%;border-collapse: collapse;border-spacing: 0}caption,legend {position: absolute;top: 0;left: 0;width: 1px;height: 1px;font-size: 1px;text-indent: -20000px;}/* ir */.ir {width: 0;height: 0;font-size: 0;line-height: 0;overflow: hidden;position: absolute;left: 0;top: 0;}/* 말줄임 */.ellipsis {display: inline-block;max-width: 85%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;vertical-align: middle;}/* skip navigation */#skip_nav a {position: absolute;top: -500px;font-size: 15px;font-weight: 600}#skip_nav a:focus,#skip_nav a:active {top: 1px;z-index: 99999;display: block;width: 100%;height: 40px;line-height: 40px;font-weight: 600;color: #fff;text-align: center;background-color: #015293}/* menu animation */.animate,.animate * {-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}/* content-------------------------------------------------------------- */html,body {width: 100%;/* height: 100%; */overflow: auto;}body,#wrap {background-color: #ebebeb;}#wrap {width: 100%;/* height: 100%; */min-height: 100%;}/* nav */nav {position: fixed;left: 0;top: 0;bottom: 0;width: 200px;background-color: #1a2229;color: #fff;z-index: 500;}nav p {position: absolute;left: 0;top: 80px;font-size: 18px;width: 100%;text-align: center;user-select: none;-ms-user-select: none;}nav h2 {font-size: 15px;font-weight: normal;padding-top: 128px;padding-bottom: 5px;user-select: none;-ms-user-select: none;}.nav-snb {padding-bottom: 20px;}.nav-snb>ul {border-top: 1px solid #969ba1;}.nav-snb>ul>li {border-bottom: 1px solid #969ba1;}.nav-snb>ul>li i {display: inline-block;width: 4px;height: 4px;margin: 0px 10px 3px -4px;border: 2px solid #fff;}.nav-snb>ul>li a {display: block;padding: 10px 20px;font-size: 12px;line-height: 18px;color: #fff;}.nav-snb>ul>li a:hover {background: #969ba1}/* section */section {width: 100%;padding: 15px 20px 15px 230px;}#contents {min-width: 900px;padding: 30px 45px;background-color: #fff;box-shadow: 0.5px 1px 3px 0px rgba(51, 51, 51, 0.2);}.guide_tit {margin: 30px 0 20px;font-size: 25px;font-weight: bold;user-select: none;-ms-user-select: none}.count {margin-bottom: 10px;text-align: right;font-size: 11px;user-select: none;}.count span {margin-left: 8px;}.count span em {font-size: 18px;font-weight: bold;}.count span.progress em {color: #ee4048;}.guide_data table {width: 100%;table-layout: fixed;margin-bottom: 50px;}.guide_data table thead th {position: relative;padding: 10px 0 10px 0;border-top: 2px solid #36485f;border-bottom: 2px solid #888;text-align: center;background-color: #fff;}.guide_data table tbody {border-bottom: 2px solid #888;}.guide_data table tbody th {padding: 7px 30px;border-bottom: 1px solid #ddd;color: #111;font-weight: bold;background-color: #f7f7f7;}.guide_data table td {padding: 7px 10px;border-bottom: 1px solid #ddd;font-size: 12px;word-break: break-word;text-align: center;border-right: 1px solid #ddd;}.guide_data table td:nth-of-type(6),.guide_data table td:nth-of-type(3),.guide_data table td:nth-of-type(4),.guide_data table td:nth-of-type(5) {text-align: left;}.guide_data table td:nth-last-of-type(1) {border-right: none;}.guide_data table tr:hover td {background: #f9f9f9;}.guide_data table td a {color: #015293}.guide_data table td a:hover {color: #3399cc;}.guide_data table .category {text-align: left;}/* 미디어 */@media screen and (max-width:1168px) {nav {/* display: none; */width: 20px;}nav p,nav h2,nav i,nav span {visibility: hidden;}nav a {padding: 0 !important;height: 38px;}section {padding-left: 40px;}}@media screen and (max-width:720px) {nav {display: none;}.count {text-align: left;}section {padding-left: 20px;}}</style>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script>
+        $(function () {
+            //table 번호 매기기
+            var $table = $('table');
+
+            $table.each(function (index) {
+                //전체행기준으로 No 번호 매기기
+                var $tab1 = $(this).eq(index).find('.no');
+                /* $tab1.each(function (index) {
+                    $(this).text(index + 1);
+                }); */
+                // //--No 번호 매기기
+                
+                // 작업완료시 background 지정
+                $(this).eq(index).find('.complete:not(:empty)').each(function() {
+                    $(this).closest("tr").find("td").css("background","#DFF9FB");
+                });
+
+                // 총페이지 count, 완료페이지 count, 진행률계산
+                var $pageCount = $tab1.length;
+                var $complete = $(this).eq(index).find('.complete:not(:empty)').length;
+                var $pagePercent = $complete / $pageCount * 100;
+
+                $('.total em').text(" " + $pageCount);
+                $('.okCheck em').text(" " + $complete);
+                $('.progress em').text(" " + $pagePercent.toFixed(1));
+                // //--총페이지 count, 완료페이지 count, 진행률계산
+
+                //카테고리 사이드바 추가
+                var $category = $(this).eq(index).find('.category');
+                $category.each(function (index) {
+                    $(this).attr('id', 'category' + index);
+                    $('.nav-snb ul').append("<li><a href='#category" + index +"'><i></i><span>" + $(this).text() + "</span></a></li>");
+                });
+                // //--카테고리 사이드바 추가
+
+                // 사이드바 타이틀 변경
+                $('nav p').text('[' + $('.guide_tit').text() + ']');
+                // //--사이드바 타이틀 변경
+            });
+
+            $("tbody").each(function (index) {
+                //No 번호 매기기
+                var $tab2 = $(this).find('.no');
+                $tab2.each(function (index) {
+                    $(this).text(index + 1);
+                });
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- sidebar -->
+        <nav>
+            <p></p>
+            <h2>카테고리</h2>
+            <div class="nav-snb">
+                <ul>
+                </ul>
+            </div>
+        </nav>
+        <!-- // sidebar -->
+
+        <!-- section -->
+        <section>
+            <div id="contents">
+                <h1 class="guide_tit">Loany</h1>
+                <div class="count">
+                    <span class="total">총 PageCount :
+                        <em> 136</em>
+                    </span>
+                    <span class="okCheck">완료된 Page :
+                        <em> 136</em>
+                    </span>
+                    <span class="progress">진행률 :
+                        <em> 100.0</em>%</span>
+                </div>
+                <div class="guide_data">
+                    <table>
+                        <colgroup>
+                            <col width="4%">
+                            <col width="8%">
+                            <col width="13%">
+                            <col width="13%">
+                            <col width="18%">
+                            <col width="15%">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>화면 ID</th>
+                                <th>1Depth</th>
+                                <th>2Depth</th>
+                                <th>3Depth</th>
+                                <th>FileName</th>
+                                <th>작업상태</th>
+                                <th>완료일</th>
+                                <th>비고</th>
+                            </tr>
+                        </thead>
+                        
+                        <!-- 로그인 전 -->
+                        <tbody>
+                            <tr>
+                                <th class="category" colspan="9">로그인 전</th>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>login</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="html/login.html" target="_blank">html/login.html</a>
+                                </td>
+                                <td></td>
+                                <td class="complete">2018.05</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>join</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="html/join.html" target="_blank">html/join.html</a>
+                                </td>
+                                <td></td>
+                                <td class="complete">2018.05</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>idfind</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="html/idfind.html" target="_blank">html/idfind.html</a>
+                                </td>
+                                <td></td>
+                                <td class="complete">2018.05</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>pwfind</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="html/pwfind.html" target="_blank">html/pwfind.html</a>
+                                </td>
+                                <td></td>
+                                <td class="complete">2018.05</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        <!-- // 로그인 전 -->
+
+                        <!-- 로그인 후 -->
+                        <tbody>
+                            <tr>
+                                <th class="category" colspan="9">로그인 후</th>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>대시보드</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="html/dashboard.html" target="_blank">html/dashboard.html</a>
+                                </td>
+                                <td></td>
+                                <td class="complete">2018.05</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>종합정보리스트</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="html/totalinfo.html" target="_blank">html/totalinfo.html</a>
+                                </td>
+                                <td></td>
+                                <td class="complete">2018.05</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>종합정보</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="html/total.html" target="_blank">html/total.html</a>
+                                </td>
+                                <td></td>
+                                <td class="complete">2018.05</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>이자수납관리</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="html/intereststore.html" target="_blank">html/intereststore.html</a>
+                                </td>
+                                <td></td>
+                                <td class="complete">2018.05</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>수납처리</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="html/repay.html" target="_blank">html/repay.html</a>
+                                </td>
+                                <td></td>
+                                <td class="complete">2018.05</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>상환스케줄</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="html/repayschedule.html" target="_blank">html/repayschedule.html</a>
+                                </td>
+                                <td></td>
+                                <td class="complete">2018.05</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        <!-- // 로그인 후 -->
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- // section -->
+    </div>
+</body>
+
+</html>
