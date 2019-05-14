@@ -1,4 +1,4 @@
-@charset "euc-kr";
+@charset "utf-8";
 
 /* Fonts
 /* noto-sans-kr-300 - korean_latin */
@@ -506,7 +506,7 @@ button{font-family: 'Noto Sans KR'; cursor: pointer;}
 .popup_list .popup_container{margin: -447px 0 0 -545px; width: 1090px; height: 894px;}
 .popup_list .body_area{padding: 20px 20px 0;}
 
-/* Ãß°¡ css */
+/* ì¶”ê°€ css */
 .ico_vote_y {display: inline-block;width: 20px;height: 20px;background: url(../img/shareholder/ico_vote_on.png) no-repeat center / 20px;vertical-align: middle;margin-left: 5px;margin-top: -3px;}
 .ico_vote_n {display: inline-block;width: 20px;height: 20px;background: url(../img/shareholder/ico_vote_off.png) no-repeat center / 20px;vertical-align: middle;margin-left: 5px;margin-top: -3px;}
 .ico_happy_y {display: inline-block;width: 22px;height: 24px;background: url(../img/shareholder/ico_donate_on2.png) no-repeat center / 22px 24px;vertical-align: middle;}
@@ -525,7 +525,7 @@ button{font-family: 'Noto Sans KR'; cursor: pointer;}
 .display_onoff {display: none;}
 
 /* card box */
-/* ÁÖÁÖ ÀÇ¾Èº° ÀÎÅÍ·º¼Ç */
+/* ì£¼ì£¼ ì˜ì•ˆë³„ ì¸í„°ë ‰ì…˜ */
 .voting_excute_div {font-size: 0;}
 .voting_execute_box {position: relative;display: inline-block;width: 33%;height:400px;font-size: 14px;-webkit-transition: all 0.6s ease-in-out; -moz-transition: all 0.6s ease-in-out; -o-transition: all 0.6s ease-in-out; transition: all 0.6s ease-in-out;margin-bottom: 1px;margin-right: 1px;}
 .pop-layer .voting_excute_div {}
@@ -577,7 +577,7 @@ button{font-family: 'Noto Sans KR'; cursor: pointer;}
 .voting_execute_box .voting_execute .copy {position: absolute;top: 195px;width: 100%;-o-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;-webkit-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
 .voting_execute_box .voting_execute .copy * {-o-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;-webkit-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
 .voting_execute_box .voting_execute .copy p:nth-child(1) {font-size: 14px;color: #fff;font-weight: 300;margin-bottom: 10px;}
-.voting_execute_box .voting_execute .copy p:nth-child(2) {font-size: 52px;color: #fff;font-weight: 700;font-family: "¸¼Àº °íµñ", "Malgun Gothic";}
+.voting_execute_box .voting_execute .copy p:nth-child(2) {font-size: 52px;color: #fff;font-weight: 700;font-family: "ë§‘ì€ ê³ ë”•", "Malgun Gothic";}
 .voting_execute_box .voting_execute .copy .btn_voting_open {margin-top: 50px;opacity: 0;-o-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;-webkit-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
 .voting_execute_box .voting_execute .copy .btn_voting_open::after {content: ">";margin-left: 5px;}
 
@@ -607,7 +607,7 @@ button{font-family: 'Noto Sans KR'; cursor: pointer;}
 .voting_execute_box.detailview_on .copy {display: none;}
 .voting_execute_box.detailview_on.vote_concen::after {display: none;}
 
-/* ¶óµð¿À */
+/* ë¼ë””ì˜¤ */
 .voting_execute_box .voteDiv .input-radio {position:relative; display:inline-block;width: 200px;height: 100px;}
 .voting_execute_box .voteDiv .input-radio .label-text {display: block;height: 100%;font-weight: 300;font-size: 22px;color:#2f313a;background: #ecedf1;text-align: center;cursor: pointer;}
 .voting_execute_box .voteDiv .input-radio:nth-of-type(3) .label-text {color: #8c8c8c;}
@@ -617,7 +617,7 @@ button{font-family: 'Noto Sans KR'; cursor: pointer;}
 .voting_execute_box .voteDiv .input-radio:nth-of-type(1) >input[type="radio"]:checked + .label-text {font-weight: 700;background: rgba(203, 23, 5, 0.6) url(../img/shareholder/card_chk_bg.png) no-repeat right bottom / 47px 44px;border: 1px solid #cb1705;}
 .voting_execute_box .voteDiv .input-radio:nth-of-type(2) >input[type="radio"]:checked + .label-text {font-weight: 700;background: rgba(18, 43, 124, 0.6) url(../img/shareholder/card_chk_bg.png) no-repeat right bottom / 47px 44px;border: 1px solid #122b7c;}
 
-/* ¶óµð¿À case1 */
+/* ë¼ë””ì˜¤ case1 */
 .voting_execute_box .voteDiv.case1 {left: 50%;margin-left: -204px;text-align: center;}
 .voting_execute_box .voteDiv.case1 .voteDiv_inner {width: 408px;font-size: 0;}
 .voting_execute_box .voteDiv.case1 .voteDiv_inner .label-text {text-align: center;line-height: 100px;}
@@ -625,7 +625,7 @@ button{font-family: 'Noto Sans KR'; cursor: pointer;}
 .voting_execute_box .voteDiv.case1 .voteDiv_inner .input-radio:nth-child(1), .voting_execute_box .voteDiv.case1 .voteDiv_inner .input-radio:nth-child(2) {margin-bottom: 8px;}
 .voting_execute_box .voteDiv.case1 .voteDiv_inner .input-radio:nth-child(1) .label-text, .voting_execute_box .voteDiv.case1 .voteDiv_inner .input-radio:nth-child(2) .label-text {font-weight: 700;}
 
-/* ¶óµð¿À case2 */
+/* ë¼ë””ì˜¤ case2 */
 .voting_execute_box .voteDiv.case2 {left: 50%;margin-left: -290px;text-align: center;}
 .voting_execute_box .voteDiv.case2 .name_tab {width: 214px;height: 52px;font-size: 16px;font-weight: 300;color: #fff;text-align: left;padding-left: 10px;position: relative;}
 .voting_execute_box .voteDiv.case2 .name_tab span {position: absolute;top: 50%;left: 10px;transform: translateY(-50%);}
@@ -639,7 +639,7 @@ button{font-family: 'Noto Sans KR'; cursor: pointer;}
 .voting_execute_box .voteDiv.case2 .input-radio:nth-of-type(2) >input[type="radio"]:checked + .label-text {background: rgba(18, 43, 124, 0.6) url(../img/shareholder/card_chk_bg2.png) no-repeat right bottom / 21px 18px;}
 .voting_execute_box .voteDiv.case2 .btn_voting_execute {margin-top: 5px;}
 
-/* ¶óµð¿À case3 */
+/* ë¼ë””ì˜¤ case3 */
 .voting_execute_box .voteDiv.case3 {left: 50%;margin-left: -240px;text-align: center;}
 .voting_execute_box .voteDiv.case3 .name_tab {padding-left: 20px;padding-right: 216px;width: 100%;height: 52px;line-height: 52px;font-size: 16px;font-weight: 300;color: #fff;text-align: left;position: relative;}
 .voting_execute_box .voteDiv.case3 .name_tab > div {display: inline-block; position: absolute; right: -1px;top: -1px;height: 52px;background: #fff;width: 216px;text-align: center;}
@@ -671,12 +671,12 @@ button{font-family: 'Noto Sans KR'; cursor: pointer;}
 .shortlongTbl .short1 tbody td:nth-child(8) {width: 110px}
 .shortlongTbl .short1 tbody td:nth-child(9) {width: 110px}
 
-/* ÁÖÁÖ°¡ÀÔÇöÈ² form_control */
+/* ì£¼ì£¼ê°€ìž…í˜„í™© form_control */
 .form_control.type2 {width: 80%;color: #222;}
 select.form_control.type2 {width: 40%;padding-left: 5px;color: #222;}
 select.form_control.type3 {width: 80%;margin-bottom: 5px;padding-left: 5px;color: #222;}
 
-/* ´ë½Ãº¸µå Ãß°¡ */
+/* ëŒ€ì‹œë³´ë“œ ì¶”ê°€ */
 .dashboard .group_table .table th {text-align: center;}
 .dashboard .group_table .table td {text-align: left;padding-left: 20px;padding-right: 20px;}
 .dashboard .group_table .table td:nth-child(3) {text-align: center;}

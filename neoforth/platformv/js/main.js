@@ -5,14 +5,14 @@ $(document).ready(function () {
 //	$.ajax({
 //		url		: "/maindata/vcnt.js",
 //		data	: "",
-//		contentType:"application/json; charset=euc-kr",
+//		contentType:"application/json; charset=utf-8",
 //		type	: "GET",
 //		dataType: "json",
 //		success: function(data){
 //			withV = data.withVCnt;
 //			$("#withV").html(withV);
 
-			// section1 ¹®±¸ ½½¶óÀÌ´õ
+			// section1 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½
 			var section1_text_swiper = new Swiper('.section1_text_swiper', {
 				effect: 'fade',
 				fadeEffect: {
@@ -41,7 +41,7 @@ $(document).ready(function () {
 				} 
 			});
 			
-			$(".section1_text_swiper .swiper-pagination").append("<span class='text_swiper_gostop'>½½¶óÀÌ´õ ¿ÀÅäÇÃ·¹ÀÌ Àç»ý/ÀÏ½ÃÁ¤Áö</span>");
+			$(".section1_text_swiper .swiper-pagination").append("<span class='text_swiper_gostop'>ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½/ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½</span>");
 			$(document).on("click", ".section1_text_swiper .text_swiper_gostop", function() {
 				
 				if($(this).hasClass("go")) {
@@ -58,13 +58,13 @@ $(document).ready(function () {
 //	});
 	
 	/*sectionR_btnarea top, sectionR_btnarea bottom*/
-	// ÁÖÁÖÀÏ ¶§
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	if($("#header").hasClass("bg_shareholder") === true) {
-		// ÃÊ±âÈ­
+		// ï¿½Ê±ï¿½È­
 		$(".sectionR_bg").removeClass("step2");
 		$(".sectionR_bg").removeClass("step3");
 		
-		/*console.log("ÁÖÁÖ");*/
+		/*console.log("ï¿½ï¿½ï¿½ï¿½");*/
 		$(".sectionR_bg").addClass("step2");
 		$(".sectionR_btnarea.top").show();
 		$(".sectionR_btnarea.bottom").hide();
@@ -75,13 +75,13 @@ $(document).ready(function () {
 		$(".section3company_li").css("display","none");
 	}
 	
-	// È¸»çÀÏ ¶§
+	// È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	if($("#header").hasClass("bg_company") === true) {
-		// ÃÊ±âÈ­
+		// ï¿½Ê±ï¿½È­
 		$(".sectionR_bg").removeClass("step2");
 		$(".sectionR_bg").removeClass("step3");
 		
-		/*console.log("È¸»ç");*/
+		/*console.log("È¸ï¿½ï¿½");*/
 		$(".sectionR_bg").addClass("step3");
 		$(".sectionR_btnarea.top").hide();
 		$(".sectionR_btnarea.bottom").show();
@@ -143,7 +143,7 @@ $(document).ready(function () {
     	},
     });
 	
-	$(".section4_div_swiper .swiper-pagination").append("<span class='text_swiper_gostop'>½½¶óÀÌ´õ ¿ÀÅäÇÃ·¹ÀÌ Àç»ý/ÀÏ½ÃÁ¤Áö</span>");
+	$(".section4_div_swiper .swiper-pagination").append("<span class='text_swiper_gostop'>ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½/ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½</span>");
 	$(document).on("click", ".section4_div_swiper .text_swiper_gostop", function() {
 		
 		if($(this).hasClass("go")) {

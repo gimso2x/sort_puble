@@ -2,17 +2,17 @@
 <html lang="ko">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>¹Ì·¡¿¡¼Â´ë¿ì</title>
+<title>ë¯¸ëž˜ì—ì…‹ëŒ€ìš°</title>
 <link rel="stylesheet" href="../css/common.css">
 <link rel="stylesheet" href="../css/plugin/jquery-ui.css">
 
 <script src="../js/jquery-1.12.4.min.js"></script>
 <script src="../js/common.js"></script>
-<!-- swiper - ½½¶óÀÌ´õ  ÇÃ·¯±×ÀÎ -->
+<!-- swiper - ìŠ¬ë¼ì´ë”  í”ŒëŸ¬ê·¸ì¸ -->
 	<script src="../js/plugin/swiper.min.js"></script>
-	<!-- // swiper - ½½¶óÀÌ´õ ÇÃ·¯±×ÀÎ -->
+	<!-- // swiper - ìŠ¬ë¼ì´ë” í”ŒëŸ¬ê·¸ì¸ -->
 
 <!-- jquery-ui -->
 <script src="../js/plugin/jquery-ui.min.js"></script>
@@ -21,13 +21,13 @@
 		$(document).ready(function() {
 			// input file
 			var fileTarget = $('.filebox .upload-hidden');
-			fileTarget.on('change', function () { // °ªÀÌ º¯°æµÇ¸é 
+			fileTarget.on('change', function () { // ê°’ì´ ë³€ê²½ë˜ë©´ 
 				if (window.FileReader) { // modern browser 
 					var filename = $(this)[0].files[0].name;
 				} else { // old IE 
-					var filename = $(this).val().split('/').pop().split('\\').pop(); // ÆÄÀÏ¸í¸¸ ÃßÃâ 
+					var filename = $(this).val().split('/').pop().split('\\').pop(); // íŒŒì¼ëª…ë§Œ ì¶”ì¶œ 
 				}
-				// ÃßÃâÇÑ ÆÄÀÏ¸í »ðÀÔ 
+				// ì¶”ì¶œí•œ íŒŒì¼ëª… ì‚½ìž… 
 				$(this).siblings('.upload-name').val(filename);
 			});
 		});
@@ -35,69 +35,69 @@
 </head>
 
 <body>
-	<div id="skip_nav" title="½ºÅµ¸Þ´º">
-		<a href="#header">Çì´õ</a>
-		<a href="#container">º»¹®</a>
-		<a href="#footer">ÇªÅÍ</a>
+	<div id="skip_nav" title="ìŠ¤í‚µë©”ë‰´">
+		<a href="#header">í—¤ë”</a>
+		<a href="#container">ë³¸ë¬¸</a>
+		<a href="#footer">í‘¸í„°</a>
 	</div>
 	<div id="wrap">
-		<!-- Çì´õ -->
+		<!-- í—¤ë” -->
 		<header id="header">
 			<div class="container_wrap">
 				<h1 class="header_logo">
 					<a href="javascript:void(0);">
-						<img src="../img/common/header_logo.png" alt="¹Ì·¡¿¡¼Â´ë¿ì ÀüÀÚÅõÇ¥ ÆäÀÌÁö »ó´Ü ·Î°í">
+						<img src="../img/common/header_logo.png" alt="ë¯¸ëž˜ì—ì…‹ëŒ€ìš° ì „ìžíˆ¬í‘œ íŽ˜ì´ì§€ ìƒë‹¨ ë¡œê³ ">
 					</a>
 				</h1>
-				<h2>¼­ºñ½º °¡ÀÔ</h2>
+				<h2>ì„œë¹„ìŠ¤ ê°€ìž…</h2>
 				<div class="header_buttonwrap">
 					<div class="form_search">
-						<a href="javascript:void(0);" class="form_search_back"><span class="ir">°Ë»öºÎºÐ ÁÙÀÌ±â</span></a>
-						<label><input type="text" name="search" class="input_search" placeholder="È¸»ç¹øÈ£ ¶Ç´Â È¸»ç¸íÀ» ÀÔ·ÂÇÏ¼¼¿ä"></label>
-						<a href="javascript:void(0)" class="form_search_clear"><span class="ir">°Ë»ö ÅØ½ºÆ® ÀÔ·Â½Ã Å¬¸®¾î ¹öÆ°</span></a>
-						<a href="javascript:void(0);" class="btn_search"><span class="ir">°Ë»ö input º¸¿©ÁÖ´Â¹öÆ°</span></a>
-						<button type="button" class="header_btn">°Ë»ö Á¶È¸ ¹öÆ°</button>
+						<a href="javascript:void(0);" class="form_search_back"><span class="ir">ê²€ìƒ‰ë¶€ë¶„ ì¤„ì´ê¸°</span></a>
+						<label><input type="text" name="search" class="input_search" placeholder="íšŒì‚¬ë²ˆí˜¸ ë˜ëŠ” íšŒì‚¬ëª…ì„ ìž…ë ¥í•˜ì„¸ìš”"></label>
+						<a href="javascript:void(0)" class="form_search_clear"><span class="ir">ê²€ìƒ‰ í…ìŠ¤íŠ¸ ìž…ë ¥ì‹œ í´ë¦¬ì–´ ë²„íŠ¼</span></a>
+						<a href="javascript:void(0);" class="btn_search"><span class="ir">ê²€ìƒ‰ input ë³´ì—¬ì£¼ëŠ”ë²„íŠ¼</span></a>
+						<button type="button" class="header_btn">ê²€ìƒ‰ ì¡°íšŒ ë²„íŠ¼</button>
 					</div>
-					<a href="javascript:void(0);" class="btn_notice"><span class="ir">¾Ë¸²¹öÆ°</span></a>
-					<!-- <a href="javascript:void(0);" class="btn_notice_new"><span class="ir">»õ¼Ò½Ä ÀÖ´Â ¾Ë¸²¹öÆ°</span></a> -->
-					<a href="javascript:void(0);" class="btn_user"><span class="ir">À¯Àú¹öÆ°</span></a>
+					<a href="javascript:void(0);" class="btn_notice"><span class="ir">ì•Œë¦¼ë²„íŠ¼</span></a>
+					<!-- <a href="javascript:void(0);" class="btn_notice_new"><span class="ir">ìƒˆì†Œì‹ ìžˆëŠ” ì•Œë¦¼ë²„íŠ¼</span></a> -->
+					<a href="javascript:void(0);" class="btn_user"><span class="ir">ìœ ì €ë²„íŠ¼</span></a>
 				</div>
 				<!-- gnb -->
 				<div id="gnb">
-					<a href="javascript:void(0);" class="btn_menu"><span class="ir">¸Þ´º ¿ÀÇÂ ¹öÆ°</span></a>
+					<a href="javascript:void(0);" class="btn_menu"><span class="ir">ë©”ë‰´ ì˜¤í”ˆ ë²„íŠ¼</span></a>
 					<ul class="gnb_1depth">
-						<li><a href="javascript:void(0);">¼­ºñ½º ¼Ò°³</a>
+						<li><a href="javascript:void(0);">ì„œë¹„ìŠ¤ ì†Œê°œ</a>
 							<ul class="gnb_2depth">
-								<li><a href="javascript:void(0);">ÇÃ·§Æû V¶õ?</a></li>
-								<li><a href="javascript:void(0);">ÁÖÁÖ(°³ÀÎ,¹ýÀÎ) ¼­ºñ½º °¡ÀÌµå</a></li>
-								<li><a href="javascript:void(0);">È¸»ç ¼­ºñ½º °¡ÀÌµå</a></li>
+								<li><a href="javascript:void(0);">í”Œëž«í¼ Vëž€?</a></li>
+								<li><a href="javascript:void(0);">ì£¼ì£¼(ê°œì¸,ë²•ì¸) ì„œë¹„ìŠ¤ ê°€ì´ë“œ</a></li>
+								<li><a href="javascript:void(0);">íšŒì‚¬ ì„œë¹„ìŠ¤ ê°€ì´ë“œ</a></li>
 							</ul>
 						</li>
-						<li><a href="javascript:void(0);">¼­ºñ½º °¡ÀÔ</a>
+						<li><a href="javascript:void(0);">ì„œë¹„ìŠ¤ ê°€ìž…</a>
 							<ul class="gnb_2depth">
-								<li><a href="javascript:void(0);">ÁÖÁÖ(°³ÀÎ, ¹ýÀÎ) ¼­ºñ½º °¡ÀÔ</a></li>
-								<li><a href="javascript:void(0);">È¸»ç ¼­ºñ½º °¡ÀÔ</a></li>
+								<li><a href="javascript:void(0);">ì£¼ì£¼(ê°œì¸, ë²•ì¸) ì„œë¹„ìŠ¤ ê°€ìž…</a></li>
+								<li><a href="javascript:void(0);">íšŒì‚¬ ì„œë¹„ìŠ¤ ê°€ìž…</a></li>
 							</ul>
 						</li>
-						<li><a href="javascript:void(0);">ÁÖÁÖÃÑÈ¸ ÀüÃ¼ÀÏÁ¤</a>
+						<li><a href="javascript:void(0);">ì£¼ì£¼ì´íšŒ ì „ì²´ì¼ì •</a>
 							<ul class="gnb_2depth">
-								<li><a href="javascript:void(0);">ÁÖÁÖ(°³ÀÎ, ¹ýÀÎ) ¼­ºñ½º °¡ÀÔ</a></li>
-								<li><a href="javascript:void(0);">È¸»ç ¼­ºñ½º °¡ÀÔ</a></li>
+								<li><a href="javascript:void(0);">ì£¼ì£¼(ê°œì¸, ë²•ì¸) ì„œë¹„ìŠ¤ ê°€ìž…</a></li>
+								<li><a href="javascript:void(0);">íšŒì‚¬ ì„œë¹„ìŠ¤ ê°€ìž…</a></li>
 							</ul>
 						</li>
-						<li><a href="javascript:void(0);">±â¾÷ È«º¸°ü</a>
+						<li><a href="javascript:void(0);">ê¸°ì—… í™ë³´ê´€</a>
 							<ul class="gnb_2depth">
-								<li><a href="javascript:void(0);">ÁÖÁÖ(°³ÀÎ, ¹ýÀÎ) ¼­ºñ½º °¡ÀÔ</a></li>
-								<li><a href="javascript:void(0);">È¸»ç ¼­ºñ½º °¡ÀÔ</a></li>
+								<li><a href="javascript:void(0);">ì£¼ì£¼(ê°œì¸, ë²•ì¸) ì„œë¹„ìŠ¤ ê°€ìž…</a></li>
+								<li><a href="javascript:void(0);">íšŒì‚¬ ì„œë¹„ìŠ¤ ê°€ìž…</a></li>
 							</ul>
 						</li>
-						<li><a href="javascript:void(0);">°í°´¼¾ÅÍ</a>
+						<li><a href="javascript:void(0);">ê³ ê°ì„¼í„°</a>
 							<ul class="gnb_2depth">
-								<li><a href="javascript:void(0);">°øÁö»çÇ×</a></li>
-								<li><a href="javascript:void(0);">ÀÚÁÖ ¹¯´Â Áú¹®</a></li>
-								<li><a href="javascript:void(0);">ÀÌº¥Æ®</a></li>
-								<li><a href="javascript:void(0);">1:1 ¹®ÀÇ</a></li>
-								<li><a href="javascript:void(0);">V ÀÚ·á½Ç</a></li>
+								<li><a href="javascript:void(0);">ê³µì§€ì‚¬í•­</a></li>
+								<li><a href="javascript:void(0);">ìžì£¼ ë¬»ëŠ” ì§ˆë¬¸</a></li>
+								<li><a href="javascript:void(0);">ì´ë²¤íŠ¸</a></li>
+								<li><a href="javascript:void(0);">1:1 ë¬¸ì˜</a></li>
+								<li><a href="javascript:void(0);">V ìžë£Œì‹¤</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -105,50 +105,50 @@
 				<!-- // gnb -->
 			</div>
 			
-			<!-- ÁÖÁÖ 01-03-01 °³ÀÎÁ¤º¸ ¼öÁ¤ ÅÇ -->
+			<!-- ì£¼ì£¼ 01-03-01 ê°œì¸ì •ë³´ ìˆ˜ì • íƒ­ -->
 			<div class="div_header_user_menu">
 				<div class="container_wrap">
-					<a href="javascript:void(0);" class="user_menu_close"><span class="ir">ÁÖÁÖ,È¸»ç Á¤º¸¸Þ´º ´Ý±â</span></a>
+					<a href="javascript:void(0);" class="user_menu_close"><span class="ir">ì£¼ì£¼,íšŒì‚¬ ì •ë³´ë©”ë‰´ ë‹«ê¸°</span></a>
 					<div class="row">
 						<div class="col fl">
 							<div class="personal_info">
-								<button type="button" class="personal_info_btn">°³ÀÎÁ¤º¸ ¼³Á¤ ¹öÆ°</button>
+								<button type="button" class="personal_info_btn">ê°œì¸ì •ë³´ ì„¤ì • ë²„íŠ¼</button>
 								<div>
 									<ul class="personal_info_modify">
-										<li><a href="javascript:void(0);">°³ÀÎÁ¤º¸ ¼öÁ¤</a></li>
+										<li><a href="javascript:void(0);">ê°œì¸ì •ë³´ ìˆ˜ì •</a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="personal_img_wrap">
-								<img src="../img/common/personal/ico_person_default.jpg" alt="±âº»ÇÁ·ÎÇÊ »çÁø">
+								<img src="../img/common/personal/ico_person_default.jpg" alt="ê¸°ë³¸í”„ë¡œí•„ ì‚¬ì§„">
 							</div>
 							<p class="persopnal_info_name">
-								<span>¹Ú¹Ì·¡</span>´ÔÀÇ V
+								<span>ë°•ë¯¸ëž˜</span>ë‹˜ì˜ V
 							</p>
 							<p class="logout_wrap">
-								<button type="button">·Î±×¾Æ¿ô</button>
+								<button type="button">ë¡œê·¸ì•„ì›ƒ</button>
 							</p>
 							
 						</div>
 						<div class="col fr">
 							<div class="header_ment">
-								<p>ÀÌ ´ÞÀÇ<br>ÁÖÁÖÃÑÈ¸</p>
+								<p>ì´ ë‹¬ì˜<br>ì£¼ì£¼ì´íšŒ</p>
 							</div>
 							<ul>
 								<li>
-									<p>ÁÖÁÖÃÑÈ¸ °á°ú</p>
+									<p>ì£¼ì£¼ì´íšŒ ê²°ê³¼</p>
 									<a href="javascript:void(0);">24</a>
 								</li>
 								<li>
-									<p>ÅõÇ¥/À§ÀÓ ÁøÇà</p>
+									<p>íˆ¬í‘œ/ìœ„ìž„ ì§„í–‰</p>
 									<a href="javascript:void(0);">7</a>
 								</li>
 								<li>
-									<p>ÅõÇ¥/À§ÀÓ ³»¿ª</p>
+									<p>íˆ¬í‘œ/ìœ„ìž„ ë‚´ì—­</p>
 									<a href="javascript:void(0);">2</a>
 								</li>
 							</ul>
-							<!-- ÇÁ·Î¸ð¼Ç ½½¶óÀÌµå -->
+							<!-- í”„ë¡œëª¨ì…˜ ìŠ¬ë¼ì´ë“œ -->
 							<div class="swiper-container header_promo">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide">
@@ -161,157 +161,157 @@
 								<!-- Add Pagination -->
 								<div class="swiper-pagination"></div>
 							</div>
-							<!-- //ÇÁ·Î¸ð¼Ç ½½¶óÀÌµå -->
+							<!-- //í”„ë¡œëª¨ì…˜ ìŠ¬ë¼ì´ë“œ -->
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- // ¸Þ´º ÅÇ -->
+			<!-- // ë©”ë‰´ íƒ­ -->
 
-			<!-- ÀÚµ¿¿Ï¼º ÅÇ -->
+			<!-- ìžë™ì™„ì„± íƒ­ -->
 			<div class="div_header_add_ajax">
 				<ul>
-					<li><span><a href="javascript:void(0);">00683</a></span><a href="javascript:void(0);">¸£³ë<b>»ï¼º</b>ÀÚµ¿Â÷</a></li>
-					<li><span><a href="javascript:void(0);">00683</a></span><a href="javascript:void(0);">¸£³ë<b>»ï¼º</b>ÀÚµ¿Â÷</a></li>
-					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>»ï¼º</b>¹ÙÀÌ¿À·ÎÁ÷½º</a></li>
-					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>»ï¼º</b>¿¡½ºµð¿¡½º</a></li>
-					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>»ï¼º</b>¿¡½ºµð¿¡½º</a></li>
-					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>»ï¼º</b>¿¡½ºµð¿¡½º</a></li>
-					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>»ï¼º</b>¿¡½ºµð¿¡½º</a></li>
-					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>»ï¼º</b>¿¡½ºµð¿¡½º</a></li>
-					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>»ï¼º</b>¿¡½ºµð¿¡½º</a></li>
-					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>»ï¼º</b>¿¡½ºµð¿¡½º</a></li>
-					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>»ï¼º</b>¿¡½ºµð¿¡½º</a></li>
-					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>»ï¼º</b>¿¡½ºµð¿¡½º</a></li>
+					<li><span><a href="javascript:void(0);">00683</a></span><a href="javascript:void(0);">ë¥´ë…¸<b>ì‚¼ì„±</b>ìžë™ì°¨</a></li>
+					<li><span><a href="javascript:void(0);">00683</a></span><a href="javascript:void(0);">ë¥´ë…¸<b>ì‚¼ì„±</b>ìžë™ì°¨</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>ì‚¼ì„±</b>ë°”ì´ì˜¤ë¡œì§ìŠ¤</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>ì‚¼ì„±</b>ì—ìŠ¤ë””ì—ìŠ¤</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>ì‚¼ì„±</b>ì—ìŠ¤ë””ì—ìŠ¤</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>ì‚¼ì„±</b>ì—ìŠ¤ë””ì—ìŠ¤</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>ì‚¼ì„±</b>ì—ìŠ¤ë””ì—ìŠ¤</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>ì‚¼ì„±</b>ì—ìŠ¤ë””ì—ìŠ¤</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>ì‚¼ì„±</b>ì—ìŠ¤ë””ì—ìŠ¤</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>ì‚¼ì„±</b>ì—ìŠ¤ë””ì—ìŠ¤</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>ì‚¼ì„±</b>ì—ìŠ¤ë””ì—ìŠ¤</a></li>
+					<li><span><a href="javascript:void(0);">0068300</a></span><a href="javascript:void(0);"><b>ì‚¼ì„±</b>ì—ìŠ¤ë””ì—ìŠ¤</a></li>
 				</ul>
 			</div>
-			<!-- // ÀÚµ¿¿Ï¼º ÅÇ -->
+			<!-- // ìžë™ì™„ì„± íƒ­ -->
 			
-			<!-- °Ë»ö¿É¼Ç ÅÇ -->
+			<!-- ê²€ìƒ‰ì˜µì…˜ íƒ­ -->
 			<div class="div_header_add">
 				<div class="div_search_option">
-					<span>±â°£</span>
+					<span>ê¸°ê°„</span>
 					<label for="from">From</label>
-					<input type="text" id="from" name="from" placeholder="ÁÖÁÖÃÑÈ¸ ½ÃÀÛ ÀÏÀÚ" onclick="layer_popup('#pop_calendar')">
+					<input type="text" id="from" name="from" placeholder="ì£¼ì£¼ì´íšŒ ì‹œìž‘ ì¼ìž" onclick="layer_popup('#pop_calendar')">
 					<span>~</span>
 					<label for="to">to</label>
-					<input type="text" id="to" name="to" placeholder="ÁÖÁÖÃÑÈ¸ Á¾·á ÀÏÀÚ" onclick="layer_popup('#pop_calendar')">
-					<i class="ico_calendar" onclick="layer_popup('#pop_calendar')"><span class="ir">Ä¶¸°´õ ¾È³» ÀÌ¹ÌÁö</span></i>
+					<input type="text" id="to" name="to" placeholder="ì£¼ì£¼ì´íšŒ ì¢…ë£Œ ì¼ìž" onclick="layer_popup('#pop_calendar')">
+					<i class="ico_calendar" onclick="layer_popup('#pop_calendar')"><span class="ir">ìº˜ë¦°ë” ì•ˆë‚´ ì´ë¯¸ì§€</span></i>
 					<div class="buttonwrap">
-						<button class="btn_default">Àç¼³Á¤</button>
-						<button class="btn_submit">Á¶È¸</button>
+						<button class="btn_default">ìž¬ì„¤ì •</button>
+						<button class="btn_submit">ì¡°íšŒ</button>
 					</div>
 				</div>
 			</div>
-			<!-- //°Ë»ö¿É¼Ç ÅÇ -->
+			<!-- //ê²€ìƒ‰ì˜µì…˜ íƒ­ -->
 			
 		</header>
 		<div id="block_allmenu"></div>
-		<!-- // E:Çì´õ -->
+		<!-- // E:í—¤ë” -->
 
-		<!-- ÄÁÅ×ÀÌ³Ê -->
+		<!-- ì»¨í…Œì´ë„ˆ -->
 		<div id="container">
 			<section id="member">
-				<h3 class="">¼­ºñ½º °¡ÀÔ (¹ßÇàÈ¸»ç)</h3>
+				<h3 class="">ì„œë¹„ìŠ¤ ê°€ìž… (ë°œí–‰íšŒì‚¬)</h3>
 				<div class="join form_write">
 					<form action="">
 						<fieldset>
 							<div class="row clearfix inBtnlabel_wrap">
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">¹ßÇàÈ¸»ç¸í</span></strong>
+									<strong class="txt_title"><span class="point point_r">ë°œí–‰íšŒì‚¬ëª…</span></strong>
 									<label class="inBtnlabel"><input type="text" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">»ç¾÷ÀÚµî·Ï¹øÈ£</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col fl">
-									<button class="btn_submit" id="btnDartApi" type="button">Á¶È¸</button>
+									<button class="btn_submit" id="btnDartApi" type="button">ì¡°íšŒ</button>
 								</div>
 							</div>
-							<p class="txt_warning">È¸»ç¸íÀ» ÀÔ·ÂÇÏ½Ã¸é ÀÚµ¿À¸·Î »ç¾÷ÀÚµî·Ï¹øÈ£°¡ ³ëÃâµÇ¸ç, Á¶È¸¹öÆ°À» ´©¸¥ ÈÄ °øÀÎÀÎÁõÀ» ÇÏ½Ã¸é È¸»çÁ¤º¸ÀÔ·ÂÀÇ ±âº»Á¤º¸µéÀÌ ÀÚµ¿ÀÔ·Â µË´Ï´Ù.</p>
+							<p class="txt_warning">íšŒì‚¬ëª…ì„ ìž…ë ¥í•˜ì‹œë©´ ìžë™ìœ¼ë¡œ ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸ê°€ ë…¸ì¶œë˜ë©°, ì¡°íšŒë²„íŠ¼ì„ ëˆ„ë¥¸ í›„ ê³µì¸ì¸ì¦ì„ í•˜ì‹œë©´ íšŒì‚¬ì •ë³´ìž…ë ¥ì˜ ê¸°ë³¸ì •ë³´ë“¤ì´ ìžë™ìž…ë ¥ ë©ë‹ˆë‹¤.</p>
 							
 							<div class="row clearfix">
 								<div class="col f3">
-									<strong class="txt_title"><span class="point point_r">ºñ¹Ð¹øÈ£</span></strong>
+									<strong class="txt_title"><span class="point point_r">ë¹„ë°€ë²ˆí˜¸</span></strong>
 									<label><input type="password" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col f3">
-									<strong class="txt_title"><span class="point point_r">ºñ¹Ð¹øÈ£ È®ÀÎ</span></strong>
+									<strong class="txt_title"><span class="point point_r">ë¹„ë°€ë²ˆí˜¸ í™•ì¸</span></strong>
 									<label><input type="password" id="" name="" class="form_control"></label>
 								</div>
 							</div>
-							<p class="txt_warning">¾ÆÀÌµð´Â »ç¾÷ÀÚµî·Ï¹øÈ£ÀÔ´Ï´Ù. ºñ¹Ð¹øÈ£¸¦ ¼³Á¤ÇÏ¿©ÁÖ¼¼¿ä. ºñ¹Ð¹øÈ£´Â ¿µ¹®, ¼ýÀÚ, Æ¯¼ö¹®ÀÚ Áß 2°¡Áö ÀÌ»ó È¥ÇÕÇÏ¿© 8ÀÚ¸® ÀÌ»ó 20ÀÚ¸® ÀÌ³»ÀÔ´Ï´Ù.</p>
+							<p class="txt_warning">ì•„ì´ë””ëŠ” ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸ìž…ë‹ˆë‹¤. ë¹„ë°€ë²ˆí˜¸ë¥¼ ì„¤ì •í•˜ì—¬ì£¼ì„¸ìš”. ë¹„ë°€ë²ˆí˜¸ëŠ” ì˜ë¬¸, ìˆ«ìž, íŠ¹ìˆ˜ë¬¸ìž ì¤‘ 2ê°€ì§€ ì´ìƒ í˜¼í•©í•˜ì—¬ 8ìžë¦¬ ì´ìƒ 20ìžë¦¬ ì´ë‚´ìž…ë‹ˆë‹¤.</p>
 							
-							<!-- È¸»çÁ¤º¸ ÀÔ·Â -->
+							<!-- íšŒì‚¬ì •ë³´ ìž…ë ¥ -->
 							<p class="form_write_tit">
-								È¸»çÁ¤º¸ ÀÔ·Â<span class="">(¸ðµç ÀÔ·Â»çÇ× ÇÊ¼ö »çÇ× ÀÔ´Ï´Ù)</span>
+								íšŒì‚¬ì •ë³´ ìž…ë ¥<span class="">(ëª¨ë“  ìž…ë ¥ì‚¬í•­ í•„ìˆ˜ ì‚¬í•­ ìž…ë‹ˆë‹¤)</span>
 							</p>
 							<div class="row clearfix">
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">±¹¹®È¸»ç¸í</span></strong>
+									<strong class="txt_title"><span class="point point_r">êµ­ë¬¸íšŒì‚¬ëª…</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col fr">
-									<strong class="txt_title"><span class="point point_r">»ç¾÷ÀÚµî·Ï¹øÈ£</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 							</div>
 							<div class="row clearfix">
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">¿µ¹®È¸»ç¸í</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì˜ë¬¸íšŒì‚¬ëª…</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col fr">
-									<strong class="txt_title"><span class="point point_r">¹ýÀÎµî·Ï¹øÈ£</span></strong>
+									<strong class="txt_title"><span class="point point_r">ë²•ì¸ë“±ë¡ë²ˆí˜¸</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 							</div>
 							<div class="row clearfix">
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">¾÷Á¾</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì—…ì¢…</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col fr">
-									<strong class="txt_title"><span class="point point_r">´ëÇ¥ÀÚ ¼º¸í</span></strong>
+									<strong class="txt_title"><span class="point point_r">ëŒ€í‘œìž ì„±ëª…</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 							</div>
 							<div class="row clearfix">
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">ÁÖ½ÄÁ¾¸ñÄÚµå</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì£¼ì‹ì¢…ëª©ì½”ë“œ</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col fr">
-									<strong class="txt_title"><span class="point point_r">ÁÖ½Ä½ÃÀå±¸ºÐ</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì£¼ì‹ì‹œìž¥êµ¬ë¶„</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 							</div>
 							<div class="row clearfix">
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">´ëÇà±â°ü</span></strong>
+									<strong class="txt_title"><span class="point point_r">ëŒ€í–‰ê¸°ê´€</span></strong>
 									<label>
 										<select class="form_control">
-											<option>¼±ÅÃÇÏ¼¼¿ä</option>
+											<option>ì„ íƒí•˜ì„¸ìš”</option>
 											<option>KSD</option>
-											<option>ÇÏ³ªÀºÇà</option>
-											<option>±¹¹ÎÀºÇà</option>
-											<option>Á÷Á¢°ü¸®</option>
+											<option>í•˜ë‚˜ì€í–‰</option>
+											<option>êµ­ë¯¼ì€í–‰</option>
+											<option>ì§ì ‘ê´€ë¦¬</option>
 										</select>
 									</label>
 								</div>
 								<div class="col fr">
-									<strong class="txt_title"><span class="point point_r">°á»ê¿ù</span></strong>
+									<strong class="txt_title"><span class="point point_r">ê²°ì‚°ì›”</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 							</div>
 							<div class="row clearfix">
-								<strong class="txt_title"><span class="point point_r">ÁÖ¼Ò</span></strong>
+								<strong class="txt_title"><span class="point point_r">ì£¼ì†Œ</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 							</div>
 							<div class="row clearfix">
 								<div class="col fl">
-									<strong class="txt_title"><a href="javascript:void(0);" class="point point_r">¹ýÀÎ µî±âºÎµîº»</a></strong>
+									<strong class="txt_title"><a href="javascript:void(0);" class="point point_r">ë²•ì¸ ë“±ê¸°ë¶€ë“±ë³¸</a></strong>
 									<div class="filebox">
 										<input class="upload-name" value="" disabled="disabled">
 										<label for="ex_filename0" tabindex="0"></label>
@@ -320,7 +320,7 @@
 								</div>
 								<div class="col fr">
 									<strong class="txt_title"><a
-										href="javascript:void(0);" class="point point_r">»ç¾÷ÀÚµî·ÏÁõ</a></strong>
+										href="javascript:void(0);" class="point point_r">ì‚¬ì—…ìžë“±ë¡ì¦</a></strong>
 									<div class="filebox">
 										<input class="upload-name" value="" disabled="disabled">
 										<label for="ex_filename1" tabindex="0"></label>
@@ -328,183 +328,183 @@
 									</div>
 								</div>
 							</div>
-							<!-- // È¸»çÁ¤º¸ ÀÔ·Â -->
+							<!-- // íšŒì‚¬ì •ë³´ ìž…ë ¥ -->
 							
-							<!-- ¾÷¹«´ã´çÀÚ Á¤º¸ -->
+							<!-- ì—…ë¬´ë‹´ë‹¹ìž ì •ë³´ -->
 							<p class="form_write_tit">
-								¾÷¹«´ã´çÀÚ Á¤º¸<span class="">(¸ðµç ÀÔ·Â»çÇ× ÇÊ¼ö »çÇ× ÀÔ´Ï´Ù)</span>
+								ì—…ë¬´ë‹´ë‹¹ìž ì •ë³´<span class="">(ëª¨ë“  ìž…ë ¥ì‚¬í•­ í•„ìˆ˜ ì‚¬í•­ ìž…ë‹ˆë‹¤)</span>
 							</p>
 							<div class="row clearfix">
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">¼º¸í</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì„±ëª…</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col fr">
-									<strong class="txt_title"><span class="point point_r">ÀüÈ­¹øÈ£</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì „í™”ë²ˆí˜¸</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 							</div>
 							<div class="row clearfix">
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">ºÎ¼­</span></strong>
+									<strong class="txt_title"><span class="point point_r">ë¶€ì„œ</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col fr">
-									<strong class="txt_title"><span class="point point_r">ÇÚµåÆù¹øÈ£</span></strong>
+									<strong class="txt_title"><span class="point point_r">í•¸ë“œí°ë²ˆí˜¸</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 							</div>
 							<div class="row clearfix">
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">Á÷À§</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì§ìœ„</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col fr">
-									<strong class="txt_title"><span class="point point_r">ÀÌ¸ÞÀÏ</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì´ë©”ì¼</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 							</div>
-							<!-- // ¾÷¹«´ã´çÀÚ Á¤º¸ -->
+							<!-- // ì—…ë¬´ë‹´ë‹¹ìž ì •ë³´ -->
 							
-							<!-- ¾÷¹«Ã¥ÀÓÀÚ Á¤º¸ -->
+							<!-- ì—…ë¬´ì±…ìž„ìž ì •ë³´ -->
 							<p class="form_write_tit">
-								¾÷¹«Ã¥ÀÓÀÚ Á¤º¸<span class="">(¸ðµç ÀÔ·Â»çÇ× ÇÊ¼ö »çÇ× ÀÔ´Ï´Ù)</span>
+								ì—…ë¬´ì±…ìž„ìž ì •ë³´<span class="">(ëª¨ë“  ìž…ë ¥ì‚¬í•­ í•„ìˆ˜ ì‚¬í•­ ìž…ë‹ˆë‹¤)</span>
 							</p>
 							<div class="row clearfix">
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">¼º¸í</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì„±ëª…</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col fr">
-									<strong class="txt_title"><span class="point point_r">ÀüÈ­¹øÈ£</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì „í™”ë²ˆí˜¸</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 							</div>
 							<div class="row clearfix">
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">ºÎ¼­</span></strong>
+									<strong class="txt_title"><span class="point point_r">ë¶€ì„œ</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col fr">
-									<strong class="txt_title"><span class="point point_r">ÇÚµåÆù¹øÈ£</span></strong>
+									<strong class="txt_title"><span class="point point_r">í•¸ë“œí°ë²ˆí˜¸</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 							</div>
 							<div class="row clearfix">
 								<div class="col fl">
-									<strong class="txt_title"><span class="point point_r">Á÷À§</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì§ìœ„</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 								<div class="col fr">
-									<strong class="txt_title"><span class="point point_r">ÀÌ¸ÞÀÏ</span></strong>
+									<strong class="txt_title"><span class="point point_r">ì´ë©”ì¼</span></strong>
 									<label><input type="text" id="" name="" class="form_control"></label>
 								</div>
 							</div>
-							<!-- // ¾÷¹«Ã¥ÀÓÀÚ Á¤º¸ -->
+							<!-- // ì—…ë¬´ì±…ìž„ìž ì •ë³´ -->
 							
 							<div class="row clearfix">
 								<div class="checkbox joinlast_check">
 									<input type="checkbox" id="check_agree15" name="" class="form_control">
-									<label for="check_agree15">ÀüÀÚÅõÇ¥°ü¸® ¹× ÀüÀÚÀ§ÀÓÀå±ÇÀ¯ °ü¸® ¼­ºñ½º ÀÌ¿ëÀ» À§ÇÑ ¾÷¹«À§Å¹ °è¾à¼­ ³»¿ëÀ» È®ÀÎÇÏ¿´À¸¸ç °è¾à¿¡ µ¿ÀÇÇÕ´Ï´Ù.</label>
+									<label for="check_agree15">ì „ìžíˆ¬í‘œê´€ë¦¬ ë° ì „ìžìœ„ìž„ìž¥ê¶Œìœ  ê´€ë¦¬ ì„œë¹„ìŠ¤ ì´ìš©ì„ ìœ„í•œ ì—…ë¬´ìœ„íƒ ê³„ì•½ì„œ ë‚´ìš©ì„ í™•ì¸í•˜ì˜€ìœ¼ë©° ê³„ì•½ì— ë™ì˜í•©ë‹ˆë‹¤.</label>
 								</div>
 							</div>
-							<p class="txt_warning">¾÷¹«À§Å¹°è¾à¼­ ¹öÆ°À» Å¬¸¯ÇÏ¿© ¾÷¹«À§Å¹°è¾à¼­ ³»¿ëÀ» È®ÀÎÇÏ¼Å¾ß µ¿ÀÇ¿¡ Ã¼Å©¸¦ ÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.</p>
+							<p class="txt_warning">ì—…ë¬´ìœ„íƒê³„ì•½ì„œ ë²„íŠ¼ì„ í´ë¦­í•˜ì—¬ ì—…ë¬´ìœ„íƒê³„ì•½ì„œ ë‚´ìš©ì„ í™•ì¸í•˜ì…”ì•¼ ë™ì˜ì— ì²´í¬ë¥¼ í•˜ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 							
 							<div class="changeBtn_wrap clearfix">
-								<!-- »ö»ó º¯°æ½Ã class acitve -->
-								<button type="button" class="fl">ÀüÀÚÅõÇ¥°ü¸®¼­ºñ½º À§Å¹°è¾à¼­</button>
-								<button type="button" class="fl">ÀüÀÚÀ§ÀÓÀå±ÇÀ¯°ü¸®¼­ºñ½º À§Å¹°è¾à¼­</button>
+								<!-- ìƒ‰ìƒ ë³€ê²½ì‹œ class acitve -->
+								<button type="button" class="fl">ì „ìžíˆ¬í‘œê´€ë¦¬ì„œë¹„ìŠ¤ ìœ„íƒê³„ì•½ì„œ</button>
+								<button type="button" class="fl">ì „ìžìœ„ìž„ìž¥ê¶Œìœ ê´€ë¦¬ì„œë¹„ìŠ¤ ìœ„íƒê³„ì•½ì„œ</button>
 								
-								<button type="button" class="fr active" onclick="layer_popup('#pop_certifi_re')">´ã´çÀÚ SMS ÀÎÁõ</button>
+								<button type="button" class="fr active" onclick="layer_popup('#pop_certifi_re')">ë‹´ë‹¹ìž SMS ì¸ì¦</button>
 							</div>
 							
 							<div class="submit_area clearfix">
-								<button type="button" class="btn btn_lg btn_default" onclick="layer_popup('#pop_content_removeall')">ÃÊ±âÈ­</button>
-								<button type="button" class="btn btn_lg btn_primary" onclick="layer_popup('#pop_content_joinok')">´ÙÀ½</button>
+								<button type="button" class="btn btn_lg btn_default" onclick="layer_popup('#pop_content_removeall')">ì´ˆê¸°í™”</button>
+								<button type="button" class="btn btn_lg btn_primary" onclick="layer_popup('#pop_content_joinok')">ë‹¤ìŒ</button>
 							</div>
 						</fieldset>
 					</form>
 				</div>
 			</section>
 		</div>
-		<!-- // E:ÄÁÅ×ÀÌ³Ê -->
+		<!-- // E:ì»¨í…Œì´ë„ˆ -->
 
-		<!-- ÇªÅÍ -->
+		<!-- í‘¸í„° -->
 		<footer id="footer">
 			<div class="container_wrap">
 				<div class="text_area">
 					<ul class="footer_gnb">
-						<li><a href="javascript:void(0);">È¸»ç¼Ò°³</a></li>
-						<li><a href="javascript:void(0);">ÀÌ¿ë¾à°ü</a></li>
-						<li><a href="javascript:void(0);">°³ÀÎÁ¤º¸Ãë±ÞÃ³¸®¹æÄ§</a></li>
-						<li><a href="javascript:void(0);">ÀúÀÛ±Çº¸È£¹æÄ§</a></li>
-						<li><a href="javascript:void(0);">PCº¸¾ÈÇÁ·Î±×·¥</a></li>
+						<li><a href="javascript:void(0);">íšŒì‚¬ì†Œê°œ</a></li>
+						<li><a href="javascript:void(0);">ì´ìš©ì•½ê´€</a></li>
+						<li><a href="javascript:void(0);">ê°œì¸ì •ë³´ì·¨ê¸‰ì²˜ë¦¬ë°©ì¹¨</a></li>
+						<li><a href="javascript:void(0);">ì €ìž‘ê¶Œë³´í˜¸ë°©ì¹¨</a></li>
+						<li><a href="javascript:void(0);">PCë³´ì•ˆí”„ë¡œê·¸ëž¨</a></li>
 						<li class="mail"><a href="mailto:ibplatform@miraeasset.com">ibplatform@miraeasset.com</a></li>
 					</ul>
-					<p class="copyright">COPYRIGHT ¨Ï MIRAE ASSET DAEWOO CO., LTD. ALL RIGHTS RESERVED</p>
+					<p class="copyright">COPYRIGHT â“’ MIRAE ASSET DAEWOO CO., LTD. ALL RIGHTS RESERVED</p>
 				</div>
 				<div class="footer_info">
 					<dl class="fl">
-						<dt>°í°´¼¾ÅÍ</dt>
+						<dt>ê³ ê°ì„¼í„°</dt>
 						<dd>1588-6800</dd>
 					</dl>
 					<dl class="fr">
-						<dt>°í°´ÄÉ¾î¼¾ÅÍ</dt>
+						<dt>ê³ ê°ì¼€ì–´ì„¼í„°</dt>
 						<dd>1644-3322</dd>
 					</dl>
 				</div>
 			</div>
 		</footer>
-		<!-- // E:ÇªÅÍ -->
+		<!-- // E:í‘¸í„° -->
 	</div>
-	<!-- ·¹ÀÌ¾îÆË¾÷ -->
+	<!-- ë ˆì´ì–´íŒì—… -->
 	<div class="layer_wrap">
 		<div id="pop_calendar" class="pop-layer">
-			<a href="javascript:void(0);" class="btn_close">´Ý±â</a>
+			<a href="javascript:void(0);" class="btn_close">ë‹«ê¸°</a>
 			<div class="pop-container">
 				<div class="cal_left">
-					<p>ÁÖÁÖÃÑÈ¸ ½ÃÀÛ ÀÏÀÚ</p>
+					<p>ì£¼ì£¼ì´íšŒ ì‹œìž‘ ì¼ìž</p>
 					<div id="from_calendar"></div>
 				</div>
 				<div class="cal_right">
-					<p>ÁÖÁÖÃÑÈ¸ Á¾·á ÀÏÀÚ</p>
+					<p>ì£¼ì£¼ì´íšŒ ì¢…ë£Œ ì¼ìž</p>
 					<div id="to_calendar"></div>
 				</div>
 			</div>
 			<div class="button_wrap">
-				<button class="btn_submit" id="cal_complete">±â°£ ¼±ÅÃ ¿Ï·á</button>
+				<button class="btn_submit" id="cal_complete">ê¸°ê°„ ì„ íƒ ì™„ë£Œ</button>
 			</div>
 		</div>
 	</div>
 	
-	<!-- ÀÔ·ÂÇÑ³»¿ëÀÌ ¸ðµÎ »ç¶óÁý´Ï´Ù ÆË¾÷-->
+	<!-- ìž…ë ¥í•œë‚´ìš©ì´ ëª¨ë‘ ì‚¬ë¼ì§‘ë‹ˆë‹¤ íŒì—…-->
 	<div class="layer_wrap">
 		<div id="pop_content_removeall" class="pop-layer alert-pop">
 			<div class="pop-header">
-				¾Ë¸²
-				<a href="javascript:void(0);" class="btn_close">´Ý±â</a>
+				ì•Œë¦¼
+				<a href="javascript:void(0);" class="btn_close">ë‹«ê¸°</a>
 			</div>
 			<div class="pop-body">
-				ÀÔ·ÂÇÑ ³»¿ëÀÌ ¸ðµÎ »ç¶óÁý´Ï´Ù.<br>Ãë¼ÒÇÏ½Ã°Ù½À´Ï±î?
+				ìž…ë ¥í•œ ë‚´ìš©ì´ ëª¨ë‘ ì‚¬ë¼ì§‘ë‹ˆë‹¤.<br>ì·¨ì†Œí•˜ì‹œê²ŸìŠµë‹ˆê¹Œ?
 				<div class="button_wrap">
-					<button class="btn_default" onclick="pop_close($('#pop_content_removeall'));">¾Æ´Ï¿À</button>
-					<button class="btn_submit" onclick="pop_close($('#pop_content_removeall'));">¿¹</button>
+					<button class="btn_default" onclick="pop_close($('#pop_content_removeall'));">ì•„ë‹ˆì˜¤</button>
+					<button class="btn_submit" onclick="pop_close($('#pop_content_removeall'));">ì˜ˆ</button>
 				</div>
 			</div>
 
 		</div>
 	</div>
-	<!-- 01-01-04 ¼­ºñ½º ÇØÁö Ã³¸®µÇ¾ú½À´Ï´Ù. ÆË¾÷-->
+	<!-- 01-01-04 ì„œë¹„ìŠ¤ í•´ì§€ ì²˜ë¦¬ë˜ì—ˆìŠµë‹ˆë‹¤. íŒì—…-->
 	<div class="layer_wrap">
 		<div id="pop_content_joinok" class="pop-layer alert-pop">
 			<div class="pop-header">
-				¾Ë¸²
-				<a href="javascript:void(0);" class="btn_close">´Ý±â</a>
+				ì•Œë¦¼
+				<a href="javascript:void(0);" class="btn_close">ë‹«ê¸°</a>
 			</div>
 			<div class="pop-body">
-				¼­ºñ½º °¡ÀÔÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.<br>·Î±×ÀÎ ÆäÀÌÁö·Î ÀÌµ¿ÇÕ´Ï´Ù.
+				ì„œë¹„ìŠ¤ ê°€ìž…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.<br>ë¡œê·¸ì¸ íŽ˜ì´ì§€ë¡œ ì´ë™í•©ë‹ˆë‹¤.
 				<div class="button_wrap">
-					<button class="btn_submit" onclick="pop_close($('#pop_content_joinok'));">È®ÀÎ</button>
+					<button class="btn_submit" onclick="pop_close($('#pop_content_joinok'));">í™•ì¸</button>
 				</div>
 			</div>
 
@@ -514,27 +514,27 @@
 	<div class="layer_wrap">
 		<div id="pop_certifi_re" class="pop-layer alert-pop lg">
 			<div class="pop-header">
-				°øÀÎÀÎÁõ¼­ Àçµî·Ï
-				<a href="javascript:void(0);" class="btn_close">´Ý±â</a>
+				ê³µì¸ì¸ì¦ì„œ ìž¬ë“±ë¡
+				<a href="javascript:void(0);" class="btn_close">ë‹«ê¸°</a>
 			</div>
 			<div class="pop-body">
 				<div class="basicmenu">
 					<div class="container_wrap">
 							<div class="basicmenu_body">
 								
-								<!-- °³ÀÎÁ¤º¸ ¿µ¿ª ¾Ë¸²¼­ºñ½º¿¡ °üÇÑ µ¿ÀÇ¼­ ¼±ÅÃ½Ã ¿ÀÇÂ -->
+								<!-- ê°œì¸ì •ë³´ ì˜ì—­ ì•Œë¦¼ì„œë¹„ìŠ¤ì— ê´€í•œ ë™ì˜ì„œ ì„ íƒì‹œ ì˜¤í”ˆ -->
 								<div class="privacy_area">
 									<div class="form_group col">
-										<label>»ç¾÷ÀÚµî·Ï¹øÈ£</label>
+										<label>ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸</label>
 										<input type="text" id="" class="">
-										<a href="javascript:void(0);" class="btn_search">Àå¼Ò¼±ÅÃ</a>
+										<a href="javascript:void(0);" class="btn_search">ìž¥ì†Œì„ íƒ</a>
 									</div>
-									<p class="txt_warning">»ç¾÷ÀÚµî·Ï¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ã°í Á¶È¸¸¦ ´­·¯ °øÀÎÀÎÁõ ÁøÇà ÈÄ ´ã´çÀÚ SMS ÀÎÁõÀ» ¿Ï·áÇÏ½Ã¸é °øÀÎÀÎÁõ¼­¸¦ Àçµî·ÏÀ» ÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.</p>
+									<p class="txt_warning">ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì‹œê³  ì¡°íšŒë¥¼ ëˆŒëŸ¬ ê³µì¸ì¸ì¦ ì§„í–‰ í›„ ë‹´ë‹¹ìž SMS ì¸ì¦ì„ ì™„ë£Œí•˜ì‹œë©´ ê³µì¸ì¸ì¦ì„œë¥¼ ìž¬ë“±ë¡ì„ í•˜ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 									
-									<p class="basicmenu_body_tit">´ã´çÀÚ SMS ÀÎÁõ</p>
+									<p class="basicmenu_body_tit">ë‹´ë‹¹ìž SMS ì¸ì¦</p>
 									<div class="sms_worker">
 										<table>
-											<caption>´ã´çÀÚ SMS ¸ñ·Ï</caption>
+											<caption>ë‹´ë‹¹ìž SMS ëª©ë¡</caption>
 											<colgroup>
 												<col width="6%">
 												<col width="21%">
@@ -548,13 +548,13 @@
 														<input type="checkbox">
 													</td>
 													<th>
-														¾÷¹«´ã´çÀÚ ¼º¸í
+														ì—…ë¬´ë‹´ë‹¹ìž ì„±ëª…
 													</th>
 													<td>
-														³ª¾÷¹«
+														ë‚˜ì—…ë¬´
 													</td>
 													<th>
-														ÇÚµåÆù¹øÈ£
+														í•¸ë“œí°ë²ˆí˜¸
 													</th>
 													<td>
 														010-2222-4444
@@ -565,13 +565,13 @@
 														<input type="checkbox">
 													</td>
 													<th>
-														¾÷¹«´ã´çÀÚ ¼º¸í
+														ì—…ë¬´ë‹´ë‹¹ìž ì„±ëª…
 													</th>
 													<td>
-														³ª¾÷¹«
+														ë‚˜ì—…ë¬´
 													</td>
 													<th>
-														ÇÚµåÆù¹øÈ£
+														í•¸ë“œí°ë²ˆí˜¸
 													</th>
 													<td>
 														010-2222-4444
@@ -580,24 +580,24 @@
 											</tbody>
 										</table>
 									</div>
-									<p class="txt_warning">SMS ÀÎÁõÇÒ ´ã´çÀÚ¸¦ ¼±ÅÃÇÏ°í SMS ÀÎÁõÀ» ÁøÇàÇÏ¼¼¿ä.</p>
+									<p class="txt_warning">SMS ì¸ì¦í•  ë‹´ë‹¹ìžë¥¼ ì„ íƒí•˜ê³  SMS ì¸ì¦ì„ ì§„í–‰í•˜ì„¸ìš”.</p>
 									
 									<div class="form_group col">
-										<label>¼º¸í</label>
+										<label>ì„±ëª…</label>
 											<input type="text" id="" class="">
 										
 									</div>
 									
 									<div class="form_group col type1">
-										<label>¼ºº°</label>
+										<label>ì„±ë³„</label>
 										<select>
-											<option>³²ÀÚ</option>
-											<option>¿©ÀÚ</option>
+											<option>ë‚¨ìž</option>
+											<option>ì—¬ìž</option>
 										</select>
 									</div>
 									
 									<div class="form_group col type2">
-										<label>¿¬¶ôÃ³</label>
+										<label>ì—°ë½ì²˜</label>
 										<select>
 											<option>SKT</option>
 											<option>KT</option>
@@ -607,7 +607,7 @@
 									</div>
 									
 									<div class="form_group col">
-										<label>»ý³â¿ùÀÏ</label>
+										<label>ìƒë…„ì›”ì¼</label>
 											<input type="text" id="" class="">
 										
 									</div>
@@ -617,66 +617,66 @@
 								</div>
 							
 								
-								<p class="basicmenu_body_tit">SMS ÀÎÁõ¼­ºñ½º ¾à°ü µ¿ÀÇ</p>
+								<p class="basicmenu_body_tit">SMS ì¸ì¦ì„œë¹„ìŠ¤ ì•½ê´€ ë™ì˜</p>
 								<div class="join">
 									<div class="checkbox">
 										<input type="checkbox" id="check_agree2" name="" class="form_control">
-										<label for="check_agree2">¼­ºñ½º ÀÌ¿ë¾à°ü µ¿ÀÇ<strong>(ÇÊ¼ö)</strong></label>
-										<button type="button" class="terms_area_work">ÀÌ¿ë¾à°ü¿­±â</button>
+										<label for="check_agree2">ì„œë¹„ìŠ¤ ì´ìš©ì•½ê´€ ë™ì˜<strong>(í•„ìˆ˜)</strong></label>
+										<button type="button" class="terms_area_work">ì´ìš©ì•½ê´€ì—´ê¸°</button>
 									</div>
 									<div class="terms_area">
-										¹Ì·¡¿¡¼Â´ë¿ì¸¦ ÀÌ¿ëÇØ ÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.<br>
-										º» ¾à°üÀº ´Ù¾çÇÑ....<br>
-										ÀÌ¿ë°ú °ü·ÃÇÏ¿© Á¦°øÇÏ´Â...<br>
-										È¸¿øÀº ¶ÇÇÑ...
+										ë¯¸ëž˜ì—ì…‹ëŒ€ìš°ë¥¼ ì´ìš©í•´ ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.<br>
+										ë³¸ ì•½ê´€ì€ ë‹¤ì–‘í•œ....<br>
+										ì´ìš©ê³¼ ê´€ë ¨í•˜ì—¬ ì œê³µí•˜ëŠ”...<br>
+										íšŒì›ì€ ë˜í•œ...
 									</div>
 									<div class="checkbox">
 										<input type="checkbox" id="check_agree3" name="" class="form_control">
-										<label for="check_agree3">°³ÀÎÁ¤º¸ ¼öÁý, ÀÌ¿ë µ¿ÀÇ<strong>(ÇÊ¼ö)</strong></label>
-										<button type="button" class="terms_area_work">ÀÌ¿ë¾à°ü¿­±â</button>
+										<label for="check_agree3">ê°œì¸ì •ë³´ ìˆ˜ì§‘, ì´ìš© ë™ì˜<strong>(í•„ìˆ˜)</strong></label>
+										<button type="button" class="terms_area_work">ì´ìš©ì•½ê´€ì—´ê¸°</button>
 									</div>
 									<div class="terms_area">
-										¹Ì·¡¿¡¼Â´ë¿ì¸¦ ÀÌ¿ëÇØ ÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.<br>
-										º» ¾à°üÀº ´Ù¾çÇÑ....<br>
-										ÀÌ¿ë°ú °ü·ÃÇÏ¿© Á¦°øÇÏ´Â...<br>
-										È¸¿øÀº ¶ÇÇÑ...
+										ë¯¸ëž˜ì—ì…‹ëŒ€ìš°ë¥¼ ì´ìš©í•´ ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.<br>
+										ë³¸ ì•½ê´€ì€ ë‹¤ì–‘í•œ....<br>
+										ì´ìš©ê³¼ ê´€ë ¨í•˜ì—¬ ì œê³µí•˜ëŠ”...<br>
+										íšŒì›ì€ ë˜í•œ...
 									</div>
 									<div class="checkbox">
 										<input type="checkbox" id="check_agree4" name="" class="form_control">
-										<label for="check_agree4">°íÀ¯½Äº°Á¤º¸ Ã³¸® µ¿ÀÇ<strong>(ÇÊ¼ö)</strong></label>
-										<button type="button" class="terms_area_work">ÀÌ¿ë¾à°ü¿­±â</button>
+										<label for="check_agree4">ê³ ìœ ì‹ë³„ì •ë³´ ì²˜ë¦¬ ë™ì˜<strong>(í•„ìˆ˜)</strong></label>
+										<button type="button" class="terms_area_work">ì´ìš©ì•½ê´€ì—´ê¸°</button>
 									</div>
 									<div class="terms_area">
-										¹Ì·¡¿¡¼Â´ë¿ì¸¦ ÀÌ¿ëÇØ ÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.<br>
-										º» ¾à°üÀº ´Ù¾çÇÑ....<br>
-										ÀÌ¿ë°ú °ü·ÃÇÏ¿© Á¦°øÇÏ´Â...<br>
-										È¸¿øÀº ¶ÇÇÑ...
+										ë¯¸ëž˜ì—ì…‹ëŒ€ìš°ë¥¼ ì´ìš©í•´ ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.<br>
+										ë³¸ ì•½ê´€ì€ ë‹¤ì–‘í•œ....<br>
+										ì´ìš©ê³¼ ê´€ë ¨í•˜ì—¬ ì œê³µí•˜ëŠ”...<br>
+										íšŒì›ì€ ë˜í•œ...
 									</div>
 									<div class="checkbox privacy_area_check">
 										<input type="checkbox" id="check_agree5" name="" class="form_control">
-										<label for="check_agree5">Åë½Å»ç ÀÌ¿ë¾à°ü µ¿ÀÇ<strong>(ÇÊ¼ö)</strong></label>
-										<button type="button" class="terms_area_work">ÀÌ¿ë¾à°ü¿­±â</button>
+										<label for="check_agree5">í†µì‹ ì‚¬ ì´ìš©ì•½ê´€ ë™ì˜<strong>(í•„ìˆ˜)</strong></label>
+										<button type="button" class="terms_area_work">ì´ìš©ì•½ê´€ì—´ê¸°</button>
 									</div>
 									<div class="terms_area">
-										¹Ì·¡¿¡¼Â´ë¿ì¸¦ ÀÌ¿ëÇØ ÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.<br>
-										º» ¾à°üÀº ´Ù¾çÇÑ....<br>
-										ÀÌ¿ë°ú °ü·ÃÇÏ¿© Á¦°øÇÏ´Â...<br>
-										È¸¿øÀº ¶ÇÇÑ...
+										ë¯¸ëž˜ì—ì…‹ëŒ€ìš°ë¥¼ ì´ìš©í•´ ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.<br>
+										ë³¸ ì•½ê´€ì€ ë‹¤ì–‘í•œ....<br>
+										ì´ìš©ê³¼ ê´€ë ¨í•˜ì—¬ ì œê³µí•˜ëŠ”...<br>
+										íšŒì›ì€ ë˜í•œ...
 									</div>
 									<p class="validation">
-										<i class="ico_warning"></i><span>¾à°ü¿¡ µ¿ÀÇÇØÁÖ¼¼¿ä.</span>
+										<i class="ico_warning"></i><span>ì•½ê´€ì— ë™ì˜í•´ì£¼ì„¸ìš”.</span>
 									</p>
 								</div>
 								
 							<div class="button_wrap1">
-								<button type="button" class="btn_submit" onclick="pop_close($('#pop_vote_personalagree'));">ÀÎÁõ¹øÈ£ ¹ß¼Û</button>
+								<button type="button" class="btn_submit" onclick="pop_close($('#pop_vote_personalagree'));">ì¸ì¦ë²ˆí˜¸ ë°œì†¡</button>
 							</div>
 							
 							<div class="button_wrap2">
 								<div class="form_group">
-									<label>ÀÎÁõ¹øÈ£ ÀÔ·Â</label>
+									<label>ì¸ì¦ë²ˆí˜¸ ìž…ë ¥</label>
 									<input type="text" id="" class="">
-									<button type="button" class="btn_submit">ÀÎÁõ</button>
+									<button type="button" class="btn_submit">ì¸ì¦</button>
 								</div>
 							</div>
 						</div>
@@ -686,7 +686,7 @@
 
 		</div>
 	</div>
-	<!-- // ·¹ÀÌ¾îÆË¾÷ -->
+	<!-- // ë ˆì´ì–´íŒì—… -->
 	<script>
 	$(function () {
 		// input date time
