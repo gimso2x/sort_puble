@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ERP</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/flat-ui.css">
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/jquery.number.min.js"></script>
+	<script type="text/javascript" src="../js/excellentexport.js"></script>
+
+</head>
+
+<body>
+	<div id="wrap">
+
+		<!-- S:FILE:header.jsp -->
+
+		<!-- header -->
+		<div id="header">
+			<h1 class="logo">
+				<a href="/common/main.do">론니(Loany)</a>
+			</h1>
+			<p class="dt">대출관리시스템</p>
+			<div class="header_login">
+				<dl>
+					<dt>Neo Forth Korea</dt>
+					<dd><span>김정현 님</span>
+						<button onclick="javscript:f_logout();" id="logout" class="btn_logout">로그아웃</button>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- // header // -->
+
+		<!-- E:FILE:header.jsp -->
+
+		<div id="container">
+			<!-- S:FILE:left.jsp -->
+
+			<script>
+				$(function () {
+					// 레프트메뉴 active 설정
+					$("#sub07_7").addClass("active");
+				});
+
+				function f_logout() {
+					$.post("/front/logout.do").done(function (data) {
+						alert("로그아웃되었습니다. 메인 화면으로 이동합니다.");
+						location.href = "/";
+					}).fail(function () {
+						alert("falil 서버에 이상이 있습니다.");
+					});
+				}
+			</script>
+
+			<!-- lnb -->
+			<div id="lnb">
+				<ul>
+					<li><a href="/common/main.do" id="sub0"><i class="dashboard"></i>대시보드</a></li>
+					<li><a href="/totallist/totalinfolist.do" id="sub02_2"><i class="totallist"></i>종합정보리스트</a></li>
+					<li><a href="/customer/totalInformation.do" id="sub01_1"><i class="total"></i>종합정보</a></li>
+					<li><a href="/interest/interestview.do" id="sub04_4"><i class="interest"></i>이자수납관리</a></li>
+					<li><a href="/receipt/receiptAdmin.do" id="sub03_3"><i class="re"></i>상환처리</a></li>
+					<li><a href="/repayment/schedule.do" id="sub05_5"><i class="resch"></i>상환스케줄</a></li>
+					<li><a href="/repayment/hschedule.do" id="sub05_6"><i class="interestsch"></i>이자납부스케줄</a></li>
+					<li><a href="/sms/smsmanager.do" id="sub06_6"><i class="sms"></i>이자문자발송관리</a></li>
+					<li><a href="/defaulter/defaulter.do" id="sub07_7"><i class="latemanage"></i>연체자 관리</a></li>
+					<li><a href="/front/memberJoin.do" id="sub08_8"><i class="join"></i>회원가입</a></li>
+					<li><a href="/info/infoSet.do" id="sub09_9"><i class="config"></i>설정관리</a></li>
+				</ul>
+			</div>
+			<!-- // lnb // -->
+
+			<!-- contents -->
+			<div id="contents">
+				<div class="contents">
+					<h3 class="cont_tit">연체자 관리&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-search pop_button"
+							type="button" onclick="common_help();" style="vertical-align: middle;">도움말</button></h3>
+					<!-- cont_inr  -->
+					<div class="cont_inr">
+
+						<div class="inr loan_lst">
+							<div class="lst_bottom nonhead">
+								<form id="frm" name="frm" method="post">
+									<input type="hidden" name="pageNum" id="pageNum" />
+									<input type="hidden" name="cnum" id="cnum" />
+									<table>
+										<caption>연체현황조회</caption>
+										<tbody>
+											<tr>
+												<th class="impact">조회일자</th>
+												<td>
+													<input type="text" class="form-control datepicker_month"
+														name="searchDate" id="searchDate" autocomplete="off">
+												</td>
+												<th class="impact">상환방법</th>
+												<td>
+													<select id="loanRepay" class="form-control input-sm" title="상환방식 선택"
+														name="loanRepay">
+														<option values="{=선택, 2=만기일시상환, 3=원리금균등분할상환, 4=원금분할}" value="">
+															선택</option>
+														<option values="{=선택, 2=만기일시상환, 3=원리금균등분할상환, 4=원금분할}" value="2">
+															만기일시상환</option>
+														<option values="{=선택, 2=만기일시상환, 3=원리금균등분할상환, 4=원금분할}" value="3">
+															원리금균등분할상환</option>
+														<option values="{=선택, 2=만기일시상환, 3=원리금균등분할상환, 4=원금분할}" value="4">
+															원금분할</option>
+													</select>
+												</td>
+												<td class="cbtnwrap" colspan="6">
+													<button class="btn btn-default" name="searchBtn"
+														id="searchBtn">조회</button>
+													<a class="btn btn-default" id="exlBtn">Excel</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</form>
+							</div>
+							<div class="por ovrxh">
+								<div class="tbl_grid_header" style="border-top:1px solid #aaa"></div>
+								<div class="lst_top third h600">
+									<table id="tbl_overdue" class="tbl_grid">
+										<colgroup>
+											<col width="3.8%" />
+											<col width="5.7%" />
+											<col width="7.6%" />
+											<col width="10%" />
+											<col width="8.6%" />
+											<col width="8.3%" />
+											<col width="6.6%" />
+											<col width="7.1%" />
+											<col width="6.7%" />
+											<col width="8%" />
+											<col width="8.6%" />
+											<col width="19%" />
+										</colgroup>
+										<thead>
+											<tr>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">No</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">이자일</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">이름</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">전화번호</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">연체시작일</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">대출금액</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">연체기간</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">정상이자</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">연체금리</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">연체이자</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">합계</div>
+													</div>
+												</th>
+												<th>
+													<div class="th-ouinner">
+														<div class="th-inner">메모</div>
+													</div>
+												</th>
+											</tr>
+										</thead>
+										<tbody id="gridBody">
+
+
+											<tr>
+												<td colspan="12">등록된 내용이 없습니다.</td>
+											</tr>
+
+
+
+										</tbody>
+									</table>
+									<!--	S:페이징 -->
+
+
+
+
+
+
+
+
+
+
+									<!-- BEGIN PAGING -->
+									<div class="row">
+										<div class="col-lg-12 fa-align-center">
+											<ul>
+												<li>
+
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- END PAGING -->
+									<!--	E:페이징 -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- // cont_inr //-->
+					<div class="dim_layerpop">
+						<div class="dimBg_layerpop"></div>
+						<!-- 공통 도움말 팝업  class=contents 안쪽에 있어야 한다.-->
+
+
+						<!-- 도움말 팝업 -->
+						<div id="layer_common_help" class="pop-layer_help section-layer">
+							<div class="inr_head">도움말
+								<div class="tcr">
+									<table>
+										<caption>도움말</caption>
+										<tbody>
+											<tr>
+												<td colspan="2" class="cbtnwrap">
+													<button class="btn btn-submit" type="button"
+														onclick="common_help_save()">
+														저장</button>
+													<button class="btn btn-default btn_close" type="button"
+														onclick="common_help_close()">
+														<i class="fui-cross"></i> 닫기</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="inr company_info">
+								<table>
+									<caption>도움말</caption>
+									<tbody>
+										<tr>
+											<th style="width:10px">화면명</th>
+											<td><input type="text" class="form-control" id="common_help_title"></td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<textarea id="common_help_content" class="form-control"
+													style="overflow-y: scroll;height:500px"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- // 도움말 팝업 // -->
+						<script>
+							/**
+							 * 공통 도움말
+							 */
+
+							function common_help() {
+								var pageId = "";
+								var tempPageName = window.location.href;
+								var strPageName = tempPageName.split("/");
+								pageId = strPageName[strPageName.length - 1].split("?")[0];
+								$("#layer_common_help").show();
+
+								var obj = new Object();
+								obj.common_help_id = pageId;
+								obj.common_help_title = $("#common_help_title").val();
+								obj.common_help_content = $("#common_help_content").val();
+
+								obj = JSON.stringify(obj);
+								// 수정
+
+								$.ajax({
+									url: "/common/common_help_select.do",
+									method: "post",
+									dataType: "json",
+									contentType: 'application/json; charset=UTF-8',
+									data: obj,
+									success: function (data) {
+										$.each(data.help, function (key, value) {
+											$("#common_help_title").val(value.title);
+											$("#common_help_content").val(value.content);
+										});
+									}
+									, error: function (e) {
+										alert('관리자에게 문의 바랍니다.\n' + e);
+									}, complete: function () {
+										if ($("#common_help_title").val() == null ||
+											$("#common_help_title").val() == ""
+										) {
+											$("#common_help_title").val($(".cont_tit").text().replace(/도움말/gi, '').trim());//화면 title 삽입
+										}
+									}
+								});
+							}
+
+							function common_help_save() {
+								var pageId = "";
+								var tempPageName = window.location.href;
+								var strPageName = tempPageName.split("/");
+								pageId = strPageName[strPageName.length - 1].split("?")[0];
+
+								var obj = new Object();
+								obj.common_help_id = pageId;
+								obj.common_help_title = $("#common_help_title").val();
+								obj.common_help_content = $("#common_help_content").val();
+
+								obj = JSON.stringify(obj);
+
+								// 저장,수정
+								$.ajax({
+									url: "/common/common_help_save.do",
+									method: "post",
+									dataType: "json",
+									contentType: 'application/json; charset=UTF-8',
+									data: obj,
+									success: function (data) {
+										alert("처리되었습니다.");
+										common_help();
+									}
+									, error: function (e) {
+										alert('관리자에게 문의 바랍니다.\n' + e);
+									}
+								});
+							}
+
+							/**
+							 * 도움말 닫기
+							 */
+							function common_help_close() {
+								$('.dim_layerpop').fadeOut();
+								$('.pop-layer').fadeOut();
+								$('body').css({
+									overflow: 'visible',
+									position: 'static'
+								});
+								$("#layer_common_help").hide();
+							} 
+						</script>
+						<div id="layer_section4_memo" class="pop-layer section-layer">
+							<div class="pop-container">
+								<div class="pop-conts">
+									<div class="contents cont_inr">
+										<div class="inr_head">
+											<i class="fui-user"></i> 메모
+											<div class="tcr">
+												<table>
+													<caption>수정 취소</caption>
+													<tbody>
+														<tr>
+															<td colspan="2" class="cbtnwrap">
+																<button class="btn btn-submit" type="button"
+																	id="memoSave">
+																	<i class="fui-plus-circle"></i> 저장</button>
+																<button class="btn btn-default btn_close" type="button">
+																	<i class="fui-cross"></i> 취소</button>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="inr">
+											<table>
+												<caption>정보 메모</caption>
+												<tbody>
+													<tr>
+														<th>메모</th>
+														<td colspan="7">
+															<textarea id="memo" name="memo"
+																class="form-control"></textarea>
+															<input type="hidden" name="memo_cnum" value=""
+																class="form-control">
+															<input type="hidden" name="memo_ov_id" value=""
+																class="form-control">
+															<input type="hidden" name="memo_loan_num" value=""
+																class="form-control">
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // contents //-->
+
+			<!-- // section4 - 메모 정보-->
+			<!-- // section4_memo 메모-->
+
+		</div>
+		<!-- // container // -->
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<title>ERP</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/flat-ui.css">
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.number.min.js"></script>
+	<script type="text/javascript" src="../js/excellentexport.js"></script>
+	<script>
+		$(function () {
+			//excel down
+			$("#exlBtn").on("click", function () {
+				return ExcellentExport.excel(this, 'tbl_interSms', 'sheet1', '이자문자발송관리' + $("#searchDate").val() + '.xls');
+			});
+		})
+
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- S:FILE:header.jsp -->
+
+		<!-- header -->
+		<div id="header">
+			<h1 class="logo">
+				<a href="/common/main.do">론니(Loany)</a>
+			</h1>
+			<p class="dt">대출관리시스템</p>
+			<div class="header_login">
+				<dl>
+					<dt>Neo Forth Korea</dt>
+					<dd><span>김정현 님</span>
+						<button onclick="javscript:f_logout();" id="logout" class="btn_logout">로그아웃</button>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- // header // -->
+
+		<!-- E:FILE:header.jsp -->
+
+		<div id="container">
+			<!-- S:FILE:left.jsp -->
+
+			<script>
+				$(function () {
+					// 레프트메뉴 active 설정
+					$("#sub06_6").addClass("active");
+				});
+			</script>
+
+			<!-- lnb -->
+			<div id="lnb">
+				<ul>
+					<li><a href="/common/main.do" id="sub0"><i class="dashboard"></i>대시보드</a></li>
+					<li><a href="/totallist/totalinfolist.do" id="sub02_2"><i class="totallist"></i>종합정보리스트</a></li>
+					<li><a href="/customer/totalInformation.do" id="sub01_1"><i class="total"></i>종합정보</a></li>
+					<li><a href="/interest/interestview.do" id="sub04_4"><i class="interest"></i>이자수납관리</a></li>
+					<li><a href="/receipt/receiptAdmin.do" id="sub03_3"><i class="re"></i>상환처리</a></li>
+					<li><a href="/repayment/schedule.do" id="sub05_5"><i class="resch"></i>상환스케줄</a></li>
+					<li><a href="/repayment/hschedule.do" id="sub05_6"><i class="interestsch"></i>이자납부스케줄</a></li>
+					<li><a href="/sms/smsmanager.do" id="sub06_6"><i class="sms"></i>이자문자발송관리</a></li>
+					<li><a href="/defaulter/defaulter.do" id="sub07_7"><i class="latemanage"></i>연체자 관리</a></li>
+					<li><a href="/front/memberJoin.do" id="sub08_8"><i class="join"></i>회원가입</a></li>
+					<li><a href="/info/infoSet.do" id="sub09_9"><i class="config"></i>설정관리</a></li>
+				</ul>
+			</div>
+			<!-- // lnb // -->
+
+
+			<!-- contents -->
+			<div id="contents">
+				<div class="contents">
+					<h3 class="cont_tit">이자문자발송관리&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-search pop_button"
+							type="button" onclick="common_help();" style="vertical-align: middle;">도움말</button></h3>
+					<!-- cont_inr  -->
+					<div class="cont_inr">
+						<form id="mainform" name="mainform" role="form" action="smsmanagerSelect.do" method="post"
+							onsubmit="return false;">
+							<div class="inr loan_lst">
+								<div class="lst_bottom nonhead">
+
+									<table>
+										<caption>대출현황</caption>
+										<tbody>
+											<tr>
+												<th class="impact">조회월</th>
+												<td>
+													<input type="hidden" name="day" id="day">
+													<input type="text" class="form-control datepicker_month"
+														name="searchDate" id="searchDate" autocomplete="off">
+												</td>
+												<th class="impact">조회일</th>
+												<td class="tl" colspan="5">
+													<button class="btn btn-default"
+														onclick="smsmanagerSelect('05');return false">5일</button>
+													<button class="btn btn-default"
+														onclick="smsmanagerSelect('15');return false">15일</button>
+													<button class="btn btn-default"
+														onclick="smsmanagerSelect('25');return false">25일</button>
+													<button class="btn btn-default"
+														onclick="smsmanagerSelect('');return false">전체</button>
+												</td>
+												<th class="impact">고객명</th>
+												<td><input type="text" class="form-control" name="cname" id="cname">
+												</td>
+												<td class="txr">
+													<button class="btn btn-default"
+														onclick="smsmanagerSelect('');">조회</button>
+													<a class="btn btn-default" id="exlBtn">Excel</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="por ovrxh">
+									<div class="tbl_grid_header" style="border-top:1px solid #aaa;"></div>
+									<div class="lst_top third h600">
+										<table id="tbl_interSms" class="tbl_grid">
+											<colgroup>
+												<col width="5.8%" />
+												<col width="5.8%" />
+												<col width="6.6%" />
+												<col width="9.6%" />
+												<col width="5.8%" />
+												<col width="4.7%" />
+												<col width="6.7%" />
+												<col width="5.8%" />
+												<col width="6.6%" />
+												<col width="13.6%" />
+												<col width="7.5%" />
+												<col width="4.4%" />
+												<col width="4.7%" />
+												<col width="12.4%" />
+											</colgroup>
+											<thead>
+												<tr>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">고객번호</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">대출번호</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">성명</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">휴대폰</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">연체여부</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">이자일</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">정상이자</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">연체이자</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">합계</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">연체시작일자</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">납입일</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">회차</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">금리</div>
+														</div>
+													</th>
+													<th>
+														<div class="th-ouinner">
+															<div class="th-inner">비고</div>
+														</div>
+													</th>
+													<!-- <th>납부할<p>금액</th>-->
+
+												</tr>
+											</thead>
+											<tbody id="loanlistcheck">
+												<tr>
+													<td colspan="14">조회된 데이터가 없습니다.</td>
+												</tr>
+											</tbody>
+
+										</table>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- // cont_inr //-->
+					<div class="dim_layerpop">
+						<div class="dimBg_layerpop"></div>
+
+
+						<!-- 도움말 팝업 -->
+						<div id="layer_common_help" class="pop-layer_help section-layer">
+							<div class="inr_head">도움말
+								<div class="tcr">
+									<table>
+										<caption>도움말</caption>
+										<tbody>
+											<tr>
+												<td colspan="2" class="cbtnwrap">
+													<button class="btn btn-submit" type="button"
+														onclick="common_help_save()">
+														저장</button>
+													<button class="btn btn-default btn_close" type="button"
+														onclick="common_help_close()">
+														<i class="fui-cross"></i> 닫기</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="inr company_info">
+								<table>
+									<caption>도움말</caption>
+									<tbody>
+										<tr>
+											<th style="width:10px">화면명</th>
+											<td><input type="text" class="form-control" id="common_help_title"></td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<textarea id="common_help_content" class="form-control"
+													style="overflow-y: scroll;height:500px"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- // 도움말 팝업 // -->
+						
+					</div>
+
+				</div>
+			</div>
+			<!-- // contents //-->
+		</div>
+		<!-- // container // -->
+
+	</div>
+</body>
+
+</html>
