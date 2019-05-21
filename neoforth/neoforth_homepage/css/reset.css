@@ -30,3 +30,5 @@ caption,legend{width:0px;height:0px;font-size:1px;text-indent:-20000px;}
 table{width:100%;border-collapse:collapse;border-spacing:0;}
 blockquote,q{quotes: none;}
 blockquote:before,blockquote:after,q:before,q:after{content: '';content: none;}
+
+.ir {font-size: 0;text-indent: -9999px;height: 0;}

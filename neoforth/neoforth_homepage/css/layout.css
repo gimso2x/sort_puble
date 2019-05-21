@@ -37,7 +37,6 @@ header .gnb .nav_line {width: 90px;height: 2px;background: #e4b477; position: ab
 #home .home-contents img {display: inline-block;width: 453px;margin: 0 21px;}
 #home .home-contents dl {position: relative;display: inline-block;text-align: left;margin-top: -70px;}
 #home .home-contents dl::before {content: "";display: inline-block;position: absolute;top: -40px;left: 44.1%;width: 1px;height: 34px;background: #e4b477;transform: translateX(-50%);}
-/* #home .home-contents dl::after {content: "";display: inline-block;position: absolute;bottom: -80px;left: 50%;width: 61px;height: 62px;background: url(../img/img_more.png) no-repeat 100% / 100%;transform: translateX(-50%);} */
 #home .home-contents dl dt {font-size: 32px;font-weight: 700;line-height: 1.69;color: #e4b477;cursor: pointer;}
 #home .home-contents dl dt p {font-size: 18px;line-height: 1.8;}
 #home .home-contents dl dd {font-size: 20px;font-weight: 700;line-height: 1.8;color: #121b2f;}
@@ -123,6 +122,7 @@ header .gnb .nav_line {width: 90px;height: 2px;background: #e4b477; position: ab
 #contact .contact-formwrap .contact-form .form-box {float: left;width: 48.27%;margin-right: 3.44%;}
 #contact .contact-formwrap .contact-form .form-box:nth-of-type(2n) {margin-right: 0;}
 #contact .contact-formwrap .contact-form .form-box.long {width: 100%;margin-right: 0;}
+#contact .contact-formwrap .contact-form label {text-indent: -9999px;font-size: 0;}
 #contact .contact-formwrap .contact-form input {border: none;border-bottom: 1px solid #e4b477;width: 100%;margin-top: 20px;height: 35px;}
 #contact .contact-formwrap .contact-form input, #contact .contact-formwrap .contact-form textarea {font-size: 14px;font-weight: 300;}
 #contact .contact-formwrap .contact-form textarea {resize: none;border: 1px solid #e4b477;width: 100%;height: 141px;margin-top: 20px;padding: 15px;}

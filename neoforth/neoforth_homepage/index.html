@@ -52,6 +52,7 @@
 		<!-- S: 콘텐츠 -->
 		<div id="contents">
 			<section id="home">
+				<h2 class="section-title ir">Home</h2>
 				<div class="contents-wrap">
 					<div class="home-contents">
 						<ul>
@@ -341,22 +342,22 @@
 							<fieldset>
 								<h4>Project Request Form</h4>
 								<div class="form-box">
-									<input type="text" name="company_name" placeholder="회사명">
+									<label>회사명<input type="text" name="company_name" placeholder="회사명"></label>
 								</div>
 								<div class="form-box">
-									<input type="text" name="mail_name" placeholder="이름">
+									<label>이름<input type="text" name="mail_name" placeholder="이름"></label>
 								</div>
 								<div class="form-box">
-									<input type="text" name="mail_email" placeholder="이메일">
+									<label>이메일<input type="text" name="mail_email" placeholder="이메일"></label>
 								</div>
 								<div class="form-box">
-									<input type="text" name="mail_tel" placeholder="연락처">
+									<label>연락처<input type="text" name="mail_tel" placeholder="연락처"></label>
 								</div>
 								<div class="form-box long">
-									<input type="text" name="mail_title" placeholder="제목을 입력해주세요">
+									<label>제목<input type="text" name="mail_title" placeholder="제목을 입력해주세요"></label>
 								</div>
 								<div class="form-box long">
-									<textarea name="mail_body" placeholder="문의하실 내용을 입력해주세요."></textarea>
+									<label>내용<textarea name="mail_body" placeholder="문의하실 내용을 입력해주세요."></textarea></label>
 								</div>
 								<button type="submit">보내기</button>
 							</fieldset>
@@ -378,6 +379,7 @@
 				</div>
 			</section>
 			<section id="map-section">
+				<h2 class="section-title ir">Map Section</h2>
 				<div id="map"></div>
 			</section>
 
@@ -554,7 +556,6 @@
 				var _liThis = $(this);
 				var divId = _liThis.find('a').attr('href');
 				var divIdtop = $(divId).offset().top - 94;
-				console.log(divIdtop + " divId");
 
 				_liThis.on('click', function (e) {
 					e.preventDefault(); // 하위 태그의 이벤트들 막기
