@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>NeoForth – 네오포스코리아</title>
 	<meta name="author" content="네오포스코리아" />
@@ -37,6 +37,7 @@
 		<header>
 			<div class="contents-wrap">
 				<h1 class="logo"><a href="/"><img src="img/logo.png" alt="네오포스코리아"></a></h1>
+				<button type="button" class="mobile_menu">전체메뉴(모바일용)</button>
 				<ul class="gnb">
 					<li class="active menu-li"><a href="#home">HOME</a></li>
 					<li class="menu-li"><a href="#about">ABOUT US</a></li>
@@ -44,6 +45,7 @@
 					<li class="menu-li"><a href="#portfolio">PORTFOLIO</a></li>
 					<li class="menu-li"><a href="#contact">CONTACT US</a></li>
 					<li class="nav_line"></li>
+					<li class="mobile_menu_close"><button type="button">전체메뉴 닫기</button></li>
 				</ul>
 			</div>
 		</header>
@@ -72,8 +74,8 @@
 						</dl>
 					</div>
 					<p class="home-detail">
-						㈜네오포스코리아는 Creative Convergence라는 비전을 통해 디지털기술의<br>
-						융합과 다양한 산업간 융합이 만들어내는 다양한 비즈니스 기회를<br>
+						㈜네오포스코리아는 Creative Convergence라는 비전을 통해 디지털기술의
+						융합과 다양한 산업간 융합이 만들어내는 다양한 비즈니스 기회를
 						고객이 사업화로 연결하도록 도와주는 토털 컨버전스 솔루션을 제공합니다.
 					</p>
 					<div class="home-partners">
@@ -81,8 +83,6 @@
 							alt="미래에셋대우, 대림, 삼성POP, SKtelecom, 펀드슈퍼마켓, 메가박스, NSK, SK미소금융재단">
 					</div>
 				</div>
-				<div class="bg-left"> </div>
-				<div class="bg-right"></div>
 			</section>
 
 			<section id="about">
@@ -99,15 +99,16 @@
 							<p class="about-detail1">
 								다양한 산업 분야에 ICT를 적용해 새로운 형태의 제품, 서비스, 비즈니스를 만들어내는 4차 산업혁명을 맞이하여 사업환경의 변동성과 불확실성이 가속화되는
 								시대에 더 이상 기존 비즈니스 모델로는 신시장을 개척하거나, 기존 고객 또는 새로운 고객의 가치를 획득하는 것이 쉽지 않습니다.<br><br>
-								이러한 컨버전스를 이끄는 디지털 트렌스포메이션은 이미 다양한 산업 분야에서 진행되고 있으며 기존 사업의 프로세스는 물론 산업의 가치사슬을 바꾸고
+								<span>이러한 컨버전스를 이끄는 디지털 트렌스포메이션은 이미 다양한 산업 분야에서 진행되고 있으며 기존 사업의 프로세스는 물론 산업의 가치사슬을 바꾸고
 								있습니다.<br><br>
 								따라서 디지털 기술을 활용하여 운영 효율성과 경쟁력을 높이고 이를 바탕으로 비즈니스 모델의 최적화 및 재구성이 필요합니다. 즉, 기업들은 성공적인 디지털
 								트랜스포메이션을 위해 디지털 역량 강화와 고객 지향적가치 획득에 집중해야 합니다.
+								</span>
 							</p>
 							<p class="about-detail2">
-								㈜네오포스코리아는 Creative Convergence라는 비전을 통해<br>
-								디지털기술의 융합과 다양한 산업간 융합이 만들어내는<br>
-								다양한 비즈니스 기회를 고객이 사업화로 연결하도록 도와주는<br>
+								㈜네오포스코리아는 Creative Convergence라는 비전을 통해
+								디지털기술의 융합과 다양한 산업간 융합이 만들어내는
+								다양한 비즈니스 기회를 고객이 사업화로 연결하도록 도와주는
 								토털 컨버전스 솔루션을 제공합니다.
 							</p>
 						</dd>
@@ -181,8 +182,8 @@
 				<div class="business-slidewrap">
 					<div class="contents-wrap">
 						<div class="slide-control">
-							<p>Find The Right Solution<br>
-								To Accelerate Your Journey<br>
+							<p>Find The Right Solution
+								To Accelerate Your Journey
 								To Digital Transformation
 							</p>
 							<ul>
@@ -198,11 +199,8 @@
 							</div>
 						</div>
 						<div class="slide-contents">
-							<!-- Slider main container -->
 							<div class="swiper-container">
-								<!-- Additional required wrapper -->
 								<div class="swiper-wrapper">
-									<!-- Slides -->
 									<div class="swiper-slide">
 										<img src="img/img_biz3.png" alt="IoT Service Platform">
 										<div>
@@ -280,54 +278,74 @@
 					<div class="portfolio-boxwrap">
 						<div class="box">
 							<div class="portfolio-img"><img src="img/pofol_mirae.png" alt="미래에셋대우 전자투표시스템 화면"></div>
-							<div class="portfolio-tit">미래에셋대우 전자투표시스템</div>
-							<div class="portfolio-detail">플랫폼 V 전자투표시스템 구축<br>(Web, Mobile Web)</div>
+							<div class="portfolio-textwrap">
+								<div class="portfolio-tit">미래에셋대우 전자투표시스템</div>
+								<div class="portfolio-detail">플랫폼 V 전자투표시스템 구축<br>(Web, Mobile Web)</div>
+							</div>
 						</div>
 						<div class="box">
 							<div class="portfolio-img"><img src="img/pofol_samsung.png" alt="삼성증권 WTS 유지보수 화면"></div>
-							<div class="portfolio-tit">삼성증권 WTS 유지보수</div>
-							<div class="portfolio-detail">삼성증권 WTS 유지보수</div>
+							<div class="portfolio-textwrap">
+								<div class="portfolio-tit">삼성증권 WTS 유지보수</div>
+								<div class="portfolio-detail">삼성증권 WTS 유지보수</div>
+							</div>
 						</div>
 						<div class="box">
 							<div class="portfolio-img"><img src="img/pofol_darim.png" alt="대림산업 스마트홈 개발 화면"></div>
-							<div class="portfolio-tit">대림코퍼레이션</div>
-							<div class="portfolio-detail">대림코퍼레이션 스마트 홈 시스템 1차 개발</div>
+							<div class="portfolio-textwrap">
+								<div class="portfolio-tit">대림코퍼레이션</div>
+								<div class="portfolio-detail">대림코퍼레이션 스마트 홈 시스템 1차 개발</div>
+							</div>
 						</div>
 						<div class="box">
 							<div class="portfolio-img"><img src="img/pofol_fund.png" alt="펀드슈퍼마켓 화면"></div>
-							<div class="portfolio-tit">펀드슈퍼마켓</div>
-							<div class="portfolio-detail">펀드슈퍼마켓 웹 및 모바일 서비스 리뉴얼 구축</div>
+							<div class="portfolio-textwrap">
+								<div class="portfolio-tit">펀드슈퍼마켓</div>
+								<div class="portfolio-detail">펀드슈퍼마켓 웹 및 모바일 서비스 리뉴얼 구축</div>
+							</div>
 						</div>
 						<div class="box">
 							<div class="portfolio-img"><img src="img/pofol_skbiz.png" alt="SKT T bizpoint 유지보수 "></div>
-							<div class="portfolio-tit">SKT T bizpoint 유지보수</div>
-							<div class="portfolio-detail">SKT T bizpoint 유지보수</div>
+							<div class="portfolio-textwrap">
+								<div class="portfolio-tit">SKT T bizpoint 유지보수</div>
+								<div class="portfolio-detail">SKT T bizpoint 유지보수</div>
+							</div>
 						</div>
 						<div class="box">
 							<div class="portfolio-img"><img src="img/pofol_megabox.png" alt="메가박스 화면"></div>
-							<div class="portfolio-tit">메가박스</div>
-							<div class="portfolio-detail">메가박스 웹, 모바일웹, APP 리뉴얼 및 유지보수 진행</div>
+							<div class="portfolio-textwrap">
+								<div class="portfolio-tit">메가박스</div>
+								<div class="portfolio-detail">메가박스 웹, 모바일웹, APP 리뉴얼 및 유지보수 진행</div>
+							</div>
 						</div>
 						<div class="box">
 							<div class="portfolio-img"><img src="img/pofol_mirae2.png" alt="미래에셋증권 화면"></div>
-							<div class="portfolio-tit">미래에셋증권 홈페이지 전면 개편</div>
-							<div class="portfolio-detail">미래에셋증권 홈페이지 및 WTS 운영 유지보수</div>
+							<div class="portfolio-textwrap">
+								<div class="portfolio-tit">미래에셋증권 홈페이지 전면 개편</div>
+								<div class="portfolio-detail">미래에셋증권 홈페이지 및 WTS 운영 유지보수</div>
+							</div>
 						</div>
 						<div class="box">
 							<div class="portfolio-img"><img src="img/pofol_mirae3.png"
 									alt="미래에셋 은퇴연구소 &amp;\nKDB대우증권 WTS"></div>
-							<div class="portfolio-tit">미래에셋 은퇴연구소 &amp;<br>KDB대우증권 WTS</div>
-							<div class="portfolio-detail">미래에셋 은퇴연구소 홈페이지 구축<br>KDB대우증권 WTS 유지보수</div>
+							<div class="portfolio-textwrap">
+								<div class="portfolio-tit">미래에셋 은퇴연구소 &amp;<br>KDB대우증권 WTS</div>
+								<div class="portfolio-detail">미래에셋 은퇴연구소 홈페이지 구축<br>KDB대우증권 WTS 유지보수</div>
+							</div>
 						</div>
 						<div class="box">
 							<div class="portfolio-img"><img src="img/pofol_nsk.png" alt="한국NSK 채용사이트 화면"></div>
-							<div class="portfolio-tit">한국NSK 채용사이트 구축</div>
-							<div class="portfolio-detail">한국NSK 홈페이지 유지보수 및 채용사이트 구축</div>
+							<div class="portfolio-textwrap">
+								<div class="portfolio-tit">한국NSK 채용사이트 구축</div>
+								<div class="portfolio-detail">한국NSK 홈페이지 유지보수 및 채용사이트 구축</div>
+							</div>
 						</div>
 						<div class="box">
 							<div class="portfolio-img"><img src="img/pofol_miso.png" alt="SK미소금융재단 화면"></div>
-							<div class="portfolio-tit">SK미소금융재단</div>
-							<div class="portfolio-detail">SK미소금융재단 홈페이지 유지보수</div>
+							<div class="portfolio-textwrap">
+								<div class="portfolio-tit">SK미소금융재단</div>
+								<div class="portfolio-detail">SK미소금융재단 홈페이지 유지보수</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -365,7 +383,7 @@
 						<div class="contact-info">
 							<img src="img/contact_logo.png" alt="네오포스 코리아 로고">
 							<p class="address">
-								우.04209 서울특별시 마포구 만리재옛길 36(신공덕동) 3층 307호<br>
+								우.04209 서울특별시 마포구 만리재옛길 36(신공덕동) 3층 307호
 								(주)네오포스코리아
 							</p>
 							<p class="tel">
@@ -431,7 +449,7 @@
 			observer: true,
 			observeParents: true,
 			slidesPerView: 'auto',
-			spaceBetween: 40,
+			// spaceBetween: 10,
 			centeredSlides: true,
 			pagination: {
 				el: '.swiper-pagination',
@@ -470,7 +488,7 @@
 		/**
 		 * S: gnb nav_line
 		 */
-		$('.gnb').find('>li').mouseenter(function () {
+		$('.gnb').find('>.menu-li').mouseenter(function () {
 			$('.nav_line').show();
 			var elPadding = Number($(this).find('a').css('padding-left').replace("px", ""))
 			var linePosX = Math.floor($(this).offset().left) - $('.gnb').offset().left + elPadding;
@@ -515,6 +533,9 @@
 		scrollFade();
 		$(window).on('scroll resize', function () {
 			scrollFade();
+			if($(window).width() > 720) {
+				$('.gnb').show();
+			}
 		});
 
 		$('#scroll').on('click', function () {
@@ -560,6 +581,9 @@
 				_liThis.on('click', function (e) {
 					e.preventDefault(); // 하위 태그의 이벤트들 막기
 					$('body,html').animate({ scrollTop: divIdtop }, 600);
+					if ($(window).width() <= 720 ) {
+						_this.fadeOut();
+					}
 				});
 				$(window).scroll(function () {
 					if ($(this).scrollTop() > divIdtop - 1) {
@@ -571,6 +595,21 @@
 		
 		/**
 		 * E: hedaer scroll function
+		 */
+
+		 /**
+		 * S: mobile gnb 버튼 활성화
+		 */
+		var $gnb = $('.gnb');
+		$('.mobile_menu').click(function() {
+			$gnb.fadeIn();
+		});
+
+		$('.mobile_menu_close').click(function() {
+			$gnb.fadeOut();
+		})
+		 /**
+		 * E: mobile gnb 버튼 활성화
 		 */
 	</script>
 </body>
