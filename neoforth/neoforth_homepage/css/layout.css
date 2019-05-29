@@ -243,7 +243,7 @@ footer .copyright::before {position: absolute;top: 0;left: 50%;content: "";displ
 	/* Home */
 	#home {padding-top: 40px;}
 	#home .contents-wrap {height: 770px;}
-	#home .home-contents {height: 345px;background: url(../img/bg_home_m.png) no-repeat center top / cover;margin: 0 -20px;}
+	#home .home-contents {height: 345px;background: url(../img/bg_home_m.png) no-repeat center top / 100% 100%;margin: 0 -20px;}
 	#home .home-contents ul {width: 100%;margin-top: 87px;}
 	#home .home-contents ul li {font-size: 29px;text-align: center;}
 	#home .home-contents img {display: none;}
@@ -266,7 +266,7 @@ footer .copyright::before {position: absolute;top: 0;left: 50%;content: "";displ
 	#about dd .about-detail1 {font-size: 14px;line-height: 1.54;margin-bottom: 22px;}
 	#about dd .about-detail1 span {position: relative;padding-right: 141px;display: inline-block;}
 	#about dd .about-detail1 span::after {content:"";position: absolute;top: -7px;right: 0;width: 127px;height: 247px;background: url(../img/bg_about_m2.jpg) no-repeat center / 100% 100%;}
-	#about dd .about-detail2 {font-size: 15px;line-height: 1.71;width: 319px;}
+	#about dd .about-detail2 {font-size: 15px;line-height: 1.71;width: 100%;}
 
 	/* history */
 	#history .section-title span {font-size: 17px;}
@@ -302,6 +302,7 @@ footer .copyright::before {position: absolute;top: 0;left: 50%;content: "";displ
 	.swiper-container {width: 100%;height: 415px;}
 	
 	/* portfolio */
+	#portfolio {background-size: contain;}
 	#portfolio .portfolio-boxwrap {margin-top: 25px;margin-bottom: 80px;}
 	#portfolio .box {width: 47%;margin-top: 12px;margin-right: 4.3%;}
 	#portfolio .box:nth-child(2n) {margin-right: 0 !important;}
@@ -337,6 +338,7 @@ footer .copyright::before {position: absolute;top: 0;left: 50%;content: "";displ
 @media all and (max-width: 720px) and (orientation: landscape) {
 	header .gnb {padding-top: 40px;}
 	#home .home-contents {height: 345px;background: url(../img/bg_home_m.png) no-repeat center top / 100% 100%;}
+	#about dd .about-detail2 {width: calc(100% - 135px);}
 	#history .box dd {padding-left: 77px;}
 	#history .box dd span {left: 50px;}
 	#history .box:nth-child(1) {height: 207px;}
