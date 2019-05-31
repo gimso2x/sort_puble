@@ -414,7 +414,7 @@
 	</div>
 
 
-	<script src="https://maps.googleapis.com/maps/api/js?key='구글키'&callback=initMap"
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsRWsIu6zwqQa8Ivt3t8uSO7eh6uMwp0M&callback=initMap"
 		async defer></script>
 	<script>
 		/**
@@ -450,7 +450,8 @@
 			observeParents: true,
 			slidesPerView: 'auto',
 			// spaceBetween: 10,
-			centeredSlides: true,
+			// centeredSlides: true,
+			loop: true,
 			pagination: {
 				el: '.swiper-pagination',
 				clickable: true,
@@ -472,7 +473,7 @@
 		});
 
 		swiper.on('slideChange', function () {
-			$slide_li.removeClass('active').eq(swiper.activeIndex).addClass('active');
+			$slide_li.removeClass('active').eq(swiper.realIndex).addClass('active');
 		});
 
 		var $slide_li = $(".slide-control ul li");
