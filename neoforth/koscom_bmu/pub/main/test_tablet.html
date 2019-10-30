@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/plugins.js"></script>
+	<script src="../js/main.js"></script>
+</head>
+<body>
+
+<div id="wrap" class="main" style="background: url(../img/main/A1_1.png) no-repeat 50% 0;">
+	<div class="width_1240" style="margin: 0 auto;width: 1240px; height: 4093px; background: url(../img/main/A1_1.png) no-repeat 50% 0;"></div>
+</div>
+
+<script>
+$(function() {
+	var swiper = new Swiper('.swiper-container', {
+		autoplay: {
+			delay: 5000,
+		},
+		navigation: {
+		    nextEl: '.swiper-button-next',
+		    prevEl: '.swiper-button-prev',
+		},
+		centeredSlides: true,
+	    pagination: {
+	        el: '.swiper-pagination',
+	        clickable: true,
+	    },
+	    speed: 400,
+	    spaceBetween: 0,
+	    effect: "fade",
+	    on: {
+	    	init: function () {
+		    	$('.txt_title').animate({top: '300px', opacity: 1}, 1000, "swing");
+		    },
+		    slideChange: function(){
+		    	console.log('swiper slideChange');
+		    },
+		    slideChangeTransitionStart: function(){
+		    	$('.txt_title').css({top: '400px', opacity: 0})
+		    },
+		    slideChangeTransitionEnd: function(){
+		    	console.log('swiper slideChangeTransitionEnd');
+		    	$('.txt_title').animate({top: '300px', opacity: 1}, 1000, 'swing');
+		    },
+	    }
+	});
+
+
+	$.scrollify({
+		section : ".section",
+	    // sectionName : true,
+	    interstitialSection : "#footer",
+	    easing: "easeOutExpo",
+	    scrollSpeed: 1100,
+	    offset : 0,
+	    scrollbars: true,
+	    standardScrollElements: "",
+	    setHeights: true,
+	    overflowScroll: true,
+	    updateHash: true,
+	    touchScroll:true,
+		before:function(i,panels) {
+			var ref = panels[i].attr("data-section-name");
+			$(".pagination .active").removeClass("active");
+			$(".pagination").find("a[href=\"#" + ref + "\"]").addClass("active");
+		},
+		afterRender:function() {
+			var pagination = "<ul class=\"pagination\">";
+			var activeClass = "";
+			$(".section").each(function(i) {
+				activeClass = "";
+				if(i===0) {
+					activeClass = "active";
+				}
+				pagination += "<li><a class=\"" + activeClass + "\" href=\"#" + $(this).attr("data-section-name") + "\"><span class=\"hover-text\">" + $(this).attr("data-section-name").charAt(0).toUpperCase() + $(this).attr("data-section-name").slice(1) + "</span></a></li>";
+			});
+			pagination += "</ul>";
+			$(".home").append(pagination);
+			/*
+			Tip: The two click events below are the same:
+			$(".pagination a").on("click",function() {
+				$.scrollify.move($(this).attr("href"));
+			});
+			*/
+			$(".pagination a").on("click",$.scrollify.move);
+		}
+	});	// scrollify
+});	// jquery
+</script>
+</body>
+</html>

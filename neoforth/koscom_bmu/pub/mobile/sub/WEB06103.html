@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script> 
+	<script src="../js/common.js"></script>
+</head>
+<body class="bg_gray"> 
+  
+<div id="wrap_webview">  
+	
+	<div class="section">
+		<ul class="lst_step clearfix"> 
+			<li class="on"> 
+				<p class="ico"></p> 
+				<p class="num">STEP 01</p> 
+				<p class="tit">인증</p> 
+			</li>
+			<li>
+				<p class="ico"></p> 
+				<p class="num">STEP 02</p> 
+				<p class="tit">약관동의</p> 
+			</li>
+			<li>
+				<p class="ico"></p> 
+				<p class="num">STEP 03</p> 
+				<p class="tit">정보입력</p>  
+			</li> 
+		</ul>	<!-- // lst_step -->
+
+		
+		<dl class="lst_join_type inner">  
+			<dt><strong>투자자 유형</strong>을 선택하여 주십시오</dt>
+			<dd class="clearfix">
+			    <label class="input_radio fl" for="type_investor1">
+			        <input type="radio" id="type_investor1" name="type_investor" checked="">  
+			        <span class="label_text">개인</span>
+			    </label>
+			    <label class="input_radio fr" for="type_investor2">
+			        <input type="radio" id="type_investor2" name="type_investor">
+			        <span class="label_text">법인</span> 
+			    </label> 
+			</dd> 
+			<dt><strong>인증방법</strong>을 선택하여 주십시오</dt>
+			<dd>
+				인증방법을 선택하시고 주민등록번호를 입력 후 인증버튼을 탭하시어 인증을 완료하시면 약관동의 화면으로 이동하게 됩니다.
+			</dd>
+			<dd class="clearfix">
+			    <label class="input_radio input_confirm fl" for="type_confirm1">
+			        <input type="radio" id="type_confirm1" name="type_confirm" checked=""> 
+			        <span class="label_text">통합인증앱</span>
+			    </label>
+			    <label class="input_radio input_confirm fr" for="type_confirm2">
+			        <input type="radio" id="type_confirm2" name="type_confirm">
+			        <span class="label_text">DID인증</span>   
+			    </label> 
+			</dd> 
+			<dd>
+				<ul class="lst_help clearfix"> 
+					<li><a href="javascript:void(0);" onclick="$('#pop_info_app').neoModal();">통합인증앱이란?</a></li>
+					<li><a href="javascript:void(0);" onclick="$('#pop_info_did').neoModal();">DID 인증이란?</a></li> 
+				</ul>
+			</dd>
+			<dt><label for="input_pnum"><strong>주민등록번호</strong></label></dt>
+			<dd> 
+				<input type="password" maxlength="" id="input_pnum" class="form_control">
+			</dd>
+		</dl>	<!-- // lst_join_type -->
+		
+	</div>	<!-- // section --> 
+	
+	<div class="footer_webview">   
+		<button type="button" class="btn_lg btn_blue btn_confirm">인증</button>
+	</div>
+</div>
+
+<div id="pop_info_app" class="pop_dim_wrap pop_modal pop_info_app"> 
+	<div class="pop_wrap">  
+		<button class="pop_btn_close">닫기</button> 
+		<div class="title_wrap al">통합인증앱이란?</div>  
+		<div class="contents_wrap">
+			<div class="inner">
+				<p class="msg">통합인증앱은 사용자스마트폰에 설치된 앱을 연동하여 스마트폰 기기에 저장된 공유인증서를 공유하여 사용하는 새로운 공인인증 방식입니다.</p> 
+			</div>
+		</div>
+		<div class="button_wrap"> 
+			<button type="button" class="btn_md btn_blue" onclick="$('#pop_info_app').neoModal('close');">확인</button>  
+		</div> 
+	</div> 
+</div>
+
+<div id="pop_info_did" class="pop_dim_wrap pop_modal pop_info_did"> 
+	<div class="pop_wrap">  
+		<button class="pop_btn_close">닫기</button> 
+		<div class="title_wrap al">DID 인증이란?</div>  
+		<div class="contents_wrap">
+			<div class="inner">
+				<p class="msg">DID인증은 모바일 ID로 SK텔레콤이 블록체인 기반으로 개발한 새로운 인증방식입니다. 최초 공인인증 후 DID 인증을 하시면 간편로그인과 같이 편리하게 사용가능합니다.</p>  
+			</div>
+		</div>
+		<div class="button_wrap"> 
+			<button type="button" class="btn_md btn_blue" onclick="$('#pop_info_did').neoModal('close');">확인</button>  
+		</div> 
+	</div>  
+</div>
+
+</body>
+</html>

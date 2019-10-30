@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#pop_shareholder_list").neoModal();
+
+			
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	
+
+</div>
+
+<!-- 팝업 -->
+<div id="pop_shareholder_list" class="pop_dim_wrap pop_modal pop_xlg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주주명부 상세
+		</div>
+		<div class="contents_wrap">
+			<h5>주주명부</h5>
+			<div class="companyinfo_table th_vertical">
+				<table>
+					<caption>주주명부 - 주주명, 주민등록번호 ,주식의종류, 1주의 금액(원), 주식의 수(주), 금액(원)</caption>
+					<colgroup>
+						<col width="*">
+						<col width="16.66%">
+						<col width="16.66%">
+						<col width="16.66%">
+						<col width="16.66%">
+						<col width="16.66%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>주주명</th>
+							<th>주민등록번호</th>
+							<th>주식의 종류</th>
+							<th>1주의 금액(원)</th>
+							<th>주식의 수(주)</th>
+							<th>금액(원)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="sum">
+							<td colspan="4">합계</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p class="txt_desc">위 주주명부는 본사에 비치된 주주명부와 대조해 다름이 없음을 증명합니다.</p>
+			<p class="txt_date">2019.08.12</p>
+			<p class="txt_ceo">주식회사 에이치솔루션 대표이사 김대표</p>
+
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue" onclick="printElem('#pop_shareholder_list .contents_wrap')">인쇄</button>
+		</div>
+	</div>
+</div>
+<!-- // 팝업 -->
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+<script>
+	
+	function printElem(elem) {
+		printPop($(elem).html());
+	}
+	function printPop(data) {
+		var mywindow = window.open('', 'my div', 'height=600,width=720');
+		var cssStyle = "@page { margin: 0; box-shadow: 0; } " +
+			"#pop_shareholder_list{background:#fff !important;padding:40px;width:21cm;min-height:29.7cm}" +
+			"#pop_shareholder_list h5{text-align:center;margin-top:20px;margin-bottom:40px;font-size:24px;font-weight:700;line-height:25px;min-height:36px;}" +
+			"#pop_shareholder_list .sum td{background:#fff7f0;}" +
+			"#pop_shareholder_list .companyinfo_table tr:nth-last-of-type(2) td{border-bottom:1px solid #aaa;}" +
+			"#pop_shareholder_list .companyinfo_table ~ p{text-align:center;color:#555;}" +
+			"#pop_shareholder_list .txt_desc{margin-top:40px;font-size:16px;}" +
+			"#pop_shareholder_list .txt_date{margin-top:20px;font-size:15px;}" +
+			"#pop_shareholder_list .txt_ceo{margin-top:25px;font-size:18px;}" +
+			"#pop_shareholder_list .button_wrap{margin-top:20px;padding-top:30px;border-top:1px solid #ddd;}";
+		mywindow.document.write('<html><head>');
+		mywindow.document.write($('head').html());
+		mywindow.document.write('<style>' + cssStyle + '</style>');
+		mywindow.document.write('</head><body><div id="pop_shareholder_list"><div class="print_wrap">');
+		mywindow.document.write(data);
+		mywindow.document.write('</div></div></body></html>');
+		mywindow.document.close();
+		mywindow.focus();
+		setTimeout(function() {
+			mywindow.print();
+			mywindow.close();
+		},300)
+		return true;
+
+	}
+</script>
+
+</body>
+</html>

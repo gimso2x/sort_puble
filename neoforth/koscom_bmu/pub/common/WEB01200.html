@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="euc-k">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script> 
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 로그인전 -->
+	<div id="header">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb">
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li>
+					<li class="join_area"><a href="javascript:void(0);" class="active"><span>서비스 가입</span></a></li>
+					<li class="login_area"><a href="javascript:void(0);"><span>로그인</span></a></li> 
+				</ul>
+				<div class="bar"></div>
+  
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+					<ul class="nav_sub"> 
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>	<!-- // submenu_area -->
+			</div>	
+			
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+				</div>
+				<div class="group_nav join_area">
+					<a href="javascript:void(0);" class="title">서비스 가입</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+				</div> 
+				<div class="group_nav login_area"> 
+					<a href="javascript:void(0);" class="title">로그인</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="nav_page">
+			<div class="inner">
+				<ul class="lst_page clearfix">
+					<li><a href="/" class="btn_home sr_only">Home</a></li>
+					<li>
+						<a href="javascript:void(0);" class="btn_page">서비스 가입</a>
+						<ul class="nav_subpage clearfix">  
+							<li><a href="javascript:void(0);">서비스 소개</a></li>
+							<li><a href="javascript:void(0);">투자정보</a></li>
+							<li><a href="javascript:void(0);">고객센터</a></li>
+							<li><a href="javascript:void(0);">로그인</a></li>
+							<li><a href="javascript:void(0);" class="active">서비스 가입</a></li>
+						</ul>
+					</li> 
+					<li>
+						<ul class="lst_subpage clearfix">  
+							<li><a href="javascript:void(0);">등록기업</a></li>
+							<li><a href="javascript:void(0);" class="active">투자자</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>	<!-- // nav_page -->
+
+		<div class="section">
+			<div class="inner">
+				<div class="group_pageinfo">
+					<h3 class="txt_title">투자자 서비스 가입</h3>
+					<p class="txt_info">Platform 투자자 서비스 가입을 위해서는 인증, 약관동의, 정보입력을 완료하시면 서비스 가입이 완료됩니다.</p>
+				</div>	<!-- // group_title -->
+				
+				<div class="contents">
+					<div class="step1"> 
+						<form action="">
+							<fieldset>
+								<legend class="sr_only">투자자 서비스 가입 인증</legend>
+								<div class="join_process_info invest">
+									<!-- [D] 활성화 li는 class에 "on" 추가 --> 
+									<ul class="clearfix">
+										<li class="on">
+											<p class="txt_tit">STEP 01</p>
+											<p class="txt_desc">인증</p>
+										</li>
+										<li>
+											<p class="txt_tit">STEP 02</p>
+											<p class="txt_desc">약관 동의</p>
+										</li>
+										<li>
+											<p class="txt_tit">STEP 03</p>
+											<p class="txt_desc">정보 입력</p>
+										</li>
+									</ul> 
+								</div>
+
+								<dl class="group_select"> 
+									<dt class="txt_title"><strong>투자자 유형</strong>을 선택하여 주십시오</dt>
+									<dd class="radio_area"> 
+										<label class="input_radio" for="rdoSolar1">
+										    <input type="radio" id="rdoSolar1" name="birthday_type1" checked="">
+										    <span class="label_text">개인</span>
+										    <span class="bg_radio"></span>
+										</label>
+										<label class="input_radio" for="rdoLunar1">
+										    <input type="radio" id="rdoLunar1" name="birthday_type1"> 
+										    <span class="label_text">법인</span>
+										    <span class="bg_radio"></span>
+										</label>
+									</dd> 
+								</dl>
+								
+								<div class="contents_user">
+									<dl class="group_select case2">   
+										<dt>
+											<p class="txt_title"><strong>인증방법</strong>을 선택하여 주십시오</p>
+											<p class="txt_desc">인증방법을 선택하시고 주민등록번호를 입력 후 인증버튼을 클릭하시고 인증이 완료되면 약관동의 화면으로 이동하게 됩니다</p>
+										</dt>
+										<dd class="radio_area"> 
+											<label class="input_radio" for="rdoSolar2">
+											    <input type="radio" id="rdoSolar2" name="birthday_type2" checked="">
+											    <span class="label_text">통합인증앱</span>
+											    <span class="bg_radio"></span>
+											</label>
+											<label class="input_radio" for="rdoLunar2">
+											    <input type="radio" id="rdoLunar2" name="birthday_type2"> 
+											    <span class="label_text">DID인증</span>
+											    <span class="bg_radio"></span> 
+											</label>
+										</dd>
+										<!-- 190821 위치변경 및 통합인증앱이란 링크 추가 -->
+										<dd class="radio_area popup_button_wrap">
+											<a href="javascript:void(0);" class="btn_did" onclick="$('#pop_certify_info').neoModal();">통합인증앱이란?</a>
+											<a href="javascript:void(0);" class="btn_did" onclick="$('#pop_did').neoModal();">DID 인증이란?</a>
+										</dd>
+									</dl>
+
+									<div class="group_srch">
+										<label for="num_regist">주민등록번호</label>
+										<input type="text" class="form_control" id="num_regist" maxlength="" value="">
+										<button type="button" class="btn_md btn_blue">조회</button>
+									</div>
+								</div>
+							
+							</fieldset>
+						</form>
+					</div>
+				</div>	<!-- // contents -->
+			</div>
+		</div>
+	</div>	<!-- // container -->
+	
+	<!-- 로그인전 -->
+	<div id="footer">
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix"> 
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.koscom.co.kr">코스콤</option>
+					</select> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_member join">
+					<p>서비스 가입</p>
+					<ul>
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+				</div>
+				<div class="nav_member login">
+					<p>로그인</p>
+					<ul>
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a>
+	</div>	<!-- // footer --> 
+
+	<div id="pop_certify" class="pop_dim_wrap pop_alert">
+	    <div class="pop_wrap">
+	        <button class="pop_btn_close">닫기</button>
+	        <div class="message_table">
+	            <div class="messageWrap">
+	                인증방법이 선택되지 않았습니다.<br>
+	                인증방법을 선택하여 주십시오.
+	            </div>
+	        </div> 
+	        <div class="button_wrap">
+				<button type="button" class="btn_pop_default btn_blue">확인</button>
+	        </div>
+	    </div>
+	</div> 
+
+	<div id="pop_certify2" class="pop_dim_wrap pop_alert">
+	    <div class="pop_wrap">
+	        <button class="pop_btn_close">닫기</button>
+	        <div class="message_table">
+	            <div class="messageWrap">
+	                입력된 주민등록번호와 인증서가<br>
+	                일치하지 않습니다.
+	            </div>
+	        </div> 
+	        <div class="button_wrap">
+				<button type="button" class="btn_pop_default btn_blue">확인</button>
+	        </div>
+	    </div>
+	</div> 
+
+	<div id="pop_certify3" class="pop_dim_wrap pop_alert">
+	    <div class="pop_wrap">
+	        <button class="pop_btn_close">닫기</button>
+	        <div class="message_table">
+	            <div class="messageWrap">
+	                인증서 비밀번호가 일치하지 않습니다.
+	            </div>
+	        </div> 
+	        <div class="button_wrap">
+				<button type="button" class="btn_pop_default btn_blue">확인</button>
+	        </div>
+	    </div>
+	</div> 
+
+	<div id="pop_did" class="pop_dim_wrap pop_modal">
+	    <div class="pop_wrap">
+	        <button class="pop_btn_close">닫기</button>
+	        <div class="title_wrap"> 
+	            DID 인증이란? 
+	        </div>
+	        <div class="contents_wrap">
+	            DID인증은 모바일 ID로 SK텔레콤이 블록체인 기반으로 개발한 새로운 
+	            인증방식입니다.<br>
+	            DID인증 소개 및 특장점 : 컨텐츠를 2-3줄 정도로 요약하여 카피 형태로 보여줄 예정입니다.
+	            <p class="img"><img src="../img/sub/logo_sk.png" alt=""></p>
+	        </div>
+	        <div class="button_wrap">
+	            <button type="button" class="btn_md btn_blue" onclick="$('#pop_did').neoModal();">확인</button>
+	        </div>
+	    </div>
+	</div>
+
+	<div id="pop_certify_info" class="pop_dim_wrap pop_modal">
+		<div class="pop_wrap">
+			<button class="pop_btn_close">닫기</button>
+			<div class="title_wrap"> 
+				통합인증앱이란? 
+			</div>
+			<div class="contents_wrap ac">
+				통합인증앱은 사용자스마트폰에 설치된 앱을 연동하여<br>
+				스마트폰 기기에 저장된 공유인증서를 공유하여 사용하는<br>
+				새로운 공인인증 방식입니다.
+			</div>
+			<div class="button_wrap">
+				<button type="button" class="btn_md btn_blue" onclick="$('#pop_certify_info').neoModal();">확인</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="pop_qr" class="pop_dim_wrap pop_modal">
+	    <div class="pop_wrap">
+	        <button class="pop_btn_close">닫기</button>
+	        <div class="title_wrap"> 
+	            DID인증용 SSW앱을 설치 QR코드
+	        </div>
+	        <div class="contents_wrap">
+	            SSW앱을 설치하신 후 앱을 실행하여 화면에 보이는 QR코드를 읽어<br>
+				회원가입을 진행하여 주십시오.
+	            <div class="qr_area">
+	            	<img src="../img/sub/img_qr.png" alt="">
+	            	<p class="txt_title">QR코드</p>
+	            </div>
+	        </div>
+	        <div class="button_wrap">
+	        	<button type="button" class="btn_md btn_white">취소</button>
+	            <button type="button" class="btn_md btn_blue">SSW앱 설치 바로가기</button>
+	        </div>
+	    </div>
+	</div>
+
+	<div id="pop_qr2" class="pop_dim_wrap pop_modal">
+		<div class="pop_wrap">
+			<button class="pop_btn_close">닫기</button>
+			<div class="title_wrap"> 
+				오픈패스
+			</div>
+			<div class="contents_wrap">
+				<div class="qr_box clearfix">
+					<dl>
+						<dt>오픈패스 앱 설치</dt>
+						<dd>QR코드를 읽어 오픈패스 앱을<br>설치하여 주십시오</dd>
+					</dl>
+					<div class="qr_area">
+						<img src="../img/sub/img_qr.png" alt="">
+						<p class="txt_title">QR코드</p>
+					</div>
+				</div>
+			</div>
+			<div class="button_wrap">
+				<button type="button" class="btn_md btn_white">취소</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="pop_qr3" class="pop_dim_wrap pop_modal">
+		<div class="pop_wrap">
+			<button class="pop_btn_close">닫기</button>
+			<div class="title_wrap"> 
+				DID인증
+			</div>
+			<div class="contents_wrap">
+				<div class="qr_box clearfix bg_type">
+					<dl>
+						<dt>앱 설치</dt>
+						<dd>QR코드를 읽어 SSW앱을 설치하신<br>후 회원가입을 진행하여 주십시오</dd>
+					</dl>
+					<div class="qr_area">
+						<img src="../img/sub/img_qr.png" alt="">
+						<p class="txt_title">QR코드</p>
+					</div>
+				</div>
+				<div class="qr_box clearfix mt40">
+					<dl>
+						<dt>DID 간편로그인 등록</dt>
+						<dd>SSW앱을 설치하신 후 앱을 실행하여<br>
+								화면에 보이는 QR코드를 읽어<br>
+								간편로그인 등록을 진행하여 주십시오</dd>
+					</dl>
+					<div class="qr_area">
+						<img src="../img/sub/img_qr.png" alt="">
+						<p class="txt_title">QR코드</p>
+					</div>
+				</div>
+			</div>
+			<div class="button_wrap">
+				<button type="button" class="btn_md btn_white">취소</button>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="../js/vendo/analytics.js" async></script>
+
+</body>
+</html>

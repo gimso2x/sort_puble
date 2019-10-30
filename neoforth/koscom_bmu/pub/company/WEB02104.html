@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+	<!--PQ Grid files-->
+	<link rel="stylesheet" href="../css/vendor/pqgrid.min.css" />
+	<link rel="stylesheet" href="../css/vendor/pqgrid.ui.min.css" />
+	<!--bootstrap theme-->
+	<link rel="stylesheet" href="../css/vendor/themes/bootstrap/pqgrid.css" />
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/vendor/Chart.min.js"></script>
+	<script src="../js/plugins.js"></script>
+	<script src="../js/vendor/pqgrid.min.js"></script>
+	<!--for localization and intellisense -->
+	<script src="../js/vendor/localize/pq-localize-en.js"></script>
+	<!--for touch devices-->
+	<script src="../js/vendor/pqTouch/pqtouch.min.js"></script>
+	<!--jsZip for zip and xlsx import/export-->
+	<script src="../js/vendor/jsZip-2.5.0/jszip.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			// 주주명부관리 상세팝업
+			$('#pop_shareholder_detail').neoModal();
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+
+</div>
+
+
+<!-- 팝업 -->
+
+<div id="pop_upload_fail" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				주주구분 및 주주성명, 주민번호가 잘못되었습니다<br>
+				다시 확인하여 주십시요.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_upload_fail').neoModal('close');">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_shareholder_detail" class="pop_dim_wrap pop_modal pop_xlg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주주명부 관리 상세
+		</div>
+			<div class="contents_wrap">
+				<div class="company_status_info">
+					<p class="pop_sort_infotxt"><span class="txt_sell_color">승인완료</span>된 주주명부 입니다</p>
+
+					<!-- 기본 주식 정보 -->
+					<h5>기본 주식 정보</h5>
+					<!-- 190812 기본주식정보 테이블 변경 -->
+					<div class="companyinfo_table">
+						<table>
+							<caption>기본 주식 정보 - 발행가능주식 총수, 발행주식 총수, 보통주, 발행수량, 액면가</caption>
+							<colgroup>
+								<col width="130">
+								<col width="*">
+								<col width="130">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>발행가능주식<br>총수(주)</th>
+									<td class="ar">300,000</td>
+									<th>발행주식 총수(주)</th>
+									<td class="ar">150,000</td>
+								</tr>
+							</tbody>
+						</table>
+						<table>
+							<caption>기본 주식 정보 - 발행가능주식 총수, 발행주식 총수, 보통주, 발행수량, 액면가</caption>
+							<colgroup>
+								<col width="130">
+								<col width="*">
+								<col width="130">
+								<col width="*">
+								<col width="130">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>보통주</th>
+									<td>보통주</td>
+									<th>발행수량(주)</th>
+									<td class="ar">100,000</td>
+									<th>액면가(원)</th>
+									<td class="ar">5,000</td>
+								</tr>
+								<tr>
+									<th>1우선주</th>
+									<td>
+										<select class="select_css form_control">
+											<option value="">상황우선주</option>
+										</select>
+									</td>
+									<th>발행수량(주)</th>
+									<td class="ar">50,000</td>
+									<th>액면가(원)</th>
+									<td class="ar">500</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- // 기본 주식 정보 -->
+
+					<!-- 주주 및 지분 정보 -->
+					<h5>주식정보 및 주주(지분)정보
+						<div class="top_right_wrap">
+							<select class="select_css form_control w160">
+								<option value="">보통주</option>
+								<option value="">둘</option>
+								<option value="">셋</option>
+							</select>
+						</div>
+					</h5>
+					<div class="shareholder_detaildata clearfix">
+						<div class="tbl_chartdata">
+							<div class="inner_div">
+								<table>
+									<caption>주주명, 주식수, 지분율, 주주구분</caption>
+									<colgroup>
+										<col width="190">
+										<col width="190">
+										<col width="190">
+										<col width="190">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">주주명</th>
+											<th scope="col">주식수(주)</th>
+											<th scope="col">지분율(%)</th>
+											<th scope="col">주주구분</th>
+										</tr>
+									</thead>
+							
+									<tbody>
+										<tr>
+											<td class="ac">김대표</td>
+											<td class="ar">200,000</td>
+											<td class="ar">50.00</td>
+											<td class="ac">주주구분</td>
+										</tr>
+										<tr>
+											<td class="ac">김대표</td>
+											<td class="ar">200,000</td>
+											<td class="ar">50.00</td>
+											<td class="ac">주주구분</td>
+										</tr>
+										<tr>
+											<td class="ac">김대표</td>
+											<td class="ar">200,000</td>
+											<td class="ar">50.00</td>
+											<td class="ac">주주구분</td>
+										</tr>
+										<tr>
+											<td class="ac">김대표</td>
+											<td class="ar">200,000</td>
+											<td class="ar">50.00</td>
+											<td class="ac">주주구분</td>
+										</tr>
+										<tr class="sum">
+											<td class="ac">계</td>
+											<td class="ar">200,000</td>
+											<td class="ar">50.00</td>
+											<td class="ac"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div>
+							
+							<canvas id="chart_canvas2" width="210" height="210" style="margin:auto;"></canvas>
+						</div>
+					</div>
+					<!-- // 주주 및 지분 정보 -->
+
+					<!-- 변경 전 주주명부 -->
+					<h5>주주명부
+						<span>(등록기준일:2019년 06월 07일, 최초 등록)</span>
+					</h5>
+					<div class="change_prev_shareholder"></div>
+					<!-- // 변경 전 주주명부 -->
+				</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+<!-- // 팝업 -->
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+<script>
+
+	//팝업차트
+	var config2 = {
+		type: 'doughnut',
+		data: {
+			datasets: [
+				{
+				data: [ 66, 23, 14, 6, 2, 1 ],
+				backgroundColor: [ '#6758f3', '#eb7425', '#f6ab2e', '#33aa44', '#4faded', '#eb4625', ],
+				borderWidth: 0,
+			}],
+			labels: [ '김대표', '(주)코스콤', '이이사', '안감사', '차이사', '기타'
+			]
+		},
+		options: {
+			responsive: false,
+			legend: {
+				display: false,
+			},
+		}
+	};
+
+	var ctx2 = document.getElementById('chart_canvas2').getContext('2d');
+	var myDoughnut = new Chart(ctx2, config2);
+
+	//swiper 주주명부 히스토리
+	var swiper_shareholder = new Swiper('.shareholder_history .swiper-container', {
+		slidesPerView: 4,
+		spaceBetween: 20,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+
+	$(document).ready(function() {
+		// pqgrid
+		//변경전 주주명부
+		function tooltipRender(ui) {
+			return {
+				//here we inject html title attribute in each cell.
+				attr: 'title="' + ui.formatVal + '"'
+			}
+		}
+		var json_data = [
+			{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+		];
+
+		var obj = { 
+			
+			height: 255,
+			rowInit: function(ui) {
+				return {style: 'color:#555;line-height:normal;'}
+			},
+			rowHtHead: 49,
+			showTop: false, // header 숨기기
+			numberCell: {show: false}, //index 열 숨기기
+			dragColumns: {enabled: false}, // 열(col)간 이동 금지
+			// fillHandle: '', // 엑셀 끌기로 데이터 채우기 기능 금지
+			stripeRows: false, // 행 줄무늬 색깔 제거,
+			roundCorners: false, //둥근 코너 제거
+			scrollModel:{autoFit:true},
+			editable: false,
+			colModel: [
+				{ title: "인증<br>여부", maxWidth:20, dataType: "string", dataIndx: "shareholder_certify", align: "center",},
+				{ title: "주주구분", minWidth:70, dataIndx: "shareholder_kind", align: "center"},
+				{ title: "주주명", minWidth:90, dataIndx: "shareholder_name", align: "center",},
+				{ title: "실명번호", dataIndx: "shareholder_num", align: "center",},
+				{ title: "주소", dataIndx: "shareholder_address", align: "left"},
+				{ title: "이메일", minWidth:50, dataIndx: "shareholder_email", align: "center",},
+				{ title: "자택전화", minWidth:70, dataIndx: "shareholder_phone", align: "center",},
+				{ title: "연락처", minWidth:70, dataIndx: "shareholder_cellphone", align: "center",},
+				{ title: "주식종류", dataIndx: "shareholder_sort", align: "center",},
+				{ title: "주식수", dataIndx: "shareholder_stock", format: '##,###', dataType: "integer"},
+				{ title: "처분제한", dataIndx: "shareholder_stock_not", format: '##,###', dataType: "integer"},
+				{ title: "처분제한<br>사유", dataIndx: "shareholder_stock_notreason"},
+			],
+			summaryData: [
+				{ shareholder_certify:'합 계', summaryRow: true, pq_fn:{shareholder_stock:'sum(I:I)', shareholder_stock_not:'sum(J:J)', }},
+			],
+			
+			dataModel: { data: json_data },
+			columnTemplate: { render: tooltipRender },
+			create: function (evt, ui) {
+				this.widget().pqTooltip();
+			},
+		};
+
+		$(".change_prev_shareholder").pqGrid(obj);
+		
+	
+	})
+</script>
+</body>
+</html>

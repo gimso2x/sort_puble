@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script> 
+	<script src="../js/common.js"></script>
+	<script>
+		$(function(){
+			$('#pop_type_industry').neoModal(); 
+		});
+	</script>
+</head>
+<body class=""> 
+
+<div id="pop_type_industry" class="pop_dim_wrap pop_modal pop_industry"> 
+	<div class="pop_wrap">  
+		<button class="pop_btn_close">닫기</button> 
+		<div class="title_wrap al">산업분류</div>  
+		<div class="contents_wrap">
+			<div class="inner">
+				<label for="select_type1">1차분류</label>
+				<select name="" id="select_type1" class="selectbox form_control">
+					<option value="">제조</option>
+				</select>
+
+				<label for="select_type2" class="pt10">2차분류</label>
+				<select name="" id="select_type2" class="selectbox form_control">
+					<option value="">섬유</option>
+				</select>
+			</div>
+		</div>
+		<div class="button_wrap"> 
+			<button type="button" class="btn_md btn_blue" onclick="$('#pop_type_industry').neoModal('close');">확인</button>  
+		</div> 
+	</div> 
+</div>
+
+</body>
+</html>

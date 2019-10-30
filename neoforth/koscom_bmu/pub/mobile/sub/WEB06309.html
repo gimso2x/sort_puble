@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script> 
+	<script src="../js/common.js"></script>
+	<script src="../js/vendor/Chart.min.js"></script>
+</head>
+<body class="bg_gray"> 
+ 
+<div id="wrap_webview" class="fixed_lnb">
+	<div class="section sec_top">
+		<ul class="nav_lnb clearfix w50">
+			<li><a href="javascript:void(0);" class="on">기업정보</a></li>
+			<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+		</ul>
+	</div>
+
+	<div class="section">
+		<dl class="lst_info_company">
+			<dt>1. 기본정보</dt>
+			<dd>
+				<div class="table table_row">
+					<table>
+						<caption class="sr_only">기본정보 상세</caption>
+						<colgroup>
+							<col width="100">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>국문회사명</th>
+								<td>국문회사명</td>
+							</tr>
+							<tr>
+								<th>영문회사명</th>
+								<td>영문회사명</td>
+							</tr>
+							<tr>
+								<th>대표자 성명</th>
+								<td>홍길동</td>
+							</tr>
+							<tr>
+								<th>사업자등록번호</th>
+								<td>111-11-11111</td>
+							</tr>
+							<tr>
+								<th>법인등록번호</th>
+								<td>000000-0000000</td>
+							</tr>
+							<tr>
+								<th>설립일</th>
+								<td>2017-07-29</td>
+							</tr>
+							<tr>
+								<th>결산월</th>
+								<td>결산월</td>
+							</tr>
+							<tr>
+								<th>투자자제공용<br>산업분류</th>
+								<td>제조업/동물용사료제조</td>
+							</tr>
+							<tr>
+								<th>주소</th>
+								<td>서울시 영등포구 여의도동 76</td>
+							</tr>
+							<tr>
+								<th>직원수</th>
+								<td>16명</td>
+							</tr>
+							<tr>
+								<th>홈페이지</th>
+								<td><a href="https://www.gqinter.com" target="_blank" class="txt_link">https://www.gqinter.com</a></td>
+							</tr>
+							<tr>
+								<th>Fax 번호</th>
+								<td>02-782-6598</td>
+							</tr>
+							<tr>
+								<th>기업비전</th>
+								<td>기업비전</td>
+							</tr>
+							<tr>
+								<th>기업사명</th>
+								<td>기업사명</td>
+							</tr>
+							<tr>
+								<th>핵심가치</th>
+								<td>핵심가치</td>
+							</tr>
+							<tr>
+								<th>기업철학</th>
+								<td>
+									1) 동물병원 전용(Vet Exclusive)<br>
+									2) 영양학 전공 수의사가 제조(Vet Made Diet)<br>
+									3) 유기능 원료 사용(Organic)<br>
+									4) 원료의 영양 균형(Balanced Nutrition)
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</dd>
+			<dt>2. 재무정보</dt>
+			<dd>
+				<div class="table table_row">
+					<table>
+						<caption class="sr_only">재무정보 상세</caption>
+						<colgroup>
+							<col width="100">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>년도</th>
+								<td class="ar bolder">2018</td>
+							</tr>
+							<tr>
+								<th>매출액(원)</th>
+								<td class="ar">2,000</td>
+							</tr>
+							<tr>
+								<th>영업이익(원)</th>
+								<td class="ar">2,000</td>
+							</tr>
+							<tr>
+								<th>당기순이익(원)</th>
+								<td class="ar">2,000</td>
+							</tr>
+							<tr>
+								<th>자산총계(원)</th>
+								<td class="ar">2,000</td>
+							</tr>
+							<tr>
+								<th>부채총계(원)</th>
+								<td class="ar">2,000</td>
+							</tr>
+							<tr>
+								<th>자본총계(원)</th>
+								<td class="ar">2,000</td>
+							</tr>
+							<tr>
+								<th>자본금(원)</th>
+								<td class="ar">2,000</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</dd>
+			<dt>3. 주요주주현황</dt>
+			<dd>
+				<div class="ar">
+					<select name="" id="" class="form_control selectbox chart_selectbox">
+						<option value="">보통주</option>
+						<option value="">우선주</option>
+					</select>
+				</div>
+				<div class="chat_area"> 
+					<canvas id="chart_canvas" width="210" height="210" style="margin:auto;"></canvas>
+				</div>
+
+				<div class="table table_noborder">
+					<table>
+						<caption class="sr_only">체결정보 상세</caption>
+						<colgroup>
+							<col width="100">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>주주명</th>
+								<td class="ar"><strong>김대표</strong></td>
+							</tr>
+							<tr>
+								<th>주식수(주)</th>
+								<td class="ar"><span>2,000</span>주</td>
+							</tr>
+							<tr>
+								<th>지분율(%)</th>
+								<td class="ar"><strong>50.00</strong>%</td>
+							</tr>
+							<tr>
+								<th>주주구분</th>
+								<td class="ar">대표이사</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<th>주주명</th>
+								<td class="ar"><strong>김대표</strong></td>
+							</tr>
+							<tr>
+								<th>주식수(주)</th>
+								<td class="ar"><span>2,000</span>주</td>
+							</tr>
+							<tr>
+								<th>지분율(%)</th>
+								<td class="ar"><strong>50.00</strong>%</td>
+							</tr>
+							<tr>
+								<th>주주구분</th>
+								<td class="ar">대표이사</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<th>주주명</th>
+								<td class="ar"><strong>김대표</strong></td>
+							</tr>
+							<tr>
+								<th>주식수(주)</th>
+								<td class="ar"><span>2,000</span>주</td>
+							</tr>
+							<tr>
+								<th>지분율(%)</th>
+								<td class="ar"><strong>50.00</strong>%</td>
+							</tr>
+							<tr>
+								<th>주주구분</th>
+								<td class="ar">대표이사</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</dd>
+		</dl>
+	</div>	<!-- // section -->
+
+	<div class="top_area">
+		<a href="javascript:void(0);" class="btn_top sr_only">top</a>
+	</div>
+</div>	<!-- // wrap -->
+
+<script>
+	// 차트 스크립트
+	//	S: 기본주식정보차트
+	var config = {
+		type: 'doughnut',
+		data: {
+			datasets: [
+				{
+				data: [ 66, 23, 14, 6, 2, 1 ],
+				backgroundColor: [ '#6758f3', '#eb7425', '#f6ab2e', '#33aa44', '#4faded', '#eb4625', ],
+				borderWidth: 0,
+			}],
+			labels: [ '김대표', '(주)코스콤', '이이사', '안감사', '차이사', '기타'
+			]
+		},
+		options: {
+			responsive: false,
+			legend: {
+				display: false,
+			},
+		}
+	};
+
+	var ctx = document.getElementById('chart_canvas').getContext('2d');
+	var myDoughnut = new Chart(ctx, config);
+	//	E: 기본주식정보차트
+</script>
+
+</body>
+</html>

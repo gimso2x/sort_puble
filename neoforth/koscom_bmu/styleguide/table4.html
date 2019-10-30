@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - TABLE4</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../pub/css/common.css">
+<link rel="stylesheet" href="../pub/css/vendor/jquery-ui.min.css">
+<script src="../pub/js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../pub/js/vendor/jquery-ui.min.js"></script>
+<script src="../pub/js/common.js"></script>
+
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(webSnb);
+		$('.g-nav-snb ul li').eq(7).addClass("active");
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">TABLE4</h2>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">기본 데이터 테이블</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="companyinfo_table">
+								<table>
+									<caption>가입 시 입력하신 정보가 자동 노출됩니다. 수정을 원하시면 My Page 가입정보 관리에서 수정하실 수 있습니다.</caption>
+									<colgroup>
+										<col width="200">
+										<col width="*">
+										<col width="200">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>국문회사명</th>
+											<td>국문회사명 노출</td>
+											<th>사업자등록번호</th>
+											<td>111-11-11111</td>
+										</tr>
+										<tr>
+											<th>영문회사명</th>
+											<td>영문회사명 노출</td>
+											<th>법인등록번호</th>
+											<td>000000-0000000</td>
+										</tr>
+										<tr>
+											<th>대표자 성명</th>
+											<td></td>
+											<th>직원수</th>
+											<td></td>
+										</tr>
+										<tr>
+											<th>설립일</th>
+											<td></td>
+											<th>결산월</th>
+											<td></td>
+										</tr>
+										<tr>
+											<th>주소</th>
+											<td></td>
+											<th>홈페이지</th>
+											<td></td>
+										</tr>
+										<tr>
+											<th>Fax 번호</th>
+											<td></td>
+											<th>업종</th>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<div class="companyinfo_table">
+									<table>
+										<caption>가입 시 입력하신 정보가 자동 노출됩니다. 수정을 원하시면 My Page 가입정보 관리에서 수정하실 수 있습니다.</caption>
+										<colgroup>
+											<col width="200">
+											<col width="*">
+											<col width="200">
+											<col width="*">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>국문회사명</th>
+												<td>국문회사명 노출</td>
+												<th>사업자등록번호</th>
+												<td>111-11-11111</td>
+											</tr>
+											<tr>
+												<th>영문회사명</th>
+												<td>영문회사명 노출</td>
+												<th>법인등록번호</th>
+												<td>000000-0000000</td>
+											</tr>
+											<tr>
+												<th>대표자 성명</th>
+												<td></td>
+												<th>직원수</th>
+												<td></td>
+											</tr>
+											<tr>
+												<th>설립일</th>
+												<td></td>
+												<th>결산월</th>
+												<td></td>
+											</tr>
+											<tr>
+												<th>주소</th>
+												<td></td>
+												<th>홈페이지</th>
+												<td></td>
+											</tr>
+											<tr>
+												<th>Fax 번호</th>
+												<td></td>
+												<th>업종</th>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.companyinfo_table{border-top:1px solid #000;border-bottom:1px solid #aaa;}
+								.companyinfo_table table{width:100%;border-collapse: collapse;border-spacing: 0;table-layout:fixed;}
+								.companyinfo_table table caption{position: absolute;font-size: 0;left: -99999px;}
+								.companyinfo_table table th, .companyinfo_table table td{height:60px;border-bottom:1px solid #ddd;}
+								.companyinfo_table table tr:last-child th, .companyinfo_table table tr:last-child td{border-bottom:0;}
+								.companyinfo_table table th{background:#f2f2f2;font-weight:400;}
+								.companyinfo_table table td{padding-left:20px;padding-right:20px;}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">기본 데이터 테이블 - 세로</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="companyinfo_table th_vertical">
+								<table>
+									<caption>관계회사 현황 - 관계사명, 지분율</caption>
+									<colgroup>
+										<col width="*">
+										<col width="160">
+										<col width="*">
+										<col width="160">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>관계사명</th>
+											<th>지분율</th>
+											<th>관계사명</th>
+											<th>지분율</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>관계사명 텍스트 노출, 관계사명 텍스트 노출</td>
+											<td>65%</td>
+											<td>관계사명 텍스트 노출, 관계사명 텍스트 노출</td>
+											<td>35%</td>
+										</tr>
+										<tr>
+											<td>관계사명 텍스트 노출, 관계사명 텍스트 노출</td>
+											<td>65%</td>
+											<td>관계사명 텍스트 노출, 관계사명 텍스트 노출</td>
+											<td>35%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<div class="companyinfo_table th_vertical">
+									<table>
+										<caption>관계회사 현황 - 관계사명, 지분율</caption>
+										<colgroup>
+											<col width="*">
+											<col width="160">
+											<col width="*">
+											<col width="160">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>관계사명</th>
+												<th>지분율</th>
+												<th>관계사명</th>
+												<th>지분율</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>관계사명 텍스트 노출, 관계사명 텍스트 노출</td>
+												<td>65%</td>
+												<td>관계사명 텍스트 노출, 관계사명 텍스트 노출</td>
+												<td>35%</td>
+											</tr>
+											<tr>
+												<td>관계사명 텍스트 노출, 관계사명 텍스트 노출</td>
+												<td>65%</td>
+												<td>관계사명 텍스트 노출, 관계사명 텍스트 노출</td>
+												<td>35%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.companyinfo_table.th_vertical th, .companyinfo_table.th_vertical td{padding:10px 20px;text-align:center;}
+								.companyinfo_table.th_vertical thead{border-bottom:1px solid #aaa;}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+		</div>
+	</div>
+</div>
+</body>
+</html>

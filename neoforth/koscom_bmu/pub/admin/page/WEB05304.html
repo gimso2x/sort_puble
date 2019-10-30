@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			// thead 체크박스 클릭시 밑 체크박스 전부 선택
+			var _theadChkBox = 'thead input[type="checkbox"]';
+			var _tbodyChkBox = 'tbody input[type="checkbox"]';
+
+			$(document).on('click', '.table_normal_list thead input[type="checkbox"]', function() {
+				$(this).closest('table').find(_tbodyChkBox).prop('checked', this.checked);
+			});
+
+			$(document).on('click', '.table_normal_list tbody input[type="checkbox"]', function() {
+				var _$chkTable = $(this).closest('table');
+				if(_$chkTable.find(_tbodyChkBox).length === _$chkTable.find(_tbodyChkBox + ':checked').length) {
+					_$chkTable.find(_theadChkBox).prop('checked', true);
+				} else {
+					_$chkTable.find(_theadChkBox).prop('checked', false);
+				}
+			});
+		})
+	</script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>컨텐츠 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">메인 NEWS 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">프리미엄<br>기업정보 관리</a></li>
+				<li><a href="javascript:void(0);">앱 강제업데이트</a></li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>프리미엄 기업정보 관리</h4>
+				<p class="explain_tabledetail">프리미엄 기업정보는 기업 리스트에서 선택하여 등록하며, 등록된 프리미엄 기업정보는 사용자화면 '투자정보&gt;기업정보' 화면에서 랜덤하게 노출됩니다</p>
+				<div class="companyinfo_table mt20"> 
+					<table>
+						<caption>프리미엄 기업정보 관리</caption>
+						<colgroup>
+							<col width="130">  
+							<col width="*">
+						</colgroup>
+						<tbody> 
+							<tr>
+								<th>노출여부</th>
+								<td>
+									<div>
+										<label class="input_radio" for="rdoSolar1">
+											<input type="radio" id="rdoSolar1" name="blockchain1" checked="">
+											<span class="label_text">노출</span>
+										</label>
+										<label class="input_radio" for="rdoLunar1">
+											<input type="radio" id="rdoLunar1" name="blockchain1">
+											<span class="label_text">비노출</span>
+										</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>기업명</th>
+								<td>
+									<input type="text" class="form_control" readonly="">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="submit_area ac">
+					<button type="button" class="btn_md btn_blue">등록</button>
+				</div>
+
+				<div class="table_normal_list mt40">
+					<div class="group_tableinfo">
+						<span class="num_total">총 <em class="txt_sell_color">15</em>건</span>
+						<div class="srch_area">
+							<div class="td_col2 pm_scrh">
+								<div>
+									<input type="text" class="form_control">
+								</div>
+								<div>
+									<button type="button" class="btn_sm btn_gray2">검색</button>
+								</div>
+							</div>
+							<select class="select_css form_control page_num_width">
+								<option value="20">20</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
+						</div>
+					</div>
+
+					<table>
+						<caption>프리미엄 기업정보관리</caption>
+						<colgroup>
+							<col width="10%">
+							<col width="*">
+							<col width="15%">
+							<col width="10%">
+							<col width="9%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>노출여부</th>
+								<th>기업명</th>
+								<th>대표자</th>
+								<th>등록일</th>
+								<th>상세 내용</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 데이터없을때 -->
+							<!-- <tr>
+								<td class="blank_area" colspan="5">
+									<p class="txt_blank">데이터가 없습니다.</p>
+								</td>
+							</tr> -->
+							<tr class="check_tr">
+								<td>노출</td>
+								<td class="al">뉴코에드윈드</td>
+								<td>홍길동</td>
+								<td>2019-06-26</td>
+								<td><button type="button" class="btn_xs btn_gray">보기</button></td>
+							</tr>
+							<tr>
+								<td>비노출</td>
+								<td class="al">뉴코에드윈드</td>
+								<td>홍길동</td>
+								<td>2019-06-26</td>
+								<td><button type="button" class="btn_xs btn_gray">보기</button></td>
+							</tr>
+							<tr>
+								<td>비노출</td>
+								<td class="al">뉴코에드윈드</td>
+								<td>홍길동</td>
+								<td>2019-06-26</td>
+								<td><button type="button" class="btn_xs btn_gray">보기</button></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="board_paging">
+						<ul>
+							<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+							<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+							<li><a href="javascript:void(0);" class="active">1</a></li>
+							<li><a href="javascript:void(0);">2</a></li>
+							<li><a href="javascript:void(0);">3</a></li>
+							<li><a href="javascript:void(0);">4</a></li>
+							<li><a href="javascript:void(0);">5</a></li>
+							<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+							<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+						</ul>
+					</div>
+				</div>
+
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+	
+
+</body>
+</html>

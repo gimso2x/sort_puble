@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/vendor/Chart.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#pop_company_infodetail2').neoModal();
+			
+			//차트
+			var config2 = {
+				type: 'doughnut',
+				data: {
+					datasets: [
+						{
+						data: [ 66, 23, 14, 6, 2, 1 ],
+						backgroundColor: [ '#6758f3', '#eb7425', '#f6ab2e', '#33aa44', '#4faded', '#eb4625', ],
+						borderWidth: 0,
+					}],
+					labels: [ '김대표', '(주)코스콤', '이이사', '안감사', '차이사', '기타'
+					]
+				},
+				options: {
+					responsive: false,
+					legend: {
+						display: false,
+					},
+				}
+			};
+
+			var ctx2 = document.getElementById('chart_canvas').getContext('2d');
+			var myDoughnut = new Chart(ctx2, config2);
+
+		})
+	</script>
+</head> 
+<body>
+
+<div id="pop_company_infodetail2" class="pop_dim_wrap pop_modal pop_xlg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			기업정보 상세
+		</div>
+		<div class="contents_wrap pb0">
+			<div class="company_status_info">
+				<!-- 기업 기본정보 -->
+				<h5 class="mt0">기업 기본정보</h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>기업 기본정보 - 국문회사명, 사업자등록번호, 영문회사명, 법인등록번호, 대표자 성명, 직원수, 설립일, 결산월, 주소, 홈페이지, Fax번호, 업종, 기업비전, 기업사명, 핵심가치, 기업철학(제조/서비스 원칙)</caption>
+						<colgroup>
+							<col width="200">
+							<col width="*">
+							<col width="200">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>국문회사명</th>
+								<td>㈜지큐인터네셔널</td>
+								<th>사업자등록번호</th>
+								<td>111-11-11111</td>
+							</tr>
+							<tr>
+								<th>영문회사명</th>
+								<td>GQ international Co,.LTD</td>
+								<th>법인등록번호</th>
+								<td>000000-0000000</td>
+							</tr>
+							<tr>
+								<th>대표자 성명</th>
+								<td>김대표</td>
+								<th>직원수</th>
+								<td>16명</td>
+							</tr>
+							<tr>
+								<th>설립일</th>
+								<td>2017.07.29</td>
+								<th>결산월</th>
+								<td>12월</td>
+							</tr>
+							<tr>
+								<th>주소</th>
+								<td>서울시 영등포구 여의도동 76 (신송빌딩 14층)</td>
+								<th>홈페이지</th>
+								<td>www.gqinter.com</td>
+							</tr>
+							<tr>
+								<th>Fax 번호</th>
+								<td>02-782-6598</td>
+								<th>업종</th>
+								<td>제조업 / 동물용사료제조</td>
+							</tr>
+							<tr>
+								<th>기업비전</th>
+								<td colspan="3">전세계의 반려인들이 가장 선호하는 펫푸드 (pet food) 제공</td>
+							</tr>
+							<tr>
+								<th>기업사명</th>
+								<td colspan="3">영양학적으로 가장 올바른 펫푸드를 동물병원을 통해 유통하고 지식을 공유</td>
+							</tr>
+							<tr>
+								<th>핵심가치</th>
+								<td colspan="3">영양학에 대한 지식, 높은 윤리 의식, 동물과 고객에 대한 존중</td>
+							</tr>
+							<tr>
+								<th>기업철학(제조/서비스 원칙)</th>
+								<td colspan="3">
+									1) 동물병원 전용 (Vet Exclusive)<br>
+									2) 영양학 전공 수의사가 제조 (Vet Made Diet)<br>
+									3) 유기농 원료 사용 (Organic)<br>
+									4) 원료의 영양 균형 (Balanced Nutrition)<br>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 기업 기본정보 -->
+
+				<!-- 재무정보 -->
+				<h5>재무정보</h5>
+				<div class="companyinfo_table th_vertical type_finace_table">
+					<table>
+						<caption>재무정보</caption>
+						<colgroup>
+							<col width="*">
+							<col width="279">
+							<col width="279">
+							<col width="279">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>년도</th>
+								<th>2019</th>
+								<th>2018</th>
+								<th>2017</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="al">매출액(원)</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+							</tr>
+							<tr>
+								<td class="al">영업이익(원)</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+							</tr>
+							<tr>
+								<td class="al">당기순이익(원)</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+							</tr>
+							<tr>
+								<td class="al">자산총계(원)</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+							</tr>
+							<tr>
+								<td class="al">부채총계(원)</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+							</tr>
+							<tr>
+								<td class="al">자본총계(원)</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+							</tr>
+							<tr>
+								<td class="al">자본금(원)</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+								<td>250,000,000</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 재무정보 -->
+
+				<!-- 주주 및 지분 정보 -->
+				<h5>주식정보 및 주주(지분)정보
+					<div class="top_right_wrap">
+						<select class="select_css form_control w160">
+							<option value="">보통주</option>
+							<option value="">둘</option>
+							<option value="">셋</option>
+						</select>
+					</div>
+				</h5>
+				<div class="shareholder_detaildata clearfix">
+					<div class="tbl_chartdata">
+						<div class="inner_div">
+							<table>
+								<caption>주주명, 주식수, 지분율, 주주구분</caption>
+								<colgroup>
+									<col width="190">
+									<col width="190">
+									<col width="190">
+									<col width="190">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">주주명</th>
+										<th scope="col">주식수(주)</th>
+										<th scope="col">지분율(%)</th>
+										<th scope="col">주주구분</th>
+									</tr>
+								</thead>
+						
+								<tbody>
+									<tr>
+										<td class="ac">김대표</td>
+										<td class="ar">200,000</td>
+										<td class="ar">50.00</td>
+										<td class="ac">주주구분</td>
+									</tr>
+									<tr>
+										<td class="ac">김대표</td>
+										<td class="ar">200,000</td>
+										<td class="ar">50.00</td>
+										<td class="ac">주주구분</td>
+									</tr>
+									<tr>
+										<td class="ac">김대표</td>
+										<td class="ar">200,000</td>
+										<td class="ar">50.00</td>
+										<td class="ac">주주구분</td>
+									</tr>
+									<tr>
+										<td class="ac">김대표</td>
+										<td class="ar">200,000</td>
+										<td class="ar">50.00</td>
+										<td class="ac">주주구분</td>
+									</tr>
+									<tr>
+										<td class="ac">김대표</td>
+										<td class="ar">200,000</td>
+										<td class="ar">50.00</td>
+										<td class="ac">주주구분</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div>
+						
+						<canvas id="chart_canvas" width="210" height="210" style="margin:auto;"></canvas>
+					</div>
+				</div>
+				<!-- // 주주 및 지분 정보 -->
+
+				<!-- 인력정보 -->
+				<h5>인력정보</h5>
+				<div class="companyinfo_table th_vertical_total">
+					<table>
+						<caption>관계회사 현황 - 관계사명, 지분율</caption>
+						<colgroup>
+							<col width="*">
+							<col width="228">
+							<col width="220">
+							<col width="220">
+							<col width="220">
+						</colgroup>
+						<thead>
+							<tr>
+								<th rowspan="2">회계년도</th>
+								<th rowspan="2">구분</th>
+								<th colspan="3">기말인원</th>
+							</tr>
+							<tr>
+								<th>현원(명)</th>
+								<th>신규 입사(명)</th>
+								<th>신규 퇴사(명)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td rowspan="3">2018</td>
+								<td>사무직</td>
+								<td class="ar">5</td>
+								<td class="ar">4</td>
+								<td class="ar">-</td>
+							</tr>
+							<tr>
+								<td>기술직</td>
+								<td class="ar">7</td>
+								<td class="ar">4</td>
+								<td class="ar">-</td>
+							</tr>
+							<tr class="tr_sumtotal">
+								<td>계</td>
+								<td class="ar">12</td>
+								<td class="ar">8</td>
+								<td class="ar">-</td>
+							</tr>
+							<tr>
+								<td rowspan="3">2017</td>
+								<td>사무직</td>
+								<td class="ar">5</td>
+								<td class="ar">4</td>
+								<td class="ar">-</td>
+							</tr>
+							<tr>
+								<td>기술직</td>
+								<td class="ar">7</td>
+								<td class="ar">4</td>
+								<td class="ar">-</td>
+							</tr>
+							<tr class="tr_sumtotal">
+								<td>계</td>
+								<td class="ar">12</td>
+								<td class="ar">8</td>
+								<td class="ar">-</td>
+							</tr>
+							<tr>
+								<td rowspan="3">2016</td>
+								<td>사무직</td>
+								<td class="ar">5명</td>
+								<td class="ar">4명</td>
+								<td class="ar">-</td>
+							</tr>
+							<tr>
+								<td>기술직</td>
+								<td class="ar">7명</td>
+								<td class="ar">4명</td>
+								<td class="ar">-</td>
+							</tr>
+							<tr class="tr_sumtotal">
+								<td>계</td>
+								<td class="ar">12명</td>
+								<td class="ar">8명</td>
+								<td class="ar">-</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //인력정보 -->
+				
+				<!-- 주요인력정보 -->
+				<h5>주요인력정보</h5>
+				<div class="companyinfo_table stream_table">
+					<table>
+						<caption>주요인력정보 - 성명, 직급, 학력, 주요경력</caption>
+						<colgroup>
+							<col width="200">
+							<col width="*">
+							<col width="200">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>성명</th>
+								<td>김대표</td>
+								<th>직급</th>
+								<td>대표이사</td>
+							</tr>
+							<tr>
+								<th>학력</th>
+								<td colspan="3">고려대학교 수의학박사</td>
+							</tr>
+							<tr>
+								<th>주요경력</th>
+								<td colspan="3">
+									<ul>
+										<li>20년 이상 임상경험</li>
+										<li>국내 최초 동물 MRI센터 대표원장 역임</li>
+										<li>대표수의사회 이사 및 대전시수의회사회 회장</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="companyinfo_table stream_table">
+					<table>
+						<caption>주요인력정보 - 성명, 직급, 학력, 주요경력</caption>
+						<colgroup>
+							<col width="200">
+							<col width="*">
+							<col width="200">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>성명</th>
+								<td>김대표</td>
+								<th>직급</th>
+								<td>대표이사</td>
+							</tr>
+							<tr>
+								<th>학력</th>
+								<td colspan="3">고려대학교 수의학박사</td>
+							</tr>
+							<tr>
+								<th>주요경력</th>
+								<td colspan="3">
+									<ul>
+										<li>20년 이상 임상경험</li>
+										<li>국내 최초 동물 MRI센터 대표원장 역임</li>
+										<li>대표수의사회 이사 및 대전시수의회사회 회장</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="companyinfo_table stream_table">
+					<table>
+						<caption>주요인력정보 - 성명, 직급, 학력, 주요경력</caption>
+						<colgroup>
+							<col width="200">
+							<col width="*">
+							<col width="200">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>성명</th>
+								<td>김대표</td>
+								<th>직급</th>
+								<td>대표이사</td>
+							</tr>
+							<tr>
+								<th>학력</th>
+								<td colspan="3">고려대학교 수의학박사</td>
+							</tr>
+							<tr>
+								<th>주요경력</th>
+								<td colspan="3">
+									<ul>
+										<li>20년 이상 임상경험</li>
+										<li>국내 최초 동물 MRI센터 대표원장 역임</li>
+										<li>대표수의사회 이사 및 대전시수의회사회 회장</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 주요인력정보 -->
+
+				<!-- 제품/기술 및 시장관련 정보 등 추가정보 -->
+				<h5>제품/기술 및 시장관련 정보 등 추가정보</h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>제품/기술 및 시장관련 정보 등 추가정보 - 첨부파일</caption>
+						<colgroup>
+							<col width="200">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>첨부파일</th>
+								<td><a href="javascript:void(0);" class="btn_download2">제품소개서.pdf</a></td>
+							</tr>
+							<tr>
+								<th>첨부파일</th>
+								<td><a href="javascript:void(0);" class="btn_download2">회사소개서.pdf</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 제품/기술 및 시장관련 정보 등 추가정보 -->
+
+				<!-- ckeditor 자료 -->
+				<div class="mt40 ckeditor_view"></div>
+				<!-- ckeditor 자료 -->
+
+				<div class="type_bordertop">
+					<ul class="lst_help">
+						<li>투자자 회원가입을 하시면 등록기업에 대한 전문가 정보 등 투자관련 자세한 정보 검색이 가능합니다.</li>
+					</ul>
+					<button type="button" class="btn_md btn_blue">발송하기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+			
+
+</body>
+</html>

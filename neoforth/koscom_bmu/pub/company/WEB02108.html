@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+	<!--PQ Grid files-->
+	<link rel="stylesheet" href="../css/vendor/pqgrid.min.css" />
+	<link rel="stylesheet" href="../css/vendor/pqgrid.ui.min.css" />
+	<!--bootstrap theme-->
+	<link rel="stylesheet" href="../css/vendor/themes/bootstrap/pqgrid.css" />
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/vendor/Chart.min.js"></script>
+	<script src="../js/plugins.js"></script>
+	<script src="../js/vendor/pqgrid.min.js"></script>
+	<!--for localization and intellisense -->
+	<script src="../js/vendor/localize/pq-localize-en.js"></script>
+	<!--for touch devices-->
+	<script src="../js/vendor/pqTouch/pqtouch.min.js"></script>
+	<!--jsZip for zip and xlsx import/export-->
+	<script src="../js/vendor/jsZip-2.5.0/jszip.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			// pqgrid
+			//변경전 주주명부
+			function tooltipRender(ui) {
+				return {
+					//here we inject html title attribute in each cell.
+					attr: 'title="' + ui.formatVal + '"'
+				}
+			}
+			var json_data = [
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+				{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+			];
+
+			var obj = { 
+				rowInit: function(ui) {
+					return {style: 'color:#555;line-height:normal;'}
+				},
+				rowHtHead: 49,
+				showTop: false, // header 숨기기
+				numberCell: {show: false}, //index 열 숨기기
+				dragColumns: {enabled: false}, // 열(col)간 이동 금지
+				// fillHandle: '', // 엑셀 끌기로 데이터 채우기 기능 금지
+				stripeRows: false, // 행 줄무늬 색깔 제거,
+				roundCorners: false, //둥근 코너 제거
+				scrollModel:{autoFit:true},
+				editable: false,
+				colModel: [
+					{ title: "인증<br>여부", maxWidth:20, dataType: "string", dataIndx: "shareholder_certify", align: "center",},
+					{ title: "주주구분", minWidth:70, dataIndx: "shareholder_kind", align: "center"},
+					{ title: "주주명", minWidth:90, dataIndx: "shareholder_name", align: "center",},
+					{ title: "실명번호", dataIndx: "shareholder_num", align: "center",},
+					{ title: "주소", dataIndx: "shareholder_address", align: "left"},
+					{ title: "이메일", minWidth:50, dataIndx: "shareholder_email", align: "center",},
+					{ title: "자택전화", minWidth:70, dataIndx: "shareholder_phone", align: "center",},
+					{ title: "연락처", minWidth:70, dataIndx: "shareholder_cellphone", align: "center",},
+					{ title: "주식종류", dataIndx: "shareholder_sort", align: "center",},
+					{ title: "주식수", dataIndx: "shareholder_stock", format: '##,###', dataType: "integer"},
+					{ title: "처분제한", dataIndx: "shareholder_stock_not", format: '##,###', dataType: "integer"},
+					{ title: "처분제한<br>사유", dataIndx: "shareholder_stock_notreason"},
+				],
+				summaryData: [
+					{ shareholder_certify:'합 계', summaryRow: true, pq_fn:{shareholder_stock:'sum(I:I)', shareholder_stock_not:'sum(J:J)', }},
+				],
+				
+				dataModel: { data: json_data },
+				columnTemplate: { render: tooltipRender },
+				create: function (evt, ui) {
+					this.widget().pqTooltip();
+				},
+				height: 255,
+			};
+
+			$(".shareholder_grid").pqGrid(obj);
+
+
+			//차트
+			var config2 = {
+				type: 'doughnut',
+				data: {
+					datasets: [
+						{
+						data: [ 66, 23, 14, 6, 2, 1 ],
+						backgroundColor: [ '#6758f3', '#eb7425', '#f6ab2e', '#33aa44', '#4faded', '#eb4625', ],
+						// 10개 color코드
+						// backgroundColor: [ '#6758f3', '#b025d8', '#d64e94', '#eb7425', '#f6ab2e', '#cae228', '#33aa44', '#10acf5', '#3372f1', '#2b58d8'],
+						borderWidth: 0,
+					}],
+					labels: [ '김대표', '(주)코스콤', '이이사', '안감사', '차이사', '기타'
+					]
+				},
+				options: {
+					responsive: false,
+					legend: {
+						display: false,
+					},
+				}
+			};
+
+			var ctx2 = document.getElementById('chart_canvas').getContext('2d');
+			var myDoughnut = new Chart(ctx2, config2);
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 등록기업 로그인 시 class="case2" -->
+	<div id="header" class="case2">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb">
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);" class="active">주주명부관리</a></li>
+					<li><a href="javascript:void(0);">투자정보관리</a></li>
+					<li><a href="javascript:void(0);">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li> 
+					<li class="mypage_area"><a href="javascript:void(0);"><span>마이페이지</span></a></li>
+					<li class="notice_area"><a href="javascript:void(0);" class="on"><span>2</span></a></li>  
+					<li class="logout_area"><a href="javascript:void(0);" class="sr_only">로그아웃</a></li>  
+				</ul> 
+				<div class="bar"></div>
+
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">주주명부</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul> 
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul>
+				</div>	<!-- // submenu_area -->
+			</div>
+			
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">주주명부관리</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">주주명부</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보관리</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+				</div> 
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">마이페이지</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li> 
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="nav_page">
+			<div class="inner">
+				<ul class="lst_page clearfix">
+					<li><a href="/" class="btn_home sr_only">Home</a></li>
+					<li>
+						<a href="javascript:void(0);" class="btn_page">주주명부관리</a>
+						<ul class="nav_subpage clearfix">  
+							<li><a href="javascript:void(0);">투자정보관리</a></li>
+							<li><a href="javascript:void(0);" class="active">주주명부관리</a></li>
+							<li><a href="javascript:void(0);">거래현황관리</a></li>
+							<li><a href="javascript:void(0);">서비스 소개</a></li>
+							<li><a href="javascript:void(0);">투자정보</a></li>
+							<li><a href="javascript:void(0);">고객센터</a></li>
+							<li><a href="javascript:void(0);">로그아웃</a></li>
+							<li><a href="javascript:void(0);">마이페이지</a></li>
+						</ul>
+					</li> 
+					<li>
+						<ul class="lst_subpage clearfix">
+							<li><a href="javascript:void(0);" class="active">주주명부</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>	<!-- // nav_page -->
+
+		<div class="section"> 
+			<div class="inner">
+				<div class="group_pageinfo">
+					<h3 class="txt_title">주주명부</h3>
+					<p class="txt_info">엑셀업로드 또는 직접입력을 선택하여 주주명부를 신규등록 또는 수정할 수 있습니다.</p>
+				</div>	<!-- // group_title -->
+				
+				<div class="contents">
+					<div class="company_status_info">
+						<div class="join_process_info type_shareholder_process">
+							<!-- [D] 활성화 li는 class에 "on" 추가 -->
+							<ul class="clearfix">
+								<li>
+									<p class="txt_tit">STEP 01</p>
+									<p class="txt_desc">주주명부 입력</p>
+								</li>
+								<li class="on">
+									<p class="txt_tit">STEP 02</p>
+									<p class="txt_desc">확인 및 승인</p>
+								</li>
+							</ul> 
+						</div>
+
+						<!-- 기본 주식 정보 -->
+						<h5>기본 주식 정보</h5>
+						<!-- 190812 기본주식정보 테이블 변경 -->
+						<div class="companyinfo_table">
+							<table>
+								<caption>기본 주식 정보 - 발행가능주식 총수, 발행주식 총수, 보통주, 발행수량, 액면가</caption>
+								<colgroup>
+									<col width="130">
+									<col width="*">
+									<col width="130">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>발행가능주식<br>총수(주)</th>
+										<td class="ar">300,000</td>
+										<th>발행주식 총수(주)</th>
+										<td class="ar">150,000</td>
+									</tr>
+								</tbody>
+							</table>
+							<table>
+								<caption>기본 주식 정보 - 발행가능주식 총수, 발행주식 총수, 보통주, 발행수량, 액면가</caption>
+								<colgroup>
+									<col width="130">
+									<col width="*">
+									<col width="130">
+									<col width="*">
+									<col width="130">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>보통주</th>
+										<td>보통주</td>
+										<th>발행수량(주)</th>
+										<td class="ar">100,000</td>
+										<th>액면가(원)</th>
+										<td class="ar">5,000</td>
+									</tr>
+									<tr>
+										<th>1우선주</th>
+										<td>
+											<select class="select_css form_control">
+												<option value="">상황우선주</option>
+											</select>
+										</td>
+										<th>발행수량(주)</th>
+										<td class="ar">50,000</td>
+										<th>액면가(원)</th>
+										<td class="ar">500</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- // 기본 주식 정보 -->
+
+						<!-- 주주 및 지분 정보 -->
+						<h5>주식정보 및 주주(지분)정보
+							<div class="top_right_wrap">
+								<select class="select_css form_control w160">
+									<option value="">보통주</option>
+									<option value="">둘</option>
+									<option value="">셋</option>
+								</select>
+							</div>
+						</h5>
+						<div class="shareholder_detaildata clearfix">
+							<div class="tbl_chartdata">
+								<div class="inner_div">
+									<table>
+										<caption>주주명, 주식수, 지분율, 주주구분</caption>
+										<colgroup>
+											<col width="190">
+											<col width="190">
+											<col width="190">
+											<col width="190">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">주주명</th>
+												<th scope="col">주식수(주)</th>
+												<th scope="col">지분율(%)</th>
+												<th scope="col">주주구분</th>
+											</tr>
+										</thead>
+								
+										<tbody>
+											<tr>
+												<td class="ac">김대표</td>
+												<td class="ar">200,000</td>
+												<td class="ar">50.00</td>
+												<td class="ac">주주구분</td>
+											</tr>
+											<tr>
+												<td class="ac">김대표</td>
+												<td class="ar">200,000</td>
+												<td class="ar">50.00</td>
+												<td class="ac">주주구분</td>
+											</tr>
+											<tr>
+												<td class="ac">김대표</td>
+												<td class="ar">200,000</td>
+												<td class="ar">50.00</td>
+												<td class="ac">주주구분</td>
+											</tr>
+											<tr>
+												<td class="ac">김대표</td>
+												<td class="ar">200,000</td>
+												<td class="ar">50.00</td>
+												<td class="ac">주주구분</td>
+											</tr>
+											<tr class="sum">
+												<td class="ac">계</td>
+												<td class="ar">200,000</td>
+												<td class="ar">50.00</td>
+												<td class="ac"></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div>
+								
+								<canvas id="chart_canvas" width="210" height="210" style="margin:auto;"></canvas>
+							</div>
+						</div>
+						<!-- // 주주 및 지분 정보 -->
+
+						<!-- 주주명부 -->
+						<h5>주주명부
+							<span>(등록기준일:2019년 06월 07일)</span>
+						</h5>
+						<div class="shareholder_grid"></div>
+						<!-- // 주주명부 -->
+
+						<div class="shareholder_btn_wrap2">
+							<button type="button" class="btn_lg btn_white" onclick="$('#pop_reset_check').neoModal();">이전</button>
+							<button type="button" class="btn_lg btn_blue" onclick="$('#pop_upload_ok').neoModal();$('#pop_upload_ok2').neoModal();">승인</button>
+						</div>
+					</div>
+				</div>	<!-- // contents --> 
+			</div>
+		</div> 
+	</div>	<!-- // container -->
+	
+	<!-- 등록기업 로그인 시 class="case2" -->
+	<div id="footer" class="case2"> 
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix"> 
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.koscom.co.kr">코스콤</option>
+					</select> 
+				</div> 
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">주주명부관리</a>
+					<ul>
+						<li><a href="javascript:void(0);">주주명부</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보관리</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">마이페이지</a> 
+					<ul>
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>  
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>  
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a>
+	</div>	<!-- // footer --> 
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+
+<!-- 팝업 -->
+<div id="pop_reset_check" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				이전 단계 내용 변경 시<br>
+				확인 및 승인 내용은 초기화 됩니다
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_reset_check').neoModal('close');">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_upload_ok" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				주주명부 수정 및 등록이 완료되었습니다
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_upload_ok').neoModal('close');">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_upload_ok2" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				대표 승인자에게 승인요청을 하였습니다<br>
+				승인이 완료되면 주주명부 리스트에서<br>
+				확인 가능합니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_upload_ok2').neoModal('close');">확인</button>
+		</div>
+	</div>
+</div>
+<!-- // 팝업 -->
+</body>
+</html>

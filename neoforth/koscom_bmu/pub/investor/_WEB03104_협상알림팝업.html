@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/vendor/Chart.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			// 협상요청자 알럿
+			$('#pop_nego_request').neoModal();
+
+			$('#pop_neo_request_in').neoModal();
+
+			$('#pop_neo_request_in2').neoModal();
+			$('#pop_neo_request_in3').neoModal();
+			$('#pop_neo_request_in4').neoModal();
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	
+</div>
+
+
+<!-- 팝업 -->
+
+<!-- 협상요청자 알럿 -->
+<div id="pop_nego_request" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				<span class="txt_sell_color">
+					<em>홍**</em>님
+				</span>에게 ‘<span>뉴코에드윈드</span>’종목
+				<p class="txt_blue_emphasis"><span>100</span>주 / <span>5,000</span>원</p>
+				협상을 요청하시겠습니까?
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_white w50">아니오</button>
+			<button type="button" class="btn_pop_default btn_blue w50">확인</button>
+		</div>
+	</div>
+</div>
+
+<!-- 주문게시자 알림 -->
+<div id="pop_neo_request_in" class="pop_dim_wrap pop_alert_type2">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			알림
+		</div>
+		<div class="contents_wrap">
+			<span class="txt_sell_color"><em>이**</em>님</span>에게 ‘<span>뉴코에드윈드</span>’종목
+			<p class="txt_blue_emphasis"><span>1,000,000</span>주 / <span>150,000</span>원</p>
+			협상을 요청했습니다.
+
+			<p class="alert_info">협상수락 버튼을 클릭하시면, 협상채팅방이 열립니다.</p>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_white w50">협상거절</button>
+			<button type="button" class="btn_pop_default btn_blue w50">협상수락</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_neo_request_in2" class="pop_dim_wrap pop_alert_type2">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			알림
+		</div>
+		<div class="contents_wrap">
+			<span class="txt_sell_color"><em>이**</em>님</span>에게 ‘<span>뉴코에드윈드</span>’종목
+			<p class="txt_blue_emphasis"><span>1,000,000</span>주 / <span>150,000</span>원</p>
+			협상요청을 수락했습니다.
+
+			<p class="alert_info">확인을 클릭하시면 협상채팅방이 열립니다.</p>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_neo_request_in3" class="pop_dim_wrap pop_alert_type2">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			알림
+		</div>
+		<div class="contents_wrap">
+			<span class="txt_sell_color"><em>이**</em>님</span>에게 ‘<span>뉴코에드윈드</span>’종목
+			<p class="txt_blue_emphasis"><span>1,000,000</span>주 / <span>150,000</span>원</p>
+			협상요청 알림을 전송했습니다.
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_neo_request_in4" class="pop_dim_wrap pop_alert_type2">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			알림
+		</div>
+		<div class="contents_wrap">
+			<span class="txt_sell_color"><em>이**</em>님</span>에게 ‘<span>뉴코에드윈드</span>’종목
+			<p class="txt_blue_emphasis"><span>1,000,000</span>주 / <span>150,000</span>원</p>
+			협상요청을 거절했습니다.
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+<!-- // 팝업 -->
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - BUTTON</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../pub/mobile/css/common.css">
+<link rel="stylesheet" href="../pub/mobile/css/vendor/jquery-ui.min.css">
+<script src="../pub/mobile/js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../pub/mobile/js/vendor/jquery-ui.min.js"></script>
+<script src="../pub/mobile/js/common.js"></script>
+<!-- //style -->
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(mobileSnb);
+		$('.g-nav-snb ul li').eq(1).addClass("active");
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">BUTTON</h2>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">타이틀부분</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<h3 class="g-tit-basic mt20">Extra Small(40 * 24)</h3>
+							<button type="button" class="btn_xxs btn_gray">삭제</button>
+
+							<h3 class="g-tit-basic mt20">Extra Small(100 * 30)</h3>
+							<button type="button" class="btn_xs btn_white btn_view">보기 ></button>
+							<button type="button" class="btn_xs btn_white">거절</button>  
+							<button type="button" class="btn_xs btn_white w100">요청취소</button> 
+							<button type="button" class="btn_xs btn_blue btn_outline">엑셀 다운로드</button>
+							<button type="button" class="btn_xs btn_blue">1:1문의하기</button>
+							<button type="button" class="btn_xs btn_blue">작성하기</button>
+							<button type="button" class="btn_xs btn_blue fwb">수락</button>
+							<button type="button" class="btn_xs btn_green w100">채팅방 ></button>  
+
+							<h3 class="g-tit-basic mt20">Small(84 * 36)</h3>
+							<button type="button" class="btn_sm btn_darkblue">검색</button>
+							<button type="button" class="btn_sm btn_blue3">검색</button>
+							<button type="button" class="btn_sm btn_white">목록</button>
+							<button type="button" class="btn_sm btn_white">취소</button>
+							<button type="button" class="btn_sm btn_gray">삭제</button>
+							<button type="button" class="btn_sm btn_blue">수정</button>
+							<button type="button" class="btn_sm btn_blue">완료</button> 
+
+							<h3 class="g-tit-basic mt20">middle(161 * 40)</h3>
+							<button type="button" class="btn_md btn_white">취소</button>
+							<button type="button" class="btn_md btn_blue btn_outline">서비스 해지 신청</button>
+							<button type="button" class="btn_md btn_blue">요청취소</button>
+							<button type="button" class="btn_md btn_blue fwb">작성하기</button>
+							<button type="button" class="btn_md btn_blue fwb">1:1문의하기</button> 
+
+							<h3 class="g-tit-basic mt20">Extra large(161 * 60)</h3>
+							<button type="button" class="btn_xlg btn_blue">주권미발행확인서<br>발급요청</button>
+							<button type="button" class="btn_xlg btn_blue">나의거래<br>내역조회</button>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<button type="button" class="btn_xxs btn_gray">삭제</button>
+
+								<button type="button" class="btn_xs btn_white btn_view">보기 ></button>
+								<button type="button" class="btn_xs btn_white">거절</button>  
+								<button type="button" class="btn_xs btn_white w100">요청취소</button> 
+								<button type="button" class="btn_xs btn_blue btn_outline">엑셀 다운로드</button>
+								<button type="button" class="btn_xs btn_blue">1:1문의하기</button>
+								<button type="button" class="btn_xs btn_blue">작성하기</button>
+								<button type="button" class="btn_xs btn_blue fwb">수락</button>
+								<button type="button" class="btn_xs btn_green w100">채팅방 ></button>
+
+								<button type="button" class="btn_sm btn_darkblue">검색</button>
+								<button type="button" class="btn_sm btn_blue3">검색</button>
+								<button type="button" class="btn_sm btn_white">목록</button>
+								<button type="button" class="btn_sm btn_white">취소</button>
+								<button type="button" class="btn_sm btn_gray">삭제</button>
+								<button type="button" class="btn_sm btn_blue">수정</button>
+								<button type="button" class="btn_sm btn_blue">완료</button>
+
+								<button type="button" class="btn_md btn_white">취소</button>
+								<button type="button" class="btn_md btn_blue btn_outline">서비스 해지 신청</button>
+								<button type="button" class="btn_md btn_blue">요청취소</button>
+								<button type="button" class="btn_md btn_blue fwb">작성하기</button>
+								<button type="button" class="btn_md btn_blue fwb">1:1문의하기</button> 
+
+								<button type="button" class="btn_xlg btn_blue">주권미발행확인서<br>발급요청</button>
+								<button type="button" class="btn_xlg btn_blue">나의거래<br>내역조회</button>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								/* extra Large(161 * 60) */
+								.btn_xlg{display:inline-block;min-width:161px;height:60px;padding:0 20px;border:0;border-radius: 0 8px;font-size:15px;font-weight:400;color:#fff;line-height:18px;text-align:center;vertical-align:middle;cursor:pointer;transition: all 0.2s ease-in-out;}
+								.btn_xlg:hover{box-shadow: 0 2px 3px rgba(0,0,0,0.16);}
+								.btn_xlg.btn_white{line-height: 58px; border:1px solid #ccc; color: #333; background:#fff;}
+								.btn_xlg.btn_white:hover{background:#f2f2f2;}
+								.btn_xlg.btn_blue{background:#3348AE;color:#fff;}
+								.btn_xlg.btn_blue:hover{background:#324084;}
+
+								/* Middle(161 * 40) */
+								.btn_md{display:inline-block;min-width:161px;height:40px;padding:0 20px;border:0;border-radius: 0 8px;font-size:14px;font-weight:400;color:#fff;line-height:40px;text-align:center;vertical-align:middle;cursor:pointer;transition: all 0.2s ease-in-out;}
+								.btn_md:hover{box-shadow: 0 2px 3px rgba(0,0,0,0.16);}
+								.btn_md.btn_white{line-height: 38px; border:1px solid #ccc; font-size: 15px; color: #333; background:#fff;}
+								.btn_md.btn_white:hover{background:#f2f2f2;}
+								.btn_md.btn_blue{font-size: 15px;background:#3348AE;color:#fff;} 
+								.btn_md.btn_blue:hover{background:#324084;}
+								.btn_md.btn_blue.btn_outline{background:#fff;border:1px solid #3348AE; font-weight: 400; color:#3348AE;line-height:38px;} 
+								.btn_md.btn_blue.btn_deal{padding-left:50px;background:#3348AE url(../img/common/ico_btn_nego.png) no-repeat 35px 50%;} 
+								.btn_md.btn_blue.btn_deal:hover{background-color:#324084;}
+
+								/* Small(90 * 40) */
+								.btn_sm{display:inline-block;min-width:84px;height:36px;padding:0 20px;border:0; border-radius: 0 6px; font-size:14px;font-weight:400;line-height:36px;text-align:center;vertical-align:middle;cursor:pointer;transition: all 0.2s ease-in-out;}
+								.btn_sm:hover{box-shadow: 0 2px 3px rgba(0,0,0,0.16);}
+								.btn_sm.btn_white{border:1px solid #ccc;background:#fff;line-height:34px; color: #333;}
+								.btn_sm.btn_blue{border:0;background:#3348AE;color:#fff;}
+								.btn_sm.btn_gray{border:1px solid #ccc; background:#F2F2F2; color:#000826;line-height:34px;}
+								.btn_sm.btn_gray2{border:1px solid #ccc;background:#fff;color:#000826;line-height:34px;}
+								.btn_sm.btn_darkblue{background:#566888;border-radius:0;color:#fff;}
+								.btn_sm.btn_blue3{border-radius: 0; background:#5163BA;color:#fff;} 
+
+								/* extra Small(60 * 30) */
+								.btn_xs{display:inline-block;min-width:70px;height:30px;padding:0 10px;border:0; border-radius: 0 6px; font-size:14px;font-weight:400;color:#333;line-height:30px;text-align:center;vertical-align:middle;cursor:pointer;transition: all 0.2s ease-in-out;}
+								.btn_xs:hover{box-shadow: 0 2px 3px rgba(0,0,0,0.16);} 
+								.btn_xs.w100{width: 100px;}   
+								.btn_xs.btn_white{border:1px solid #ccc;background:#fff;line-height:28px; color: #333;}
+								.btn_xs.btn_gray{border:1px solid #ccc;background:#fff;line-height:28px;}
+								.btn_xs.btn_gray:hover{background:#f2f2f2;}
+								.btn_xs.btn_gray.btn_like{text-align:left;background:#fff url(../img/sub/ico_like.png) no-repeat 7px 50%;padding: 0 9px 0 32px;color:#555;}
+								.btn_xs.btn_darkgray{background-color:#757575;color: #fff;border: 1px solid #ccc;line-height:28px;}
+								.btn_xs.btn_blue{color:#fff; background-color:#3348AE; line-height:28px; font-size: 15px;} 
+								.btn_xs.btn_blue.btn_outline{background:#fff;border:1px solid #3348AE; border-radius: 0; color:#3348AE;line-height:28px; font-size: 14px;} 
+								.btn_xs.btn_green{color:#fff; background-color:#038085; line-height:28px; font-size: 15px; font-weight: 700;}   
+								.btn_xs.btn_view{width: 64px; min-width: 0; height: 28px; line-height: 26px; color:#3348AE; border-radius: 0;}
+
+								/* extra Small(40 * 24) */
+								.btn_xxs{display:inline-block;min-width:40px;height:24px;padding:0 5px;border:0;font-size:14px;font-weight:400;color:#757575;line-height:24px;text-align:center;cursor:pointer;transition: all 0.2s ease-in-out;}
+								.btn_xxs.btn_gray{border:1px solid #ddd;background:#fff;line-height:22px;}
+								.btn_xxs.btn_gray:hover{background:#f2f2f2;}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">label</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<span class="state_list case1">기업알림</span>
+							<span class="state_list case2">홍보자료</span>
+
+							<span class="state_deal case1">협상</span>
+							<span class="state_deal case2">협상</span>
+							<span class="state_deal case3">협상대기</span>
+							<span class="state_deal case4">협상대기</span>
+							<span class="state_deal case5">서명대기</span>
+							<span class="state_deal case6">입금대기</span>
+							<span class="state_deal case7">체결</span>
+							<span class="state_deal case8">완료</span>
+							<span class="state_deal case9">계약</span>
+							<span class="state_deal case10">결렬</span>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<span class="state_list case1">기업알림</span>
+								<span class="state_list case2">홍보자료</span>
+
+								<span class="state_deal case1">협상</span>
+								<span class="state_deal case2">협상</span>
+								<span class="state_deal case3">협상대기</span>
+								<span class="state_deal case4">협상대기</span>
+								<span class="state_deal case5">서명대기</span>
+								<span class="state_deal case6">입금대기</span>
+								<span class="state_deal case7">체결</span>
+								<span class="state_deal case8">완료</span>
+								<span class="state_deal case9">계약</span>
+								<span class="state_deal case10">결렬</span>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.state_list{display: inline-block; width: 64px; height: 24px; text-align: center; line-height: 24px; font-size: 14px; color: #fff; background-color: #6573D4;}
+								.state_list.case1{background-color: #6573D4;} 
+								.state_list.case2{background-color: #EB256F;} 
+
+								.state_deal{display: inline-block; width: 64px; height: 24px; text-align: center; line-height: 24px; font-size: 14px; color: #fff; background-color: #038085;}
+								.state_deal.case1{color: #fff; background-color: #038085;} 
+								.state_deal.case2{color: #666; background-color: #f2f2f2;cursor:default;} 
+								.state_deal.case3{color: #fff; background-color: #3348ae;} 
+								.state_deal.case4{color: #fff; background-color: #e8055a;}  
+								.state_deal.case5{color: #fff; background-color: #7348ed;}  
+								.state_deal.case6{color: #fff; background-color: #337bcd;}  
+								.state_deal.case7{color: #fff; background-color: #e47a3f;}  
+								.state_deal.case8{color: #fff; background-color: #52a033;}  
+								.state_deal.case9{color: #fff; background-color: #7759f6;}    
+								.state_deal.case10{color: #fff; background-color: #757575;}  
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			// $('#pop_mobile_alert').neoModal();
+			// $('#pop_mobile_alert2').neoModal();
+		});
+	</script>
+</head>
+<body>
+
+<div id="mobile_wrap" class="mobile_manage">
+	<div id="container">
+		<div class="mobile_header">
+			주주명부 변경내용 조회
+			<button type="button" class="sr_only shareholder_change_close">주주명부 닫기</button>
+		</div>
+
+		<div class="mobile_shareholder_conts bg_reverse">
+			<div class="section">
+				<!-- 기본주식정보 -->
+				<h5 class="m_h5_tit">기본 주식 정보</h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>기본주식정보</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>발행주식 총수(주)</th>
+								<td class="ar">300,000</td>
+							</tr>
+							<tr>
+								<th>액면가(원)</th>
+								<td class="ar">10,000</td>
+							</tr>
+							<tr>
+								<th>처분제한(주)</th>
+								<td>
+									<dl>
+										<dt>보통주식</dt>
+										<dd>200,000</dd>
+										<dt>우선주식</dt>
+										<dd>100,000</dd>
+									</dl>
+								</td>
+							</tr>
+							<tr>
+								<th>발행주식의<br>종류(주)</th>
+								<td>
+									<dl>
+										<dt>보통주식</dt>
+										<dd>200,000</dd>
+										<dt>우선주식</dt>
+										<dd>100,000</dd>
+									</dl>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 기본주식정보 -->
+			</div>
+
+			<div class="section">
+				<!-- 변경 전 주주명부 -->
+				<h5 class="m_h5_tit">변경 전 주주명부<span>(등록기준일: 2019년 06월 07일)</span></h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>변경 전 주주명부</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>주주명</th>
+								<td>김*자</td>
+							</tr>
+							<tr>
+								<th>주주구분</th>
+								<td>00.일반주주</td>
+							</tr>
+							<tr>
+								<th>주식종류</th>
+								<td>우선주</td>
+							</tr>
+							<tr>
+								<th>주식수(주)</th>
+								<td class="ar">100,000</td>
+							</tr>
+							<tr>
+								<th>처분제한(주)</th>
+								<td class="ar">20,000</td>
+							</tr>
+							<tr>
+								<th>처분제한사유</th>
+								<td>처분제한사유 내용</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="companyinfo_table">
+					<table>
+						<caption>변경 전 주주명부</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>주주명</th>
+								<td>김*자</td>
+							</tr>
+							<tr>
+								<th>주주구분</th>
+								<td>00.일반주주</td>
+							</tr>
+							<tr>
+								<th>주식종류</th>
+								<td>우선주</td>
+							</tr>
+							<tr>
+								<th>주식수(주)</th>
+								<td class="ar">100,000</td>
+							</tr>
+							<tr>
+								<th>처분제한(주)</th>
+								<td class="ar">20,000</td>
+							</tr>
+							<tr>
+								<th>처분제한사유</th>
+								<td>처분제한사유 내용</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="companyinfo_table">
+					<table>
+						<caption>변경 전 주주명부</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>주주명</th>
+								<td>김*자</td>
+							</tr>
+							<tr>
+								<th>주주구분</th>
+								<td>00.일반주주</td>
+							</tr>
+							<tr>
+								<th>주식종류</th>
+								<td>우선주</td>
+							</tr>
+							<tr>
+								<th>주식수(주)</th>
+								<td class="ar">100,000</td>
+							</tr>
+							<tr>
+								<th>처분제한(주)</th>
+								<td class="ar">20,000</td>
+							</tr>
+							<tr>
+								<th>처분제한사유</th>
+								<td>처분제한사유 내용</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 변경 전 주주명부 -->
+			</div>
+
+			<div class="section">
+				<!-- 변경 후 주주명부 -->
+				<h5 class="m_h5_tit">변경 후 주주명부<span>(등록기준일: 2019년 06월 07일)</span></h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>변경 후 주주명부</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>주주명</th>
+								<td>김*자</td>
+							</tr>
+							<tr>
+								<th>주주구분</th>
+								<td>00.일반주주</td>
+							</tr>
+							<tr>
+								<th>주식종류</th>
+								<td>우선주</td>
+							</tr>
+							<tr>
+								<th>주식수(주)</th>
+								<td class="ar">100,000</td>
+							</tr>
+							<tr>
+								<th>처분제한(주)</th>
+								<td class="ar">20,000</td>
+							</tr>
+							<tr>
+								<th>처분제한사유</th>
+								<td>처분제한사유 내용</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="companyinfo_table">
+					<table>
+						<caption>변경 후 주주명부</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>주주명</th>
+								<td>김*자</td>
+							</tr>
+							<tr>
+								<th>주주구분</th>
+								<td>00.일반주주</td>
+							</tr>
+							<tr>
+								<th>주식종류</th>
+								<td>우선주</td>
+							</tr>
+							<tr>
+								<th>주식수(주)</th>
+								<td class="ar">100,000</td>
+							</tr>
+							<tr>
+								<th>처분제한(주)</th>
+								<td class="ar">20,000</td>
+							</tr>
+							<tr>
+								<th>처분제한사유</th>
+								<td>처분제한사유 내용</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="companyinfo_table">
+					<table>
+						<caption>변경 후 주주명부</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>주주명</th>
+								<td><span class="txt_sell_color">김*자</span></td>
+							</tr>
+							<tr>
+								<th>주주구분</th>
+								<td>00.일반주주</td>
+							</tr>
+							<tr>
+								<th>주식종류</th>
+								<td>우선주</td>
+							</tr>
+							<tr>
+								<th>주식수(주)</th>
+								<td class="ar"><span class="txt_sell_color">100,000</span></td>
+							</tr>
+							<tr>
+								<th>처분제한(주)</th>
+								<td class="ar">20,000</td>
+							</tr>
+							<tr>
+								<th>처분제한사유</th>
+								<td>처분제한사유 내용</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 변경 후 주주명부 -->
+			</div>
+			
+			<div class="pw_section">
+				<p class="info2">서비스 가입시 입력하신 비밀번호로 주주명부 승인 또는 반려가 가능합니다. 비밀번호를 입력하여 인증을 완료하시고 반려 또는 승인을 탭하여 2차 승인을 진행하여 주십시오.</p>
+				<input type="password" class="form_control pwd_2th" maxlength="">
+				<p class="txt_info">※ <b>인증에 성공</b>하였습니다.</p>
+				<!-- 벨리데이션용 -->
+				<!-- <p class="txt_info txt_buy_color">※ <b>인증에 실패</b>하였습니다.</p> -->
+			</div>
+		</div>
+
+		<div class="button_wrap twoline_button">
+			<button type="button" class="m_btn_lg btn_gray">반려</button>
+			<button type="button" class="m_btn_lg btn_blue">승인</button>
+		</div>
+	</div>	<!-- // container -->
+</div>
+
+<div id="pop_mobile_alert" class="pop_dim_wrap pop_alert pop_mobile">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				주주명부 수정 <b>승인</b>이<br>완료되었습니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_mobile_alert2" class="pop_dim_wrap pop_alert pop_mobile">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				주주명부 수정 <b>반려</b>가<br> 완료되었습니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_mobile_alert2').neoModal('close')">확인</button>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

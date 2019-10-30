@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - TABLE3</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../pub/css/common.css">
+<link rel="stylesheet" href="../pub/css/vendor/jquery-ui.min.css">
+<script src="../pub/js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../pub/js/vendor/jquery-ui.min.js"></script>
+<script src="../pub/js/common.js"></script>
+
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(webSnb);
+		$('.g-nav-snb ul li').eq(6).addClass("active");
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">TABLE3</h2>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">투자자 테이블형태게시판2</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+								<!-- 테이블형태 -->
+								<div class="board_deallist2">
+									<div class="inner_div">
+										<table>
+											<caption>주문테이블 - 번호, 종목, 수량, 가격, 거래상태</caption>
+											<colgroup>
+												<col width="100">
+												<col width="100">
+												<col width="100">
+												<col width="100">
+												<col width="100">
+											</colgroup>
+											<thead>
+												<tr>
+													<th>항목1</th>
+													<th>항목2</th>
+													<th>항목3</th>
+													<th>항목4</th>
+													<th>항목5</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>항목내용1</td>
+													<td>항목내용2</td>
+													<td>항목내용3</td>
+													<td>항목내용4</td>
+													<td>항목내용5</td>
+												</tr>
+												<tr>
+													<td>항목내용1</td>
+													<td>항목내용2</td>
+													<td>항목내용3</td>
+													<td>항목내용4</td>
+													<td>항목내용5</td>
+												</tr>
+												<tr>
+													<td>항목내용1</td>
+													<td>항목내용2</td>
+													<td>항목내용3</td>
+													<td>항목내용4</td>
+													<td>항목내용5</td>
+												</tr>
+												<tr>
+													<td>항목내용1</td>
+													<td>항목내용2</td>
+													<td>항목내용3</td>
+													<td>항목내용4</td>
+													<td>항목내용5</td>
+												</tr>
+												<tr>
+													<td>항목내용1</td>
+													<td>항목내용2</td>
+													<td>항목내용3</td>
+													<td>항목내용4</td>
+													<td>항목내용5</td>
+												</tr>
+												<tr>
+													<td>항목내용1</td>
+													<td>항목내용2</td>
+													<td>항목내용3</td>
+													<td>항목내용4</td>
+													<td>항목내용5</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">투자자 주문체결 내역</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+								<div class="order_concluded">
+									<p>주문 체결 내역</p>
+									<table>
+										<caption>주문 체결 내역 - 종목, 체결량(주), 체결가(원)</caption>
+										<colgroup>
+											<col width="*">
+											<col width="71">
+											<col width="65">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>종목</th>
+												<th>체결량(주)</th>
+												<th>체결가(원)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="new_order">
+												<td><div>뉴코메드윈드</div></td>
+												<td>1,000,000</td>
+												<td>5,000</td>
+											</tr>
+											<tr class="new_order">
+												<td><div>에이오지히팅크테</div></td>
+												<td>100</td>
+												<td>500</td>
+											</tr>
+											<tr class="new_order">
+												<td><div>에이피시테크</div></td>
+												<td>500,000</td>
+												<td>100,000</td>
+											</tr>
+											<tr>
+												<td><div>필옵틱스</div></td>
+												<td>3,000</td>
+												<td>50,000</td>
+											</tr>
+											<tr>
+												<td><div>샘스게임즈</div></td>
+												<td>10</td>
+												<td>1,500</td>
+											</tr>
+											<tr>
+												<td><div>뉴코메드윈드</div></td>
+												<td>1,000,000</td>
+												<td>5,000</td>
+											</tr>
+											<tr>
+												<td><div>에이오지히팅크테일</div></td>
+												<td>100</td>
+												<td>500</td>
+											</tr>
+											<tr>
+												<td><div>에이피시테크</div></td>
+												<td>500,000</td>
+												<td>100,000</td>
+											</tr>
+											<tr>
+												<td><div>필옵틱스</div></td>
+												<td>3,000</td>
+												<td>50,000</td>
+											</tr>
+											<tr>
+												<td><div>샘스게임즈</div></td>
+												<td>10</td>
+												<td>1,500</td>
+											</tr>
+											<tr>
+												<td><div>뉴코메드윈드</div></td>
+												<td>1,000,000</td>
+												<td>5,000</td>
+											</tr>
+											<tr>
+												<td><div>에이오지히팅크테</div></td>
+												<td>100</td>
+												<td>500</td>
+											</tr>
+											<tr>
+												<td><div>에이피시테크</div></td>
+												<td>500,000</td>
+												<td>100,000</td>
+											</tr>
+											<tr>
+												<td><div>필옵틱스</div></td>
+												<td>3,000</td>
+												<td>50,000</td>
+											</tr>
+											<tr>
+												<td><div>샘스게임즈</div></td>
+												<td>10</td>
+												<td>1,500</td>
+											</tr>
+											<tr>
+												<td><div>뉴코메드윈드</div></td>
+												<td>1,000,000</td>
+												<td>5,000</td>
+											</tr>
+											<tr>
+												<td><div>에이오지히팅크테</div></td>
+												<td>100</td>
+												<td>500</td>
+											</tr>
+											<tr>
+												<td><div>에이피시테크</div></td>
+												<td>500,000</td>
+												<td>100,000</td>
+											</tr>
+											<tr>
+												<td><div>필옵틱스</div></td>
+												<td>3,000</td>
+												<td>50,000</td>
+											</tr>
+											<tr>
+												<td><div>샘스게임즈</div></td>
+												<td>10</td>
+												<td>1,500</td>
+											</tr>
+											<tr>
+												<td><div>뉴코메드윈드</div></td>
+												<td>1,000,000</td>
+												<td>5,000</td>
+											</tr>
+											<tr>
+												<td><div>에이오지히팅크테</div></td>
+												<td>100</td>
+												<td>500</td>
+											</tr>
+											<tr>
+												<td><div>에이피시테크</div></td>
+												<td>500,000</td>
+												<td>100,000</td>
+											</tr>
+											<tr>
+												<td><div>필옵틱스</div></td>
+												<td>3,000</td>
+												<td>50,000</td>
+											</tr>
+											<tr>
+												<td><div>샘스게임즈</div></td>
+												<td>10</td>
+												<td>1,500</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<div class="order_concluded">
+									<p>주문 체결 내역</p>
+									<table>
+										<caption>주문 체결 내역 - 종목, 체결량(주), 체결가(원)</caption>
+										<colgroup>
+											<col width="*">
+											<col width="71">
+											<col width="65">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>종목</th>
+												<th>체결량(주)</th>
+												<th>체결가(원)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="new_order">
+												<td><div>뉴코메드윈드</div></td>
+												<td>1,000,000</td>
+												<td>5,000</td>
+											</tr>
+											<tr class="new_order">
+												<td><div>에이오지히팅크테</div></td>
+												<td>100</td>
+												<td>500</td>
+											</tr>
+											<tr class="new_order">
+												<td><div>에이피시테크</div></td>
+												<td>500,000</td>
+												<td>100,000</td>
+											</tr>
+											<tr>
+												<td><div>필옵틱스</div></td>
+												<td>3,000</td>
+												<td>50,000</td>
+											</tr>
+											<tr>
+												<td><div>샘스게임즈</div></td>
+												<td>10</td>
+												<td>1,500</td>
+											</tr>
+											<tr>
+												<td><div>뉴코메드윈드</div></td>
+												<td>1,000,000</td>
+												<td>5,000</td>
+											</tr>
+											<tr>
+												<td><div>에이오지히팅크테일</div></td>
+												<td>100</td>
+												<td>500</td>
+											</tr>
+											<tr>
+												<td><div>에이피시테크</div></td>
+												<td>500,000</td>
+												<td>100,000</td>
+											</tr>
+											<tr>
+												<td><div>필옵틱스</div></td>
+												<td>3,000</td>
+												<td>50,000</td>
+											</tr>
+											<tr>
+												<td><div>샘스게임즈</div></td>
+												<td>10</td>
+												<td>1,500</td>
+											</tr>
+											<tr>
+												<td><div>뉴코메드윈드</div></td>
+												<td>1,000,000</td>
+												<td>5,000</td>
+											</tr>
+											<tr>
+												<td><div>에이오지히팅크테</div></td>
+												<td>100</td>
+												<td>500</td>
+											</tr>
+											<tr>
+												<td><div>에이피시테크</div></td>
+												<td>500,000</td>
+												<td>100,000</td>
+											</tr>
+											<tr>
+												<td><div>필옵틱스</div></td>
+												<td>3,000</td>
+												<td>50,000</td>
+											</tr>
+											<tr>
+												<td><div>샘스게임즈</div></td>
+												<td>10</td>
+												<td>1,500</td>
+											</tr>
+											<tr>
+												<td><div>뉴코메드윈드</div></td>
+												<td>1,000,000</td>
+												<td>5,000</td>
+											</tr>
+											<tr>
+												<td><div>에이오지히팅크테</div></td>
+												<td>100</td>
+												<td>500</td>
+											</tr>
+											<tr>
+												<td><div>에이피시테크</div></td>
+												<td>500,000</td>
+												<td>100,000</td>
+											</tr>
+											<tr>
+												<td><div>필옵틱스</div></td>
+												<td>3,000</td>
+												<td>50,000</td>
+											</tr>
+											<tr>
+												<td><div>샘스게임즈</div></td>
+												<td>10</td>
+												<td>1,500</td>
+											</tr>
+											<tr>
+												<td><div>뉴코메드윈드</div></td>
+												<td>1,000,000</td>
+												<td>5,000</td>
+											</tr>
+											<tr>
+												<td><div>에이오지히팅크테</div></td>
+												<td>100</td>
+												<td>500</td>
+											</tr>
+											<tr>
+												<td><div>에이피시테크</div></td>
+												<td>500,000</td>
+												<td>100,000</td>
+											</tr>
+											<tr>
+												<td><div>필옵틱스</div></td>
+												<td>3,000</td>
+												<td>50,000</td>
+											</tr>
+											<tr>
+												<td><div>샘스게임즈</div></td>
+												<td>10</td>
+												<td>1,500</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								/* 주문 체결 내역 */
+								.order_concluded{display:inline-block;width:240px;}
+								.order_concluded>p{padding:12px 0;border-bottom:1px solid #000826;font-size:20px;font-weight:700;text-align:center;}
+								.order_concluded table{width:100%;table-layout:fixed;border-spacing:0;border-collapse:collapse;}
+								.order_concluded table caption{position:absolute;font-size:0;left:-99999px;text-indent:-9999px;}
+								.order_concluded table th{height:46px;font-size:13px;font-weight:400;color:#555;}
+								.order_concluded table tbody{border:1px solid #ddd;}
+								.order_concluded table tbody td{padding:7px 0;font-size:13px;color:#000;}
+								.order_concluded table tbody td:nth-child(1) > div{padding-left:5px;text-overflow: ellipsis;overflow: hidden;word-break: keep-all;}
+								.order_concluded table tbody td:nth-child(2),.order_concluded table tbody td:nth-child(3){padding-right:5px;text-align:right;}
+								.order_concluded table tbody tr:nth-child(5n-4) td{padding-top:17px;}
+								.order_concluded table tbody tr:nth-child(5n) td{padding-bottom:17px;}
+								.order_concluded table tbody tr:nth-of-type(-n+5) td,
+								.order_concluded table tbody tr:nth-of-type(n+11):nth-of-type(-n+15) td,
+								.order_concluded table tbody tr:nth-of-type(n+21):nth-of-type(-n+25) td{background:#f6f6f6;}
+								.order_concluded table tbody tr.new_order td:nth-child(1) > div{padding-right:8px;position:relative;}
+								.order_concluded table tbody tr.new_order td:nth-child(1) > div::after{content:'N';position:absolute;top:1px;right:0;font-size:11px;font-weight:700;color:#e8055a;vertical-align:top;}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+		</div>
+	</div>
+</div>
+</body>
+</html>

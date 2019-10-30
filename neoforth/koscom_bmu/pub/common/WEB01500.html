@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="euc-k">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script> 
+	<script>
+		$(document).ready(function() {
+			//탭 동작
+			var $tabMenu = $('.tabs li a');
+			var $tabContent = $('.tab_contents');
+
+			$tabMenu.on('click', function(e) {
+				e.preventDefault();
+				var idx = $tabMenu.index(this);
+				
+				$(this).addClass('on').closest('li').siblings().children('a').removeClass('on');
+				$tabContent.eq(idx).addClass('on').siblings().removeClass('on');
+			});
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 로그인전 -->
+	<div id="header">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb">
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);" class="active">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li>
+					<li class="join_area"><a href="javascript:void(0);"><span>서비스 가입</span></a></li>
+					<li class="login_area"><a href="javascript:void(0);"><span>로그인</span></a></li> 
+				</ul>
+				<div class="bar"></div>
+ 
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+					<ul class="nav_sub"> 
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>	<!-- // submenu_area -->
+			</div>	
+			
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+				</div>
+				<div class="group_nav join_area">
+					<a href="javascript:void(0);" class="title">서비스 가입</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+				</div> 
+				<div class="group_nav login_area"> 
+					<a href="javascript:void(0);" class="title">로그인</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="nav_page">
+			<div class="inner">
+				<ul class="lst_page clearfix">
+					<li><a href="/" class="btn_home sr_only">Home</a></li>
+					<li>
+						<a href="javascript:void(0);" class="btn_page">서비스 소개</a>
+						<ul class="nav_subpage clearfix">  
+							<li><a href="javascript:void(0);" class="active">서비스 소개</a></li>
+							<li><a href="javascript:void(0);">투자정보</a></li>
+							<li><a href="javascript:void(0);">고객센터</a></li>
+							<li><a href="javascript:void(0);">로그인</a></li>
+							<li><a href="javascript:void(0);">서비스 가입</a></li>
+						</ul>
+					</li> 
+					<li>
+						<ul class="lst_subpage clearfix">  
+							<li><a href="javascript:void(0);" class="active">이용안내</a></li>
+							<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+							<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+							<li><a href="javascript:void(0);">보안모듈설치</a></li>
+							<li><a href="javascript:void(0);">인증방법안내</a></li>
+						</ul> 
+					</li>
+				</ul>
+			</div>
+		</div>	<!-- // nav_page -->
+
+		<div class="section">
+			<div class="inner">
+				<div class="group_pageinfo">
+					<h3 class="txt_title">이용안내</h3>
+				</div>	<!-- // group_title -->
+			</div> 
+				
+			<div class="contents contents_intro">
+				<ul class="tab_md tabs clearfix inner"> 
+					<li><a href="javascript:void(0);" class="on">서비스개요</a></li>
+					<li><a href="javascript:void(0);">주요프로세스</a></li>
+					<li><a href="javascript:void(0);">위험고지</a></li>
+					<li><a href="javascript:void(0);">관련규정</a></li> 
+				</ul> 
+				
+				<div class="tab_contents on">
+					<dl class="lst_service">
+						<dt class="inner">
+							BMU 플랫폼 <strong>기본 개념</strong>
+						</dt>
+						<dd class="service1">
+							<img src="../img/sub/intro_service1.png" alt="거래플랫폼, 신뢰정보 커뮤니티, 주주명부 관리">
+						</dd>
+						<dd class="service2 inner">
+							<p>
+								<strong>Be My Unicorn (BMU, 비 마이 유니콘)</strong>은 블록체인 기술을 활용하여 주권을 발행하지 않은 중소·벤처기업들이 주주명부를 클라우드 SaaS (Software as a Service) 서비스 형태로 관리 가능하게 하고, 관련 기업의 비상장주식 거래에 필요한 업무를 투자자들이 안심하고 편리하게 처리할 수 있는 ‘비상장주식 마켓 플랫폼’입니다.
+							</p>
+							<p> 
+								BMU는 플랫폼에 등록된 기업들과 투자자들이 주주명부관리와 비상장주식 유통시장 관련하여 마주치는 불필요한 비용 절감, 신뢰성 확보, 유동성 향상 등의 문제를 해결하여 유니콘 기업으로 성장·도약할 수 있도록 지원하는 디딤돌이자 마중물로서의 역할을 수행합니다.  
+							</p>
+						</dd>
+						<dt class="inner">
+							BMU 플랫폼 <strong>이용대상자 및 절차</strong> 
+						</dt>
+						<dd class="service3">
+							<ul class="lst inner clearfix">  
+								<li>
+									<span class="ico"></span> 
+									<strong>플랫폼 등록기업</strong>
+									<p>통일규격주권을 발행하지 않고, 예탁결제원 혹은 은행 등을 통하여 명의개서서비스를 이용하고 있지 아니하여, 엑셀, 워드프로세스 등 Off-line 기반으로 주주명부를 관리하는 비상장 스타트업·벤처·중소기업</p>
+								</li>
+								<li> 
+									<span class="ico"></span> 
+									<strong>투자자</strong>
+									<p>플랫폼에 등록된 스타트업·벤처·중소기업의 비상장주식의 거래를 희망하는 엔젤투자자, 엑셀러레이터, 벤처캐피털 등 전문투자자(as-is) [* 향후 시장활성화 및 투자자보호 장치 마련 상황에 따라 비상장주식의 거래를 희망하는 일반투자자까지 투자허용/플랫폼개방 가능 (to-be)]</p>
+								</li>
+							</ul> 
+						</dd>
+						<dt class="inner">
+							BMU 플랫폼 <strong>서비스 특징</strong>
+						</dt>
+						<dd class="service4">
+							<ol class="lst inner clearfix">
+								<li>
+									<span>1</span>
+									<p class="title">SaaS 형태의 클라우드 기반 주주명부 관리 서비스</p>
+									<p class="txt_sm">(Software as a Service-based apitalization Table Management Tool)</p>
+								</li>
+								<li>
+									<span>2</span>
+									<p class="title">블록체인 기반 주주명부 플랫폼의 신뢰성을 바탕으로 <br>거래 상대방 위험 제거 </p>
+									<p class="txt_sm">(Blockchain-inspired Trust Plastform to elimninate counterparty risk)</p>
+								</li>
+								<li>
+									<span>3</span>
+									<p class="title">엑셀러레이터 등 전문기관과 연계하여 신뢰 가능한 <br>벤처 생태·기업정보 공유</p>
+									<p class="txt_sm">(Trustable, Professional Venture Investment Information Platform)</p>
+								</li>
+								<li>
+									<span>4</span>
+									<p class="title">채팅을 통한 자유로운 거래 협상</p>
+									<p class="txt_sm">(Convenient Communication / Trade Negotiation solutions)</p>
+								</li>
+								<li>
+									<span>5</span>
+									<p class="title">계약체결관련 법률 서비스</p>
+									<p class="txt_sm">(Legal IT solutions for negotiated trading)</p>
+								</li>
+							</ol>
+						</dd>
+					</dl>	<!-- // lst_service -->
+				</div>	<!-- // tab_contents -->
+
+				<div class="tab_contents">
+					<dl class="lst_process inner">
+						<dt>주요 <strong>프로세스</strong></dt>
+						<dd class="process1">
+							<div class="table_process">
+								<table>
+									<caption class="sr_only">주요프로세스 상세</caption>
+									<colgroup>
+										<col width="160">
+										<col width="318">
+										<col width="113">
+										<col width="323">
+										<col width="*">
+									</colgroup>
+									<thead>
+										<tr>
+											<th></th>
+											<th>기업</th>
+											<th>투자</th>
+											<th>법률</th>
+											<th>은행</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>기업등록</th>
+											<td colspan="4" class="process1_area"><img src="../img/sub/intro_process1.png" alt="기업정보 등록 주주명부 등록 > 기업가치 정보등록"></td>
+										</tr>
+										<tr>
+											<th>비상장<br>주식거래</th>
+											<td colspan="4" class="process2_area"><img src="../img/sub/intro_process2.png" alt="거래의향 게시 > 협상 > 에스크로 입금(매수자→은행) > 주주명부 변경 > 에스크로 송금(은행→매도자)"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</dd>
+					</dl>	<!-- // lst_process -->
+				</div>	<!-- // tab_contents -->
+
+				<div class="tab_contents">
+					<div class="inner">
+						<div class="img_top"><img src="../img/sub/intro_warning1.jpg" alt=""></div>
+						<div class="clearfix">
+							<dl class="lst_warning m0">
+								<dt>유동성·환금성 관련</dt>
+								<dd>
+									<ul class="lst">
+										<li>BMU 플랫폼에 등록된 기업의 비상장주식은 유동성이 낮아 투자 자의 적시 주식취득 혹은 처분에 어려움이 생길 수 있으므로 충분한 고려 후 투자판단 하시기 바랍니다.</li>
+										<li>BMU 플랫폼 내 주문 가격은 확정된 가격이 아니며 거래당사자 간 협상(협의)과정에서 가격(주문량) 등이 변경될 수 있으며, 이와 관련된 모든 사항은 당사자 간 협상의 결과물로 BMU 플랫폼과 코스콤은 협상과정은 물론 협상 이후의 일체의 사항에 관여하지 않는 바, 신중한 투자결정이 필요합니다.</li> 
+									</ul>
+								</dd>
+							</dl>
+							<dl class="lst_warning m0">
+								<dt>적정 기업가치 반영 관련</dt>
+								<dd>
+									<ul class="lst">
+										<li>BMU 플랫폼 등록 대상 기업은 운영 기준에 따른 거래 대상 기업으로 코스콤에 의한 별도의 심사 없이 거래됩니다.</li>
+										<li>BMU 플랫폼 내 주문 및 등록이 해당기업의 가치반영을 반영하고 있지 않는 바, 투자자는 해당기업의 내용을 충분히 검토 하신 후 투자하셔야 합니다.</li> 
+									</ul>
+								</dd>
+							</dl>
+						</div>
+						<div class="clearfix">
+							<dl class="lst_warning">
+								<dt>기업 정보 관련</dt>
+								<dd>
+									<ul class="lst">
+										<li>BMU 플랫폼은 등록 기업을 대상으로 별도의 공시를 강제하지 않고 있으며, 특히, 증·감자, 주식소각 등 주식의 권리 변동과 관련된 정보가 적시에 반영되지 않을 수 있어 각별한 주의가 필요합니다.</li>
+										<li>또한, BMU 플랫폼이 제공하는 등록기업과 관련된 재무정보 등은 코스콤의 사전검토를 거치지 아니한 정보로 해당기업에 대한 기업 내용을 충분히 검토한 후 투자판단 하시기 바랍니다.</li> 
+									</ul>
+								</dd>
+							</dl>
+							<dl class="lst_warning">
+								<dt>투자결정 번복 관련</dt>
+								<dd>
+									<ul class="lst">
+										<li>BMU 플랫폼이 제공하는 어플리케이션(App)을 통해 계약당사자 간 최종 계약이 종료된 이후에는 대금 및 주식이체 번복 (혹은 변경)이 불가합니다. 최종 의사결정 이전 충분히 숙고한 후 거래를 완료하시기 바랍니다.</li> 
+									</ul>
+								</dd>
+							</dl>
+						</div>
+						<div class="clearfix">
+							<dl class="lst_warning lst_etc">
+								<dt>기타사항</dt>
+								<dd>
+									<ul class="lst">
+										<li>BMU 플랫폼을 통한 주문 및 거래가격은 타 장외시장과 동일 하지 않을 수 있습니다.</li>
+										<li>BMU 플랫폼에 게시된 매도 의향 주문에 대한 체결이 완료되는 경우, 해당 주문은 BMU 플랫폼에서 자동 삭제 됩니다. </li>
+										<li>BMU 플랫폼에 게시된 매도 의향 주문에 대한 협상 채팅이 시작되는 경우, 7일 이내에 완료되지 않으면 해당 채팅 내역은 삭제되지만, 주문 게시글은 삭제 되지 않습니다.</li>
+										<li>플랫폼 등록 기업의 요청이나, 기타 기업 이벤트 등의 발생으로 거래 중지 사유가 발생되는 경우, 해당 주식의 주문은 BMU 플랫폼에서 자동 삭제 됩니다.</li>
+										<li>BMU 플랫폼이 K-OTC, 코스닥, 코스피 연착륙을 위한 인큐베이팅 시장이기는 하나, BMU 플랫폼 등록 기업의 향후 상장을 보장하는 것은 아닙니다.</li>
+										<li>BMU 플랫폼 주식거래 시 통상의 장외거래와 같이 양도소득세 및 증권거래세가 과세됩니다. 자세한 사항은 거래증권 회사 혹은 세무서 등에 문의하시기 바랍니다.</li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>	<!-- // tab_contents -->
+
+				<div class="tab_contents">
+					<div class="inner">
+						<div class="img_top"><img src="../img/sub/intro_rule1.jpg" alt=""></div>
+						<dl class="lst_rule">
+							<dt>
+								법규정
+								<a href="http://law.fss.or.kr/fss/lmx/law/law_tree_list.jsp?plawcode=LAW101-04-08&lawname=%EC%9E%90%EB%B3%B8%EC%8B%9C%EC%9E%A5%EA%B3%BC%EA%B8%88%EC%9C%B5%ED%88%AC%EC%9E%90%EC%97%85%EC%97%90%EA%B4%80%ED%95%9C%EB%B2%95%EB%A5%A0%20%EB%B0%8F%EA%B4%80%EB%A0%A8%EA%B7%9C%EC%A0%95" class="btn_more" target="_blank">바로가기</a>
+							</dt>
+							<dd>
+								<ul class="lst">
+									<li>자본시장과 금융투자업에 관한 법률</li>
+									<li>자본시장과 금융투자업에 관한 법률 시행령</li>
+									<li>자본시장과 금융투자업에 관한 법률 시행규칙</li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</div>	<!-- // tab_contents -->
+			</div>	<!-- // contents -->
+			
+		</div>
+	</div>	<!-- // container -->
+	
+	<!-- 로그인전 -->
+	<div id="footer">
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix"> 
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.koscom.co.kr">코스콤</option>
+					</select> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_member join">
+					<p>서비스 가입</p>
+					<ul>
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+				</div>
+				<div class="nav_member login">
+					<p>로그인</p>
+					<ul>
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a>
+	</div>	<!-- // footer --> 
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="../js/vendo/analytics.js" async></script>
+
+</body>
+</html>

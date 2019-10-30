@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script> 
+	<script src="../js/common.js"></script>
+</head>
+<body class="bg_gray"> 
+  
+<div id="wrap_webview"> 
+	
+	<div class="section">
+		<ul class="lst_step clearfix"> 
+			<li class="on"> 
+				<p class="ico"></p> 
+				<p class="num">STEP 01</p> 
+				<p class="tit">인증</p> 
+			</li>
+			<li>
+				<p class="ico"></p> 
+				<p class="num">STEP 02</p> 
+				<p class="tit">약관동의</p> 
+			</li>
+			<li>
+				<p class="ico"></p> 
+				<p class="num">STEP 03</p> 
+				<p class="tit">정보입력</p>  
+			</li> 
+		</ul>	<!-- // lst_step -->
+
+		
+		<dl class="lst_join_type inner">  
+			<dt><strong>투자자 유형</strong>을 선택하여 주십시오</dt>
+			<dd class="clearfix">
+			    <label class="input_radio fl" for="type_investor1">
+			        <input type="radio" id="type_investor1" name="type_investor" checked="">  
+			        <span class="label_text">개인</span>
+			    </label>
+			    <label class="input_radio fr" for="type_investor2">
+			        <input type="radio" id="type_investor2" name="type_investor">
+			        <span class="label_text">법인</span> 
+			    </label> 
+			</dd>
+			<dd>
+				사업자등록번호를 입력 후 인증번호를 탭하시어 인증을  완료하시면 약관동의 화면으로 이동하게 됩니다.
+			</dd>
+			<dt><label for="input_pnum"><strong>사업자등록번호</strong></label></dt>
+			<dd> 
+				<input type="password" maxlength="" id="input_pnum" class="form_control">
+			</dd>
+		</dl>	<!-- // lst_join_type -->
+		
+	</div>	<!-- // section --> 
+	
+	<div class="footer_webview">   
+		<button type="button" class="btn_lg btn_blue btn_confirm">인증</button>
+	</div>
+</div> 
+
+</body>
+</html>

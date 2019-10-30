@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#pop_deal_list').neoModal();
+			var autoComplete_text = ['네오', '네오포스']
+			$("#srch_name1").autocomplete({
+			    			source: autoComplete_text
+			    		});
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	
+</div>
+
+<!-- 팝업 --> 
+<div id="pop_deal_list" class="pop_dim_wrap pop_modal pop_xxlg">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="title_wrap">
+            나의거래내역
+        </div>
+        <div class="contents_wrap">
+            <div class="group_date_srch mt30"> 
+				<div class="search_name"> 
+					<label for="srch_name">종목명</label>
+					<input type="text" maxlength="" id="srch_name" class="form_control" placeholder="종목형 또는 종목번호를 입력"> 
+					<div class="autocomplete_area on">  
+						<a href="javascript:void(0);" class="btn_close sr_only">close</a>
+						<ul class="lst_auto on"> 
+							<li><a href="javascript:void(0);">뉴코에드윈드</a></li>
+							<li><a href="javascript:void(0);">뉴코트랜드</a></li>
+							<li><a href="javascript:void(0);">뉴코시스템</a></li>
+						</ul>
+					</div> 
+				</div>
+				<ul class="datepicker_searchwrap clearfix">
+					<li><label for="srch_date">기간</label><input type="text" id="srch_date" class="datepicker form_control"></li> 
+					<li class="datepicker_connect">~</li>
+					<li><input type="text" class="datepicker form_control"></li>
+				</ul> 
+				<div class="date_btn_wrap">
+					<!-- [D] 활성화 버튼은 'on' 추가 -->
+					<button type="button" class="btn_term_select on">오늘</button>
+					<button type="button" class="btn_term_select">1주</button>
+					<button type="button" class="btn_term_select">1달</button>
+					<button type="button" class="btn_term_select">1년</button>
+				</div> 
+			</div>
+
+			<div class="ac pt20"> 
+				<button type="button" class="btn_md btn_white">초기화</button>
+				<button type="button" class="btn_md btn_blue">검색</button> 
+			</div>
+
+			<div class="table_normal_list table_list_order mt30">   
+				<!-- <div class="group_tableinfo">
+					<span class="num_total">총 <em>245</em>건</span> 
+					<div class="srch_area">
+						<label>
+							<select name="" id="" class="select_css form_control">
+								<option value="">전체</option>  
+							</select>
+						</label>
+					</div>
+				</div>  -->
+
+			    <table>  
+			        <caption>나의거래내역 상세</caption>
+					<colgroup>
+						<col width="6%">
+			            <col width="*">
+			            <col width="12%">   
+			            <col width="12%"> 
+			            <col width="12%"> 
+			            <col width="15%"> 
+			            <col width="20%">  
+			        </colgroup> 
+			        <thead>
+			            <tr>
+			                <th>No</th>
+			                <th>종목명</th>
+			                <th>수량(주)<br>가격(원)<br>금액(원)</th>
+			                <th>
+			                	<span class="ar">매매수수료(원)<br>에스크로수수료(원)<br>기타(원)</span>
+			                </th>
+			                <th>거래 전 잔량(주)<br>거래 후 잔량(주)</th>
+			                <th>구분</th>
+			                <th>거래일시</th>
+			            </tr>
+			        </thead>
+			        <tbody> 
+			            <tr>    
+			            	<td>111</td>  
+			                <td class="al"><a href="javascript:void(0);" title="에이오지히팅시스템">에이오지히팅시스템</a></td>
+			                <td class="ar">5,000<br>5,000<br>5,000</td>
+			                <td class="ar">5,000<br>5,000<br>5,000</td>  
+			                <td class="ar">5,000<br>5,000</td>  
+			                <td class="txt_sell_color">매도</td>  
+			                <td>2019-08-10 11:20</td> 
+			            </tr>
+			            <tr>    
+			            	<td>111</td>  
+			                <td class="al"><a href="javascript:void(0);" title="에이오지히팅시스템">에이오지히팅시스템</a></td>
+			                <td class="ar">5,000<br>5,000<br>5,000</td>
+			                <td class="ar">5,000<br>5,000<br>5,000</td>  
+			                <td class="ar">5,000<br>5,000</td>  
+			                <td class="txt_buy_color">매수</td>  
+			                <td>2019-08-10 11:20</td> 
+			            </tr>
+			            <tr>    
+			            	<td>111</td>  
+			                <td class="al"><a href="javascript:void(0);" title="에이오지히팅시스템">에이오지히팅시스템</a></td>
+			                <td class="ar">5,000<br>5,000<br>5,000</td>
+			                <td class="ar">5,000<br>5,000<br>5,000</td>  
+			                <td class="ar">5,000<br>5,000</td>  
+			                <td>기업이벤트<br>(최초등록)</td>  
+			                <td>2019-08-10 11:20</td> 
+			            </tr>
+			        </tbody>   
+			    </table>
+			    <div class="board_paging">
+			        <ul>
+			            <li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+			            <li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+			            <li><a href="javascript:void(0);" class="active">1</a></li>
+			            <li><a href="javascript:void(0);">2</a></li>
+			            <li><a href="javascript:void(0);">3</a></li>
+			            <li><a href="javascript:void(0);">4</a></li>
+			            <li><a href="javascript:void(0);">5</a></li>
+			            <li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+			            <li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+			        </ul>
+			    </div>
+			</div> 
+        </div>
+        <div class="button_wrap"> 
+            <button type="button" class="btn_md btn_white">닫기</button>
+        </div>
+    </div>
+</div>
+<!-- // 팝업 -->
+
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+</body>
+</html>

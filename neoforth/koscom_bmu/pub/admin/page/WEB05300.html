@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			// thead 체크박스 클릭시 밑 체크박스 전부 선택
+			var _theadChkBox = 'thead input[type="checkbox"]';
+			var _tbodyChkBox = 'tbody input[type="checkbox"]';
+
+			$(document).on('click', '.table_normal_list thead input[type="checkbox"]', function() {
+				$(this).closest('table').find(_tbodyChkBox).prop('checked', this.checked);
+			});
+
+			$(document).on('click', '.table_normal_list tbody input[type="checkbox"]', function() {
+				var _$chkTable = $(this).closest('table');
+				if(_$chkTable.find(_tbodyChkBox).length === _$chkTable.find(_tbodyChkBox + ':checked').length) {
+					_$chkTable.find(_theadChkBox).prop('checked', true);
+				} else {
+					_$chkTable.find(_theadChkBox).prop('checked', false);
+				}
+			});
+			
+			// 팝업탭
+			var $tabMenu = $('.tabs.stock_serachtit li a');
+			var $tabContent = $('.tab_contents');
+
+			$tabMenu.on('click', function(e) {
+				e.preventDefault();
+				var idx = $tabMenu.index(this);
+				
+				$(this).addClass('on').closest('li').siblings().children('a').removeClass('on');
+				$tabContent.eq(idx).addClass('on').siblings().removeClass('on');
+			});
+
+			// 게시물관리, 이미지관리 탭
+			var $tabMenu2 = $('.tab_xs li a');
+			var $tabContent2 = $('.tab_contents2');
+
+			$tabMenu2.on('click', function(e) {
+				e.preventDefault();
+				var idx = $tabMenu2.index(this);
+				
+				$(this).addClass('on').closest('li').siblings().children('a').removeClass('on');
+				$tabContent2.eq(idx).addClass('on').siblings().removeClass('on');
+			});
+
+		})
+	</script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>컨텐츠 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);" class="active">메인 NEWS 관리</a></li>
+				<li><a href="javascript:void(0);">프리미엄<br>기업정보 관리</a></li>
+				<li><a href="javascript:void(0);">앱 강제업데이트</a></li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>메인 NEWS 관리</h4>
+
+				<ul class="tab_xs clearfix mt30">
+					<li><a href="javascript:void(0);" class="on">게시물 관리</a></li>
+					<li><a href="javascript:void(0);">이미지 관리</a></li>
+				</ul>
+				
+				<!-- 게시물관리 -->
+				<div class="tab_contents2 on">
+					<p class="explain_tabledetail">메인 NEWS는 '기업알림 및 홍보자료' 게시물에서 선택하여 등록하며, 관리자가 등록한 최근 4개의 게시물이 메인에 노출됩니다.</p>
+					
+					<div class="companyinfo_table mt15">
+						<table>
+							<caption>게시물관리</caption>
+							<colgroup>
+								<col width="130">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>노출여부</th>
+									<td>
+										<label class="input_radio" for="rdoSolar">
+											<input type="radio" id="rdoSolar" name="birthday_type" checked="">
+											<span class="label_text">노출</span>
+										</label>
+										<label class="input_radio" for="rdoLunar">
+											<input type="radio" id="rdoLunar" name="birthday_type">
+											<span class="label_text">비노출</span>
+										</label>
+									</td>
+								</tr>
+								<tr>
+									<th>게시물선택</th>
+									<td>
+										<div class="td_col2">
+											<div>
+												<input type="text" class="form_control" readonly="">
+											</div>
+											<div>
+												<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_select_board').neoModal();">검색</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>이미지선택</th>
+									<td>
+										<div class="td_image_wrap">
+											<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+										</div>
+										<button tpye="button" class="btn_sm btn_gray2" onclick="$('#pop_select_image').neoModal();">검색</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="submit_area ac mt10">
+						<button type="button" class="btn_md btn_blue">등록</button>
+					</div>
+
+					<div class="table_normal_list mt40">
+						<div class="group_tableinfo">
+							<span class="num_total">총 <em class="txt_sell_color">15</em>건</span>
+							<div class="srch_area">
+								<button type="button" class="btn_sm btn_blue">삭제</button>
+								<select class="select_css form_control page_num_width">
+									<option value="20">20</option>
+									<option value="50">50</option>
+									<option value="100">100</option>
+								</select>
+							</div>
+						</div>
+
+						<table class="img_normal_tbl">
+							<caption>전문기관</caption>
+							<colgroup>
+								<col width="3%">
+								<col width="6%">
+								<col width="26%">
+								<col width="27%">
+								<col width="6%">
+								<col width="13%">
+								<col width="9%">
+								<col width="10%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>
+										<label class="input_check pop_notext">
+											<input type="checkbox" id="" name="check1">
+											<span class="label_text"></span>
+										</label>
+									</th>
+									<th>노출여부</th>
+									<th>이미지</th>
+									<th>제목</th>
+									<th>구분</th>
+									<th>발송대상</th>
+									<th>등록일</th>
+									<th>상세내용</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- 데이터없을때 -->
+								<!-- <tr>
+									<td class="blank_area" colspan="8">
+										<p class="txt_blank">데이터가 없습니다.</p>
+									</td>
+								</tr> -->
+								<tr class="check_tr">
+									<td>
+										<label class="input_check pop_notext">
+											<input type="checkbox" id="" name="check1">
+											<span class="label_text"></span>
+										</label>
+									</td>
+									<td>노출</td>
+									<td>
+										<img src="../img/common/bg_spot4.png" alt="선택된 이미지가 표시됩니다">
+									</td>
+									<td class="al">유럽 화장품 박람회 참가</td>
+									<td>홍보자료</td>
+									<td>뉴코에드윈드</td>
+									<td>2019-06-27</td>
+									<td><button type="button" class="btn_xs btn_gray">보기</button></td>
+								</tr>
+								<tr>
+									<td>
+										<label class="input_check pop_notext">
+											<input type="checkbox" id="" name="check1">
+											<span class="label_text"></span>
+										</label>
+									</td>
+									<td>비노출</td>
+									<td>
+										<img src="../img/common/bg_login3.png" alt="선택된 이미지가 표시됩니다">
+									</td>
+									<td class="al">2018년 감사보고서 및 재무제표 증명원</td>
+									<td>기업알림</td>
+									<td>뉴코에드윈드</td>
+									<td>2019-06-27</td>
+									<td><button type="button" class="btn_xs btn_gray">보기</button></td>
+								</tr>
+								<tr>
+									<td>
+										<label class="input_check pop_notext">
+											<input type="checkbox" id="" name="check1">
+											<span class="label_text"></span>
+										</label>
+									</td>
+									<td>비노출</td>
+									<td>
+										<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+									</td>
+									<td class="al">2018년 감사보고서 및 재무제표 증명원</td>
+									<td>기업알림</td>
+									<td>뉴코에드윈드</td>
+									<td>2019-06-27</td>
+									<td><button type="button" class="btn_xs btn_gray">보기</button></td>
+								</tr>
+								<tr>
+									<td>
+										<label class="input_check pop_notext">
+											<input type="checkbox" id="" name="check1">
+											<span class="label_text"></span>
+										</label>
+									</td>
+									<td>비노출</td>
+									<td>
+										<img src="../img/common/bg_login3.png" alt="선택된 이미지가 표시됩니다">
+									</td>
+									<td class="al">2018년 감사보고서 및 재무제표 증명원</td>
+									<td>기업알림</td>
+									<td>뉴코에드윈드</td>
+									<td>2019-06-27</td>
+									<td><button type="button" class="btn_xs btn_gray">보기</button></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="board_paging">
+							<ul>
+								<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+								<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+								<li><a href="javascript:void(0);" class="active">1</a></li>
+								<li><a href="javascript:void(0);">2</a></li>
+								<li><a href="javascript:void(0);">3</a></li>
+								<li><a href="javascript:void(0);">4</a></li>
+								<li><a href="javascript:void(0);">5</a></li>
+								<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+								<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- // 게시물관리 -->
+
+				<!-- 이미지 관리 -->
+				<div class="tab_contents2">
+					<p class="explain_tabledetail">권장 이미지 사이즈 : <span class="txt_sell_color">260 * 100px</span></p>
+
+					<div class="imgboard_wrap clearfix">
+						<div>
+							<h5>기업알림 이미지</h5>
+							<div class="board_deallist2 type_imgboard2 mt20">
+								<div class="inner_div">
+									<table>
+										<caption>이미지선택 - 이미지</caption>
+										<colgroup>
+											<col width="60">
+											<col width="455">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>번호</th>
+												<th>이미지</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- 데이터없을때 -->
+											<!-- <tr>
+												<td class="blank_area" colspan="2">
+													<p class="txt_blank">데이터가 없습니다</p>
+												</td>
+											</tr> -->
+											<tr>
+												<td>8</td>
+												<td class="al">
+													<dl>
+														<dt>
+															<img src="../img/common/bg_login3.png" alt="선택된 이미지가 표시됩니다">
+														</dt>
+														<dd>
+															<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+															<div class="upload_file_wrap">
+																<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+																<button type="button" class="btn_delimg">이미지 삭제버튼</button>
+															</div>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td class="al">
+													<dl>
+														<dt>
+															<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+														</dt>
+														<dd>
+															<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+															<div class="upload_file_wrap">
+																<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+																<button type="button" class="btn_delimg">이미지 삭제버튼</button>
+															</div>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td class="al">
+													<dl>
+														<dt>
+															<img src="../img/common/bg_spot4.png" alt="선택된 이미지가 표시됩니다">
+														</dt>
+														<dd>
+															<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+															<div class="upload_file_wrap">
+																<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+																<button type="button" class="btn_delimg">이미지 삭제버튼</button>
+															</div>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td class="al">
+													<dl>
+														<dt>
+															<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+														</dt>
+														<dd>
+															<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+															<div class="upload_file_wrap">
+																<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+																<button type="button" class="btn_delimg">이미지 삭제버튼</button>
+															</div>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td class="al">
+													<dl>
+														<dt>
+															<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+														</dt>
+														<dd>
+															<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+															<div class="upload_file_wrap">
+																<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+																<button type="button" class="btn_delimg">이미지 삭제버튼</button>
+															</div>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td class="al">
+													<dl>
+														<dt>
+															<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+														</dt>
+														<dd>
+															<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+															<div class="upload_file_wrap">
+																<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+																<button type="button" class="btn_delimg">이미지 삭제버튼</button>
+															</div>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div>
+							<h5>홍보자료이미지</h5>
+							<div class="board_deallist2 type_imgboard2 mt20">
+								<div class="inner_div">
+									<table>
+										<caption>이미지선택 - 이미지</caption>
+										<colgroup>
+											<col width="60">
+											<col width="455">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>번호</th>
+												<th>이미지</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- 데이터없을때 -->
+											<!-- <tr>
+												<td class="blank_area" colspan="2">
+													<p class="txt_blank">데이터가 없습니다</p>
+												</td>
+											</tr> -->
+											<tr>
+												<td>8</td>
+												<td class="al">
+													<dl>
+														<dt>
+															<img src="../img/common/bg_login3.png" alt="선택된 이미지가 표시됩니다">
+														</dt>
+														<dd>
+															<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+															<div class="upload_file_wrap">
+																<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+																<button type="button" class="btn_delimg">이미지 삭제버튼</button>
+															</div>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td class="al">
+													<dl>
+														<dt>
+															<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+														</dt>
+														<dd>
+															<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+															<div class="upload_file_wrap">
+																<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+																<button type="button" class="btn_delimg">이미지 삭제버튼</button>
+															</div>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td class="al">
+													<dl>
+														<dt>
+															<img src="../img/common/bg_spot4.png" alt="선택된 이미지가 표시됩니다">
+														</dt>
+														<dd>
+															<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+															<div class="upload_file_wrap">
+																<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+																<button type="button" class="btn_delimg">이미지 삭제버튼</button>
+															</div>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td class="al">
+													<dl>
+														<dt>
+															<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+														</dt>
+														<dd>
+															<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+															<div class="upload_file_wrap">
+																<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+																<button type="button" class="btn_delimg">이미지 삭제버튼</button>
+															</div>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td class="al">
+													<dl>
+														<dt>
+															<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+														</dt>
+														<dd>
+															<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+															<div class="upload_file_wrap">
+																<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+																<button type="button" class="btn_delimg">이미지 삭제버튼</button>
+															</div>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td class="al">
+													<dl>
+														<dt>
+															<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+														</dt>
+														<dd>
+															<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+															<div class="upload_file_wrap">
+																<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+																<button type="button" class="btn_delimg">이미지 삭제버튼</button>
+															</div>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="submit_area ac mt10">
+						<button type="button" class="btn_md btn_blue">저장</button>
+					</div>
+				</div>
+				<!-- // 이미지 관리 -->
+				
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+
+<!-- 팝업 -->
+<!-- 게시물선택 -->
+<div id="pop_select_board" class="pop_dim_wrap pop_modal pop_lg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			게시물선택
+		</div>
+		<div class="contents_wrap">
+			<div class="companyinfo_table">
+				<table>
+					<caption>검색</caption>
+					<colgroup>
+						<col width="130">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>검색</th>
+							<td class="pop_search_tdwrap">
+								<select class="select_css form_control">
+									<option value="">전체회원</option>
+								</select>
+								<select class="select_css form_control">
+									<option value="">이름</option>
+								</select>
+								<input type="text" class="form_control" maxlength="">
+								<button type="button" class="btn_sm btn_gray2">검색</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p class="deallist_total">게시물수 : <em class="txt_sell_color">245</em></p>
+
+			<div class="board_deallist2 type_selectboard mt20">
+				<div class="inner_div">
+					<table>
+						<caption>게시물선택, 제목, 이메일, 등록기업, 등록일</caption>
+						<colgroup>
+							<col width="55">
+							<col width="415">
+							<col width="90">
+							<col width="165">
+							<col width="145">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>선택</th>
+								<th>제목</th>
+								<th>이메일</th>
+								<th>등록기업</th>
+								<th>등록일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 데이터없을때 -->
+							<!-- <tr>
+								<td class="blank_area" colspan="5">
+									<p class="txt_blank">데이터가 없습니다</p>
+								</td>
+							</tr> -->
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr1">
+										<input type="radio" id="select_tr1" name="select_tr" checked="">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">유럽 화장품 박람회 참가</a></td>
+								<td>홍보자료</td>
+								<td>뉴코에드윈드</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr2">
+										<input type="radio" id="select_tr2" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">유럽 화장품 박람회 참가유럽 화장품 박람회 참가유럽 화장품 박람회 참가유럽 화장품 박람회 참가유럽 화장품 박람회 참가유럽 화장품 박람회 참가</a></td>
+								<td>홍보자료</td>
+								<td>뉴코에드윈드</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr3">
+										<input type="radio" id="select_tr3" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">유럽 화장품 박람회 참가</a></td>
+								<td>홍보자료</td>
+								<td>뉴코에드윈드</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr4">
+										<input type="radio" id="select_tr4" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">유럽 화장품 박람회 참가</a></td>
+								<td>홍보자료</td>
+								<td>뉴코에드윈드</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr5">
+										<input type="radio" id="select_tr5" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">유럽 화장품 박람회 참가</a></td>
+								<td>홍보자료</td>
+								<td>뉴코에드윈드</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr6">
+										<input type="radio" id="select_tr6" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">유럽 화장품 박람회 참가</a></td>
+								<td>홍보자료</td>
+								<td>뉴코에드윈드</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr7">
+										<input type="radio" id="select_tr7" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">유럽 화장품 박람회 참가</a></td>
+								<td>홍보자료</td>
+								<td>뉴코에드윈드</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr8">
+										<input type="radio" id="select_tr8" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">유럽 화장품 박람회 참가</a></td>
+								<td>홍보자료</td>
+								<td>뉴코에드윈드</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr9">
+										<input type="radio" id="select_tr9" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">유럽 화장품 박람회 참가</a></td>
+								<td>홍보자료</td>
+								<td>뉴코에드윈드</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr10">
+										<input type="radio" id="select_tr10" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">유럽 화장품 박람회 참가</a></td>
+								<td>홍보자료</td>
+								<td>뉴코에드윈드</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr11">
+										<input type="radio" id="select_tr11" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">유럽 화장품 박람회 참가</a></td>
+								<td>홍보자료</td>
+								<td>뉴코에드윈드</td>
+								<td>2019-06-27</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_white">취소</button>
+			<button type="button" class="btn_md btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<!-- 이미지선택 -->
+<div id="pop_select_image" class="pop_dim_wrap pop_modal">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			이미지 선택
+		</div>
+		<div class="contents_wrap">
+			<ul class="tabs stock_serachtit clearfix">
+				<li><a href="javascript:void(0);" class="on">기업알림 이미지</a></li>
+				<li><a href="javascript:void(0);">홍보자료 이미지</a></li>
+			</ul>
+			<div class="tab_contents on">
+				<div class="board_deallist2 type_imgboard mt20">
+					<div class="inner_div">
+						<table>
+							<caption>이미지선택 - 이미지</caption>
+							<colgroup>
+								<col width="90">
+								<col width="310">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>선택</th>
+									<th>이미지</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- 데이터없을때 -->
+								<!-- <tr>
+									<td class="blank_area" colspan="2">
+										<p class="txt_blank">데이터가 없습니다</p>
+									</td>
+								</tr> -->
+								<tr>
+									<td>
+										<label class="input_radio pop_notext" for="select_imgtr1">
+											<input type="radio" id="select_imgtr1" name="select_tr" checked>
+											<span class="label_text">라디오 체크</span>
+										</label>
+									</td>
+									<td>
+										<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="input_radio pop_notext" for="select_imgtr2">
+											<input type="radio" id="select_imgtr2" name="select_tr">
+											<span class="label_text">라디오 체크</span>
+										</label>
+									</td>
+									<td>
+										<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="input_radio pop_notext" for="select_imgtr3">
+											<input type="radio" id="select_imgtr3" name="select_tr">
+											<span class="label_text">라디오 체크</span>
+										</label>
+									</td>
+									<td>
+										<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="input_radio pop_notext" for="select_imgtr4">
+											<input type="radio" id="select_imgtr4" name="select_tr">
+											<span class="label_text">라디오 체크</span>
+										</label>
+									</td>
+									<td>
+										<img src="../img/common/ex_img.png" alt="선택된 이미지가 표시됩니다">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="tab_contents">
+				<div class="board_deallist2 type_imgboard mt20">
+					<div class="inner_div">
+						<table>
+							<caption>이미지선택 - 이미지</caption>
+							<colgroup>
+								<col width="90">
+								<col width="310">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>선택</th>
+									<th>이미지</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- 데이터없을때 -->
+								<!-- <tr>
+									<td class="blank_area" colspan="2">
+										<p class="txt_blank">데이터가 없습니다</p>
+									</td>
+								</tr> -->
+								<tr>
+									<td>
+										<label class="input_radio pop_notext" for="select_imgtr1_1">
+											<input type="radio" id="select_imgtr1_1" name="select_tr">
+											<span class="label_text">라디오 체크</span>
+										</label>
+									</td>
+									<td>
+										<img src="../img/common/bg_login3.png" alt="선택된 이미지가 표시됩니다">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_white">취소</button>
+			<button type="button" class="btn_md btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+
+<!-- 파일첨부 업로드 -->
+<div id="pop_logoupload" class="pop_dim_wrap pop_modal">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			파일첨부
+		</div>
+		<div class="contents_wrap">
+			<div class="wrap_file">
+				<input class="upload_name form_control" value="" disabled="disabled">
+				<input type="file" id="ex_filename" class="upload_hidden">
+				<label for="ex_filename" class="btn_sm btn_darkblue">파일찾기</label>
+			</div>
+			<ul class="explain_ul mt20">
+				<li>※ 5MB 미만의 파일만 등록 가능합니다</li>
+			</ul>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue">확인</button>
+			<button type="button" class="btn_md btn_white" onclick="$('#pop_logoupload').neoModal('close');">취소</button>
+		</div>
+	</div>
+</div>
+
+<!-- // 팝업 -->
+
+</body>
+</html>

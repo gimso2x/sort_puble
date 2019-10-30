@@ -1,0 +1,1176 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			// 행추가 버튼 클릭시
+			var order_preferred = 1;
+			$('.btn_add').on('click', function() {
+				var minus_html = '<fieldset class="tableform_wrap type_col3 addrow_col3">'+
+									'<table>'+
+										'<caption>보통주, 발행수량, 액면가</caption>'+
+										'<colgroup>'+
+											'<col width="130">'+
+											'<col width="231">'+
+											'<col width="130">'+
+											'<col width="*">'+
+											'<col width="130">'+
+											'<col width="*">'+
+										'</colgroup>'+
+										'<tbody>'+
+											'<tr>'+
+												'<th><label>'+ order_preferred + '우선주</label></th>'+
+												'<td>'+
+													'<select class="select_css form_control">'+
+														'<option value="">우선주</option>'+
+													'</select>'+
+												'</td>'+
+												'<th><label>발행수량</label></th>'+
+												'<td><input type="text" class="form_control ar"></td>'+
+												'<th><label>액면가</label></th>'+
+												'<td><input type="text" class="form_control ar"></td>'+
+											'</tr>'+
+											'<tr>'+
+												'<th><label>추가발행주식 설명</label></th>'+
+												'<td colspan="5">'+
+													'<input type="text" class="form_control" placeholder="보통주 외 발행주식에 대한 설명을 입력하는 곳 입니다.">'+
+												'</td>'+
+											'</tr>'+
+										'</tbody>'+
+									'</table>'+
+								'</fieldset>';
+				if(order_preferred < 11) {
+					$('.addrow_box').append(minus_html);
+					$('.addrow_box .addrow_col3:last-child .form_control').eq(0).focus();
+					order_preferred++;
+				}
+			});
+			
+			// 행삭제 버튼 클릭시
+			$(document).on('click', '.btn_minus', function() {
+				order_preferred--;
+				if($('.addrow_box .addrow_col3').length > 0) {
+					$('.addrow_box .addrow_col3:last-child').remove();
+				}
+			});
+		});
+	</script> 
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 등록기업 로그인 시 class="case2" -->
+	<div id="header" class="case2">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb">
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);">주주명부관리</a></li>
+					<li><a href="javascript:void(0);">투자정보관리</a></li>
+					<li><a href="javascript:void(0);">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li> 
+					<li class="mypage_area"><a href="javascript:void(0);" class="active"><span>마이페이지</span></a></li>
+					<li class="notice_area"><a href="javascript:void(0);" class="on"><span>2</span></a></li>  
+					<li class="logout_area"><a href="javascript:void(0);" class="sr_only">로그아웃</a></li>  
+				</ul> 
+				<div class="bar"></div>
+
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">주주명부</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);" class="active">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul> 
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul>
+				</div>	<!-- // submenu_area -->
+			</div>
+			
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">주주명부관리</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">주주명부</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보관리</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+				</div> 
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">마이페이지</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li> 
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="nav_page">
+			<div class="inner">
+				<ul class="lst_page clearfix">
+					<li><a href="/" class="btn_home sr_only">Home</a></li>
+					<li>
+						<a href="javascript:void(0);" class="btn_page">마이페이지</a>
+						<ul class="nav_subpage clearfix"> 
+							<li><a href="javascript:void(0);">투자정보관리</a></li>
+							<li><a href="javascript:void(0);">주주명부관리</a></li>
+							<li><a href="javascript:void(0);">거래현황관리</a></li>
+							<li><a href="javascript:void(0);">서비스 소개</a></li>
+							<li><a href="javascript:void(0);">투자정보</a></li>
+							<li><a href="javascript:void(0);">고객센터</a></li>
+							<li><a href="javascript:void(0);">로그아웃</a></li>
+							<li><a href="javascript:void(0);" class="active">마이페이지</a></li> 
+						</ul> 
+					</li>
+					<li>
+						<ul class="lst_subpage clearfix">  
+							<li><a href="javascript:void(0);" class="active">가입정보관리</a></li>
+							<li><a href="javascript:void(0);">증빙서류관리</a></li>
+							<li><a href="javascript:void(0);">1:1문의</a></li>
+							<li><a href="javascript:void(0);">서비스해지 신청</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>	<!-- // nav_page -->
+
+		<div class="section"> 
+			<div class="inner">
+				<div class="group_pageinfo">
+					<h3 class="txt_title">가입정보관리</h3>
+					<p class="txt_info">가입하신 정보(비밀번호 변경, 회사명, 주소 등)를 변경 하실 수 있습니다. 사업자등록번호, 법인등록번호는 변경이 불가능 합니다.</p>
+				</div>	<!-- // group_title -->
+				
+				<div class="contents">
+					<form class="join_process_form mt30">
+						<fieldset class="tableform_wrap type_col3">
+							<table>
+								<caption>사업자등록번호, 비밀번호, 비밀번호 확인</caption>
+								<!-- [resize] 190812 col width 변경 -->
+								<colgroup>
+									<col width="130">
+									<col width="*">
+									<col width="130">
+									<col width="*">
+									<col width="130">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><label for="company_regnum">사업자등록번호</label></th>
+										<td><input type="text" id="company_regnum" class="form_control" maxlength="" readonly></td>
+										<th><label for="pwd">비밀번호</label></th>
+										<td><input type="password" id="pwd" class="form_control" maxlength=""></td>
+										<th><label for="pwd_check">비밀번호 확인</label></th>
+										<td><input type="password" id="pwd_check" class="form_control" maxlength=""></td>
+									</tr>
+								</tbody>
+							</table>
+						</fieldset>
+						<p class="txt_info ico_dot">조회 전용 ID는 사업자등록번호 입니다. 비밀번호를 설정하여 주십시오.</p>	<!-- 190725: text, class 수정 -->
+
+						<h5 class="tableform_tit">회사정보입력<span>※ 사업자등록번호, 법인등록번호는 수정이 불가합니다.</span></h5>
+						<fieldset class="tableform_wrap type_col2">
+							<table>
+								<caption>회사정보입력 - 국문회사명, 사업자등록번호, 영문회사명, 법인등록번호, 대표자 성명, 직원수, 설립일, 결산월, 주소, Fax 번호, 홈페이지, 업종</caption>
+								<colgroup>
+									<!-- [resize] 190812 col width 변경 -->
+									<col width="130">
+									<col width="420">
+									<col width="130">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><label for="company_name_kr">국문회사명</label></th>
+										<td><input type="text" id="company_name_kr" class="form_control" maxlength=""></td>
+										<th><label for="company_regnum2">사업자등록번호</label></th>
+										<td><input type="text" id="company_regnum2" class="form_control" maxlength="" readonly></td>
+									</tr>
+									<tr>
+										<th><label for="company_name_en">영문회사명</label></th>
+										<td><input type="text" id="company_name_en" class="form_control" maxlength=""></td>
+										<th><label for="coporate_regnum">법인등록번호</label></th>
+										<td><input type="text" id="coporate_regnum" class="form_control" maxlength="" readonly></td>
+									</tr>
+									<tr>
+										<th><label for="ceo_name">대표자 성명</label></th>
+										<td><input type="text" id="ceo_name" class="form_control" maxlength=""></td>
+										<th><label for="employees_num">직원수</label></th>
+										<td><input type="text" id="employees_num" class="form_control" maxlength=""></td>
+									</tr>
+									<tr>
+										<th><label for="created_date">설립일</label></th>
+										<td><input type="text" id="created_date" class="form_control" maxlength=""></td>
+										<th><label for="dec_year">결산월</label></th>
+										<td><input type="text" id="dec_year" class="form_control" maxlength=""></td>
+									</tr>
+									<tr>
+										<th><label for="company_fax">FAX 번호</label></th>
+										<td>
+											<ul class="td_col_phone clearfix">
+												<li><input type="text" id="company_fax" class="form_control" maxlength=""></li>
+												<li>-</li>
+												<li><input type="text" class="form_control" maxlength=""></li>
+												<li>-</li>
+												<li><input type="text" class="form_control" maxlength=""></li>
+											</ul>
+										</td>
+										<th><label for="company_homepage">홈페이지</label></th>
+										<td><input type="text" id="company_homepage" class="form_control" maxlength=""></td>
+										
+									</tr>
+									<tr>
+										<th><label for="comapny_address">주소</label></th>
+										<td>
+											<div class="td_col2">
+												<div>
+													<input type="text" id="comapny_address" class="form_control" maxlength="" readonly>
+												</div>
+												<div>
+													<button type="button" class="btn_sm btn_darkblue" onclick="$('#pop_address_find').neoModal();">주소검색</button>
+												</div>
+											</div>
+											<input type="text" id="" class="form_control" maxlength="" >
+										</td>
+										<th><label for="">회사로고</label></th>
+										<td>
+											<div class="td_col2">
+												<div>
+													<input type="text" class="form_control" readonly>
+												</div>
+												<div>
+													<button type="button" class="btn_sm btn_darkblue" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th><label class="longtxt_label">투자자제공용<br>산업분류</label></th>
+										<td colspan="3">
+											<div class="td_col2">
+												<div>
+													<input type="text" class="form_control" readonly>
+												</div>
+												<div>
+													<button type="button" class="btn_sm btn_darkblue" onclick="$('#pop_investor_find').neoModal();">검색</button>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th><label for="">표준산업분류</label></th>
+										<td colspan="3">
+											<div class="td_col2">
+												<div>
+													<input type="text" class="form_control" readonly>
+												</div>
+												<div>
+													<button type="button" class="btn_sm btn_darkblue" onclick="$('#pop_stanindu_find').neoModal();">검색</button>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</fieldset>
+						<p class="txt_info ico_dot">투자자제공용산업분류는 Platform 내 관리 및 투자자 노출을 위한 산업분류로 필수 입력 항목이며, 표준산업분류는 선택 입력 항목입니다</p>
+
+						<h5 class="tableform_tit">주식관련 정보입력<span>※ 발행주식 총수를 변경하신 경우 주주명부를 반드시 수정하여야 합니다.</span>
+							<div class="top_right_wrap">
+								<button type="button" class="btn_sm btn_add">행추가</button>
+								<button type="button" class="btn_sm btn_minus">행삭제</button>
+							</div>
+						</h5>
+						<fieldset class="tableform_wrap type_col2">
+							<table>
+								<caption>주식관련 정보입력 - 발행가능주식 총수, 발행주식 총수</caption>
+								<colgroup>
+									<!-- [resize] 190812 col width 변경 -->
+									<col width="130">
+									<col width="420">
+									<col width="130">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><label for="issuable_stock_totalnum">발행가능주식 총수</label></th>
+										<td><input type="text" id="issuable_stock_totalnum" class="form_control ar" maxlength=""></td>
+										<th><label for="issued_stock_totalnum">발행주식 총수</label></th>
+										<td><input type="text" id="issued_stock_totalnum" class="form_control ar" maxlength=""></td>
+									</tr>
+								</tbody>
+							</table>
+						</fieldset>
+						<fieldset class="tableform_wrap type_col3 addrow_col3">
+							<table>
+								<caption>보통주, 발행수량, 액면가</caption>
+								<colgroup>
+									<col width="130">
+									<col width="*">
+									<col width="130">
+									<col width="*">
+									<col width="130">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><label>보통주</label></th>
+										<td><input type="text" class="form_control" value="보통주"></td>
+										<th><label>발행수량</label></th>
+										<td><input type="text" class="form_control ar"></td>
+										<th><label>액면가</label></th>
+										<td><input type="text" class="form_control ar"></td>
+									</tr>
+								</tbody>
+							</table>
+						</fieldset>
+						<div class="addrow_box"></div>
+						
+
+						<h5 class="tableform_tit">업무 담당자 정보<span class="ico_essential">필수 사항</span></h5>	<!-- 190725: text, class 수정 -->
+						<fieldset class="tableform_wrap type_col2">
+							<table>
+								<caption>업무 담당자 정보 - 성명, 전화번호, 부서, 핸드폰번호, 직급, 이메일</caption>
+								<colgroup>
+									<!-- [resize] 190812 col width 변경 -->
+									<col width="130">
+									<col width="420">
+									<col width="130">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><label for="operator_name" class="ico_essential ico_right">성명</label></th>	<!-- 190725: text, class 수정 -->
+										<td><input type="text" id="operator_name" class="form_control" maxlength=""></td>
+										<th><label for="operator_tel" class="ico_essential ico_right">전화번호</label></th>	<!-- 190725: text, class 수정 -->
+										<td>
+											<ul class="td_col_phone clearfix">
+												<li><input type="text" id="operator_tel" class="form_control" maxlength=""></li>
+												<li>-</li>
+												<li><input type="text" class="form_control" maxlength=""></li>
+												<li>-</li>
+												<li><input type="text" class="form_control" maxlength=""></li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th><label for="operator_department" class="ico_essential ico_right">부서</label></th>	<!-- 190725: text, class 수정 -->
+										<td><input type="text" id="operator_department" class="form_control" maxlength=""></td>
+										<th><label for="operator_cellphone" class="ico_essential ico_right">핸드폰번호</label></th>	<!-- 190725: text, class 수정 -->
+										<td>
+											<ul class="td_col_phone clearfix">
+												<li><input type="text" id="operator_cellphone" class="form_control" maxlength=""></li>
+												<li>-</li>
+												<li><input type="text" class="form_control" maxlength=""></li>
+												<li>-</li>
+												<li><input type="text" class="form_control" maxlength=""></li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th><label for="operator_rank" class="ico_essential ico_right">직급</label></th>	<!-- 190725: text, class 수정 -->
+										<td><input type="text" id="operator_rank" class="form_control" maxlength=""></td>
+										<th><label for="operator_email" class="ico_essential ico_right">이메일</label></th>	<!-- 190725: text, class 수정 --> 
+										<td>
+											<ul class="td_col_email clearfix">
+												<li>
+													<input type="text" id="operator_email" class="form_control" maxlength="">
+												</li>
+												<li>@</li>
+												<li>
+													<input type="text" id="" class="form_control" maxlength="">
+												</li>
+												<li>
+													<select class="select_css form_control">
+														<option value="">선택</option>
+													</select>
+												</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</fieldset>
+
+						<h5 class="tableform_tit">대표 승인자 정보
+							<span>※ 선택사항 : 미 입력 시 대표 승인 서비스를 받으실 수 없습니다.</span>
+							<label class="input_check">
+								<input type="checkbox" id="" name="">
+								<span class="label_text">업무담당자정보와 동일</span>
+							</label>
+							<div class="tooltip_area tooltip_inline">
+								<button type="button" class="btn_stockorder_tooltip">상태설명 툴팁</button>
+								<dl>
+									<dt class="sr_only">대표승인자 도움말</dt>
+									<dd class="tooltip_close"><button type="button">툴팁닫기</button></dd>
+									<dd>
+										업무 담당자가 주주명부를 주소변경, 질권설정, 권리등에 따른 수량변동이 발생하는 경우,<br>대표 승인자의 휴대전화번호로 수정사항이 전송되며, 대표 승인자의 승인을 거쳐야만 주주명부의 최종 변경이 적용 됩니다
+									</dd>
+								</dl>
+							</div>
+							<label class="input_check representation">
+								<input type="checkbox" id="" name="">
+								<span class="label_text">대표승인자 여부</span>
+							</label>
+						</h5>
+						<fieldset class="tableform_wrap type_col2">
+							<table>
+								<caption>대표 승인자 정보 - 성명, 전화번호, 부서, 핸드폰번호, 직급, 이메일</caption>
+								<colgroup>
+									<!-- [resize] 190812 col width 변경 -->
+									<col width="130">
+									<col width="420">
+									<col width="130">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><label for="exponent_name">성명</label></th>
+										<td><input type="text" id="exponent_name" class="form_control" maxlength=""></td>
+										<th><label for="exponent_tel">전화번호</label></th>
+										<td>
+											<ul class="td_col_phone clearfix">
+												<li><input type="text" id="exponent_tel" class="form_control" maxlength=""></li>
+												<li>-</li>
+												<li><input type="text" class="form_control" maxlength=""></li>
+												<li>-</li>
+												<li><input type="text" class="form_control" maxlength=""></li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th><label for="exponent_department">부서</label></th>
+										<td><input type="text" id="exponent_department" class="form_control" maxlength=""></td>
+										<th><label for="exponent_cellphone">핸드폰번호</label></th>
+										<td>
+											<ul class="td_col_phone clearfix">
+												<li><input type="text" id="exponent_cellphone" class="form_control" maxlength=""></li>
+												<li>-</li>
+												<li><input type="text" class="form_control" maxlength=""></li>
+												<li>-</li>
+												<li><input type="text" class="form_control" maxlength=""></li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th><label>직급</label></th>
+										<td>
+											<input type="text" id="" class="form_control" maxlength="">
+										</td>
+										<th><label for="exponent_email">이메일</label></th>
+										<td>
+											<ul class="td_col_email clearfix">
+												<li>
+													<input type="text" id="exponent_email" class="form_control" maxlength="">
+												</li>
+												<li>@</li>
+												<li>
+													<input type="text" id="" class="form_control" maxlength="">
+												</li>
+												<li>
+													<select class="select_css form_control">
+														<option value="">선택</option>
+													</select>
+												</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</fieldset>
+
+						<div class="btn_wrap">
+							<button type="button" class="btn_lg btn_white">취소</button>
+							<button type="button" class="btn_lg btn_blue">수정</button>
+						</div>
+					</form>
+				</div>	<!-- // contents --> 
+			</div> 
+		</div> 
+	</div>	<!-- // container -->
+	
+	<!-- 등록기업 로그인 시 class="case2" -->
+	<div id="footer" class="case2"> 
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix"> 
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.koscom.co.kr">코스콤</option>
+					</select> 
+				</div> 
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">주주명부관리</a>
+					<ul>
+						<li><a href="javascript:void(0);">주주명부</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보관리</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">마이페이지</a> 
+					<ul>
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>  
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>  
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a>
+	</div>	<!-- // footer --> 
+
+</div>
+
+
+<!-- 팝업 -->
+<div id="pop_write_blank" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				입력한 내용이 모두 사라집니다.<br>
+				서비스가입을 취소하시겠습니까?
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_white w50">아니오</button>
+			<button type="button" class="btn_pop_default btn_blue w50">예</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_pw_false" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				비밀번호가 일치하지 않습니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_pw_false').neoModal('close');">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_input_false" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				모든 입력사항이 필수 입력 되어야 합니다.<br>
+				모든 사항이 입력완료 되었는지 확인하여 주십시오.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_comapnycetify_false" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				입력된 사업자등록번호와<br>
+				인증서가 일치하지 않습니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_cetify_false" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				인증서가 비밀번호가 일치하지 않습니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_join_success" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				서비스 가입이 완료되었습니다.<br>
+				<span class="txt_emphasis">로그인 페이지로 이동</span>합니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<!-- 주소검색 -->
+<div id="pop_address_find" class="pop_dim_wrap pop_modal pop_md">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주소검색
+		</div>
+		<div class="contents_wrap">
+			<div>
+				<table>
+					<caption>주소검색 - 주소, 우편번호, 선택주소, 상세주소</caption>	
+					<tbody>
+						<tr>
+							<td colspan="2">
+								<div class="td_col2">
+									<div>
+										<input type="text" class="form_control" maxlength="">
+									</div>
+									<div>
+										<button type="button" class="btn_sm btn_darkblue">검색</button>
+									</div>
+								</div>
+								<p>
+									※ 지역명(지번주소): 동/읍/면/리 (예: 여의도동 3210, 역삼동 912, 화도읍)
+								</p>
+								<p>
+									※ 도로명주소(새주소):도로명 + 건물명 (예: 국제금융10, 상도로)
+								</p>
+								<ul class="address_result">
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr class="address_detail">
+							<th><label for="post_num">우편번호</label></th>
+							<td><input type="text" id="post_num" class="form_control form_sm" maxlength=""></td>
+						</tr>
+						<tr class="address_detail">
+							<th><label for="select_addr">선택주소</label></th>
+							<td><input type="text" id="select_addr" class="form_control" maxlength=""></td>
+						</tr>
+						<tr class="address_detail">
+							<th><label for="detail_addr">상세주소</label></th>
+							<td><input type="text" id="detail_addr" class="form_control" maxlength=""></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue" onclick="$('#pop_address_find').neoModal('close');">완료</button>
+		</div>
+	</div>
+</div>
+
+
+<!-- 표준산업분류 검색 -->
+<div id="pop_stanindu_find" class="pop_dim_wrap pop_modal pop_md">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			표준산업분류 검색
+		</div>
+		<div class="contents_wrap">
+			<div>
+				<table>
+					<caption>표준산업분류 검색</caption>	
+					<tbody>
+						<tr>
+							<td colspan="2">
+								<div class="td_col2">
+									<div>
+										<input type="text" class="form_control" maxlength="">
+									</div>
+									<div>
+										<button type="button" class="btn_sm btn_darkblue">검색</button>
+									</div>
+								</div>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<ul class="explain_ul al">
+					<li>세세분류명으로 검색하여 검색목록에서 선택하여 추가하여주십시오.</li>
+					<li>정부에서 제공하는 가장 최근 차수의 표준산업분류가 적용됩니다.</li>
+				</ul>
+
+				<h5>표준산업분류</h5>
+				<div class="companyinfo_table th_vertical">
+					<table>
+						<caption>관계회사 현황 - 관계사명, 지분율</caption>
+						<colgroup>
+							<col width="40px">
+							<col width="19%">
+							<col width="19%">
+							<col width="19%">
+							<col width="19%">
+							<col width="19%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</th>
+								<th>대분류</th>
+								<th>중분류</th>
+								<th>소분류</th>
+								<th>세분류</th>
+								<th>세세분류명</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>대분류</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="board_paging">
+					<ul>
+						<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+						<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+						<li><a href="javascript:void(0);" class="active">1</a></li>
+						<li><a href="javascript:void(0);">2</a></li>
+						<li><a href="javascript:void(0);">3</a></li>
+						<li><a href="javascript:void(0);">4</a></li>
+						<li><a href="javascript:void(0);">5</a></li>
+						<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+						<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+					</ul>
+					<button type="button" class="btn_sm btn_add">추가</button>
+				</div>
+
+				<ul class="address_result">
+					<li>
+						<!-- // 19.09.23 추가
+						// 표준산업분류 삭제 -->
+						<a href="javascript:void(0)">여의도동 3210</a>
+						<button type="button" class="btn_stanindu_delete">표준산업분류 삭제</button>
+					</li>
+					<li>
+						<a href="javascript:void(0)">여의도동 3210</a>
+						<button type="button" class="btn_stanindu_delete">표준산업분류 삭제</button>
+					</li>
+					<li>
+						<a href="javascript:void(0)">여의도동 3210</a>
+						<button type="button" class="btn_stanindu_delete">표준산업분류 삭제</button>
+					</li>
+					<li>
+						<a href="javascript:void(0)">여의도동 3210</a>
+						<button type="button" class="btn_stanindu_delete">표준산업분류 삭제</button>
+					</li>
+					<li>
+						<a href="javascript:void(0)">여의도동 3210</a>
+						<button type="button" class="btn_stanindu_delete">표준산업분류 삭제</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue" onclick="$('#pop_address_find').neoModal('close');">완료</button>
+		</div>
+	</div>
+</div>
+
+<!-- 회사로고 업로드 -->
+<div id="pop_logoupload" class="pop_dim_wrap pop_modal">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			회사로고 업로드
+		</div>
+		<div class="contents_wrap">
+			<div class="wrap_file">
+				<input class="upload_name form_control" value="" disabled="disabled">
+				<input type="file" id="ex_filename" class="upload_hidden">
+				<label for="ex_filename" class="btn_sm btn_darkblue">파일찾기</label>
+			</div>
+			<ul class="explain_ul mt20">
+				<li>로고이미지는 jpg, 사이즈는 0000*0000만 가능합니다</li>
+				<li>2M byte 이상의 파일은 업로드 불가 합니다</li>
+			</ul>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue">완료</button>
+		</div>
+	</div>
+</div>
+
+<!-- 투자자제공용산업분류 -->
+<div id="pop_investor_find" class="pop_dim_wrap pop_modal pop_md">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			투자자제공용산업분류
+		</div>
+		<div class="contents_wrap">
+			<div class="companyinfo_table">
+				<table>
+					<caption>투자자제공용산언분류 - 1차분류, 2차분류</caption>
+					<colgroup>
+						<col width="80">
+						<col width="*">
+						<col width="80">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>1차분류</th>
+							<td>
+								<select class="select_css form_control">
+									<option value="">제조</option>
+								</select>
+							</td>
+							<th>2차분류</th>
+							<td>
+								<select class="select_css form_control">
+									<option value="">제조</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue">완료</button>
+		</div>
+	</div>
+</div>
+
+<!-- 업종코드 -->
+<div id="pop_compnaykinds_find" class="pop_dim_wrap pop_modal pop_lg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			업종코드 검색
+		</div>
+		<div class="contents_wrap">
+			<form class="table_search_wrap">
+				<fieldset>
+					<table>
+						<caption>업종코드 검색 - 귀속연도, 업종코드, 업체명, 세세분류명</caption>
+						<colgroup>
+							<col>
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label for="">귀속연도</label></th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+								<th><label for="">업종코드</label></th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+							</tr>
+							<tr>
+								<th><label for="">업체명</label></th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+								<th><label for="">세세분류명</label></th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="btn_wrap">
+						<button type="button" class="btn_sm btn_darkblue">검색</button>
+					</div>
+				</fieldset>
+			</form>
+			<div class="table_normal_list">
+				<table>
+					<caption>공지사항</caption>
+					<colgroup>
+					</colgroup>
+					<thead>
+						<tr>
+							<th>귀속연도</th>
+							<th>업종코드</th>
+							<th>업체명</th>
+							<th>세세분류명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<!-- <tr>
+							<td colspan="4">검색된 내용이 없습니다.</td>
+						</tr> -->
+					</tbody>
+				</table>
+				<div class="board_paging">
+					<ul>
+						<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+						<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+						<li><a href="javascript:void(0);" class="active">1</a></li>
+						<li><a href="javascript:void(0);">2</a></li>
+						<li><a href="javascript:void(0);">3</a></li>
+						<li><a href="javascript:void(0);">4</a></li>
+						<li><a href="javascript:void(0);">5</a></li>
+						<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+						<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- // 팝업 --> 
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+<script>
+	// 19.09.23 추가
+	// 표준산업분류 삭제
+	$(document).on('click', '.btn_stanindu_delete', function(){
+		$(this).closest('li').remove();
+	});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script> 
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 투자자로그인 로그인 시 class="case3" -->
+	<div id="header" class="case3">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb">
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);">비상장주식거래</a></li>
+					<li><a href="javascript:void(0);">기업정보</a></li>
+					<li><a href="javascript:void(0);">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li>
+					<li class="mypage_area"><a href="javascript:void(0);" class="active"><span>마이페이지</span></a></li>
+					<li class="notice_area"><a href="javascript:void(0);" class="on"><span>2</span></a></li>  
+					<li class="logout_area"><a href="javascript:void(0);" class="sr_only">로그아웃</a></li>  
+				</ul>
+				<div class="bar"></div>
+
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">주문현황</a></li>
+						<li><a href="javascript:void(0);">체결현황</a></li>
+						<li><a href="javascript:void(0);">전종목 거래현황</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보 조회</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+					
+					<ul class="nav_sub"> 
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul>
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul>
+				</div>	<!-- // submenu_area -->
+			</div>
+
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">비상장주식거래</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">주문현황</a></li>
+						<li><a href="javascript:void(0);">체결현황</a></li>
+						<li><a href="javascript:void(0);">전종목 거래현황</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">기업정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보 조회</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">마이페이지</a> 
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li> 
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+ 
+	<div id="container">
+		<div class="nav_page">
+			<div class="inner">
+				<ul class="lst_page clearfix"> 
+					<li><a href="/" class="btn_home sr_only">Home</a></li>
+					<li>
+						<a href="javascript:void(0);" class="btn_page">마이페이지</a>
+						<ul class="nav_subpage clearfix"> 
+							<li><a href="javascript:void(0);">비상장주식거래</a></li>
+							<li><a href="javascript:void(0);">기업정보</a></li>
+							<li><a href="javascript:void(0);">서비스 소개</a></li>
+							<li><a href="javascript:void(0);">투자정보</a></li>
+							<li><a href="javascript:void(0);">고객센터</a></li>
+							<li><a href="javascript:void(0);">로그아웃</a></li>
+							<li><a href="javascript:void(0);" class="active">마이페이지</a></li> 
+						</ul>
+					</li>
+					<li>
+						<ul class="lst_subpage clearfix">
+							<li><a href="javascript:void(0);">가입정보 관리</a></li>
+							<li><a href="javascript:void(0);">계좌정보 관리</a></li> 
+							<li><a href="javascript:void(0);">관심기업 관리</a></li>
+							<li><a href="javascript:void(0);">나의 주문</a></li> 
+							<li><a href="javascript:void(0);">계약내역 조회</a></li>
+							<li><a href="javascript:void(0);">거래내역 조회</a></li>
+							<li><a href="javascript:void(0);">보유잔고 현황</a></li>
+							<li><a href="javascript:void(0);">증빙서류 관리</a></li>
+							<li><a href="javascript:void(0);" class="active">1:1 문의</a></li> 
+							<li><a href="javascript:void(0);">서비스해지신청</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>	<!-- // nav_page -->
+
+		<div class="section">
+			<div class="inner">
+				<div class="group_pageinfo">
+					<h3 class="txt_title">1:1 문의</h3>
+					<p class="txt_info">서비스에 대해 궁금하시면 언제든지 1:1 문의를 이용해 주세요.</p>
+				</div>	<!-- // group_title -->
+				
+				<div class="contents">
+					<div class="table_normal_list mt40">
+						<table>
+							<caption>1:1 문의</caption>
+							<colgroup>
+								<!-- [resize] 190812 col width 변경 -->
+								<col width="7.2%">
+								<col width="*">
+								<col width="11.7%">
+								<col width="9.2%">
+								<col width="12.9%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>제목</th>
+									<th><a href="javascript:void(0);" class="sorting_button">작성일</a></th>
+									<th>첨부파일</th>
+									<th><a href="javascript:void(0);" class="sorting_button">답변여부</a></th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- <tr>
+									<td colspan="5" class="blank_area">
+										<p class="txt_blank">등록된 1:1 문의가 없습니다</p>
+									</td>
+								</tr> --> 
+								<tr>
+									<td>10</td>
+									<td class="al"><a href="javascript:void(0);">유럽 화장품 박람회 참가 유럽 화장품 박람회 참가 유럽 화장품 박람회 참가 유럽 화장품 박람회 참가 유럽 화장품 박람회 참가유럽 화장품 박람회 참가유럽 화장품 박람회 참가</a></td>
+									<td>2019.06.08</td>
+									<td><a href="javascript:void(0);" class="btn_file">file download</a></td>
+									<td><span class="state state_y">Y</span></td>
+								</tr> 
+								<tr>
+									<td>10</td>
+									<td class="al"><a href="javascript:void(0);">유럽 화장품 박람회 참가 유럽 화장품 박람회 참가 유럽 화장품 박람회 참가 유럽 화장품 박람회 참가 유럽 화장품 박람회 참가유럽 화장품 박람회 참가유럽 화장품 박람회 참가</a></td>
+									<td>2019.06.08</td>
+									<td><a href="javascript:void(0);" class="btn_file">file download</a></td>
+									<td><span class="state state_n">N</span></td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td class="al"><a href="javascript:void(0);">유럽 화장품 박람회 참가 유럽 화장품 박람회 참가 유럽 화장품 박람회 참가 유럽 화장품 박람회 참가 유럽 화장품 박람회 참가유럽 화장품 박람회 참가유럽 화장품 박람회 참가</a></td>
+									<td>2019.06.08</td>
+									<td><a href="javascript:void(0);" class="btn_file">file download</a></td>
+									<td><span class="state state_y">Y</span></td>
+								</tr>
+								<tr> 
+									<td>10</td>
+									<td class="al"><a href="javascript:void(0);">유럽 화장품 박람회 참가 유럽 화장품 박람회 참가 유럽 화장품 박람회 참가 유럽 화장품 박람회 참가 유럽 화장품 박람회 참가유럽 화장품 박람회 참가유럽 화장품 박람회 참가</a></td>
+									<td>2019.06.08</td>
+									<td><a href="javascript:void(0);" class="btn_file">file download</a></td>
+									<td><span class="state state_n">N</span></td>
+								</tr> 
+							</tbody>
+						</table>
+						<div class="board_paging">
+							<ul>
+								<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+								<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+								<li><a href="javascript:void(0);" class="active">1</a></li>
+								<li><a href="javascript:void(0);">2</a></li>
+								<li><a href="javascript:void(0);">3</a></li>
+								<li><a href="javascript:void(0);">4</a></li>
+								<li><a href="javascript:void(0);">5</a></li>
+								<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+								<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+							</ul>
+							<button type="button" class="btn_md btn_blue btn_right">1:1 문의하기</button>
+						</div>
+					</div>
+				</div>	<!-- // contents -->
+			</div>
+		</div>
+	</div>	<!-- // container -->
+	
+	<!-- 투자자로그인 로그인 시 class="case3" -->
+	<div id="footer" class="case3">
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix">
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.naver.com">aaa</option> 
+						<option value="http://www.daum.net">bbb</option> 
+						<option value="https://www.kakaocorp.com">ccc</option>
+					</select> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">비상장주식거래</a>
+					<ul>
+						<li><a href="javascript:void(0);">주문현황</a></li>
+						<li><a href="javascript:void(0);">체결현황</a></li>
+						<li><a href="javascript:void(0);">전종목 거래현황</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">기업정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보 조회</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">마이페이지</a> 
+					<ul>
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>  
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a> 
+		<a href="javascript:void(0);" class="btn_chatting"><span>협상채팅</span></a>
+	</div>	<!-- // footer --> 
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="../js/vendo/analytics.js" async></script>
+
+</body>
+</html>

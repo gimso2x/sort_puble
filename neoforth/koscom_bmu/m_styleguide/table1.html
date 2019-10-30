@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - TABLE1</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../pub/mobile/css/common.css">
+<link rel="stylesheet" href="../pub/mobile/css/vendor/jquery-ui.min.css">
+<script src="../pub/mobile/js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../pub/mobile/js/vendor/jquery-ui.min.js"></script>
+<script src="../pub/mobile/js/common.js"></script>
+
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(mobileSnb);
+		$('.g-nav-snb ul li').eq(4).addClass("active");
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">TABLE1</h2>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">세로형</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="table table_col">
+								<table>
+									<caption class="sr_only">체결정보 상세</caption>
+									<colgroup>
+										<col width="*">
+										<col width="25%">
+										<col width="25%">
+										<col width="25%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>거래수량(주)</th>
+											<th>단가(원)</th>
+											<th>거래금액(원)</th>
+											<th>상태</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="ar">2,000</td>
+											<td class="ar">2,000</td>
+											<td class="ar">2,000</td>
+											<td>서명대기</td>
+										</tr>
+										<tr>
+											<td class="ar">2,000</td>
+											<td class="ar">2,000</td>
+											<td class="ar">2,000</td>
+											<td>서명대기</td>
+										</tr>
+										<tr>
+											<td class="ar">2,000</td>
+											<td class="ar">2,000</td>
+											<td class="ar">2,000</td>
+											<td>서명대기</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="table table_col table_vline mt30">
+								<table>
+									<caption class="sr_only">체결정보 상세</caption>
+									<colgroup>
+										<col width="*">
+										<col width="25%">
+										<col width="25%">
+										<col width="25%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th colspan="2">거래수량(주)</th>
+											<th>거래금액(원)</th>
+											<th>상태</th>
+										</tr>
+										<tr>
+											<th>거래수량(주)</th>
+											<th>단가(원)</th>
+											<th>거래금액(원)</th>
+											<th>상태</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="ar">2,000</td>
+											<td class="ar">2,000</td>
+											<td class="ar">2,000</td>
+											<td>서명대기</td>
+										</tr>
+										<tr>
+											<td class="ar">2,000</td>
+											<td class="ar">2,000</td>
+											<td class="ar">2,000</td>
+											<td>서명대기</td>
+										</tr>
+										<tr>
+											<td class="ar">2,000</td>
+											<td class="ar">2,000</td>
+											<td class="ar">2,000</td>
+											<td>서명대기</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<div class="table table_col">
+									<table>
+										<caption class="sr_only">체결정보 상세</caption>
+										<colgroup>
+											<col width="*">
+											<col width="25%">
+											<col width="25%">
+											<col width="25%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>거래수량(주)</th>
+												<th>단가(원)</th>
+												<th>거래금액(원)</th>
+												<th>상태</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="ar">2,000</td>
+												<td class="ar">2,000</td>
+												<td class="ar">2,000</td>
+												<td>서명대기</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div class="table table_col table_vline">
+									<table>
+										
+									</table>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.table_col thead tr:first-child th{border-top: 0;}   
+								.table_col table tbody tr:first-child th,.table_col table tbody tr:first-child td{border-top: 1px solid #ccc;}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">가로형</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="table table_row">
+								<table>
+									<caption class="sr_only">체결정보 상세</caption>
+									<colgroup>
+										<col width="100">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>수량(주)</th>
+											<td class="ar">2,000</td>
+										</tr>
+										<tr>
+											<th>수량(주)</th>
+											<td class="ar">2,000</td>
+										</tr>
+										<tr>
+											<th>상태</th>
+											<td>서명대기</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="table table_row table_vline mt30">
+								<table>
+									<caption class="sr_only">체결정보 상세</caption>
+									<colgroup>
+										<col width="35">
+										<col width="75">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th rowspan="2" class="ac">주문</th>
+											<th>수량(주)</th>
+											<td class="ar">2,000</td>
+										</tr>
+										<tr>
+											<th>수량(주)</th>
+											<td class="ar">2,000</td>
+										</tr>
+										<tr>
+											<th colspan="2" class="ac">수량(주)</th>
+											<td class="ar">2,000</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<div class="table table_row">
+									<table>
+										<caption class="sr_only">체결정보 상세</caption>
+										<colgroup>
+											<col width="100">
+											<col width="*">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>수량(주)</th>
+												<td class="ar">2,000</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div class="table table_row table_vline">
+									<table>
+										<caption class="sr_only">체결정보 상세</caption>
+										<colgroup>
+											<col width="35">
+											<col width="75">
+											<col width="*">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th rowspan="2" class="ac">주문</th>
+												<th>수량(주)</th>
+												<td class="ar">2,000</td>
+											</tr>
+											<tr>
+												<th>수량(주)</th>
+												<td class="ar">2,000</td>
+											</tr>
+											<tr>
+												<th colspan="2" class="ac">수량(주)</th>
+												<td class="ar">2,000</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.table{border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;} 
+								.table table{table-layout: fixed; width: 100%; border-collapse: collapse;}  
+								.table table tr th,.table table tr td{padding: 0 10px; height: 40px; line-height: 20px; border-top: 1px solid #eee;}  
+								.table table tr th{font-size: 13px; font-weight: 400; color: #555; background-color: #f8f8f8;}   
+								.table table tbody tr td{text-align: center; font-size: 14px; font-weight: 400; color: #333;} 
+
+								.table.table_vline table tr th,.table.table_vline table tr td{border-left: 1px solid #eee;}    
+								.table.table_vline table thead tr th:first-child{border-left: 0;}     
+								.table.table_vline table tbody tr th:first-child{border-left: 0;}  
+								.table.table_vline table tbody tr td:first-child{border-left: 0;} 
+
+								.table_row table tbody tr th,.table_row table tbody tr td{text-align: left;}  
+								.table_row table tbody tr:first-child th,.table_row table tbody tr:first-child td{border-top: 0;}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">상세</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="table table_detail">
+								<table>
+									<caption class="sr_only">체결정보 상세</caption>
+									<colgroup>
+										<col width="*">
+										<col width="20%">
+										<col width="20%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>구분</th>
+											<th colspan="2">평가점수</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="al">창업팀 우수성</td>
+											<td>평균</td>
+											<td class="ar">4.67</td>
+										</tr>
+										<tr>
+											<td class="al">창업팀 우수성</td>
+											<td>평균</td>
+											<td class="ar">4.67</td>
+										</tr>
+										<tr>
+											<td class="al">창업팀 우수성</td>
+											<td>평균</td>
+											<td class="ar">4.67</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<div class="table table_detail">
+									<table>
+										<caption class="sr_only">체결정보 상세</caption>
+										<colgroup>
+											<col width="*">
+											<col width="20%">
+											<col width="20%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>구분</th>
+												<th colspan="2">평가점수</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="al">창업팀 우수성</td>
+												<td>평균</td>
+												<td class="ar">4.67</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.table_detail{border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}  
+								.table_detail table thead tr th{background-color: #fff;}  
+								.table_detail table thead tr:first-child th{border-top: 0;}    
+								.table_detail table tr th,.table_detail table tr td{border-left: 1px solid #eee;}
+								.table_detail table tbody tr:first-child th,.table_detail table tbody tr:first-child td{border-top: 1px solid #ddd;} 
+								.table_detail table tr th:first-child,.table_detail table tr td:first-child{text-align: center; border-left: 0;} 
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

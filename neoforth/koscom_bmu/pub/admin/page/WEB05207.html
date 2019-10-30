@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);" class="active">회원 관리</a></li>
+				<li><a href="javascript:void(0);">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>회원 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">해지관리</a></li>
+				<li><a href="javascript:void(0);">휴면조회</a></li>
+				<li><a href="javascript:void(0);">전문기관</a></li>
+				<li><a href="javascript:void(0);">화이트리스트</a></li>
+				<li><a href="javascript:void(0);" class="active">관리자</a></li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>관리자
+					<div class="btn_topright_wrap">
+						<button type="button" class="btn_md btn_blue" onclick="$('#pop_admininfo_change').neoModal();">등록</button>
+					</div>
+				</h4>
+				<!-- 관리자1 -->
+				<h5 class="section_tith5">관리자1
+					<div class="btn_topright_wrap">
+						<button type="button" class="btn_sm btn_blue" onclick="$('#pop_admininfo_change').neoModal();">수정</button>
+						<button type="button" class="btn_sm btn_blue2">삭제</button>
+					</div>
+				</h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>관리자</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>성명</th>
+								<td></td>
+								<th>핸드폰번호</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>소속 / 직급</th>
+								<td></td>
+								<th>이메일</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>ID</th>
+								<td></td>
+								<th>PW</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>권한</th>
+								<td colspan="3">사용자 전환, 회원 관리, 컨텐츠 관리, 알림 관리, 고객센터 관리, 정산 관리, 통계 관리, 메타 관리, 블록체인 관리</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 관리자1 -->
+
+				<!-- 관리자2 -->
+				<h5 class="section_tith5">관리자2
+					<div class="btn_topright_wrap">
+						<button type="button" class="btn_sm btn_blue" onclick="$('#pop_admininfo_change').neoModal();">수정</button>
+						<button type="button" class="btn_sm btn_blue2">삭제</button>
+					</div>
+				</h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>관리자</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>성명</th>
+								<td></td>
+								<th>핸드폰번호</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>소속 / 직급</th>
+								<td></td>
+								<th>이메일</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>ID</th>
+								<td></td>
+								<th>PW</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>권한</th>
+								<td colspan="3">사용자 전환, 회원 관리, 컨텐츠 관리, 알림 관리, 고객센터 관리, 정산 관리, 통계 관리, 메타 관리, 블록체인 관리</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 관리자2 -->
+
+				<!-- 관리자3 -->
+				<h5 class="section_tith5">관리자3
+					<div class="btn_topright_wrap">
+						<button type="button" class="btn_sm btn_blue" onclick="$('#pop_admininfo_change').neoModal();">수정</button>
+						<button type="button" class="btn_sm btn_blue2">삭제</button>
+					</div>
+				</h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>관리자</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>성명</th>
+								<td></td>
+								<th>핸드폰번호</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>소속 / 직급</th>
+								<td></td>
+								<th>이메일</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>ID</th>
+								<td></td>
+								<th>PW</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>권한</th>
+								<td colspan="3">사용자 전환, 회원 관리, 컨텐츠 관리, 알림 관리, 고객센터 관리, 정산 관리, 통계 관리, 메타 관리, 블록체인 관리</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 관리자3 -->
+
+				<!-- 관리자4 -->
+				<h5 class="section_tith5">관리자4
+					<div class="btn_topright_wrap">
+						<button type="button" class="btn_sm btn_blue" onclick="$('#pop_admininfo_change').neoModal();">수정</button>
+						<button type="button" class="btn_sm btn_blue2">삭제</button>
+					</div>
+				</h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>관리자</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>성명</th>
+								<td></td>
+								<th>핸드폰번호</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>소속 / 직급</th>
+								<td></td>
+								<th>이메일</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>ID</th>
+								<td></td>
+								<th>PW</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>권한</th>
+								<td colspan="3">사용자 전환, 회원 관리, 컨텐츠 관리, 알림 관리, 고객센터 관리, 정산 관리, 통계 관리, 메타 관리, 블록체인 관리</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 관리자4 -->
+
+				<!-- 관리자5 -->
+				<h5 class="section_tith5">관리자5
+					<div class="btn_topright_wrap">
+						<button type="button" class="btn_sm btn_blue" onclick="$('#pop_admininfo_change').neoModal();">수정</button>
+						<button type="button" class="btn_sm btn_blue2">삭제</button>
+					</div>
+				</h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>관리자</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>성명</th>
+								<td></td>
+								<th>핸드폰번호</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>소속 / 직급</th>
+								<td></td>
+								<th>이메일</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>ID</th>
+								<td></td>
+								<th>PW</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>권한</th>
+								<td colspan="3">사용자 전환, 회원 관리, 컨텐츠 관리, 알림 관리, 고객센터 관리, 정산 관리, 통계 관리, 메타 관리, 블록체인 관리</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 관리자5 -->
+				
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+
+<!-- 팝업 -->
+<div id="pop_cancle_pop" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				입력된 내용이 있습니다.<br>
+				정말로 취소하시겠습니까?
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_white w50">아니오</button>
+			<button type="button" class="btn_pop_default btn_blue w50">예</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_ok_pop" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				관리자 등록을 완료하였습니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_admininfo_change" class="pop_dim_wrap pop_modal pop_lg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			관리자정보 변경
+		</div>
+		<div class="contents_wrap">
+			<h5 class="section_tith5">관리자1</h5>
+			<div class="companyinfo_table">
+				<table>
+					<caption>관리자</caption>
+					<colgroup>
+						<col width="130">
+						<col width="*">
+						<col width="130">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>성명</th>
+							<td><input type="text" class="form_control" maxlength=""></td>
+							<th>핸드폰번호</th>
+							<td>
+								<ul class="td_col_phone clearfix">
+									<li><input type="text" id="" class="form_control" maxlength=""></li>
+									<li>-</li>
+									<li><input type="text" class="form_control" maxlength=""></li>
+									<li>-</li>
+									<li><input type="text" class="form_control" maxlength=""></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>소속 / 직급</th>
+							<td><input type="text" class="form_control" maxlength=""></td>
+							<th>이메일</th>
+							<td>
+								<ul class="td_col_email clearfix">
+									<li>
+										<input type="text" id="" class="form_control" maxlength="">
+									</li>
+									<li>@</li>
+									<li>
+										<input type="text" id="" class="form_control" maxlength="">
+									</li>
+									<li>
+										<select class="select_css form_control">
+											<option value="">선택</option>
+										</select>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>ID</th>
+							<td><input type="text" class="form_control" maxlength=""></td>
+							<th>PW</th>
+							<td><input type="password" class="form_control" maxlength=""></td>
+						</tr>
+						<tr>
+							<th>권한</th>
+							<td colspan="3">
+								<div>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked disabled>
+										<span class="label_text">사용자 전환</span>
+									</label>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked disabled>
+										<span class="label_text">회원 관리</span>
+									</label>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked disabled>
+										<span class="label_text">컨텐츠 관리</span>
+									</label>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked disabled>
+										<span class="label_text">알림 관리</span>
+									</label>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked disabled>
+										<span class="label_text">고객센터 관리</span>
+									</label>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked disabled>
+										<span class="label_text">정산 관리</span>
+									</label>
+								</div>
+								<div style="margin-top:5px;">
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked disabled>
+										<span class="label_text">통계 관리</span>
+									</label>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked disabled>
+										<span class="label_text">메타 관리</span>
+									</label>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked disabled>
+										<span class="label_text">블록체인 관리</span>
+									</label>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_white" onclick="$('#pop_cancle_pop').neoModal();">취소</button>
+			<button type="button" class="btn_md btn_blue" onclick="$('#pop_ok_pop').neoModal();">완료</button>
+		</div>
+	</div>
+</div>
+<!-- // 팝업 -->
+
+</body>
+</html>

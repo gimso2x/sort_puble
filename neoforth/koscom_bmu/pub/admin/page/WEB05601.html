@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+ 
+	<div id="container">
+		<div class="group_lnb">
+			<h3>정산 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">등록기업 정산</a></li>
+				<li><a href="javascript:void(0);" class="active">매매계약 정산</a></li>
+				<li><a href="javascript:void(0);">증빙문서 정산</a></li>
+			</ul> 
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>매매계약 정산</h4>  
+				<div class="group_srch">
+					<table class="tb_srch"> 
+						<colgroup>
+							<col width="130">
+							<col width="*">
+						</colgroup>  
+						<tbody>  
+							<tr>
+								<th>계약일자</th>  
+								<td class="srch_area al">
+									<ul class="datepicker_searchwrap clearfix"> 
+									 	<li><input type="text" class="datepicker form_control"></li> 
+									 	<li class="datepicker_connect">~</li> 
+									 	<li><input type="text" class="datepicker form_control"></li> 
+									</ul>  
+									<div class="date_btn_wrap"> 
+									 	<!-- [D] 활성화 버튼은 'on' 추가 -->
+									 	<button type="button" class="btn_term_select on">오늘</button>
+									 	<button type="button" class="btn_term_select">1주</button>
+									 	<button type="button" class="btn_term_select">1달</button>
+									 	<button type="button" class="btn_term_select">3달</button>
+									 	<button type="button" class="btn_term_select">6달</button>
+									 	<button type="button" class="btn_term_select">1년</button>
+									</div> 
+								</td>  
+							</tr>
+							<tr>
+								<th>종목</th>  
+								<td class="srch_area al">
+									<input type="text" class="form_control name">
+								</td>  
+							</tr>
+						</tbody>
+					</table>
+				</div>	<!-- // group_search --> 
+
+				<div class="submit_area">
+					<button class="btn_md btn_white">초기화</button>
+					<button class="btn_md btn_blue">검색</button>
+				</div>
+
+				<div class="group_tableinfo mt30"> 
+					<span class="num_total">총 <em><strong class="txt_sell_color">245</strong>건</em></span>
+					<div class="srch_area"> 
+						<button type="button" class="btn_sm btn_blue">엑셀다운로드</button>
+						<select class="select_css form_control"> 
+							<option value="20">20</option>
+							<option value="50">50</option>
+							<option value="100">100</option>
+						</select>
+					</div>
+				</div> 
+ 				
+				<div class="companyinfo_table th_vertical table_total mt10">
+				    <table> 
+				        <caption class="sr_only">매매계약 정산 상세</caption>
+				        <colgroup>
+				            <col width="10%">
+				            <col width="*">
+				            <col width="8%">
+				            <col width="10%">
+				            <col width="10%">
+				            <col width="10%">
+				            <col width="10%">
+				            <col width="10%">
+				            <col width="10%">
+				            <col width="10%">
+				        </colgroup> 
+				        <thead> 
+				            <tr>
+				            	<th>계약일자</th>
+				            	<th>종목</th>
+				            	<th>매도수구분</th>
+				            	<th>거래금액</th>
+				            	<th>비상장주식<br>거래시스템<br>이용료 1%</th>
+				            	<th>에스크로서비스<br>수수료 0.2%</th>
+				            	<th>주식양수도계약서<br>자동작성서비스<br>수수료</th>
+				            	<th>주권미발행확인서<br>발급서비스<br>수수료</th>
+				            	<th>수수료합계</th>
+				            	<th>에스크로금액</th>
+				            </tr>
+				        </thead>
+				        <tbody>
+				        	<!-- <tr>   
+				                <td colspan="10" class="blank_area type_white">
+				                	<p class="txt_blank">데이터가 없습니다.</p>
+				                </td>
+				            </tr> -->
+				        	<tr>  
+				                <td rowspan="2" colspan="2">합계</td>
+				                <td>매도자</td>
+				                <td class="ar sell_area">100,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar buy_area">4,000</td>
+				                <td class="ar total_area">4,000</td>
+				            </tr>
+				            <tr> 
+				                <td>매수자</td>
+				                <td class="ar sell_area">100,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar buy_area">4,000</td>
+				                <td class="ar total_area">4,000</td>
+				            </tr>
+				            <tr> 
+				                <td rowspan="2">2019-06-27</td>
+				                <td rowspan="2" class="al">뉴코에드윈드뉴코에드윈드</td>
+				                <td>매도자</td>
+				                <td class="ar sell_area">100,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar buy_area">4,000</td>
+				                <td class="ar total_area">4,000</td>
+				            </tr>
+				            <tr>
+				                <td>매도자</td>
+				                <td class="ar sell_area">100,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar">4,000</td>
+				                <td class="ar buy_area">4,000</td>
+				                <td class="ar total_area">4,000</td>
+				            </tr>
+				        </tbody>
+				    </table>
+				</div> 
+
+				<div class="board_paging"> 
+					<ul>
+						<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+						<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+						<li><a href="javascript:void(0);" class="active">1</a></li>
+						<li><a href="javascript:void(0);">2</a></li>
+						<li><a href="javascript:void(0);">3</a></li>
+						<li><a href="javascript:void(0);">4</a></li>
+						<li><a href="javascript:void(0);">5</a></li>
+						<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+						<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+					</ul>
+				</div>
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+
+</body>
+</html>

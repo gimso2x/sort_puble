@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#pop_orderstatus_detail').neoModal();
+		})
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+
+</div>
+
+<div id="pop_orderstatus_detail" class="pop_dim_wrap pop_modal pop_xlg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주문현황 상세
+		</div>
+			<div class="contents_wrap">
+				<div class="company_status_info">
+					<!-- 주문 정보 -->
+					<h5>주문 정보</h5>
+					<div class="companyinfo_table">
+						<table>
+							<caption>주문 정보 - 종목명, 등록일시, 구분, 등록자, 수량, 가격, 잔량, 직전체결가, 거래조건, 주문상태</caption>
+							<colgroup>
+								<col width="130">
+								<col width="*">
+								<col width="130">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>종목명</th>
+									<td>코스콤</td>
+									<th>등록일시</th>
+									<td>2019.06.12 15:36</td>
+								</tr>
+								<tr>
+									<th>구분</th>
+									<td >매도</td>
+									<th>등록자</th>
+									<td>닉네임(김*응)</td>
+								</tr>
+								<tr>
+									<th>수량(주)</th>
+									<td class="ar">90,000</td>
+									<th>가격(원)</th>
+									<td class="ar">5,000</td>
+								</tr>
+								<tr>
+									<th>잔량(주)</th>
+									<td class="ar">10,900</td>
+									<th>직전체결가(원)</th>
+									<td class="ar">5,200</td>
+								</tr>
+								<tr>
+									<th>거래조건</th>
+									<td>100주 미만 거래불가100주</td>
+									<th>주문상태</th>
+									<td>협상</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- // 주문 정보 -->
+				
+				</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue">승인</button>
+		</div>
+	</div>
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+</body>
+</html>

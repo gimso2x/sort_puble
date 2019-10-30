@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 등록기업 로그인 시 class="case2" -->
+	<div id="header" class="case2">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb">
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);">주주명부관리</a></li>
+					<li><a href="javascript:void(0);" class="active">투자정보관리</a></li>
+					<li><a href="javascript:void(0);">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li> 
+					<li class="mypage_area"><a href="javascript:void(0);"><span>마이페이지</span></a></li>
+					<li class="notice_area"><a href="javascript:void(0);" class="on"><span>2</span></a></li>  
+					<li class="logout_area"><a href="javascript:void(0);" class="sr_only">로그아웃</a></li>  
+				</ul> 
+				<div class="bar"></div>
+
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">주주명부</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);" class="active">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul> 
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul>
+				</div>	<!-- // submenu_area -->
+			</div>
+			
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">주주명부관리</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">주주명부</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보관리</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+				</div> 
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">마이페이지</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li> 
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="nav_page">
+			<div class="inner">
+				<ul class="lst_page clearfix">
+					<li><a href="/" class="btn_home sr_only">Home</a></li>
+					<li>
+						<a href="javascript:void(0);" class="btn_page">거래현황관리</a>
+						<ul class="nav_subpage clearfix"> 
+							<li><a href="javascript:void(0);">투자정보관리</a></li>
+							<li><a href="javascript:void(0);">주주명부관리</a></li>
+							<li><a href="javascript:void(0);" class="active">거래현황관리</a></li>
+							<li><a href="javascript:void(0);">서비스 소개</a></li>
+							<li><a href="javascript:void(0);">투자정보</a></li>
+							<li><a href="javascript:void(0);">고객센터</a></li>
+							<li><a href="javascript:void(0);">로그아웃</a></li>
+							<li><a href="javascript:void(0);">마이페이지</a></li>  
+						</ul> 
+					</li>
+					<li>
+						<ul class="lst_subpage clearfix">  
+							<li><a href="javascript:void(0);">거래현황</a></li>
+							<li><a href="javascript:void(0);">주문현황</a></li>
+							<li><a href="javascript:void(0);" class="active">체결현황</a></li> 
+							<li><a href="javascript:void(0);">거래정지처리</a></li>
+						</ul> 
+					</li>
+				</ul>
+			</div>
+		</div>	<!-- // nav_page -->
+
+		<div class="section"> 
+			<div class="inner">
+				<div class="group_pageinfo">
+					<h3 class="txt_title">체결현황</h3>
+					<p class="txt_info">투자자의 호가현황, 협상현황, 계약현황 등을 모니터링 하실 수 있습니다. 또한 계약완료 후 에스크로 결제가 완료된 내용에 대해서는 승인을 통해 주주명부 자동변경이 가능합니다.</p>
+				</div>	<!-- // group_title --> 
+				
+				<div class="contents"> 
+					<div class="company_status_wrap pt0 mt40"> 
+						<dl class="company_box_status order_status">
+							<a href="javascript:void(0);">
+								<dt>주문현황</dt>
+								<dd><p><em><span>18</span>건</em></p></dd>
+							</a>
+						</dl>
+						<dl class="company_box_status contract_status">
+							<a href="javascript:void(0);">
+								<dt>계약 및 체결현황</dt>
+								<dd><p><span>18</span>건</p></dd>
+							</a>
+						</dl> 
+					</div>
+
+					<div class="group_date_srch mt40 clearfix">
+						<dl class="box clearfix">
+							<dt>주식종류</dt>
+							<dd>
+								<label class="input_check check_table">
+									<input type="checkbox">
+									<span class="label_text">일반주</span>
+								</label>
+								
+								<label class="input_check check_table">
+									<input type="checkbox" checked>
+									<span class="label_text">우선주</span>
+								</label>
+							</dd>
+						</dl>
+						<dl class="box clearfix">
+							<dt>거래상태</dt>
+							<dd>
+								<label class="input_check check_table">
+									<input type="checkbox">
+									<span class="label_text">일반주</span>
+								</label>
+								
+								<label class="input_check check_table">
+									<input type="checkbox" checked>
+									<span class="label_text">우선주</span>
+								</label>
+							</dd>
+						</dl>
+						<dl class="box clearfix">
+							<dt>기간</dt>
+							<dd>
+								<ul class="datepicker_searchwrap clearfix">
+									<li><input type="text" autocomplete="" class="datepicker form_control"></li> 
+									<li class="datepicker_connect">~</li>
+									<li><input type="text" autocomplete="" class="datepicker form_control"></li>
+								</ul> 
+								<div class="date_btn_wrap">
+									<!-- [D] 활성화 버튼은 'on' 추가 -->
+									<button type="button" class="btn_term_select on">오늘</button>
+									<button type="button" class="btn_term_select">1주</button>
+									<button type="button" class="btn_term_select">1달</button>
+									<button type="button" class="btn_term_select">1년</button>
+								</div>
+							</dd>
+						</dl>
+					</div>
+
+					<div class="double_btnwrap mt20 ac">
+						<button class="btn_md btn_white">초기화</button>
+						<button class="btn_md btn_blue">검색</button>
+					</div>
+
+					<ul class="dealstop_wrap clearfix mt40">
+						<!-- 계약 -->
+						<li>
+							<p class="investor_title_contract">계약</p>
+							<ul class="select_deal clearfix">
+								<li>총<span>254</span><em>건</em></li>
+								<li>
+									<label class="input_radio" for="contract_new">
+										<input type="radio" id="contract_new" name="status_contract" checked="">
+										<span class="label_text">최신순</span>
+									</label>
+									<label class="input_radio" for="contract_quantity">
+										<input type="radio" id="contract_quantity" name="status_contract" checked="">
+										<span class="label_text">수량순</span>
+									</label>
+									<label class="input_radio" for="contract_price">
+										<input type="radio" id="contract_price" name="status_contract" checked="">
+										<span class="label_text">가격순</span>
+									</label>
+								</li>
+								<li>
+									<button type="button" class="btn_refresh_company">새로고침</button>
+								</li>
+							</ul>
+							<ul class="contract_cardlist clearfix">
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>5,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>5,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>5,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표김대표김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>1,005,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표김대표김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>1,005,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표김대표김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>1,005,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표김대표김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>1,005,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표김대표김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>1,005,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<!-- // 계약 -->
+
+						<!-- 체결 -->
+						<li>
+							<p class="investor_title_conclusion">체결</p>
+							<ul class="select_deal clearfix">
+								<li>총<span>254</span><em>건</em></li>
+								<li>
+									<label class="input_radio" for="conclusion_new">
+										<input type="radio" id="conclusion_new" name="status_conclusion" checked="">
+										<span class="label_text">최신순</span>
+									</label>
+									<label class="input_radio" for="conclusion_quantity">
+										<input type="radio" id="conclusion_quantity" name="status_conclusion" checked="">
+										<span class="label_text">수량순</span>
+									</label>
+									<label class="input_radio" for="conclusion_price">
+										<input type="radio" id="conclusion_price" name="status_conclusion" checked="">
+										<span class="label_text">가격순</span>
+									</label>
+								</li>
+								<li>
+									<button type="button" class="btn_refresh_company">새로고침</button>
+								</li>
+							</ul>
+							<ul class="contract_cardlist clearfix">
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>5,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>5,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>5,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표김대표김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>1,005,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표김대표김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>1,005,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표김대표김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>1,005,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표김대표김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>1,005,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<dl>
+											<dt>매도자</dt>
+											<dd>김대표김대표김대표</dd>
+											<dt>매수자</dt>
+											<dd>김*은</dd>
+											<dt>단가</dt>
+											<dd>1,005,000원</dd>
+											<dt>수량</dt>
+											<dd>2,000주</dd>
+											<dt>계약현황</dt>
+											<dd>21</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<!-- // 체결 -->
+					</ul>
+				</div>	<!-- // contents --> 
+			</div> 
+		</div> 
+	</div>	<!-- // container -->
+	
+	<!-- 등록기업 로그인 시 class="case2" -->
+	<div id="footer" class="case2"> 
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix"> 
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.koscom.co.kr">코스콤</option>
+					</select> 
+				</div> 
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">주주명부관리</a>
+					<ul>
+						<li><a href="javascript:void(0);">주주명부</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보관리</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">마이페이지</a> 
+					<ul>
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>  
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>  
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a>
+	</div>	<!-- // footer --> 
+
+</div>
+
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+</body>
+</html>

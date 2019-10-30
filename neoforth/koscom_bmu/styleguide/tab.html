@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - TAB</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../pub/css/common.css">
+<link rel="stylesheet" href="../pub/css/vendor/jquery-ui.min.css">
+<script src="../pub/js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../pub/js/vendor/jquery-ui.min.js"></script>
+<script src="../pub/js/common.js"></script>
+<!-- //style -->
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(webSnb);
+		$('.g-nav-snb ul li').eq(2).addClass("active");
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">TAB</h2>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+			
+			<div class="tab-wrap g-tab-sample ui-tab">
+				<div class="tab-content">
+					<div class="g-tab-inner">
+						<!-- view -->
+						<h3 class="g-tit-basic">tab_md</h3>
+						<ul class="tab_md clearfix">
+							<li><a href="javascript:void(0);" class="on">주주명부 입력</a></li>
+							<li><a href="javascript:void(0);">확인 및 승인</a></li>
+						</ul>
+						<br><br>
+						<h3 class="g-tit-basic">tab_xs</h3>
+						<ul class="tab_xs clearfix">  
+							<li><a href="#tab_contents1" class="on">전체</a></li>
+							<li><a href="#tab_contents2">매도</a></li>
+							<li><a href="#tab_contents3">매수</a></li>
+						</ul>
+						<br><br>
+						<div class="group_tabs clearfix mt30">
+							<ul class="tab_xs tabs clearfix fl">
+								<li><a href="javascript:void(0);" class="on">전체</a></li>
+								<li><a href="javascript:void(0);">매도</a></li>
+								<li><a href="javascript:void(0);">매수</a></li>
+							</ul>
+							<p class="txt_date fl">생성일시 : 2019-06-10 18:30</p>
+							<div class="search_form fr">
+								<label>
+									<input type="text" class="form_control" maxlength="" placeholder="기업명, 종목, 종목번호 검색">
+									<div class="autocomplete_area on">  
+										<a href="javascript:void(0);" class="btn_close sr_only">close</a>
+										<ul class="lst_auto on"> 
+											<li><a href="javascript:void(0);">뉴코에드윈드</a></li>
+											<li><a href="javascript:void(0);">뉴코트랜드</a></li>
+											<li><a href="javascript:void(0);">뉴코시스템</a></li>
+										</ul>
+									</div>
+								</label>
+								<button class="btn_search">검색</button>
+							</div>
+						</div>
+						<br><br>
+						<h3 class="g-tit-basic">admin - tab_srch</h3>
+						<div class="group_tabs mt30">
+							<div class="tab_srch clearfix">
+								<li><a href="javascript:void(0);" class="on">등록기업</a></li>
+								<li><a href="javascript:void(0);">투자자</a></li>
+							</div>
+						</div>
+						<br><br>
+						<h3 class="g-tit-basic">stock_serachtit</h3>
+						<ul class="tabs stock_serachtit clearfix">
+							<li><a href="javascript:void(0);" class="on">전종목</a></li>
+							<li><a href="javascript:void(0);">매도가능종목</a></li>
+							<li><a href="javascript:void(0);">관심기업종목</a></li>
+						</ul>
+						<br><br>
+						<ul class="tabs orderdetail_tabtit">
+							<!-- [D]  활성화될 경우 class에 'on' 추가 -->
+							<li><a href="javascript:void(0);" class="on">주문 상세 정보</a></li>
+							<li><a href="javascript:void(0);" class="">토론게시판</a></li>
+							<li><a href="javascript:void(0);" class="">기업정보</a></li>
+							<li><a href="javascript:void(0);" class="">거래정보</a></li>
+						</ul>
+
+						
+						<!-- //view -->
+					</div>
+				</div>
+				<div class="tab-content">
+					<div class="g-tab-inner">
+						<p class="on">HTML</p>
+						<pre class="syntax brush:html">
+							<ul class="tab_md clearfix">
+								<li><a href="javascript:void(0);" class="on">주주명부 입력</a></li>
+								<li><a href="javascript:void(0);">확인 및 승인</a></li>
+							</ul>
+
+							<ul class="tab_xs clearfix mt30"> 
+								<li><a href="#tab_contents1" class="on">전체</a></li>
+								<li><a href="#tab_contents2">매도</a></li>
+								<li><a href="#tab_contents3">매수</a></li>
+							</ul>
+
+							<div class="group_tabs clearfix mt30">  
+								<ul class="tab_xs tabs clearfix fl">
+									<li><a href="javascript:void(0);" class="on">전체</a></li>
+									<li><a href="javascript:void(0);">매도</a></li>
+									<li><a href="javascript:void(0);">매수</a></li>
+								</ul>
+								<p class="txt_date fl">생성일시 : 2019-06-10 18:30</p>
+								<div class="search_form fr">
+									<label>
+										<input type="text" class="form_control" maxlength="" placeholder="기업명, 종목, 종목번호 검색">
+										<div class="autocomplete_area on">  
+											<a href="javascript:void(0);" class="btn_close sr_only">close</a>
+											<ul class="lst_auto on"> 
+												<li><a href="javascript:void(0);">뉴코에드윈드</a></li>
+												<li><a href="javascript:void(0);">뉴코트랜드</a></li>
+												<li><a href="javascript:void(0);">뉴코시스템</a></li>
+											</ul>
+										</div>
+									</label>
+									<button class="btn_search">검색</button>
+								</div>
+							</div>
+
+							<ul class="tabs stock_serachtit clearfix">
+								<li><a href="javascript:void(0);" class="on">전종목</a></li>
+								<li><a href="javascript:void(0);">매도가능종목</a></li>
+								<li><a href="javascript:void(0);">관심기업종목</a></li>
+							</ul>
+
+							<ul class="tabs orderdetail_tabtit">
+								<!-- [D]  활성화될 경우 class에 'on' 추가 -->
+								<li><a href="javascript:void(0);" class="on">주문 상세 정보</a></li>
+								<li><a href="javascript:void(0);" class="">토론게시판</a></li>
+								<li><a href="javascript:void(0);" class="">기업정보</a></li>
+								<li><a href="javascript:void(0);" class="">거래정보</a></li>
+							</ul>
+						</pre>
+						<p>CSS</p>
+						<pre class="syntax brush:css">
+							.tab_md li{float:left;}
+							.tab_md a{display:inline-block;width:290px;height:60px;border:1px solid #ccc;font-size:18px;line-height:60px;color:#555;text-align:center;}
+							.tab_md a.on{border:2px solid #3348ae;font-weight:700;color:#3348ae;}
+
+							/* tab_xs */  
+							.tab_xs li{float:left;}
+							.tab_xs a{display:inline-block; margin-left: -1px; width:100px;height:40px;border:1px solid #ccc;font-size:14px;line-height:38px;color:#555;text-align:center; background-color: #f2f2f2;}  
+							.tab_xs a.on{line-height: 40px; border: 0; color:#fff !important; background-color: #3348ae;}
+
+							/* stock_serachtit */
+							.stock_serachtit{border-bottom:1px solid #707070;}
+							.stock_serachtit li{float:left;}
+							.stock_serachtit li a{display:inline-block;min-width:105px;height:40px;padding:0 20px;margin-bottom:-1px;margin-left:-1px;border:1px solid #ccc;border-bottom-color:#777;background:#f2f2f2;line-height:39px;color:#555;text-align:center;}
+							.stock_serachtit.tabs li a.on{position:relative;background:#fff;border:1px solid #777;border-bottom-color:#fff;color:#000;z-index:1;}
+
+							/* orderdetail_tabtit */
+							.orderdetail_tabtit{border-bottom:1px solid #d6d6d6;font-size:0;}
+							.orderdetail_tabtit li{display:inline-block;}
+							.orderdetail_tabtit li a{position:relative;display:inline-block;height:50px;margin-bottom:-1px;padding:12px 22px;background:#f5f5f5;border:1px solid #d6d6d6;border-left:0;font-size:16px;color:#555;line-height:25px;}
+							.orderdetail_tabtit li a.on{position:relative;background:#fff;border-top:2px solid #000;border-bottom:0;color:#000;}
+							.orderdetail_tabtit li a.on::after{content:'';display:block;position:absolute;bottom:-1px;left:0;width:100%;height:1px;background:#fff;}
+							.orderdetail_tabtit li:first-child a{border-left:1px solid #d6d6d6;}
+						</pre>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+			</div>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

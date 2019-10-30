@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/vendor/Chart.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#pop_order_detail').neoModal();
+			$('#pop_delete').neoModal();
+
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	
+</div>
+
+
+<!-- 팝업 -->
+<div id="pop_order_detail" class="pop_dim_wrap pop_modal pop_lg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주문정보
+		</div>
+		<div class="contents_wrap">
+			<div class="companyinfo_table tbl_sell_color">
+				<table>
+					<caption>주문 상세 - 매도수 구분, 종목, 주문수량, 단가(주당), 총금액, 거래조건, 주문상태, 등록일</caption>
+					<colgroup>
+						<col width="130">
+						<col width="315"> 
+						<col width="130">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>종목명</th>
+							<td>코스콤</td>
+							<th>등록일시</th>
+							<td>2019-06-12 15:36</td>
+						</tr>
+						<tr>
+							<th>구분</th>
+							<td>매도</td>
+							<th>등록자</th>
+							<td>닉네임(김*응)</td>
+						</tr>
+						<tr>
+							<th>수량</th>
+							<td class="ar">90,000주</td>
+							<th>가격</th>
+							<td class="ar">5,000원</td>
+						</tr>
+						<tr>
+							<th>잔량</th>
+							<td class="ar">90,000주</td>
+							<th>직전체결가</th>
+							<td class="ar">5,000원</td>
+						</tr>
+						<tr>
+							<th>거래조건</th>
+							<td>100주 미만은 거래 불가합니다.</td>
+							<th>주문상태</th>
+							<td><span class="state_deal case2">협상</span></td>
+						</tr> 
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_white" onclick="$('#pop_order_detail').neoModal('close');">확인</button>
+			<button type="button" class="btn_md btn_blue">삭제</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_delete" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap">
+                해당 주문을 삭제하시겠습니까?
+            </div>
+        </div>
+        <div class="button_wrap">
+            <button type="button" class="btn_pop_default btn_white w50">아니오</button>
+            <button type="button" class="btn_pop_default btn_blue w50">예</button>
+        </div>
+    </div>
+</div>
+<!-- // 팝업 -->
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+</body>
+</html>

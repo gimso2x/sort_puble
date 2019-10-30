@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script> 
+	<script src="../js/common.js"></script>
+	<script src="../js/vendor/Chart.min.js"></script> 
+</head>
+<body class="bg_gray"> 
+ 
+<div id="wrap_webview"> 
+	<div class="section sec_expert">
+
+		<dl class="lst_accodian">
+			<dt class="on"><a href="javascript:void(0);"><span>01</span>기업개요</a></dt>
+			<dd class="expert_desc1 on">
+				<div class="group_summary clearfix"> 
+					<dl class="clearfix">  
+						<dt><span>INFRASTRUCTURE</span></dt>  
+						<dd>
+							<p>핵심파트너</p>
+							<div class="lst_desc">
+								<pre>SK텔레콤</pre>
+							</div>
+						</dd> 
+						<dd>
+							<p>핵심활동</p>
+							<div class="lst_desc">
+								<pre>알고리즘 연구개발<br>알고리즘 연구개발</pre>
+							</div>  
+						</dd>
+						<dd>
+							<p>핵심자원</p>
+							<div class="lst_desc">
+								<pre>SK텔레콤</pre>
+							</div>
+						</dd>
+					</dl> 
+					<dl class="case2 clearfix"> 
+						<dt><span>OFFER</span></dt>   
+						<dd>
+							<p>가치제안</p>
+							<div class="lst_desc">
+								<pre>SK텔레콤</pre>
+							</div>
+						</dd>
+					</dl>
+					<dl class="case3 clearfix"> 
+						<dt><span>CUSTOMER</span></dt>   
+						<dd>
+							<p>고객관계</p>
+							<div class="lst_desc">
+								<pre>SK텔레콤</pre>
+							</div>
+						</dd> 
+						<dd>
+							<p>고객세분화(타겟고객)</p>
+							<div class="lst_desc">
+								<pre>SK텔레콤</pre>
+							</div>
+						</dd>
+						<dd>
+							<p>마케팅(유통)채널</p>
+							<div class="lst_desc">
+								<pre>SK텔레콤</pre>
+							</div>
+						</dd>
+					</dl>
+					<dl class="case4 clearfix">
+						<dt><span>FINANCE</span></dt>   
+						<dd>
+							<p>고객관계</p>
+							<div class="lst_desc">
+								<pre>SK텔레콤</pre>
+							</div>
+						</dd>
+						
+						<dd>
+							<p>고객세분화(타겟고객)</p>
+							<div class="lst_desc">
+								<pre>SK텔레콤</pre>
+							</div>
+						</dd>
+					</dl> 
+				</div>	<!-- // group_summary --> 
+			</dd>
+			<dt class=""><a href="javascript:void(0);"><span>02</span>기업평가</a></dt>
+			<dd class="expert_desc2">
+				<h3 class="title"><span>기업평가의견</span></h3>  
+				<div class="chart_area">
+					<canvas id="evaluation_chart" width="305" height="277"></canvas> 
+				</div>	<!-- // chart_area -->
+
+				<div class="table table_detail">
+					<table>
+						<caption class="sr_only">체결정보 상세</caption>
+						<colgroup>
+							<col width="*">
+							<col width="20%">
+							<col width="20%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>구분</th>
+								<th colspan="2">평가점수</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="al">창업팀 우수성<a href="javascript:void(0);" class="btn_more sr_only">자세히보기</a></td>  
+								<td>평균</td>
+								<td class="ar">4.67</td>
+							</tr>
+							<tr>
+								<td colspan="3" class="detail_area"> 
+									<div class="table table_in">
+										<table>
+											<caption class="sr_only">창업팀 우수성 상세</caption>
+											<colgroup>
+												<col width="10%">     
+												<col width="*">
+												<col width="20%">
+												<col width="20%"> 
+											</colgroup>
+											<tbody>
+												<tr>
+													<td rowspan="3" class="p0">세부<br>항목</td> 
+													<td class="al">대표자역량 (경력 및 전문성)</td>
+													<td rowspan="3">평균</td> 
+													<td class="ar">5</td>  
+												</tr> 
+												<tr>
+													<td class="al">전문성 갖춘 창업팀 구성</td>
+													<td class="ar">5</td> 
+												</tr> 
+												<tr>
+													<td class="al">직원들간의 화합 및 소통</td> 
+													<td class="ar">5</td> 
+												</tr> 
+											</tbody>
+										</table>
+									</div>	<!-- // table_in -->
+								</td>
+							</tr>
+							<tr>
+								<td class="al">재무적 안정성<a href="javascript:void(0);" class="btn_more sr_only">자세히보기</a></td>
+								<td>평균</td>
+								<td class="ar">4.67</td>
+							</tr>
+							<tr>
+								<td colspan="3" class="detail_area">
+									<div class="table table_in">
+										<table>
+											<caption class="sr_only">재무적 안정성 상세</caption>
+											<colgroup>
+												<col width="10%">     
+												<col width="*">
+												<col width="20%">
+												<col width="20%"> 
+											</colgroup>
+											<tbody>
+												<tr>
+													<td rowspan="3" class="p0">세부<br>항목</td> 
+													<td class="al">대표자역량 (경력 및 전문성)</td>
+													<td rowspan="3">평균</td> 
+													<td class="ar">5</td>  
+												</tr> 
+												<tr>
+													<td class="al">전문성 갖춘 창업팀 구성</td>
+													<td class="ar">5</td> 
+												</tr> 
+												<tr>
+													<td class="al">직원들간의 화합 및 소통</td> 
+													<td class="ar">5</td> 
+												</tr> 
+											</tbody>
+										</table>
+									</div>	<!-- // table_in -->
+								</td>
+							</tr>
+							<tr>
+								<td class="al">비즈니스 독창성<a href="javascript:void(0);" class="btn_more sr_only">자세히보기</a></td>
+								<td>평균</td>
+								<td class="ar">4.67</td>
+							</tr>
+							<tr>
+								<td colspan="3" class="detail_area">
+									<div class="table table_in">
+										<table>
+											<caption class="sr_only">비즈니스 독창성 상세</caption>
+											<colgroup>
+												<col width="10%">     
+												<col width="*">
+												<col width="20%">
+												<col width="20%"> 
+											</colgroup>
+											<tbody>
+												<tr>
+													<td rowspan="3" class="p0">세부<br>항목</td> 
+													<td class="al">대표자역량 (경력 및 전문성)</td>
+													<td rowspan="3">평균</td> 
+													<td class="ar">5</td>  
+												</tr> 
+												<tr>
+													<td class="al">전문성 갖춘 창업팀 구성</td>
+													<td class="ar">5</td> 
+												</tr> 
+												<tr>
+													<td class="al">직원들간의 화합 및 소통</td> 
+													<td class="ar">5</td> 
+												</tr> 
+											</tbody>
+										</table>
+									</div> <!-- // table_in -->
+								</td>
+							</tr>
+							<tr>
+								<td class="al">미래 시장성<a href="javascript:void(0);" class="btn_more sr_only">자세히보기</a></td>
+								<td>평균</td>
+								<td class="ar">4.67</td>
+							</tr>
+							<tr>
+								<td colspan="3" class="detail_area">
+									<div class="table table_in">
+										<table>
+											<caption class="sr_only">미래 시장성 상세</caption>
+											<colgroup>
+												<col width="10%">     
+												<col width="*">
+												<col width="20%">
+												<col width="20%"> 
+											</colgroup>
+											<tbody>
+												<tr>
+													<td rowspan="3" class="p0">세부<br>항목</td> 
+													<td class="al">대표자역량 (경력 및 전문성)</td>
+													<td rowspan="3">평균</td> 
+													<td class="ar">5</td>  
+												</tr> 
+												<tr>
+													<td class="al">전문성 갖춘 창업팀 구성</td>
+													<td class="ar">5</td> 
+												</tr> 
+												<tr>
+													<td class="al">직원들간의 화합 및 소통</td> 
+													<td class="ar">5</td> 
+												</tr> 
+											</tbody>
+										</table>
+									</div>	<!-- // table_in -->
+								</td>
+							</tr>
+							<tr>
+								<td class="al">판로/마케팅 확장성<a href="javascript:void(0);" class="btn_more sr_only">자세히보기</a></td>
+								<td>평균</td> 
+								<td class="ar">4.67</td>
+							</tr>
+							<tr>
+								<td colspan="3" class="detail_area">
+									<div class="table table_in">
+										<table>
+											<caption class="sr_only">판로/마케팅 확장성 상세</caption>
+											<colgroup>
+												<col width="10%">     
+												<col width="*">
+												<col width="20%">
+												<col width="20%"> 
+											</colgroup>
+											<tbody>
+												<tr>
+													<td rowspan="3" class="p0">세부<br>항목</td> 
+													<td class="al">대표자역량 (경력 및 전문성)</td>
+													<td rowspan="3">평균</td> 
+													<td class="ar">5</td>  
+												</tr> 
+												<tr>
+													<td class="al">전문성 갖춘 창업팀 구성</td>
+													<td class="ar">5</td> 
+												</tr> 
+												<tr>
+													<td class="al">직원들간의 화합 및 소통</td> 
+													<td class="ar">5</td> 
+												</tr> 
+											</tbody>
+										</table>
+									</div>	<!-- // table_in -->
+								</td>
+							</tr>
+							<tr>
+								<td class="al">투자회수<a href="javascript:void(0);" class="btn_more sr_only">자세히보기</a></td>
+								<td>평균</td>
+								<td class="ar">4.67</td> 
+							</tr>
+							<tr>
+								<td colspan="3" class="detail_area">
+									<div class="table table_in">
+										<table>
+											<caption class="sr_only">투자회수 상세</caption>
+											<colgroup>
+												<col width="10%">     
+												<col width="*">
+												<col width="20%">
+												<col width="20%"> 
+											</colgroup>
+											<tbody>
+												<tr>
+													<td rowspan="3" class="p0">세부<br>항목</td> 
+													<td class="al">대표자역량 (경력 및 전문성)</td>
+													<td rowspan="3">평균</td> 
+													<td class="ar">5</td>  
+												</tr> 
+												<tr>
+													<td class="al">전문성 갖춘 창업팀 구성</td>
+													<td class="ar">5</td> 
+												</tr> 
+												<tr>
+													<td class="al">직원들간의 화합 및 소통</td> 
+													<td class="ar">5</td> 
+												</tr> 
+											</tbody>
+										</table> 
+									</div>	<!-- // table_in -->
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	<!-- // table_detail --> 
+
+				<p class="lst_help">7점적도 (1:전혀없음, 2:부족함, 3:다소 부족함,<br>4:보통임, 5:다소미흠, 6:우수함, 7:매우 우수함)</p>  
+
+				<h3 class="title"><span>리스크 평가 (기술위험성 및 시장위험성)</span></h3>  
+
+				<dl class="lst_accodian lst_accodian_in"> 
+					<dt><a href="javascript:void(0);">조직 / 경영</a></dt> 
+					<dd>
+						<ul class="lst_lisk">
+							<li>
+								<p class="title">대표자 사업추진 의지 및 신의 성실 상실</p>
+								<div class="desc">
+									<p class="col"><em class="ico_lisk type1"></em><span class="txt_lisk">위험한 수준 아님</span></p>
+									<p class="col">
+										<strong>중요도</strong>
+										<span>상</span>
+									</p>
+									<p class="col">
+										<strong>가능성</strong> 
+										<span>상</span>
+									</p>
+								</div>
+							</li>
+							<li>
+								<p class="title">단기 내 조직 구성(인력충원 및 조직 체계화) 실패</p>
+								<div class="desc">
+									<p class="col"><em class="ico_lisk type2"></em><span class="txt_lisk">매우 위험하며<br>지속관리 필요</span></p>
+									<p class="col">
+										<strong>중요도</strong>
+										<span>상</span>
+									</p>
+									<p class="col">
+										<strong>가능성</strong> 
+										<span>상</span>
+									</p>
+								</div>
+							</li>
+							<li>
+								<p class="title">기술개발/제품출시 계획 미달성</p>
+								<div class="desc">
+									<p class="col"><em class="ico_lisk type3"></em><span class="txt_lisk">위험할 수 있으며<br>관리로 해결가능</span></p>
+									<p class="col">
+										<strong>중요도</strong>
+										<span>상</span>
+									</p>
+									<p class="col">
+										<strong>가능성</strong> 
+										<span>상</span>
+									</p>
+								</div>
+							</li>
+						</ul>	<!-- // lst_lisk -->
+					</dd>
+					<dt><a href="javascript:void(0);">기술사협회</a></dt>
+					<dd>
+						<ul class="lst_lisk">
+							<li>
+								<p class="title">대표자 사업추진 의지 및 신의 성실 상실</p>
+								<div class="desc">
+									<p class="col"><em class="ico_lisk type1"></em><span class="txt_lisk">위험한 수준 아님</span></p>
+									<p class="col">
+										<strong>중요도</strong>
+										<span>상</span>
+									</p>
+									<p class="col">
+										<strong>가능성</strong> 
+										<span>상</span>
+									</p>
+								</div>
+							</li>
+							<li>
+								<p class="title">단기 내 조직 구성(인력충원 및 조직 체계화) 실패</p>
+								<div class="desc">
+									<p class="col"><em class="ico_lisk type2"></em><span class="txt_lisk">매우 위험하며<br>지속관리 필요</span></p>
+									<p class="col">
+										<strong>중요도</strong>
+										<span>상</span>
+									</p>
+									<p class="col">
+										<strong>가능성</strong> 
+										<span>상</span>
+									</p>
+								</div>
+							</li>
+							<li>
+								<p class="title">기술개발/제품출시 계획 미달성</p>
+								<div class="desc">
+									<p class="col"><em class="ico_lisk type3"></em><span class="txt_lisk">위험할 수 있으며<br>관리로 해결가능</span></p>
+									<p class="col">
+										<strong>중요도</strong>
+										<span>상</span>
+									</p>
+									<p class="col">
+										<strong>가능성</strong> 
+										<span>상</span>
+									</p>
+								</div>
+							</li>
+						</ul>	<!-- // lst_lisk -->
+					</dd>
+					<dt><a href="javascript:void(0);">시장상황</a></dt>
+					<dd>
+						<ul class="lst_lisk">
+							<li>
+								<p class="title">대표자 사업추진 의지 및 신의 성실 상실</p>
+								<div class="desc">
+									<p class="col"><em class="ico_lisk type1"></em><span class="txt_lisk">위험한 수준 아님</span></p>
+									<p class="col">
+										<strong>중요도</strong>
+										<span>상</span>
+									</p>
+									<p class="col">
+										<strong>가능성</strong> 
+										<span>상</span>
+									</p>
+								</div>
+							</li>
+							<li>
+								<p class="title">단기 내 조직 구성(인력충원 및 조직 체계화) 실패</p>
+								<div class="desc">
+									<p class="col"><em class="ico_lisk type2"></em><span class="txt_lisk">매우 위험하며<br>지속관리 필요</span></p>
+									<p class="col">
+										<strong>중요도</strong>
+										<span>상</span>
+									</p>
+									<p class="col">
+										<strong>가능성</strong> 
+										<span>상</span>
+									</p>
+								</div>
+							</li>
+							<li>
+								<p class="title">기술개발/제품출시 계획 미달성</p>
+								<div class="desc">
+									<p class="col"><em class="ico_lisk type3"></em><span class="txt_lisk">위험할 수 있으며<br>관리로 해결가능</span></p>
+									<p class="col">
+										<strong>중요도</strong>
+										<span>상</span>
+									</p>
+									<p class="col">
+										<strong>가능성</strong> 
+										<span>상</span>
+									</p>
+								</div>
+							</li>
+						</ul>	<!-- // lst_lisk -->
+					</dd>
+					<dt><a href="javascript:void(0);">재무 / 투자</a></dt>
+					<dd>
+						<ul class="lst_lisk">
+							<li>
+								<p class="title">대표자 사업추진 의지 및 신의 성실 상실</p>
+								<div class="desc">
+									<p class="col"><em class="ico_lisk type1"></em><span class="txt_lisk">위험한 수준 아님</span></p>
+									<p class="col">
+										<strong>중요도</strong>
+										<span>상</span>
+									</p>
+									<p class="col">
+										<strong>가능성</strong> 
+										<span>상</span>
+									</p>
+								</div>
+							</li>
+							<li>
+								<p class="title">단기 내 조직 구성(인력충원 및 조직 체계화) 실패</p>
+								<div class="desc">
+									<p class="col"><em class="ico_lisk type2"></em><span class="txt_lisk">매우 위험하며<br>지속관리 필요</span></p>
+									<p class="col">
+										<strong>중요도</strong>
+										<span>상</span>
+									</p>
+									<p class="col">
+										<strong>가능성</strong> 
+										<span>상</span>
+									</p>
+								</div>
+							</li>
+							<li>
+								<p class="title">기술개발/제품출시 계획 미달성</p>
+								<div class="desc">
+									<p class="col"><em class="ico_lisk type3"></em><span class="txt_lisk">위험할 수 있으며<br>관리로 해결가능</span></p>
+									<p class="col">
+										<strong>중요도</strong>
+										<span>상</span>
+									</p>
+									<p class="col">
+										<strong>가능성</strong> 
+										<span>상</span>
+									</p>
+								</div>
+							</li>
+						</ul>	<!-- // lst_lisk -->
+					</dd>
+				</dl> <!-- // lst_accodian_in -->
+
+				<h3 class="title"><span>RED Flag Risk 관리방안</span></h3> 
+
+				<div class="table table_row table_vline">
+					<table>
+						<caption class="sr_only">RED Flag Risk 관리방안</caption>
+						<colgroup>
+							<col width="100">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>
+									기술개발<br>
+									주요 파트너사<br>
+									위협
+								</th>
+								<td>
+									애플부품 공급사 다각화 등으로 리스크 최소화 - 다만, 정품 부품이 아닌 점은 고객께 명확이 사전 명시
+								</td>
+							</tr>
+							<tr>
+								<th>
+									조기투자 자금<br>
+									소진
+								</th>
+								<td>
+									오프라인 매장 확대로 인한 투자금 조기 소진예상 - 순차적 매장 확대 전략 추진
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	<!-- // table_detail -->
+
+				<h3 class="title"><span>마일스톤별 주요기대 Factor(KPI)</span></h3> 
+
+				<div class="table table_row table_vline">
+					<table>
+						<caption class="sr_only">마일스톤별 주요기대 Factor(KPI)</caption>
+						<colgroup>
+							<col width="45%">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>마일스톤(년도, 분기)</th>
+								<td>2019년 3분기</td>
+							</tr>
+							<tr>
+								<th>KPI(달성목표)</th>
+								<td>가입자 100만명</td>
+							</tr>
+							<tr>
+								<th>Target1 (기본목표)</th>
+								<td>월 신규가입자 5만명 달성</td>
+							</tr>
+							<tr>
+								<th>Target2 (초과목표)</th>
+								<td>일 신규가입자 5만명 달성</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	<!-- // table_detail -->
+
+			</dd>
+			<dt class=""><a href="javascript:void(0);"><span>03</span>기업가치평가</a></dt>
+			<dd class="expert_desc3">
+				<h3 class="title"><span>첨부파일</span></h3>  
+				<div class="file_area">
+					<ul class="lst_file"> 
+						<li><a href="javascript:void(0);" class="btn_file">제품소개서.pdf</a></li>
+						<li><a href="javascript:void(0);" class="btn_file">제품소개서.pdf</a></li>
+					</ul>
+				</div>
+
+				<h3 class="title"><span>1) Valuation Method</span></h3> 
+				<div class="table table_row table_vline">
+					<table>
+						<caption class="sr_only">Valuation Method</caption>
+						<colgroup>
+							<col width="80">
+							<col width="80">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>투자금액</th>
+								<td colspan="2">
+									50,000,000원<br>(라운드 총 투자금액 : 200,000,000원)
+								</td>
+							</tr>
+							<tr>
+								<th>투자형태</th>
+								<td colspan="2">보통주</td>
+							</tr>
+							<tr>
+								<th>발행주식수</th>
+								<td colspan="2">2,000주(총 발행주 수 100,000주)</td>
+							</tr>
+							<tr>
+								<th rowspan="2">투자단가</th>
+								<td class="ac">발행가액</td>
+								<td class="ar">600,000원</td>
+							</tr>
+							<tr>
+								<td class="ac">액면가액</td>
+								<td class="ar">600,000원</td>
+							</tr>
+							<tr>
+								<th colspan="3">투자 후 지분변동</th>
+							</tr>
+							<tr>
+								<td colspan="3" class="p0">
+									<div class="table table_col">
+										<table>
+											<caption class="sr_only">투자 후 지분변동</caption>
+											<colgroup>
+												<col width="20%">
+												<col width="22%">
+												<col width="18%">
+												<col width="22%">
+												<col width="18%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th rowspan="2">주주명</th>
+													<th colspan="2">투자전</th>
+													<th colspan="2">투자후</th>
+												</tr>
+												<tr>
+													<th>주식수<br>(주)</th>
+													<th>지분율<br>(%)</th>
+													<th>주식수<br>(주)</th>
+													<th>지분율<br>(%)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="ac">김학민</td>
+													<td class="ar">9,750</td>
+													<td class="ar">93.75</td>
+													<td class="ar">9,750</td>
+													<td class="ar">93.75</td>
+												</tr>
+												<tr>
+													<td class="ac">김학민</td>
+													<td class="ar">9,750</td>
+													<td class="ar">93.75</td>
+													<td class="ar">9,750</td>
+													<td class="ar">93.75</td>
+												</tr>
+												<tr>
+													<td class="ac">김학민</td>
+													<td class="ar">9,750</td>
+													<td class="ar">93.75</td>
+													<td class="ar">9,750</td>
+													<td class="ar">93.75</td>
+												</tr>
+												<tr>
+													<td class="ac">창업재단 외 3명</td>
+													<td class="ar">9,750</td>
+													<td class="ar">93.75</td>
+													<td class="ar">9,750</td>
+													<td class="ar">93.75</td>
+												</tr>
+												<tr>
+													<td class="ac">기타</td>
+													<td class="ar">9,750</td>
+													<td class="ar">93.75</td>
+													<td class="ar">9,750</td>
+													<td class="ar">93.75</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<th class="ac">계</th>
+													<td class="ar">9,750</td>
+													<td class="ar">93.75</td>
+													<td class="ar">9,750</td>
+													<td class="ar">93.75</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>	<!-- // table_col -->
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	<!-- // table_row -->
+
+				<h3 class="title"><span>2) Valuation Method</span><span class="txt_sm">(선택입력 사항입니다)</span></h3> 
+				<div class="table table_row table_vline">
+					<table>
+						<caption>기업가치평가 기본가정</caption>
+						<colgroup>
+							<col width="112">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="bg_white">매출추정시점</th>
+								<td>
+									추정연도 2019년 <br>
+									- 2023년/추정기간 4년
+								</td>
+							</tr>
+							<tr>
+								<th class="bg_white">총 매출액</th>
+								<td>27,694백만원</td>
+							</tr>
+							<tr>
+								<th class="bg_white">총 당기순이익</th>
+								<td>13,868백만원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	<!-- // table_row -->
+				<div class="table table_row table_vline">
+					<table>
+						<caption>현금흐름할인모형(DCF)</caption>
+						<colgroup>
+							<col width="112">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="bg_white">할인율</th>
+								<td>20%</td>
+							</tr>
+							<tr>
+								<th class="bg_white">추정기업가치</th>
+								<td>3,000,000백만원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	<!-- // table_row -->
+				<div class="table table_row table_vline">
+					<table>
+						<caption>시장거래가치모험(PER)</caption>
+						<colgroup>
+							<col width="112">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="bg_white">비교대상</th>
+								<td>000사, 000사, 000사</td>
+							</tr>
+							<tr>
+								<th class="bg_white">PER</th>
+								<td>100배수</td>
+							</tr>
+							<tr>
+								<th class="bg_white">할인율</th>
+								<td>0%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	<!-- // table_row -->
+				<div class="table table_row table_vline">
+					<table>
+						<caption>가치신청</caption>
+						<colgroup>
+							<col width="112">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="bg_white">리스트 추가할인율</th>
+								<td>20%</td>
+							</tr>
+							<tr>
+								<th class="bg_white">미래상대가치</th>
+								<td>3,115백만원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	<!-- // table_row -->
+			</dd>
+			<dt class=""><a href="javascript:void(0);"><span>04</span>투자핵심포인트</a></dt>
+			<dd class="expert_desc4">
+				<h3 class="title"><span>첨부파일</span></h3>  
+				<div class="file_area">
+					<ul class="lst_file"> 
+						<li><a href="javascript:void(0);" class="btn_file">제품소개서.pdf</a></li>
+						<li><a href="javascript:void(0);" class="btn_file">제품소개서.pdf</a></li>
+					</ul>
+				</div>
+
+				<dl class="lst_desc">
+					<dt>1. 차별성 및 경쟁력</dt>
+					<dd>
+						<p>○ 대표이사가 보유한 스마트기기에 대한 높은 이해도</p>
+						<ul>
+							<li>동사의 대표이사는 탈북민으로서 시계 수리공으로 알려져 있음</li>
+							<li>과거 북한에서 시계수리, 전자제품 수리 등을 통하여 각종 기기 수리에 특화되어 있었던 것으로 보여짐</li>
+						</ul>
+						<p>○ 수리 기술을 전달하고 교육사업 시작</p>
+						<ul>
+							<li>대표이사가 보유한 수리 노하우 및 기술을 학력에 구별없이 관심있는 사람에게 널리 전파하고 전문가를 육성하고 하는 꿈을 갖고 있음</li>
+						</ul>
+					</dd>
+					<dt>2. 시장 기회 및 성장성</dt>
+					<dd>
+						<p>1) 대표이사가 보유한 스마트기기에 대한 높은 이해도</p>
+						<ul>
+							<li>동사의 대표이사는 탈북민으로서 시계 수리공으로 알려져 있음</li>
+							<li>과거 북한에서 시계수리, 전자제품 수리 등을 통하여 각종 기기 수리에 특화되어 있었던 것으로 보여짐</li>
+						</ul>
+						<p>2) 수리 기술을 전달하고 교육사업 시작</p>
+						<ul>
+							<li>대표이사가 보유한 수리 노하우 및 기술을 학력에 구별없이 관심있는 사람에게 널리 전파하고 전문가를 육성하고 하는 꿈을 갖고 있음</li>
+						</ul>
+					</dd>
+					<dt>3. 타 사업으로 확장성</dt>
+					<dd>
+						<ul>
+							<li>동사의 대표이사는 탈북민으로서 시계 수리공으로 알려져 있음</li>
+							<li>과거 북한에서 시계수리, 전자제품 수리 등을 통하여 각종 기기 수리에 특화되어 있었던 것으로 보여짐</li>
+						</ul>
+					</dd>
+					<dt>4. 리스크 및 해결 방안</dt>
+					<dd>
+						<ul>
+							<li>동사의 대표이사는 탈북민으로서 시계 수리공으로 알려져 있음</li>
+							<li>과거 북한에서 시계수리, 전자제품 수리 등을 통하여 각종 기기 수리에 특화되어 있었던 것으로 보여짐</li>
+						</ul>
+					</dd>
+					<dt>5. 종합의견</dt>
+					<dd>
+						<ul>
+							<li>동사의 대표이사는 탈북민으로서 시계 수리공으로 알려져 있음</li>
+							<li>과거 북한에서 시계수리, 전자제품 수리 등을 통하여 각종 기기 수리에 특화되어 있었던 것으로 보여짐</li>
+						</ul>
+					</dd>
+				</dl>
+			</dd> 
+		</dl>	<!-- // lst_accodian -->
+
+	</div>	<!-- // section -->
+	
+	<div class="top_area">
+		<a href="javascript:void(0);" class="btn_top sr_only">top</a>
+	</div>
+</div>	<!-- // wrap -->
+
+
+<script>
+	// 차트 스크립트 
+	var ctx_radar = document.getElementById('evaluation_chart').getContext('2d');  
+
+	var config = {
+		type: 'radar',
+		data: {
+			datasets: [{ 
+				data: [5, 7, 4, 7, 5, 4],          
+				backgroundColor: 'rgba(255,12,52,0.1)',  
+				borderColor: '#ff2c4f', 
+				borderWidth: 2,  
+				pointRadius: 0,
+				lineTension: 0,  
+			}],
+			labels: [ '창업팀 우수성', '재무적 안정성', '미래 시장성', '판로/마케팅 확장성', '비즈니스 독창성', '투자회수'] 
+		}, 
+		options: {
+			legend: {  
+				display: false,
+			},
+			scale: {
+				ticks: {  
+					display: true, 
+					showLabelBackdrop: false,
+					min: 0, 
+					max: 7,
+					stepSize: 1,
+					fontColor: '#555',
+					fontSize: 11,
+				},
+				pointLabels: {
+					fontSize: 14,
+					fontColor: '#555'
+				}, 
+				gridLines: {
+					display: true,
+					circular: false,
+					lineWidth: 1,       
+					color: 'rgba(0,0,0,0.1)'
+				},    
+				angleLines: { 
+					color: '#ddd',
+				} 
+			}
+		} 
+	};
+	 
+	var radarChart = new Chart(ctx_radar, config);
+
+	$(function(){
+		$(document).on('click', '.btn_more', function(e){
+			e.preventDefault();
+
+			
+			
+			if ($(this).hasClass('on')) {
+				$('.btn_more').removeClass('on');
+			}else{
+				$('.btn_more').removeClass('on');
+				$(this).addClass('on'); 
+			} 
+
+			$('.table_in').stop().slideUp(200); 
+			$(this).closest('tr').next().find('.table_in').stop().slideToggle(200);
+		});
+	});
+</script> 
+</body>
+</html>

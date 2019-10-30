@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#pop_deal_static").neoModal();
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	
+
+</div>
+
+<!-- 팝업 -->
+<div id="pop_deal_static" class="pop_dim_wrap pop_modal pop_xlg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			거래통계 보기
+		</div>
+		<div class="contents_wrap">
+			<div class="group_date_srch mt10">  
+				<ul class="datepicker_searchwrap clearfix">
+					<li><input type="text" autocomplete="" class="datepicker form_control"></li> 
+					<li class="datepicker_connect">~</li>
+					<li><input type="text" autocomplete="" class="datepicker form_control"></li>
+				</ul> 
+				<div class="date_btn_wrap">
+					<!-- [D] 활성화 버튼은 'on' 추가 -->
+					<button type="button" class="btn_term_select on">오늘</button>
+					<button type="button" class="btn_term_select">1주</button>
+					<button type="button" class="btn_term_select">1달</button>
+					<button type="button" class="btn_term_select">1년</button>
+				</div>
+				<button type="button" class="btn_sm btn_darkblue">조회</button> 
+			</div>
+
+			<div class="table_list_detail mt50">
+				<table>
+					<caption class="sr_only">거래현황관리</caption>
+					<colgroup>
+						<!-- [resize] 190812 col width 변경 -->
+						<col width="*">
+						<col width="11%">
+						<col width="11%">
+						<col width="11%">
+						<col width="11%">
+						<col width="11%">
+						<col width="11%">
+						<col width="11%">
+						<col width="11%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th rowspan="3">일자</th>
+							<th colspan="6">주문</th>
+							<th colspan="2">체결</th>
+						</tr>
+						<tr>
+							<th colspan="3">매도</th>
+							<th colspan="3">매수</th>
+							<th rowspan="2">체결수량</th>
+							<th rowspan="2">체결평균가</th>
+						</tr>
+						<tr>
+							<th>평균주문가</th>
+							<th>수량</th>
+							<th>잔량</th>
+							<th>평균주문가</th>
+							<th>수량</th>
+							<th>잔량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="ac">2019-06-10</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td class="ac">2019-06-10</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td class="ac">2019-06-10</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td class="ac">2019-06-10</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td class="ac">2019-06-10</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td class="ac">2019-06-10</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td class="ac">2019-06-10</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td class="ac">2019-06-10</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td class="ac">2019-06-10</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td class="ac">2019-06-10</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<!-- 데이터 없을때 -->
+						<!-- <tr>
+							<td class="blank_area" colspan="9">
+								<p class="txt_blank">등록된 거래현황이 없습니다
+								</p>
+							</td>
+						</tr> -->
+					</tbody>
+				</table>
+			</div>
+
+			<ul class="explain_ul mt10">
+				<li>매일 새벽 02:00 기준으로 전일 주문 및 체결에 대한 통계를 제공하여 드립니다</li>
+			</ul>
+
+			<div class="board_paging">
+				<ul>
+					<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+					<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+					<li><a href="javascript:void(0);" class="active">1</a></li>
+					<li><a href="javascript:void(0);">2</a></li>
+					<li><a href="javascript:void(0);">3</a></li>
+					<li><a href="javascript:void(0);">4</a></li>
+					<li><a href="javascript:void(0);">5</a></li>
+					<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+					<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // 팝업 -->
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+</body>
+</html>

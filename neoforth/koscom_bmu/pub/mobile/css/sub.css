@@ -1,0 +1,497 @@
+@charset "euc-kr";
+@import './sub2.css';
+
+/* ==========================================================================
+   common
+   ========================================================================== */
+#header{}
+#header .inner{box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16);}
+#header h2{height: 44px; line-height: 44px; text-align: center; font-size: 17px; font-weight: 700; color: #000; letter-spacing: -0.25px;}
+ 
+#container{padding-top: 69px;}  
+#container h3{height: 21px; line-height: 21px; font-size: 16px; font-weight: 700; color: #333;}
+
+.blank_area{position: relative; padding: 100px 0; width: 100%; text-align: center;}
+.blank_area .txt_blank{padding-top: 60px; width: 100%; text-align: center; font-size: 14px; color: #555; background: url(../img/sub/ico_warning.png) no-repeat 50% 0; background-size: 50px;} 
+.blank_area button{margin-top: 30px;}  
+
+.btn_file{display: inline-block; margin-left: 0px;padding-left: 29px;height: 29px;line-height: 29px;font-size: 14px;color: #3348ae;text-decoration: underline;background: url(../img/sub/ico_file.png) no-repeat 0 50%; background-size: 19px;} 
+
+.btn_area{padding: 10px 16px; text-align: right; background-color: #E6E8F4;} 
+
+.submit_area{padding: 15px 16px 0; text-align: center;} 
+.submit_area .fl, .submit_area .fr{width: 49%;}
+
+.submit_area.ar{padding: 6px 16px; background-color: #fff;}    
+
+.submit_area.type2{padding: 15px 16px 0; text-align: right; border-top: 1px solid #eee;} 
+.submit_area.type2 .fl{width: auto;}  
+.submit_area.type2 .w50{width: 49%;}   
+.submit_area .btn_sm.btn_blue{font-size: 15px; font-weight: 700;}     
+
+.nav_lnb{height: 38px; line-height: 38px; background: linear-gradient(135deg, #4BADA0, #4E4E9E 20%);} 
+.nav_lnb li{float: left;} 
+.nav_lnb.w50 li{width: 50%;text-align:center;}  
+.nav_lnb li a{display: block; position: relative; text-align: center; font-size: 15px; color: #fff;}
+.nav_lnb.w50 li a{display: inline-block;}
+.nav_lnb li a.on{font-weight: 700;}
+.nav_lnb li a.on:after{content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: #fff;}
+
+.nav_lnb.w100 li{width: 100%; text-align: center; font-size: 15px; font-weight: 700; color: #fff;}   
+
+.more_area{margin-top: 5px; padding: 0 16px;}
+.more_area .btn_more{display: block; height: 32px; line-height: 30px; text-align: center; border: 1px solid #eee; font-size: 14px; color: #555; background-color: #fff;}  
+.more_area .btn_more span{display: inline-block; padding-right: 24px; background: url(../img/sub/btn_more.png) no-repeat 100% 50%; background-size: 24px;}  
+
+.tableinfo_area{padding: 8px 16px; background-color: #fff;}  
+.tableinfo_area .total{margin-top: 6px; font-size: 13px; color: #555;}  
+.tableinfo_area .total .count{padding: 0 3px; font-size: 14px; color: #333;}  
+.tableinfo_area button{min-width: 94px;}       
+
+.lst_help li{padding-left: 13px; line-height: 18px; font-size: 13px; color: #757575; background: url(../img/sub/ico_help.png) no-repeat 0 5px; background-size: 9px;}
+.lst_help li.txt_sell_color{background-image: url(../img/sub/ico_help_blue.png);}
+.lst_help.type2 li{padding-left: 13px; line-height: 20px; font-size: 14px; color: #666; background: url(../img/sub/ico_help.png) no-repeat 0 7px; background-size: 9px;}
+
+/* ==========================================================================
+   WEB06302 : WEB06302 : 주문상세
+   ========================================================================== */
+.name_area{padding: 0 16px; position: relative; line-height: 40px; height: 40px; letter-spacing: -0.25px; background-color: #fff;} 
+.name_area .title{font-size: 13px; color: #555;}   
+.name_area .name{position: absolute; left: 0; top: 0; width: 100%; height: 40px; line-height: 40px; text-align: center; font-size: 16px; color: #0E1D64;}  
+ 
+.chart_area{border-top: 1px solid #eee; padding: 10px 16px; background-color: #fff;}
+
+hr{display: block; margin: 0; height: 10px; border:0; background-color: #E6E8F4;}
+
+/* ==========================================================================
+   WEB06310 : 투자정보_기업알림 및 홍보자료(리스트)
+   ========================================================================== */
+.lst_notice{padding: 10px 16px 0;} 
+.lst_notice li{float: left; margin-bottom: 10px; width: 48.5%;}
+.lst_notice li:nth-child(2n){float: right;}
+.lst_notice li a{display: block; position: relative; padding-top: 10px; height: 159px; text-align: center; border: 1px solid #eee; border-radius: 6px; background-color: #fff;}   
+.lst_notice li a .company{display: block; margin-top: 10px; font-size: 15px; color: #0E1D64;}  
+.lst_notice li a .company span{position: relative;}    
+.lst_notice li a .company span:after{content: ''; display: block; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; background-color: #54A29A; opacity: 0.1;}     
+.lst_notice li a .company.case2 span:after{background-color: #43539A;}      
+.lst_notice li a .file{display: block; margin-top: 12px; line-height: 20px; font-size: 15px; font-weight: 400; color: #000;}  
+.lst_notice li a .date{display: block; margin-top: 13px; font-size: 12px; color: #757575;} 
+.lst_notice li a .state_list{} 
+
+/* ==========================================================================
+   WEB06311 : 투자정보_기업알림 및 홍보자료(상세)
+   ========================================================================== */
+.lst_notice_view{padding: 0 16px; background-color: #fff;}   
+.lst_notice_view dt{margin: 0 -16px; padding: 10px 16px; background-color: #F8F8F8;} 
+.lst_notice_view dt .title{margin-top: 10px; font-size: 18px; color: #000; line-height: 25px;}  
+.lst_notice_view dt .date{margin-top: 10px; font-size: 13px; color: #757575;}    
+
+.lst_notice_view dd.desc{padding: 16px 0; line-height: 24px; font-size: 14px; color: #555; }    
+.lst_notice_view dd .table{border-top: 1px solid #eee; border-bottom: 1px solid #eee;} 
+ 
+.lst_notice_view dd.file_area{padding: 16px 0; border-top: 1px solid #eee;}     
+.lst_notice_view dd.file_area .title span{display: inline-block; position: relative; padding: 0 9px;}
+.lst_notice_view dd.file_area .title span:after{content: ''; display: block; position: absolute; left: 0; right: 0; margin-top: -12px; height: 12px; background-color: #4E4E9E; opacity: 0.1}
+.lst_notice_view dd.file_area .lst_file{margin-top: 15px;} 
+
+/* ==========================================================================
+   WEB06317 : 전종목거래현황
+   ========================================================================== */
+#wrap_webview.fixed_order{padding-top: 118px;}    
+#wrap_webview .sec_top_order{background-color: #f8f8f8;}  
+
+.sec_top_order{padding: 0 0 7px;}  
+/*.sec_top_order h3{padding: 0 16px; height: 23px; line-height: 23px; font-size: 17px; font-weight: 700; color: #000;}   */
+.sec_top_order .search_name{height: auto; border:0; padding: 0 16px 7px;}      
+.sec_top_order .search_name .btn_srch{top: 8px;}  
+.sec_top_order .tab_md{}       
+
+/* ==========================================================================
+   WEB06318 : 투자정보_리스트
+   ========================================================================== */ 
+.lst_invest{padding: 10px 16px 0; background-color: #fff;}   
+.lst_invest>li{float: left; margin-bottom: 10px; width: 48.5%;}   
+.lst_invest>li:nth-child(2n){float: right;}
+.lst_invest>li>a{display: block; position: relative; padding: 48px 8px 0; height: 139px; border: 1px solid #eee; border-radius: 0 8px; background-color: #FEFAF5;}    
+.lst_invest li a .company{display: block; line-height: 18px; font-size: 15px; font-weight: 400; color: #0E1D64;} 
+/*.lst_invest li a .desc{display: block; margin-top: 14px; line-height: 14px; font-size: 12px;  color: #67727A;} */
+.lst_invest li a .logo{overflow: hidden; display: block; position: absolute; right: 8px; top: 8px; width: 36px; height: 36px; border: 1px solid #AEAEAE; border-radius: 18px;}  
+.lst_invest li a .logo img{display: block; position: relative; left: -1px; top: -1px; width: 36px; height: 36px;}  
+.lst_invest li a .lst_desc{margin-top: 17px;}   
+.lst_invest li a .lst_desc .title{float: left; font-size: 12px; color: #757575;}
+.lst_invest li a .lst_desc .num{float: right; font-size: 13px; color: #333;}   
+.lst_invest li:nth-child(2) a .lst_desc .num{color: #000;}     
+ 
+.lst_invest li:nth-child(2n) a{background-color: #F5FFF7;}   
+.lst_invest li:nth-child(3n) a{background-color: #ECFBFC;} 
+.lst_invest li:nth-child(4n) a{background-color: #EEF6FF;} 
+.lst_invest li:nth-child(5n) a{background-color: #FCF8FF;} 
+.lst_invest li:nth-child(6n) a{background-color: #FEFAF5;} 
+.lst_invest li:nth-child(7n) a{background-color: #F5FFF7;}
+.lst_invest li:nth-child(8n) a{background-color: #ECFBFC;} 
+
+/* ==========================================================================
+   WEB06305 : 전문가정보
+   ========================================================================== */
+.sec_expert .lst_accodian .expert_desc1{padding: 10px 16px;} 
+.group_summary{}
+.group_summary dl{padding: 0 10px 0; vertical-align: top; border: 1px solid #eee; background-color: #eff3f8;}        
+.group_summary dl:first-child{border-left: 0;}     
+.group_summary dl dt{position: relative; margin: -1px -11px 10px; height: 40px; line-height: 38px; text-align: center; border: 1px solid #E6E8F4; border-bottom: 1px solid #A5AACC; font-size: 15px; font-weight: 700; color: #3348ae; background-color: #fff;}   
+.group_summary dl dt:after{content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; background-color: #E6E8F4;}   
+/*.group_summary dl dt span{position: relative; padding: 0 14px; background-color: #fff; z-index: 1;}     */
+.group_summary dl dd{float: left; margin: 0 0 10px; padding: 0; width: 48.5%; vertical-align: top; }  
+.group_summary dl dd:nth-of-type(2n){float: right;}  
+.group_summary dl dd p{position: relative; height: 30px; line-height: 30px; text-align: center; border-radius: 0 8px; font-size: 15px; color: #fff; background-color: #6573d4; z-index: 1;}
+.group_summary dl dd:nth-of-type(1) p{background-color: #4c99cd;}
+.group_summary dl dd:nth-of-type(2) p{background-color: #6573d4;}   
+.group_summary dl dd:nth-of-type(3) p{background-color: #3ab2bf;}  
+
+.group_summary dl dd .lst_desc{min-height: 117px; padding: 34px 10px 10px; margin-top: -30px !important; border: 1px solid #ddd; border-radius: 10px 10px 0 8px; background-color: #fff;}
+.group_summary dl dd .lst_desc li{padding-left: 20px; height: 25px; line-height: 25px; text-align: left; font-size: 15px; color: #757575;}
+.group_summary dl dd .lst_desc pre{line-height: 18px; text-align: left; font-size: 13px; color: #555; letter-spacing: -0.25px;}
+  
+.group_summary dl.case2{background-color: #ecf8f2;}  
+.group_summary dl.case2 dt{color: #038085;}   
+.group_summary dl.case2 dd p{background-color: #379d46;}   
+
+.group_summary dl.case3{background-color: #fffaf6;}   
+.group_summary dl.case3 dt{color: #e8055a;}   
+.group_summary dl.case3 dd:nth-of-type(1) p{background-color: #f65e01;}    
+.group_summary dl.case3 dd:nth-of-type(2) p{background-color: #f63d46;}   
+.group_summary dl.case3 dd:nth-of-type(3) p{background-color: #eb256f;} 
+
+.group_summary dl.case4{border-top: 1px solid #ddd; background-color: #f2f2f2;}       
+.group_summary dl.case4 dt{color: #000826;}         
+.group_summary dl.case4 dd p{background-color: #4c5267;} 
+
+/* .group_summary .blank_area{padding-top: 70px; height: 350px;text-align: center;background-color: #f2f2f2;}
+ .group_summary .blank_area .txt_blank {padding: 69px 0 24px;font-size: 18px;color: #555;background: url(../img/sub/ico_warning_table.png) no-repeat 50% 0;}  */ 
+
+
+.sec_expert .lst_accodian .expert_desc2{padding: 10px 16px ;}   
+.sec_expert .lst_accodian dd h3.title{position: relative; margin-top: 10px; height: 40px; line-height: 38px; border:1px solid #E6E8F4; border-bottom: 1px solid #A5AACC; text-align: center; font-size: 15px; font-weight: 700; color:#4E4E9E;}    
+.sec_expert .lst_accodian dd h3.title:first-child{margin-top: 0;}   
+/*.sec_expert .lst_accodian .expert_desc2 h3.title:after{content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background-color: #ddd; opacity: 0.3;}*/
+/*.sec_expert .lst_accodian .expert_desc2 h3.title span{position: relative; padding: 0 14px; z-index: 1; background-color: #6C7294;}*/
+
+.sec_expert .expert_desc2 .chart_area{padding: 0 5px; border:1px solid #eee; border-top: 0;}     
+.sec_expert .expert_desc2 .table_detail{margin-top: 5px; border:1px solid #eee;}      
+  
+.sec_expert  .expert_desc2 .table table tbody tr td.detail_area{padding: 0; height: auto; background-color: #EFF3F8; border:0;}   
+.sec_expert  .expert_desc2 .table table tbody tr td.detail_area>div{display: none;}   
+.sec_expert  .expert_desc2 .table table tbody tr td.detail_area.on>div{display: block;} 
+.sec_expert  .expert_desc2 .table table tbody tr td{position: relative;}  
+.sec_expert  .expert_desc2 .table table tbody tr td .btn_more{display: block; position: absolute; top: 50%; right: 12px; margin-top: -12px; width: 24px; height: 24px; background: url(../img/sub/ico_down_table.png) no-repeat 50% 50%; background-size: 24px;}  
+.sec_expert  .expert_desc2 .table table tbody tr td .btn_more.on{background-image: url(../img/sub/ico_up_table.png);} 
+   
+.sec_expert .expert_desc2 .table_in{border: 0; border-top: 1px solid #eee;} 
+.sec_expert .expert_desc2 .table_in table tbody tr td {position: relative; letter-spacing: -1px; background-color: #f8f8f8;}  
+.sec_expert  .expert_desc2 .table_in table tbody tr:first-child th, .sec_expert .expert_desc2 .table_in table tbody tr:first-child td {border-top: 0;}
+.sec_expert .expert_desc2 .table_in table tbody tr:nth-child(2) td, .sec_expert .expert_desc2 .table_in table tbody tr:nth-child(3) td {border-left: 1px solid #eee;} 
+
+.sec_expert .expert_desc2 .lst_help{padding: 10px; line-height: 18px; border: 1px solid #eee; border-top: 0; font-size: 13px; color: #757575;}      
+.sec_expert .expert_desc2 .lst_accodian{border: 1px solid #eee; border-top: 0;}      
+.sec_expert .expert_desc2 .table_row{border: 1px solid #eee; border-top: 0;}      
+
+.sec_expert .lst_lisk li{margin-top: 10px; font-size: 14px; color: #333;}
+.sec_expert .lst_lisk li:first-child{margin-top: 0;} 
+.sec_expert .lst_lisk li .desc{display: table; margin-top: 7px; width: 100%; height: 50px;} 
+.sec_expert .lst_lisk li .desc .col{display: table-cell; position: relative; padding: 8px; vertical-align: middle; background-color: #fff;} 
+.sec_expert .lst_lisk li .desc .col:nth-child(2),.sec_expert .lst_lisk li .desc .col:nth-child(3){width: 50px; text-align: center;}
+
+.sec_expert .lst_lisk li .desc .col strong{display: block; font-size: 12px; font-weight: 400; color: #757575;} 
+.sec_expert .lst_lisk li .desc .col span{display: block; font-size: 14px; font-weight: 400; color: #333;} 
+.sec_expert .lst_lisk li .desc .col .txt_lisk{display: inline-block;  padding-left: 10px; line-height: 18px; vertical-align: middle;} 
+.sec_expert .lst_lisk li .desc .col .ico_lisk{display: inline-block; width: 15px; height: 15px; vertical-align: middle; border-radius: 50%; background-color: #1CAC59;} 
+.sec_expert .lst_lisk li .desc .col .ico_lisk.type1{background-color: #1CAC59;} 
+.sec_expert .lst_lisk li .desc .col .ico_lisk.type2{background-color: #FF0C34;} 
+.sec_expert .lst_lisk li .desc .col .ico_lisk.type3{background-color: #F6AB2E;}
+
+.sec_expert .lst_lisk li .desc .col:before{content: ''; display: block; position: absolute; left: 0; top: 50%; margin-top: -15px; width: 1px; height: 30px; background-color: #eee;}  
+.sec_expert .lst_lisk li .desc .col:first-child:before{display: none;}
+
+.sec_expert .lst_accodian .expert_desc3{padding: 10px 16px;}
+.sec_expert .lst_accodian dd .file_area{padding: 10px; border: 1px solid #eee;}
+
+.sec_expert .lst_accodian .expert_desc3 .table_row {border: 1px solid #eee;border-top: 0;}
+.sec_expert .lst_accodian .expert_desc3 .table_row caption{padding: 10px; height: 40px; text-align: left; vertical-align: middle; font-size: 15px; color: #000; background-color: #f8f8f8; border-bottom: 1px solid #eee;}
+.sec_expert .lst_accodian .expert_desc3 .table_row caption.sr_only{padding: 0; height: 1px;}
+.sec_expert .lst_accodian .expert_desc3 .table_row .table_col{border-top: 1px solid #aaa;}
+.sec_expert .lst_accodian .expert_desc3 .table_row .table_col thead tr th{padding: 6px 0; text-align: center; background-color: #F8FAFF;}
+.sec_expert .lst_accodian .expert_desc3 .table_row .table_col tbody tr td{padding: 6px 10px;}
+.sec_expert .lst_accodian .expert_desc3 .table_row .table_col tfoot tr th,.sec_expert .lst_accodian .expert_desc3 .table_row .table_col tfoot tr td{padding: 6px 10px; border-top: 1px solid #ccc; background-color: #FFF7F0;} 
+
+.sec_expert .lst_accodian .expert_desc4{padding: 10px 16px;}
+.sec_expert .lst_accodian .lst_desc{margin-top: 10px; border: 1px solid #eee; border-bottom: 0;}
+.sec_expert .lst_accodian .lst_desc dt{padding: 0 10px; height: 40px; line-height: 40px; font-size: 15px; color: #000; border-bottom: 1px solid #eee; background-color: #f8f8f8;}
+.sec_expert .lst_accodian .lst_desc dd{padding: 10px; line-height: 24px; font-size: 14px; color: #333; border-bottom: 1px solid #eee;}
+.sec_expert .lst_accodian .lst_desc dd ul li{position: relative; padding-left: 10px;}
+.sec_expert .lst_accodian .lst_desc dd ul li:after{content: ''; position: absolute; left: 3px; top: 12px; width: 3px; height: 1px; background-color: #333;}
+
+/* ==========================================================================
+   WEB06309 : 투자정보_기업정보
+   ========================================================================== */ 
+.lst_info_company{}
+.lst_info_company dt{padding: 0 16px; height: 38px; line-height: 38px; font-size: 16px; font-weight: 700; color: #000; background-color: #F8F8F8;}
+.lst_info_company dd{padding: 10px 16px; background-color: #fff;} 
+.lst_info_company dd .table_row th,.lst_info_company dd .table_row td{padding: 6px 0 6px 10px;}
+.lst_info_company dd .chart_selectbox{margin-bottom:20px;width:150px;}
+
+.lst_info_company .table_noborder{margin-top: 10px; border-top: 0; border-bottom: 1px solid #ccc;} 
+.lst_info_company .table_noborder table tbody th{text-align: left; background-color: #fff;}
+.lst_info_company .table_noborder table tbody th,.lst_info_company .table_noborder table tbody td{height: 36px; padding: 0; border:0;} 
+.lst_info_company .table_noborder table tbody td strong{font-size: 15px; font-weight: 700;}
+.lst_info_company .table_noborder table tbody td span{font-size: 15px;} 
+.lst_info_company .table_noborder table tbody tr:first-child th,.lst_info_company .table_noborder table tbody tr:first-child td{border-top: 1px solid #ccc}  
+
+/* ==========================================================================
+   WEB06503 : 거래정보_주문관리
+   ========================================================================== */ 
+#wrap_webview.fixed_mypage{padding-top: 92px;}   
+.sec_top_mypage{height: 92px;}  
+
+.sec_top .nav_sub{overflow-x: auto; white-space: nowrap; padding: 0 16px; border-top: 1px solid #eee;}  
+.sec_top .nav_sub li{display: inline-block; position: relative; padding: 0 10px;} 
+.sec_top .nav_sub li:first-child{padding-left: 0;}  
+.sec_top .nav_sub li:before{content: ''; display: block; position: absolute; left: 0; top: 50%; margin-top: -6px; width: 1px; height: 12px; background-color: #eee;}    
+.sec_top .nav_sub li:first-child:before{display: none;}    
+.sec_top .nav_sub a{display:block; height:40px; line-height: 40px; font-size:14px;color:#555;text-align:center;}   
+.sec_top .nav_sub a.on{border-bottom:1px solid #333;font-size: 15px; font-weight:700;color:#333 !important;}   
+
+.lst_order{padding: 10px 16px 0;} 
+.lst_order li{margin-top: 8px;} 
+.lst_order li:first-child{margin-top: 0;}
+.lst_order li a{display: block; position: relative; padding: 12px 10px; height: 100px; border: 1px solid #eee; background-color: #fff;}  
+.lst_order li .state_deal{position: absolute; right: -1px; top: 10px;} 
+.lst_order li .title{font-size: 16px; color: #0E1D64;}  
+.lst_order li .title .txt_sm{padding-left: 6px; font-size: 13px; color: #666;}
+.lst_order li table{margin-top: 12px; width: 100%; border-collapse: collapse; border-spacing: 0;}
+.lst_order li table th{font-size: 13px; font-weight: 400; color: #757575;} 
+.lst_order li table td{height: 20px; font-size: 15px; font-weight: 700; color: #333;}
+.lst_order li table tbody tr:nth-child(2) td{color: #000;}     
+.lst_order li table td.date{font-size: 12px; font-weight: 400; color: #757575 !important;}  
+
+/* ==========================================================================
+   WEB06508 : 거래정보_나의거래내역조회 팝업
+   ========================================================================== */
+.pop_ask_print .msg{padding: 15px 0 0; text-align: center; font-size: 14px; color: #555;}  
+.pop_ask_print label{display: block; margin-top: 11px; font-size: 13px; color: #757575;}   
+.pop_ask_print label:first-child{margin-top: 0;}     
+.pop_ask_print input.form_control{text-align: right; font-size: 15px; font-weight: 700;}    
+.pop_ask_print .form_control{margin-top: 6px;}     
+
+/* tab_lg */
+.tab_lg li{float:left; position: relative; width: 33.3333%;}
+/*.tab_lg li:first-child{padding-left: 0;}*/
+.tab_lg li:before{content: ''; display: block; position: absolute; left: 0; top: 0px; width: 1px; height: 32px; background-color: #fff;}
+.tab_lg li:first-child:before{display: none;}
+.tab_lg a{display:block; height:32px; line-height: 32px; font-size:14px; color:#555; text-align:center; background-color: #f2f2f2;}
+.tab_lg a.on{background-color: #3348ae; font-weight:700; color:#fff;}
+
+/* ==========================================================================
+   WEB06509 : 관심기업관리
+   ========================================================================== */
+#wrap_webview.fixed_mypage_favorite{padding-top: 48px;}
+#wrap_webview.fixed_mypage_favorite .sec_top_mypage{height: 48px;}
+#wrap_webview.fixed_mypage_favorite .sec_top_mypage .tab_md{padding: 8px 16px;}
+
+
+
+/* ==========================================================================
+   WEB06510 : 증빙서류관리
+   ========================================================================== */
+.info_list{position: relative; padding: 8px 16px; min-height: 35px; background-color: #f8f8f8;}
+.info_list .total{position: absolute; top: 50%; margin-top: -10px; font-size: 13px; color: #555;}
+.info_list .total strong{font-size: 14px; color: #3348AE;}
+
+/*.group_list{border-bottom: 1px solid #ddd; background-color: #fff;}
+.group_list .lst_title{display: table; padding: 0 16px; width: 100%; height: 32px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+.group_list .lst_title li{display: table-cell; text-align: center; line-height: 30px; font-size: 13px; color: #555;}
+
+.group_list .lst_contents{ padding: 0 16px; }
+.group_list .lst_contents li{display: table; width: 100%;} 
+.group_list .lst_contents li>a{display: table-row;}
+
+.group_list .lst_contents li .col{display: table-cell; height: 60px; border-top: 1px solid #ddd; text-align: center; vertical-align: middle; font-size: 13px; color: #555;}
+.group_list .lst_contents li:first-child .col{border-top: 0;}
+
+.group_list .lst_title .col:nth-child(1){width: 27%;}
+.group_list .lst_title .col:nth-child(2){}
+.group_list .lst_title .col:nth-child(3){width: 27%;}
+
+.group_list .lst_contents .col:nth-child(1){width: 27%;}
+.group_list .lst_contents .col:nth-child(2){}
+.group_list .lst_contents .col:nth-child(3){width: 27%;}*/
+
+.blank_doc{position: fixed; left: 16px; top: 54px; right: 16px; bottom: 10px; width: auto; height: auto; border: 1px solid #ccc; background-color: #fff; box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);}
+.blank_doc .txt_blank{position: absolute; top: 50%; transform: translateY(-50%);}
+ 
+/* ==========================================================================
+   WEB06512 : 1:1문의_리스트
+   ========================================================================== */
+.lst_qna{padding: 0 16px;} 
+.lst_qna li{margin-top: 10px; border: 1px solid #eee; border-radius: 6px; background-color: #fff;}
+.lst_qna li:first-child{margin-top: 0;}
+.lst_qna li a{display: block; position: relative; padding: 8px 10px; height: 80px;}
+.lst_qna li .title{display: block; line-height: 20px; font-size: 14px; color: #333;} 
+.lst_qna li .date{display: block; margin-top: 5px; font-size: 12px; color: #757575;}
+.lst_qna li .state{position: absolute; right: -1px; bottom: 8px;} 
+.lst_qna li .state .ico_file{display: inline-block; position: relative; margin: 0 5px; width: 18px; height: 21px; vertical-align: middle; background: url(../img/sub/ico_file.png) no-repeat 0 0; background-size: 18px;}   
+.lst_qna li .state_qna{display: inline-block; padding: 0 5px; width: 66px; height: 22px; vertical-align: middle; line-height: 20px; border: 1px solid #F2F2F2; font-size: 12px; color: #666;} 
+.lst_qna li .state_qna.type2{background-color: #f2f2f2;}  
+.lst_qna li .state_qna em{padding: 0 12px; font-size: 13px; color: #333;} 
+
+.view_qna{padding: 0 16px 0; background-color: #fff;}    
+.view_qna dt{padding: 16px 0 10px;}    
+.view_qna dt .title{line-height: 24px; font-size: 18px; color: #000;} 
+.view_qna dt .info{margin-top: 8px; font-size: 13px; color: #757575;}
+.view_qna dt .info span{display: inline-block; position: relative; padding: 0 8px;} 
+.view_qna dt .info span:before{content: ''; display: block; position: absolute; left: 0; top: 50%; margin-top: -4px; width: 1px; height: 8px; background-color: #ddd;} 
+.view_qna dt .info span:first-child{padding-left: 0;} 
+.view_qna dd.desc{padding: 16px 0 20px; line-height: 24px; font-size: 15px; color: #000; border-top: 1px solid #eee;}  
+
+.view_qna dd.file_area{padding: 16px 0; border-top: 1px solid #eee;}     
+.view_qna dd.file_area .title span{display: inline-block; position: relative; padding: 0 9px;}
+.view_qna dd.file_area .title span:after{content: ''; display: block; position: absolute; left: 0; right: 0; margin-top: -12px; height: 12px; background-color: #4E4E9E; opacity: 0.1}
+.view_qna dd.file_area .lst_file{margin-top: 15px;} 
+
+.view_reply{padding: 0 16px; background-color: #fff;}   
+.view_reply dt{margin: 0 -16px; padding: 0 16px; height: 38px; line-height: 37px; border-top: 1px solid #ccc; background-color: #F8F8F8;} 
+.view_reply dt .title{float: left; margin-top: 7px; width: 54px; height: 24px; line-height: 24px; text-align: center; border-radius: 3px; font-size: 14px; color: #fff; background-color: #4E4E9E;}  
+.view_reply dt .title span{padding-left: 10px; background: url(../img/sub/ico_answer_w.png) no-repeat 0 50%; background-size: 10px;}   
+.view_reply dt .date{float: right; font-size: 13px; color: #757575;}
+.view_reply dd{padding: 0 16px;} 
+.view_reply dd.desc{padding: 16px 0; line-height: 24px; font-size: 14px; color: #000;}
+  
+.view_reply dd.file_area{padding: 16px 0; border-top: 1px solid #eee;}     
+.view_reply dd.file_area .title span{display: inline-block; position: relative; padding: 0 9px;}
+.view_reply dd.file_area .title span:after{content: ''; display: block; position: absolute; left: 0; right: 0; margin-top: -12px; height: 12px; background-color: #4E4E9E; opacity: 0.1}
+.view_reply dd.file_area .lst_file{margin-top: 15px;} 
+
+
+.write_qna{padding: 0 16px 5px; background-color: #f8f8f8;} 
+.write_qna dt{padding: 10px 0 3px; font-size: 13px; color: #555;}
+.write_qna dd textarea{height: 233px;}
+.write_qna dd .wrap_file{margin-top: 10px;}
+.write_qna dd .wrap_file:first-child{margin-top: 0;}
+.write_qna .lst_help{margin-top: 10px;} 
+
+
+
+/* ==========================================================================
+   WEB06517 : 서비스해지
+   ========================================================================== */
+.leave_service{padding: 0 16px; background-color: #fff;} 
+.leave_service dt{padding: 11px 0 16px;} 
+.leave_service dt .title{font-size: 17px; font-weight: 700; color: #000;} 
+.leave_service dt .msg{font-size: 14px; color: #555;} 
+.leave_service dt .warning{margin-top: 15px; font-size: 15px; font-weight: 700; color: #333;}  
+.leave_service dt .warning strong{color: #3348AE;} 
+
+.leave_service dd{padding: 16px 0 20px; border-top: 1px solid #ccc;}
+.leave_service dd .title{padding-left: 20px; font-size: 14px; color: #333; background: url(../img/sub/ico_check.png) no-repeat 0 50%; background-size: 16px;}
+.leave_service dd .lst_leave{margin-top: 10px;} 
+.leave_service dd .lst_leave li{position: relative; padding-left: 10px; font-size: 14px; line-height: 20px; color: #727272;} 
+.leave_service dd .lst_leave li:before{content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; background-color: #757575;}
+.leave_service dd .btn_state{display: block; margin: 16px auto 0; width: 200px; font-size: 14px; font-weight: 400; background-color: #6573D4;}   
+
+/* ==========================================================================
+   WEB06103 : 서비스가입(개인_인증)
+   ========================================================================== */
+.lst_step{padding: 16px; height: 70px; background-color: #fff;}
+.lst_step li{float: left; position: relative; padding-left: 29px; width: 33.3333%; background: url(../img/sub/arrow_next.png) no-repeat 100% 50%; background-size: 23px;}
+.lst_step li:last-child{background: none;}
+
+
+
+.lst_step li .ico{position: absolute; left: 0; top: 5px; width: 24px; height: 24px; background: url(../img/sub/ico_step1.png) no-repeat 0 0; background-size: 24px;}
+.lst_step li:nth-child(1) .ico{background-image: url(../img/sub/ico_step1.png);}
+.lst_step li:nth-child(2) .ico{background-image: url(../img/sub/ico_step2.png);}
+.lst_step li:nth-child(3) .ico{background-image: url(../img/sub/ico_step3.png);}
+.lst_step li:nth-child(1).on .ico{background-image: url(../img/sub/ico_step1_on.png);}
+.lst_step li:nth-child(2).on .ico{background-image: url(../img/sub/ico_step2_on.png);}
+.lst_step li:nth-child(3).on .ico{background-image: url(../img/sub/ico_step3_on.png);}
+
+.lst_step li .num{font-size: 12px; color: #757575;}
+.lst_step li.on .num{color: #3348AE;}
+.lst_step li .tit{margin-top: 2px; font-size: 15px; color: #333;}
+.lst_step li.on .tit{font-weight: 700;}
+
+.lst_join_type{}
+.lst_join_type dt{padding-top: 20px; font-size: 16px; font-weight: 400; color: #757575;} 
+.lst_join_type dt strong{color: #111;}  
+.lst_join_type dt:first-child{padding-top: 15px;}  
+.lst_join_type dd{padding: 10px 0 0 13px; line-height: 18px; font-size: 13px; color: #757575;} 
+.lst_join_type dd .input_radio{float: left; margin: 0; width: 49%;}      
+.lst_join_type dd .input_radio > .label_text{display: block; padding-left: 35px; height: 50px; line-height: 48px; border: 1px solid #ccc; border-radius: 0 8px; font-size: 15px; color: #000; background-image: url(../img/sub/ico_check_type.png),url(../img/sub/ico_login_people.png); background-repeat: no-repeat; background-position: 7px 50%, calc(100% - 7px) 50%; background-size: 28px, 32px; background-color: #fff;}      
+.lst_join_type dd .input_radio.fr > .label_text{background-image: url(../img/sub/ico_check_type.png),url(../img/sub/ico_login_company.png);}
+.lst_join_type dd .input_radio > input[type="radio"]:checked + .label_text{border-color: #3348AE; box-shadow: 0 3px 6px rgba(0,0,0,0.16); font-weight: 700; color: #3348AE; background-image: url(../img/sub/ico_check_type_on.png),url(../img/sub/ico_login_people.png);}     
+.lst_join_type dd .input_radio.fr > input[type="radio"]:checked + .label_text{background-image: url(../img/sub/ico_check_type_on.png),url(../img/sub/ico_login_company.png);}  
+
+.lst_join_type dd .input_radio.input_confirm > .label_text{background-image: url(../img/sub/ico_check_type.png),url(../img/sub/ico_login_key.png);}
+.lst_join_type dd .input_radio.input_confirm.fr > .label_text{background-image: url(../img/sub/ico_check_type.png),url(../img/sub/ico_login_did.png);}
+.lst_join_type dd .input_radio.input_confirm > input[type="radio"]:checked + .label_text{font-weight: 400; color: #fff; background-color: #3348AE; background-image: url(../img/sub/ico_check_w.png),url(../img/sub/ico_login_key_w.png);}       
+.lst_join_type dd .input_radio.input_confirm.fr > input[type="radio"]:checked + .label_text{background-image: url(../img/sub/ico_check_w.png),url(../img/sub/ico_login_did_w.png);}      
+.lst_join_type dd .lst_help li{float: left; width: 49%;}      
+.lst_join_type dd .lst_help li:nth-child(2){float: right;} 
+.lst_join_type dd .lst_help a{display: block; padding-left: 24px; height: 24px; line-height: 24px; font-size: 14px; color: #555; background: url(../img/sub/ico_info.png) no-repeat 0 50%; background-size: 24px;}   
+ 
+.pop_info_app .pop_wrap .contents_wrap .inner{padding-bottom: 100px; background: url(../img/sub/ico_app.png) no-repeat calc(100% - 43px) calc(100% - 21px); background-size: 38px;}
+.pop_info_did .pop_wrap .contents_wrap .inner{padding-bottom: 100px; background: url(../img/sub/ico_did.png) no-repeat calc(100% - 43px) calc(100% - 21px); background-size: 170px;}           
+
+/* ==========================================================================
+   WEB06104 : 서비스가입(개인_약관동의)
+   ========================================================================== */
+.allcheck_area{padding: 16px;}    
+.allcheck_area .input_check > .label_text{line-height: 20px; color: #000;}
+
+.lst_check li{position: relative; padding: 10px 16px; border-top: 1px solid #eee; background-color: #fff;}  
+.lst_check li .input_check > .label_text{height: 20px; line-height: 20px; color: #000; background: url(../img/sub/ico_check_terms.png) no-repeat 0 0 / 20px;} 
+.lst_check li .input_check > input[type="checkbox"]:checked + .label_text {background-image: url(../img/sub/ico_check_terms_on.png);}  
+.lst_check li .input_check > .label_text em{font-size: 13px; color: #555;}       
+.lst_check li .btn_more{display: block; position: absolute; right: 11px; top: 50%; margin: 0; margin-top: -12px; width: 24px; height: 24px; background: url(../img/sub/ico_right.png) no-repeat 0 0; background-size: 24px;}     
+
+/* ==========================================================================
+   WEB06106 : 서비스가입(개인_정보입력)
+   ========================================================================== */
+.ico_required{padding-left: 10px; background: url(../img/sub/ico_required.png) no-repeat 0 50%; background-size: 5px;} 
+.ico_required.right{padding-left: 0; padding-right: 10px; background-position: 100% 50%;} 
+
+.lst_write{}
+.lst_write dt{padding: 15px 0; font-size: 16px; font-weight: 700; color: #000;} 
+.lst_write dt .txt_sm{margin-left: 10px; font-size: 13px; font-weight: 400; color: #666;}
+.lst_write dd{padding: 0 0 0 14px;} 
+.lst_write dd:type-of-child{padding-top: 0;} 
+.lst_write dd label{display: inline-block; margin-top: 10px; font-size: 13px; color: #555;} 
+.lst_write dd label:first-child{margin-top: 0;} 
+.lst_write dd label + p{margin-top: 2px;} 
+.lst_write dd label + p + p{margin-top: 10px;} 
+.lst_write dd .search_address{padding-right: 72px;} 
+.lst_write dd .search_address label{display: block;} 
+.lst_write dd .search_address .btn_srch{width: 70px;} 
+
+.lst_write dd p + .lst_help{margin-top: 5px;} 
+.lst_write.bg_gray{padding-bottom: 15px !important;}  
+
+/* ==========================================================================
+   WEB06109 : 산업분류 팝업 (Webview)
+   ========================================================================== */
+.pop_industry label{display: block; margin-top: 11px; font-size: 13px; color: #757575;}   
+.pop_industry label:first-child{margin-top: 0;}     
+.pop_industry input.form_control{text-align: right; font-size: 15px; font-weight: 700;}    
+.pop_industry .form_control{margin-top: 6px;}     
+
+/* ==========================================================================
+   WEB06501 : 가입정보관리(개인)
+   ========================================================================== */
+.lst_write dd.add_confirm_area{padding: 0; padding-top: 15px; text-align: center;}  
+.lst_write dd.add_confirm_area p{padding: 10px; text-align: left; border: 1px solid #ddd; font-size: 14px; color: #555; background-color: #fff;}  
+.lst_write dd.add_confirm_area p button{display: block; margin: 8px auto 0; padding: 0; width: 108px;}
+
+.lst_write dd.terms_area{margin: 10px -16px 0; padding: 0;}    
+.lst_write dd.terms_area .lst_check{border-bottom: 1px solid #eee;}    
+
+/* ==========================================================================
+   WEB06502 : 가입정보관리(법인)
+   ========================================================================== */ 

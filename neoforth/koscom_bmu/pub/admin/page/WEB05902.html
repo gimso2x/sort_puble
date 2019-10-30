@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">블록체인 관리</a></li> 
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>블록체인 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">Tx 조회</a></li>
+				<li><a href="javascript:void(0);" class="active">BC 연계 설정</a></li>
+				<li><a href="javascript:void(0);">배치 내역 조회</a></li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>BC 연계 설정</h4>
+
+				<div class="companyinfo_table mt30"> 
+				    <table>
+				        <caption>BC 연계 설정 작성</caption>
+				        <colgroup>
+				            <col width="250">  
+				            <col width="*">
+				        </colgroup>
+				        <tbody> 
+				            <tr>
+				                <th>블록체인 채널 - 에스크로</th>  
+				                <td>
+				                	<div>
+									    <label class="input_radio" for="rdoSolar1">
+									        <input type="radio" id="rdoSolar1" name="blockchain1" checked="">
+									        <span class="label_text">사용</span>
+									    </label>
+									    <label class="input_radio" for="rdoLunar1">
+									        <input type="radio" id="rdoLunar1" name="blockchain1">
+									        <span class="label_text">미사용</span>
+									    </label>
+									</div>
+				                </td>
+				            </tr>
+				            <tr>
+				                <th>블록체인 채널 - 양수도계약서</th>
+				                <td>
+				                	<div>
+									    <label class="input_radio" for="rdoSolar2">
+									        <input type="radio" id="rdoSolar2" name="blockchain2" checked="">
+									        <span class="label_text">사용</span>
+									    </label>
+									    <label class="input_radio" for="rdoLunar2">
+									        <input type="radio" id="rdoLunar2" name="blockchain2">
+									        <span class="label_text">미사용</span>
+									    </label>
+									</div>
+				                </td>
+				            </tr>
+				            <tr>
+				                <th>블록체인 채널 - 주주명부</th>  
+				                <td>
+				                	<div>
+									    <label class="input_radio" for="rdoSolar3">
+									        <input type="radio" id="rdoSolar3" name="blockchain3" checked="">
+									        <span class="label_text">사용</span>
+									    </label>
+									    <label class="input_radio" for="rdoLunar3">
+									        <input type="radio" id="rdoLunar3" name="blockchain3">
+									        <span class="label_text">미사용</span>
+									    </label>
+									</div>
+				                </td>
+				            </tr>
+				            <tr>
+				                <th>블록체인 채널 - DID</th>   
+				                <td>
+				                	<div>
+									    <label class="input_radio" for="rdoSolar4">
+									        <input type="radio" id="rdoSolar4" name="blockchain4" checked="">
+									        <span class="label_text">사용</span>
+									    </label>
+									    <label class="input_radio" for="rdoLunar4"> 
+									        <input type="radio" id="rdoLunar4" name="blockchain4">
+									        <span class="label_text">미사용</span>
+									    </label>
+									</div>
+				                </td>
+				            </tr>
+				        </tbody>
+				    </table>
+				</div>
+				 
+				<div class="submit_area">  
+					<button type="button" class="btn_md btn_blue">저장</button>
+				</div>
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+
+</body>
+</html>

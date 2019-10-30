@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - TAB</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../pub/mobile/css/common.css">
+<link rel="stylesheet" href="../pub/mobile/css/vendor/jquery-ui.min.css">
+<script src="../pub/mobile/js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../pub/mobile/js/vendor/jquery-ui.min.js"></script>
+<script src="../pub/mobile/js/common.js"></script>
+<!-- //style -->
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(mobileSnb);
+		$('.g-nav-snb ul li').eq(2).addClass("active");
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">TAB</h2>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">middle</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<ul class="tab_md clearfix">
+								<li><a href="javascript:void(0);" class="on">전체</a></li>
+								<li><a href="javascript:void(0);">매도</a></li>
+								<li><a href="javascript:void(0);">매수</a></li>
+							</ul>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<ul class="tab_md clearfix">
+									<li><a href="javascript:void(0);" class="on">전체</a></li>
+									<li><a href="javascript:void(0);">매도</a></li>
+									<li><a href="javascript:void(0);">매수</a></li>
+								</ul>
+							</pre>
+							<p>CSS</p> 
+							<pre class="syntax brush:css">
+								.tab_md li{float:left; position: relative; padding: 0 15px;}
+								.tab_md li:first-child{padding-left: 0;}  
+								.tab_md li:before{content: ''; display: block; position: absolute; left: 0; top: 5px; width: 1px; height: 12px; background-color: #eee;}   
+								.tab_md li:first-child:before{display: none;}    
+								.tab_md a{display:block; height:29px; line-height: 20px; font-size:15px;color:#000;text-align:center;}
+								.tab_md a.on{border-bottom:2px solid #3348ae;font-weight:700;color:#3348ae !important;} 
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

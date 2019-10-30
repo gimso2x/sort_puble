@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - POPUP</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../pub/css/common.css">
+<link rel="stylesheet" href="../pub/css/vendor/jquery-ui.min.css">
+<script src="../pub/js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../pub/js/vendor/jquery-ui.min.js"></script>
+<script src="../pub/js/common.js"></script>
+<!-- //style -->
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(webSnb);
+		$('.g-nav-snb ul li').eq(10).addClass("active");
+
+
+		// ==== S: 챗팅 팝업 스크립트 ====
+		var chat_wrap = $('#pop_nego_chat');
+		var chat_content = $('#pop_nego_chat > div');
+		var chat_width = '';
+		var chat_height = '';
+		var openChat_offset = $('.btn_chatting').offset();
+		$(window).scroll(function() {
+			openChat_offset = $('.btn_chatting').offset();
+		})
+
+		$('.btn_chatting').click(function() {
+			chat_wrap.show();
+			chat_width = chat_content.outerWidth();
+			chat_height = chat_content.outerHeight();
+
+			chat_content.css({ top: 322, left: openChat_offset.left, width: 0, height: 0, opacity: 0, position: 'absolute', transform: 'translate(-50%,-50%)'});
+			
+
+			chat_content.animate({ top: '50%', left: '50%', width: chat_width, height: chat_height, opacity: 1 }, 300, "swing");
+			chat_content.draggable({ containment: "parent", scroll: false, start: function() {
+				chat_content.css('transform', '');
+			}});
+		});
+
+		$('#pop_nego_chat .pop_btn_close').on('click', function() {
+			chat_content.animate({ top: 322, left: openChat_offset.left, height: 0, width: 0, opacity: 0 }, 500, function () {
+				chat_wrap.hide();
+				chat_content.removeAttr('class style');
+			});
+		});
+		
+
+		// 탭 메뉴 스크립트
+		var $tabMenu = $('.tabs li a');
+		var $tabContent = $('.tab_contents');
+
+		$tabMenu.on('click', function(e) {
+			e.preventDefault();
+			var idx = $tabMenu.index(this);
+			
+			$(this).addClass('on').closest('li').siblings().children('a').removeClass('on');
+			$tabContent.eq(idx).addClass('on').siblings().removeClass('on');
+		});
+
+		// 채팅모달 팝업 우측 설정 및 계약서 작성 여닫기
+		$(document).on('click', function(e){
+			var $chat_room = $('#pop_nego_chat .chat_room');
+			var $chat_modal_config = $('#pop_nego_chat .chat_modal_config');
+			var $chat_modal_contract = $('#pop_nego_chat .chat_modal_contract');
+			var $element = $(e.target);
+
+			// 채팅방설정 여닫기
+			if ($element.hasClass('btn_chat_config')) {
+				$chat_room.removeClass('contract_on');
+				if (!$chat_room.hasClass('config_on')) {
+					$chat_room.addClass('config_on');
+				} else {
+					$chat_room.removeClass('config_on');
+				}
+			}
+			
+			// 채팅방설정 닫기
+			if ($element.hasClass('config_close')) {
+				$chat_room.removeClass('config_on');
+			}
+
+			// 계약서작성 열기
+			if ($element.hasClass('btn_chat_contract')) {
+				$chat_room.removeClass('config_on');
+				$chat_room.addClass('contract_on');
+			}
+
+			// 계약서작성 닫기
+			if ($element.hasClass('contract_close') || $element.hasClass('btn_cancle')) {
+				$chat_room.removeClass('contract_on');
+			}
+		});
+		// ==== E: 챗팅 팝업 스크립트 ====
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">POPUP</h2>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">채팅방팝업</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div id="footer" style="padding-top:0;">
+								<a href="javascript:void(0);" class="btn_chatting" style="position:relative;left:0;top:0;margin-left:0;"><span>협상채팅</span></a>
+							</div>
+								<!-- 채팅모달 -->
+								<div id="pop_nego_chat">
+									<div>
+										<div id="pop_header">
+											협상채팅
+											<button type="button" class="pop_btn_close">닫기</button>
+										</div>
+										<div id="pop_container">
+											<div class="chat_list">
+												<ul class="tabs">
+													<!-- [D] 활성화 탭은 a태그 class에 "on" 추가 -->
+													<li><a href="#tab1" class="on">진행</a></li>
+													<li><a href="#tab2">종료</a></li>
+													<li><a href="#tab3">요청</a></li>
+													<li><a href="#tab4">요청</a></li>
+												</ul>
+											
+												<ul id="tab1" class="tab_contents on">
+													<!-- [D] 활성화 채팅방은 li태그 class에 "on" 추가 -->
+													<li class="on">
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>뉴코에드윈드</dt>
+																<dd>6월 28일 14:44</dd>
+															</dl>
+														</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>에이오지히팅시스템에이오지히팅시스템</dt>
+																<dd>6월 28일 14:45</dd>
+															</dl>
+														</a>
+													</li>
+													<li class="notice_on">
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>모션블루1우</dt>
+																<dd>6월 28일 15:30</dd>
+															</dl>
+														</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>아우름플래닛</dt>
+																<dd>6월 28일 15:30</dd>
+															</dl>
+														</a>
+													</li>
+												</ul>
+												<ul id="tab2" class="tab_contents">
+													<li>
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>아우름플래닛</dt>
+																<dd>6월 28일 15:30</dd>
+															</dl>
+														</a>
+													</li>
+												</ul>
+												<ul id="tab3" class="tab_contents">
+													<li>
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>아우름플래닛</dt>
+																<dd>6월 28일 15:30</dd>
+															</dl>
+														</a>
+														<div class="tab_button_wrap">
+															<button type="button" class="btn_smalltype_gray">취소</button>
+															<button type="button" class="btn_smalltype_blue">재요청</button>
+														</div>
+													</li>
+												</ul>
+												<ul id="tab4" class="tab_contents">
+													<li>
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>아우름플래닛</dt>
+																<dd>6월 28일 15:30</dd>
+															</dl>
+														</a>
+														<div class="tab_button_wrap">
+															<button type="button" class="btn_smalltype_gray">거절</button>
+															<button type="button" class="btn_smalltype_blue">수락</button>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<!-- [D] 채팅방 설정이나, 계약서작성으로 화면이 줄어들경우 class "mini" 추가 -->
+											<div class="chat_room">
+												<div class="chat_title">
+													<span>뉴코에드윈드</span>
+													<button type="button" class="btn_chat_close">채팅방나가기</button>
+													<button type="button" class="btn_chat_config">채팅방설정</button>
+												</div>
+												<div class="chat_dealinfo">
+													<dl>
+														<dt>주문 수량</dt>
+														<dd><span>100</span>주</dd>
+													</dl>
+													<dl>
+														<dt>주당 가격</dt>
+														<dd><span>5,000</span>원</dd>
+													</dl>
+												</div>
+												<div class="chat_talk_wrap">
+													<div class="chat_date">2019년 6월 28일 금요일</div>
+													<div class="chat_info"><span>홍**</span>님과 <span>이**</span>님의 협상을 시작합니다.</div>
+													<!-- [D] 상대측 메시지-->
+													<div class="chat_msg_wrap">
+														<div class="chat_thumnail">이</div>
+														<dl>
+															<dt>이**</dt>
+															<dd class="msg_contents">안녕하세요?<br>뉴코에드윈드 100주만<br>23123<br>구입하고 싶습니다.</dd>
+															<dd class="msg_date">오전 11:40</dd>
+														</dl>
+													</div>
+
+													<!-- [D] 본인 메세지 my_chat 클래스 추가-->
+													<div class="chat_msg_wrap my_chat">
+														<dl>
+															<dd class="msg_contents">안녕하세요?</dd>
+															<dd class="msg_date">오전 11:40</dd>
+														</dl>
+													</div>
+
+													<!-- [D] 봇 메세지 bot 클래스 추가-->
+													<div class="chat_msg_wrap bot">
+														<div class="chat_thumnail">봇</div>
+														<dl>
+															<dd class="msg_contents">
+																<p>거래내역을 확인해 주세요.</p>
+																<ul>
+																	<li>
+																		<span>매도자</span><em>홍**</em>
+																	</li>
+																	<li>
+																		<span>매수자</span><em>이수영</em>
+																	</li>
+																	<li>
+																		<span>단가</span><em>5,000원</em>
+																	</li>
+																	<li>
+																		<span>주문수량</span><em>100주</em>
+																	</li>
+																	<li>
+																		<span>총금액</span><em>500,000원</em>
+																	</li>
+																	<li>
+																		<span>결재마감일</span><em>2019년 6월 15일</em>
+																	</li>
+																</ul>
+																<div class="botbutton_wrap1">
+																	<button type="button" class="btn_contract_view">계약서 보기</button>
+																</div>
+																<p>거래확인 버튼을 누르면 계약을 위한 전자서명이 진행됩니다.</p>
+																<div class="botbutton_wrap2">
+																	<button type="button" class="btn_bot_cancle">취소</button>
+																	<button type="button" class="btn_bot_confirm">확인</button>
+																</div>
+															</dd>
+															<dd class="msg_date">오전 11:40</dd>
+														</dl>
+													</div>
+
+													<div class="chat_msg_wrap bot">
+														<div class="chat_thumnail">봇</div>
+														<dl>
+															<dd class="msg_contents">
+																<p>계약을 위한 전자서명 방법을<br>선택해 주세요.<br>전자서명 후에는 취소가 불가합니다.</p>
+																<div class="botbutton_wrap3">
+																	<button type="button" class="btn_bot_sign">공인인증<br>전자서명</button>
+																	<button type="button" class="btn_bot_sign">DID<br>전자서명</button>
+																	<button type="button" class="btn_bot_cancle_long">취소</button>
+																</div>
+															</dd>
+															<dd class="msg_date">오전 11:40</dd>
+														</dl>
+													</div>
+												</div>
+												<div class="chat_contract">
+													<button type="button" class="btn_chat_contract">계약서 작성</button>
+												</div>
+												<div class="chat_input">
+													<div class="chat_fileupload_wrap">
+														<input type="file" id="chat_fileupload">
+														<label for="chat_fileupload"></label>
+													</div>
+													<textarea class="chat_textarea"></textarea>
+													<button type="button" class="chat_send">전송</button>
+												</div>
+											</div>
+											<!-- 대화방설정 모달 -->
+											<div class="chat_modal_config">
+												<div class="config_header">
+													대화방설정
+													<button type="button" class="config_close">대화방설정 닫기</button>
+												</div>
+												<ul>
+													<li>
+														<div class="chat_thumbnail color_type1">나</div>
+														<span>홍길동</span>
+													</li>
+													<li>
+														<div class="chat_thumbnail color_type2">이</div>
+														<span>이**</span>
+													</li>
+												</ul>
+												<div class="close_btn_wrap">
+													<button type="button" class="btn_chat_close2">대화방 나가기</button>
+												</div>
+											</div>
+
+											<!-- 계약서작성 모달 -->
+											<div class="chat_modal_contract">
+												<div class="contract_header">
+													계약서 작성
+													<button type="button" class="contract_close">계약서 작성 닫기</button>
+												</div>
+												<div class="contract_prev">
+													직전 체결가: <span>4,900</span> 원
+												</div>
+												<div class="contract_deal">
+													<p>협상내역을 입력해 주세요</p>
+													<dl>
+														<dt>수량</dt>
+														<dd>
+															<input type="text" value="1,000,000"><span>주</span>
+														</dd>
+														<dt>가격<span>(1주당)</span></dt>
+														<dd>
+															<input type="text" value="5,000"><span>원</span>
+														</dd>
+														<dt>결제마감일</dt>
+														<dd>
+															<input type="text" value="2019.07.30" class="datepicker"><i>캘린더</i>
+														</dd>
+													</dl>
+													<p>확인 버튼을 누르면<br>거래내역이 상대방에게<br>전송됩니다.</p>
+												</div>
+												<div class="contract_button_wrap">
+													<button type="button" class="btn_cancle">취소</button>
+													<button type="button" class="btn_confirm">확인</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- // 채팅모달 -->
+
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<!-- 채팅모달 -->
+								<div id="pop_nego_chat">
+									<div>
+										<div id="pop_header">
+											협상채팅
+											<button type="button" class="pop_btn_close">닫기</button>
+										</div>
+										<div id="pop_container">
+											<div class="chat_list">
+												<ul class="tabs">
+													<!-- [D] 활성화 탭은 a태그 class에 "on" 추가 -->
+													<li><a href="#tab1" class="on">진행</a></li>
+													<li><a href="#tab2">종료</a></li>
+													<li><a href="#tab3">요청</a></li>
+													<li><a href="#tab4">요청</a></li>
+												</ul>
+											
+												<ul id="tab1" class="tab_contents on">
+													<!-- [D] 활성화 채팅방은 li태그 class에 "on" 추가 -->
+													<li class="on">
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>뉴코에드윈드</dt>
+																<dd>6월 28일 14:44</dd>
+															</dl>
+														</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>에이오지히팅시스템에이오지히팅시스템</dt>
+																<dd>6월 28일 14:45</dd>
+															</dl>
+														</a>
+													</li>
+													<li class="notice_on">
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>모션블루1우</dt>
+																<dd>6월 28일 15:30</dd>
+															</dl>
+														</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>아우름플래닛</dt>
+																<dd>6월 28일 15:30</dd>
+															</dl>
+														</a>
+													</li>
+												</ul>
+												<ul id="tab2" class="tab_contents">
+													<li>
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>아우름플래닛</dt>
+																<dd>6월 28일 15:30</dd>
+															</dl>
+														</a>
+													</li>
+												</ul>
+												<ul id="tab3" class="tab_contents">
+													<li>
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>아우름플래닛</dt>
+																<dd>6월 28일 15:30</dd>
+															</dl>
+														</a>
+														<div class="tab_button_wrap">
+															<button type="button" class="btn_smalltype_gray">취소</button>
+															<button type="button" class="btn_smalltype_blue">재요청</button>
+														</div>
+													</li>
+												</ul>
+												<ul id="tab4" class="tab_contents">
+													<li>
+														<a href="javascript:void(0);">
+															<dl>
+																<dt>아우름플래닛</dt>
+																<dd>6월 28일 15:30</dd>
+															</dl>
+														</a>
+														<div class="tab_button_wrap">
+															<button type="button" class="btn_smalltype_gray">거절</button>
+															<button type="button" class="btn_smalltype_blue">수락</button>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<!-- [D] 채팅방 설정이나, 계약서작성으로 화면이 줄어들경우 class "mini" 추가 -->
+											<div class="chat_room">
+												<div class="chat_title">
+													<span>뉴코에드윈드</span>
+													<button type="button" class="btn_chat_close">채팅방나가기</button>
+													<button type="button" class="btn_chat_config">채팅방설정</button>
+												</div>
+												<div class="chat_dealinfo">
+													<dl>
+														<dt>주문 수량</dt>
+														<dd><span>100</span>주</dd>
+													</dl>
+													<dl>
+														<dt>주당 가격</dt>
+														<dd><span>5,000</span>원</dd>
+													</dl>
+												</div>
+												<div class="chat_talk_wrap">
+													<div class="chat_date">2019년 6월 28일 금요일</div>
+													<div class="chat_info"><span>홍**</span>님과 <span>이**</span>님의 협상을 시작합니다.</div>
+													<!-- [D] 상대측 메시지-->
+													<div class="chat_msg_wrap">
+														<div class="chat_thumnail">이</div>
+														<dl>
+															<dt>이**</dt>
+															<dd class="msg_contents">안녕하세요?<br>뉴코에드윈드 100주만<br>23123<br>구입하고 싶습니다.</dd>
+															<dd class="msg_date">오전 11:40</dd>
+														</dl>
+													</div>
+
+													<!-- [D] 본인 메세지 my_chat 클래스 추가-->
+													<div class="chat_msg_wrap my_chat">
+														<dl>
+															<dd class="msg_contents">안녕하세요?</dd>
+															<dd class="msg_date">오전 11:40</dd>
+														</dl>
+													</div>
+
+													<!-- [D] 봇 메세지 bot 클래스 추가-->
+													<div class="chat_msg_wrap bot">
+														<div class="chat_thumnail">봇</div>
+														<dl>
+															<dd class="msg_contents">
+																<p>거래내역을 확인해 주세요.</p>
+																<ul>
+																	<li>
+																		<span>매도자</span><em>홍**</em>
+																	</li>
+																	<li>
+																		<span>매수자</span><em>이수영</em>
+																	</li>
+																	<li>
+																		<span>단가</span><em>5,000원</em>
+																	</li>
+																	<li>
+																		<span>주문수량</span><em>100주</em>
+																	</li>
+																	<li>
+																		<span>총금액</span><em>500,000원</em>
+																	</li>
+																	<li>
+																		<span>결재마감일</span><em>2019년 6월 15일</em>
+																	</li>
+																</ul>
+																<div class="botbutton_wrap1">
+																	<button type="button" class="btn_contract_view">계약서 보기</button>
+																</div>
+																<p>거래확인 버튼을 누르면 계약을 위한 전자서명이 진행됩니다.</p>
+																<div class="botbutton_wrap2">
+																	<button type="button" class="btn_bot_cancle">취소</button>
+																	<button type="button" class="btn_bot_confirm">확인</button>
+																</div>
+															</dd>
+															<dd class="msg_date">오전 11:40</dd>
+														</dl>
+													</div>
+
+													<div class="chat_msg_wrap bot">
+														<div class="chat_thumnail">봇</div>
+														<dl>
+															<dd class="msg_contents">
+																<p>계약을 위한 전자서명 방법을<br>선택해 주세요.<br>전자서명 후에는 취소가 불가합니다.</p>
+																<div class="botbutton_wrap3">
+																	<button type="button" class="btn_bot_sign">공인인증<br>전자서명</button>
+																	<button type="button" class="btn_bot_sign">DID<br>전자서명</button>
+																	<button type="button" class="btn_bot_cancle_long">취소</button>
+																</div>
+															</dd>
+															<dd class="msg_date">오전 11:40</dd>
+														</dl>
+													</div>
+												</div>
+												<div class="chat_contract">
+													<button type="button" class="btn_chat_contract">계약서 작성</button>
+												</div>
+												<div class="chat_input">
+													<div class="chat_fileupload_wrap">
+														<input type="file" id="chat_fileupload">
+														<label for="chat_fileupload"></label>
+													</div>
+													<textarea class="chat_textarea"></textarea>
+													<button type="button" class="chat_send">전송</button>
+												</div>
+											</div>
+											<!-- 대화방설정 모달 -->
+											<div class="chat_modal_config">
+												<div class="config_header">
+													대화방설정
+													<button type="button" class="config_close">대화방설정 닫기</button>
+												</div>
+												<ul>
+													<li>
+														<div class="chat_thumbnail color_type1">나</div>
+														<span>홍길동</span>
+													</li>
+													<li>
+														<div class="chat_thumbnail color_type2">이</div>
+														<span>이**</span>
+													</li>
+												</ul>
+												<div class="close_btn_wrap">
+													<button type="button" class="btn_chat_close2">대화방 나가기</button>
+												</div>
+											</div>
+
+											<!-- 계약서작성 모달 -->
+											<div class="chat_modal_contract">
+												<div class="contract_header">
+													계약서 작성
+													<button type="button" class="contract_close">계약서 작성 닫기</button>
+												</div>
+												<div class="contract_prev">
+													직전 체결가: <span>4,900</span> 원
+												</div>
+												<div class="contract_deal">
+													<p>협상내역을 입력해 주세요</p>
+													<dl>
+														<dt>수량</dt>
+														<dd>
+															<input type="text" value="1,000,000"><span>주</span>
+														</dd>
+														<dt>가격<span>(1주당)</span></dt>
+														<dd>
+															<input type="text" value="5,000"><span>원</span>
+														</dd>
+														<dt>결제마감일</dt>
+														<dd>
+															<input type="text" value="2019.07.30" class="datepicker"><i>캘린더</i>
+														</dd>
+													</dl>
+													<p>확인 버튼을 누르면<br>거래내역이 상대방에게<br>전송됩니다.</p>
+												</div>
+												<div class="contract_button_wrap">
+													<button type="button" class="btn_cancle">취소</button>
+													<button type="button" class="btn_confirm">확인</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- // 채팅모달 -->
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								/* 레이어팝업 pop_nego_chat */
+								#pop_nego_chat #pop_wrap{width:730px;border:1px solid #000725;}
+								#pop_nego_chat #pop_header{position:relative;height:40px;padding:9px 16px 7px;background:#000826;font-size:16px;font-weight:700;color:#fff; line-height:20px}
+								#pop_nego_chat #pop_header .pop_btn_close {position:absolute;top:14px;right:18px;width:15px;height:15px;border:0;background:url(../img/btn_pop_close.png) no-repeat 50%;font-size:0;text-indent:-9999px;cursor:pointer;}
+								#pop_nego_chat #pop_container::after{content:'';display:block;clear:both;}
+								#pop_nego_chat .chat_list, #pop_nego_chat .chat_room, #pop_nego_chat .chat_modal_config, #pop_nego_chat .chat_modal_contract{height:600px;}
+								/* 레이어팝업 pop_nego_chat - 채팅방리스트 */
+								#pop_nego_chat .chat_list{float:left;width:190px;border-right:1px solid #c3cad4;}
+								#pop_nego_chat .chat_list .tabs{position:relative;z-index:2;padding:10px;box-shadow:0 1px 3px 0 rgba(0, 0, 0, 0.16);}
+								#pop_nego_chat .chat_list .tabs::after{content:'';display:block;clear:both;}
+								#pop_nego_chat .chat_list .tabs li{float:left;width:25%;text-align:center;}
+								#pop_nego_chat .chat_list .tabs li a{position:relative;display:inline-block;padding:0 8px;font-size:14px;color:#555;line-height:20px;}
+								#pop_nego_chat .chat_list .tabs li a.on{color:#000;}
+								#pop_nego_chat .chat_list .tabs li a.on::after{content:'';position:absolute;left:0;bottom:-10px;width:100%;height:4px;background:#000;}
+								#pop_nego_chat .chat_list .tabs li:nth-child(3) a, #pop_nego_chat  .chat_list .tabs li:nth-child(4) a{padding-left:0;padding-right:8px;}
+								#pop_nego_chat .chat_list .tabs li:nth-child(3) a{background:url(../img/ico_request_in.png) no-repeat 100% 50% / 9px 8px;}
+								#pop_nego_chat .chat_list .tabs li:nth-child(4) a{background:url(../img/ico_request_out.png) no-repeat 100% 50% / 9px 8px;}
+								#pop_nego_chat .chat_list .tab_contents{overflow-y:auto;height:559px;}
+								#pop_nego_chat .chat_list .tab_contents li{position:relative;border-bottom:1px solid #e8eaec;}
+								#pop_nego_chat .chat_list .tab_contents li.on{background:#eff3f8;}
+								#pop_nego_chat .chat_list .tab_contents li.notice_on::after{content:'';position:absolute;top:50%;right:12px;display:inline-block;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:#e8055a;}
+								#pop_nego_chat .chat_list .tab_contents li .tab_button_wrap{position:absolute;top:0;right:0;width:56px;padding:5px 4px 5px 0;}
+								#pop_nego_chat .chat_list .tab_contents li .tab_button_wrap button:first-child{margin-bottom:5px;}
+								#pop_nego_chat .chat_list .tab_contents dl{display:inline-block;width:130px;padding:8px 0 8px 14px;margin:0;}
+								#pop_nego_chat .chat_list .tab_contents dt{overflow:hidden;font-size:14px;color:#000;line-height:20px;text-overflow:ellipsis;word-break:keep-all;}
+								#pop_nego_chat .chat_list .tab_contents dd{margin-left:0;font-size:12px;color:#757575;line-height:20px;}
+								/* 레이어팝업 pop_nego_chat - 채팅방대화 */
+								#pop_nego_chat .chat_room{float:left;position:relative;width:538px;background:#eff3f8;-webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;}
+								#pop_nego_chat .chat_room.config_on, #pop_nego_chat .chat_room.contract_on{width:360px;}
+								#pop_nego_chat .chat_room.config_on ~ .chat_modal_config, #pop_nego_chat .chat_room.contract_on ~ .chat_modal_contract{display:block;opacity:1;}
+								#pop_nego_chat .chat_room.config_on .chat_talk_wrap .chat_date::before, #pop_nego_chat .chat_room.config_on .chat_talk_wrap .chat_date::after,
+								#pop_nego_chat .chat_room.contract_on .chat_talk_wrap .chat_date::before, #pop_nego_chat .chat_room.contract_on .chat_talk_wrap .chat_date::after{width:85px;}
+								#pop_nego_chat .chat_room .chat_title{position:relative;z-index:2;padding:10px 15px;box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16);background:#fff;font-size:16px;font-weight:700;color:#000;line-height:20px;}
+								#pop_nego_chat .chat_room .chat_title .btn_chat_close{position:absolute;top:50%;right:33px;transform:translateY(-50%);}
+								#pop_nego_chat .chat_room .chat_title .btn_chat_config{position:absolute;top:50%;right:13px;transform:translateY(-50%);}
+								#pop_nego_chat .chat_room .chat_dealinfo{position:relative;padding:10px 15px;background:#fff;}
+								#pop_nego_chat .chat_room .chat_dealinfo dl,#pop_nego_chat .chat_room .chat_dealinfo dt,#pop_nego_chat .chat_room .chat_dealinfo dd{display:inline-block;vertical-align:middle;}
+								#pop_nego_chat .chat_room .chat_dealinfo dl{font-size:0;}
+								#pop_nego_chat .chat_room .chat_dealinfo dt{margin-right:11px;font-size:13px;color:#757575;line-height:20px;letter-spacing:-0.33px;}
+								#pop_nego_chat .chat_room .chat_dealinfo dd{margin-left:0;font-size:15px;font-weight:700;color:#000;line-height:20px;letter-spacing:-0.38px;}
+								#pop_nego_chat .chat_room .chat_dealinfo dl:nth-child(2){position:absolute;top:10px;right:15px;}
+								#pop_nego_chat .chat_room .chat_dealinfo dl:nth-child(2) dd{color:#001372;}
+								#pop_nego_chat .chat_room .chat_talk_wrap{overflow-y:auto;height:431px;padding:13px 11px 10px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap > div{margin-top:13px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap > div:nth-child(1){margin-top:0;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_date{position:relative;font-size:13px;line-height:19px;color:#444;text-align:center;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_date::before, #pop_nego_chat .chat_room .chat_talk_wrap .chat_date::after{content:'';display:block;position:absolute;top:0;left:0;width:175px;height:22px;background:url(../img/img_chat_dateline.png) no-repeat 0 50%;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_date::after{left:auto !important;right:0;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_info{font-size:13px;color:#000;line-height:20px;letter-spacing:-0.33px;text-align:center;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap{font-size:0;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap:last-child{margin-bottom:10px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap + .chat_msg_wrap{margin-top:20px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap .chat_thumnail{display:inline-block;width:38px;height:38px;margin-top:9px;border:1px solid #e5e5e5;border-radius:50%;background:#038085;font-size:16px;color:#fff;line-height:36px;letter-spacing:-0.4px;text-align:center;vertical-align:top;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap dl{position:relative;display:inline-block;width:273px;margin-left:9px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap dl::after{content:'';position:absolute;top:30px;left:-8px;display:inline-block;width:8px;height:7px;background:url(../img/img_chat_ballon1.png) no-repeat;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap dt{margin-bottom:2px;font-size:12px;color:#666;line-height:20px;letter-spacing:-0.3px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap dd{display:inline-block;margin-left:0;font-size:0;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap .msg_contents{padding:6px 13px;border-radius:5px;box-shadow: 0 2px 3px 0 rgba(21, 35, 67, 0.16);background:#fff;width:226px;font-size:14px;color:#000;line-height:20px;letter-spacing:-0.35px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap .msg_date{position:absolute;bottom:0;right:-5px;font-size:10px;color:#666;line-height:20px;letter-spacing:-0.23px;vertical-align:bottom;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.my_chat{text-align:right;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.my_chat .chat_thumnail{display:none;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.my_chat dl::after{top:10px;left:auto !important;right:-8px;background-image:url(../img/img_chat_ballon2.png);}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.my_chat dt{display:none;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.my_chat .msg_contents{text-align:left;background:#ffe4d2;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.my_chat .msg_date{left:-5px;right:auto;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .chat_thumnail{background:#18203b;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot dt{display:none;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents p{font-size:14px;color:#000;line-height:20px;letter-spacing:-0.35px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents ul{margin-bottom:15px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents li{border-bottom:1px solid rgba(21,35,67,0.16);}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents li::after{content:'';display:block;clear:both;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents li span{font-size:14px;color:#555;line-height:30px;letter-spacing:-0.35px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents li em{float:right;font-size:14px;color:#000;line-height:30px;letter-spacing:-0.35px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents .botbutton_wrap1{text-align:center;margin-bottom:12px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents .botbutton_wrap2{margin-top:24px;margin-bottom:9px;text-align:center;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents .botbutton_wrap2 button:nth-child(1){margin-right:3px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents .botbutton_wrap2 button:nth-child(2){margin-left:3px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents .botbutton_wrap3{margin-top:15px;margin-bottom:8px;text-align:center;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents .botbutton_wrap3 button:nth-child(1){margin-right:3px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents .botbutton_wrap3 button:nth-child(2){margin-left:3px;}
+								#pop_nego_chat .chat_room .chat_talk_wrap .chat_msg_wrap.bot .msg_contents .botbutton_wrap3 .btn_bot_cancle_long{width:100%;margin-top:11px;}
+								#pop_nego_chat .chat_room .chat_contract{position:absolute;bottom:60px;width:100%;text-align:center;}
+								#pop_nego_chat .chat_room .chat_input{position:absolute;bottom:0;width:100%;height:50px;box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16);}
+								#pop_nego_chat .chat_room .chat_input .chat_fileupload_wrap{position:absolute;top:10px;left:8px;}
+								#pop_nego_chat .chat_room .chat_input .chat_fileupload_wrap #chat_fileupload{position: absolute;overflow: hidden;opacity: 0;width: 1px;height: 1px;padding: 0;margin: -1px;border: 0;}
+								#pop_nego_chat .chat_room .chat_input .chat_fileupload_wrap label{display:inline-block;width:34px;height:34px;border-radius:50%;background:#e5e5e5 url(../img/img_chat_fileupload.png) no-repeat 50%;cursor:pointer;}
+								#pop_nego_chat .chat_room .chat_input .chat_fileupload_wrap #chat_fileupload:focus + label{outline:1px dotted;outline-color: #a6c7ff;outline:-webkit-focus-ring-color auto 5px;}
+								#pop_nego_chat .chat_room .chat_input .chat_textarea{overflow:hidden;resize: none;width:100%;height:50px;padding:5px 55px 5px 49px;border:0;font-size:14px;color:#000;line-height:20px;}
+								#pop_nego_chat .chat_room .chat_input .chat_send{position:absolute;top:9px;right:14px;display:inline-block;width:35px;height:35px;border:0;border-top-right-radius:5px;border-bottom-left-radius:5px;background:#3348ae url(../img/ico_chat_send.png) no-repeat center;font-size:0;text-indent:-9999px;cursor:pointer;}
+								#pop_nego_chat .chat_modal_config{display:none;position:absolute;left:550px;z-index:3;width:178px;padding:0 4px;box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);background:#fff;opacity:0;transition: 0.2s 0.2s;}
+								#pop_nego_chat .chat_modal_config .config_header{position:relative;padding:10px 17px;border-bottom:1px solid #e5e5e5;font-size:14px;line-height:20px;letter-spacing:-0.35px;}
+								#pop_nego_chat .chat_modal_config .config_header .config_close{position:absolute;top:50%;right:17px;display:inline-block;width:11px;height:11px;margin-top:-5px;border:0;background:url(../img/btn_chatconfig_close.png) no-repeat;font-size:0;text-indent:-9999px;cursor:pointer;}
+								#pop_nego_chat .chat_modal_config ul{padding:10px 12px;border-bottom:1px solid #e5e5e5;}
+								#pop_nego_chat .chat_modal_config li{font-size:0;padding:5px 0;}
+								#pop_nego_chat .chat_modal_config li .chat_thumbnail{display:inline-block;width:32px;height:32px;margin-right:10px;border:1px solid #777676;border-radius:50%;font-size:15px;line-height:31px;text-align:center;vertical-align:middle;}
+								.color_type1{background:#ff5e21;color:#fff;}
+								.color_type2{background:#038085;color:#fff;}
+								#pop_nego_chat .chat_modal_config li span{overflow:hidden;display:inline-block;width:96px;font-size:13px;color:#555;vertical-align:middle;text-overflow:ellipsis;word-break:keep-all;}
+								#pop_nego_chat .chat_modal_config .close_btn_wrap{position:absolute;left:0;bottom:0;width:calc(100% - 8px);height:50px;padding:15px 17px;margin:0 4px;border-top:1px solid #e5e5e5;}
+								#pop_nego_chat .chat_modal_config .close_btn_wrap .btn_chat_close2{display:inline-block;padding-left:25px;border:none;background:url(../img/btn_chat_close.png) no-repeat;font-size:12px;color:#000;line-height:16px;letter-spacing:-0.3px;cursor:pointer;}
+								#pop_nego_chat .chat_modal_contract{display:none;position:absolute;left:550px;z-index:3;width:178px;box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);background:#fff;opacity:0;transition: 0.2s 0.2s;}
+								#pop_nego_chat .chat_modal_contract .contract_header{position:relative;width:100%;height:95px;padding-top:56px;background:#3348ae url(../img/ico_contract_write_lg.png) no-repeat 50% 33.2%;font-size:18px;color:#fff;line-height:20px;letter-spacing:-0.45px;text-align:center;}
+								#pop_nego_chat .chat_modal_contract .contract_header .contract_close{position:absolute;top:14px;right:15px;display:inline-block;width:12px;height:12px;border:0;background:url(../img/btn_contract_close.png) no-repeat 50%;font-size:0;text-indent:-9999px;cursor:pointer;}
+								#pop_nego_chat .chat_modal_contract .contract_prev{width:100%;height:35px;padding-left:8px;background:#354595 url(../img/ico_pointmark.png) no-repeat 6.3% 50%;font-size:13px;line-height:35px;color:#fff;letter-spacing:-0.33px;text-align:center;}
+								#pop_nego_chat .chat_modal_contract .contract_deal{width:100%;padding:16px 15px;}
+								#pop_nego_chat .chat_modal_contract .contract_deal p{font-size:14px;line-height:20px;color:#000;letter-spacing:-0.35px;}
+								#pop_nego_chat .chat_modal_contract .contract_deal p:nth-of-type(1){margin-bottom:17px;}
+								#pop_nego_chat .chat_modal_contract .contract_deal p:nth-of-type(2){color:#555;}
+								#pop_nego_chat .chat_modal_contract .contract_deal dl{margin:0 0 4px;}
+								#pop_nego_chat .chat_modal_contract .contract_deal dt{margin:0 0 8px;font-size:14px;color:#000;}
+								#pop_nego_chat .chat_modal_contract .contract_deal dd{height:39px;margin:0 0 12px;border-bottom:1px solid rgba(0, 8, 38, 0.3);font-size:0;}
+								#pop_nego_chat .chat_modal_contract .contract_deal dd input{width:126px;height:39px;padding-right:6px;border:0;background:rgba(229, 229, 229, 0.3);font-size:15px;font-weight:700;color:#3348ae;line-height:24px;text-align:right;vertical-align:middle;}
+								#pop_nego_chat .chat_modal_contract .contract_deal dd input::-ms-clear{display: none;}
+								#pop_nego_chat .chat_modal_contract .contract_deal dd:nth-of-type(3) input{color:#e8055a;}
+								#pop_nego_chat .chat_modal_contract .contract_deal dd span{margin-left:6px;font-size:15px;color:#000;line-height:24px;vertical-align:middle;}
+								#pop_nego_chat .chat_modal_contract .contract_deal dd i{display:inline-block;width:18px;height:19px;margin-left:2px;background:url(../img/ico_calendar.png) no-repeat 50%;font-size:0;text-indent:-9999px;vertical-align:middle;}
+								#pop_nego_chat .chat_modal_contract .contract_button_wrap{position:absolute;bottom:0;width:100%;}
+								#pop_nego_chat .chat_modal_contract .contract_button_wrap::after{content:'';display:block;clear:both;}
+								#pop_nego_chat .chat_modal_contract .contract_button_wrap button{float:left;width:50%;}
+							</pre>
+						</div>
+					</div>
+				</div>
+				<!-- //탭그룹 -->
+			</div>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

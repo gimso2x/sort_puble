@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+	<style>
+		@page {
+			margin: 0;
+			box-shadow: 0;
+		}
+
+	</style>
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<!-- 계약서 아미쿠스렉스 -->
+	<script src="../js/vendor/amicuslex-1.0.1.min.js"></script>
+</head>
+<body>
+
+<div id="print_wrap">
+	<div class="btn_wrap">
+		<button type="button" class="btn_md btn_blue" onclick="window.print();">인쇄</button>
+	</div>
+	<div id="amicus_contract"></div>
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+<!-- 아미쿠스렉스 -->
+<script>
+	(function() {
+		var result = Amicuslex.get_html(100, {
+			"seller_name" 			: "seller_name",
+			"seller_birthday" 		: "seller_birthday",
+			"seller_ssn" 			: "1234567",
+			"seller_address" 		: "서울시 서대문구 연희동 305번지 201호",
+			"buyer_name" 			: "buyer_name",
+			"buyer_birthday" 		: "buyer_birthday",
+			"buyer_ssn" 			: "7654321",
+			"buyer_address" 		: "서울시 강남구 역삼동 499-1번지 101호",
+			"company_name" 			: "company_name",
+			"company_address" 		: "company_address",
+			"stock_quantity" 		: "stock_quantity",
+			"stock_price" 			: "stock_price",
+			"total_cost"			: "20,0000,000",
+			"bank_name" 			: "우리은행",
+			"bank_account_number" 	: "1000-121-123123",
+			"transaction_end_date"	: "2019년 08월 21일 15:30",
+			"contract_date" 		: "2019 . 08 . 02"
+		});
+
+		if (result["code"] == 200) {
+			document.getElementById("amicus_contract").innerHTML = result["html"];
+		} else {
+			alert(result["code"] + " " + result["msg"]);
+		}
+	})();
+</script>
+
+</body>
+</html>

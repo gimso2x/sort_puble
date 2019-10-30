@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>통계 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">Analytics 연동</a></li>
+				<li>
+					<a href="javascript:void(0);">집계 현황</a>
+					<ul> 
+						<li><a href="javascript:void(0);" class="active">종합 집계</a></li>
+						<li><a href="javascript:void(0);">주문/체결 내역</a></li>
+						<li><a href="javascript:void(0);">주문 내역</a></li>
+						<li><a href="javascript:void(0);">계약 내역</a></li>
+						<li><a href="javascript:void(0);">진행 현황</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>종합 집계</h4> 
+				<div class="group_srch">
+					<table class="tb_srch"> 
+						<colgroup>
+							<col width="130">
+							<col width="*">
+						</colgroup>  
+						<tbody>  
+							<tr>
+								<th>기간</th>  
+								<td class="srch_area al">
+									<ul class="datepicker_searchwrap clearfix"> 
+									 	<li><input type="text" class="datepicker form_control"></li> 
+									 	<li class="datepicker_connect">~</li> 
+									 	<li><input type="text" class="datepicker form_control"></li> 
+									 </ul>  
+									 <div class="date_btn_wrap"> 
+									 	<!-- [D] 활성화 버튼은 'on' 추가 -->
+									 	<button type="button" class="btn_term_select on">오늘</button>
+									 	<button type="button" class="btn_term_select">1주</button>
+									 	<button type="button" class="btn_term_select">1달</button>
+									 	<button type="button" class="btn_term_select">3달</button>
+									 	<button type="button" class="btn_term_select">6달</button>
+									 	<button type="button" class="btn_term_select">1년</button>
+									 </div> 
+									 <button type="button" class="btn_sm btn_srch">검색</button>  
+								</td>  
+							</tr>
+						</tbody>
+					</table>
+				</div>	<!-- // group_search --> 
+ 				
+				<div class="ar mt30"> 
+					<button type="button" class="btn_sm btn_blue">엑셀다운로드</button>
+				</div> 
+
+				<h5 class="mt30 clearfix">
+					<p class="fl">거래 현황</p> 
+					<p class="fr txt_unit mt10">(단위 : 건, 원, 주)</p>
+				</h5>
+				<div class="companyinfo_table th_vertical mt10">
+				    <table> 
+				        <caption class="sr_only">거래 현황 상세</caption>
+				        <colgroup>
+				            <col width="*">
+				            <col width="9%">  
+				            <col width="7%">
+				            <col width="4%"> 
+				            <col width="9%">
+				            <col width="7%"> 
+				            <col width="4%">
+				            <col width="9%">
+				            <col width="7%">
+				            <col width="4%">
+				            <col width="9%">
+				            <col width="7%">
+				            <col width="4%">
+				            <col width="9%">
+				            <col width="7%">  
+				        </colgroup>
+				        <thead>
+				            <tr>
+				                <th colspan="3">신규주문</th>
+				                <th colspan="3">신규협상</th>
+				                <th colspan="3">신규계약</th>
+				                <th colspan="3">계약취소</th>
+				                <th colspan="3">명의개서</th>
+				            </tr>
+				            <tr>
+				            	<th>건수</th>
+				            	<th>금액(원)</th>
+				            	<th>수량(주)</th>
+				            	<th>건수</th>
+				            	<th>금액(원)</th>
+				            	<th>수량(주)</th>
+				            	<th>건수</th>
+				            	<th>금액(원)</th>
+				            	<th>수량(주)</th>
+				            	<th>건수</th>
+				            	<th>금액(원)</th>
+				            	<th>수량(주)</th>
+				            	<th>건수</th>
+				            	<th>금액(원)</th>
+				            	<th>수량(주)</th>
+				            </tr>
+				        </thead>
+				        <tbody>
+				        	<!-- <tr>   
+				                <td colspan="15" class="blank_area type_white">
+				                	<p class="txt_blank">데이터가 없습니다.</p>
+				                </td>
+				            </tr> -->
+				            <tr> 
+				                <td>02</td>
+				                <td class="ar">1,000,000</td>
+				                <td class="ar">20,000</td>
+				                <td>02</td>
+				                <td class="ar">1,000,000</td>
+				                <td class="ar">20,000</td>
+				                <td>02</td>
+				                <td class="ar">1,000,000</td>
+				                <td class="ar">20,000</td>
+				                <td>02</td>
+				                <td class="ar">1,000,000</td>
+				                <td class="ar">20,000</td>
+				                <td>02</td>
+				                <td class="ar">1,000,000</td>
+				                <td class="ar">20,000</td> 
+				            </tr>
+				        </tbody>
+				    </table>
+				</div>
+
+				<h5 class="mt30 clearfix">
+					<p class="fl">회원 현황</p>
+					<p class="fr txt_unit mt10">(단위 : 명)</p>
+				</h5>
+				<div class="companyinfo_table th_vertical mt10">
+				    <table> 
+				        <caption class="sr_only">회원 현황 상세</caption>
+				        <colgroup>
+				            <col width="*">
+				            <col width="11.33%">
+				            <col width="11.33%">
+				            <col width="11.33%">
+				            <col width="11.33%">
+				            <col width="11.33%">
+				            <col width="11.33%">
+				            <col width="11.33%"> 
+				            <col width="11.33%"> 
+				        </colgroup>
+				        <thead> 
+				            <tr>
+				                <th colspan="3" rowspan="2">등록기업</th>
+				                <th colspan="6">투자자</th>
+				            </tr>
+				            <tr>
+				            	<th colspan="3">개인</th>
+				            	<th colspan="3">법인</th> 
+				            </tr> 
+				            <tr>
+				            	<th>신규</th>
+				            	<th>탈퇴</th>
+				            	<th>전체</th>
+				            	<th>신규</th>
+				            	<th>탈퇴</th>
+				            	<th>전체</th>
+				            	<th>신규</th>
+				            	<th>탈퇴</th>
+				            	<th>전체</th> 
+				            </tr> 
+				        </thead>
+				        <tbody>
+				        	<!-- <tr>   
+				                <td colspan="9" class="blank_area type_white">
+				                	<p class="txt_blank">데이터가 없습니다.</p>
+				                </td>
+				            </tr> -->
+				            <tr> 
+				                <td class="ar">0,000</td>
+				                <td class="ar">0,000</td>
+				                <td class="ar">0,000</td>
+				                <td class="ar">0,000</td>
+				                <td class="ar">0,000</td>
+				                <td class="ar">0,000</td>
+				                <td class="ar">0,000</td> 
+				                <td class="ar">0,000</td>
+				                <td class="ar">0,000</td>
+				            </tr>
+				        </tbody>
+				    </table>
+				</div>
+				 
+				<h5 class="mt30 clearfix">
+					<p class="fl">주주명부변경</p> 
+					<p class="fr txt_unit mt10">(단위 : 건)</p>    
+				</h5>
+				<div class="companyinfo_table th_vertical mt10">
+				    <table> 
+				        <caption class="sr_only">주주명부변경 상세</caption>
+				        <colgroup>
+				            <col width="*">
+				            <col width="25%">
+				            <col width="25%">
+				            <col width="25%">
+				        </colgroup> 
+				        <thead> 
+				            <tr>
+				            	<th>주주 변경</th>
+				            	<th>주소 변경</th>
+				            	<th>처분제한 변경</th>
+				            	<th>기업이벤트</th>
+				            </tr> 
+				        </thead>
+				        <tbody>
+				        	<!-- <tr>   
+				                <td colspan="4" class="blank_area type_white">
+				                	<p class="txt_blank">데이터가 없습니다.</p>
+				                </td>
+				            </tr> --> 
+				            <tr> 
+				                <td class="ar">0,000</td>
+				                <td class="ar">0,000</td>
+				                <td class="ar">0,000</td>
+				                <td class="ar">0,000</td>
+				            </tr>
+				        </tbody>
+				    </table>
+				</div>
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+
+</body>
+</html>

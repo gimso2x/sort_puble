@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="euc-k">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+	<link rel="stylesheet" href="../css/expert.css"> 
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script> 
+</head>
+<body>
+
+<div id="wrap_group" class="wrap_login"> 
+	
+	<h1 class="logo sr_only">BMU - BE MY UNICORN</h1>
+	<div class="group_login">
+		<form action="">
+			<fieldset> 
+				<legend class="sr_only">전문기관 로그인</legend>
+				<div class="box_outer">
+					<h2 class="title_area">전문기관 <span>로그인</span></h2>
+					<p class="txt_msg">플랫폼 업무 담당자와 협의하여 발급 받으신<br>아이디, 비밀번호로 로그인하여 주십시오.</p>
+					<label><input type="text" class="form_control" maxlength="" value="" placeholder="아이디"></label>
+					<label><input type="text" class="form_control" maxlength="" value="" placeholder="비밀번호"></label>
+					<button type="button" class="btn_lg btn_blue" onClick="$('#pop_id').neoModal();">로그인</button>
+					<p class="pw_area">
+						<label class="input_check">
+					        <input type="checkbox" id="" name="check1" checked="">
+					        <span class="label_text">아이디저장</span>
+					    </label>
+						<a href="javascript:void(0);" class="btn_pw" onClick="$('#pop_find_pw').neoModal();">비밀번호 찾기</a>
+					</p>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+				
+			
+	
+	<div id="pop_id" class="pop_dim_wrap pop_alert">
+	    <div class="pop_wrap">
+	        <button class="pop_btn_close">닫기</button>
+	        <div class="message_table">
+	            <div class="messageWrap">
+	                가입된 아이디를 찾을 수 없습니다.<br>아이디를 다시 확인하여 주십시오.
+	            </div>
+	        </div>
+	        <div class="button_wrap">
+				<button type="button" class="btn_pop_default btn_blue">확인</button>
+	        </div>
+	    </div>
+	</div>
+
+	<div id="pop_pw" class="pop_dim_wrap pop_alert">
+	    <div class="pop_wrap">
+	        <button class="pop_btn_close">닫기</button>
+	        <div class="message_table">
+	            <div class="messageWrap">
+	                비밀번호가 일치하지 않습니다<br>
+					비밀번호 확인 후 다시 시도해 주십시오
+	            </div>
+	        </div>
+	        <div class="button_wrap">
+				<button type="button" class="btn_pop_default btn_blue">확인</button>
+	        </div>
+	    </div>
+	</div>
+
+	<div id="pop_email" class="pop_dim_wrap pop_alert">
+	    <div class="pop_wrap">
+	        <button class="pop_btn_close">닫기</button>
+	        <div class="message_table">
+	            <div class="messageWrap">
+	                가입 시 입력하신 abcd@abcd.com 으로<br>
+					임시비밀번호 이메일을 발송하였습니다.
+	            </div>
+	        </div>
+	        <div class="button_wrap">
+				<button type="button" class="btn_pop_default btn_blue">확인</button>
+	        </div>
+	    </div>
+	</div>
+</div>
+
+<div id="pop_find_pw" class="pop_dim_wrap pop_alert pop_find_pw">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+        	<div class="messageWrap">
+	            등록된 e메일로 임시 비밀번호를 발송합니다.<br>아이디를 입력하시고 비밀번호 찾기를 클릭하세요.
+	            <label><input type="text" class="form_control mt20" maxlength="" value="" placeholder="아이디를 입력하세요"></label>
+	        </div>
+        </div>
+        <div class="button_wrap">
+            <button type="button" class="btn_pop_default btn_blue">비밀번호 찾기</button>
+        </div>
+    </div>
+</div> 
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="../js/vendo/analytics.js" async></script>
+
+</body>
+</html>

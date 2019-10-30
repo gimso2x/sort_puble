@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - POPUP</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../pub/css/common.css">
+<link rel="stylesheet" href="../pub/css/vendor/jquery-ui.min.css">
+<script src="../pub/js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../pub/js/vendor/jquery-ui.min.js"></script>
+<script src="../pub/js/common.js"></script>
+<!-- //style -->
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+
+<!--PQ Grid files-->
+<link rel="stylesheet" href="../pub/css/vendor/pqgrid.min.css" />
+<link rel="stylesheet" href="../pub/css/vendor/pqgrid.ui.min.css" />
+<!--bootstrap theme-->
+<link rel='stylesheet' href='../pub/css/vendor/themes/bootstrap/pqgrid.css' />  
+
+<script src="../pub/js/vendor/pqgrid.min.js"></script>
+<!--for localization and intellisense -->
+<script src="../pub/js/vendor/localize/pq-localize-en.js"></script>
+<!--for touch devices-->
+<script src="../pub/js/vendor/pqTouch/pqtouch.min.js"></script>
+<!--jsZip for zip and xlsx import/export-->
+<script src="../pub/js/vendor/jsZip-2.5.0/jszip.min.js"></script>
+
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(webSnb);
+		$('.g-nav-snb ul li').eq(10).addClass("active");
+	}); 
+</script> 
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">ParamQuery Grid</h2>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">Table Type Default</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="pqgrid_default"></div>
+
+							<script>
+								$(function () {
+								    var data = [
+								        { rank: 1, company: 'Exxon Mobil', revenues: 339938.0, profits: 36130.0 },
+								        { rank: 2, company: 'Wal-Mart Stores', revenues: 315654.0, profits: 11231.0 },
+								        { rank: 3, company: 'Royal Dutch Shell', revenues: 306731.0, profits: 25311.0 },
+								        { rank: 4, company: 'BP', revenues: 267600.0, profits: 22341.0 },
+								        { rank: 5, company: 'General Motors', revenues: 192604.0, profits: -10567.0 },
+								        { rank: 6, company: 'Chevron', revenues: 189481.0, profits: 14099.0 },
+								        { rank: 7, company: 'DaimlerChrysler', revenues: 186106.3, profits: 3536.3 },
+								        { rank: 8, company: 'Toyota Motor', revenues: 185805.0, profits: 12119.6 },
+								        { rank: 9, company: 'Ford Motor', revenues: 177210.0, profits: 2024.0 },
+								        { rank: 10, company: 'ConocoPhillips', revenues: 166683.0, profits: 13529.0 },
+								        { rank: 11, company: 'General Electric', revenues: 157153.0, profits: 16353.0 },
+								        { rank: 12, company: 'Total', revenues: 152360.7, profits: 15250.0 },
+								        { rank: 13, company: 'ING Group', revenues: 138235.3, profits: 8958.9 },
+								        { rank: 14, company: 'Citigroup', revenues: 131045.0, profits: 24589.0 },
+								        { rank: 15, company: 'AXA', revenues: 129839.2, profits: 5186.5 },
+								    ];
+								    
+								    var obj = {
+								        numberCell:{resizable:true,title:"#",width:30,minWidth:30},
+								        editor: {type: 'textbox'},
+								        title: "ParamQuery Grid with JSON Data",
+								        resizable:true,
+								        menuIcon: true,
+								        scrollModel:{autoFit:true}
+								    };
+								    obj.colModel = [
+								        { title: "Rank", width: 100, dataType: "integer", dataIndx: "rank" },
+								        { title: "Company", width: 200, dataType: "string", dataIndx: "company" },
+								        { title: "Revenues ($ millions)", width: 150, dataType: "float", format: '$#,###.00', dataIndx: "revenues" },
+								        { title: "Profits ($ millions)", width: 150, dataType: "float", format: '$#,###.00', dataIndx: "profits" }
+								    ];
+								    // obj.dataModel = { data: data };
+								    obj.dataModel = { 
+								    	data: data,
+								    	sortIndx: 1,
+								    	sortDir: "up"
+								    };
+								    $(".pqgrid_default").pqGrid(obj); 
+									$(".pqgrid_default").pqGrid( "addClass", {rowIndx: 2, dataIndx: 'rank', cls: 'pq-delete'} );
+								});
+							</script> 
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								
+							</pre>
+							<p>SCRIPT</p>
+							<pre class="syntax brush:css">
+								
+							</pre>
+						</div>
+					</div>
+				</div>
+				<!-- //탭그룹 -->
+			</div>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">Table Type1 : col, row fixed</h3>   
+				<div class="tab-wrap g-tab-sample ui-tab"> 
+					<div class="tab-content"> 
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="pqgrid_type1"></div>
+
+							<!-- 주소검색 -->
+							<div id="pop_address_find" class="pop_dim_wrap pop_modal pop_md">
+								<div class="pop_wrap">
+									<button class="pop_btn_close">닫기</button>
+									<div class="title_wrap">
+										주소검색
+									</div>
+									<div class="contents_wrap">
+										<div>
+											<table>
+												<caption>주소검색 - 주소, 우편번호, 선택주소, 상세주소</caption>	
+												<tbody>
+													<tr>
+														<td colspan="2">
+															<div class="td_col2">
+																<div>
+																	<input type="text" class="form_control" maxlength="">
+																</div>
+																<div>
+																	<button type="button" class="btn_sm btn_darkblue">검색</button>
+																</div>
+															</div>
+															<p>
+																※ 지역명(지번주소): 동/읍/면/리 (예: 여의도동 3210, 역삼동 912, 화도읍)
+															</p>
+															<p>
+																※ 도로명주소(새주소):도로명 + 건물명 (예: 국제금융10, 상도로)
+															</p>
+															<ul class="address_result">
+																<li>
+																	<a href="javascript:void(0)">여의도동 3210</a>
+																</li>
+																<li>
+																	<a href="javascript:void(0)">여의도동 3210</a>
+																</li>
+																<li>
+																	<a href="javascript:void(0)">여의도동 3210</a>
+																</li>
+																<li>
+																	<a href="javascript:void(0)">여의도동 3210</a>
+																</li>
+																<li>
+																	<a href="javascript:void(0)">여의도동 3210</a>
+																</li>
+															</ul>
+														</td>
+													</tr>
+													<tr class="address_detail">
+														<th><label for="post_num">우편번호</label></th>
+														<td><input type="text" id="post_num" class="form_control form_sm" maxlength=""></td>
+													</tr>
+													<tr class="address_detail">
+														<th><label for="select_addr">선택주소</label></th>
+														<td><input type="text" id="select_addr" class="form_control" maxlength=""></td>
+													</tr>
+													<tr class="address_detail">
+														<th><label for="detail_addr">상세주소</label></th>
+														<td><input type="text" id="detail_addr" class="form_control" maxlength=""></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="button_wrap">
+										<button type="button" class="btn_md btn_blue" onclick="$('#pop_address_find').neoModal('close');">완료</button>
+									</div>
+								</div>
+							</div>
+				
+							<script>
+								$(function () {
+									
+								    var data = [
+								        { rank: 1, company: 'Exxon Mobil', address: '서울특별시 여의도동 25-11',revenues: 339938.0, profits: 36130.0 },
+								        { rank: 2, company: '기업정보', address: '서울특별시 여의도동 25-11',revenues: 315654.0, profits: 11231.0 },
+								        { rank: 3, company: 'Royal Dutch Shell', address: '서울특별시 여의도동 25-11',revenues: 306731.0, profits: 25311.0 },
+								        { rank: 4, company: 'BP', address: '서울특별시 여의도동 25-11',revenues: 267600.0, profits: 22341.0 },
+								        { rank: 5, company: 'General Motors', address: '서울특별시 여의도동 25-11',revenues: 192604.0, profits: -10567.0 },
+								        { rank: 6, company: 'Chevron', address: '서울특별시 여의도동 25-11',revenues: 189481.0, profits: 14099.0 },
+								        { rank: 7, company: 'DaimlerChrysler', address: '서울특별시 여의도동 25-11',revenues: 186106.3, profits: 3536.3 },
+								        { rank: 8, company: 'Toyota Motor', address: '서울특별시 여의도동 25-11',revenues: 185805.0, profits: 12119.6 },
+								        { rank: 9, company: 'Ford Motor', address: '서울특별시 여의도동 25-11',revenues: 177210.0, profits: 2024.0 },
+								        { rank: 10, company: 'ConocoPhillips', address: '서울특별시 여의도동 25-11',revenues: 166683.0, profits: 13529.0 },
+								        { rank: 11, company: 'General Electric', address: '서울특별시 여의도동 25-11',revenues: 157153.0, profits: 16353.0 },
+								        { rank: 12, company: 'Total', address: '서울특별시 여의도동 25-11',revenues: 152360.7, profits: 15250.0 },
+								        { rank: 13, company: 'ING Group', address: '서울특별시 여의도동 25-11',revenues: 138235.3, profits: 8958.9 },
+								        { rank: 14, company: 'Citigroup', address: '서울특별시 여의도동 25-11',revenues: 131045.0, profits: 24589.0 },
+								        { rank: 16, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 17, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 18, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 19, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 20, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 21, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 22, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 23, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 24, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 25, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 26, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 27, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 28, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								        { rank: 29, company: 'AXA', address: '서울특별시 여의도동 25-11',revenues: 129839.2, profits: 5186.5 },
+								    ];
+								    
+								    var obj = {
+								    	height: 400, 
+								    	// width: 800,
+								        numberCell:{show:false,resizable:true,title:"#",width:30,minWidth:30},
+								        editor: {type: 'textbox'},
+								        title: "ParamQuery Grid with JSON Data", 
+								        showTop: false,	// header 숨기기
+								        pageModel: {type: 'local', rpp: 20, strRpp: "{0}", strDisplay: "{0} to {1} of {2}"},	// paging 설정 
+								        resizable:false,
+								        rowHt: 30, // cell height 
+								        freezeCols:2,	// col 고정 
+								        freezeRows:2,	// row 고정
+								        columnBorders: true,  
+								        rowBorders: true,     
+								        roundCorners: false, 
+								        menuIcon: false,  // title 검색 버튼 숨기기 
+								        scrollModel:{autoFit:false},
+								        stripeRows: false,
+								    };
+
+								    function disableTextRender(ui){
+										if (this.isEditableCell(ui) == false) {
+											return {
+												style: 'background: #f2f2f2;'
+											}
+										}
+									}
+
+								    obj.colModel = [  
+								        { title: "check", width: 90, type: 'checkbox', dataType: 'bool', cb: {select: true, header: true}, align: "center", dataIndx: "check"},
+								        { title: "selectbox", width: 150, dataType: "string", align: "center", dataIndx: "state", cls: 'select_area',
+								        	editor: {
+									        	type: 'select', 
+									        	options: ['aaa', 'bbb', 'ccc', 'ddd'], 
+								        	},
+								        	validations: [
+								        		{type: 'minLen', value: 1, msg: "Required"}
+								        	]
+								        },  
+								        { title: "번호", width: 100, dataType: "integer", dataIndx: "rank",  align: "center",
+								        	editor: {
+								        		style: 'background-color: #ccc;font-size:20px;font-weight: 700;'
+								        	}
+								        },
+								        { title: "주소", width: 300, dataType: "integer", dataIndx: "address",  align: "center", 
+								        	render: function( ui ){
+										        //set max height of cell with help of render function.
+										        return {
+										            text: "<span style = 'height:100%;overflow:hidden;'>" + ui.cellData + "</span> " + "<button type='button' class='btn_xs btn_white btn_address'>search</button>",
+										            // style: "height:30px;" 
+										        };
+										    }
+								    	},
+								        { title: "read-only", width: 300, dataType: "string", dataIndx: "company", align: "left",
+								        	editable: function(ui){
+								        		// var lst_rank = (ui.rowData.rank);
+								        		// return ($.inArray(lst_rank, [1, 2, 3]) === -1);
+								        		return false;
+								        	},
+								        	render: disableTextRender
+								        },
+								        { title: "sortable: false", width: 300, dataType: "float", format: '$#,###.00', dataIndx: "revenues", align: "center", sortable: false, render: customRenderer
+								    	},
+								        { title: ["<input type='text' value='2019'/>"], width: 500, dataType: "float", format: '$#,###.00', dataIndx: "profits", align: "right",
+								        	colModel: [
+									        	{ title: "Company A", width: 250, dataIndx: "profits"},
+											    { title: "Company B", width: 250, dataIndx: "rank"}
+									        ] 
+								        }, 
+								        { title: "지분율", width: 200, dataType: "float", format: '$#,###.00', dataIndx: "profits", align: "center", icon: ["circle-plus"]},
+								        { title: "Profits", width: 200, dataType: "float", format: '$#,###.00', dataIndx: "profits", align: "right" }, 
+								        { title: "Profits", width: 200, dataType: "float", format: '$#,###.00', dataIndx: "profits", align: "center" }
+								    ];
+
+								    obj.dataModel = { 
+								    	data: data,
+								    	sortIndx: 1,
+								    	sortDir: "up"
+								    };
+
+								    
+
+								    function customRenderer( ui ){
+									    //inject class, style or HTML attributes in the cell.
+									    return {
+									        cls: 'red',
+									        style: 'font-weight:bold;font-size:18px;',
+									        attr: 'some HTML attribute'
+									    };
+									};
+									
+
+								    
+								    $(".pqgrid_type1").pqGrid(obj);
+
+								    $(document).on('click', '.btn_address',function(e){
+								    	e.preventDefault();
+								    	// console.log('pop_address_find');
+								    	$('#pop_address_find').neoModal();
+								    });
+
+								    
+								});
+							</script>  
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">SCRIPT</p>
+							<pre class="syntax brush:html">
+								var obj = {
+							        numberCell:{resizable:true,title:"#",width:30,minWidth:30},
+							        editor: {type: 'textbox'},
+							        title: "ParamQuery Grid with JSON Data", 
+							        resizable:true, // cell height 
+							        freezeCols:2,	// cols fix
+							        freezeRows:3,	 // rows fix   
+							        menuIcon: true,
+							        scrollModel:{autoFit:true},
+							    };  
+							</pre>
+							<p></p>
+							<pre class="syntax brush:css">
+								
+							</pre>
+						</div>
+					</div>
+				</div>
+				<!-- //탭그룹 -->
+			</div>
+			
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">Table Type2 - rowadd, rowdelete</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="pqgrid_type2"></div>
+
+							<script>
+								$(function () {
+								    var data = [
+								        { rank: 1, company: 'Exxon Mobil', revenues: 339938.0, profits: 36130.0 },
+								        { rank: 2, company: 'Wal-Mart Stores', revenues: 315654.0, profits: 11231.0 },
+								        { rank: 3, company: 'Royal Dutch Shell', revenues: 306731.0, profits: 25311.0 },
+								        { rank: 4, company: 'BP', revenues: 267600.0, profits: 22341.0 },
+								        { rank: 5, company: 'General Motors', revenues: 192604.0, profits: -10567.0 },
+								        { rank: 6, company: 'Chevron', revenues: 189481.0, profits: 14099.0 },
+								        { rank: 7, company: 'DaimlerChrysler', revenues: 186106.3, profits: 3536.3 },
+								        { rank: 8, company: 'Toyota Motor', revenues: 185805.0, profits: 12119.6 },
+								        { rank: 9, company: 'Ford Motor', revenues: 177210.0, profits: 2024.0 },
+								        { rank: 10, company: 'ConocoPhillips', revenues: 166683.0, profits: 13529.0 },
+								        { rank: 11, company: 'General Electric', revenues: 157153.0, profits: 16353.0 },
+								        { rank: 12, company: 'Total', revenues: 152360.7, profits: 15250.0 },
+								        { rank: 13, company: 'ING Group', revenues: 138235.3, profits: 8958.9 },
+								        { rank: 14, company: 'Citigroup', revenues: 131045.0, profits: 24589.0 },
+								        { rank: 15, company: 'AXA', revenues: 129839.2, profits: 5186.5 },
+								    ];
+								    
+								    var obj = {
+								        // numberCell:{resizable:true,title:"#",width:30,minWidth:30},
+								        editor: {type: 'textbox'},
+								        title: "주주명부 - 행추가, 행삭제",
+								        resizable:true,
+								        // menuIcon: true,
+										scrollModel:{autoFit:true},
+										toolbar: {
+											items: [
+												{
+													type: 'button', label: '행추가', cls: 'btn_sm btn_add',listener: function() {
+														var rowIndx = $grid.pqGrid('addRow', { newRow: {} },);
+														$grid.pqGrid('editFirstCellInRow', { rowIndx: rowIndx});
+													}
+												}
+											]
+										},
+										postRenderInterval: -1,
+								    };
+								    obj.colModel = [
+								        { title: "Rank", width: 100, dataType: "integer", dataIndx: "rank" },
+								        { title: "Company", width: 200, dataType: "string", dataIndx: "company" },
+								        { title: "Revenues ($ millions)", width: 150, dataType: "float", format: '$#,###.00', dataIndx: "revenues" },
+										{ title: "Profits ($ millions)", width: 150, dataType: "float", format: '$#,###.00', dataIndx: "profits" },
+										// { title: "", editable: false, minWidth: 83, sortable: false,
+										// 	render: function (ui) {
+										// 		return "<button type='button' class='btn_sm btn_minus'>행삭제</button>";
+										// 	},
+										// 	postRender: function (ui) {
+										// 		var rowIndx = ui.rowIndx,
+										// 		grid = this,
+										// 		$cell = grid.getCell(ui);
+										// 		$cell.find('button').on('click', function() {
+										// 			grid.deleteRow({rowIndx: rowIndx});
+										// 		});
+										// 	}
+										// }
+										
+								    ];
+								    obj.dataModel = { data: data };
+								    var $grid = $(".pqgrid_type2").pqGrid(obj);
+								});
+							</script> 
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								
+							</pre>
+							<p>SCRIPT</p>
+							<pre class="syntax brush:css">
+								
+							</pre>
+						</div>
+					</div>
+				</div>
+				<!-- //탭그룹 -->
+			</div>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">Table Type3</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="pqgrid_type3"></div>
+
+							<script>
+								$(function () {
+								    var data = [
+										{
+											dataname: '매출액', totalData1: 1000, totalData2: 2000, totalData3: 3000, subData: [
+												{ subName: '제품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '상품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '서비스매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '입대매출액', productData1: 300, productData2: 400, productData3: 500 },
+											]
+										},
+										{
+											dataname: '영업이익', totalData1: 2000, totalData2: 2000, totalData3: 3000, subData: [
+												{ subName: '제품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '상품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '서비스매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '입대매출액', productData1: 300, productData2: 400, productData3: 500 },
+											]
+										},
+										{
+											dataname: '당기순이익', totalData1: 3000, totalData2: 2000, totalData3: 3000, subData: [
+												{ subName: '제품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '상품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '서비스매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '입대매출액', productData1: 300, productData2: 400, productData3: 500 },
+											]
+										},
+										{
+											dataname: '자산총계', totalData1: 1000, totalData2: 2000, totalData3: 3000, subData: [
+												{ subName: '제품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '상품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '서비스매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '입대매출액', productData1: 300, productData2: 400, productData3: 500 },
+											]
+										},
+										{
+											dataname: '부채총계', totalData1: 1000, totalData2: 2000, totalData3: 3000, subData: [
+												{ subName: '제품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '상품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '서비스매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '입대매출액', productData1: 300, productData2: 400, productData3: 500 },
+											]
+										},
+										{
+											dataname: '자본총계', totalData1: 1000, totalData2: 2000, totalData3: 3000, subData: [
+												{ subName: '제품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '상품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '서비스매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '입대매출액', productData1: 300, productData2: 400, productData3: 500 },
+											]
+										},
+										{
+											dataname: '자본금', totalData1: 1000, totalData2: 2000, totalData3: 3000, subData: [
+												{ subName: '제품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '상품매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '서비스매출액', productData1: 300, productData2: 400, productData3: 500 },
+												{ subName: '입대매출액', productData1: 300, productData2: 400, productData3: 500 },
+											]
+										},
+									];
+									
+								    var pqgrid_type3 = $(".pqgrid_type3").pqGrid({
+										height:'flex',
+										showTop: false, // header 숨기기
+										scrollModel: {autoFit: true}, //셀 가로길이 자동맞춤
+										numberCell: {show: false}, //index 열 숨기기
+										dragColumns: {enabled: false}, // 열(col)간 이동 금지
+										fillHandle: '', // 엑셀 끌기로 데이터 채우기 기능 금지
+										stripeRows: false, // 행 줄무늬 색깔 제거
+										colModel: [
+											{ title: "", width: '15%', dataType: "string", dataIndx: "dataname", editable: false, sortable: false},
+											{ title: ["<input type='text' style='width:55px;text-align:center;border:0;' value='2018'/><div class='ui-icon ui-icon-triangle-1-s btn_sorting'></div>"], width: 100, dataType: "integer", dataIndx: "totalData1",format: '#,### 원'},
+											{ title: ["<input type='text' style='width:55px;text-align:center;border:0;' value='2017'/><div class='ui-icon ui-icon-triangle-1-s'></div>"], width: 100, dataType: "integer", dataIndx: "totalData2",format: '#,### 원'},
+											{ title: 2016, width: 100, dataType: "integer", dataIndx: "totalData3",format: '#,### 원'},
+											{ title: "", minWidth:40, maxWidth:40, type: "detail", resizable: false, editable: false, sortable: false},
+											// { title: "Company", width: 200, dataType: "string", dataIndx: "company" },
+											// { title: "Revenues ($ millions)", width: 150, dataType: "float", format: '$#,###.00', dataIndx: "revenues" },
+											// { title: "Profits ($ millions)", width: 150, dataType: "float", format: '$#,###.00', dataIndx: "profits" }
+										],
+										dataModel: {data: data},
+										detailModel: {
+											// height:'90',
+											collapseIcon: 'ui-icon-triangle-1-s',
+											expandIcon: 'ui-icon-triangle-1-n',
+											init: function(ui){
+												var rowData = ui.rowData,
+													model = subModel(rowData.subData),
+													$grid = $('<div></div>').pqGrid(model);
+												return $grid;
+											}
+										},
+										sort: function(){
+											console.log('sort');
+										}
+									});
+
+									$('.btn_sorting').click(function(){
+										console.log('aaa');
+										$(".pqgrid_type3").pqGrid({dataModel:{sorting:"remote"}});
+									});
+
+									var subModel = function(data) {
+										return {
+											showTop: false, // header 숨기기
+											scrollModel: {autoFit: true}, //셀 가로길이 자동맞춤
+											numberCell: {show: false}, //index 열 숨기기
+											dragColumns: {enabled: false}, // 열(col)간 이동 금지
+											fillHandle: '', // 엑셀 끌기로 데이터 채우기 기능 금지
+											showHeader: false, // 컬럼 헤더 숨기기
+											stripeRows: false, // 행 줄무늬 색깔 제거
+											height: 'flex',
+											colModel: [
+												{title: '',width: '15%', dataIndx: 'subName'},
+												{title: '', dataIndx: 'productData1'},
+												{title: '', dataIndx: '', editable: false,},
+												{title: '', dataIndx: 'productData2'},
+												{title: '', dataIndx: '', editable: false,},
+												{title: '', dataIndx: 'productData3'},
+												{title: '', dataIndx: '', editable: false,},
+											],
+											dataModel: {data: data},
+										};
+									};
+								});
+							</script> 
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								
+							</pre>
+							<p>SCRIPT</p>
+							<pre class="syntax brush:css">
+								
+							</pre>
+						</div>
+					</div>
+				</div>
+				<!-- //탭그룹 -->
+			</div>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">Table Type4</h3>    
+				<div class="tab-wrap g-tab-sample ui-tab"> 
+					<div class="tab-content"> 
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="pqgrid_type4"></div>
+							
+							<script>
+								$(function () {
+							        /*function groupChg(val){            
+							            var lower = Math.floor( val/ 10 ) * 10,
+							                upper = Math.ceil( (val + 1)/ 10 ) * 10;
+							            return lower + " < " + upper;
+							        };*/ 
+
+							        var data = [
+							        	{"title": "매출액", "year": 2018, "subtitle":"제품매출액", "total": 34267242345},  
+							        	{"title": "매출액", "year": 2017, "subtitle":"상품매출액", "total": 345634},   
+							        	{"title": "매출액", "year": 2016, "subtitle":"서비스매출액", "total": 53463},  
+							        	{"title": "매출액", "year": 2016, "subtitle":"임대매출액", "total": 563245}, 
+
+							        	{"title": "영업이익", "year": 2018, "subtitle":"제품매출액", "total": 2},  
+							        	{"title": "영업이익", "year": 2017, "subtitle":"상품매출액", "total": 3},  
+							        	{"title": "영업이익", "year": 2016, "subtitle":"서비스매출액", "total": 4},  
+							        	{"title": "영업이익", "year": 2016, "subtitle":"임대매출액", "total": 5},    
+
+							        	{"title": "당기순이익", "year": 2018, "subtitle":"제품매출액", "total": 2},  
+							        	{"title": "당기순이익", "year": 2017, "subtitle":"상품매출액", "total": 3},  
+							        	{"title": "당기순이익", "year": 2016, "subtitle":"서비스매출액", "total": 4},  
+							        	{"title": "당기순이익", "year": 2016, "subtitle":"임대매출액", "total": 5}, 
+
+							        	{"title": "자산총계", "year": 2018, "subtitle":"제품매출액", "total": 2},  
+							        	{"title": "자산총계", "year": 2017, "subtitle":"상품매출액", "total": 3},  
+							        	{"title": "자산총계", "year": 2016, "subtitle":"서비스매출액", "total": 4},  
+							        	{"title": "자산총계", "year": 2016, "subtitle":"임대매출액", "total": 5},  
+
+							        	{"title": "부채총계", "year": 2018, "subtitle":"제품매출액", "total": 2},  
+							        	{"title": "부채총계", "year": 2017, "subtitle":"상품매출액", "total": 3},  
+							        	{"title": "부채총계", "year": 2016, "subtitle":"서비스매출액", "total": 4},  
+							        	{"title": "부채총계", "year": 2016, "subtitle":"임대매출액", "total": 5},    
+
+							        	{"title": "자본총계", "year": 2018, "subtitle":"제품매출액", "total": 2},  
+							        	{"title": "자본총계", "year": 2017, "subtitle":"상품매출액", "total": 3},  
+							        	{"title": "자본총계", "year": 2016, "subtitle":"서비스매출액", "total": 4},  
+							        	{"title": "자본총계", "year": 2016, "subtitle":"임대매출액", "total": 5},    
+
+							        	{"title": "자본금", "year": 2018, "subtitle":"제품매출액", "total": 2},   
+							        	{"title": "자본금", "year": 2017, "subtitle":"상품매출액", "total": 3},  
+							        	{"title": "자본금", "year": 2016, "subtitle":"서비스매출액", "total": 4},  
+							        	{"title": "자본금", "year": 2016, "subtitle":"임대매출액", "total": 5},   
+							        ];  
+							         
+							        var colM = [ 
+							            //first column to show grouping (for both pivot and row grouping mode). ( used along with groupModel.titleInFirstCol )
+							            //first column to show grouping. ( used along with groupModel.titleInFirstCol )
+							            {
+							                title: '년도', tpHide: true, menuInHide: true, 
+							                menuUI: {
+							                    tabs: ['hideCols'] //display only hide columns tab in menu.
+							                }
+							            },
+							            {title: "Year", dataIndx: "year", dataType: "integer"},      
+							            {title: "title", dataIndx: "title", dataType: "integer"},  
+							            {title: "subtitle", dataIndx: "subtitle", dataType: "integer"},         
+							            {title: "Total", dataIndx: 'total', denyGroup: true, dataType: "integer", format: "##,###원"},
+									];   
+							         
+							        colM.forEach(function(col){ 
+							            col.menuIcon = false;
+							            col.filter = { condition: 'range'};
+							        })
+
+							        var groupModel = {            
+							            on: true, //grouping mode.
+							            pivot: true, //pivotMode
+							            checkbox: false, checkboxHead: false, select: false, 
+							            titleInFirstCol: true, indent: 20, fixCols: true, 
+							            groupCols: ['year'], //grouping along column axis.
+							            agg:{ //aggregate fields.
+							                total: 'sum'                   
+							            },  
+
+							            header: true, //hide grouping toolbar. 
+							            headerMenu: true, 
+							            grandSummary: false, //show grand summary row.              
+							            dataIndx: ['title', 'subtitle'], //grouping along row axis. 
+							            collapsed: [true, true],               
+							            useLabel: true,
+							            // menuItems: ["merge", "fixCols", "grandSummary"], 
+							            merge: true, 
+							            pivotColsTotal: "",  
+							            titleDefault: '{0}',  
+							            style: 'background: red;',  
+							              
+							        };
+							        var dataModel = { 
+							        	data: data,
+							            // location: "remote",
+							            // cache: true,
+							            // url: "/Content/olympicWinners.json",
+							            // getData: function (data) {
+							            //     return { data: data };
+							            // }
+							        };
+
+							        var obj = {
+							            height: 500,            
+							            dataModel: dataModel,            
+							            numberCell: {show: false, width: 50},
+										dragColumns: {enabled: false}, // 열(col)간 이동 금지
+										fillHandle: '', // 엑셀 끌기로 데이터 채우기 기능 금지
+							            scrollModel:{autoFit: true},  
+							            // freezeCols: 1,
+							            // flex:{one: true}, 
+							            showTop: false, 
+							            rowBorders: true,  
+							            stripeRows: false, 
+							            colModel: colM,            
+							            groupModel: groupModel,
+							            
+							            // autoRow: false,  
+							            
+							            //sortModel: { sorter:[{dataIndx: 'country'}] },            
+							            summaryTitle: {
+							                avg: "",
+							                count: '',
+							                max: "",
+							                min: "",
+										    stdev: "",
+										    stdevp: "",
+							                sum: ""
+							            },
+							            formulas: [['total', function(rd){
+							                // var total = rd.gold + rd.silver + rd.bronze;
+							                var total = rd.total;    
+
+							                return isNaN(total)? "": total;   
+							            }]],                                                            
+							            showTitle: false,            
+							            wrap: false,
+							            hwrap:false,
+							            editable: true,
+							            toolPanel:{
+							                //show: true  //show toolPanel initially.
+							            },
+							            /*
+							            toolbar: {
+							                cls: 'pq-toolbar-export',
+							                items: [
+							                    {
+							                        type: 'button',
+							                        label: "Export to Excel(xlsx)",
+							                        icon: 'ui-icon-document',
+							                        listener: function (evt) {
+							                            var str = this.exportExcel({render: true });                            
+							                            saveAs(str, "pivot.xlsx");
+							                        }
+							                    },
+							                    {
+							                        type: 'button',
+							                        label: "Toolbar Panel",
+							                        icon: 'ui-icon-wrench',
+							                        listener: function (evt) {
+							                            this.ToolPanel().toggle();
+							                        }
+							                    },
+							                    {
+							                        type: 'textbox',
+							                        label: "Filter: ",                   
+													attr:'placeholder="Enter text"',
+							                        listener:{timeout: function (evt) {
+							                            var txt = $(evt.target).val();
+							                            var rules = this.getCMPrimary().map(function(col){
+							                                return {
+							                                    dataIndx: col.dataIndx,
+							                                    condition:'contain',
+							                                    value: txt
+							                                }
+							                            })
+							                            this.filter({
+							                                mode: 'OR',
+							                                rules:rules
+							                            })
+							                        }}
+							                    }
+							                ] 
+							            },
+							            */ 
+							            
+							            groupOption: function (evt, ui) { 
+							                //hide Group column when no group rows are present.                
+							                this.Columns().find(function (col) {
+							                    return col.title == "Group"
+							                }).hidden = !this.option('groupModel').dataIndx.length;
+							            },
+							            //use pivotCM event to make grouped columns collapsible.
+							            pivotCM: function(evt, ui) {
+							            	         
+							                //add collapsible to grouped parent columns.
+							                /*this.Columns().each(function(col){
+							                    var cm = col.colModel
+							                    if(cm && cm.length>1 && !col.collapsible)
+							                        col.collapsible = {on: true, last: true};
+							                }, ui.CM);  */
+
+							                // console.log(ui.CM[4].title);   
+							                ui.CM[3].colModel[0].title = '전전기'; 
+							                ui.CM[4].colModel[0].title = '전기'; 
+							                ui.CM[5].colModel[0].title = '당기';   
+							                var arr_year = ui.CM.slice(3).reverse();
+							                // console.log(arr_year); 
+							            	ui.CM.splice(3, 3, arr_year[0], arr_year[1], arr_year[2]);     
+							            	// console.log(ui.CM);    
+							            	// console.log(ui.CM[3].title);    
+							            	year_sales1 = ui.CM[3].title; 
+							            	year_sales2 = ui.CM[4].title;
+							            	year_sales3 = ui.CM[5].title; 
+							            },
+							            change: function(event, ui) {
+							            	changeGrid(); 
+							            } 							        
+							        }; 
+							         
+							        var grid = $(".pqgrid_type4").pqGrid(obj);    
+ 									changeGrid();
+ 
+ 									var year_sales1 = "";
+							        var year_sales2 = "";
+							        var year_sales3 = "";
+
+ 									function changeGrid(){
+ 										$("#pq-head-cell-u13-0-3-right").find('.pq-td-div').html("<input type='text' class='input_year1' maxlength='4' value='" + year_sales1 + "' />"); 
+							        	$("#pq-head-cell-u13-0-4-right").find('.pq-td-div').html("<input type='text' class='input_year2' maxlength='4' value='" + year_sales2 + "' />"); 
+							        	$("#pq-head-cell-u13-0-5-right").find('.pq-td-div').html("<input type='text' class='input_year3' maxlength='4' value='" + year_sales3 + "' />");  
+ 									} 
+							        
+							        $(document).on('change', '.input_year1', function(){
+							        	year_sales1 = $(this).val();
+							        }); 
+							        $(document).on('change', '.input_year2', function(){
+							        	year_sales2 = $(this).val(); 
+							        }); 
+							        $(document).on('change', '.input_year3', function(){
+							        	year_sales3 = $(this).val(); 
+							        });  
+
+							        $('#pq-body-cell-u13-0-0-right').find('.pq-group-icon').click();  
+							        
+							    });
+							</script>  
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">SCRIPT</p>
+							<pre class="syntax brush:html">
+								 
+							</pre>
+							<p></p>
+							<pre class="syntax brush:css">
+								
+							</pre>
+						</div>
+					</div>
+				</div>
+				<!-- //탭그룹 -->
+			</div> 
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

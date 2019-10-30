@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			//탭 동작
+			var $tabMenu = $('.tabs li a');
+			var $tabContent = $('.tab_contents');
+
+			$tabMenu.on('click', function(e) {
+				e.preventDefault();
+				var idx = $tabMenu.index(this);
+				
+				$(this).addClass('on').closest('li').siblings().children('a').removeClass('on');
+				$tabContent.eq(idx).addClass('on').siblings().removeClass('on');
+			});
+		});
+	</script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>진행 현황</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">Analytics 연동</a></li>
+				<li>
+					<a href="javascript:void(0);">집계 현황</a>
+					<ul>
+						<li><a href="javascript:void(0);">종합 집계</a></li>
+						<li><a href="javascript:void(0);">주문/체결 내역</a></li>
+						<li><a href="javascript:void(0);">주문 내역</a></li>
+						<li><a href="javascript:void(0);">계약 내역</a></li> 
+						<li><a href="javascript:void(0);" class="active">진행 현황</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>통계 관리</h4>   
+				
+				<ul class="tab_xs tabs clearfix mt30"> 
+					<li><a href="javascript:void(0);" class="on">진행현황</a></li>
+					<li><a href="javascript:void(0);">거래정지 내역</a></li>
+				</ul>
+
+				<div class="tab_contents on">
+					<div class="group_tableinfo mt30"> 
+						<span class="num_total">총 <em><strong class="txt_sell_color">245</strong>종목</em></span>
+						<div class="srch_area"> 
+						    <label class="input_radio p0" for="srch_divide1">
+						        <input type="radio" id="srch_divide1" name="srch_divide" checked="">
+						        <span class="label_text">전체</span>
+						    </label>
+						    <label class="input_radio" for="srch_divide2">
+						        <input type="radio" id="srch_divide2" name="srch_divide">
+						        <span class="label_text">입금대기</span>
+						    </label>
+						    <label class="input_radio" for="srch_divide3">
+						        <input type="radio" id="srch_divide3" name="srch_divide">
+						        <span class="label_text">승인대기</span>
+						    </label>
+							<button type="button" class="btn_sm btn_blue ml20">엑셀다운로드</button>
+							<select class="select_css form_control"> 
+								<option value="20">20</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
+						</div>
+					</div> 
+	 				
+					<div class="companyinfo_table th_vertical mt10">
+					    <table> 
+					        <caption class="sr_only">진행 현황 상세</caption>
+					        <colgroup>
+					            <col width="12%">
+					            <col width="*">
+					            <col width="12%">
+					            <col width="12%">
+					            <col width="12%">
+					            <col width="10%">
+					            <col width="10%">
+					            <col width="14%">     
+					        </colgroup> 
+					        <thead> 
+					            <tr>
+					            	<th>계약일자</th>
+					            	<th>종목</th>
+					            	<th>수량</th>
+					            	<th>단가</th>
+					            	<th>금액</th>
+					            	<th>매도자</th>
+					            	<th>매수자</th>
+					            	<th>구분</th>
+					            </tr>
+					        </thead> 
+					        <tbody>
+					        	<!-- <tr>   
+					                <td colspan="8" class="blank_area type_white">
+					                	<p class="txt_blank">데이터가 없습니다.</p>
+					                </td>
+					            </tr> -->
+					            <tr> 
+					                <td>2019-06-27</td>
+					                <td class="al">뉴코에드윈드</td>
+					                <td class="ar">0,000</td>
+					                <td class="ar">0,000</td> 
+					                <td class="ar">0,000</td>
+					                <td>홍길동</td>
+					                <td>홍길동</td>
+					                <td>입금대기</td>
+					            </tr>
+					            <tr> 
+					                <td>2019-06-27</td>
+					                <td class="al">뉴코에드윈드뉴코에드윈드뉴코에드윈드 </td>
+					                <td class="ar">0,000</td>
+					                <td class="ar">0,000</td> 
+					                <td class="ar">0,000</td>
+					                <td>홍길동</td>
+					                <td>홍길동</td>
+					                <td>승인대기</td>
+					            </tr>
+					            <tr> 
+					                <td>2019-06-27</td>
+					                <td class="al">뉴코에드윈드</td>
+					                <td class="ar">0,000</td>
+					                <td class="ar">0,000</td> 
+					                <td class="ar">0,000</td>
+					                <td>홍길동</td>
+					                <td>홍길동</td> 
+					                <td>입금대기</td>
+					            </tr>
+					        </tbody>
+					    </table>
+					</div> 
+
+					<div class="board_paging"> 
+						<ul>
+							<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+							<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+							<li><a href="javascript:void(0);" class="active">1</a></li>
+							<li><a href="javascript:void(0);">2</a></li>
+							<li><a href="javascript:void(0);">3</a></li>
+							<li><a href="javascript:void(0);">4</a></li>
+							<li><a href="javascript:void(0);">5</a></li>
+							<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+							<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="tab_contents">
+					<div class="group_tableinfo mt30"> 
+						<span class="num_total">총 <em><strong class="txt_sell_color">245</strong>종목</em></span>
+						<div class="srch_area">
+							<button type="button" class="btn_sm btn_blue ml20">엑셀다운로드</button>
+							<select class="select_css form_control"> 
+								<option value="20">20</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
+						</div>
+					</div> 
+	 				
+					<div class="companyinfo_table th_vertical mt10">
+					    <table> 
+					        <caption class="sr_only">진행 현황 상세</caption>
+					        <colgroup>
+					            <col width="*">
+					            <col width="20%">
+					            <col width="12%">
+					            <col width="12%">
+					            <col width="25%">
+					            <col width="12%">     
+					        </colgroup> 
+					        <thead> 
+					            <tr>
+					            	<th>종목</th>
+					            	<th>거래정지 기간</th>
+					            	<th>거래정지 주식종류</th>
+					            	<th>거래정지 사유</th>
+					            	<th>메모</th>
+					            	<th>거래정지 처리일</th>
+					            </tr>
+					        </thead>
+					        <tbody>
+					        	<!-- <tr>   
+					                <td colspan="6" class="blank_area type_white">
+					                	<p class="txt_blank">데이터가 없습니다.</p>
+					                </td>
+					            </tr> -->
+					            <tr> 
+					                <td class="al">뉴코애드윈드</td>
+					                <td>2019-08-12 ~ 2019-08-25</td>
+					                <td>보통주</td>
+					                <td>OOOOO</td>
+					                <td class="al">OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</td> 
+					                <td>2019-08-10</td>
+					            </tr>
+					            <tr> 
+					                <td class="al">뉴코애드윈드</td>
+					                <td>2019-08-12 ~ 2019-08-25</td>
+					                <td>보통주</td>
+					                <td>OOOOO</td>
+					                <td class="al">OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</td> 
+					                <td>2019-08-10</td>
+					            </tr>
+					            <tr> 
+					                <td class="al">뉴코애드윈드</td>
+					                <td>2019-08-12 ~ 2019-08-25</td>
+					                <td>보통주</td>
+					                <td>OOOOO</td>
+					                <td class="al">OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</td> 
+					                <td>2019-08-10</td>
+					            </tr>
+					        </tbody>
+					    </table>
+					</div> 
+
+					<div class="board_paging"> 
+						<ul>
+							<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+							<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+							<li><a href="javascript:void(0);" class="active">1</a></li>
+							<li><a href="javascript:void(0);">2</a></li>
+							<li><a href="javascript:void(0);">3</a></li>
+							<li><a href="javascript:void(0);">4</a></li>
+							<li><a href="javascript:void(0);">5</a></li>
+							<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+							<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+
+</body>
+</html>

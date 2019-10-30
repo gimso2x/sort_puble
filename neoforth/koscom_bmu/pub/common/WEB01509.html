@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="euc-k">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/plugins.js"></script> 
+	<script src="../js/common.js"></script> 
+	<script>
+		$(document).ready(function() {
+			//탭 동작
+			var $tabMenu = $('.tabs li a');
+			var $tabContent = $('.tab_contents');
+
+			$tabMenu.on('click', function(e) {
+				e.preventDefault();
+				var idx = $tabMenu.index(this);
+				
+				$(this).addClass('on').closest('li').siblings().children('a').removeClass('on');
+				$tabContent.eq(idx).addClass('on').siblings().removeClass('on');
+			});
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 로그인전 -->
+	<div id="header">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb">
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);" class="active">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li>
+					<li class="join_area"><a href="javascript:void(0);"><span>서비스 가입</span></a></li>
+					<li class="login_area"><a href="javascript:void(0);"><span>로그인</span></a></li> 
+				</ul>
+				<div class="bar"></div>
+ 
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+					<ul class="nav_sub"> 
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>	<!-- // submenu_area -->
+			</div>	
+			
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+				</div>
+				<div class="group_nav join_area">
+					<a href="javascript:void(0);" class="title">서비스 가입</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+				</div> 
+				<div class="group_nav login_area"> 
+					<a href="javascript:void(0);" class="title">로그인</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="nav_page">
+			<div class="inner">
+				<ul class="lst_page clearfix">
+					<li><a href="/" class="btn_home sr_only">Home</a></li>
+					<li>
+						<a href="javascript:void(0);" class="btn_page">서비스 소개</a>
+						<ul class="nav_subpage clearfix">  
+							<li><a href="javascript:void(0);" class="active">서비스 소개</a></li>
+							<li><a href="javascript:void(0);">투자정보</a></li>
+							<li><a href="javascript:void(0);">고객센터</a></li>
+							<li><a href="javascript:void(0);">로그인</a></li>
+							<li><a href="javascript:void(0);">서비스 가입</a></li>
+						</ul>
+					</li> 
+					<li>
+						<ul class="lst_subpage clearfix">  
+							<li><a href="javascript:void(0);">이용안내</a></li>
+							<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+							<li><a href="javascript:void(0);" class="active">투자자 서비스 가이드</a></li>
+							<li><a href="javascript:void(0);">보안모듈설치</a></li>
+							<li><a href="javascript:void(0);">인증방법안내</a></li>
+						</ul> 
+					</li>
+				</ul>
+			</div>
+		</div>	<!-- // nav_page -->
+
+		<div class="section">
+			<div class="inner">
+				<div class="group_pageinfo">
+					<h3 class="txt_title">투자자 서비스 가이드</h3>
+				</div>	<!-- // group_title -->
+			</div>
+				
+			<div class="contents contents_guide"> 
+				<ul class="tab_md tabs clearfix inner">
+					<li><a href="javascript:void(0);" class="on">01. 서비스가입/로그인</a></li>
+					<li><a href="javascript:void(0);">02. 기업정보</a></li>
+					<li><a href="javascript:void(0);">03. 주문 및 협상</a></li>
+					<li><a href="javascript:void(0);">04. 계약 및 결제</a></li>
+					<li><a href="javascript:void(0);">05. My Page</a></li>
+				</ul> 
+				
+				<!-- 서비스가입/로그인 -->
+				<div class="tab_contents on">
+					<dl class="lst_guide lst_investor">
+						<dt class="inner">서비스 가입</dt>
+						<dd class="desc_area inner">
+							통합인증 또는 DID를 통하여 ID/PW 없이 주민등록번호만으로 가입이 가능합니다.<br>
+							법인 투자자의 경우 통합인증을 통해서만 가입이 가능합니다.<br>
+							(DID의 경우 최초 가입 시 주민등록번호 검증을 위해 통합인증 진행 필수)
+						</dd>
+						<dd class="slide_area">
+							<div class="notebook_area">
+								<div class="swiper-container swiper_notebook">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step1_1.png" alt="서비스가입1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step1_2.png" alt="서비스가입2"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step1_3.png" alt="서비스가입3"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step1_4.png" alt="서비스가입4"></div>
+									</div>
+								</div>
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-pagination"></div>
+							</div>
+						</dd>
+
+						<dt class="hr_divid"></dt>
+
+						<dt class="inner">로그인</dt>
+						<dd class="desc_area inner">
+							개인/법인 여부와 로그인 방식(통합인증/DID) 중 선택 후 해당 방식 검증을 통한 로그인이 가능합니다.
+						</dd>
+						<dd class="slide_area">
+							<div class="notebook_area">
+								<div class="swiper-container swiper_notebook">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step1_5.png" alt="로그인1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step1_6.png" alt="로그인2"></div>
+									</div>
+								</div>
+								<!-- Add Arrows -->
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+								<!-- Add Pagination -->
+								<div class="swiper-pagination"></div>
+							</div>
+
+							<div class="mobile_area">
+								<div class="swiper-container swiper_mobile">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step1_5.png" alt="로그인1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step1_6.png" alt="로그인2"></div>
+									</div>
+								</div>
+							</div>
+						</dd>
+						
+					</dl>
+				</div>	<!-- // tab_contents -->
+
+				<!-- 기업정보 -->
+				<div class="tab_contents">
+					<dl class="lst_guide lst_investor">
+						<dt class="inner">기업정보</dt>
+						<dd class="desc_area inner">
+							가입 정보와 모든 거래 내역 정보에 대한 조회 및 관리가 가능합니다.
+						</dd>
+						<dd class="slide_area">
+							<div class="notebook_area">
+								<div class="swiper-container swiper_notebook">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step2_1.png" alt="기업정보1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step2_2.png" alt="기업정보2"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step2_3.png" alt="기업정보3"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step2_4.png" alt="기업정보4"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step2_5.png" alt="기업정보5"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step2_6.png" alt="기업정보6"></div>
+									</div>
+								</div>
+								<!-- Add Arrows -->
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+								<!-- Add Pagination -->
+								<div class="swiper-pagination"></div>
+							</div>
+
+							<div class="mobile_area">
+								<div class="swiper-container swiper_mobile">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step2_1.png" alt="기업정보1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step2_2.png" alt="기업정보2"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step2_3.png" alt="기업정보3"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step2_4.png" alt="기업정보4"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step2_5.png" alt="기업정보5"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step2_6.png" alt="기업정보6"></div>
+									</div>
+								</div>
+							</div>
+						</dd>
+						<dd class="desc_step">
+							<div class="desc on">
+								<p class="title">플랫폼에 등록된 모든 기업들을 확인할 수 있습니다.</p>
+							</div>
+							<div class="desc"> 
+								<p class="title">기업의 전반적인 재무정보, 인력, 주요제품등을 확인할 수 있습니다.</p>
+							</div>
+							<div class="desc">
+								<p class="title">전문가들이 제공하는 기업의 장점 및 특징점에 대해 확인할 수 있습니다.</p>
+							</div>
+							<div class="desc">
+								<p class="title">해당 기업의 최근 3개월간의 거래 실적을 파악할 수 있습니다.</p>
+							</div>
+							<div class="desc">
+								<p class="title">기업의 주요 알림(공시) 또는 홍보자료 등을 확인할 수 있습니다. 주주에게는 실시간 알림으로 기업 최신 정보를 알려드립니다.</p>
+							</div>
+							<div class="desc">
+								<p class="title">다른 투자자들과 해당 기업에 대한 정보 교류가 가능합니다. </p>
+							</div>
+						</dd> 
+					</dl>
+				</div> <!-- // tab_contents -->
+
+				<!-- 주문 및 협상 -->
+				<div class="tab_contents">
+					<dl class="lst_guide lst_investor">
+						<dt class="inner">주문</dt>
+						<dd class="desc_area inner">
+							매도 또는 매수를 원하는 해당 종목에 대한 주문을 등록할 수 있습니다.
+						</dd>
+						<dd class="step_area inner">
+							<ul class="lst_step">
+								<li>
+									<a href="javascript:void(0);" class="on">
+										<strong class="step"><span>Step 1</span></strong>
+										<span class="desc">신규 주문 등록</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<strong class="step"><span>Step 2</span></strong>
+										<span class="desc">주문 상세 내용<br>입력 후 등록완료</span>
+									</a>
+								</li>
+							</ul>
+						</dd> 
+						<dd class="slide_area">
+							<div class="notebook_area">
+								<div class="swiper-container swiper_notebook">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step3_1.png" alt="주문1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step3_2.png" alt="주문2"></div>
+									</div>
+								</div>
+								<!-- Add Arrows -->
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+								<!-- Add Pagination -->
+								<div class="swiper-pagination"></div>
+							</div>
+
+							<div class="mobile_area">
+								<div class="swiper-container swiper_mobile">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step3_1.png" alt="주문1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step3_2.png" alt="주문2"></div>
+									</div>
+								</div>
+							</div>
+						</dd>
+
+						<dt class="hr_divid"></dt>
+
+						<dt class="inner">협상</dt>
+						<dd class="desc_area inner">
+							등록된 주문 중 원하는 주문을 클릭하여 협상요청 후 협상을 시작할 수 있습니다.
+						</dd>
+						<dd class="step_area inner">
+							<ul class="lst_step">
+								<li>
+									<a href="javascript:void(0);" class="on">
+										<strong class="step"><span>Step 1</span></strong>
+										<span class="desc">거래를 원하는 주문 조회</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<strong class="step"><span>Step 2</span></strong>
+										<span class="desc">주문 내용 확인 후 협상 요청<br>(결제마감일은 최대 5일)</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<strong class="step"><span>Step 3</span></strong>
+										<span class="desc">상대방 협상 수락 시 채팅을 통한 협상 진행</span>
+									</a>
+								</li> 
+							</ul>
+						</dd> 
+						<dd class="slide_area">
+							<div class="notebook_area">
+								<div class="swiper-container swiper_notebook">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step3_1.png" alt="협상1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step3_4.png" alt="협상2"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step3_5.png" alt="협상3"></div>
+									</div>
+								</div>
+								<!-- Add Arrows -->
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+								<!-- Add Pagination -->
+								<div class="swiper-pagination"></div>
+							</div>
+
+							<div class="mobile_area">
+								<div class="swiper-container swiper_mobile">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step3_1.png" alt="협상1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step3_4.png" alt="협상2"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step3_5.png" alt="협상3"></div>
+									</div>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</div> <!-- // tab_contents -->
+
+				<!-- 계약 및 결제 -->
+				<div class="tab_contents">
+					<dl class="lst_guide lst_investor">
+						<dt class="inner">계약 및 체결</dt>
+						<dd class="desc_area inner">
+							채팅을 통한 협상 진행 후 거래상대방과 단가 및 수량에 협의가 완료 된 경우, 거래 계약이 진행됩니다.<br>
+							계약서 생성 -&gt; 계약서 서명 -&gt; 에스크로 입금(체결) -&gt; 기업 승인 -&gt; 거래완료 순으로 계약이 이루어지게 됩니다.
+
+						</dd>
+						<dd class="step_area inner">
+							<ul class="lst_step">
+								<li>
+									<a href="javascript:void(0);" class="on">
+										<strong class="step"><span>Step 1</span></strong>
+										<span class="desc">계약서 생성</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<strong class="step"><span>Step 2</span></strong>
+										<span class="desc">미확인발행서 발급</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<strong class="step"><span>Step 3</span></strong>
+										<span class="desc">계약서 서명</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<strong class="step"><span>Step 4</span></strong>
+										<span class="desc">양수인 에스크로 대금 입금</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<strong class="step"><span>Step 5</span></strong>
+										<span class="desc">기업 변경승인 및 거래완료</span>
+									</a>
+								</li> 
+							</ul>
+						</dd> 
+						<dd class="slide_area">
+							<div class="notebook_area">
+								<div class="swiper-container swiper_notebook">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step4_1.png" alt="계약 및 결제1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step4_2.png" alt="계약 및 결제2"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step4_3.png" alt="계약 및 결제3"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step4_4.png" alt="계약 및 결제4"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step4_5.png" alt="계약 및 결제5"></div>
+									</div>
+								</div>
+								<!-- Add Arrows -->
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+								<!-- Add Pagination -->
+								<div class="swiper-pagination"></div>
+							</div>
+
+							<div class="mobile_area">
+								<div class="swiper-container swiper_mobile">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step4_1.png" alt="계약 및 결제1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step4_2.png" alt="계약 및 결제2"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step4_3.png" alt="계약 및 결제3"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step4_4.png" alt="계약 및 결제4"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step4_5.png" alt="계약 및 결제5"></div>
+									</div>
+								</div>
+							</div>
+						</dd>
+						<dd class="desc_step">
+							<div class="desc on">
+								<p class="title">계약서 생성</p>
+								<ul class="lst_desc">
+									<li>주문을 등록한 사용자가 협의가 완료된 수량 및 단가를 입력 후 상대방이 수락하면 계약서 생성</li>
+								</ul>
+							</div>
+							<div class="desc"> 
+								<p class="title">미발행확인서 발급</p>
+								<ul class="lst_desc">
+									<li>매도자의 잔고 보유여부를 확인하기 위해 기 발급된 미발행확인서 조회</li>
+									<li>(미발행확인서 신규 발급 가능)</li>
+								</ul>
+							</div>
+							<div class="desc">
+								<p class="title">계약서 서명</p>
+								<ul class="lst_desc">
+									<li>생성된 계약서 확인 후 매도자/매수자 모두 서명 진행</li>
+									<li class="txt_buy_color">(로그인 한 방식으로만 서명 가능 Ex.공인인증서 로그인 시 공인인증서로만 서명가능)</li>
+								</ul>
+							</div>
+							<div class="desc">
+								<p class="title">양수인 에스크로 대금 입금</p>
+								<ul class="lst_desc">
+									<li>양수인은 안내된 에스크로 계좌로 해당 금액을 이체</li>
+									<li class="txt_buy_color">결제마감일까지 미입금 시 거래 자동 취소) </li>
+								</ul>
+							</div>
+							<div class="desc">
+								<p class="title">기업 변경 승인 및 거래 완료</p>
+								<ul class="lst_desc">
+									<li>매수대금 입금 완료 후 해당 종목의 기업의 승인 후 거래가 최종적으로 완료되며,<br>매수대금이 매도자에게 이체되며 매수자의 명의가 주주명부에 반영됩니다. </li>
+								</ul>
+							</div>
+						</dd> 
+					</dl>
+				</div> <!-- // tab_contents -->
+
+				<!-- My Page -->
+				<div class="tab_contents">
+					<dl class="lst_guide lst_investor">
+						<dt class="inner">My Page</dt>
+						<dd class="desc_area inner">
+							가입 정보와 모든 거래 내역 정보에 대한 조회 및 관리가 가능합니다.
+						</dd>
+						<dd class="slide_area">
+							<div class="notebook_area">
+								<div class="swiper-container swiper_notebook">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step5_1.png" alt="My Page1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step5_2.png" alt="My Page2"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step5_3.png" alt="My Page3"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step5_4.png" alt="My Page4"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step5_5.png" alt="My Page5"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step5_6.png" alt="My Page6"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_guidei_step5_7.png" alt="My Page7"></div>
+									</div>
+								</div>
+								<!-- Add Arrows -->
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+								<!-- Add Pagination -->
+								<div class="swiper-pagination"></div>
+							</div>
+
+							<div class="mobile_area">
+								<div class="swiper-container swiper_mobile">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step5_1.png" alt="My Page1"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step5_2.png" alt="My Page2"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step5_3.png" alt="My Page3"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step5_4.png" alt="My Page4"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step5_5.png" alt="My Page5"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step5_6.png" alt="My Page6"></div>
+										<div class="swiper-slide"><img src="../img/sub/sv/img_step5_7.png" alt="My Page7"></div>
+									</div>
+								</div>
+							</div>
+						</dd>
+						<dd class="desc_step">
+							<div class="desc on">
+								<p class="title">회원가입 때 입력한 정보를 확인하고 추가 로그인 방식을 등록하고, 매도금을 이체받을 계좌정보를 수정할 수 있습니다.</p>
+							</div>
+							<div class="desc"> 
+								<p class="title">내가 올린 주문에 대해서 확인할 수 있으며, 협상대기 상태인 주문은 삭제가 가능합니다.</p>
+							</div>
+							<div class="desc">
+								<p class="title">협상(채팅)과 관련된 알림을 확인하고 상대방의 협상 요청 시 수락 또는 거절을 통해 계약을 진행할 수 있습니다.</p>
+							</div>
+							<div class="desc">
+								<p class="title">협상내역에 합의한 거래들의 진행 상태를 확인할 수 있습니다.</p>
+							</div>
+							<div class="desc">
+								<p class="title">현재 보유한 잔고(주식)의 수량 및 가치를 확인할 수 있습니다</p>
+							</div>
+							<div class="desc">
+								<p class="title">기업정보화면에서 등록한 관심기업들에 대한 거래 현황을 확인하고 관심기업 등록해제가 가능합니다.</p>
+							</div>
+							<div class="desc">
+								<p class="title">주권미발행확인서와 양수도계약서가 필요한 경우 출력이 가능합니다.<br>(주권미발행확인서의 경우 보유잔고현황에서 신규 발급 가능)</p>
+							</div>
+						</dd> 
+					</dl>
+				</div> <!-- // tab_contents -->
+
+
+			</div><!-- // contents -->
+		</div>	
+
+	</div>	<!-- // container -->
+	
+	<!-- 로그인전 -->
+	<div id="footer">
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix"> 
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.koscom.co.kr">코스콤</option>
+					</select> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_member join">
+					<p>서비스 가입</p>
+					<ul>
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+				</div>
+				<div class="nav_member login">
+					<p>로그인</p>
+					<ul>
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a>
+	</div>	<!-- // footer --> 
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="../js/vendo/analytics.js" async></script>
+
+<!-- Initialize Swiper -->
+<script>
+$(document).ready(function() {
+	$('.slide_area').each(function(index, element) {
+		var _$this = $(this);
+
+		_$this.find('.swiper_notebook').addClass('notebook_' + index); // 각 노트북슬라이더 번호 지정
+		_$this.find('.swiper-button-next').addClass('swiper-button-next' + index);
+		_$this.find('.swiper-button-prev').addClass('swiper-button-prev' + index);
+		_$this.find('.swiper-pagination').addClass('swiper-pagination' + index);
+		var swiper_notebook_name = 'swiper_notebook_name' + index;
+
+		swiper_notebook_name = new Swiper('.notebook_' + index, {
+			observer: true,
+			observeParents: true,
+			spaceBetween: 0,
+			navigation: {
+				nextEl: '.swiper-button-next' + index,
+				prevEl: '.swiper-button-prev' + index,
+			},
+			pagination: {
+				el: '.swiper-pagination' + index,
+				clickable: true,
+			},
+			on: {
+				slideChange: function(){
+					btn_step.removeClass('on');
+					btn_step.eq(swiper_notebook_name.activeIndex).addClass('on');
+
+					lst_desc.stop().fadeOut(200);
+					lst_desc.eq(swiper_notebook_name.activeIndex).stop().fadeIn(200);
+
+					swiper_mobile_name.slideTo(swiper_notebook_name.activeIndex); 
+				}
+			}
+		});
+
+		_$this.find('.swiper_mobile').addClass('swipermobile_' + index);
+		var swiper_mobile_name = 'swiper_mobile_name' + index;
+		swiper_mobile_name = new Swiper('.swipermobile_' + index, {
+			observer: true,
+			observeParents: true,
+			spaceBetween: 0, 
+			on: {
+				slideChange: function(){ 
+					swiper_notebook_name.slideTo(swiper_mobile_name.activeIndex); 
+				}
+			}
+		});
+		
+		var lst_desc = $(this).closest('.tab_contents').find('.desc_step .desc');
+		var btn_step = _$this.prev('.step_area').find('.lst_step li a');
+		btn_step.each(function(i){
+			var tg = $(this);
+			// console.log(tg)
+			var idx = i;
+			tg.click(function(e){
+				e.preventDefault();
+				btn_step.removeClass('on');
+				$(this).addClass('on');
+				// console.log(idx);
+				swiper_notebook_name.slideTo(idx);
+			});
+		});
+
+	});
+});
+
+
+
+
+</script>
+
+</body>
+</html>

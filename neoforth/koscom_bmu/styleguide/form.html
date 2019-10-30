@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - FORM</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../pub/css/common.css">
+<link rel="stylesheet" href="../pub/css/vendor/jquery-ui.min.css">
+<script src="../pub/js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../pub/js/vendor/jquery-ui.min.js"></script>
+<script src="../pub/js/common.js"></script>
+
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(webSnb);
+		$('.g-nav-snb ul li').eq(3).addClass("active");
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">FORM</h2>
+			
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">INPUT BASIC</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<input type="text" class="form_control" maxlength="" placeholder="input basic">
+							<input type="text" class="form_control" maxlength="" placeholder="input basic readonly" readonly>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								&lt;input type="text" class="form_control" maxlength="" placeholder="input basic"&gt;
+								&lt;input type="text" class="form_control" maxlength="" placeholder="input basic readonly" readonly&gt;
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.form_control{width:100%;height:40px;padding:0 10px;border:1px solid #ccc;font-size:14px;color:#333;}
+								.form_control::-ms-clear{display: none;}
+								.form_control:read-only {background-color:#f2f2f2;}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">INPUT (datepicker)</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<input type="text" class="datepicker form_control" autocomplete="off">
+							<br><br>
+							<ul class="datepicker_searchwrap clearfix">
+								<li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+								<li class="datepicker_connect">~</li>
+								<li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+							</ul>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<!-- 데이터피커 -->
+								&lt;input type="text" class="datepicker form_control"&gt;
+
+								&lt;ul class="datepicker_searchwrap clearfix"&gt;
+									<li>&lt;input type="text" autocomplete="off" class="datepicker form_control"&gt;</li>
+									<li class="datepicker_connect">~</li>
+									<li>&lt;input type="text" autocomplete="off" class="datepicker form_control"&gt;</li>
+								&lt;/ul&gt;
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.datepicker_searchwrap{display:inline-block;}
+								.datepicker_searchwrap li{float:left;}
+								.datepicker_searchwrap .datepicker_connect{padding:0 5px;font-size:18px;color:#444;line-height:40px;}
+								.datepicker_searchwrap input{width:130px;padding:0 30px 0 13px;background:#fff url(../img/common/ico_search_cal.png) no-repeat 92.7% 50%;}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">INPUT (radio,checkbox)</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<h3 class="g-tit-basic">텍스트 없는 체크박스</h3>
+							<div>
+								<label class="input_check pop_notext">
+									<input type="checkbox" id="" name="check1">
+									<span class="label_text"></span>
+								</label>
+								<label class="input_check pop_notext">
+									<input type="checkbox" id="" name="check1" checked>
+									<span class="label_text"></span>
+								</label>
+							</div>
+							<br>
+							<h3 class="g-tit-basic">공통, 모든약관 동의</h3>
+							<div>
+								<label class="input_check">
+									<input type="checkbox" id="" name="check1">
+									<span class="label_text">체크박스 체크해제</span>
+								</label>
+
+								<label class="input_check">
+									<input type="checkbox" id="" name="check1" checked>
+									<span class="label_text">체크박스 체크</span>
+								</label>
+								
+							</div>
+							<br>
+							<h3 class="g-tit-basic">개별 약관 동의</h3>
+							<div>
+								<label class="input_check check_individual">
+									<input type="checkbox" id="" name="">
+									<span class="label_text">체크박스 체크해제</span>
+								</label>
+								<label class="input_check check_individual">
+									<input type="checkbox" id="" name="" checked>
+									<span class="label_text">체크박스 체크</span>
+								</label>
+							</div>
+							<br>
+							<h3 class="g-tit-basic">테이블 in</h3>
+							<div>
+								<label class="input_check check_table">
+									<input type="checkbox" id="" name="">
+									<span class="label_text">체크박스 체크해제</span>
+								</label>
+
+								<label class="input_check check_table">
+									<input type="checkbox" id="" name="" checked>
+									<span class="label_text">체크박스 체크</span>
+								</label>
+							</div>
+							<br>
+							<h3 class="g-tit-basic">텍스트 없는 라디오박스</h3>
+							<div>
+								<label class="input_radio" for="rdoSolar2">
+									<input type="radio" id="rdoSolar2" name="birthday_type2" checked="">
+									<span class="label_text">라디오 체크</span>
+								</label>
+								<label class="input_radio" for="rdoLunar2">
+									<input type="radio" id="rdoLunar2" name="birthday_type2">
+									<span class="label_text">라디오 체크해제</span>
+								</label>
+							</div>
+							<br>
+							<h3 class="g-tit-basic">라디오박스</h3>
+							<div>
+								<label class="input_radio pop_notext" for="rdoSolar">
+									<input type="radio" id="rdoSolar" name="birthday_type" checked="">
+									<span class="label_text">라디오 체크</span>
+								</label>
+								<label class="input_radio pop_notext" for="rdoLunar">
+									<input type="radio" id="rdoLunar" name="birthday_type">
+									<span class="label_text">라디오 체크해제</span>
+								</label>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<!-- 공통, 모든약관 동의 -->
+								<div>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text">체크박스 체크해제</span>
+									</label>
+	
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked>
+										<span class="label_text">체크박스 체크</span>
+									</label>
+									
+								</div>
+								
+								<!-- 개별 약관 동의 -->
+								<div>
+									<label class="input_check check_individual">
+										<input type="checkbox" id="" name="">
+										<span class="label_text">체크박스 체크해제</span>
+									</label>
+									<label class="input_check check_individual">
+										<input type="checkbox" id="" name="" checked>
+										<span class="label_text">체크박스 체크</span>
+									</label>
+								</div>
+								
+								<!-- 테이블 in -->
+								<div>
+									<label class="input_check check_table">
+										<input type="checkbox" id="" name="">
+										<span class="label_text">체크박스 체크해제</span>
+									</label>
+	
+									<label class="input_check check_table">
+										<input type="checkbox" id="" name="" checked>
+										<span class="label_text">체크박스 체크</span>
+									</label>
+								</div>
+
+								<!-- 라디오박스 -->
+								<div>
+									<label class="input_radio" for="rdoSolar">
+										<input type="radio" id="rdoSolar" name="birthday_type" checked="">
+										<span class="label_text">라디오 체크</span>
+									</label>
+									<label class="input_radio" for="rdoLunar">
+										<input type="radio" id="rdoLunar" name="birthday_type">
+										<span class="label_text">라디오 체크해제</span>
+									</label>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								/* 체크박스 */
+								.input_check{position:relative;display:inline-block;min-height:20px;margin-left:12px;line-height:20px;color:#666;font-size:14px;font-weight:normal;vertical-align:middle}
+								.input_check:first-child{margin-left:0}
+								.input_check > input[type="checkbox"]{position:absolute;top:0;left:0;height:auto;line-height:normal;opacity:0}
+								.input_check > input[type="checkbox"]:focus + .label_text{outline: 1px dotted;outline-color: #A6C7FF;outline:-webkit-focus-ring-color auto 5px;}
+								.input_check > .label_text{display:inline-block;padding-left:28px;background:url(../img/common/ico_checkbox_off.png) no-repeat 0 50% / 20px;vertical-align:top;cursor:pointer;}
+								.input_check > input[type="checkbox"]:checked + .label_text{background-image:url(../img/common/ico_checkbox_on.png)}
+								
+								/* 라디오 */
+								.input_radio{position:relative;display:inline-block;min-height:20px;margin-left:12px;line-height:20px;color:#666;font-size:14px;font-weight:normal;vertical-align:middle}
+								.input_radio:first-child{margin-left:0}
+								.input_radio > input[type="radio"]{position:absolute;top:0;left:0;height:auto;line-height:normal;opacity:0}
+								.input_radio > input[type="radio"]:focus + .label_text{outline: 1px dotted;outline-color: #A6C7FF;outline:-webkit-focus-ring-color auto 5px;}
+								.input_radio > .label_text{display:inline-block;padding-left:28px;background:url(../img/common/ico_radio_off.png) no-repeat 0 50% / 20px;vertical-align:top;cursor:pointer;}
+								.input_radio > input[type="radio"]:checked + .label_text{background-image:url(../img/common/ico_radio_on.png)}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">select css(IE 10 ~)</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<select class="select_css form_control">
+								<option>This is a native select element</option>
+								<option>Apples</option>
+								<option>Bananas</option>
+								<option>Grapes</option>
+								<option>Oranges</option>
+							</select>
+
+							<select class="select_css form_control" disabled>
+								<option>This is a native select element</option>
+								<option>Apples</option>
+								<option>Bananas</option>
+								<option>Grapes</option>
+								<option>Oranges</option>
+							</select>
+
+							<select class="select_css search_select form_control">
+								<option>전체</option>
+								<option>보통주</option>
+								<option>우선주</option>
+							</select>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<select class="select_css form_control">
+									<option>This is a native select element</option>
+									<option>Apples</option>
+									<option>Bananas</option>
+									<option>Grapes</option>
+									<option>Oranges</option>
+								</select>
+	
+								<select class="select_css form_control" disabled>
+									<option>This is a native select element</option>
+									<option>Apples</option>
+									<option>Bananas</option>
+									<option>Grapes</option>
+									<option>Oranges</option>
+								</select>
+	
+								<select class="select_css search_select form_control">
+									<option>전체</option>
+									<option>보통주</option>
+									<option>우선주</option>
+								</select>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.select_css{display:block;position:relative;max-width:100%;margin:0;background:#fff url(../img/common/ico_selectcss.png) no-repeat;background-position: calc(100% - 10px) center;-moz-appearance:none;-webkit-appearance:none;appearance:none;cursor:pointer;}
+								.select_css::after {position:absolute;top:0;right:0;content:'';display:inline-block;width:12px;height:7px;background:#666;}
+								.select_css::-ms-expand{display:none}
+								.select_css option{font-weight:normal;}
+								/* Disabled styles */
+								.select_css:disabled,
+								.select_css[aria-disabled=true]{color:#aaa;background-color: #d4cece;cursor:default;}
+								
+								.select_css.search_select{width:230px;}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">FILE Upload</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="wrap_file">
+								<input class="upload_name form_control" value="" disabled="disabled">
+								<input type="file" id="ex_filename" class="upload_hidden">
+								<label for="ex_filename" class="btn_sm btn_darkblue">파일찾기</label>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<div class="wrap_file">
+									<input class="upload_name form_control" value="" disabled="disabled">
+									<input type="file" id="ex_filename" class="upload_hidden">
+									<label for="ex_filename" class="btn_sm btn_darkblue">파일찾기</label>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.wrap_file {display:inline-block;width:400px;}
+								.wrap_file input[type="file"]{position:absolute;overflow:hidden;width:1px;height:1px;padding:0;margin:-1px;border:0;opacity:0}
+								.wrap_file .upload_name{display:inline-block;width:300px;vertical-align:middle;background-color:#fff;-webkit-appearance:none;-moz-appearance:none;appearance:none}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">input + search form</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="search_form">
+								<input type="text" class="form_control">
+								<button class="btn_search">검색</button>
+							</div>
+
+							<div class="search_form"> 
+								<label>
+									<input type="text" class="form_control" maxlength="" placeholder="기업명, 종목, 종목번호 검색">
+									<div class="autocomplete_area on">  
+										<a href="javascript:void(0);" class="btn_close sr_only">close</a>
+										<ul class="lst_auto on"> 
+											<li><a href="javascript:void(0);">뉴코에드윈드</a></li>
+											<li><a href="javascript:void(0);">뉴코트랜드</a></li>
+											<li><a href="javascript:void(0);">뉴코시스템</a></li>
+										</ul>
+									</div>
+								</label>
+								<button class="btn_search">검색</button>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<div class="search_form">
+									<input type="text" class="form_control">
+									<button class="btn_search">검색</button>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.search_form{display:inline-block;width:464px;font-size:0;vertical-align:middle;}
+								.search_form input[type="text"]{width:350px;margin-right:5px;vertical-align:middle;}
+								.search_form .btn_search{vertical-align:middle;}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

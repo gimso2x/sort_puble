@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#pop_dealstop_play').neoModal();
+			$('#pop_push_request').neoModal();
+		})
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	
+</div>
+
+<div id="pop_dealstop_play" class="pop_dim_wrap pop_modal pop_xlg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			거래정지 처리
+		</div>
+		<div class="contents_wrap">
+			<h5>거래정지 처리</h5>
+			<div class="companyinfo_table">
+				<table>
+					<caption>거래정지 기간</caption>
+					<colgroup>
+						<col width="130">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>거래정지 기간</th>
+							<td>
+								<ul class="datepicker_searchwrap clearfix">
+									<li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+									<li class="datepicker_connect">~</li>
+									<li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+								</ul>
+								<div class="date_btn_wrap">
+									<!-- [D] 활성화 버튼은 'on' 추가 -->
+									<button type="button" class="btn_term_select">오늘</button>
+									<button type="button" class="btn_term_select">1주</button>
+									<button type="button" class="btn_term_select">1달</button>
+									<button type="button" class="btn_term_select">1년</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>거래정지 주식종류</th>
+							<td>
+								<select name="" id="" class="select_css form_control">
+									<option value="">1</option>
+								</select>
+								<p class="stock_num_p">종목번호 노출</p>
+							</td>
+						</tr>
+						<tr>
+							<th>거래정지사유</th>
+							<td>
+								<select class="select_css form_control">
+									<option value="배당">배당</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>메모</th>
+							<td>
+								<textarea class="form_control" placeholder="내용을 입력하세요."></textarea>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+			<ul class="explain_ul">
+				<li>거래정지 처리 시 체결(매수대금입금) 이전의 모든 주문, 협상, 계약건에 대해서 취소 처리됩니다.</li>
+				<li>거래 정지 처리 이전에 현재 주문, 협상, 계약을 진행중인 해당 투자자들에게 미리 Push를 전송할 수 있습니다.</li>
+				<li>거래정지 사유를 반드시 입력하여 주십시오. 해당 사유가 주문, 계약이 취소된 모든 투자자에게 해당 내역을 고지합니다.</li>
+				<li>액면분할 등 발행주식수의 등 변동이 발생한 경우 기업정보의 주식총수를 먼저 변경하신 후 주주명부를 변경하셔야 합니다.</li>
+			</ul>
+			<button class="btn_sm btn_blue" type="button">Push 요청</button>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue">승인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_push_request" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				"기업명"은 기업이벤트 예정이 있어<br>
+				거래정지처리를 하고자 합니다.<br>
+				따라서 거래정지처리 이전 Push 전송 요청을 합니다.
+
+				<select class="select_css form_control">
+					<option value="기업이벤트">기업이벤트</option>
+				</select>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_white w50">취소</button>
+			<button type="button" class="btn_pop_default btn_blue w50">요청</button>
+		</div>
+	</div>
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+</body>
+</html>

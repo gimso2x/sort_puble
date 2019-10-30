@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - Alert</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../pub/mobile/css/common.css">
+<link rel="stylesheet" href="../pub/mobile/css/vendor/jquery-ui.min.css">
+<script src="../pub/mobile/js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../pub/mobile/js/vendor/jquery-ui.min.js"></script>
+<script src="../pub/mobile/js/common.js"></script>
+<!-- //style -->
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(mobileSnb);
+		$('.g-nav-snb ul li').eq(5).addClass("active");
+
+		// 거래체결 클릭시
+		$('.open_modal').click(function() {
+			$('#pop_modalsample1').neoModal();
+		}); 
+
+		$('.open_modal2').click(function() {
+			$('#pop_alert_sample2').neoModal();
+		})
+
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">ALERT</h2>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">modal</h3> 
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view --> 
+							<button type="button" class="btn_sm btn_blue open_modal">open_modal</button>
+							<button type="button" class="btn_sm btn_blue open_modal2">open_modal2</button>
+
+							<div id="pop_modalsample1" class="pop_dim_wrap pop_modal"> 
+								<div class="pop_wrap"> 
+									<button class="pop_btn_close">닫기</button>
+									<div class="title_wrap">주문정보</div>
+									<div class="contents_wrap">
+										<div class="table table_row">
+											<table>
+												<caption class="sr_only">체결정보 상세</caption>
+												<colgroup>
+													<col width="100">
+													<col width="*">
+												</colgroup>
+												<tbody>
+													<tr>
+														<th>종목명</th>
+														<td>코스콤</td>
+													</tr>
+													<tr>
+														<th>구분</th>
+														<td class="txt_sell_color">매도</td>
+													</tr>
+													<tr>
+														<th>수량(주)</th>
+														<td class="ar">90,000</td>
+													</tr>
+													<tr>
+														<th>가격(원)</th>
+														<td class="ar">90,000</td>
+													</tr>
+													<tr>
+														<th>잔량(주)</th>
+														<td class="ar">90,000</td>
+													</tr>
+													<tr>
+														<th>직전체결가(원)</th>
+														<td class="ar">90,000</td>
+													</tr>
+													<tr>
+														<th>주문상태</th>
+														<td>협상</td>
+													</tr>
+													<tr>
+														<th>등록일시</th>
+														<td>2019.06.12 15:36</td>
+													</tr>
+													<tr>
+														<th>거래조건</th>
+														<td>100주 미만은 거래 불가합니다.</td>
+													</tr>
+												</tbody>
+											</table>
+										</div> 
+									</div>
+									<div class="button_wrap"> 
+										<button type="button" class="btn_md btn_blue">확인</button>
+									</div> 
+								</div> 
+							</div>
+
+							<div id="pop_alert_sample2" class="pop_dim_wrap pop_alert">
+								<div class="pop_wrap"> 
+									<button class="pop_btn_close">닫기</button>
+									<div class="message_table">
+										<div class="messageWrap"> 
+											'OOOOOO' 닉네임은<br>
+											사용하실 수 없습니다
+										</div> 
+									</div>
+									<div class="button_wrap clearfix">
+										<button type="button" class="btn_md btn_blue" onclick="$('#pop_alert_sample2').neoModal('close');">확인</button> 
+									</div>
+								</div>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html"> 
+								<div id="pop_modalsample1" class="pop_dim_wrap pop_modal"> 
+									<div class="pop_wrap"> 
+										<button class="pop_btn_close">닫기</button>
+										<div class="title_wrap">주문정보</div>
+										<div class="contents_wrap">
+											<div class="table table_row">
+												<table>
+													<caption class="sr_only">체결정보 상세</caption>
+													<colgroup>
+														<col width="100">
+														<col width="*">
+													</colgroup>
+													<tbody>
+														<tr>
+															<th>종목명</th>
+															<td>코스콤</td>
+														</tr>
+														<tr>
+															<th>구분</th>
+															<td class="txt_sell_color">매도</td>
+														</tr>
+														<tr>
+															<th>수량(주)</th>
+															<td class="ar">90,000</td>
+														</tr>
+														<tr>
+															<th>가격(원)</th>
+															<td class="ar">90,000</td>
+														</tr>
+														<tr>
+															<th>잔량(주)</th>
+															<td class="ar">90,000</td>
+														</tr>
+														<tr>
+															<th>직전체결가(원)</th>
+															<td class="ar">90,000</td>
+														</tr>
+														<tr>
+															<th>주문상태</th>
+															<td>협상</td>
+														</tr>
+														<tr>
+															<th>등록일시</th>
+															<td>2019.06.12 15:36</td>
+														</tr>
+														<tr>
+															<th>거래조건</th>
+															<td>100주 미만은 거래 불가합니다.</td>
+														</tr>
+													</tbody>
+												</table>
+											</div> 
+										</div>
+										<div class="button_wrap"> 
+											<button type="button" class="btn_md btn_blue">확인</button>
+										</div> 
+									</div> 
+								</div>
+
+								<div id="pop_alert_sample2" class="pop_dim_wrap pop_alert">
+									<div class="pop_wrap"> 
+										<button class="pop_btn_close">닫기</button>
+										<div class="message_table">
+											<div class="messageWrap"> 
+												'OOOOOO' 닉네임은<br>
+												사용하실 수 없습니다
+											</div> 
+										</div>
+										<div class="button_wrap clearfix">
+											<button type="button" class="btn_md btn_blue" onclick="$('#pop_alert_sample2').neoModal('close');">확인</button> 
+										</div>
+									</div>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			
+
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

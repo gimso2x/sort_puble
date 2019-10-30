@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+<div id="wrap" class="login">
+	
+	<div id="login">
+		<h1>SIP 관리자 <strong>로그인</strong></h1>
+		<ul class="lst_login">
+			<li><label><input type="text" class="form_control" maxlength="" placeholder="아이디"></label></li>
+			<li><label><input type="password" class="form_control" maxlength="" placeholder="비밀번호"></label></li>
+			<li class="check_area">
+				<label class="input_check">
+				    <input type="checkbox" id="mailChk3">
+				    <span class="label_text">아이디저장</span>
+				</label>
+			</li>
+		</ul>
+		<ul class="lst_certify">
+			<li class="phone_area clearfix">
+				<label>
+					<select class="select_css form_control">
+					    <option>010</option>
+					    <option>010</option>
+					    <option>010</option>
+					</select>
+				</label>
+				<label><input type="text" class="form_control"></label>
+				<label><input type="text" class="form_control"></label>
+				<button type="button" class="btn_xs btn_gray btn_send">인증번호발송</button>
+				<!-- <button class="btn">인증번호발송</button> --> 
+			</li>
+			<li class="certify_area clearfix">
+				<label><input type="text" class="form_control"></label>
+				<span>(03:00)</span>
+				<button class="btn">확인</button>
+			</li>
+		</ul>
+		<button type="button" class="btn_lg btn_blue btn_login">로그인</button>
+	</div> 
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+</body>
+</html>

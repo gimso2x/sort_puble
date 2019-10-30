@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>메타 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">운영 meta 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">시스템 meta 관리</a></li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>시스템 meta 관리</h4>
+
+				<div class="companyinfo_table mt30"> 
+				    <table>
+				        <caption>시스템 meta 관리 설정</caption>
+				        <colgroup>
+				            <col width="130">  
+				            <col width="*">
+				            <col width="130">  
+				            <col width="*">
+				        </colgroup>
+				        <tbody> 
+				            <tr>
+				                <th>메타코드</th>  
+				                <td><input type="text" class="form_control" maxlength=""></td>
+				                <th>메타코드명</th>  
+				                <td><input type="text" class="form_control" maxlength=""></td>
+				            </tr>
+				            <tr>
+				                <th>속성코드</th>  
+				                <td><input type="text" class="form_control" maxlength=""></td>
+				                <th>속성명</th>  
+				                <td><input type="text" class="form_control" maxlength=""></td>
+				            </tr>
+				            <tr>
+				                <th>비고</th>  
+				                <td colspan="3">
+				                	<textarea name="" id="" class="form_control"></textarea>
+				                </td>
+				            </tr>
+				            <tr>
+				                <th>사용여부</th>  
+				                <td colspan="3">
+				                	<div>
+									    <label class="input_radio" for="rdo_use1">
+									        <input type="radio" id="rdo_use1" name="rdo_use" checked="">
+									        <span class="label_text">Y</span>
+									    </label>
+									    <label class="input_radio" for="rdo_use2">
+									        <input type="radio" id="rdo_use2" name="rdo_use">
+									        <span class="label_text">N</span>
+									    </label>
+									</div>
+				                </td>
+				            </tr>
+				        </tbody>
+				    </table>
+				</div>
+				 
+				<div class="submit_area">  
+					<button type="button" class="btn_md btn_blue">등록</button>
+				</div>
+
+				<div class="companyinfo_table mt30"> 
+				    <table>
+				        <caption>운영 meta 검색</caption>
+				        <colgroup>
+				            <col width="130">  
+				            <col width="*">
+				            <col width="130">  
+				            <col width="*">
+				        </colgroup>
+				        <tbody> 
+				            <tr>
+				                <th>사용여부</th>  
+				                <td>
+				                	<div>
+				                		<label class="input_radio" for="rdo_srch1">
+									        <input type="radio" id="rdo_srch1" name="rdo_srch" checked="">
+									        <span class="label_text">전체</span>
+									    </label>
+									    <label class="input_radio" for="rdo_srch2">
+									        <input type="radio" id="rdo_srch2" name="rdo_srch" checked="">
+									        <span class="label_text">Y</span>
+									    </label>
+									    <label class="input_radio" for="rdo_srch3">
+									        <input type="radio" id="rdo_srch3" name="rdo_srch">
+									        <span class="label_text">N</span>
+									    </label>
+									</div>
+				                </td>
+				                <th>기간</th>  
+				                <td>
+				                	<ul class="datepicker_searchwrap clearfix">
+									    <li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+									    <li class="datepicker_connect">~</li>
+									    <li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+									</ul>
+				                </td>
+				            </tr>
+				            <tr>
+				                <th>검색어</th>  
+				                <td colspan="3" class="td_srch">
+				                	<select class="select_css form_control">
+										<option>전체</option>
+										<option>운영업무코드</option>
+										<option>업무명</option>
+									</select>
+									<input type="text" class="form_control">
+				                </td>
+				            </tr>
+				        </tbody>
+				    </table>
+				</div>
+
+				<div class="submit_area">  
+					<button type="button" class="btn_md btn_white">초기화</button>
+					<button type="button" class="btn_md btn_blue">검색</button>
+				</div>
+				
+				<div class="group_tableinfo mt30">
+					<span class="num_total">총 <em><strong class="txt_sell_color">245</strong>건</em></span>
+					<div class="srch_area">
+						<select class="select_css form_control">
+							<option value="20">20</option>
+							<option value="50">50</option>
+							<option value="100">100</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="table_normal_list mt10">
+					<table>
+						<caption>시스템 meta 관리 리스트</caption>
+						<colgroup>
+							<col width="6%">
+							<col width="10%">
+							<col width="*">
+							<col width="10%">
+							<col width="10%">
+							<col width="15%"> 
+							<col width="10%">
+							<col width="10%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>No</th> 
+								<th>메타코드</th>
+								<th>메타코드명</th>
+								<th>속성코드</th>
+								<th>속성명</th>
+								<th>비고</th>
+								<th>등록일</th>
+								<th>사용여부</th>
+							</tr>
+						</thead> 
+						<tbody>
+							<!-- <tr>    
+				                <td colspan="8" class="blank_area">
+				                	<p class="txt_blank">데이터가 없습니다.</p>
+				                </td>
+				            </tr> -->
+							<tr>
+								<td>20</td>
+								<td>0000</td>
+								<td class="al"><a href="javascript:void(0);" class="txt_ellipsis">증권종류구분코드</a></td>
+								<td>00</td>
+								<td>일반주</td>
+								<td></td>
+								<td>2019-06-26</td>
+								<td>Y</td>
+							</tr>
+							<tr>
+								<td>20</td>
+								<td>0000</td>
+								<td class="al"><a href="javascript:void(0);" class="txt_ellipsis">증권종류구분코드</a></td>
+								<td>00</td>
+								<td>일반주</td>
+								<td></td>
+								<td>2019-06-26</td>
+								<td>Y</td>
+							</tr>
+							<tr>
+								<td>20</td>
+								<td>0000</td>
+								<td class="al"><a href="javascript:void(0);" class="txt_ellipsis">증권종류구분코드</a></td>
+								<td>00</td>
+								<td>일반주</td>
+								<td></td>
+								<td>2019-06-26</td>
+								<td>Y</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> 
+
+				<div class="board_paging">
+					<ul>
+						<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+						<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+						<li><a href="javascript:void(0);" class="active">1</a></li>
+						<li><a href="javascript:void(0);">2</a></li>
+						<li><a href="javascript:void(0);">3</a></li>
+						<li><a href="javascript:void(0);">4</a></li>
+						<li><a href="javascript:void(0);">5</a></li>
+						<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+						<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+					</ul>
+				</div>
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+
+</body>
+</html>

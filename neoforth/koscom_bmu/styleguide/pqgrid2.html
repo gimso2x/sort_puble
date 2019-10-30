@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - PARAMETER QUERY</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../pub/css/common.css">
+<link rel="stylesheet" href="../pub/css/vendor/jquery-ui.min.css">
+<script src="../pub/js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../pub/js/vendor/jquery-ui.min.js"></script>
+<script src="../pub/js/common.js"></script>
+<!-- //style -->
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+
+<!--PQ Grid files-->
+<link rel="stylesheet" href="../pub/css/vendor/pqgrid.min.css" />
+<link rel="stylesheet" href="../pub/css/vendor/pqgrid.ui.min.css" />
+<!--bootstrap theme-->
+<link rel='stylesheet' href='../pub/css/vendor/themes/bootstrap/pqgrid.css' />  
+
+<script src="../pub/js/vendor/pqgrid.min.js"></script>
+<!--for localization and intellisense -->
+<script src="../pub/js/vendor/localize/pq-localize-en.js"></script>
+<!--for touch devices-->
+<script src="../pub/js/vendor/pqTouch/pqtouch.min.js"></script>
+<!--jsZip for zip and xlsx import/export-->
+<script src="../pub/js/vendor/jsZip-2.5.0/jszip.min.js"></script>
+
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(webSnb);
+		$('.g-nav-snb ul li').eq(11).addClass("active");
+	}); 
+</script> 
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">ParamQuery Grid</h2>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">Table Type Default</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div style="width:1060px;">
+								<div id="grid_summary"></div>
+							</div>
+							<script>
+								$(function () {
+									function tooltipRender(ui) {
+										return ui.formatVal === undefined ? '' : {attr: 'title="' + ui.formatVal + '"'};
+									}
+
+									var json_data = [
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+										{shareholder_certify : "N", shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유처분제한사유처분제한사유"},
+									];
+
+									var obj = { 
+										rowInit: function(ui) {
+											return {style: 'color:#555;line-height:normal;'}
+										},
+										rowHtHead: 49,
+										showTop: false, // header 숨기기
+										numberCell: {show: false}, //index 열 숨기기
+										dragColumns: {enabled: false}, // 열(col)간 이동 금지
+										// fillHandle: '', // 엑셀 끌기로 데이터 채우기 기능 금지
+										stripeRows: false, // 행 줄무늬 색깔 제거,
+								        roundCorners: false, //둥근 코너 제거
+										scrollModel:{autoFit:true},
+										editable: false,
+										colModel: [
+										{ title: "인증<br>여부", maxWidth:20, dataType: "string", dataIndx: "shareholder_certify", align: "center",},
+										{ title: "주주구분", minWidth:70, dataIndx: "shareholder_kind", align: "center"},
+										{ title: "주주명", minWidth:90, dataIndx: "shareholder_name", align: "center",},
+										{ title: "실명번호", dataIndx: "shareholder_num", align: "center",},
+										{ title: "주소", dataIndx: "shareholder_address", align: "left"},
+										{ title: "이메일", minWidth:50, dataIndx: "shareholder_email", align: "center",},
+										{ title: "자택전화", minWidth:70, dataIndx: "shareholder_phone", align: "center",},
+										{ title: "연락처", minWidth:70, dataIndx: "shareholder_cellphone", align: "center",},
+										{ title: "주식종류", dataIndx: "shareholder_sort", align: "center",},
+										{ title: "주식수", dataIndx: "shareholder_stock", format: '##,###', dataType: "integer"},
+										{ title: "처분제한", dataIndx: "shareholder_stock_not", format: '##,###', dataType: "integer"},
+										{ title: "처분제한<br>사유", dataIndx: "shareholder_stock_notreason"},
+										],
+										summaryData: [
+											{ shareholder_certify:'합 계', summaryRow: true, pq_fn:{shareholder_stock:'sum(I:I)', shareholder_stock_not:'sum(J:J)', }},
+										],
+										
+										dataModel: { data: json_data },
+										columnTemplate: { render: tooltipRender },
+										create: function (evt, ui) {
+											this.widget().pqTooltip();
+										},
+										height: 255,
+									};
+
+									$("#grid_summary").pqGrid(obj);
+
+								});
+								
+							</script> 
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								
+							</pre>
+							<p>SCRIPT</p>
+							<pre class="syntax brush:css">
+								
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+			
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">Table Type Default</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+
+							<div style="width:1100px;">
+								<div id="grid_summary2"></div>
+							</div>
+							<script>
+								$(function () {
+									
+
+									$(document).on('click', '.btn_address',function(e){
+								    	e.preventDefault();
+								    	$('#pop_address_find').neoModal();
+								    });
+
+									function tooltipRender(ui) {
+										return ui.formatVal === undefined ? '' : {attr: 'title="' + ui.formatVal + '"'};
+									}
+
+									var json_data2 = [
+										{shareholder_kind: "00. 일반주주", shareholder_name: "김대표", shareholder_num: "000000-0******", shareholder_address: "서울시 도봉구 도봉산로1", shareholder_email: "omp@koscom.com", shareholder_phone: "02-0000-0000", shareholder_cellphone: "010-0000-0000", shareholder_sort: "보통주식", shareholder_stock: "100000", shareholder_stock_not: "20000", shareholder_stock_notreason: "처분제한사유"},
+									];
+
+									var obj = {
+										rowInit: function(ui) {
+											return {style: 'color:#555;'}
+										},
+										height: '320',
+										collapsible: false,
+										rowHtHead: 49, //셀제목 높이 지정,
+										rowHt: 41,
+										showTitle: false, //제목 열 제거
+										numberCell: {show: false}, //index 열 숨기기
+										dragColumns: {enabled: false}, // 열(col)간 이동 금지
+										fillHandle: '', // 엑셀 끌기로 데이터 채우기 기능 금지
+										stripeRows: false, // 행 줄무늬 색깔 제거,
+								        roundCorners: false, //둥근 코너 제거
+										scrollModel:{autoFit:true},
+										toolbar: {
+											style:'text-align:right;',
+											items: [
+												{ type: 'button', label: '행추가', cls: 'btn_sm btn_add', listener: function () {
+														var rowData = {}; //empty row
+														var rowIndx = grid.addRow( { rowData: rowData, checkEditable: true });
+														grid.editFirstCellInRow({ rowIndx: rowIndx });
+													}
+												},
+											]
+										},
+										autoRow: false,
+										autoRowSum: true,
+										colModel: [
+											{ title: "주주구분", dataIndx: "shareholder_kind", minWidth: 100, align:'center', editor: {
+													type: 'select', 
+													options: ['00.일반주주', '01.최대주주', '02.가족 / 친척', '03.임직원', '04.기타'], 
+												},
+											},
+											{ title: "주주명", dataIndx: "shareholder_name", minWidth: 120, align: "center"},
+											{ title: "실명번호", dataIndx: "shareholder_num", minWidth: 80, align: "center"},
+											{ title: "주소", dataIndx: "shareholder_address", minWidth: 105, align: "left",
+												render: function( ui ){
+													if(ui.rowData.shareholder_name === '합 계') {
+														return ui.rowData.shareholder_address;
+													} else {
+														return ui.cellData ? ui.cellData : "<button type='button' class='btn_sm btn_darkblue btn_address'>주소검색</button>";
+													}
+												}
+											},
+											{ title: "이메일", dataIndx: "shareholder_email", minWidth: 60},
+											{ title: "자택전화", dataIndx: "shareholder_phone", minWidth: 60, align: "center"},
+											{ title: "연락처", dataIndx: "shareholder_cellphone", minWidth: 110, align: "center"},
+											{ title: "주식종류", dataIndx: "shareholder_sort", minWidth: 70, align: "center"},
+											{ title: "주식수", dataIndx: "shareholder_stock", minWidth: 110, align: "right", format: '##,###', dataType: "integer" },
+											{ title: "처분제한", dataIndx: "shareholder_stock_not", minWidth: 110, align: "right", format: '##,###', dataType: "integer" },
+											{ title: "처분제한<br>사유", dataIndx: "shareholder_stock_notreason", minWidth: 60, dataType: "string" },
+											{ title: "", editable: false, minWidth: 72, sortable: false, align: "left",
+												render: function (ui) {
+													if(ui.rowData.shareholder_name === '합 계') {
+														return '';
+													} else {
+														return "<button type='button' class='btn_sm btn_minus'>행삭제</button>";
+													}
+													
+												},
+												postRender: function (ui) {
+													var rowIndx = ui.rowIndx,
+														grid = this,
+														$cell = grid.getCell(ui);
+
+													$cell.find("button").button().on("click", function () {
+														grid.deleteRow({ rowIndx: rowIndx });
+													});
+												}
+											}
+										],
+										postRenderInterval: -1, //call postRender synchronously.
+										summaryData: [
+											{ shareholder_name:'합 계', summaryRow: true, pq_fn:{shareholder_stock:'sum(H:H)', shareholder_stock_not:'sum(I:I)', }},
+										],
+										dataModel: { data: json_data2 },
+										columnTemplate: { render: tooltipRender },
+										create: function (evt, ui) {
+											this.widget().pqTooltip();
+										},
+									};
+
+									// var grid = $("#grid_summary2").pqGrid(obj);
+									var grid = pq.grid( "#grid_summary2", obj );
+
+
+								});
+							</script> 
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								
+							</pre>
+							<p>SCRIPT</p>
+							<pre class="syntax brush:css">
+								
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			
+		</div>
+	</div>
+
+	<!-- 팝업 -->
+	<!-- 주소검색 -->
+	<div id="pop_address_find" class="pop_dim_wrap pop_modal pop_md">
+		<div class="pop_wrap">
+			<button class="pop_btn_close">닫기</button>
+			<div class="title_wrap">
+				주소검색
+			</div>
+			<div class="contents_wrap">
+				<div>
+					<table>
+						<caption>주소검색 - 주소, 우편번호, 선택주소, 상세주소</caption>	
+						<tbody>
+							<tr>
+								<td colspan="2">
+									<div class="td_col2">
+										<div>
+											<input type="text" class="form_control" maxlength="">
+										</div>
+										<div>
+											<button type="button" class="btn_sm btn_darkblue">검색</button>
+										</div>
+									</div>
+									<p>
+										※ 지역명(지번주소): 동/읍/면/리 (예: 여의도동 3210, 역삼동 912, 화도읍)
+									</p>
+									<p>
+										※ 도로명주소(새주소):도로명 + 건물명 (예: 국제금융10, 상도로)
+									</p>
+									<ul class="address_result">
+										<li>
+											<a href="javascript:void(0)">여의도동 3210</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">여의도동 3210</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">여의도동 3210</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">여의도동 3210</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">여의도동 3210</a>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr class="address_detail">
+								<th><label for="post_num">우편번호</label></th>
+								<td><input type="text" id="post_num" class="form_control form_sm" maxlength=""></td>
+							</tr>
+							<tr class="address_detail">
+								<th><label for="select_addr">선택주소</label></th>
+								<td><input type="text" id="select_addr" class="form_control" maxlength=""></td>
+							</tr>
+							<tr class="address_detail">
+								<th><label for="detail_addr">상세주소</label></th>
+								<td><input type="text" id="detail_addr" class="form_control" maxlength=""></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="button_wrap">
+				<button type="button" class="btn_md btn_blue" onclick="$('#pop_address_find').neoModal('close');">완료</button>
+			</div>
+		</div>
+	</div>
+	<!-- // 팝업 -->
+</div>
+</body>
+</html>

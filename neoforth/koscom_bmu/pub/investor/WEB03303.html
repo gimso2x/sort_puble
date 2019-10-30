@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			//탭 동작
+			var $tabMenu = $('.tabs li a');
+			var $tabContent = $('.tab_contents');
+
+			$tabMenu.on('click', function(e) {
+				e.preventDefault();
+				var idx = $tabMenu.index(this);
+				
+				$(this).addClass('on').closest('li').siblings().children('a').removeClass('on');
+				$tabContent.eq(idx).addClass('on').siblings().removeClass('on');
+			});
+
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 투자자로그인 로그인 시 class="case3" -->
+	<div id="header" class="case3">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb">
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);">비상장주식거래</a></li>
+					<li><a href="javascript:void(0);">기업정보</a></li>
+					<li><a href="javascript:void(0);">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li>
+					<li class="mypage_area"><a href="javascript:void(0);" class="active"><span>마이페이지</span></a></li>
+					<li class="notice_area"><a href="javascript:void(0);" class="on"><span>2</span></a></li>  
+					<li class="logout_area"><a href="javascript:void(0);" class="sr_only">로그아웃</a></li>  
+				</ul>
+				<div class="bar"></div>
+
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">주문현황</a></li>
+						<li><a href="javascript:void(0);">체결현황</a></li>
+						<li><a href="javascript:void(0);">전종목 거래현황</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보 조회</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+					
+					<ul class="nav_sub"> 
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul>
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul>
+				</div>	<!-- // submenu_area -->
+			</div>
+
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">비상장주식거래</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">주문현황</a></li>
+						<li><a href="javascript:void(0);">체결현황</a></li>
+						<li><a href="javascript:void(0);">전종목 거래현황</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">기업정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보 조회</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">마이페이지</a> 
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li> 
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="nav_page">
+			<div class="inner">
+				<ul class="lst_page clearfix">
+					<li><a href="/" class="btn_home sr_only">Home</a></li> 
+					<li>
+						<a href="javascript:void(0);" class="btn_page">마이페이지</a>
+						<ul class="nav_subpage clearfix">  
+							<li><a href="javascript:void(0);" class="active">비상장주식거래</a></li>
+							<li><a href="javascript:void(0);">기업정보</a></li>
+							<li><a href="javascript:void(0);">서비스 소개</a></li>
+							<li><a href="javascript:void(0);">투자정보</a></li>
+							<li><a href="javascript:void(0);">고객센터</a></li>
+							<li><a href="javascript:void(0);">로그아웃</a></li>
+							<li><a href="javascript:void(0);">마이페이지</a></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="lst_subpage clearfix">  
+							<li><a href="javascript:void(0);">가입정보 관리</a></li>
+							<li><a href="javascript:void(0);">계좌정보 관리</a></li> 
+							<li><a href="javascript:void(0);">관심기업 관리</a></li>
+							<li><a href="javascript:void(0);" class="active">나의 주문</a></li> 
+							<li><a href="javascript:void(0);">계약내역 조회</a></li>
+							<li><a href="javascript:void(0);">거래내역 조회</a></li>
+							<li><a href="javascript:void(0);">보유잔고 현황</a></li>
+							<li><a href="javascript:void(0);">증빙서류 관리</a></li>
+							<li><a href="javascript:void(0);">1:1 문의</a></li> 
+							<li><a href="javascript:void(0);">서비스해지신청</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>	<!-- // nav_page -->
+
+		<div class="section"> 
+			<div class="inner">
+				<div class="group_pageinfo">
+					<h3 class="txt_title">거래정보관리</h3>
+				</div>	<!-- // group_title -->
+				
+				<div class="contents">
+					<ul class="tab_md tabs tab_4ea clearfix mt30"> 
+						<li><a href="javascript:void(0);" class="on">주문관리</a></li>
+						<li><a href="javascript:void(0);">협상관리</a></li>
+						<li><a href="javascript:void(0);">계약 및 체결 관리</a></li>
+						<li><a href="javascript:void(0);">보유잔고현황</a></li> 
+					</ul>
+					
+					<div class="tab_contents on"> 
+						
+						<div class="group_date_srch mt30"> 
+							<div class="search_name"> 
+								<label for="srch_name">종목명</label>
+								<input type="text" maxlength="" id="srch_name" class="form_control" placeholder="종목형 또는 종목번호를 입력"> 
+								<div class="autocomplete_area on">  
+									<a href="javascript:void(0);" class="btn_close sr_only">close</a>
+									<ul class="lst_auto on"> 
+										<li><a href="javascript:void(0);">뉴코에드윈드</a></li>
+										<li><a href="javascript:void(0);">뉴코트랜드</a></li>
+										<li><a href="javascript:void(0);">뉴코시스템</a></li>
+									</ul>
+								</div> 
+							</div>
+							<ul class="datepicker_searchwrap clearfix">
+								<li><label for="srch_date">기간</label><input type="text" id="srch_date" class="datepicker form_control"></li> 
+								<li class="datepicker_connect">~</li>
+								<li><input type="text" class="datepicker form_control"></li>
+							</ul> 
+							<div class="date_btn_wrap">
+								<!-- [D] 활성화 버튼은 'on' 추가 -->
+								<button type="button" class="btn_term_select on">오늘</button>
+								<button type="button" class="btn_term_select">1주</button>
+								<button type="button" class="btn_term_select">1달</button>
+								<button type="button" class="btn_term_select">1년</button>
+							</div> 
+						</div>
+	 
+						<div class="ac pt20"> 
+							<button type="button" class="btn_md btn_white">초기화</button>
+							<button type="button" class="btn_md btn_blue">검색</button> 
+						</div>
+
+						<div class="table_normal_list table_list_order mt30">   
+							
+							<ul class="explain_ul type_new">
+								<li>등록기업에서 거래정지 처리 시 체결이전의 모든 주문, 협상, 계약이 취소되며 관리화면에서 삭제됩니다.</li>
+								<li>종목명을 클릭하면 상세내역조회가 가능합니다.</li>
+							</ul>
+							<div class="group_tableinfo">
+								<span class="num_total">총 <em><strong>245</strong>건</em></span>
+								<div class="srch_area">
+									<label>
+										<select name="" id="" class="select_css form_control">
+											<option value="">전체</option>  
+										</select>
+									</label>
+								</div>
+							</div> 
+
+						    <table>  
+						        <caption>주문 리스트</caption>
+								<colgroup>
+									<!-- [resize] 190812 col width 변경 -->
+						            <col width="7.4%">
+						            <col width="*">
+						            <col width="12%">   
+						            <col width="12%"> 
+						            <col width="10%"> 
+						            <col width="12%">  
+						            <col width="18%">  
+						        </colgroup> 
+						        <thead>
+						            <tr>
+						                <th>NO</th>
+						                <th>종목명</th>
+						                <th>수량(주)</th>
+						                <th>가격(원)</th>  
+						                <th><a href="javascript:void(0);" class="sorting_button">구분</a></th>
+						                <th>상태</th>  
+						                <th>주문일시</th> 
+						            </tr>
+						        </thead>
+						        <tbody> 
+						            <tr>
+						                <td>12</td>    
+						                <td class="al"><a href="javascript:void(0);">에이오지히팅시스템</a></td>
+						                <td class="ar">10,000</td>
+						                <td class="ar">5,000</td>  
+						                <td class="txt_sell">매도</td>  
+						                <td>
+						                	<span class="state_deal case3">협상대기</span> 
+						                </td>   
+						                <td>2019-06-10 11:20</td> 
+						            </tr> 
+						            <tr>
+						                <td>12</td>
+						                <td class="al"><a href="javascript:void(0);">에이오지히팅시스템</a></td> 
+						                <td class="ar">10,000</td>
+						                <td class="ar">5,000</td> 
+						                <td class="txt_buy">매수</td>
+						                <td> 
+						                	<span class="state_deal case4">협상대기</span> 
+						                </td>
+						                <td>2019-06-10 11:20</td>  
+						            </tr> 
+						            <tr> 
+						                <td>12</td> 
+						                <td class="al"><a href="javascript:void(0);">에이오지히팅시스템</a></td> 
+						                <td class="ar">10,000</td>
+						                <td class="ar">5,000</td> 
+						                <td class="txt_sell">매도</td>  
+						                <td> 
+						                	<span class="state_deal case3">협상대기</span>   
+						                </td>    
+						                <td>2019-06-10 11:20</td>
+						            </tr> 
+						            <tr>
+						                <td>12</td>
+						                <td class="al"><a href="javascript:void(0);">에이오지히팅시스템</a></td>   
+						                <td class="ar">10,000</td>
+						                <td class="ar">5,000</td> 
+						                <td class="txt_buy">매수</td> 
+						                <td>
+						                	<span class="state_deal case2">협상</span> 
+						                </td>
+						                <td>2019-06-10 11:20</td>    
+						            </tr> 
+						            <tr> 
+						                <td>12</td> 
+						                <td class="al"><a href="javascript:void(0);">에이오지히팅시스템</a></td> 
+						                <td class="ar">10,000</td>
+						                <td class="ar">5,000</td> 
+						                <td class="txt_sell">매도</td> 
+						                <td> 
+						                	<span class="state_deal case1">협상</span> 
+						                </td> 
+						                <td>2019-06-10 11:20</td>  
+						            </tr>  
+						            <tr> 
+						                <td>12</td>  
+						                <td class="al"><a href="javascript:void(0);">에이오지히팅시스템</a></td>   
+						                <td class="ar">10,000</td>
+						                <td class="ar">5,000</td> 
+						                <td class="txt_sell">매도</td> 
+						                <td> 
+						                	<span class="state_deal case3">협상대기</span>   
+						                </td>  
+						                <td>2019-06-10 11:20</td>  
+						            </tr>  
+						            <tr> 
+						                <td>12</td>  
+						                <td class="al"><a href="javascript:void(0);">에이오지히팅시스템</a></td>  
+						                <td class="ar">10,000</td>
+						                <td class="ar">5,000</td>  
+						                <td class="txt_sell">매도</td>   
+						                <td> 
+						                	<span class="state_deal case3">협상대기</span>   
+						                </td> 
+						                <td>2019-06-10 11:20</td>        
+						            </tr>   
+						        </tbody>   
+						    </table>
+						    <div class="board_paging">
+						        <ul>
+						            <li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+						            <li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+						            <li><a href="javascript:void(0);" class="active">1</a></li>
+						            <li><a href="javascript:void(0);">2</a></li>
+						            <li><a href="javascript:void(0);">3</a></li>
+						            <li><a href="javascript:void(0);">4</a></li>
+						            <li><a href="javascript:void(0);">5</a></li>
+						            <li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+						            <li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+						        </ul>
+						    </div>
+						</div> 
+					</div>
+
+					<div class="tab_contents">  
+						<div class="group_date_srch mt30"> 
+							<div class="search_name"> 
+								<label for="srch_name">종목명</label>
+								<input type="text" maxlength="" id="srch_name" class="form_control" placeholder="종목형 또는 종목번호를 입력"> 
+								<div class="autocomplete_area on">  
+									<a href="javascript:void(0);" class="btn_close sr_only">close</a>
+									<ul class="lst_auto on"> 
+										<li><a href="javascript:void(0);">뉴코에드윈드</a></li>
+										<li><a href="javascript:void(0);">뉴코트랜드</a></li>
+										<li><a href="javascript:void(0);">뉴코시스템</a></li>
+									</ul>
+								</div> 
+							</div>
+							<ul class="datepicker_searchwrap clearfix">
+								<li><label for="srch_date">기간</label><input type="text" id="srch_date" class="datepicker form_control"></li> 
+								<li class="datepicker_connect">~</li>
+								<li><input type="text" class="datepicker form_control"></li>
+							</ul> 
+							<div class="date_btn_wrap">
+								<!-- [D] 활성화 버튼은 'on' 추가 -->
+								<button type="button" class="btn_term_select on">오늘</button>
+								<button type="button" class="btn_term_select">1주</button>
+								<button type="button" class="btn_term_select">1달</button>
+								<button type="button" class="btn_term_select">1년</button>
+							</div> 
+						</div>
+	 
+						<div class="ac pt20"> 
+							<button type="button" class="btn_md btn_white">초기화</button>
+							<button type="button" class="btn_md btn_blue">검색</button> 
+						</div>
+
+						<div class="table_normal_list table_list_order mt30">
+							<div class="group_tableinfo">
+								<span class="num_total">총 <em><strong>245</strong>건</em></span> 
+								<ul class="lst_help case2">
+									<li>등록기업에서 거래정지 처리 시 체결이전의 모든 주문, 협상, 계약이 취소되며 관리화면에서 삭제됩니다.</li>
+								</ul>
+								<div class="srch_area">
+									<label>
+										<select name="" id="" class="select_css form_control">
+											<option value="">전체</option>  
+										</select>
+									</label>
+								</div>
+							</div>   
+						    <table>  
+						        <caption>주문 리스트</caption>
+						        <colgroup>
+						            <col width="50">
+						            <col width="*">
+						            <col width="140">
+						            <col width="140"> 
+						            <col width="120">
+						            <col width="120">
+						            <col width="120">
+						            <col width="180">   
+						        </colgroup> 
+						        <thead>
+						            <tr>
+						                <th>NO</th>
+						                <th>종목명</th>
+						                <th><a href="javascript:void(0);" class="sorting_button">수량(주)</a></th> 
+						                <th><a href="javascript:void(0);" class="sorting_button">가격(원)</a></th> 
+						                <th><a href="javascript:void(0);" class="sorting_button">주문구분</a></th> 
+						                <th><a href="javascript:void(0);" class="sorting_button">상태</a></th>   
+						                <th>거래상대방</th>
+						                <th></th>
+						            </tr>
+						        </thead>
+						        <tbody> 
+						            <tr>
+						                <td>12</td>
+						                <td class="al">에이오지히팅시스템</td>
+						                <td class="ar">10,000주</td>
+						                <td class="ar">5,000원</td> 
+						                <td class="txt_sell_color">매도</td>
+						                <td><span class="state_deal case3">협상대기</span></td>
+						                <td>김*표</td>
+						                <td><button type="button" class="btn_xs btn_gray btn_cancel">요청취소</button></td>
+						            </tr>  
+						            <tr>
+						                <td>12</td>
+						                <td class="al">에이오지히팅시스템</td>
+						                <td class="ar">10,000주</td>
+						                <td class="ar">5,000원</td> 
+						                <td class="txt_buy_color">매수</td>
+						                <td><span class="state_deal case4">협상대기</span></td>
+						                <td>김*표</td>
+						                <td>
+						                	<button class="btn_xs btn_blue btn_chat">채팅방 &gt;</button>  
+						                </td>   
+						            </tr> 
+						            <tr>  
+						                <td>12</td>
+						                <td class="al">에이오지히팅시스템</td>
+						                <td class="ar">10,000주</td>
+						                <td class="ar">5,000원</td> 
+						                <td class="txt_sell_color">매도</td>
+						                <td><span class="state_deal case1">협상</span></td>
+						                <td>김*표</td>
+						                <td>
+						                	<button type="button" class="btn_xs btn_gray btn_reject">거절</button>
+						                	<button type="button" class="btn_xs btn_blue btn_confirm">수락</button>
+						                </td>       
+						            </tr>   
+						            <tr>
+						                <td>12</td>
+						                <td class="al">에이오지히팅시스템</td>
+						                <td class="ar">10,000주</td>
+						                <td class="ar">5,000원</td> 
+						                <td class="txt_sell_color">매도</td>
+						                <td><span class="state_deal case1">협상</span></td>
+						                <td>김*표</td>
+						                <td>협상거부</td>      
+						            </tr> 
+						            <tr> 
+						                <td>12</td>
+						                <td class="al">에이오지히팅시스템</td>
+						                <td class="ar">10,000주</td>
+						                <td class="ar">5,000원</td> 
+						                <td class="txt_buy_color">매수</td>
+						                <td><span class="state_deal case2">협상</span></td>
+						                <td>김*표</td>
+						                <td>요청취소</td>   
+						            </tr> 
+						            <tr> 
+						                <td>12</td>
+						                <td class="al">에이오지히팅시스템</td>
+						                <td class="ar">10,000주</td>
+						                <td class="ar">5,000원</td> 
+						                <td class="txt_buy_color">매수</td>
+						                <td><span class="state_deal case4">협상대기</span></td>
+						                <td>김*표</td>
+						                <td>협상거절</td>   
+						            </tr> 
+						            <tr> 
+						                <td>12</td>
+						                <td class="al">에이오지히팅시스템</td>
+						                <td class="ar">10,000주</td>
+						                <td class="ar">5,000원</td> 
+						                <td class="txt_buy_color">매수</td>
+						                <td><span class="state_deal case10">결렬</span></td>
+						                <td>김*표</td>
+						                <td>협상거절</td>    
+						            </tr> 
+						        </tbody>   
+						    </table>
+						    <div class="board_paging">
+						        <ul>
+						            <li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+						            <li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+						            <li><a href="javascript:void(0);" class="active">1</a></li>
+						            <li><a href="javascript:void(0);">2</a></li>
+						            <li><a href="javascript:void(0);">3</a></li>
+						            <li><a href="javascript:void(0);">4</a></li>
+						            <li><a href="javascript:void(0);">5</a></li>
+						            <li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+						            <li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+						        </ul>
+						    </div>
+						</div> 
+					</div>  
+
+					<div class="tab_contents">  
+						<div class="group_date_srch mt30"> 
+							<div class="search_name"> 
+								<label for="srch_name">종목명</label>
+								<input type="text" maxlength="" id="srch_name" class="form_control" placeholder="종목형 또는 종목번호를 입력"> 
+								<div class="autocomplete_area on">  
+									<a href="javascript:void(0);" class="btn_close sr_only">close</a>
+									<ul class="lst_auto on"> 
+										<li><a href="javascript:void(0);">뉴코에드윈드</a></li>
+										<li><a href="javascript:void(0);">뉴코트랜드</a></li>
+										<li><a href="javascript:void(0);">뉴코시스템</a></li>
+									</ul>
+								</div> 
+							</div>
+							<ul class="datepicker_searchwrap clearfix">
+								<li><label for="srch_date">기간</label><input type="text" id="srch_date" class="datepicker form_control"></li> 
+								<li class="datepicker_connect">~</li>
+								<li><input type="text" class="datepicker form_control"></li>
+							</ul> 
+							<div class="date_btn_wrap">
+								<!-- [D] 활성화 버튼은 'on' 추가 -->
+								<button type="button" class="btn_term_select on">오늘</button>
+								<button type="button" class="btn_term_select">1주</button>
+								<button type="button" class="btn_term_select">1달</button>
+								<button type="button" class="btn_term_select">1년</button>
+							</div> 
+						</div>
+	 
+						<div class="ac pt20"> 
+							<button type="button" class="btn_md btn_white">초기화</button>
+							<button type="button" class="btn_md btn_blue">검색</button> 
+						</div>
+
+						<div class="table_normal_list mt30">
+							<div class="group_tableinfo">
+								<span class="num_total">총 <em><strong>245</strong>건</em></span> 
+								<ul class="lst_help case2">
+									<li>등록기업에서 거래정지 처리 시 체결이전의 모든 주문, 협상, 계약이 취소되며 관리화면에서 삭제됩니다.</li>
+								</ul>
+								<div class="srch_area">
+									<label>
+										<select name="" id="" class="select_css form_control">
+											<option value="">전체</option>  
+										</select>
+									</label>
+								</div>
+							</div>   
+						    <table>  
+						        <caption>주문 리스트</caption>
+						        <colgroup>
+						            <col width="50">
+						            <col width="*">
+						            <col width="100">
+						            <col width="100"> 
+						            <col width="80">
+						            <col width="100">
+						            <col width="100">
+						            <col width="90">
+						            <col width="100">
+						            <col width="90">
+						            <col width="100">   
+						        </colgroup> 
+						        <thead>
+						            <tr>
+						                <th>NO</th>
+						                <th>종목명</th>
+						                <th>수량(주)<br>가격(원)<br>금액(원)</th> 
+						                <th><a href="javascript:void(0);" class="sorting_button">주문구분</a></th> 
+						                <th><a href="javascript:void(0);" class="sorting_button">상태</a></th>   
+						                <th>거래상대방</th>
+						                <th><a href="javascript:void(0);" class="sorting_button">전자서명여부</a></th>   
+						                <th><a href="javascript:void(0);" class="sorting_button">입금상태</a></th>   
+						                <th><a href="javascript:void(0);" class="sorting_button">기업승인여부</a></th>   
+						                <th>계약서</th>
+						                <th>TXID</th>
+						            </tr>
+						        </thead>
+						        <tbody> 
+						            <tr>
+						                <td>12</td>
+						                <td class="al"><span class="txt_ellipsis" title="에이오지히팅시스템">에이오지히팅시스템</span></td>
+						                <td class="ar">10,000<br>10,000<br>10,000</td> 
+						                <td class="txt_sell_color">매도</td>
+						                <td><span class="state_deal case5">서명대기</span></td>
+						                <td>김*표</td>
+						                <td><a href="javascript:void(0);" class="txt_buy_color">N</a></td>
+						                <td></td>
+						                <td class="txt_sell_color">Y</td>
+						                <td><button type="button" class="btn_xs btn_gray">보기</button></td>
+						                <td><span class="txt_ellipsis" title="8999f39188999f3918">8999f39188999f3918</span></td>
+						            </tr> 
+						            <tr>
+						                <td>12</td>
+						                <td class="al"><span class="txt_ellipsis" title="에이오지히팅시스템">에이오지히팅시스템에이오지히팅시스템에이오지히팅시스템</span></td>
+						                <td class="ar">10,000<br>10,000<br>10,000</td> 
+						                <td class="txt_buy_color">매수</td>
+						                <td><span class="state_deal case6">입금대기</span></td>
+						                <td>김*표</td>
+						                <td><a href="javascript:void(0);" class="txt_sell_color">Y</a></td>
+						                <td>매수대금<br>입금대기</td>
+						                <td class="txt_sell_color">Y</td>
+						                <td><button type="button" class="btn_xs btn_gray">보기</button></td>
+						                <td><span class="txt_ellipsis" title="8999f39188999f3918">8999f39188999f3918</span></td>
+						            </tr> 
+						            <tr>
+						                <td>12</td>
+						                <td class="al"><span class="txt_ellipsis" title="에이오지히팅시스템">에이오지히팅시스템</span></td>
+						                <td class="ar">10,000<br>10,000<br>10,000</td> 
+						                <td class="txt_sell_color">매도</td>
+						                <td><span class="state_deal case7">체결</span></td>
+						                <td>김*표</td>
+						                <td><a href="javascript:void(0);" class="txt_buy_color">N</a></td>
+						                <td>매도계좌<br>이체대기</td>
+						                <td class="txt_buy_color">N</td>
+						                <td><button type="button" class="btn_xs btn_gray">보기</button></td>
+						                <td><span class="txt_ellipsis" title="8999f39188999f3918">8999f39188999f3918</span></td>
+						            </tr> 
+						            <tr>
+						                <td>12</td>
+						                <td class="al"><span class="txt_ellipsis" title="에이오지히팅시스템">에이오지히팅시스템</span></td>
+						                <td class="ar">10,000<br>10,000<br>10,000</td> 
+						                <td class="txt_sell_color">매도</td>
+						                <td><span class="state_deal case7">체결</span></td>
+						                <td>김*표</td>
+						                <td><a href="javascript:void(0);" class="txt_buy_color">N</a></td>
+						                <td>매도계좌<br>이체대기</td>
+						                <td class="txt_sell_color">Y</td>
+						                <td><button type="button" class="btn_xs btn_gray">보기</button></td>
+						                <td><span class="txt_ellipsis" title="8999f39188999f3918">8999f39188999f3918</span></td>
+						            </tr> 
+						        </tbody>   
+						    </table>
+						    <div class="board_paging">
+						        <ul>
+						            <li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+						            <li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+						            <li><a href="javascript:void(0);" class="active">1</a></li>
+						            <li><a href="javascript:void(0);">2</a></li>
+						            <li><a href="javascript:void(0);">3</a></li>
+						            <li><a href="javascript:void(0);">4</a></li>
+						            <li><a href="javascript:void(0);">5</a></li>
+						            <li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+						            <li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+						        </ul>
+						    </div>
+						</div> 
+					</div>
+
+					<div class="tab_contents">
+						<div class="group_message mt30">
+							<p><span>“닉네임”</span>님은 총 <strong>3</strong>개 종목의 주식을 보유하고 있습니다.</p>
+						</div>
+						
+						<div class="mt20 ar"><button type="button" class="btn_sm btn_blue">엑셀 다운로드</button></div>
+
+						<div class="companyinfo_table th_vertical mt10">
+						    <table>
+						        <caption>보유잔고현황 상세</caption>
+						        <colgroup>
+						            <col width="*">
+						            <col width="120">
+						            <col width="120">
+						            <col width="120">
+						            <col width="120">
+						            <col width="120">
+						            <col width="120">
+						            <col width="150">
+						            <col width="60">
+						        </colgroup>
+						        <thead>
+						            <tr>
+						                <th rowspan="2">종목명</th>
+						                <th colspan="3">수량</th>
+						                <th rowspan="2">양도예정수량<br>(주)</th>
+						                <th rowspan="2">양수예정수량<br>(주)</th>
+						                <th rowspan="2">직전체결가<br>또는 액면가(원)</th>
+						                <th rowspan="2">보유 가치(원)</th>
+						                <th rowspan="2">지분율(%)</th>
+						            </tr>
+						            <tr>
+						                <th>보유수량(주)</th>
+						                <th>처분제한수량(주)</th>
+						                <th>주문가능수량(주)</th>
+						            </tr>
+						        </thead>
+						        <tbody>
+						            <tr>
+						                <td class="al"><a href="javascript:void(0);" class="txt_ellipsis" title="코스콤코스콤코스콤코스콤코스콤코스콤코스콤코스콤코스콤코스콤코스콤">코스콤코스콤코스콤코스콤코스콤코스콤코스콤코스콤코스콤코스콤코스콤</a></td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">7.38</td>
+						            </tr>
+						            <tr>
+						                <td class="al"><a href="javascript:void(0);" class="txt_ellipsis" title="코스콤">코스콤</a></td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">7.38</td>
+						            </tr>
+						            <tr>
+						                <td class="al"><a href="javascript:void(0);" class="txt_ellipsis" title="코스콤">코스콤</a></td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">1,500</td>
+						                <td class="ar">7.38</td>
+						            </tr>
+						        </tbody>
+						    </table>
+						</div>	
+
+						<div class="companyinfo_table th_vertical mt20">
+						    <table>
+						        <caption>보유잔고현황 상세</caption>
+						        <colgroup>
+						            <col width="*">
+						            <col width="120">
+						            <col width="120">
+						            <col width="120">
+						            <col width="120">
+						            <col width="120">
+						            <col width="120">
+						            <col width="120">
+						            <col width="80">
+						        </colgroup>
+						        <thead>
+						            <tr>
+						                <th rowspan="2">종목명</th>
+						                <th colspan="3">수량</th>
+						                <th rowspan="2">양도예정수량<br>(주)</th>
+						                <th rowspan="2">양수예정수량<br>(주)</th>
+						                <th rowspan="2">직전체결가<br>또는 액면가(원)</th>
+						                <th rowspan="2">보유 가치(원)</th>
+						                <th rowspan="2">지분율(%)</th>
+						            </tr>
+						            <tr>
+						                <th>보유수량(주)</th>
+						                <th>처분제한수량(주)</th>
+						                <th>주문가능수량(주)</th>
+						            </tr>
+						        </thead>
+						        <tbody>
+						            <tr>
+						                <td colspan="9" class="blank_area type_white"> 
+						                	<p class="txt_blank">보유잔고 현황이 없습니다</p>
+						                </td>
+						            </tr>
+						        </tbody>
+						    </table>
+						</div>
+
+						<div class="submit_area ar mt30 clearfix">
+							<ul class="lst_help fl">
+								<li>보유 가치는 직전체결가(액면가)에 보유수량을 곱한 금액입니다.</li>
+							</ul>
+							<button class="btn_md btn_blue" onclick="$('#pop_ask_document').neoModal();">주권미발행확인서 발급요청</button>
+							<button class="btn_md btn_blue">나의 거래내역 조회</button>
+						</div>
+					</div> 
+
+				</div>	<!-- // contents -->   
+			</div> 
+		</div>
+	</div>	<!-- // container -->
+
+	<!-- 투자자로그인 로그인 시 class="case3" -->
+	<div id="footer" class="case3">
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix">
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.naver.com">aaa</option> 
+						<option value="http://www.daum.net">bbb</option> 
+						<option value="https://www.kakaocorp.com">ccc</option>
+					</select> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">비상장주식거래</a>
+					<ul>
+						<li><a href="javascript:void(0);">주문현황</a></li>
+						<li><a href="javascript:void(0);">체결현황</a></li>
+						<li><a href="javascript:void(0);">전종목 거래현황</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">기업정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보 조회</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">마이페이지</a> 
+					<ul>
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>  
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a> 
+		<a href="javascript:void(0);" class="btn_chatting"><span>협상채팅</span></a>
+	</div>	<!-- // footer --> 
+</div>
+
+<!-- 팝업 --> 
+<div id="pop_ask_document" class="pop_dim_wrap pop_modal">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="title_wrap">
+            주권미발행확인서 발급요청
+        </div>
+        <div class="contents_wrap">
+            <div class="companyinfo_table th_vertical mt20">
+			    <table>
+			        <caption>주권미발행확인서 발급요청 등록</caption>
+			        <colgroup>
+			        	<col width="130">
+			            <col width="*">
+			        </colgroup>
+			        <tbody>
+			            <tr>
+			                <th><label for="select_type">종목명</label></th>
+			                <td>
+			                	<select name="" id="select_type" class="select_css form_control">
+			                		<option value="">종목명</option>
+			                	</select>
+			                </td>
+			            </tr>
+			            <tr>
+			                <th>보유수량(주)</th>
+			                <td class="ar">1,000</td>
+			            </tr>
+			        </tbody>
+			    </table>
+			</div>
+			<p class="txt_agree">발급요청을 진행하시겠습니까?</p>
+        </div>
+        <div class="button_wrap">
+            <button type="button" class="btn_md btn_blue">확인</button>
+        </div>
+    </div>
+</div>
+
+<div id="pop_ask_complete" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap">
+                발급요청을 완료하였습니다
+            </div>
+        </div>
+        <div class="button_wrap">
+            <button type="button" class="btn_pop_default btn_blue">확인</button>
+        </div>
+    </div>
+</div>
+
+<div id="pop_deal_cancel" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap"> 
+                “거래상대방”님에게 보낸 협상요청을<br>취소하시겠습니까?
+            </div>
+        </div>
+        <div class="button_wrap">
+            <button type="button" class="btn_pop_default btn_white w50">아니오</button>
+            <button type="button" class="btn_pop_default btn_blue w50">예</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="pop_deal_cancel" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap"> 
+                “거래상대방”님에게 보낸 협상요청을<br>취소하시겠습니까?
+            </div>
+        </div>
+        <div class="button_wrap">
+            <button type="button" class="btn_pop_default btn_white w50">아니오</button>
+            <button type="button" class="btn_pop_default btn_blue w50">예</button>
+        </div>
+    </div>
+</div>
+
+<div id="pop_deal_confirm" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap">
+                “거래상대방”님이 보낸 협상요청을<br>수락하였습니다
+            </div>
+        </div>
+        <div class="button_wrap">
+            <button type="button" class="btn_pop_default btn_blue">확인</button>
+        </div>
+    </div>
+</div>
+
+<div id="pop_deal_reject" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap"> 
+                “거래상대방”님에게 보낸 협상요청을<br>거절하시겠습니까?
+            </div>
+        </div>
+        <div class="button_wrap">
+            <button type="button" class="btn_pop_default btn_white w50">아니오</button>
+            <button type="button" class="btn_pop_default btn_blue w50">예</button>
+        </div>
+    </div>
+</div>
+<!-- // 팝업 -->
+
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+</body>
+</html>

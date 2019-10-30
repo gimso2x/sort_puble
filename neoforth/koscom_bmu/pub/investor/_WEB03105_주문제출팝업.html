@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/vendor/Chart.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#pop_order_process').neoModal();
+
+
+			$('input[name="buysell_type"').change(function() {
+				check_radio();
+			})
+			// 매도 체크일 때, 매수체크일 때 디자인요소상 글자색 변경
+			function check_radio() {
+				var $companyinfo_table = $('#pop_order_process .companyinfo_table');
+				if($('#stock_sell').is(':checked')){
+					$companyinfo_table.removeClass('tbl_buy_color');
+					$companyinfo_table.addClass('tbl_sell_color');
+				}
+				if($('#stock_buy').is(':checked')){
+					$companyinfo_table.removeClass('tbl_sell_color');
+					$companyinfo_table.addClass('tbl_buy_color');
+				}
+			}
+
+			// 종목검색 탭
+			//종목검색팝업 탭 동작
+			var $tabMenu = $('.tabs li a');
+			var $tabContent = $('.tab_contents');
+
+			$tabMenu.on('click', function(e) {
+				e.preventDefault();
+				var idx = $tabMenu.index(this);
+				
+				$(this).addClass('on').closest('li').siblings().children('a').removeClass('on');
+				$tabContent.eq(idx).addClass('on').siblings().removeClass('on');
+			});
+
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	
+</div>
+
+
+<!-- 팝업 -->
+<div id="pop_order_process" class="pop_dim_wrap pop_modal pop_lg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주문 제출
+		</div>
+		<div class="contents_wrap">
+			<div class="companyinfo_table tbl_sell_color">
+				<table>
+					<caption>주문 제출 - 매도수 구분, 종목, 종목수량, 단가(주당), 총금액, 거래조건</caption>
+					<colgroup>
+						<col width="122">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>매도수 구분 <span class="txt_sell_color">*</span></th>
+							<td>
+								<div>
+									<label class="input_radio" for="stock_sell">
+										<input type="radio" id="stock_sell" name="buysell_type" checked="">
+										<span class="label_text txt_sell_color">매도</span>
+									</label>
+									<label class="input_radio" for="stock_buy">
+										<input type="radio" id="stock_buy" name="buysell_type">
+										<span class="label_text txt_buy_color">매수</span>
+									</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>종목 <span class="txt_sell_color">*</span></th>
+							<td>
+								<div class="search_form">
+									<input type="text" class="form_control" readonly>
+									<button class="btn_search" onclick="$('#pop_stock_search').neoModal();">검색</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>주문수량 <span class="txt_sell_color">*</span></th>
+							<td>
+								<dl>
+									<dt><input type="text" class="form_control" maxlength=""></dt>
+									<dd>주</dd>
+								</dl>
+								<dl>
+									<dt>매도가능 수량 <input type="text" class="form_control" maxlength="" readonly></dt>
+									<dd>주</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th>단가(주당) <span class="txt_sell_color">*</span></th>
+							<td>
+								<dl>
+									<dt><input type="text" class="form_control" maxlength=""></dt>
+									<dd>원</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th>총 금액</th>
+							<td>
+								<span>500,000</span> 원
+							</td>
+						</tr>
+						<tr>
+							<th>거래조건</th>
+							<td>
+								<textarea class="form_control" placeholder="내용을 입력하세요"></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_white" onclick="$('#pop_order_process').neoModal('close');">취소</button>
+			<button type="button" class="btn_md btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<!-- 종목검색 팝업 -->
+<div id="pop_stock_search" class="pop_dim_wrap pop_modal">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			종목검색
+		</div>
+		<div class="contents_wrap">
+			<ul class="tabs stock_serachtit clearfix mb10">
+				<li><a href="javascript:void(0);" class="on">전종목</a></li>
+				<li><a href="javascript:void(0);">매도가능종목</a></li>
+				<li><a href="javascript:void(0);">관심기업종목</a></li>
+			</ul>
+
+			<!-- 전종목 -->
+			<div class="tab_contents on">
+				<div class="search_form mb10">
+					<input type="text" class="form_control" maxlength="" placeholder="기업명, 종목, 종목번호 검색">
+					<button class="btn_search">검색</button>
+				</div>
+				<div class="search_initial mb10">
+					<button type="button" class="active">가</button>
+					<button type="button">나</button>
+					<button type="button">다</button>
+					<button type="button">라</button>
+					<button type="button">마</button>
+					<button type="button">바</button>
+					<button type="button">사</button>
+					<button type="button">아</button>
+					<button type="button">자</button>
+					<button type="button">차</button>
+					<button type="button">카</button>
+					<button type="button">타</button>
+					<button type="button">파</button>
+					<button type="button">하</button>
+					<button type="button">A-Z</button>
+				</div>
+				<ul class="search_after_list">
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks on">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks on">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+				</ul>
+			</div>
+			<!-- // 전종목 -->
+
+			<!-- 매도가능종목 -->
+			<div class="tab_contents">
+				<p class="search_info_txt">총 <span class="txt_emphasis">17</span>개의 관심기업종목이 있습니다.</p>
+				<ul class="search_after_list long_type">
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks on">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks on">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+						<div><button class="favorite_stocks">즐겨찾기</button></div>
+					</li>
+				</ul>
+			</div>
+			<!-- // 매도가능종목 -->
+			<!-- 관심기업종목 -->
+			<div class="tab_contents">
+				<p class="search_info_txt">총 <span class="txt_emphasis">38</span>개의 관심기업종목이 있습니다.</p>
+				<ul class="search_after_list long_type">
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+					</li>
+					<li class="clearfix">
+						<div><a href="javascript:void(0);">123456</a></div>
+						<div><a href="javascript:void(0);">아가방컴퍼니</a></div>
+					</li>
+				</ul>
+			</div>
+			<!-- 관심기업종목 -->
+		</div>
+	</div>
+</div>
+
+
+<div id="pop_alert_counterror" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				직전체결가의 10배 이상의 금액을 입력하셨습니다. 
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_alert_counterror2" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				액면가의 10배 이상의 금액을 입력하셨습니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+<!-- // 팝업 -->
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+</body>
+</html>

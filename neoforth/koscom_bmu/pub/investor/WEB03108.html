@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/vendor/Chart.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#pop_order_info').neoModal();
+
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	
+</div>
+
+ 
+<!-- 팝업 -->
+<div id="pop_order_info" class="pop_dim_wrap pop_modal pop_lg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주문정보
+		</div>
+		<div class="contents_wrap">
+			<div class="companyinfo_table">
+				<table>
+					<caption>주문 상세 - 매도수 구분, 종목, 주문수량, 단가(주당), 총금액, 거래조건, 주문상태, 등록일</caption>
+					<colgroup>
+						<col width="130">
+						<col width="315"> 
+						<col width="130">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>종목명</th>
+							<td>코스콤</td>
+							<th>양도인</th>
+							<td>김*표</td>
+						</tr>
+						<tr>
+							<th>수량(주)</th>
+							<td class="ar">5,000</td>
+							<th>양수인</th>
+							<td>김*응</td>
+						</tr>
+						<tr>
+							<th>가격(원)</th>
+							<td class="ar">90,000</td>
+							<th>계약체결일</th>
+							<td>2019.06.15</td>
+						</tr>
+						<tr>
+							<th>금액(원)</th>
+							<td class="ar">90,000</td>
+							<th>상태</th>
+							<td><span class="state_deal case9">계약</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="companyinfo_table">
+				<table>
+					<caption>주문 상세 - 매도수 구분, 종목, 주문수량, 단가(주당), 총금액, 거래조건, 주문상태, 등록일</caption>
+					<colgroup>
+						<col width="130">
+						<col width="315"> 
+						<col width="130">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>종목명</th>
+							<td>코스콤</td>
+							<th>양도인</th>
+							<td>김*표</td>
+						</tr>
+						<tr>
+							<th>수량(주)</th>
+							<td class="ar">5,000</td>
+							<th>양수인</th>
+							<td>김*응</td>
+						</tr>
+						<tr>
+							<th>가격(원)</th>
+							<td class="ar">90,000</td>
+							<th>계약체결일</th>
+							<td>2019.06.15</td>
+						</tr>
+						<tr>
+							<th>금액(원)</th>
+							<td class="ar">90,000</td>
+							<th>상태</th>
+							<td><span class="state_deal case7">체결</span></td> 
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // 팝업 -->
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+</body>
+</html>

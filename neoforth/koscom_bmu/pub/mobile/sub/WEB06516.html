@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body class="bg_gray"> 
+ 
+<div id="wrap_webview">
+
+	<div class="section">
+		<dl class="write_qna">
+			<dt>
+				<label for="input_name">제목</label>
+			</dt>
+			<dd>
+				<input type="text" maxlength="" id="input_name" class="form_control" placeholder="종목명 또는 종목번호를 입력해주세요">
+			</dd>
+			<dt>
+				<label for="input_desc">내용</label>
+			</dt>
+			<dd>
+				<textarea name="" id="input_desc" class="form_control"></textarea>
+			</dd>
+			<dt>
+				<label for="input_file">파일첨부</label>
+			</dt>
+			<dd>
+				<div class="wrap_file">
+				    <input class="upload_name form_control" id="input_file" value="" disabled="disabled">
+				    <input type="file" id="ex_filename1" class="upload_hidden">
+				    <label for="ex_filename1" class="btn_sm btn_darkblue btn_srch">파일찾기</label>
+				</div>
+				<div class="wrap_file">
+				    <input class="upload_name form_control" value="" disabled="disabled">
+				    <input type="file" id="ex_filename2" class="upload_hidden">
+				    <label for="ex_filename2" class="btn_sm btn_darkblue btn_srch">파일찾기</label>
+				</div>
+				<div class="wrap_file">
+				    <input class="upload_name form_control" value="" disabled="disabled">
+				    <input type="file" id="ex_filename3" class="upload_hidden">
+				    <label for="ex_filename3" class="btn_sm btn_darkblue btn_srch">파일찾기</label>
+				</div>
+				<ul class="lst_help type2">
+					<li>1:1 문의 시 필요하신 경우 파일 첨부를 하여 주십시오.<br>첨부파일은 3개까지 가능합니다.</li>
+				</ul>
+			</dd> 
+		</dl> 
+
+		<div class="submit_area type2 clearfix bt0">
+			<button type="button" class="btn_sm btn_white fl w50">취소</button>
+			<button type="button" class="btn_sm btn_blue fr w50">완료</button> 
+		</div>
+		
+	</div>	<!-- // section -->
+
+	<div class="top_area"> 
+		<a href="javascript:void(0);" class="btn_top sr_only">top</a>
+	</div> 
+
+</div>
+
+</body>
+</html>

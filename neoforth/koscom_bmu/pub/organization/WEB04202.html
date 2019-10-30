@@ -1,0 +1,1568 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+	<link rel="stylesheet" href="../css/expert.css"> 
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- ckeditor -->
+	<script src="../js/vendor/ckeditor/ckeditor.js"></script> 
+</head>
+<body>
+ 
+<div id="wrap_group">
+	
+	<div id="header_group">
+		<div class="inner">
+			<h1 class="logo"><a href="javascript:void(0);">전문가진단 관리시스템</a></h1> 
+			<ul class="nav_gnb_group clearfix">
+				<li><a href="javascript:void(0);" class="active">관리현황</a></li>
+				<li><a href="javascript:void(0);">전문가진단등록</a></li>
+			</ul>
+			<ul class="nav_log clearfix">
+				<li><a href="javascript:void(0);" class="btn_setting">엑셀러레이터협회 김길동님</a></li>
+				<li><a href="javascript:void(0);" class="btn_logout">로그아웃</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+	
+	<div id="container_group">
+		<div class="inner">
+			<h2>전문가진단등록</h2>
+			<div class="contents">
+				<div class="table_select mt30">
+					<label for="form_companyname">기업명</label>
+					<select id="form_companyname" class="select_css search_select form_control">
+					    <option>㈜지큐인터네셔널</option>
+					</select>
+				</div>
+
+				<h5 class="companyinfo_h5">1. 기업개요</h5>  
+				<div class="table_summary">
+					<table>
+						<caption class="sr_only">기업개요 등록</caption>
+						<colgroup>
+							<col width="130">
+							<col width="420">
+							<col width="130">
+							<col width="420">
+						</colgroup>
+						<thead>
+							<tr>
+								<th colspan="2" scope="col">Infrastructure</th>
+								<th colspan="2" scope="col">Customer</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="form_summary1">핵심파트너</label></th>
+								<td><textarea name="" id="form_summary1" class="form_control"></textarea></td>
+								<th scope="row"><label for="form_summary2">고객관계</label></th>
+								<td><textarea name="" id="form_summary2" class="form_control"></textarea></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="form_summary3">핵심활동</label></th>
+								<td><textarea name="" id="form_summary3" class="form_control"></textarea></td>
+								<th scope="row"><label for="form_summary4">마케팅(유통)채널</label></th>
+								<td><textarea name="" id="form_summary4" class="form_control"></textarea></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="form_summary5">핵심자원</label></th>
+								<td><textarea name="" id="form_summary5" class="form_control"></textarea></td>
+								<th scope="row"><label for="form_summary6">고객세분화<br>(타겟고객)</label></th>
+								<td><textarea name="" id="form_summary6" class="form_control"></textarea></td>
+							</tr>
+						</tbody>
+
+						<thead>
+							<tr>
+								<th colspan="2" scope="col">Finace</th>
+								<th colspan="2" scope="col">Offer</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="form_summary7">비용구조</label></th>
+								<td><textarea name="" id="form_summary7" class="form_control"></textarea></td>
+								<th scope="row" rowspan="2"><label for="form_summary8">가치제안</label></th>
+								<td rowspan="2"><textarea name="" id="form_summary8" class="form_control"></textarea></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="form_summary9">수익흐름</label></th>
+								<td><textarea name="" id="form_summary9" class="form_control"></textarea></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h5 class="companyinfo_h5">2. 기업평가</h5> 
+				<h6 class="companyinfo_h6">1) 기업평가의견</h6>  
+				<div class="companyinfo_table th_vertical_total table_estimate mt10">
+					<table> 
+						<caption>기업평가 등록</caption> 
+						<colgroup>
+							<col width="100">
+							<col width="246">
+							<col width="*">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" colspan="2">구분</th>
+								<th scope="col">평가점수</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" rowspan="3">창업팀<br>우수성</th>
+								<td class="al">대표자 역량(경력 및 전문성)</td>
+								<td class="al">
+									<label class="input_radio" for="radio1-1">
+								        <input type="radio" id="radio1-1" name="estimate1" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio1-2">
+								        <input type="radio" id="radio1-2" name="estimate1">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio1-3">
+								        <input type="radio" id="radio1-3" name="estimate1">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio1-4">
+								        <input type="radio" id="radio1-4" name="estimate1">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio1-5">
+								        <input type="radio" id="radio1-5" name="estimate1">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio1-6">
+								        <input type="radio" id="radio1-6" name="estimate1">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio1-7">
+								        <input type="radio" id="radio1-7" name="estimate1">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<td class="al">전문성 갖춘 창업팀 구성</td>
+								<td class="al">
+									<label class="input_radio" for="radio2-1">
+								        <input type="radio" id="radio2-1" name="estimate2" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio2-2">
+								        <input type="radio" id="radio2-2" name="estimate2">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio2-3">
+								        <input type="radio" id="radio2-3" name="estimate2">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio2-4">
+								        <input type="radio" id="radio2-4" name="estimate2">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio2-5">
+								        <input type="radio" id="radio2-5" name="estimate2">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio2-6">
+								        <input type="radio" id="radio2-6" name="estimate2">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio2-7">
+								        <input type="radio" id="radio2-7" name="estimate2">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<td class="al">직원들간의 화합/소통</td>
+								<td class="al">
+									<label class="input_radio" for="radio3-1">
+								        <input type="radio" id="radio3-1" name="estimate3" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio3-2">
+								        <input type="radio" id="radio3-2" name="estimate3">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio3-3">
+								        <input type="radio" id="radio3-3" name="estimate3">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio3-4">
+								        <input type="radio" id="radio3-4" name="estimate3">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio3-5">
+								        <input type="radio" id="radio3-5" name="estimate3">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio3-6">
+								        <input type="radio" id="radio3-6" name="estimate3">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio3-7">
+								        <input type="radio" id="radio3-7" name="estimate3">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<th scope="row" rowspan="3">재무적<br>안정성</th>
+								<td class="al">매출계획의 논리성</td>
+								<td class="al">
+									<label class="input_radio" for="radio4-1">
+								        <input type="radio" id="radio4-1" name="estimate4" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio4-2">
+								        <input type="radio" id="radio4-2" name="estimate4">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio4-3">
+								        <input type="radio" id="radio4-3" name="estimate4">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio4-4">
+								        <input type="radio" id="radio4-4" name="estimate4">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio4-5">
+								        <input type="radio" id="radio4-5" name="estimate4">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio4-6">
+								        <input type="radio" id="radio4-6" name="estimate4">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio4-7">
+								        <input type="radio" id="radio4-7" name="estimate4">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<td class="al">자금확보 계획성</td>
+								<td class="al">
+									<label class="input_radio" for="radio5-1">
+								        <input type="radio" id="radio5-1" name="estimate5" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio5-2">
+								        <input type="radio" id="radio5-2" name="estimate5">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio5-3">
+								        <input type="radio" id="radio5-3" name="estimate5">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio5-4">
+								        <input type="radio" id="radio5-4" name="estimate5">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio5-5">
+								        <input type="radio" id="radio5-5" name="estimate5">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio5-6">
+								        <input type="radio" id="radio5-6" name="estimate5">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio5-7">
+								        <input type="radio" id="radio5-7" name="estimate5">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<td class="al">현금흐름 관리 전략</td>
+								<td class="al">
+									<label class="input_radio" for="radio6-1">
+								        <input type="radio" id="radio6-1" name="estimate6" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio6-2">
+								        <input type="radio" id="radio6-2" name="estimate6">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio6-3">
+								        <input type="radio" id="radio6-3" name="estimate6">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio6-4">
+								        <input type="radio" id="radio6-4" name="estimate6">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio6-5">
+								        <input type="radio" id="radio6-5" name="estimate6">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio6-6">
+								        <input type="radio" id="radio6-6" name="estimate6">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio6-7">
+								        <input type="radio" id="radio6-7" name="estimate6">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<th scope="row" rowspan="3">비즈니스<br>독창성</th>
+								<td class="al">지식재산권 확보</td>
+								<td class="al">
+									<label class="input_radio" for="radio7-1">
+								        <input type="radio" id="radio7-1" name="estimate7" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio7-2">
+								        <input type="radio" id="radio7-2" name="estimate7">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio7-3">
+								        <input type="radio" id="radio7-3" name="estimate7">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio7-4">
+								        <input type="radio" id="radio7-4" name="estimate7">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio7-5">
+								        <input type="radio" id="radio7-5" name="estimate7">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio7-6">
+								        <input type="radio" id="radio7-6" name="estimate7">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio7-7">
+								        <input type="radio" id="radio7-7" name="estimate7">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<td class="al">모방성 어려운 기술(노하우) 확보</td>
+								<td class="al">
+									<label class="input_radio" for="radio8-1">
+								        <input type="radio" id="radio8-1" name="estimate8" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio8-2">
+								        <input type="radio" id="radio8-2" name="estimate8">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio8-3">
+								        <input type="radio" id="radio8-3" name="estimate8">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio8-4">
+								        <input type="radio" id="radio8-4" name="estimate8">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio8-5">
+								        <input type="radio" id="radio8-5" name="estimate8">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio8-6">
+								        <input type="radio" id="radio8-6" name="estimate8">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio8-7">
+								        <input type="radio" id="radio8-7" name="estimate8">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<td class="al">기존 경쟁자와의 비교 경쟁우위</td>
+								<td class="al">
+									<label class="input_radio" for="radio9-1">
+								        <input type="radio" id="radio9-1" name="estimate9" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio9-2">
+								        <input type="radio" id="radio9-2" name="estimate9">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio9-3">
+								        <input type="radio" id="radio9-3" name="estimate9">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio9-4">
+								        <input type="radio" id="radio9-4" name="estimate9">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio9-5">
+								        <input type="radio" id="radio9-5" name="estimate9">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio9-6">
+								        <input type="radio" id="radio9-6" name="estimate9">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio9-7">
+								        <input type="radio" id="radio9-7" name="estimate9">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<th scope="row" rowspan="3">미래<br>시장성</th>
+								<td class="al">시장 규모 및 성장성</td>
+								<td class="al">
+									<label class="input_radio" for="radio10-1">
+								        <input type="radio" id="radio10-1" name="estimate10" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio10-2">
+								        <input type="radio" id="radio10-2" name="estimate10">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio10-3">
+								        <input type="radio" id="radio10-3" name="estimate10">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio10-4">
+								        <input type="radio" id="radio10-4" name="estimate10">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio10-5">
+								        <input type="radio" id="radio10-5" name="estimate10">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio10-6">
+								        <input type="radio" id="radio10-6" name="estimate10">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio10-7">
+								        <input type="radio" id="radio10-7" name="estimate10">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<td class="al">최신 트렌드 정합성</td>
+								<td class="al">
+									<label class="input_radio" for="radio11-1">
+								        <input type="radio" id="radio11-1" name="estimate11" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio11-2">
+								        <input type="radio" id="radio11-2" name="estimate11">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio11-3">
+								        <input type="radio" id="radio11-3" name="estimate11">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio11-4">
+								        <input type="radio" id="radio11-4" name="estimate11">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio11-5">
+								        <input type="radio" id="radio11-5" name="estimate11">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio11-6">
+								        <input type="radio" id="radio11-6" name="estimate11">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio11-7">
+								        <input type="radio" id="radio11-7" name="estimate11">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<td class="al">새로운 사업기회 탐색 가능성<br>(Business Pivot)</td>
+								<td class="al">
+									<label class="input_radio" for="radio12-1">
+								        <input type="radio" id="radio12-1" name="estimate12" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio12-2">
+								        <input type="radio" id="radio12-2" name="estimate12">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio12-3">
+								        <input type="radio" id="radio12-3" name="estimate12">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio12-4">
+								        <input type="radio" id="radio12-4" name="estimate12">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio12-5">
+								        <input type="radio" id="radio12-5" name="estimate12">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio12-6">
+								        <input type="radio" id="radio12-6" name="estimate12">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio12-7">
+								        <input type="radio" id="radio12-7" name="estimate12">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<th scope="row" rowspan="3">판로/마케팅<br>확장성</th>
+								<td class="al">고객 수용성</td>
+								<td class="al">
+									<label class="input_radio" for="radio13-1">
+								        <input type="radio" id="radio13-1" name="estimate13" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio13-2">
+								        <input type="radio" id="radio13-2" name="estimate13">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio13-3">
+								        <input type="radio" id="radio13-3" name="estimate13">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio13-4">
+								        <input type="radio" id="radio13-4" name="estimate13">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio13-5">
+								        <input type="radio" id="radio13-5" name="estimate13">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio13-6">
+								        <input type="radio" id="radio13-6" name="estimate13">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio13-7">
+								        <input type="radio" id="radio13-7" name="estimate13">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<td class="al">홍보/판촉 채널 보유</td>
+								<td class="al">
+									<label class="input_radio" for="radio14-1">
+								        <input type="radio" id="radio14-1" name="estimate14" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio14-2">
+								        <input type="radio" id="radio14-2" name="estimate14">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio14-3">
+								        <input type="radio" id="radio14-3" name="estimate14">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio14-4">
+								        <input type="radio" id="radio14-4" name="estimate14">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio14-5">
+								        <input type="radio" id="radio14-5" name="estimate14">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio14-6">
+								        <input type="radio" id="radio14-6" name="estimate14">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio14-7">
+								        <input type="radio" id="radio14-7" name="estimate14">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<td class="al">마케팅 전문역량 보유</td>
+								<td class="al">
+									<label class="input_radio" for="radio15-1">
+								        <input type="radio" id="radio15-1" name="estimate15" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio15-2">
+								        <input type="radio" id="radio15-2" name="estimate15">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio15-3">
+								        <input type="radio" id="radio15-3" name="estimate15">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio15-4">
+								        <input type="radio" id="radio15-4" name="estimate15">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio15-5">
+								        <input type="radio" id="radio15-5" name="estimate15">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio15-6">
+								        <input type="radio" id="radio15-6" name="estimate15">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio15-7">
+								        <input type="radio" id="radio15-7" name="estimate15">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<th scope="row" rowspan="3">투자회수</th>
+								<td class="al">EXIT 모델의 명확성</td>
+								<td class="al">
+									<label class="input_radio" for="radio16-1">
+								        <input type="radio" id="radio16-1" name="estimate16" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio16-2">
+								        <input type="radio" id="radio16-2" name="estimate16">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio16-3">
+								        <input type="radio" id="radio16-3" name="estimate16">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio16-4">
+								        <input type="radio" id="radio16-4" name="estimate16">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio16-5">
+								        <input type="radio" id="radio16-5" name="estimate16">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio16-6">
+								        <input type="radio" id="radio16-6" name="estimate16">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio16-7">
+								        <input type="radio" id="radio16-7" name="estimate16">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<td class="al">조기 투자회수 가능성</td>
+								<td class="al">
+									<label class="input_radio" for="radio17-1">
+								        <input type="radio" id="radio17-1" name="estimate17" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio17-2">
+								        <input type="radio" id="radio17-2" name="estimate17">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio17-3">
+								        <input type="radio" id="radio17-3" name="estimate17">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio17-4">
+								        <input type="radio" id="radio17-4" name="estimate17">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio17-5">
+								        <input type="radio" id="radio17-5" name="estimate17">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio17-6">
+								        <input type="radio" id="radio17-6" name="estimate17">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio17-7">
+								        <input type="radio" id="radio17-7" name="estimate17">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+							<tr>
+								<td class="al">투자회수 규모 기대치</td>
+								<td class="al">
+									<label class="input_radio" for="radio18-1">
+								        <input type="radio" id="radio18-1" name="estimate18" checked="">
+								        <span class="label_text">1점(전혀없음)</span>
+								    </label>
+								    <label class="input_radio" for="radio18-2">
+								        <input type="radio" id="radio18-2" name="estimate18">
+								        <span class="label_text">2점(부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio18-3">
+								        <input type="radio" id="radio18-3" name="estimate18">
+								        <span class="label_text">3점(다소 부족)</span>
+								    </label>
+								    <label class="input_radio" for="radio18-4">
+								        <input type="radio" id="radio18-4" name="estimate18">
+								        <span class="label_text">4점(보통)</span>
+								    </label>
+								    <label class="input_radio" for="radio18-5">
+								        <input type="radio" id="radio18-5" name="estimate18">
+								        <span class="label_text">5점(다소 미흡)</span>
+								    </label>
+								    <label class="input_radio" for="radio18-6">
+								        <input type="radio" id="radio18-6" name="estimate18">
+								        <span class="label_text">6점(우수)</span>
+								    </label>
+								    <label class="input_radio" for="radio18-7">
+								        <input type="radio" id="radio18-7" name="estimate18">
+								        <span class="label_text">7점(매우 우수)</span>
+								    </label>
+								</td> 
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<h6 class="companyinfo_h6 mt30">2) 리스크 평가 (기술위험성 및 시장위험성)</h6>
+				<div class="companyinfo_table th_vertical_total mt10"> 
+					<table> 
+						<caption>리스크평가 등록</caption>
+						<colgroup>
+							<col width="100">
+							<col width="*">
+							<col width="320">
+							<col width="320">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" colspan="2">구분</th>
+								<th scope="col">중요도</th>
+								<th scope="col">가능성</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" rowspan="3">조직/경영</th>
+								<td class="al">대표자 사업추진 의지 및 신의성실 상실</td>
+								<td>
+									<label class="input_radio" for="radio_lisk1-1">
+								        <input type="radio" id="radio_lisk1-1" name="lisk1" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk1-2">
+								        <input type="radio" id="radio_lisk1-2" name="lisk1">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk1-3">
+								        <input type="radio" id="radio_lisk1-3" name="lisk1">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+								<td>
+									<label class="input_radio" for="radio_lisk2-1">
+								        <input type="radio" id="radio_lisk2-1" name="lisk2" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk2-2">
+								        <input type="radio" id="radio_lisk2-2" name="lisk2">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk2-3">
+								        <input type="radio" id="radio_lisk2-3" name="lisk2">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+							</tr>
+							<tr>
+								<td class="al">단기 내 조직 구성(인력충원 및 조직 체계화) 실패</td>
+								<td>
+									<label class="input_radio" for="radio_lisk3-1">
+								        <input type="radio" id="radio_lisk3-1" name="lisk3" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk3-2">
+								        <input type="radio" id="radio_lisk3-2" name="lisk3">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk3-3">
+								        <input type="radio" id="radio_lisk3-3" name="lisk3">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+								<td>
+									<label class="input_radio" for="radio_lisk4-1">
+								        <input type="radio" id="radio_lisk4-1" name="lisk4" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk4-2">
+								        <input type="radio" id="radio_lisk4-2" name="lisk4">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk4-3">
+								        <input type="radio" id="radio_lisk4-3" name="lisk4">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+							</tr>
+							<tr>
+								<td class="al">기술개발/제품출시 계획 미달성</td>
+								<td>
+									<label class="input_radio" for="radio_lisk5-1">
+								        <input type="radio" id="radio_lisk5-1" name="lisk5" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk5-2">
+								        <input type="radio" id="radio_lisk5-2" name="lisk5">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk5-3">
+								        <input type="radio" id="radio_lisk5-3" name="lisk5">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+								<td>
+									<label class="input_radio" for="radio_lisk6-1">
+								        <input type="radio" id="radio_lisk6-1" name="lisk6" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk6-2">
+								        <input type="radio" id="radio_lisk6-2" name="lisk6">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk6-3">
+								        <input type="radio" id="radio_lisk6-3" name="lisk6">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="3">기술사업화</th>
+								<td class="al">기술개발 / 제품출시 계획 미달성</td>
+								<td>
+									<label class="input_radio" for="radio_lisk7-1">
+								        <input type="radio" id="radio_lisk7-1" name="lisk7" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk7-2">
+								        <input type="radio" id="radio_lisk7-2" name="lisk7">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk7-3">
+								        <input type="radio" id="radio_lisk7-3" name="lisk7">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+								<td>
+									<label class="input_radio" for="radio_lisk8-1">
+								        <input type="radio" id="radio_lisk8-1" name="lisk8" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk8-2">
+								        <input type="radio" id="radio_lisk8-2" name="lisk8">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk8-3">
+								        <input type="radio" id="radio_lisk8-3" name="lisk8">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+							</tr>
+							<tr>
+								<td class="al">기술개발 주요 파트너사 위협</td>
+								<td>
+									<label class="input_radio" for="radio_lisk9-1">
+								        <input type="radio" id="radio_lisk9-1" name="lisk9" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk9-2">
+								        <input type="radio" id="radio_lisk9-2" name="lisk9">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk9-3">
+								        <input type="radio" id="radio_lisk9-3" name="lisk9">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+								<td>
+									<label class="input_radio" for="radio_lisk10-1">
+								        <input type="radio" id="radio_lisk10-1" name="lisk10" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk10-2">
+								        <input type="radio" id="radio_lisk10-2" name="lisk10">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk10-3">
+								        <input type="radio" id="radio_lisk10-3" name="lisk10">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+							</tr>
+							<tr>
+								<td class="al">지식재산권 미확보로 경쟁우위 불가</td>
+								<td>
+									<label class="input_radio" for="radio_lisk11-1">
+								        <input type="radio" id="radio_lisk11-1" name="lisk11" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk11-2">
+								        <input type="radio" id="radio_lisk11-2" name="lisk11">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk11-3">
+								        <input type="radio" id="radio_lisk11-3" name="lisk11">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+								<td>
+									<label class="input_radio" for="radio_lisk12-1">
+								        <input type="radio" id="radio_lisk12-1" name="lisk12" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk12-2">
+								        <input type="radio" id="radio_lisk12-2" name="lisk12">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk12-3">
+								        <input type="radio" id="radio_lisk12-3" name="lisk12">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="3">시장상황</th>
+								<td class="al">경쟁사(기술)의 출현으로 시장선점 실패</td>
+								<td>
+									<label class="input_radio" for="radio_lisk13-1">
+								        <input type="radio" id="radio_lisk13-1" name="lisk13" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk13-2">
+								        <input type="radio" id="radio_lisk13-2" name="lisk13">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk13-3">
+								        <input type="radio" id="radio_lisk13-3" name="lisk13">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+								<td>
+									<label class="input_radio" for="radio_lisk14-1">
+								        <input type="radio" id="radio_lisk14-1" name="lisk14" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk14-2">
+								        <input type="radio" id="radio_lisk14-2" name="lisk14">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk14-3">
+								        <input type="radio" id="radio_lisk14-3" name="lisk14">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+							</tr>
+							<tr>
+								<td class="al">소비 트렌드 / 사회 문화의 변화</td>
+								<td>
+									<label class="input_radio" for="radio_lisk15-1">
+								        <input type="radio" id="radio_lisk15-1" name="lisk15" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk15-2">
+								        <input type="radio" id="radio_lisk15-2" name="lisk15">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk15-3">
+								        <input type="radio" id="radio_lisk15-3" name="lisk15">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+								<td>
+									<label class="input_radio" for="radio_lisk16-1">
+								        <input type="radio" id="radio_lisk16-1" name="lisk16" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk16-2">
+								        <input type="radio" id="radio_lisk16-2" name="lisk16">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk16-3">
+								        <input type="radio" id="radio_lisk16-3" name="lisk16">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+							</tr>
+							<tr>
+								<td class="al">정부 정책 / 규제의 변화</td>
+								<td>
+									<label class="input_radio" for="radio_lisk17-1">
+								        <input type="radio" id="radio_lisk17-1" name="lisk17" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk17-2">
+								        <input type="radio" id="radio_lisk17-2" name="lisk17">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk17-3">
+								        <input type="radio" id="radio_lisk17-3" name="lisk17">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+								<td>
+									<label class="input_radio" for="radio_lisk18-1">
+								        <input type="radio" id="radio_lisk18-1" name="lisk18" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk18-2">
+								        <input type="radio" id="radio_lisk18-2" name="lisk18">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk18-3">
+								        <input type="radio" id="radio_lisk18-3" name="lisk18">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="3">재무 / 투자</th>
+								<td class="al">조기 투자 자금 소진</td>
+								<td>
+									<label class="input_radio" for="radio_lisk19-1">
+								        <input type="radio" id="radio_lisk19-1" name="lisk19" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk19-2">
+								        <input type="radio" id="radio_lisk19-2" name="lisk19">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk19-3">
+								        <input type="radio" id="radio_lisk19-3" name="lisk19">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+								<td>
+									<label class="input_radio" for="radio_lisk20-1">
+								        <input type="radio" id="radio_lisk20-1" name="lisk20" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk20-2">
+								        <input type="radio" id="radio_lisk20-2" name="lisk20">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk20-3">
+								        <input type="radio" id="radio_lisk20-3" name="lisk20">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+							</tr>
+							<tr>
+								<td class="al">회계관리 업무 정체</td>
+								<td>
+									<label class="input_radio" for="radio_lisk21-1">
+								        <input type="radio" id="radio_lisk21-1" name="lisk21" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk21-2">
+								        <input type="radio" id="radio_lisk21-2" name="lisk21">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk21-3">
+								        <input type="radio" id="radio_lisk21-3" name="lisk21">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+								<td>
+									<label class="input_radio" for="radio_lisk22-1">
+								        <input type="radio" id="radio_lisk22-1" name="lisk22" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk22-2">
+								        <input type="radio" id="radio_lisk22-2" name="lisk22">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk22-3">
+								        <input type="radio" id="radio_lisk22-3" name="lisk22">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+							</tr>
+							<tr>
+								<td class="al">자산 운영 및 자금조달 어려움</td>
+								<td>
+									<label class="input_radio" for="radio_lisk23-1">
+								        <input type="radio" id="radio_lisk23-1" name="lisk23" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk23-2">
+								        <input type="radio" id="radio_lisk23-2" name="lisk23">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk23-3">
+								        <input type="radio" id="radio_lisk23-3" name="lisk23">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+								<td>
+									<label class="input_radio" for="radio_lisk24-1">
+								        <input type="radio" id="radio_lisk24-1" name="lisk24" checked="">
+								        <span class="label_text">상</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk24-2">
+								        <input type="radio" id="radio_lisk24-2" name="lisk24">
+								        <span class="label_text">중</span>
+								    </label>
+								    <label class="input_radio" for="radio_lisk24-3">
+								        <input type="radio" id="radio_lisk24-3" name="lisk24">
+								        <span class="label_text">하</span>
+								    </label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="3">RED Flag Risk 관리방안</th>
+								<td class="al"><label for="txt_lisk1">기술개발 주요 파트너사 위협</label></td>
+								<td colspan="2">
+									<input type="text" id="txt_lisk1" class="form_control" maxlength="">
+								</td>
+							</tr>
+							<tr>
+								<td class="al"><label for="txt_lisk2">조기 투자 자금 소진</label></td>
+								<td colspan="2">
+									<input type="text" id="txt_lisk2" class="form_control" maxlength="">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<h6 class="companyinfo_h6 clearfix mt30">
+					3) 마일스톤별 주요기대 Factor (KPI)
+					<div class="fr btn_milestone">
+						<button type="button" class="btn_sm btn_add">행추가</button>
+						<button type="button" class="btn_sm btn_minus">행삭제</button>
+					</div>
+				</h6>  
+
+				
+				<div class="companyinfo_table th_vertical_total table_milestone mt15">
+					<table> 
+						<caption>마일스톤별 주요기대 Factor (KPI) 등록</caption>
+						<colgroup>
+							<col width="25%">
+							<col width="25%">
+							<col width="25%">
+							<col width="*">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">마일스톤</th>
+								<th scope="col">KPI (달성목표)</th>
+								<th scope="col">Target1 (기본목표)</th>
+								<th scope="col">Target2 (초과목표)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td> 
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+							</tr>
+							<tr>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+							</tr>
+							<tr>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+							</tr>
+							<tr>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+							</tr>
+							<tr>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+								<td><label><input type="text" maxlength="" class="form_control"></label></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h5 class="companyinfo_h5">
+					3. 기업가치평가 (Valuation)
+					<div class="radio_area radio_valuation">  
+					    <label class="input_radio" for="radio_Valuation1">
+					        <input type="radio" id="radio_Valuation1" name="radio_Valuation" value="valuation1" checked="">
+					        <span class="label_text">직접입력</span>
+					    </label>
+					    <label class="input_radio" for="radio_Valuation2">
+					        <input type="radio" id="radio_Valuation2" value="valuation2" name="radio_Valuation">
+					        <span class="label_text">파일업로드</span> 
+					    </label>
+					    <a href="javascript:void" class="btn_toggle sr_only">toggle</a> 
+					</div>
+				</h5> 
+
+				<div class="slide_area">
+					<div id="valuation1" class="tab_contents tab_contents_valuation on">
+						<h6 class="companyinfo_h6 clearfix">1) Valuation</h6>  
+						<div class="companyinfo_table th_vertical_total mt10"> 
+							<table> 
+								<caption>Valuation 등록</caption>
+								<colgroup>
+									<col width="150">
+									<col width="*">
+									<col width="72">
+									<col width="72">
+									<col width="408"> 
+								</colgroup>
+								<tbody>
+									<tr> 
+										<th scope="row"><label for="input_valuation1">투자금액</label></th> 
+										<td><input type="text" id="input_valuation1" class="form_control" maxlength=""></td> 
+										<th scope="row" rowspan="2">투자단가</th> 
+										<th scope="row"><label for="input_valuation2">발행가액</label></th> 
+										<td><input type="text" id="input_valuation2" class="form_control ar" maxlength=""></td> 
+									</tr>
+									<tr>  
+										<th scope="row"><label for="input_valuation3">투자형태</label></th> 
+										<td><input type="text" id="input_valuation3" class="form_control" maxlength=""></td>
+										<th scope="row"><label for="input_valuation4">액면가액</label></th> 
+										<td><input type="text" id="input_valuation4" class="form_control ar" maxlength=""></td> 
+									</tr>
+									<tr> 
+										<th scope="row"><label for="input_valuation5">투자형태</label></th> 
+										<td colspan="4"><input type="text" id="input_valuation5" class="form_control" maxlength=""></td> 
+									</tr>
+									<tr>
+										<th scope="row">투자 후 지분변동</th>
+										<td colspan="4">
+											<div class="ar btn_quota"> 
+												<button type="button" class="btn_sm btn_add">행추가</button>
+												<button type="button" class="btn_sm btn_minus">행삭제</button>
+											</div> 
+											<div class="companyinfo_table th_vertical_total table_quota mt10">    
+												<table> 
+													<caption>투자 후 지분변동 등록</caption>
+													<colgroup>
+														<col width="180">
+														<col width="180">
+														<col width="180"> 
+														<col width="180"> 
+														<col width="*"> 
+													</colgroup>
+													<thead>  
+														<tr>
+															<th scope="col" rowspan="2">주주명</th>
+															<th scope="col" colspan="2">투자전</th>
+															<th scope="col" colspan="2">투자후</th>
+														</tr>
+														<tr>
+															<th scope="col">주식수(주)</th>
+															<th scope="col">지분율(%)</th>
+															<th scope="col">주식수(주)</th>
+															<th scope="col">지분율(%)</th> 
+														</tr>
+													</thead>
+													<tbody>
+														<tr>  
+															<td><label><input type="text" class="form_control" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td> 
+														</tr>
+														<tr>  
+															<td><label><input type="text" class="form_control" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td> 
+														</tr>
+														<tr>  
+															<td><label><input type="text" class="form_control" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td> 
+														</tr>
+														<tr>  
+															<td><label><input type="text" class="form_control" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td> 
+														</tr>
+														<tr>  
+															<td><label><input type="text" class="form_control" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td> 
+														</tr>
+														<tr> 
+															<td><label><input type="text" class="form_control" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td> 
+														</tr> 
+													</tbody>
+													<tfoot>
+														<tr>
+															<th>계</th> 
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td>
+															<td><label><input type="text" class="form_control ar" maxlength=""></label></td> 
+														</tr> 
+													</tfoot>
+												</table>
+											</div> 
+										</td> 
+									</tr>
+								</tbody>
+							</table>
+						</div> 
+
+						<h6 class="companyinfo_h6 clearfix mt30">2) Valuation Method <span class="txt_sm">(선택입력 사항입니다)</span></h6> 
+ 
+						<div class="companyinfo_table th_vertical_total mt10">  
+							<table> 
+								<caption>가치평가결과 등록</caption>
+								<colgroup>
+									<col width="140">
+									<col width="160"> 
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr> 
+										<th rowspan="3">기업가치평가<br>기본가정</th>
+										<td class="al"><label for="input_method1">매출추정시점</label></td>
+										<td><input type="text" id="input_method1" class="form_control" maxlength=""></td>
+									</tr> 
+									<tr> 
+										<td class="al"><label for="input_method2">총 매출액</label></td>
+										<td><input type="text" id="input_method2" class="form_control" maxlength=""></td>
+									</tr> 
+									<tr> 
+										<td class="al"><label for="input_method3">총 당기순이익</label></td>
+										<td><input type="text" id="input_method3" class="form_control" maxlength=""></td>
+									</tr>
+									<tr> 
+										<th rowspan="2">현금흐름할인모형<br>(DCF)</th>
+										<td class="al"><label for="input_method4">할인율</label></td>
+										<td><input type="text" id="input_method4" class="form_control" maxlength=""></td>
+									</tr> 
+									<tr> 
+										<td class="al"><label for="input_method5">추정기업가치</label></td>
+										<td><input type="text" id="input_method5" class="form_control" maxlength=""></td>
+									</tr>
+									<tr> 
+										<th rowspan="3">시장거래가치모형<br>(PER)</th>
+										<td class="al"><label for="input_method6">비교대상</label></td>
+										<td><input type="text" id="input_method6" class="form_control" maxlength=""></td>
+									</tr> 
+									<tr> 
+										<td class="al"><label for="input_method7">PER</label></td>
+										<td><input type="text" id="input_method7" class="form_control" maxlength=""></td>
+									</tr> 
+									<tr> 
+										<td class="al"><label for="input_method8">할인율</label></td>
+										<td><input type="text" id="input_method8" class="form_control" maxlength=""></td>
+									</tr>
+									<tr> 
+										<th rowspan="2">가치산정</th>
+										<td class="al"><label for="input_method9">리스트 추가할인율</label></td>
+										<td><input type="text" id="input_method9" class="form_control" maxlength=""></td>
+									</tr> 
+									<tr> 
+										<td class="al"><label for="input_method10">미래상대가치</label></td>
+										<td><input type="text" id="input_method10" class="form_control" maxlength=""></td>
+									</tr> 
+								</tbody> 
+							</table>
+						</div>
+					</div> 
+
+					<div id="valuation2" class="tab_contents tab_contents_valuation">
+						<div class="companyinfo_table th_vertical_total">
+							<table> 
+								<caption>Valuation 등록</caption>
+								<colgroup>
+									<col width="130">
+									<col width="*"> 
+								</colgroup>
+								<tbody>
+									<tr> 
+										<th scope="row"><label for="file_valuation">파일업로드</label></th> 
+										<td>
+											<div class="wrap_file w100"> 
+											    <input class="upload_name form_control" id="file_valuation" value="" disabled="disabled">
+											    <input type="file" id="file_valuation_name" class="upload_hidden">
+											    <label for="file_valuation_name" class="btn_sm btn_darkblue">파일검색</label>
+											</div>
+										</td> 
+									</tr> 
+								</tbody> 
+							</table>
+						</div> 
+					</div>
+				</div>
+
+				<h5 class="companyinfo_h5">
+					4. 투자핵심포인트
+					<div class="radio_area radio_report">  
+					    <label class="input_radio" for="radio_report1">
+					        <input type="radio" id="radio_report1" name="radio_report" value="report1" checked="">
+					        <span class="label_text">직접입력</span>
+					    </label>
+					    <label class="input_radio" for="radio_report2">
+					        <input type="radio" id="radio_report2" value="report2" name="radio_report">
+					        <span class="label_text">파일업로드</span> 
+					    </label>
+					    <a href="javascript:void" class="btn_toggle sr_only">toggle</a> 
+					</div> 
+				</h5>
+				
+				<div class="slide_area">
+					<div id="report1" class="tab_contents tab_contents_report on">
+						<div class="companyinfo_table th_vertical_total"> 
+							<textarea id="ckeditor_write"></textarea>  
+						</div> 
+					</div>
+
+					<div id="report2" class="tab_contents tab_contents_report">
+						<div class="companyinfo_table th_vertical_total"> 
+							<table> 
+								<caption>투자심사보고서 주요내용 등록</caption>
+								<colgroup>
+									<col width="130">
+									<col width="*"> 
+								</colgroup>
+								<tbody>
+									<tr> 
+										<th scope="row"><label for="file_point">파일업로드</label></th> 
+										<td> 
+											<div class="wrap_file w100">
+											    <input class="upload_name form_control" id="file_point" value="" disabled="disabled">
+											    <input type="file" id="file_point_name" class="upload_hidden">
+											    <label for="file_point_name" class="btn_sm btn_darkblue">파일검색</label>
+											</div>
+										</td> 
+									</tr> 
+								</tbody>
+							</table>
+						</div> 
+					</div>
+				</div> 
+ 
+				<!-- <div class="submit_area">
+					<button type="button" class="btn_md btn_white">취소</button>
+					<button type="button" class="btn_md btn_blue">완료</button>
+				</div> -->
+			</div>	<!-- // contents -->
+		</div>	<!-- // inner -->
+	</div>	<!-- // container_group --> 
+	
+	<div id="footer_group"> 
+		<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+	</div>	<!-- // footer -->
+</div>
+ 
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="../js/vendo/analytics.js" async></script>
+
+<script>
+	// 행추가, 행삭제
+	$(function(){
+		var btn_add_milestone = $('.btn_milestone .btn_add');
+		var btn_del_milestone = $('.btn_milestone .btn_minus');
+		var tbody_milestone = $('.table_milestone table tbody');  
+		var tr_milestone = '<tr>' +
+					'<td>' +
+						'<label><input type="text" class="form_control ar" maxlength=""></label>' +
+					'</td>' +
+					'<td><label><input type="text" maxlength="" class="form_control"></label></td>' +
+					'<td><label><input type="text" maxlength="" class="form_control"></label></td>' +
+					'<td><label><input type="text" maxlength="" class="form_control"></label></td>' +
+				'</tr>';  
+
+		btn_add_milestone.click(function(){
+			tbody_milestone.append(tr_milestone);     
+		});
+
+		btn_del_milestone.click(function(){
+			tbody_milestone.find('tr:last').remove(); 
+		});
+
+		var btn_add_quota = $('.btn_quota .btn_add');
+		var btn_del_quota = $('.btn_quota .btn_minus');
+		var tbody_quota = $('.table_quota table tbody'); 
+		var tr_quota = '<tr>' +
+							'<td><label><input type="text" class="form_control" maxlength=""></label></td>' +
+							'<td><label><input type="text" class="form_control ar" maxlength=""></label></td>' +
+							'<td><label><input type="text" class="form_control ar" maxlength=""></label></td>' +
+							'<td><label><input type="text" class="form_control ar" maxlength=""></label></td>' +
+							'<td><label><input type="text" class="form_control ar" maxlength=""></label></td>' + 
+						'</tr>';
+
+		btn_add_quota.click(function(){
+			tbody_quota.append(tr_quota);      
+		});
+
+		btn_del_quota.click(function(){
+			tbody_quota.find('tr:last').remove(); 
+		});
+
+		CKEDITOR.replace('ckeditor_write', {
+			height: 300, //editor height 높이 지정
+			resize_enabled: false //editor 크기조정 삭제 
+		});
+
+		var btn_toggle = $('.btn_toggle');
+		btn_toggle.each(function(){
+			var tg = $(this);
+			tg.click(function(){
+				tg.toggleClass('on');  
+				tg.closest('h5').next().slideToggle(200);    
+			});
+		});
+		
+		var lst_radio_valuation = $('.radio_valuation input[type="radio"]');
+		var lst_contents_valuation = $('.tab_contents_valuation');
+		lst_radio_valuation.each(function(){
+			var tg = $(this);
+			tg.click(function(){
+				var idx = tg.val();
+				lst_contents_valuation.removeClass('on');
+				$('#' + idx).addClass('on');
+			});
+		});
+
+		var lst_radio_report = $('.radio_report input[type="radio"]');
+		var lst_contents_report = $('.tab_contents_report');
+		lst_radio_report.each(function(){
+			var tg = $(this);
+			tg.click(function(){
+				var idx = tg.val();
+				lst_contents_report.removeClass('on');
+				$('#' + idx).addClass('on');
+			});
+		});
+	}); 
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script> 
+	<script src="../js/common.js"></script>
+</head>
+<body class="bg_gray"> 
+  
+<div id="wrap_webview"> 
+	
+	<div class="section">
+		<ul class="lst_step clearfix"> 
+			<li class=""> 
+				<p class="ico"></p> 
+				<p class="num">STEP 01</p> 
+				<p class="tit">인증</p> 
+			</li>
+			<li class="on">
+				<p class="ico"></p> 
+				<p class="num">STEP 02</p> 
+				<p class="tit">약관동의</p> 
+			</li>
+			<li>
+				<p class="ico"></p> 
+				<p class="num">STEP 03</p> 
+				<p class="tit">정보입력</p>  
+			</li> 
+		</ul>	<!-- // lst_step -->
+
+		<div class="allcheck_area">
+		    <label class="input_check">
+		        <input type="checkbox" id="" name="check1">
+		        <span class="label_text">Platform 서비스 이용약관, 부가서비스이용약관, 법인정보수집, 이용, 제공, 담당자 SMS, e-mail 수신 및 알림 서비스 수신에 모두 동의 합니다.</span>
+		    </label>
+		</div>
+		
+		<ul class="lst_check">
+			<li>
+				<label class="input_check">
+			        <input type="checkbox" id="" name="check1">
+			        <span class="label_text">Platform 서비스 이용약관 동의<em class="txt_sell_color">(필수)</em></span>
+			    </label>
+			    <a href="javascript:void(0);" class="btn_more sr_only">약관보기</a>
+			</li>
+			<li> 
+				<label class="input_check">
+			        <input type="checkbox" id="" name="check1">
+			        <span class="label_text">개인정보 수집, 이용 및 제공에 관한 동의<em class="txt_sell_color">(필수)</em></span>
+			    </label>
+			    <a href="javascript:void(0);" class="btn_more sr_only">약관보기</a>
+			</li>
+			<li>
+				<label class="input_check">
+			        <input type="checkbox" id="" name="check1">
+			        <span class="label_text">담당자 SMS 수신 동의<em class="">(선택)</em></span>
+			    </label>
+			    <a href="javascript:void(0);" class="btn_more sr_only">약관보기</a>
+			</li>
+			<li>
+				<label class="input_check">
+			        <input type="checkbox" id="" name="check1">
+			        <span class="label_text">담당자 e-mail 수신 동의<em class="">(선택)</em></span>
+			    </label>
+			    <a href="javascript:void(0);" class="btn_more sr_only">약관보기</a>
+			</li>
+			<li>
+				<label class="input_check">
+			        <input type="checkbox" id="" name="check1">
+			        <span class="label_text">알림 수신 동의<em class="">(선택)</em></span>
+			    </label>
+			    <a href="javascript:void(0);" class="btn_more sr_only">약관보기</a>
+			</li> 
+		</ul>
+	</div>	<!-- // section --> 
+	
+	<div class="footer_webview clearfix">
+		<button type="button" class="btn_lg btn_white w50">비동의</button>
+		<button type="button" class="btn_lg btn_blue btn_confirm w50" onclick="$('#pop_agree_terms').neoModal();">동의</button>
+	</div>
+</div>
+
+<div id="pop_cancel_terms" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap">
+                약관동의 없이는 서비스 가입이 불가합니다.<br>
+				서비스 가입을 취소하시겠습니까?
+            </div>
+        </div>
+        <div class="button_wrap clearfix">
+            <button type="button" class="btn_md btn_white w50" onclick="$('#pop_cancel_terms').neoModal('close');">아니오</button>
+            <button type="button" class="btn_md btn_blue w50" onclick="$('#pop_cancel_terms').neoModal('close');">예</button>
+        </div>
+    </div>
+</div>
+
+<div id="pop_agree_terms" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap">
+                필수 동의 사항에 대한 동의를 하지 않았습니다.<br>
+				필수 동의 사항을 확인하여 주십시오.
+            </div>
+        </div>
+        <div class="button_wrap clearfix">
+            <button type="button" class="btn_md btn_blue" onclick="$('#pop_agree_terms').neoModal('close');">예</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

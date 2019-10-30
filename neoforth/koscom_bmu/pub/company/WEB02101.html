@@ -1,0 +1,1219 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/vendor/Chart.min.js"></script>
+	<script src="../js/plugins.js"></script>
+	<script>
+		$(document).ready(function() {
+			//주주명부 히스토리 카드, 리스트형태 토글
+			var $tabMenu = $('.tabs button');
+			var $tabContent = $('.tab_contents');
+
+			$tabMenu.on('click', function(e) {
+				e.preventDefault();
+				var idx = $tabMenu.index(this);
+				
+				$(this).addClass('on').siblings($tabMenu).removeClass('on');
+				$tabContent.eq(idx).addClass('on').siblings($tabContent).removeClass('on');
+			});
+
+			// 퍼블용스크립트
+			$('.btn_deal_listview').trigger('click');
+
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 등록기업 로그인 시 class="case2" -->
+	<div id="header" class="case2">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb">
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);" class="active">주주명부관리</a></li>
+					<li><a href="javascript:void(0);">투자정보관리</a></li>
+					<li><a href="javascript:void(0);">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li> 
+					<li class="mypage_area"><a href="javascript:void(0);"><span>마이페이지</span></a></li>
+					<li class="notice_area"><a href="javascript:void(0);" class="on"><span>2</span></a></li>  
+					<li class="logout_area"><a href="javascript:void(0);" class="sr_only">로그아웃</a></li>  
+				</ul> 
+				<div class="bar"></div>
+
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">주주명부</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul> 
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul>
+				</div>	<!-- // submenu_area -->
+			</div>
+			
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">주주명부관리</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">주주명부</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보관리</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+				</div> 
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">마이페이지</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li> 
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="nav_page">
+			<div class="inner">
+				<ul class="lst_page clearfix">
+					<li><a href="/" class="btn_home sr_only">Home</a></li>
+					<li>
+						<a href="javascript:void(0);" class="btn_page">주주명부관리</a>
+						<ul class="nav_subpage clearfix">  
+							<li><a href="javascript:void(0);">투자정보관리</a></li>
+							<li><a href="javascript:void(0);" class="active">주주명부관리</a></li>
+							<li><a href="javascript:void(0);">거래현황관리</a></li>
+							<li><a href="javascript:void(0);">서비스 소개</a></li>
+							<li><a href="javascript:void(0);">투자정보</a></li>
+							<li><a href="javascript:void(0);">고객센터</a></li>
+							<li><a href="javascript:void(0);">로그아웃</a></li>
+							<li><a href="javascript:void(0);">마이페이지</a></li>
+						</ul>
+					</li> 
+					<li>
+						<ul class="lst_subpage clearfix">
+							<li><a href="javascript:void(0);" class="active">주주명부</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>	<!-- // nav_page -->
+
+		<div class="section"> 
+			<div class="inner">
+				<div class="group_pageinfo">
+					<h3 class="txt_title">주주명부 관리</h3>
+					<p class="txt_info">최초 주주명부를 등록하시면 쉽고 편리하게 주주명부를 관리 하실 수 있습니다. 또한 등록된 주주명부를 통해 투자자의 주주인증을 통해 본 플랫폼에서 주식 거래가 가능합니다.</p>
+				</div>	<!-- // group_title -->
+				
+				<div class="contents">
+					<div class="company_status_info">
+
+						<!-- 기본 주식 정보 -->
+						<h5>기본 주식 정보</h5>
+						<!-- 190812 기본주식정보 테이블 변경 -->
+						<div class="companyinfo_table">
+							<table>
+								<caption>기본 주식 정보 - 발행가능주식 총수, 발행주식 총수, 보통주, 발행수량, 액면가</caption>
+								<colgroup>
+									<col width="130">
+									<col width="*">
+									<col width="130">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>발행가능주식<br>총수(주)</th>
+										<td class="ar">300,000</td>
+										<th>발행주식 총수(주)</th>
+										<td class="ar">150,000</td>
+									</tr>
+								</tbody>
+							</table>
+							<table>
+								<caption>기본 주식 정보 - 발행가능주식 총수, 발행주식 총수, 보통주, 발행수량, 액면가</caption>
+								<colgroup>
+									<col width="130">
+									<col width="*">
+									<col width="130">
+									<col width="*">
+									<col width="130">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>보통주</th>
+										<td>보통주</td>
+										<th>발행수량(주)</th>
+										<td class="ar">100,000</td>
+										<th>액면가(원)</th>
+										<td class="ar">5,000</td>
+									</tr>
+									<tr>
+										<th>1우선주</th>
+										<td>
+											<select class="select_css form_control">
+												<option value="">상황우선주</option>
+											</select>
+										</td>
+										<th>발행수량(주)</th>
+										<td class="ar">50,000</td>
+										<th>액면가(원)</th>
+										<td class="ar">500</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- // 기본 주식 정보 -->
+
+						<!-- 주주 및 지분 정보 -->
+						<h5>주식정보 및 주주(지분)정보
+							<div class="top_right_wrap">
+								<select class="select_css form_control w160">
+									<option value="">보통주</option>
+									<option value="">둘</option>
+									<option value="">셋</option>
+								</select>
+							</div>
+						</h5>
+						<div class="shareholder_detaildata clearfix">
+							<div class="tbl_chartdata">
+								<div class="inner_div">
+									<table>
+										<caption>주주명, 주식수, 지분율, 주주구분</caption>
+										<colgroup>
+											<col width="190">
+											<col width="190">
+											<col width="190">
+											<col width="190">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">주주명</th>
+												<th scope="col">주식수(주)</th>
+												<th scope="col">지분율(%)</th>
+												<th scope="col">주주구분</th>
+											</tr>
+										</thead>
+								
+										<tbody>
+											<tr>
+												<td class="ac">김대표</td>
+												<td class="ar">200,000</td>
+												<td class="ar">50.00</td>
+												<td class="ac">주주구분</td>
+											</tr>
+											<tr>
+												<td class="ac">김대표</td>
+												<td class="ar">200,000</td>
+												<td class="ar">50.00</td>
+												<td class="ac">주주구분</td>
+											</tr>
+											<tr>
+												<td class="ac">김대표</td>
+												<td class="ar">200,000</td>
+												<td class="ar">50.00</td>
+												<td class="ac">주주구분</td>
+											</tr>
+											<tr>
+												<td class="ac">김대표</td>
+												<td class="ar">200,000</td>
+												<td class="ar">50.00</td>
+												<td class="ac">주주구분</td>
+											</tr>
+											<tr class="sum">
+												<td class="ac">계</td>
+												<td class="ar">200,000</td>
+												<td class="ar">100.00</td>
+												<td class="ac"></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div>
+								
+								<canvas id="chart_canvas" width="210" height="210" style="margin:auto;"></canvas>
+							</div>
+						</div>
+						<!-- // 주주 및 지분 정보 -->
+
+						<!-- 주주명부 히스토리 -->
+						<h5>주주명부 히스토리
+							<div class="btn_wrap tabs">
+								<button type="button" class="btn_deal_cardview on">카드형</button>
+								<button type="button" class="btn_deal_listview">리스트형</button>
+							</div>
+						</h5>
+						<!-- 카드형태 -->
+						<div class="shareholder_history tab_contents on">
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<p><a href="javascript:void(0);">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></p>
+										<p>등록기준일<span>2019.06.14</span></p>
+										<p>자동변경</p>
+										<p class="status_p">승인대기</p>
+									</div>
+									<div class="swiper-slide">
+										<p><a href="javascript:void(0);">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></p>
+										<p>등록기준일<span>2019.06.14</span></p>
+										<p>최초등록</p>
+										<p class="status_p"><a href="javascript:void(0);">반려</a></p>
+									</div>
+									<div class="swiper-slide">
+										<p><a href="javascript:void(0);">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></p>
+										<p>등록기준일<span>2019.06.14</span></p>
+										<p>자체변경</p>
+										<p class="status_p">승인대기</p>
+									</div>
+									<div class="swiper-slide">
+										<p><a href="javascript:void(0);">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></p>
+										<p>등록기준일<span>2019.06.14</span></p>
+										<p>자동변경</p>
+										<p class="status_p">승인대기</p>
+									</div>
+									<div class="swiper-slide">
+										<p><a href="javascript:void(0);">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></p>
+										<p>등록기준일<span>2019.06.14</span></p>
+										<p>자동변경</p>
+										<p class="status_p">승인대기</p>
+									</div>
+								</div>
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+							</div>
+							<!-- 데이터없을 때 -->
+							<!-- <div class="shareholder_nodata">
+								<p>등록된 주주명부가 없습니다.</p>
+								<button type="button" class="btn_md btn_blue">주주명부 신규등록</button>
+							</div> -->
+						</div>
+						<!-- // 카드형태 -->
+
+						<!-- 리스트형태 -->
+						<div class="table_normal_list tab_contents">
+							<table>
+								<caption>주주명부 히스토리</caption>
+								<colgroup>
+									<col width="90">
+									<col width="110">
+									<col width="125">
+									<col width="*">
+									<col width="127">
+									<col width="120">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>No</th>
+										<th><a href="javascript:void(0);" class="sorting_button">구분</a></th>
+										<th><a href="javascript:void(0);" class="sorting_button">등록기준일</a></th>
+										<th><a href="javascript:void(0);" class="sorting_button">수정사유 메모</a></th>
+										<th>블록체인조회</th>
+										<th>승인상태</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>10</td>
+										<td>자동변경</td>
+										<td>2019-07-19</td>
+										<td class="al"><a href="javascript:void(0);">차이사 20,000주 매도 (주)코스콤 20,000 매수 거래 체결에 따른 수정따른 수정따른 수정</a></td>
+										<td><a href="javascript:void(0);" title="8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></td>
+										<td><a href="javascript:void(0);">반려</a></td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>자동변경</td>
+										<td>2019-07-19</td>
+										<td class="al"><a href="javascript:void(0);">차이사 20,000주 매도 (주)코스콤 20,000 매수 거래 체결에 따른 수정따른 수정따른 수정</a></td>
+										<td><a href="javascript:void(0);" title="8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></td>
+										<td><a href="javascript:void(0);">반려</a></td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>자동변경</td>
+										<td>2019-07-19</td>
+										<td class="al"><a href="javascript:void(0);">차이사 20,000주 매도 (주)코스콤 20,000 매수 거래 체결에 따른 수정따른 수정따른 수정</a></td>
+										<td><a href="javascript:void(0);" title="8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></td>
+										<td><a href="javascript:void(0);">반려</a></td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>자동변경</td>
+										<td>2019-07-19</td>
+										<td class="al"><a href="javascript:void(0);">차이사 20,000주 매도 (주)코스콤 20,000 매수 거래 체결에 따른 수정따른 수정따른 수정</a></td>
+										<td><a href="javascript:void(0);" title="8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></td>
+										<td><a href="javascript:void(0);">반려</a></td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>자동변경</td>
+										<td>2019-07-19</td>
+										<td class="al"><a href="javascript:void(0);">차이사 20,000주 매도 (주)코스콤 20,000 매수 거래 체결에 따른 수정따른 수정따른 수정</a></td>
+										<td><a href="javascript:void(0);" title="8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></td>
+										<td><a href="javascript:void(0);">반려</a></td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>자동변경</td>
+										<td>2019-07-19</td>
+										<td class="al"><a href="javascript:void(0);">차이사 20,000주 매도 (주)코스콤 20,000 매수 거래 체결에 따른 수정따른 수정따른 수정</a></td>
+										<td><a href="javascript:void(0);" title="8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></td>
+										<td><a href="javascript:void(0);">반려</a></td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>자동변경</td>
+										<td>2019-07-19</td>
+										<td class="al"><a href="javascript:void(0);">차이사 20,000주 매도 (주)코스콤 20,000 매수 거래 체결에 따른 수정따른 수정따른 수정</a></td>
+										<td><a href="javascript:void(0);" title="8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></td>
+										<td><a href="javascript:void(0);">반려</a></td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>자동변경</td>
+										<td>2019-07-19</td>
+										<td class="al"><a href="javascript:void(0);">차이사 20,000주 매도 (주)코스콤 20,000 매수 거래 체결에 따른 수정따른 수정따른 수정</a></td>
+										<td><a href="javascript:void(0);" title="8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></td>
+										<td><a href="javascript:void(0);">반려</a></td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>자동변경</td>
+										<td>2019-07-19</td>
+										<td class="al"><a href="javascript:void(0);">차이사 20,000주 매도 (주)코스콤 20,000 매수 거래 체결에 따른 수정따른 수정따른 수정</a></td>
+										<td><a href="javascript:void(0);" title="8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></td>
+										<td><a href="javascript:void(0);">반려</a></td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>자동변경</td>
+										<td>2019-07-19</td>
+										<td class="al"><a href="javascript:void(0);">차이사 20,000주 매도 (주)코스콤 20,000 매수 거래 체결에 따른 수정따른 수정따른 수정</a></td>
+										<td><a href="javascript:void(0);" title="8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</a></td>
+										<td><a href="javascript:void(0);">반려</a></td>
+									</tr>
+									<!-- 데이터없을 때 -->
+									<!-- <tr>
+										<td colspan="6">데이터가 없습니다.</td>
+									</tr> -->
+								</tbody>
+							</table>
+							<div class="board_paging">
+								<ul>
+									<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+									<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+									<li><a href="javascript:void(0);" class="active">1</a></li>
+									<li><a href="javascript:void(0);">2</a></li>
+									<li><a href="javascript:void(0);">3</a></li>
+									<li><a href="javascript:void(0);">4</a></li>
+									<li><a href="javascript:void(0);">5</a></li>
+									<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+									<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+								</ul>
+								<button type="button" class="btn_md btn_blue btn_right">주주명부수정</button>
+							</div>
+						</div>
+						<!-- // 리스트형태 -->
+						<div class="btn_wrap mt40">
+							<ul class="explain_ul al">
+								<li>블록체인 기반 기술로 주주명부의 정합성을 체크하여 주식거래에 따른 주주명부 자동변경 서비스를 제공하고 있습니다.</li>
+							</ul>
+						</div>
+						<!-- // 주주명부 히스토리 -->
+
+					</div>
+				</div>	<!-- // contents --> 
+			</div>
+		</div> 
+	</div>	<!-- // container -->
+	
+	<!-- 등록기업 로그인 시 class="case2" -->
+	<div id="footer" class="case2"> 
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix"> 
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.koscom.co.kr">코스콤</option>
+					</select> 
+				</div> 
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">주주명부관리</a>
+					<ul>
+						<li><a href="javascript:void(0);">주주명부</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보관리</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">마이페이지</a> 
+					<ul>
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>  
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>  
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a>
+	</div>	<!-- // footer -->
+</div>
+
+
+<!-- 팝업 -->
+
+<div id="pop_upload_fail" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				주주구분 및 주주성명, 주민번호가 잘못되었습니다<br>
+				다시 확인하여 주십시요.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_upload_fail').neoModal('close');">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_shareholder_detail" class="pop_dim_wrap pop_modal pop_xlg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주주명부 관리 상세
+		</div>
+			<div class="contents_wrap">
+				<div class="company_status_info">
+
+					<!-- 기본 주식 정보 -->
+					<h5>기본 주식 정보</h5>
+					<ul class="major_shareholders_wrap clearfix pop_major_shareholders">
+						<li>
+							<table>
+								<caption>기업정보 및 주요 주주현황 - 발행주식 총수, 액면가, 처분제한, 발행주식 종류</caption>
+								<tbody>
+									<tr>
+										<th>발행주식 총수</th>
+										<td><span>300,000</span>주</td>
+									</tr>
+									<tr>
+										<th>액면가</th>
+										<td><span>10,000</span>원 / <span>8,000</span>원</td>
+									</tr>
+									<tr>
+										<th>처분제한</th>
+										<td>보통주식 <span>20,000</span>주<br>우선주식 <span>20,000</span>주</td>
+									</tr>
+									<tr>
+										<th>발행주식 종류</th>
+										<td>보통주식 <span>20,000</span>주<br>우선주식 <span>20,000</span>주</td>
+									</tr>
+								</tbody>
+							</table>
+						</li>
+						<li>
+							<canvas id="chart_canvas2" width="210" height="210"></canvas>
+							<!-- 데이터없을 때 -->
+							<!-- <div class="chart_nodata">차트데이터가 없습니다</div> -->
+						</li>
+						<li>
+							<dl>
+								<dt>주요주주현황
+								</dt>
+								<dd class="purple">
+									<span>김대표김대표김대표김대표</span>
+									<span>66.66%</span>
+								</dd>
+								<dd class="green">
+									<span>안감사</span>
+									<span>6.67%</span>
+								</dd>
+								<dd class="orange">
+									<span>(주)코스콤</span>
+									<span>23.33%</span>
+								</dd>
+								<dd class="lightblue">
+									<span>차이사</span>
+									<span>2.03%</span>
+								</dd>
+								<dd class="yellow">
+									<span>이이사</span>
+									<span>14.03%</span>
+								</dd>
+								<dd class="red">
+									<span>기타</span>
+									<span>1.24%</span>
+								</dd>
+							</dl>
+							<!-- 데이터없을 때 -->
+							<!-- <div class="shareholder_nodata">
+								<p>등록된 주주명부가 없습니다.</p>
+								<button type="button" class="btn_md btn_blue">주주명부 신규등록</button>
+							</div> -->
+						</li>
+					</ul>
+					<!-- // 기본 주식 정보 -->
+
+					<!-- 변경 전 주주명부 -->
+					<h5>변경 전 주주명부
+						<span>(등록기준일:2019년 06월 07일)</span>
+					</h5>
+					<div class="table_accordion shareholder_table mt10 pop_accordion">
+						<ul class="group_title clearfix">
+							<li>인증여부</li>
+							<li>주주구분</li>
+							<li>주주명</li>
+							<li>실명번호</li>
+							<li>주식종류</li>
+							<li>주식수</li>
+							<li>처분제한</li>
+							<li>처분제한사유</li>
+						</ul>
+						<dl class="group_desc">
+							<dt>
+								<ul class="lst_title clearfix">
+									<li>Y</li>
+									<li></li>
+									<li>김대표</li>
+									<li>851207-1******</li>
+									<li>보통주식</li>
+									<li>100,000주</li>
+									<li>40,000주</li>
+									<li></li>
+								</ul>
+							</dt>
+							<dd>
+								<table>
+									<caption>주소, 연락처, 이메일</caption>
+									<colgroup>
+										<col width="90">
+										<col width="400">
+										<col width="127">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th rowspan="2">주소</th>
+											<td>서울특별시 용산구 한강대로 92 D동 27층 미래전략실</td>
+											<th>연락처</th>
+											<td>010-1234-1234</td>
+										</tr>
+										<tr>
+											<td>미래전략실</td>
+											<th>이메일</th>
+											<td>abc123@abc.om</td>
+										</tr>
+									</tbody>
+								</table>
+							</dd>
+							<dt class="">
+								<ul class="lst_title clearfix">
+									<li>Y</li>
+									<li></li>
+									<li>김대표</li>
+									<li>851207-1******</li>
+									<li>보통주식</li>
+									<li>100,000주</li>
+									<li>40,000주</li>
+									<li></li>
+								</ul>
+							</dt>
+							<dd>
+								<table>
+									<caption>주소, 연락처, 이메일</caption>
+									<colgroup>
+										<col width="90">
+										<col width="400">
+										<col width="127">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th rowspan="2">주소</th>
+											<td>서울특별시 용산구 한강대로 92 D동 27층 미래전략실</td>
+											<th>연락처</th>
+											<td>010-1234-1234</td>
+										</tr>
+										<tr>
+											<td>미래전략실</td>
+											<th>이메일</th>
+											<td>abc123@abc.om</td>
+										</tr>
+									</tbody>
+								</table>
+							</dd>
+							<dt class="">
+								<ul class="lst_title clearfix">
+									<li>Y</li>
+									<li></li>
+									<li>김대표</li>
+									<li>851207-1******</li>
+									<li>보통주식</li>
+									<li>100,000주</li>
+									<li>40,000주</li>
+									<li>처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유</li>
+								</ul>
+							</dt>
+							<dd>
+								<table>
+									<caption>주소, 연락처, 이메일</caption>
+									<colgroup>
+										<col width="90">
+										<col width="400">
+										<col width="127">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th rowspan="2">주소</th>
+											<td>서울특별시 용산구 한강대로 92 D동 27층 미래전략실</td>
+											<th>연락처</th>
+											<td>010-1234-1234</td>
+										</tr>
+										<tr>
+											<td>미래전략실</td>
+											<th>이메일</th>
+											<td>abc123@abc.om</td>
+										</tr>
+									</tbody>
+								</table>
+							</dd>
+							<dt>
+								<ul class="lst_title clearfix">
+									<li>Y</li>
+									<li></li>
+									<li>김대표</li>
+									<li>851207-1******</li>
+									<li>보통주식</li>
+									<li>100,000주</li>
+									<li>40,000주</li>
+									<li></li>
+								</ul>
+							</dt>
+							<dd>
+								<table>
+									<caption>주소, 연락처, 이메일</caption>
+									<colgroup>
+										<col width="90">
+										<col width="400">
+										<col width="127">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th rowspan="2">주소</th>
+											<td>서울특별시 용산구 한강대로 92 D동 27층 미래전략실</td>
+											<th>연락처</th>
+											<td>010-1234-1234</td>
+										</tr>
+										<tr>
+											<td>미래전략실</td>
+											<th>이메일</th>
+											<td>abc123@abc.om</td>
+										</tr>
+									</tbody>
+								</table>
+							</dd>
+							<dt>
+								<ul class="lst_title clearfix">
+									<li>Y</li>
+									<li></li>
+									<li>김대표</li>
+									<li>851207-1******</li>
+									<li>보통주식</li>
+									<li>100,000주</li>
+									<li>40,000주</li>
+									<li></li>
+								</ul>
+							</dt>
+							<dd>
+								<table>
+									<caption>주소, 연락처, 이메일</caption>
+									<colgroup>
+										<col width="90">
+										<col width="400">
+										<col width="127">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th rowspan="2">주소</th>
+											<td>서울특별시 용산구 한강대로 92 D동 27층 미래전략실</td>
+											<th>연락처</th>
+											<td>010-1234-1234</td>
+										</tr>
+										<tr>
+											<td>미래전략실</td>
+											<th>이메일</th>
+											<td>abc123@abc.om</td>
+										</tr>
+									</tbody>
+								</table>
+							</dd>
+						</dl>
+						<ul class="count_sum clearfix">
+							<li>합계</li>
+							<li>300,000주</li>
+							<li>40,000주</li>
+						</ul>
+					</div>
+					<!-- // 변경 전 주주명부 -->
+
+					<!-- 변경 후 주주명부 -->
+					<h5>변경 후 주주명부
+						<span>(등록기준일:2019년 06월 07일)</span>
+					</h5>
+					<div class="table_accordion shareholder_table mt10 pop_accordion">
+						<ul class="group_title clearfix">
+							<li>인증여부</li>
+							<li>주주구분</li>
+							<li>주주명</li>
+							<li>실명번호</li>
+							<li>주식종류</li>
+							<li>주식수</li>
+							<li>처분제한</li>
+							<li>처분제한사유</li>
+						</ul>
+						<dl class="group_desc">
+							<dt>
+								<ul class="lst_title clearfix">
+									<li>Y</li>
+									<li></li>
+									<li>김대표</li>
+									<li>851207-1******</li>
+									<li>보통주식</li>
+									<li>100,000주</li>
+									<li>40,000주</li>
+									<li></li>
+								</ul>
+							</dt>
+							<dd>
+								<table>
+									<caption>주소, 연락처, 이메일</caption>
+									<colgroup>
+										<col width="90">
+										<col width="400">
+										<col width="127">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th rowspan="2">주소</th>
+											<td>서울특별시 용산구 한강대로 92 D동 27층 미래전략실</td>
+											<th>연락처</th>
+											<td>010-1234-1234</td>
+										</tr>
+										<tr>
+											<td>미래전략실</td>
+											<th>이메일</th>
+											<td>abc123@abc.om</td>
+										</tr>
+									</tbody>
+								</table>
+							</dd>
+							<dt>
+								<ul class="lst_title clearfix">
+									<li>Y</li>
+									<li></li>
+									<li>김대표</li>
+									<li>851207-1******</li>
+									<li>보통주식</li>
+									<li>100,000주</li>
+									<li>40,000주</li>
+									<li></li>
+								</ul>
+							</dt>
+							<dd>
+								<table>
+									<caption>주소, 연락처, 이메일</caption>
+									<colgroup>
+										<col width="90">
+										<col width="400">
+										<col width="127">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th rowspan="2">주소</th>
+											<td>서울특별시 용산구 한강대로 92 D동 27층 미래전략실</td>
+											<th>연락처</th>
+											<td>010-1234-1234</td>
+										</tr>
+										<tr>
+											<td>미래전략실</td>
+											<th>이메일</th>
+											<td>abc123@abc.om</td>
+										</tr>
+									</tbody>
+								</table>
+							</dd>
+							<dt>
+								<ul class="lst_title clearfix">
+									<li>Y</li>
+									<li></li>
+									<li>김대표</li>
+									<li>851207-1******</li>
+									<li>보통주식</li>
+									<li>100,000주</li>
+									<li>40,000주</li>
+									<li>처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유처분제한사유</li>
+								</ul>
+							</dt>
+							<dd>
+								<table>
+									<caption>주소, 연락처, 이메일</caption>
+									<colgroup>
+										<col width="90">
+										<col width="400">
+										<col width="127">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th rowspan="2">주소</th>
+											<td>서울특별시 용산구 한강대로 92 D동 27층 미래전략실</td>
+											<th>연락처</th>
+											<td>010-1234-1234</td>
+										</tr>
+										<tr>
+											<td>미래전략실</td>
+											<th>이메일</th>
+											<td>abc123@abc.om</td>
+										</tr>
+									</tbody>
+								</table>
+							</dd>
+							<dt>
+								<ul class="lst_title clearfix">
+									<li>Y</li>
+									<li></li>
+									<li>김대표</li>
+									<li>851207-1******</li>
+									<li>보통주식</li>
+									<li>100,000주</li>
+									<li>40,000주</li>
+									<li></li>
+								</ul>
+							</dt>
+							<dd>
+								<table>
+									<caption>주소, 연락처, 이메일</caption>
+									<colgroup>
+										<col width="90">
+										<col width="400">
+										<col width="127">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th rowspan="2">주소</th>
+											<td>서울특별시 용산구 한강대로 92 D동 27층 미래전략실</td>
+											<th>연락처</th>
+											<td>010-1234-1234</td>
+										</tr>
+										<tr>
+											<td>미래전략실</td>
+											<th>이메일</th>
+											<td>abc123@abc.om</td>
+										</tr>
+									</tbody>
+								</table>
+							</dd>
+							<dt>
+								<ul class="lst_title clearfix">
+									<li>Y</li>
+									<li></li>
+									<li>김대표</li>
+									<li>851207-1******</li>
+									<li>보통주식</li>
+									<li>100,000주</li>
+									<li>40,000주</li>
+									<li></li>
+								</ul>
+							</dt>
+							<dd>
+								<table>
+									<caption>주소, 연락처, 이메일</caption>
+									<colgroup>
+										<col width="90">
+										<col width="400">
+										<col width="127">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th rowspan="2">주소</th>
+											<td>서울특별시 용산구 한강대로 92 D동 27층 미래전략실</td>
+											<th>연락처</th>
+											<td>010-1234-1234</td>
+										</tr>
+										<tr>
+											<td>미래전략실</td>
+											<th>이메일</th>
+											<td>abc123@abc.om</td>
+										</tr>
+									</tbody>
+								</table>
+							</dd>
+						</dl>
+						<ul class="count_sum clearfix">
+							<li>합계</li>
+							<li>300,000주</li>
+							<li>40,000주</li>
+						</ul>
+					</div>
+					<!-- // 변경 후 주주명부 -->
+				</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_manage_list" class="pop_dim_wrap pop_modal pop_xlg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주주명부 관리 리스트
+		</div>
+		<div class="contents_wrap pb0"> 
+			<div class="table_normalView">
+			    <table>
+			        <caption>상세보기</caption>
+			        <colgroup>
+			            <col width="200">
+			            <col width="*">
+			        </colgroup>
+			        <thead>
+			            <tr>
+			                <th>TxID</th>
+			                <td><p class="txt_ellipsis">8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed308999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</p></td>
+			            </tr>
+			        </thead>
+			        <tbody>
+			            <tr>
+			            	<th class="vat">내용</th>
+			                <td>
+			                    8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed3adsfdfsaduifysfbkaasldkhasjhdfkjahsdflhaklsdfhksdalghsadhgiwyowqiuewlfehriu23759172502y5g1ukdfncladksnvklqhktoi2750y21teejfqbdglkahgfashoyfw8oqi7r0qtnlrkk31hv1orho4iut09q4ujavjbjghatkjgqgrogyq984oyt13oqr,mgrflvqeahrvpief8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed3adsfdfsaduifysfbkaasldkhasjhdfkjahsdflhaklsdfhksdalghsadhgiwyowqiuewlfehriu23759172502y5g1ukdfncladksnvklqhktoi2750y21teejfqbdglkahgfashoyfw8oqi7r0qtnlrkk31hv1orho4iut09q4ujavjbjghatkjgqgrogyq984oyt13oqr,mgrflvqeahrvpief8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed3adsfdfsaduifysfbkaasldkhasjhdfkjahsdflhaklsdfhksdalghsadhgiwyowqiuewlfehriu23759172502y5g1ukdfncladksnvklqhktoi2750y21teejfqbdglkahgfashoyfw8oqi7r0qtnlrkk31hv1orho4iut09q4ujavjbjghatkjgqgrogyq984oyt13oqr,mgrflvqeahrvpief8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed3adsfdfsaduifysfbkaasldkhasjhdfkjahsdflhaklsdfhksdalghsadhgiwyowqiuewlfehriu23759172502y5g1ukdfncladksnvklqhktoi2750y21teejfqbdglkahgfashoyfw8oqi7r0qtnlrkk31hv1orho4iut09q4ujavjbjghatkjgqgrogyq984oyt13oqr,mgrflvqeahrvpief
+			                </td>
+			            </tr>
+			        </tbody>
+			    </table>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // 팝업 -->
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+<script>
+	// 차트 스크립트
+	var config = {
+		type: 'doughnut',
+		data: {
+			datasets: [
+				{
+				data: [ 66, 23, 14, 6, 2, 1 ],
+				backgroundColor: [ '#6758f3', '#eb7425', '#f6ab2e', '#33aa44', '#4faded', '#eb4625', ],
+				borderWidth: 0,
+			}],
+			labels: [ '김대표', '(주)코스콤', '이이사', '안감사', '차이사', '기타'
+			]
+		},
+		options: {
+			responsive: false,
+			legend: {
+				display: false,
+			},
+		}
+	};
+
+	var ctx = document.getElementById('chart_canvas').getContext('2d');
+	var myDoughnut = new Chart(ctx, config);
+
+
+	//차트 스크립트 select에 변화에따른 차트업데이트 function
+	$('.top_right_wrap .select_css ').change(function() {
+		myDoughnut.data.datasets[0].data= [1,1,1,1,1,1];
+		myDoughnut.update();
+	});
+	
+
+	//팝업차트
+	var config2 = {
+		type: 'doughnut',
+		data: {
+			datasets: [
+				{
+				data: [ 66, 23, 14, 6, 2, 1 ],
+				backgroundColor: [ '#6758f3', '#eb7425', '#f6ab2e', '#33aa44', '#4faded', '#eb4625', ],
+				// 10개 color코드
+				// backgroundColor: [ '#6758f3', '#b025d8', '#d64e94', '#eb7425', '#f6ab2e', '#cae228', '#33aa44', '#10acf5', '#3372f1', '#2b58d8'],
+				borderWidth: 0,
+			}],
+			labels: [ '김대표', '(주)코스콤', '이이사', '안감사', '차이사', '기타'
+			]
+		},
+		options: {
+			responsive: false,
+			legend: {
+				display: false,
+			},
+		}
+	};
+
+	var ctx2 = document.getElementById('chart_canvas2').getContext('2d');
+	var myDoughnut2 = new Chart(ctx2, config2);
+
+	//swiper 주주명부 히스토리
+	var swiper_shareholder = new Swiper('.shareholder_history .swiper-container', {
+		slidesPerView: 4,
+		spaceBetween: 20,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+</script>
+</body>
+</html>

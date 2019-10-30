@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			// thead 체크박스 클릭시 밑 체크박스 전부 선택
+			var _theadChkBox = 'thead input[type="checkbox"]';
+			var _tbodyChkBox = 'tbody input[type="checkbox"]';
+
+			$(document).on('click', '.table_normal_list thead input[type="checkbox"]', function() {
+				$(this).closest('table').find(_tbodyChkBox).prop('checked', this.checked);
+			});
+
+			$(document).on('click', '.table_normal_list tbody input[type="checkbox"]', function() {
+				var _$chkTable = $(this).closest('table');
+				if(_$chkTable.find(_tbodyChkBox).length === _$chkTable.find(_tbodyChkBox + ':checked').length) {
+					_$chkTable.find(_theadChkBox).prop('checked', true);
+				} else {
+					_$chkTable.find(_theadChkBox).prop('checked', false);
+				}
+			});
+		})
+	</script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>컨텐츠 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">메인 NEWS 관리</a></li>
+				<li><a href="javascript:void(0);">프리미엄<br>기업정보 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">앱 강제업데이트</a></li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>앱 강제업데이트</h4>
+				<!-- AOS -->
+				<h5 class="mt30">AOS 강제업데이트 얼럿</h5>
+				<div class="companyinfo_table mt20 type_update">
+					<table>
+						<caption>AOS 강제업데이트 얼럿</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>노출여부</th>
+								<td>
+									<label class="input_radio" for="rdoSolar">
+										<input type="radio" id="rdoSolar" name="birthday_type" checked="">
+										<span class="label_text">노출</span>
+									</label>
+									<label class="input_radio" for="rdoLunar">
+										<input type="radio" id="rdoLunar" name="birthday_type">
+										<span class="label_text">비노출</span>
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<th>노출기간</th>
+								<td>
+									<ul class="datepicker_searchwrap clearfix">
+										<li>
+											<input type="text" autocomplete="off" class="datepicker form_control">
+											<input type="text" class="form_control" maxlength="">시
+											<input type="text" class="form_control" maxlength="">분
+										</li>
+										<li class="datepicker_connect">~</li>
+										<li>
+											<input type="text" autocomplete="off" class="datepicker form_control" >
+											<input type="text" class="form_control" maxlength="">시
+											<input type="text" class="form_control" maxlength="">분
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>앱버전</th>
+								<td>
+									<ul class="input_betweenwrap clearfix">
+										<li><input type="text" class="form_control"></li>
+										<li>~</li>
+										<li><input type="text" class="form_control"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>얼럿메세지</th>
+								<td>
+									<div class="tr_radio">
+										<label class="input_radio" for="alert_msg1">
+											<input type="radio" id="alert_msg1" name="alert_msg" checked="">
+											<span class="label_text">새로운 업데이트 버전이 있습니다. 업데이트 후 사용하시기 바랍니다.</span>
+										</label>
+									</div>
+									<div class="tr_radio">
+										<label class="input_radio" for="alert_msg2">
+											<input type="radio" id="alert_msg2" name="alert_msg">
+											<span class="label_text">새로운 업데이트 버전이 있습니다. 업데이트 후 사용하시겠습니까?</span>
+										</label>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="submit_area ac">
+					<button type="button" class="btn_md btn_blue">등록</button>
+				</div>
+				<!-- // AOS -->
+
+				<!-- IOS -->
+				<h5 class="mt30">IOS 강제업데이트 얼럿</h5>
+				<div class="companyinfo_table mt20 type_update">
+					<table>
+						<caption>AOS 강제업데이트 얼럿</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>노출여부</th>
+								<td>
+									<label class="input_radio" for="rdoSolar2">
+										<input type="radio" id="rdoSolar2" name="birthday_type2" checked="">
+										<span class="label_text">노출</span>
+									</label>
+									<label class="input_radio" for="rdoLunar2">
+										<input type="radio" id="rdoLunar2" name="birthday_type2">
+										<span class="label_text">비노출</span>
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<th>노출기간</th>
+								<td>
+									<ul class="datepicker_searchwrap clearfix">
+										<li>
+											<input type="text" autocomplete="off" class="datepicker form_control">
+											<input type="text" class="form_control" maxlength="">시
+											<input type="text" class="form_control" maxlength="">분
+										</li>
+										<li class="datepicker_connect">~</li>
+										<li>
+											<input type="text" autocomplete="off" class="datepicker form_control" >
+											<input type="text" class="form_control" maxlength="">시
+											<input type="text" class="form_control" maxlength="">분
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>앱버전</th>
+								<td>
+									<ul class="input_betweenwrap clearfix">
+										<li><input type="text" class="form_control"></li>
+										<li>~</li>
+										<li><input type="text" class="form_control"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>얼럿메세지</th>
+								<td>
+									<div class="tr_radio">
+										<label class="input_radio" for="alert_msg3">
+											<input type="radio" id="alert_msg3" name="alert_msg2" checked="">
+											<span class="label_text">새로운 업데이트 버전이 있습니다. 업데이트 후 사용하시기 바랍니다.</span>
+										</label>
+									</div>
+									<div class="tr_radio">
+										<label class="input_radio" for="alert_msg4">
+											<input type="radio" id="alert_msg4" name="alert_msg2">
+											<span class="label_text">새로운 업데이트 버전이 있습니다. 업데이트 후 사용하시겠습니까?</span>
+										</label>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="submit_area ac">
+					<button type="button" class="btn_md btn_blue">등록</button>
+				</div>
+				<!-- // IOS -->
+
+				<div class="table_normal_list mt40">
+					<div class="group_tableinfo">
+						<span class="num_total">총 <em class="txt_sell_color">265</em>건</span>
+						<div class="srch_area">
+							<button type="button" class="btn_sm btn_blue">삭제</button>
+							<select class="select_css form_control page_num_width">
+								<option value="20">20</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
+						</div>
+					</div>
+
+					<table>
+						<caption>앱 강제업데이트 이력</caption>
+						<colgroup>
+							<col width="5%">
+							<col width="20%">
+							<col width="20%">
+							<col width="20%">
+							<col width="15%">
+							<col width="15%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</th>
+								<th>노출여부</th>
+								<th>노출기간</th>
+								<th>디바이스</th>
+								<th>앱버전</th>
+								<th>등록일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 데이터없을때 -->
+							<!-- <tr>
+								<td class="blank_area" colspan="6">
+									<p class="txt_blank">데이터가 없습니다.</p>
+								</td>
+							</tr> -->
+							<tr class="check_tr">
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>노출</td>
+								<td>2019-08-01 ~ 2019-08-31</td>
+								<td>AOS</td>
+								<td>2.0.1 ~ 2.0.9</td>
+								<td>2109-06-26</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>노출</td>
+								<td>2019-08-01 ~ 2019-08-31</td>
+								<td>AOS</td>
+								<td>2.0.1 ~ 2.0.9</td>
+								<td>2109-06-26</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>노출</td>
+								<td>2019-08-01 ~ 2019-08-31</td>
+								<td>AOS</td>
+								<td>2.0.1 ~ 2.0.9</td>
+								<td>2109-06-26</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="board_paging">
+						<ul>
+							<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+							<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+							<li><a href="javascript:void(0);" class="active">1</a></li>
+							<li><a href="javascript:void(0);">2</a></li>
+							<li><a href="javascript:void(0);">3</a></li>
+							<li><a href="javascript:void(0);">4</a></li>
+							<li><a href="javascript:void(0);">5</a></li>
+							<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+							<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+						</ul>
+					</div>
+				</div>
+
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+<!-- 팝업 -->
+<!-- 게시물선택 -->
+<div id="pop_select_board" class="pop_dim_wrap pop_modal pop_md">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			기업정보 선택
+		</div>
+		<div class="contents_wrap">
+			<div class="companyinfo_table">
+				<table>
+					<caption>검색</caption>
+					<colgroup>
+						<col width="130">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>검색</th>
+							<td class="pop_search_tdwrap type_md">
+								<select class="select_css form_control">
+									<option value="">전체</option>
+									<option value="">기업명</option>
+									<option value="">대표자</option>
+								</select>
+								<input type="text" class="form_control" maxlength="">
+								<button type="button" class="btn_sm btn_gray2">검색</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p class="deallist_total">게시물수 : <em class="txt_sell_color">15</em></p>
+
+			<div class="board_deallist2 type_selectboard mt20 type_md">
+				<div class="inner_div">
+					<table>
+						<caption>기업정보 선택</caption>
+						<colgroup>
+							<col width="55">
+							<col width="294">
+							<col width="120">
+							<col width="110">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>선택</th>
+								<th>기업명</th>
+								<th>대표자</th>
+								<th>등록일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 데이터없을때 -->
+							<!-- <tr>
+								<td class="blank_area" colspan="4">
+									<p class="txt_blank">데이터가 없습니다</p>
+								</td>
+							</tr> -->
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr1">
+										<input type="radio" id="select_tr1" name="select_tr" checked="">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">뉴코에드윈드</a></td>
+								<td>홍길동</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr2">
+										<input type="radio" id="select_tr2" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">뉴코에드윈드</a></td>
+								<td>홍길동</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr3">
+										<input type="radio" id="select_tr3" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">뉴코에드윈드</a></td>
+								<td>홍길동</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr4">
+										<input type="radio" id="select_tr4" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">뉴코에드윈드</a></td>
+								<td>홍길동</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr5">
+										<input type="radio" id="select_tr5" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">뉴코에드윈드</a></td>
+								<td>홍길동</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr6">
+										<input type="radio" id="select_tr6" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">뉴코에드윈드</a></td>
+								<td>홍길동</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr7">
+										<input type="radio" id="select_tr7" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td class="al"><a href="javascript:void(0);" class="btn_link">뉴코에드윈드</a></td>
+								<td>홍길동</td>
+								<td>2019-06-27</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_white">취소</button>
+			<button type="button" class="btn_md btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+	
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script> 
+	<script src="../js/common.js"></script>
+	<script>
+		$(function(){
+			$('#pop_orderinfo').neoModal();
+			$('#pop_orderinfo2').neoModal();
+		});
+	</script>
+</head>
+<body class="bg_gray"> 
+ 
+<div id="pop_orderinfo" class="pop_dim_wrap pop_modal"> 
+	<div class="pop_wrap"> 
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">주문정보</div>
+		<div class="contents_wrap">
+			<hr>
+			<div class="name_area"><span class="title">종목명</span><span class="name">코스콤</span></div>
+			<div class="table table_row table_vline bb0">
+				<table>
+					<caption class="sr_only">주문정보 상세</caption>
+					<colgroup>
+						<col width="100">
+						<col width="*">
+					</colgroup>
+					<tbody class="top">
+						<tr>
+							<th class="al bt0">구분</th>
+							<td class="txt_sell_color bt0">매도</td>
+						</tr>
+						<tr> 
+							<th class="al">수량(주)</th>
+							<td class="ar">90,000</td>
+						</tr>
+						<tr>
+							<th class="al">가격(원)</th>
+							<td class="ar">90,000</td>
+						</tr>
+					</tbody>
+					<tbody class="bottom">
+						<tr>
+							<th class="al">잔량(주)</th>
+							<td class="ar">90,000</td>
+						</tr>
+						<tr>
+							<th class="al">직전체결가(원)</th>
+							<td class="ar">90,000</td>
+						</tr>
+						<tr>
+							<th class="al">주문상태</th>
+							<td>
+								<!-- <span class="state_deal case1">협상</span>
+								<span class="state_deal case2">협상</span>
+								<span class="state_deal case3">협상대기</span>
+								<span class="state_deal case4">협상대기</span>
+								<span class="state_deal case5">서명대기</span>
+								<span class="state_deal case6">입금대기</span>
+								<span class="state_deal case7">체결</span>
+								<span class="state_deal case8">완료</span>
+								<span class="state_deal case9">계약</span>
+								<span class="state_deal case10">결렬</span> -->
+								<span class="state_deal case3">협상대기</span> 
+							</td>
+						</tr>
+						<tr>
+							<th class="al">등록일시</th>
+							<td>2019.06.12 15:36</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="desc_area">
+								<p class="title">거래조건</p>
+								<p class="desc">100주 미만은 거래가 불가합니다. 100주 미만은 거래가 불가합니다. </p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div> 
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_white fl" onclick="$('#pop_orderinfo').neoModal('close');">삭제</button>
+			<button type="button" class="btn_md btn_blue fr" onclick="$('#pop_orderinfo').neoModal('close');">확인</button>
+		</div> 
+	</div> 
+</div>
+
+<div id="pop_orderinfo2" class="pop_dim_wrap pop_modal"> 
+	<div class="pop_wrap"> 
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">주문정보</div>
+		<div class="contents_wrap">
+			<hr>
+			<div class="name_area"><span class="title">종목명</span><span class="name">코스콤</span></div>
+			<div class="table table_row table_vline bb0">
+				<table>
+					<caption class="sr_only">주문정보 상세</caption>
+					<colgroup>
+						<col width="100">
+						<col width="*">
+					</colgroup>
+					<tbody class="top">
+						<tr>
+							<th class="al bt0">구분</th>
+							<td class="txt_buy_color bt0">매수</td>
+						</tr>
+						<tr>
+							<th class="al">수량(주)</th>
+							<td class="ar">90,000</td>
+						</tr>
+						<tr>
+							<th class="al">가격(원)</th>
+							<td class="ar">90,000</td>
+						</tr>
+					</tbody>
+					<tbody class="bottom">
+						<tr>
+							<th class="al">잔량(주)</th>
+							<td class="ar">90,000</td>
+						</tr>
+						<tr>
+							<th class="al">직전체결가(원)</th>
+							<td class="ar">90,000</td>
+						</tr>
+						<tr>
+							<th class="al">주문상태</th>
+							<td>
+								<!-- <span class="state_deal case1">협상</span>
+								<span class="state_deal case2">협상</span>
+								<span class="state_deal case3">협상대기</span>
+								<span class="state_deal case4">협상대기</span>
+								<span class="state_deal case5">서명대기</span>
+								<span class="state_deal case6">입금대기</span>
+								<span class="state_deal case7">체결</span>
+								<span class="state_deal case8">완료</span>
+								<span class="state_deal case9">계약</span>
+								<span class="state_deal case10">결렬</span> -->
+								<span class="state_deal case4">협상대기</span>
+							</td>
+						</tr>
+						<tr>
+							<th class="al">등록일시</th>
+							<td>2019.06.12 15:36</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="desc_area">
+								<p class="title">거래조건</p>
+								<p class="desc">100주 미만은 거래가 불가합니다. 100주 미만은 거래가 불가합니다. </p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div> 
+		</div>
+		<div class="button_wrap clearfix"> 
+			<button type="button" class="btn_md btn_white fl" onclick="$('#pop_orderinfo2').neoModal('close');">삭제</button>
+			<button type="button" class="btn_md btn_blue fr" onclick="$('#pop_orderinfo2').neoModal('close');">확인</button>
+		</div> 
+	</div> 
+</div>
+
+</body>
+</html>

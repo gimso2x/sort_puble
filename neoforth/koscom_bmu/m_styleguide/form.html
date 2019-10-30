@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - FORM</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../pub/mobile/css/common.css">
+<link rel="stylesheet" href="../pub/mobile/css/vendor/jquery-ui.min.css">
+<script src="../pub/mobile/js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../pub/mobile/js/vendor/jquery-ui.min.js"></script>
+<script src="../pub/mobile/js/common.js"></script>
+
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(mobileSnb);
+		$('.g-nav-snb ul li').eq(3).addClass("active");
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">FORM</h2>
+			
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">input</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<input type="text" maxlength="" class="form_control" placeholder="종목명 또는 종목번호를 입력">
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<input type="text" maxlength="" class="form_control" placeholder="종목명 또는 종목번호를 입력">
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.form_control{width:100%;height:36px;padding:0 10px;border:1px solid #ddd;font-size:14px;color:#333;}
+								.form_control::placeholder{color:#757575;} 
+								.form_control::-ms-clear{display: none;}
+								input.form_control:read-only {background-color:#f8f8f8;}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">select</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<select name="" id="" class="form_control selectbox">
+								<option value="">선택</option>
+								<option value="">2</option>
+								<option value="">3</option>
+							</select>
+
+							<select name="" id="" class="form_control selectbox type2 mt10">
+								<option value="">선택</option>
+								<option value="">2</option>
+								<option value="">3</option>
+							</select>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<select name="" id="" class="form_control selectbox">
+									<option value="">선택</option>
+									<option value="">2</option>
+									<option value="">3</option>
+								</select>
+
+								<select name="" id="" class="form_control selectbox type2">
+									<option value="">선택</option>
+								</select>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.selectbox{-webkit-appearance: none;-moz-appearance: none;appearance: none; background: url(../img/sub/ico_select.png) no-repeat; background-position: calc(100% - 4px) 50%; background-size: 24px;}   
+								.selectbox.type2{background-image: url(../img/sub/ico_select_rb.png); background-position: calc(100% + 2px) calc(100% + 2px);} 
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">component</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="phone_input_area">
+								<input type="text" maxlength="" id="input_phone" class="form_control">
+								<input type="text" maxlength="" class="form_control">
+								<input type="text" maxlength="" class="form_control">
+							</div>
+							<br>
+							<div class="phone_email_area">
+								<input type="text" maxlength="" id="input_email" class="form_control">
+								<span>@</span>
+								<input type="text" maxlength="" class="form_control">
+								<select name="" id="" class="form_control selectbox">
+									<option value="">선택</option>
+									<option value="">2</option>
+									<option value="">3</option>
+								</select>
+							</div>
+							<br>
+							<div class="search_address">
+								<label><input type="text" maxlength="" class="form_control" placeholder="지번/도로명을 입력해주세요."></label>
+								<button class="btn_srch">검색</button>
+							</div>
+
+							<div class="search_name mt10">
+								<label for="srch_name">종목명</label>
+								<input type="text" maxlength="" id="srch_name" class="form_control" placeholder="종목명 또는 종목번호를 입력">
+								<a href="javascript:void(0);" class="btn_srch sr_only">검색</a>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<p class="phone_input_area">
+									<input type="text" maxlength="" id="input_phone" class="form_control">
+									<input type="text" maxlength="" class="form_control">
+									<input type="text" maxlength="" class="form_control">
+								</p>
+
+								<p class="phone_email_area">
+									<input type="text" maxlength="" id="input_email" class="form_control">
+									<span>@</span>
+									<input type="text" maxlength="" class="form_control">
+									<select name="" id="" class="form_control selectbox">
+										<option value="">선택</option>
+										<option value="">2</option>
+										<option value="">3</option>
+									</select>
+								</p> 
+
+								<div class="search_address">
+									<label><input type="text" maxlength="" class="form_control" placeholder="지번/도로명을 입력해주세요."></label>
+									<button class="btn_srch">검색</button>
+								</div>
+
+								<div class="search_name mt10">
+									<label for="srch_name">종목명</label>
+									<input type="text" maxlength="" id="srch_name" class="form_control" placeholder="종목명 또는 종목번호를 입력">
+									<a href="javascript:void(0);" class="btn_srch sr_only">검색</a>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.search_name{position: relative; padding: 10px 16px; height: 51px; border-bottom: 1px solid #eee; background-color: #fff;} 
+								.search_name label{display: block; position: absolute; left: 16px; top: 50%; margin-top: -9px; height: 18px; line-height: 18px; font-size: 13px; color: #757575;}  
+								.search_name .form_control{padding: 0 40px; height: 30px; border:0; font-size: 19px; color: #0E1D64; text-align: center; border-bottom: 1px solid #000826;}   
+								.search_name .form_control::placeholder{font-size: 14px; color: #757575;}  
+								.search_name .btn_srch{position: absolute; top: 12px; right: 16px; width: 24px; height: 24px; background: url(../img/sub/ico_search.png) no-repeat 0 0; background-size: 24px;}
+
+								.search_address{position: relative; padding-right: 89px;}
+								.search_address .btn_srch{position: absolute; right: 0; top: 0; width: 84px; height: 36px; border: 0; font-size: 15px; color: #fff; background-color: #56618B; } 
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

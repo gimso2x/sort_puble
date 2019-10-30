@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script> 
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 로그인전 -->
+	<div id="header">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb">
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);" class="active">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li>
+					<li class="join_area"><a href="javascript:void(0);"><span>서비스 가입</span></a></li>
+					<li class="login_area"><a href="javascript:void(0);"><span>로그인</span></a></li> 
+				</ul>
+				<div class="bar"></div>
+ 
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+					<ul class="nav_sub"> 
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>	<!-- // submenu_area -->
+			</div>	
+			
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+				</div>
+				<div class="group_nav join_area">
+					<a href="javascript:void(0);" class="title">서비스 가입</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+				</div> 
+				<div class="group_nav login_area"> 
+					<a href="javascript:void(0);" class="title">로그인</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+ 
+	<div id="container">
+		<div class="nav_page">
+			<div class="inner">
+				<ul class="lst_page clearfix">
+					<li><a href="/" class="btn_home sr_only">Home</a></li>
+					<li>
+						<a href="javascript:void(0);" class="btn_page">서비스 소개</a>
+						<ul class="nav_subpage clearfix">  
+							<li><a href="javascript:void(0);" class="active">서비스 소개</a></li>
+							<li><a href="javascript:void(0);">투자정보</a></li>
+							<li><a href="javascript:void(0);">고객센터</a></li>
+							<li><a href="javascript:void(0);">로그인</a></li>
+							<li><a href="javascript:void(0);">서비스 가입</a></li> 
+						</ul>
+					</li>
+					<li>
+						<ul class="lst_subpage clearfix">
+							<li><a href="javascript:void(0);">이용안내</a></li>
+							<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+							<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+							<li><a href="javascript:void(0);">보안모듈설치</a></li>
+							<li><a href="javascript:void(0);" class="active">인증방법안내</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>	<!-- // nav_page -->
+
+		<div class="section">
+			<div class="inner">
+				<div class="group_pageinfo">
+					<h3 class="txt_title">인증방법안내</h3>
+				</div>	<!-- // group_title -->
+				
+			</div>	<!-- // contents -->
+				<div class="contents contents_intro certifi_info">
+					<ul class="tab_md inner clearfix type50">
+						<li><a href="#tab_contents1" class="on">DID 인증 소개</a></li>
+						<li><a href="#tab_contents2">통합 인증 소개</a></li>
+					</ul>
+
+					<div id="tab_contents1" class="tab_contents on">
+
+						<div class="section pt15">
+							<div class="inner">
+								<p class="info_tit">자기주권 신원(DID(SSI): Self-Sovereign Identify)이란?</p>
+								<p class="info_desc">자기주권 신원 모델이란 기업이 개인정보를 통제하는 방식이 아닌,<br>
+										개인이 적접 개인정보와 관련된 증명 발급과 제출을 수행하는 방식</p>
+								<div class="model_wrap clearfix">
+									<dl class="fl">
+										<dt>(현재) 중앙집중형/연합형 신원 모델</dt>
+										<dd>
+											<img src="../img/sub/bg_model_info1.png" alt="(현재) 중앙집중형/연합형 신원 모델">
+											<p>활용기관이 이개인에게 개인 정보(로그인 등)를 요청할 경우 (신원)발행기관에게<br>
+												(개인의 동의 하에) 제공해주는 방식</p>
+										</dd>
+									</dl>
+									<dl class="fl">
+										<dt>(미래) 자기주권형 신원 모델</dt>
+										<dd>
+											<img src="../img/sub/bg_model_info2.png" alt="(미래) 자기주권형 신원 모델">
+											<p>개인은 (신원)발행기관에게 개인 정보 관련 증명 발급을 요청하고, 발급받은 증명을<br>
+												활용기관에게 전달하는 방식</p>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+
+						<div class="section bg_gray2">
+							<div class="inner">
+								<p class="info_tit">자기주권형 '본산 신원(DID)' 모델로 무엇을 할 것인가?</p>
+								<p class="info_desc">디지털 자기주권을 기반으로 중개자 없이 개인의 신원을 증명하자!</p>
+								<ul class="circle_info_wrap">
+									<li>나의 개인정보를<br> 내 단말에 저장하고,<br> 필요시 직접<br> 제출할 수 있는 서비스</li>
+									<li>신뢰 기반의<br> 증명서 발행과<br> 증명서 검증이 가능한<br> DID(Decertrafzed ID)<br> 블록체인 인프라</li>
+									<li>증명 발행과<br> 증명 확인 기관간의<br> 직접적인 연결을<br> 제거함으로써<br> 개인의 프라이버시 보호</li>
+								</ul>
+								<img class="mt30" src="../img/sub/bg_model_info3.png" alt="자기주권형 '본산 신원(DID)' 모델">
+							</div>
+						</div>
+
+						<div class="section bg_mobile_certify">
+							<div class="inner">
+								<p class="info_tit">모바일 전자증명 서비스 주요 기능</p>
+								<p class="info_desc">모바일 전자증명 어플리케이션은 각종 증명서를 단말에 발급 받아 저장하고<br>
+										기관에 제출하는 기능 및 전자계약을 위한 전자서명 기능으로 구성</p>
+								<div class="mobile_certify clearfix">
+									<ul class="fl">
+										<li>
+											<dl>
+												<dt>1. 전자증명서</dt>
+												<dd>발급 완료한 증명서의 자세한 내용 및<br>상태를 조회하고 관리 가능</dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt>2. 증명서 선택</dt>
+												<dd>필요한 증명서를 선택하여<br>발급 신청하는 기능</dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt>3. 발행기관 선택</dt>
+												<dd>기관을 선택하여 발급이 가능한 증명서를<br>신청하는 기능</dd>
+											</dl>
+										</li>
+									</ul>
+									<ul class="fr">
+										<li>
+											<dl>
+												<dt>4. QR스캔</dt>
+												<dd>QR스캔 기능으로 기관과 연결하여<br>증명서를 발급/제출하는 기능</dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt>5. 전자계약서</dt>
+												<dd>전자계약서를 DID로 서명 후<br>모바일 내에서 관리 기능</dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt>6. 리워드 쿠폰</dt>
+												<dd>행위에 따라서 OTX로 교환 가능한<br>리워드 발행 기능</dd>
+											</dl>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="section bg_gray">
+							<div class="inner">
+								<div class="info_tit">Be My Unicon에서 활용</div>
+								<div class="info_desc">서비스 로그인을 위해 QR 코드를 모바일에서 스캔하여<br>
+										간편 로그인 기능을 제공하고 주식 양수도 계약에 대한 전자계약 서비스 제공</div>
+								<ul class="mobile_qr">
+									<li>QR코드 스캔</li>
+									<li>기관연결</li>
+									<li>전자계약 메인</li>
+									<li>전자계약서 상세</li>
+								</ul>
+							</div>
+						</div>
+
+
+					</div>
+					<div id="tab_contents2" class="tab_contents">
+						<div class="section pt15">
+							<div class="inner">
+								<p class="info_tit">편리한 본인 확인 방식과 다양한 인증체계를 지원하는 All-In-One 인증서비스</p>
+								<p class="info_desc">OpenPass는 고객이 원하는 인증서비스를 선택할 수 있는 통합인증서비스입니다.<br>
+										비밀번호 외에 간편 비밀번호, 생체인식 등의 편리한 본인확인 방식을 제공하고,<br>
+										공인인증은 물론 지문, OTP 등 다양한 인증체계를 지원합니다.</p>
+								<img class="mt40" src="../img/sub/bg_model_total1.png" alt="OpenPass 통합인증앱">
+								<div class="total_wrap clearfix mt15">
+									<div class="fl">
+										<img src="../img/sub/bg_model_total2.png" alt="일반PW, 간편PW, 지문안면, 패턴">
+									</div>
+									<div class="fl">
+										<img src="../img/sub/bg_model_total3.png" alt="웹표준PC지원, 보안키패드, 메시징">
+									</div>
+								</div>
+								<p class="info_tit_mini mt15">Trustonic사의 TAP(Trustonic Application Protection) 솔루션 적용</p>
+								<p class="info_desc_mini">※ TAP : 보안정보의 저장과 생성을 담당하는 TEE(Trusted Execution Envirarrint)규격을 구현한 솔루션</p>
+							</div>
+						</div>
+
+						<div class="section bg_gray">
+							<div class="inner">
+								<p class="info_tit">특장점</p>
+								<p class="info_desc">디지털 자기주권을 기반으로 중개자 없이 개인의 신원을 증명하자!</p>
+
+								<ul class="good_point clearfix mt40">
+									<li>
+										<dl>
+											<dt>편리한 본인확인</dt>
+											<dd>
+												간편 비밀번호, 생체인식(지문, 안면), 패턴 등<br>
+												편리한 본인확인 기능을 제공하고 새로운 기능도<br>
+												빠르게 추가 수용이 가능합니다.
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>다양한 인증체계</dt>
+											<dd>
+												공인인증, 지문, OTP 등 다양한 인증체계를<br>
+												통합하여 제공합니다.
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>안전한 저장공간</dt>
+											<dd>
+												TrustZone과 화이트박스 암호기술을 기반으로<br>
+												사용자의 중요 정보를 안전하게 보호하며,<br>
+												TEE 표준과 호환됩니다.
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>웹표준·PC지원</dt>
+											<dd>
+												브라우저(모바일, PC)에서 별도 프로그램 설치 없이<br>
+												인증서비스를 이용할 수 있습니다. 스마트폰을 이용하여<br>
+												PC에 로그인하고 전자서명을 이용할 수 있습니다.
+											</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="section pb0">
+							<div class="inner">
+								<p class="info_tit">통합인증앱 주요 기능</p>
+								<ul class="certify_app">
+									<li>
+										<dl>
+											<dt>공인인증서</dt>
+											<dd><p>전자서명 생성</p><p>인증서 발급 및 관리<br>(비밀번호 변경 등)</p>다양한 본인확인<br>(간편 비밀번호, 생체인식 등)</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>고객사용 서비스 기능</dt>
+											<dd>고객사 앱과 연동하여<br>공인인증서, FIDO 등을<br>이용 및 관리</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>FIDO</dt>
+											<dd><p>전자서명 생성</p><p>관리(간편 비밀번호 변경 등)</p>다양한 본인확인<br>(간편 비밀번호, 생체인식 등)</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>	<!-- // container -->
+	
+	<!-- 로그인전 -->
+	<div id="footer">
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix"> 
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.koscom.co.kr">코스콤</option>
+					</select> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_member join">
+					<p>서비스 가입</p>
+					<ul>
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+				</div>
+				<div class="nav_member login">
+					<p>로그인</p>
+					<ul>
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a>
+	</div>	<!-- // footer -->  
+</div>
+
+<div id="pop_id" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap">
+                입력된 사업자등록번호와 인증서가<br>
+				일치하지 않습니다.
+            </div>
+        </div>
+        <div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+        </div>
+    </div>
+</div>
+
+<div id="pop_pw" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap">
+                인증서 비밀번호가 일치하지 않습니다.
+            </div>
+        </div>
+        <div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+        </div>
+    </div>
+</div>
+
+<div id="pop_confirm" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap">
+                공인인증서 변경이 완료되었습니다.<br>
+				로그인 페이지로 이동합니다.
+            </div>
+        </div>
+        <div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="../js/vendo/analytics.js" async></script>
+
+<script>
+	$(function(){
+		var lst_tab = $('.tab_md>li>a');
+		var lst_tab_contents = $('.tab_contents');
+		lst_tab.each(function(){
+			var tg = $(this);
+			tg.click(function(e){
+				e.preventDefault();
+				var link = tg.attr('href');
+
+				lst_tab.removeClass('on');
+				tg.addClass('on');
+
+				lst_tab_contents.removeClass('on');
+				$(link).addClass('on');
+			});
+		});
+	});
+</script>
+
+</body>
+</html>

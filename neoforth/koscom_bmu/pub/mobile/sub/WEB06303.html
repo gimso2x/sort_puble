@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script> 
+	<script src="../js/common.js"></script>
+	<!-- 차트 -->
+	<script src="../js/vendor/Chart.min.js"></script>
+</head>
+<body class="bg_gray"> 
+ 
+<div id="wrap_webview">
+	<div class="section">
+		<h3 class="title_section">체결정보차트</h3>
+		
+		<div class="chart_area">
+			<canvas id="dealinfo_chart"></canvas>
+		</div>
+
+		<div class="table table_row table_vline">
+			<table>
+				<caption class="sr_only">체결정보</caption>
+				<colgroup>
+					<col width="100">
+					<col width="*">
+				</colgroup>
+				<tbody class="top">
+					<tr> 
+						<th class="al bt0">수량(주)</th>
+						<td class="ar bt0">2,000</td>
+					</tr>
+					<tr>
+						<th class="al">단가(원)</th>
+						<td class="ar">5,000</td>
+					</tr>
+					<tr>
+						<th class="al">금액(주)</th>
+						<td class="ar">2,000</td>
+					</tr>
+				</tbody>
+				<tbody class="bottom"> 
+					<tr>
+						<th class="al">상태</th>
+						<td><span class="state_deal case5">서명대기</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>	<!-- // table -->
+	</div> 	<!-- // section -->
+	<div class="top_area">
+		<a href="javascript:void(0);" class="btn_top sr_only">top</a>
+	</div>
+</div>
+
+<script>
+	// 차트 스크립트
+	var ctx = document.getElementById('dealinfo_chart').getContext('2d');
+	var gradientFill = ctx.createLinearGradient(0,400,0,0);
+	gradientFill.addColorStop(0, "rgb(255, 255, 255)");
+	gradientFill.addColorStop(1, "rgba(8, 130, 135, 0.4)");
+
+	var config = {
+		type: 'line',
+		data: {
+			datasets: [{
+				data: [ 500, 1000, 2000, 3000, 0, 5000],
+				backgroundColor: gradientFill,
+				borderColor: '#13888D',
+				borderWidth: 2,
+				pointRadius: 0,
+				lineTension: 0,
+				type:'line',
+			}],
+			labels: [ '05.15', '05.29', '06.07', '06.21', '07.05', '07.13',]
+		},
+		options: {
+				// responsive: false,
+				legend: {
+					display: false,
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true,
+							stepSize:500
+						},
+						position: 'right'
+					}]
+				},
+				tooltips: {
+					intersect: false,
+					mode: 'index',
+			}
+		}
+	};
+	var chart_dealhistory = new Chart(ctx, config);
+</script>
+
+
+</body>
+</html>

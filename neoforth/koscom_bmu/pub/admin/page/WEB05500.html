@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- ckeditor -->
+	<script src="../js/vendor/ckeditor/ckeditor.js"></script> 
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);">알림 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+ 
+	<div id="container">
+		<div class="group_lnb">
+			<h3>고객센터 관리</h3>
+			<ul class="nav_lnb"> 
+				<li><a href="javascript:void(0);" class="active">공지사항 관리</a></li>
+				<li><a href="javascript:void(0);">FAQ 관리</a></li>
+				<li><a href="javascript:void(0);">1:1문의 관리</a></li> 
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>공지사항 관리</h4>
+
+				<div class="companyinfo_table mt30"> 
+				    <table>
+				        <caption>공지사항 등록</caption>
+				        <colgroup>
+				            <col width="130"> 
+				            <col width="*">
+				        </colgroup>
+				        <tbody>
+				            <tr>
+				                <th>제목</th>
+				                <td><input type="text" class="form_control" maxlength=""></td>
+				            </tr>
+				            <tr>
+				                <th>메인 노출</th>
+				                <td> 
+				                	<label class="input_radio p0" for="management_main1">
+								        <input type="radio" id="management_main1" name="management_main" checked="">
+								        <span class="label_text">Y</span>
+								    </label>
+								    <label class="input_radio" for="management_main2">
+								        <input type="radio" id="management_main2" name="management_main">
+								        <span class="label_text">N</span>
+								    </label>
+				                </td>
+				            </tr>
+				            <tr>
+				                <th>첨부파일</th> 
+				                <td class="file_area">
+				                	<button type="button" class="btn_sm btn_gray2" onclick="$('#pop_logoupload').neoModal();">파일찾기</button> 
+									<div class="upload_file_wrap">
+										<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+										<button type="button" class="btn_delimg">이미지 삭제버튼</button> 
+									</div>
+									<div class="upload_file_wrap">
+										<a href="javascript:void(0);" class="btn_link">simple01.png</a>
+										<button type="button" class="btn_delimg">이미지 삭제버튼</button> 
+									</div>   
+				                </td> 
+				            </tr>
+				            <tr>
+				                <td colspan="2">
+				               		<textarea id="ckeditor_write"></textarea> 
+				                </td> 
+				            </tr>
+				        </tbody>
+				    </table>
+				</div> 
+
+				<div class="submit_area">  
+					<button type="button" class="btn_md btn_blue">등록</button>
+					<!-- <button type="button" class="btn_md btn_blue">수정</button> -->
+				</div>
+
+				<div class="group_srch">
+					<table class="tb_srch"> 
+						<colgroup>
+							<col width="130">
+							<col width="*">
+							<col width="130">
+							<col width="*"> 
+						</colgroup>  
+						<tbody>
+							<tr>
+								<th>메인 노출</th>  
+								<td class="srch_area al">
+									<div>
+									    <label class="input_radio p0" for="srch_main1">
+									        <input type="radio" id="srch_main1" name="srch_main" checked="">
+									        <span class="label_text">Y</span>
+									    </label>
+									    <label class="input_radio" for="srch_main2">
+									        <input type="radio" id="srch_main2" name="srch_main">
+									        <span class="label_text">N</span>
+									    </label>
+									</div>
+								</td>  
+								<th>기간</th>  
+								<td class="srch_area al">
+									<ul class="datepicker_searchwrap clearfix">
+									    <li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+									    <li class="datepicker_connect">~</li>
+									    <li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+									</ul> 
+								</td> 
+							</tr>
+							<tr>
+								<th>검색어</th>  
+								<td colspan="3" class="srch_area al"> 
+									<select name="" id="" class="select_css form_control">
+										<option value="">전체</option>
+										<option value="">제목</option>
+										<option value="">내용</option>
+										<option value="">등록자</option> 
+									</select>
+									<input type="text" class="form_control name">
+								</td>  
+							</tr>
+						</tbody>
+					</table>
+				</div>	<!-- // group_search --> 
+
+				<div class="submit_area">
+					<button class="btn_md btn_white">초기화</button>
+					<button class="btn_md btn_blue">검색</button>
+				</div>
+
+				<div class="group_tableinfo mt30"> 
+					<span class="num_total">총 <em><strong class="txt_sell_color">245</strong>건</em></span>
+					<div class="srch_area"> 
+						<button type="button" class="btn_sm btn_blue">삭제</button>
+						<select class="select_css form_control"> 
+							<option value="20">20</option>
+							<option value="50">50</option>
+							<option value="100">100</option>
+						</select>
+					</div>
+				</div> 
+ 				
+				<div class="companyinfo_table th_vertical mt10"> 
+				    <table> 
+				        <caption class="sr_only">공지사항 관리 리스트</caption>
+				        <colgroup>
+				            <col width="5%">
+				            <col width="7%">
+				            <col width="*">   
+				            <col width="7%"> 
+				            <col width="7%">
+				            <col width="7%">
+				            <col width="10%">
+				            <col width="10%">  
+				            <col width="10%">  
+				            <col width="10%"> 
+				        </colgroup> 
+				        <thead> 
+				            <tr>
+				            	<th>
+				            		<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check_notice">
+										<span class="label_text"></span>
+									</label>
+								</th> 
+				            	<th>번호</th>
+				            	<th>제목</th>
+				            	<th>첨부파일</th>
+				            	<th>조회수</th>
+				            	<th>메인 노출</th>
+				            	<th>등록일자</th>
+				            	<th>등록자</th>
+				            	<th>수정일자</th>
+				            	<th>수정자</th>
+				            </tr>
+				        </thead>
+				        <tbody>
+				        	<!-- <tr>   
+				                <td colspan="9" class="blank_area type_white">
+				                	<p class="txt_blank">데이터가 없습니다.</p>
+				                </td>
+				            </tr> -->
+				            <tr>   
+				                <td>
+				                	<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check_notice">
+										<span class="label_text"></span>
+									</label>
+				                </td> 
+				                <td>245</td>
+				                <td class="al">제목이 들어갑니다.제목이 들어갑니다.제목이 들어갑니다.</td> 
+				                <td><span class="ico_file"></span></td> 
+				                <td>84</td>
+				                <td>Y</td> 
+				                <td>2019-06-26</td>
+				                <td>홍길동</td>
+				                <td>2019-06-26</td> 
+				                <td>홍길동</td>  
+				            </tr>
+				            <tr class="check_tr">    
+				                <td>
+				                	<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check_notice">
+										<span class="label_text"></span>
+									</label>
+				                </td> 
+				                <td>245</td>
+				                <td class="al">제목이 들어갑니다.제목이 들어갑니다.제목이 들어갑니다.</td> 
+				                <td><span class="ico_file"></span></td> 
+				                <td>84</td>
+				                <td>Y</td> 
+				                <td>2019-06-26</td>
+				                <td>홍길동</td>
+				                <td>2019-06-26</td> 
+				                <td>홍길동</td>  
+				            </tr>
+				            <tr> 
+				                <td>
+				                	<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check_notice">
+										<span class="label_text"></span>
+									</label>
+				                </td> 
+				                <td>245</td>
+				                <td class="al">제목이 들어갑니다.제목이 들어갑니다.제목이 들어갑니다.</td> 
+				                <td><span class="ico_file"></span></td> 
+				                <td>84</td>
+				                <td>Y</td> 
+				                <td>2019-06-26</td>
+				                <td>홍길동</td>
+				                <td>2019-06-26</td> 
+				                <td>홍길동</td>  
+				            </tr>
+				        </tbody>
+				    </table>
+				</div> 
+
+				<div class="board_paging"> 
+					<ul>
+						<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+						<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+						<li><a href="javascript:void(0);" class="active">1</a></li>
+						<li><a href="javascript:void(0);">2</a></li>
+						<li><a href="javascript:void(0);">3</a></li>
+						<li><a href="javascript:void(0);">4</a></li>
+						<li><a href="javascript:void(0);">5</a></li>
+						<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+						<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+					</ul>
+				</div>
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+
+<!-- 파일첨부 업로드 -->
+<div id="pop_logoupload" class="pop_dim_wrap pop_modal">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			파일첨부
+		</div>
+		<div class="contents_wrap">
+			<div class="wrap_file">
+				<input class="upload_name form_control" value="" disabled="disabled">
+				<input type="file" id="ex_filename" class="upload_hidden">
+				<label for="ex_filename" class="btn_sm btn_darkblue">파일찾기</label>
+			</div>
+			<ul class="explain_ul mt20">
+				<li>※ 5MB 미만의 파일만 등록 가능합니다</li>
+			</ul>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue">확인</button>
+			<button type="button" class="btn_md btn_white" onclick="$('#pop_logoupload').neoModal('close');">취소</button>
+		</div>
+	</div> 
+</div>
+
+<!-- // 팝업 -->
+
+<script>
+	CKEDITOR.replace('ckeditor_write', {
+		height: 300, //editor height 높이 지정
+		resize_enabled: false //editor 크기조정 삭제
+	});
+</script>
+
+</body>
+</html>

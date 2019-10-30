@@ -1,0 +1,1135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/plugins.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/vendor/Chart.min.js"></script>
+	<script src="../js/vendor/stackBlur.js"></script>
+	<script src="../js/vendor/html2canvas.js"></script>
+</head>
+<body>
+<!-- header banner 'popup_on' -->
+<div id="wrap" class="main popup_on">
+	<!-- 로그인전 -->
+	<div id="header">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+		
+		<div class="popup_notice">
+			<div class="inner">
+				<a href="javascript:void(0);">
+					<strong>비상장주식거래 BeMyUnicorn 오픈 기념 이벤트 안내</strong>
+					<span>2019.11.01-12.31</span>
+					<!-- <img src="../img/common/temp_notice.png" alt="비상장주식거래 BeMyUnicorn 오픈 기념 이벤트 안내, 2019.11.01-12.31"> -->
+				</a>
+				<p class="close_area">
+					<label class="input_check">
+						<input type="checkbox" id="" name="check1">
+						<span class="label_text">오늘 하루 보지 않기</span>
+					</label>
+					<a href="javascript:void(0);" class="btn_close">닫기</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb"> 
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);" class="">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li>
+					<li class="join_area"><a href="javascript:void(0);"><span>서비스 가입</span></a></li>
+					<li class="login_area"><a href="javascript:void(0);"><span>로그인</span></a></li>
+				</ul>
+				<div class="bar"></div>
+ 
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>	<!-- // submenu_area -->
+			</div>	
+			
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">발행회사 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">DID인증 및 공인인증</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업자료</a></li>
+						<li><a href="javascript:void(0);">관련뉴스</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li> 
+						<li><a href="javascript:void(0);">채팅문의</a></li>
+					</ul>
+				</div>
+				<div class="group_nav join_area">
+					<a href="javascript:void(0);" class="title">서비스 가입</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+				</div>
+				<div class="group_nav login_area">
+					<a href="javascript:void(0);" class="title">로그인</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div> 
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="section home" data-section-name="MAIN">
+			<h2 class="sr_only">Main Visual</h2>
+			<div class="inner">
+				<!-- Swiper -->
+				<div class="swiper-container swiper_home">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="txt_area">
+								<p class="txt_title">
+									Blockchain-inspired<br>
+									Cap Table(Equity)<br>
+									Management Platform 
+								</p>
+								<p class="txt_sub">블록체인기반 주주명부관리 플랫폼</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="txt_area">
+								<p class="txt_title">
+									Safe and Convenient<br>
+									Uncertificated Securities<br>
+									Market Platform
+								</p>
+								<p class="txt_sub">안전하고 편리한 원스톱 비상장주식 마켓 플랫폼</p>
+							</div> 
+						</div>
+						<div class="swiper-slide">
+							<div class="txt_area">
+								<p class="txt_title">
+									Unicorn Basecamp for<br>
+									startups, venture firms,<br>
+									and SMEs
+								</p>
+								<p class="txt_sub">스타트업, 벤처, 중소기업의 유니콘기업 도약을 위한 베이스캠프</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="txt_area">
+								<p class="txt_title">
+									Reliable Startup and<br>
+									Venture Capital Investment<br>
+									Ecosystem Information Portal
+								</p>
+								<p class="txt_sub">신뢰가능한 스타트업 및 벤처 투자 생태계 정보 포탈</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="group_page"> 
+						<div class="group_controler">
+		    				<div class="swiper-pagination"></div>
+		    				<div class="swiper-counter"></div>
+		    				<a href="javascript:void(0);" class="swiper-controler pause"></a>
+		    				<div class="btns_arrow">
+		    					<a href="javascript:void(0);" class="btn_prev gu_btn_arrow sr_only" data-pos="l">prev</a>  
+								<a href="javascript:void(0);" class="btn_next gu_btn_arrow sr_only" data-pos="r">next</a>  
+							</div>
+		    			</div>
+						
+						<a href="javascript:void(0);" class="btn_company">등록기업</a>
+	    				<a href="javascript:void(0);" class="btn_investor">투자자</a>
+	    				<p class="txt_slogan">BUSINESS<br>INTELLIGENCE<br>PLATFORM</p>
+					</div>
+
+					<div class="scroll_info en_gill_400">
+						<span class="line"></span>
+					</div>
+				</div> 
+			</div>
+		</div>	<!-- // .section.home -->
+
+		<div class="section company" data-section-name="기업정보">
+			<div class="inner">
+				<h2>
+					기업정보
+					<span class="txt_sm">투자자 회원가입을 하시면 등록기업에 대한 전문가 정보 등 투자관련 자세한 정보 검색이 가능합니다.</span>
+					<span class="txt_unit">(단위 : 원)</span>
+					<a href="javascript:void(0);" class="btn_more">더보기 +</a>
+				</h2>
+				<div class="contents">
+					<div class="swiper-container swiper_thumbs">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<ul class="lst_thumbs clearfix">
+									<li>
+										<a href="#lst_contents1" class="active">
+											<span class="img_logo"><img src="../img/main/temp_company.png" alt=""></span>
+											<span class="txt_title">모션블루1우1</span>
+											<ul class="lst_desc">
+												<li><strong>자본금</strong><span>1,000,000</span></li>
+												<li><strong>매출액</strong><span>10,000</span></li>
+											</ul>
+										</a>
+									</li>
+									<li>
+										<a href="#lst_contents2">
+											<span class="img_logo"><img src="../img/main/temp_company.png" alt=""></span>
+											<span class="txt_title">모션블루1우2</span>
+											<ul class="lst_desc">
+												<li><strong>자본금</strong><span>1,000,000</span></li>
+												<li><strong>매출액</strong><span>10,000</span></li>
+											</ul>
+										</a>
+									</li>
+									<li>
+										<a href="#lst_contents3">
+											<span class="img_logo"><img src="../img/main/temp_company.png" alt=""></span>
+											<span class="txt_title">모션블루1우3</span>
+											<ul class="lst_desc">
+												<li><strong>자본금</strong><span>1,000,000</span></li>
+												<li><strong>매출액</strong><span>10,000</span></li>
+											</ul>
+										</a>
+									</li>
+									<li>
+										<a href="#lst_contents4">
+											<span class="img_logo"><img src="../img/main/temp_company.png" alt=""></span>
+											<span class="txt_title">모션블루1우4</span>
+											<ul class="lst_desc">
+												<li><strong>자본금</strong><span>1,000,000</span></li>
+												<li><strong>매출액</strong><span>10,000</span></li>
+											</ul>
+										</a>
+									</li>
+									<li>
+										<a href="#lst_contents5">
+											<span class="img_logo"><img src="../img/main/temp_company.png" alt=""></span>
+											<span class="txt_title">모션블루1우5</span>
+											<ul class="lst_desc">
+												<li><strong>자본금</strong><span>1,000,000</span></li>
+												<li><strong>매출액</strong><span>10,000</span></li>
+											</ul>
+										</a>
+									</li>
+								</ul>
+							</div>	<!-- // swiper-slide -->
+							<div class="swiper-slide">
+								<ul class="lst_thumbs clearfix">
+									<li>
+										<a href="#lst_contents6">
+											<span class="img_logo"><img src="../img/main/temp_company.png" alt=""></span>
+											<span class="txt_title">모션블루1우1</span>
+											<ul class="lst_desc">
+												<li><strong>자본금</strong><span>1,000,000</span></li>
+												<li><strong>매출액</strong><span>10,000</span></li>
+											</ul>
+										</a>
+									</li>
+									<li>
+										<a href="#lst_contents7"> 
+											<span class="img_logo"><img src="../img/main/temp_company.png" alt=""></span>
+											<span class="txt_title">모션블루1우2</span>
+											<ul class="lst_desc">
+												<li><strong>자본금</strong><span>1,000,000</span></li>
+												<li><strong>매출액</strong><span>10,000</span></li>
+											</ul>
+										</a>
+									</li>
+								</ul>
+							</div>	<!-- // swiper-slide -->
+						</div>	<!-- // swiper-wrapper -->
+					</div>	<!-- // swiper_thumbs -->
+					
+					<a href="javascript:void(0);" class="swiper-button-next"></a>
+    				<a href="javascript:void(0);" class="swiper-button-prev"></a>
+
+					<div class="swiper_contents">
+						<div class="">
+							<div class="lst_contents clearfix active">
+								<div class="financial_area">
+									<div class="table_info">(단위 : 원)</div>
+									<table>
+										<caption class="sr_only">요약재무정보 상세</caption>
+										<colgroup>
+											<col width="*">
+											<col width="120">
+											<col width="120">
+										</colgroup>
+										<thead>
+											<tr> 
+												<th scope="col" class="al">요약재무정보</th>
+												<th scope="col">2018</th>
+												<th scope="col">2017</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row" class="al">매출액</th>
+												<td colspan="2" rowspan="7" class="blank_area"> 
+													<p class="txt_blank">등록된 기업정보가 없습니다</p>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="al">영업이익</th>
+											</tr>
+											<tr>
+												<th scope="row" class="al">당기순이익</th>
+											</tr>
+											<tr>
+												<th scope="row" class="al">자산총계</th>
+											</tr>
+											<tr>
+												<th scope="row" class="al">부채총계</th>
+											</tr>
+											<tr>
+												<th scope="row" class="al">자본총계</th>
+											</tr>
+											<tr>
+												<th scope="row" class="al">자본금</th>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="summary_area">
+									<dl>
+										<dt>아우딘 퓨처스</dt>
+										<dd>
+											<table>
+												<caption class="sr_only">기업정보 상세</caption>
+												<colgroup>
+													<col width="*">
+													<col width="200">
+												</colgroup>
+												<tbody>
+													<tr>
+														<th scope="row" class="al">대표자 성명</th>
+														<td class="ar">김대표</td>
+													</tr>
+													<tr>
+														<th scope="row" class="al">설립일</th>
+														<td class="ar">2017.07.29</td>
+													</tr>
+													<tr>
+														<th scope="row" class="al">직원수</th>
+														<td class="ar">16명</td>
+													</tr>
+													<tr>
+														<th scope="row" class="al">업종</th>
+														<td class="ar">서비스업</td>
+													</tr>
+													<tr>
+														<th scope="row" class="al vat">주소</th>
+														<td class="ar">서울시 영등포구 여의도동 76<br>(신송센터빌딩 1층)</td>
+													</tr>
+												</tbody>
+											</table>
+										</dd>
+									</dl>
+								</div>
+								<div class="opinion_area">
+									<dl>
+										<dt>기업평가의견</dt>
+										<dd>
+											<canvas id="evaluation_chart" class="evaluation_chart1" width="320" height="210"></canvas> 
+											<!-- 데이터없을 때 --> 
+											<!-- <div class="blank_area">
+												<p class="txt_blank">등록된 기업평가의견이<br>없습니다.</p>
+											</div> -->
+										</dd>
+									</dl>
+								</div>
+							</div>	<!-- // lst_contents -->
+						
+						</div>
+					</div>	<!-- // swiper_contents -->
+				</div>	<!-- // contents -->
+			</div>
+		</div>	<!-- // .section.company -->
+
+		<div class="section order" data-section-name="주문정보">
+			<div class="inner">
+				<h2>
+					주문정보
+					<span class="txt_sm">투자자 회원가입을 하시면 주문정보 검색이 가능하며, 주문, 게시, 협상 요청 등 다양한 거래 편의 서비스를 이용하실 수 있습니다.</span>
+					<a href="javascript:void(0);" class="btn_more">더보기 +</a>
+				</h2>
+
+				<div class="contents">
+					<ul class="group_tabs">
+						<li><a href="#desc_order1" class="active">전체</a></li>
+						<li><a href="#desc_order2">매도</a></li>
+						<li><a href="#desc_order3">매수</a></li>
+					</ul>
+
+					<div class="group_tabs_contents">
+						<div id="desc_order1" class="desc active">
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<ul class="lst_order clearfix">
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off favorite">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case3">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<span class="txt_type">3우선주(전환상환)</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case1">협상</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case2">협상</span>
+													<span class="txt_title">모션블루1우</span>
+													<span class="txt_type">3우선주(전환상환)</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case4">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case3">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off favorite">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case3">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<span class="txt_type">3우선주(전환상환)</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case1">협상</span>
+													<span class="txt_title">모션블루1우</span>
+													<span class="txt_type">3우선주(전환상환)</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case2">협상</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off favorite">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case4">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case3">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<span class="txt_type">3우선주(전환상환)</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case3">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case1">협상</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case2">협상</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case4">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case3">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+										</ul>
+									</div>	<!-- // swiper-slide -->
+									<div class="swiper-slide">
+										<ul class="lst_order clearfix">
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case3">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case1">협상</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case2">협상</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case4">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case3">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case3">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case1">협상</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case2">협상</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case4">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case3">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case3">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case1">협상</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case2">협상</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case4">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="custom_viewmore off">
+													<span class="line line_l"></span>
+													<span class="line line_r"></span>
+													<span class="state_deal case3">협상대기</span>
+													<span class="txt_title">모션블루1우</span>
+													<ul class="lst_desc">
+														<li><strong>수량</strong><span>1,000,000주</span></li>
+														<li><strong>가격</strong><span>10,000원</span></li>
+													</ul>
+												</a>
+											</li>
+										</ul>
+									</div>	<!-- // swiper-slide -->
+								</div>
+
+								<div class="group_controler">
+									<!-- Add Pagination -->
+				    				<div class="swiper-pagination"></div>
+				    				<a href="javascript:void(0);" class="swiper-controler"></a>
+								</div>
+							</div>
+						</div>	<!-- // #desc_order1 -->
+
+						<div id="desc_order2" class="desc">
+							<!-- 데이터없을때 -->
+							<div class="blank_area">
+								<p class="txt_blank">등록된 주문정보가 없습니다</p>
+							</div>
+							<!-- // 데이터없을때 -->
+						</div>	<!-- // #desc_order2 -->
+
+						<div id="desc_order3" class="desc">
+							<!-- 데이터없을때 -->
+							<div class="blank_area">
+								<p class="txt_blank">등록된 주문정보가 없습니다</p>
+							</div>
+							<!-- // 데이터없을때 -->
+						</div>	<!-- // #desc_order3 -->
+					</div>
+				</div>
+			</div>
+		</div>	<!-- // .section.order -->
+
+		<div class="section news" data-section-name="NEWS/GUIDE">
+			<div class="inner">
+				<h2>기업알림 및 홍보<a href="javascript:void(0);" class="btn_more">더보기 +</a></h2>
+				<div class="contents">
+					<ul class="lst_news clearfix">
+						<li>
+							<a href="javascript:void(0);" onclick="$('#pop_concolusion_detail').neoModal();$.scrollify.disable();">
+								<span class="img_area"><img src="../img/main/bg_news.png" alt=""></span>
+								<strong class="txt_title">출범기념식 및 국제세비나 개최 안내 출범기념식 및 국제세비나 개최 안내출범기념식 및 국제세비나 개최 안내</strong>
+								<span class="txt_date">2019-06-23</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<span class="img_area"><img src="../img/main/bg_news2.png" alt=""></span>
+								<strong class="txt_title">출범기념식 및 국제세비나 개최 안내</strong>
+								<span class="txt_date">2019-06-23</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<span class="img_area"><img src="../img/main/bg_news3.png" alt=""></span>
+								<strong class="txt_title">출범기념식 및 국제세비나 개최 안내</strong>
+								<span class="txt_date">2019-06-23</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<span class="img_area"><img src="../img/main/bg_news4.png" alt=""></span>
+								<strong class="txt_title">출범기념식 및 국제세비나 개최 안내</strong>
+								<span class="txt_date">2019-06-23</span>
+							</a>
+						</li>
+					</ul>	<!-- // lst_news -->
+					
+					<h2>서비스 가이드</h2>
+					<ul class="lst_guide clearfix">
+						<li>
+							<span class="img_area"><img src="../img/main/img_guide2.png" alt=""></span>
+							<p class="txt_title">등록기업 서비스 가이드</p>
+							<p class="txt_desc">주주명부를 등록하여 주주명부 관리를 시작할 수 있으며 등록된 주주명부와 투자자 회원간 매칭을 통해 주식거래가 가능합니다, 투자자간 주식거래에 따른 주주명부 변경 등 명의개서대행 시스템을 제공합니다.</p>
+							<a href="javascript:void(0);" class="btn_detail">자세히보기 ></a>
+						</li>
+						<li>
+							<span class="img_area"><img src="../img/main/img_guide.png" alt=""></span>
+							<p class="txt_title">투자자 서비스 가이드</p>
+							<p class="txt_desc">PC와 Mobile을 통해 비상장주식에 대한 정보확인, 주문, 가격 및 수량 협상이 가능하며 협상 완료 시 전자계약 및 에스크로 결제 서비스를 통해 간편하게 계약 및 체결이 완료되는 원스탑 서비스를 제공합니다.</p>
+							<a href="javascript:void(0);" class="btn_detail">자세히보기 ></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // .section.news -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+
+		<div class="group_help">
+			<div class="inner">
+				<ul class="nav_help clearfix">
+					<li><a href="javascript:void(0);">서비스 가이드</a></li>
+					<li><a href="javascript:void(0);">FAQ</a></li>
+					<li><a href="javascript:void(0);">인증방법안내</a></li>
+					<li><a href="javascript:void(0);">보안모듈설치</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix"> 
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.koscom.co.kr">코스콤</option>
+					</select> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_member join">
+					<p>서비스 가입</p>
+					<ul>
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+				</div>
+				<div class="nav_member login">
+					<p>로그인</p>
+					<ul>
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a>
+	</div>	<!-- // footer -->
+</div>
+
+<div id="pop_concolusion_detail" class="pop_dim_wrap pop_modal pop_xlg" onclick="$.scrollify.enable();">
+	<div class="pop_wrap">
+		<button class="pop_btn_close" onclick="$.scrollify.enable();">닫기</button>
+		<div class="title_wrap">미래에셋대우</div>
+		<div class="contents_wrap pb0">
+			<div class="table_normalView">
+			    <table>
+			        <caption>상세보기</caption>
+			        <colgroup>
+			            <col width="200">
+			            <col width="310">
+			            <col width="200">
+			            <col width="*">
+			        </colgroup>
+			        <thead>
+			            <tr>
+			                <th>구분</th>
+			                <td class="ac">토론</td>
+			                <th>첨부파일1</th>
+			                <td class="ac">
+			                	
+			                </td>
+			            </tr>
+			            <tr>
+			                <th>제목</th>
+			                <td class="title_area ac">미래에셋대우 토론게시판입니다.</td>
+			                <th>첨부파일2</th>
+			                <td class="ac">
+			                	
+			                </td> 
+			            </tr>
+			        </thead>
+			        <tbody>
+			            <tr>
+			            	<th class="vat">내용</th>
+			                <td colspan="3"><pre>자유로운 내용을 입력바랍니다.</pre></td>
+			            </tr>
+			        </tbody>
+			    </table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="../js/vendor/analytics.js" async></script>
+<script> 
+	var type = 'radar';
+	var options = {
+		//S: blur 처리
+		//stackBlurCanvasRGB 블러처리가 로컬에선 돌아가지않음
+		/* animation: {
+			duration: 0,
+			onComplete: function(animation) {
+				var chartdd = document.querySelector('.section.company .swiper_contents .lst_contents .opinion_area dl dd');
+				html2canvas(chartdd, {
+					imageTimeout: 0,
+					allowTaint: true,
+					onrendered: function(canvas) {
+						canvas.setAttribute('id', 'chart_blur_img');
+						canvas.setAttribute('crossOrigin', 'anonymous');
+						chartdd.appendChild(canvas);
+						stackBlurCanvasRGB('chart_blur_img', 0, 0, 320, 230, 12);
+					}
+				})
+			}
+		}, */
+		//E: blur 처리
+		legend: {   
+			display: false,
+		},
+		scale: {
+			ticks: {  
+				display: true, 
+				showLabelBackdrop: false,
+				min: 0, 
+				max: 100,
+				stepSize: 20,
+				fontColor: '#fff',
+				fontSize: 11,
+			},
+			pointLabels: {
+				fontColor: '#fff'
+			}, 
+			gridLines: {
+				display: true,
+				circular: false,
+				lineWidth: 1,       
+				color: ['rgba(0,0,0,0.3)','rgba(0,0,0,0.1)','rgba(0,0,0,0.2)','rgba(0,0,0,0.3)','rgba(0,0,0,0.4)']
+			},    
+			angleLines: { 
+				color: 'rgba(255,255,255,0.5)',
+			} 
+		}
+	};
+	
+	var data = [ 
+		{
+			datasets: [{  
+				data: [10, 70, 30, 70, 50, 90],           
+				backgroundColor: 'rgba(255,12,52,0.1)',  
+				borderColor: '#ff2c4f', 
+				borderWidth: 2,  
+				pointRadius: 0,
+				lineTension: 0, 
+			}],
+			labels: [ '창업팀 우수성', '재무적 안정성', '미래 시장성', '판로/마케팅 확장성', '비즈니스 독창성', '투자회수'] 
+		},
+		// {
+		// 	datasets: [{  
+		// 		data: [60, 70, 90, 70, 80, 90],            
+		// 		backgroundColor: 'rgba(255,12,52,0.1)',  
+		// 		borderColor: '#ff2c4f', 
+		// 		borderWidth: 2,  
+		// 		pointRadius: 0,
+		// 		lineTension: 0, 
+		// 	}],
+		// 	labels: [ '창업팀 우수성', '재무적 안정성', '미래 시장성', '판로/마케팅 확장성', '비즈니스 독창성', '투자회수'] 
+		// },
+		// {
+		// 	datasets: [{  
+		// 		data: [20, 40, 50, 60, 70, 80],           
+		// 		backgroundColor: 'rgba(255,12,52,0.1)',  
+		// 		borderColor: '#ff2c4f', 
+		// 		borderWidth: 2,  
+		// 		pointRadius: 0,
+		// 		lineTension: 0, 
+		// 	}],
+		// 	labels: [ '창업팀 우수성', '재무적 안정성', '미래 시장성', '판로/마케팅 확장성', '비즈니스 독창성', '투자회수'] 
+		// },
+		// {
+		// 	datasets: [{  
+		// 		data: [10, 30, 30, 20, 10, 10],           
+		// 		backgroundColor: 'rgba(255,12,52,0.1)',  
+		// 		borderColor: '#ff2c4f', 
+		// 		borderWidth: 2,  
+		// 		pointRadius: 0,
+		// 		lineTension: 0,  
+		// 	}],
+		// 	labels: [ '창업팀 우수성', '재무적 안정성', '미래 시장성', '판로/마케팅 확장성', '비즈니스 독창성', '투자회수'] 
+		// },
+		// {
+		// 	datasets: [{  
+		// 		data: [60, 70, 90, 70, 80, 90],           
+		// 		backgroundColor: 'rgba(255,12,52,0.1)',  
+		// 		borderColor: '#ff2c4f', 
+		// 		borderWidth: 2,  
+		// 		pointRadius: 0,
+		// 		lineTension: 0, 
+		// 	}],
+		// 	labels: [ '창업팀 우수성', '재무적 안정성', '미래 시장성', '판로/마케팅 확장성', '비즈니스 독창성', '투자회수'] 
+		// }
+	];
+
+	var radarChart1 = new Chart($('.evaluation_chart1'), {type: type, data: data[0], options:options}); 
+	// var radarChart2 = new Chart($('.evaluation_chart2'), {type: type, data: data[1], options:options}); 
+	// var radarChart3 = new Chart($('.evaluation_chart3'), {type: type, data: data[2], options:options});  
+	// var radarChart4 = new Chart($('.evaluation_chart4'), {type: type, data: data[3], options:options});  
+	// var radarChart5 = new Chart($('.evaluation_chart5'), {type: type, data: data[4], options:options}); 
+
+	var canvas = document.getElementById('evaluation_chart');  
+	var context = canvas.getContext('2d');
+</script>
+</body>
+</html> 

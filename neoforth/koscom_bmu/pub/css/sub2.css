@@ -1,0 +1,1139 @@
+@charset "euc-kr";
+
+/* ==========================================================================
+    custom styles
+   ========================================================================== */
+/* WEB03100, WEB03101 - 투자자 > 비상장주식거래 > 주문 */
+.investor_deal_wrap{padding-top:30px;} 
+.investor_deal_wrap > div{float: left;}
+.investor_deal_wrap .order_status{width:830px;margin-right:30px;}
+.investor_deal_wrap .order_status .box_wrap{margin-bottom:15px;}
+.investor_deal_wrap .order_status .box_wrap .btn_wrap{float:right;font-size:0;}
+.investor_deal_wrap .order_status .box_wrap .btn_wrap button{margin-left:10px;}
+
+.investor_deal_wrap .order_status .group_date_srch .search_name .form_control{width: 200px;}
+.investor_deal_wrap .order_status .group_date_srch .search_name label{padding: 0 5px 0 0;} 
+.investor_deal_wrap .order_status .group_date_srch .datepicker_searchwrap label{padding: 0 5px 0 20px;} 
+.investor_deal_wrap .autocomplete_area{width: 200px;}
+.investor_deal_wrap .order_status .group_date_srch .date_btn_wrap{padding: 0 0 0 7px;}  
+
+
+
+/* .investor_deal_wrap .order_status .search_wrap{padding:15px 20px;margin-bottom:20px;border-top:1px solid #000;border-bottom:1px solid #aaa;background:#eff3f8;}
+.investor_deal_wrap .order_status .search_wrap>li{float:left;margin-right:120px;}
+.investor_deal_wrap .order_status .search_wrap>li > p{font-size:14px;line-height:30px;}
+.investor_deal_wrap .order_status .search_wrap>li:nth-child(1) > p{margin-bottom:10px;}
+.investor_deal_wrap .order_status .search_wrap>li:nth-child(2) > p{margin-bottom:19px;}
+.investor_deal_wrap .order_status .search_wrap>li:nth-child(3) > p{margin-bottom:10px;}
+.investor_deal_wrap .order_status .search_wrap>li:nth-child(3){position:relative;width:280px;margin-right:0;}
+.investor_deal_wrap .order_status .search_wrap>li:nth-child(3) .btn_wrap{position:absolute;top:0;right:0;font-size:0;}
+.investor_deal_wrap .order_status .search_wrap>li:nth-child(3) .btn_wrap button{margin-left:7px;} */
+
+ 
+.investor_deal_wrap .order_status .formbtn_wrap{margin:15px 0 12px;text-align:center;font-size:0;}
+.investor_deal_wrap .order_status .formbtn_wrap button:nth-child(1){margin-right:10px;} 
+.investor_deal_wrap .order_status .box_wrap2{position:relative;margin-bottom:15px;}
+.investor_deal_wrap .order_status .box_wrap2 ul li{position:relative;padding-left:12px;margin-bottom:5px;font-size:14px;color:#757575;}
+.investor_deal_wrap .order_status .box_wrap2 ul li::before{position:absolute;top:50%;left:0;content:'';width:4px;height:4px;margin-top:-2px;background:#757575;}
+.investor_deal_wrap .order_status .box_wrap2 .btn_wrap{position:absolute;top:0;right:0;font-size:0;}
+.investor_deal_wrap .order_status .status_wrap > div{float:left;width:400px;}  
+.investor_deal_wrap .order_status .status_wrap > div > p{margin-bottom:12px;} 
+.investor_deal_wrap .order_status .status_wrap .status_sell{margin-right:30px;}    
+.investor_deal_wrap .order_status .lst_help{margin-top: 15px;}  
+.investor_deal_wrap .order_status .lst_help li{font-size: 15px;}  
+.investor_deal_wrap .order_status .submit_area{position: relative; padding-top: 30px;}  
+.investor_deal_wrap .order_status .submit_area .btn_write{position: absolute; right: 0; bottom: 0;}  
+.select_deal{position:relative;width:100%;height:50px;margin-bottom:3px;padding:0 20px;background:#f2f2f2;line-height:50px;}
+.select_deal li{float:left;}
+.select_deal li:nth-child(1){font-size:14px;} 
+.select_deal li:nth-child(1) span{margin-left:5px;font-size:19px;font-weight:700;}
+.select_deal li:nth-child(1) em{font-size:15px;}
+.select_deal li:nth-child(2){float:right; margin-right: 100px;} 
+.select_deal li:nth-child(3) .select_css{width:102px;margin-top:7px;}
+.select_deal li:nth-child(3){position:absolute;top:0;right:5px;}    
+/*.select_deal .option_button{display:inline-block;width:60px;height:30px;border:1px solid #000;background:#fff;line-height:28px;font-size:14px;cursor:pointer;margin-left:10px;}*/
+
+/* 매도, 매수일때 */
+.board_deallist2.type_col5_deal{width:535px;}
+.board_deallist2.type_col5_deal .inner_div tr th:nth-child(1){width:150px;}
+.board_deallist2.type_col5_deal .inner_div tr th:nth-child(2){width:100px;}
+.board_deallist2.type_col5_deal .inner_div tr th:nth-child(3){width:100px;}
+.board_deallist2.type_col5_deal .inner_div tr th:nth-child(4){width:85px;}
+.board_deallist2.type_col5_deal .inner_div tr th:nth-child(5){width:100px;}
+.board_deallist2.type_col5_deal .inner_div tr td{padding-left:5px;padding-right:5px;}
+.board_deallist2.type_col5_deal .inner_div tr td:nth-child(1){text-align:center;}
+.board_deallist2.type_col5_deal .inner_div tr td:nth-child(2){text-align:right;}
+.board_deallist2.type_col5_deal .inner_div tr td:nth-child(3){text-align:right;}
+.board_deallist2.type_col5_deal .inner_div tr td:nth-child(4){text-align:center;}
+.board_deallist2.type_col5_deal .inner_div tr td:nth-child(4) span{display:block;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;}
+.board_deallist2.type_col5_deal .inner_div tr td:nth-child(5){text-align:left;padding-left:10px;}
+.board_deallist2.type_col5_deal .inner_div tr td a{display:block;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;}
+.btn_deallist2_state{display:inline-block;width:64px;height:28px;line-height:28px;border:0;padding:0;font-size:14px;cursor:pointer;}
+.btn_deallist2_state.btn_state_dealwaitsell2{background:#3348ae;color:#fff;}
+.btn_deallist2_state.btn_state_dealwaitbuy2{background:#e8055a;color:#fff;}
+.btn_deallist2_state.btn_state_dealnego2{background:#038085;color:#fff;}
+.btn_deallist2_state.btn_state_dealnegoend2{background:#f2f2f2;color:#666;}
+.btn_deallist2_state.btn_state_signwait{background:#7348ed;color:#fff;}
+.btn_deallist2_state.btn_state_depositwait{background:#337bcd;color:#fff;}
+.btn_deallist2_state.btn_state_dealsuccess{background:#e47a3f;color:#fff;}
+.btn_deallist2_state.btn_state_dealcomplete{background:#52a033;color:#fff;}
+
+/* 계약체결일때 */
+.board_deallist2.type_col6_deal{width:535px;}
+.board_deallist2.type_col6_deal .inner_div tr th:nth-child(1){width:120px;}
+.board_deallist2.type_col6_deal .inner_div tr th:nth-child(2){width:91px;}
+.board_deallist2.type_col6_deal .inner_div tr th:nth-child(3){width:91px;}
+.board_deallist2.type_col6_deal .inner_div tr th:nth-child(4){width:65px;}
+.board_deallist2.type_col6_deal .inner_div tr th:nth-child(5){width:85px;}
+.board_deallist2.type_col6_deal .inner_div tr th:nth-child(6){width:83px;}
+.board_deallist2.type_col6_deal .inner_div tr td{padding-left:5px;padding-right:5px;}
+.board_deallist2.type_col6_deal .inner_div tr td:nth-child(1){text-align:center;}
+.board_deallist2.type_col6_deal .inner_div tr td:nth-child(2){text-align:right;}
+.board_deallist2.type_col6_deal .inner_div tr td:nth-child(3){text-align:right;}
+.board_deallist2.type_col6_deal .inner_div tr td:nth-child(4){text-align:center;}
+.board_deallist2.type_col6_deal .inner_div tr td:nth-child(4) span{display:block;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;}
+.board_deallist2.type_col6_deal .inner_div tr td:nth-child(5){text-align:center;}
+.board_deallist2.type_col6_deal .inner_div tr td:nth-child(6){text-align:left;padding-left:12px;}
+.board_deallist2.type_col6_deal .inner_div tr td a{display:block;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;}
+.board_deallist2.type_col6_deal .inner_div tr td a.state_deal{display:inline-block;vertical-align:middle;}
+
+/* 계약체결일때 - type_chkbox */
+.board_deallist2.type_chkbox{width:535px;}
+.board_deallist2.type_chkbox .inner_div tr th:nth-child(1){width:33px;}
+.board_deallist2.type_chkbox .inner_div tr th:nth-child(2){width:130px;}
+.board_deallist2.type_chkbox .inner_div tr th:nth-child(3){width:101px;}
+.board_deallist2.type_chkbox .inner_div tr th:nth-child(4){width:101px;}
+.board_deallist2.type_chkbox .inner_div tr th:nth-child(5){width:75px;}
+.board_deallist2.type_chkbox .inner_div tr th:nth-child(6){width:95px;}
+.board_deallist2.type_chkbox .inner_div tr td:nth-child(3), .board_deallist2.type_chkbox .inner_div tr td:nth-child(4){text-align:right;}
+.board_deallist2.type_chkbox .inner_div tr td span{display:block;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;}
+.board_deallist2.type_chkbox .inner_div tr td a{display:block;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+/* WEB3102 투자자 > 주문 > 종목검색팝업 */
+#pop_stock_search .pop_wrap{width:525px;padding-bottom:0;}
+#pop_stock_search .contents_wrap{padding:30px; height: 650px;} 
+#pop_stock_search .search_form{width:100%;}
+#pop_stock_search .search_form .form_control{width:420px;}
+.search_initial{font-size:0;text-align:center;}
+.search_initial button{display:inline-block;min-width:30px;height:30px;padding:0px 8px;border:0;background:#f2f2f2;color:#757575;font-size:14px;cursor:pointer;}
+.search_initial button.active{background:#484e63;color:#fff;}
+.search_after_list{position: relative; height:402px;border:1px solid #ddd;overflow-y:auto;}
+.search_after_list.long_type{height:442px;}
+.search_after_list li > div{float:left;height:40px;line-height:40px;}
+.search_after_list li:hover{background:#EFF3F8;}
+.search_after_list li > div:nth-child(1){width:100px;text-align:center;}
+.search_after_list li > div:nth-child(2){width:265px;}
+.search_after_list li > div:nth-child(3){width:80px;text-align:center;}
+.search_after_list li > div a{display:block;}
+.search_after_list li > div:nth-child(2) a{padding-left:15px;padding-right:15px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+
+.search_after_list li.blank_area{position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; text-align: center; background-color: #fff;}        
+.search_after_list li.blank_area .txt_blank{padding: 76px 0 0; text-align: center; font-size: 18px; color: #757575; background: url(../img/sub/ico_warning_table.png) no-repeat 50% 0;}      
+
+.search_info_txt{margin:10px 0 7px; font-size:14px;line-height:24px;color:#757575;}
+.search_info_txt span{font-size:18px;} 
+
+/* WEB3103 투자자 > 주문 > 주문상세팝업 */
+#pop_company_infodetail .pop_wrap::after{content: '';display: block;height: 140px;position: absolute;bottom: -140px;left: 0;width: 100%;}
+#pop_company_infodetail .stock_tit_wrap .stock_num span{font-size:15px;line-height:25px;vertical-align:middle;}
+#pop_company_infodetail .stock_tit_wrap .stock_num .favorite_stocks{margin-left:7px;}
+#pop_company_infodetail .stock_tit_wrap .stock_name{font-size:28px;font-weight:700;line-height:25px;}
+#pop_company_infodetail .orderdetail_tabtit{margin-top:-32px;}
+
+.orderdetail_tabcont > dt{margin:30px 0 15px;font-size:24px;font-weight:700;color:#000;}
+.orderdetail_tabcont > dd{border-top:1px solid #000;border-bottom:1px solid #aaa;border-left:1px solid #ddd;border-right:1px solid #ddd;}
+.orderdetail_tabcont > dt, .orderdetail_tabcont > dd{position:relative;}
+.orderdetail_tabcont > dt > span{margin-left:10px;font-size:14px;font-weight:400;color:#555;}
+.top_right_wrap{position:absolute;top:0;right:0;font-size:14px;font-weight:400;}
+.orderdetail_tabcont > dt:nth-of-type(1) span{color:#757575;}
+.orderdetail_tabcont > dt:nth-of-type(1) span:nth-of-type(2){position:relative;padding-left:20px;}
+.orderdetail_tabcont > dt:nth-of-type(1) span:nth-of-type(2)::before{content:'';display:inline-block;position:absolute;top:50%;left:0;width:4px;height:4px;margin-top:-2px;border-radius:50%;background:#ccc;}
+.orderdetail_tabcont > dt:nth-of-type(1) em:nth-of-type(1){margin-left:24px;margin-right:16px; color:#3348AE;}
+.orderdetail_tabcont > dt:nth-of-type(1) em:nth-of-type(2){margin-left:20px;color:#555;}
+.orderdetail_tabcont .box_wrap{border-right:0;border-bottom:0;}
+.orderdetail_tabcont .box_wrap dt{font-size:15px;color:#555;}
+.orderdetail_tabcont .box_wrap dl{border-right:1px solid #eee;border-bottom:1px solid #eee;}
+.orderdetail_tabcont .box_wrap > dl{float:left;width:23%;}
+.orderdetail_tabcont .box_wrap > div{float:left;width:27%;}
+
+.orderdetail_tabcont .box_wrap .box_w235{font-size:0;}
+.orderdetail_tabcont .box_wrap .box_w235 dt{display:inline-block;width:43%;padding-left:15px;}
+.orderdetail_tabcont .box_wrap .box_w235 dd{display:inline-block;width:57%;padding-right:17px;font-size:20px;font-weight:700;text-align:right;}
+.orderdetail_tabcont .box_wrap .box_w235.box_h_sm dd{font-size:18px;font-weight:400;}
+.orderdetail_tabcont .box_wrap .box_h_lg{height:150px;text-align:center;}
+.orderdetail_tabcont .box_wrap .box_h_lg dt{margin-top:34px;}
+.orderdetail_tabcont .box_wrap .box_h_lg dd{margin-top:11px;}
+.orderdetail_tabcont .box_wrap .box_h_md{height:87px;line-height:87px;}
+.orderdetail_tabcont .box_wrap .box_h_sm{height:63px;line-height:63px;}
+.orderdetail_tabcont .box_wrap .box_w_long{width:100%;height:70px;border-bottom:1px solid #aaa;}
+.orderdetail_tabcont .box_wrap .box_w_long dt{float:left;width:10%;text-align:center;line-height:70px;}
+.orderdetail_tabcont .box_wrap .box_w_long dd{float:left;width:90%;height:70px;padding:10px 15px;}
+.orderdetail_tabcont .btn_wrap{border:0;text-align:center;margin-top:24px;}
+.txt_orderdetail_buy{font-size:24px;font-weight:700;color:#E8055A;}
+.txt_orderdetail_sell{font-size:24px;font-weight:700;color:#3348AE;}
+.txt_sell_color{color:#3348AE !important;}
+.txt_buy_color{color:#E8055A !important;}
+.txt_warning_color{color:#FF0808 !important;}
+
+.chart_wrap_dl dt, .chart_wrap_dl dd{position:relative;}
+.chart_wrap_dl dt{margin: 30px 0 15px; font-size: 24px; font-weight: 700; color: #000;line-height:24px; }
+.chart_wrap_dl dt span{margin-left: 10px; font-size: 14px; font-weight: 400; color: #555; }
+.chart_wrap_dl dd{border-top: 1px solid #000; border-bottom: 1px solid #aaa; border-left: 1px solid #ddd; border-right: 1px solid #ddd;}
+
+.chart_wrap_tit .top_right_wrap{font-size:14px;color:#333;}
+.chart_wrap_tit .top_right_wrap span{display:inline-block;width:40px;height:20px;margin-right:8px;border:1px solid #ccc;vertical-align:middle;line-height:19px;text-align:center;}
+.chart_wrap_tit .top_right_wrap select.form_control{position: relative;top:-5px; width: 240px;} 
+.chart_wrap{height:370px;padding:40px 30px;}
+.chart_wrap .top_right_wrap{top:5px;right:5px;font-size:12px;}
+.orderdetail_tabcont .table_wrap table{width:100%;border-collapse: collapse;border-spacing: 0;}
+.orderdetail_tabcont .table_wrap table caption{position: absolute;font-size: 0;left: -99999px;}
+.orderdetail_tabcont .table_wrap table th{height:50px;border-bottom:1px solid #bbb;font-weight:400;}
+.orderdetail_tabcont .table_wrap table td{height:60px;padding:0 20px;border-bottom:1px solid #e5e5e5;text-align:right;}
+.orderdetail_tabcont .table_wrap table tbody tr:last-child td{border-bottom:0;}
+
+.orderdetail_tabcont .table_wrap .tooltip_area{display:inline-block;margin-left:4px;}
+.tooltip_area{position:relative;}
+.tooltip_area dl{display:none; position:absolute;top:30px;right:-52px;width:380px;padding:25px 20px;border:1px solid #aaa;background:#fff;box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.27);text-align:left;}
+.tooltip_area dt{margin-bottom:7px;font-size:18px;line-height:26px;color:#000;}
+.tooltip_area .tooltip_close{position:absolute;top:10px;right:10px;}
+.tooltip_area .tooltip_close button{display:inline-block;width:17px;height:17px;border:0;background:url(../img/common/ico_popclose_black.png) no-repeat 50% / 17px;text-indent:-9999px;cursor:pointer;}
+.tooltip_area li{position:relative;padding-left:8px;font-size:14px;line-height:24px;color:#555;}
+.tooltip_area li::before{content:'';display:inline-block;width:2px;height:2px;position:absolute;top:50%;left:0;margin-top:-1px;background:#333;}
+.tooltip_area li span{color:#333;}
+
+/* WEB3014 주문 협상요청알림팝업 */
+.txt_blue_emphasis{color:#3348ae;text-decoration:underline;}
+.alert_info{position:absolute;left:0;bottom:10px;width:100%;font-size:14px;text-align:center;color:#555;}
+
+/* WEB3105 비상장주식거래 주문제출 팝업 */
+#pop_order_process .input_radio > .label_text{font-size:16px;}
+#pop_order_process .search_form input[type="text"]{width:256px;}
+#pop_order_process dl{display:inline-block;}
+#pop_order_process dl + dl{margin-left:50px;}
+#pop_order_process dl + dl .form_control{margin-left:10px;font-weight:400;}
+#pop_order_process dl::after{content:'';display:block;clear:both;}
+#pop_order_process dt, #pop_order_process dd{float:left;line-height:40px;}
+#pop_order_process dd{padding-left:10px;}
+#pop_order_process dl .form_control{width:136px;font-size:16px;font-weight:700;}
+#pop_order_process td > span{font-size:16px;font-weight:700;margin-right:10px;}
+#pop_order_process .tbl_buy_color dl .form_control, #pop_order_process .tbl_buy_color td > span{color:#E8055A}
+#pop_order_process .tbl_sell_color dl .form_control, #pop_order_process .tbl_sell_color td > span{color:#3348AE}
+
+/* WEB03114 비상장주식거래 > 주문 현황 > 전종목 주문현황 */
+.status_info_wrap{position:relative;height:30px;padding-top:5px;margin-bottom:15px;}
+.status_refresh_wrap{position:absolute;top:0;right:0;}
+.status_refresh_wrap{font-size:14px;line-height:28px;color:#757575;}
+.status_refresh_wrap button{margin-left:15px;background-color:#f2f2f2;}
+.mgtb15{margin-top:15px;margin-bottom:15px;}
+
+/* WEB03200 기업정보 - 기업정보 조회 */
+.select_select_srch{padding-left:52px;padding-right:52px;text-align:center;font-size:0;}
+.select_select_srch dl{display:inline-block;margin-left:25px;margin-right:25px;width:299px;vertical-align:middle;}
+.select_select_srch dt{margin-bottom:15px;text-align:left;font-size:14px;}
+.select_select_srch dd .search_form{width:100%;}
+.select_select_srch dd input.form_control{width:224px;}
+.select_select_srch .datepicker_searchwrap .form_control{width:130px;}
+.select_select_srch .datepicker_searchcontrol{text-align:right;}
+.select_select_srch .datepicker_searchcontrol label{margin-right:10px;}
+.select_select_srch .datepicker_searchcontrol .date_btn_wrap{padding-right:27px;}
+.companyinfo_srchwrap .box{float:left;width:31.4%;margin-right:2.9%;margin-bottom:30px;border:1px solid #ddd;}
+.companyinfo_srchwrap .box:nth-child(4n-3){background:#F3EFE6;}
+.companyinfo_srchwrap .box:nth-child(4n-2){background:#E1ECF8;}
+.companyinfo_srchwrap .box:nth-child(4n-1){background:#EEEAFF;}
+.companyinfo_srchwrap .box:nth-child(4n){background:#D3EDEB;}
+.companyinfo_srchwrap .box:nth-child(3n){margin-right:0;}
+.companyinfo_srchwrap .box .logo_wrap{width:70px;height:70px;margin:20px auto;border:1px solid #ccc;border-radius:50%;background:#fff;text-align:center;}
+.companyinfo_srchwrap .box .logo_wrap img{max-width: 100%;}
+/* .companyinfo_srchwrap .box .logo_wrap img{width:70px;height:70px;} */
+.companyinfo_srchwrap .box > p{margin-bottom:20px;font-size:22px;color:#333;text-align:center;}
+.companyinfo_srchwrap .box > .desc_wrap{position:relative;padding:20px;background:#fff;text-align:center;}
+.companyinfo_srchwrap .box > .desc_wrap p{margin-bottom:20px;font-size:15px;line-height:24px;text-align:left;} 
+.companyinfo_srchwrap .box > .desc_wrap .favorite_stocks{position:absolute;left:20px;bottom:20px;}
+.companyinfo_srchwrap .box > .txt_date{margin:-10px 0 20px;font-size:15px; text-align:center; color: #555;}  
+
+.companyinfo_srchwrap.type2 .box {position: relative; padding-top: 30px; margin:0; width: 237px; height: 177px; border-radius: 0 10px; }     
+.companyinfo_srchwrap.type2 .box>p {margin:0; font-size: 16px;}      
+.companyinfo_srchwrap.type2 .box .logo_wrap{overflow: hidden; position: absolute; top: 67px; left: 50%; margin:0 0 0 -35px; }       
+.companyinfo_srchwrap.type2 .box .logo_wrap img{position: absolute; top: -1px; left: -1px; width: 70px; height: 70px;}        
+
+#pop_company_search .pop_wrap{width:350px;padding-bottom:0;}
+#pop_company_search .contents_wrap{padding:30px;}
+#pop_company_search .search_form{width:100%;}
+#pop_company_search .search_form .form_control{width:245px;}
+#pop_company_search .company_search_lst{height:205px;margin-top:15px;border:1px solid #ddd;overflow-y:auto;}
+#pop_company_search .company_search_lst a{display:inline-block;height:40px;line-height:40px;}
+#pop_company_search .company_search_lst li:hover{background:#EFF3F8;}
+#pop_company_search .company_search_lst a span{display:inline-block !important;vertical-align:middle;}
+#pop_company_search .company_search_lst a span:nth-child(1){width:100px;text-align:center;}
+#pop_company_search .company_search_lst a span:nth-child(2){width:165px;padding-left:15px;}
+
+/* WEB03201 기업정보 - 기업정보조회 - 기업정보 */
+.companytit_func_wrap dt span{margin-right:7px;font-size:15px;line-height:25px;vertical-align:middle;}
+.companytit_func_wrap dd p{display:inline-block;margin-right:16px;font-size:28px;font-weight:700;line-height:25px;vertical-align:middle;}
+.companytit_func_wrap dd .btn_sm{float:right;}
+
+.companytit_func_wrap dd .btn_favorite{padding: 0; width: 143px; height: 36px; line-height: 34px; text-align: center; font-size: 16px; font-weight: 400; color: #333; border: 1px solid #ccc; background-color: #fff;}     
+.companytit_func_wrap dd .btn_favorite:hover{box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);}   
+.companytit_func_wrap dd .btn_favorite span{padding-left: 25px; background: url(../img/common/ico_favorite_off.png) no-repeat 0 50%;}      
+.companytit_func_wrap dd .btn_favorite.on span{background-image: url(../img/common/ico_favorite_on.png);} 
+.companytit_func_wrap dd .fr .btn_write{height: 36px; line-height: 36px; background-color: #3348ae; color: #fff;}  
+.companytit_func_wrap dd .fr .btn_sm{float: none; clear: both;}  
+
+.full_width6 li{width:16.6666%;}
+.full_width6 li a{width:100%}
+.companyinfo_h5{position: relative; margin-top:30px;margin-bottom:10px;font-size:24px;line-height:36px;font-weight:700;vertical-align:middle;color:#000;} 
+.companyinfo_h5 .btn_favorite{position: absolute; padding: 0; right: 0; top: 0; width: 143px; height: 36px; line-height: 34px; text-align: center; font-size: 16px; font-weight: 400; color: #333; border: 1px solid #ccc; background-color: #fff;}    
+.companyinfo_h5 .btn_favorite:hover{box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);}   
+.companyinfo_h5 .btn_favorite span{padding-left: 25px; background: url(../img/common/ico_favorite_off.png) no-repeat 0 50%;}      
+.companyinfo_h5 .btn_favorite.on span{background-image: url(../img/common/ico_favorite_on.png);} 
+.companyinfo_h5 .fr .btn_favorite{position: relative; top: auto; right: auto;}
+.companyinfo_h5 .fr .btn_write{height: 36px; line-height: 36px; background-color: #3348ae; color: #fff;} 
+.companyinfo_h5 .fr select.form_control {width: 240px;}         
+
+/* WEB03202 기업정보 - 기업정보조회 - 기업알림 */
+.table_explain_position{position:absolute;left:0;top:10px;display:inline-block;}
+.group_tableinfo_scrchbtn{position:relative;height:40px;margin-bottom:10px;line-height:40px;}
+.group_tableinfo_scrchbtn .double_btnwrap{position:absolute;top:0;right:0;}
+.group_tableinfo_scrchbtn .double_btnwrap button{margin-left:5px;}
+
+/* WEB03206 */
+.td_group_tit li{float:left;line-height:15px;}
+.td_group_tit li:first-child{max-width:515px;}
+.td_group_tit.debate_type li:first-child{max-width:610px;}
+.td_group_tit li .tit_comment{display:inline-block;vertical-align:top;}
+.td_group_tit li .tit_new{margin-left:5px;}
+/* tbody .td_group_tit a{display:inline-block;max-width:400px;} */
+.ico_like{display:inline-block;width:19px;height:20px;margin-right:5px;background:url(../img/sub/ico_like.png) no-repeat 50%;text-indent:-9999px;}
+.tit_comment{font-size:13px;color:#3348AE}
+.tit_new{display:inline-block;width:15px;height:15px;background:#E8055A;border-radius:50%;font-size:10px;font-style:normal;color:#fff;text-align:center;}
+
+.notice_info{position:relative;display:inline-block;height:24px;padding:0 12px 0 33px;border:1px solid #ddd;font-size:16px;line-height:22px;}
+.notice_info::before{content:'!';display:inline-block;position:absolute;left:-1px;top:-1px;background:#2F3243;width:25px;height:24px;text-align:center;color:#fff;font-weight:700;}
+
+.btn_list_next{position:absolute;left:150px;bottom:0;}
+.title_area_bold{font-size:18px;color:#333;} 
+
+/* WEB03207 */
+.table_normalView_comment .content_area{border-top:1px solid #000;border-bottom:1px solid #aaa;}
+.table_normalView_comment .content_area dt, .table_normalView_comment .content_area dd{position:relative;}
+.table_normalView_comment .content_area dt{position:relative;height: 60px;line-height: 60px;background:#fff;box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);z-index:1;}
+.table_normalView_comment .content_area dt li p{display:block;width: 700px; font-size: 15px; font-weight: 400;color: #000; overflow:hidden;text-overflow:ellipsis;white-space: nowrap;}
+.table_normalView_comment .content_area dt .top_right_wrap{right:20px;}
+.table_normalView_comment .content_area dd:nth-of-type(1){height: 60px;line-height: 60px;background:#f2f2f2;}
+.table_normalView_comment .content_area dd:nth-of-type(1) > ul:nth-of-type(1) li:nth-of-type(2){font-size:15px;color:#3348AE;}
+.table_normalView_comment .content_area ul .desc_li{width: 116px; font-size: 15px; color: #555; min-width:60px;}   
+.table_normalView_comment .content_area dd:nth-of-type(1) > ul:nth-of-type(2) .btn_li{position:relative;padding-left:20px;}
+
+.table_normalView_comment .content_area dd:nth-of-type(1) > ul:nth-of-type(2) .btn_li::before{content:'';position:absolute;top:22px;left:0;width:1px;height:30px;background:#ccc;}
+.table_normalView_comment .content_area dd:nth-of-type(2){min-height:220px;padding: 20px 25px; color: #757575;font-size:15px;} 
+.table_normalView_comment .content_area dd .top_right_wrap{display:inline-block;width:auto;}
+.table_normalView_comment .content_area dd .top_right_wrap li{float:left;}
+.table_normalView_comment .content_area ul{display:table;width:100%;}
+.table_normalView_comment .content_area ul li{display:table-cell;}
+.table_normalView_comment .content_area ul .tit_li{padding-left: 20px; width: 77px; text-align: left; font-size: 14px; color: #333;}
+
+.comment_lst li dt{position: relative;} 
+.comment_lst li dt span:nth-child(2){color: #757575;} 
+.comment_lst li dt .btn_delete{position: absolute; top: -5px; right: 0; background-color: #f2f2f2;}  
+.comment_lst li dd{color: #555;} 
+
+.comment_write dd{position: relative; padding-right: 95px;}
+.comment_write dd .form_control{width: 100%;}
+.comment_write dd button{position: absolute; top: 0; right: 0;}
+.comment_write dd .txt_byte{position: absolute; top: 45px; right: 105px; font-size: 12px; color: #757575;} 
+
+.comment_write dt{font-size:18px;margin-bottom:5px;}
+.comment_write dt em{margin-left:5px;}
+.comment_write dd textarea{width:965px;height:70px;vertical-align:middle;}
+.comment_write dd button{display:inline-block;width:90px;height:70px;border:1px solid #3348AE;background:#fff;line-height:68px;font-size:14px;text-align:center;color:#3348AE;vertical-align:middle;}
+
+.comment_lst{border-top:1px solid #ddd;}
+.comment_lst li{padding:16px 0;border-bottom:1px solid #ddd;}
+.comment_lst li dt span:nth-of-type(1){display:inline-block;padding-right:18px;border-right:1px solid #ccc;font-size:15px;color:#3348AE;} 
+.comment_lst li dt span:nth-of-type(2){display:inline-block;padding-left:14px;}
+.comment_lst li dt{margin-bottom:8px;}
+.comment_lst li dd{font-size:15px;line-height:25px;}
+
+.table_normalView_comment .submit_area{position: relative; padding: 25px 0 0; text-align: right;}      
+.table_normalView_comment .submit_area .btn_list{position: absolute; left: 0; bottom: 0;}       
+
+/* WEB03307 */
+.type_contract_history td:nth-child(2), .type_contract_history td:nth-child(13){font-size:13px;color:#757575;}
+.type_deal_history td:nth-child(2){font-size:13px;color:#757575;}
+.txt_minigray_color{font-size:13px;color:#757575;}
+.btn_dealstatus{display:inline-block;width:80px;height:30px;border-radius:5px;font-size:14px;line-height:28px;color:#333;}
+.btn_dealend{background:#ddd;border:1px solid #ccc;color:#555;}
+.btn_depositend{background:#fff6ec;border:1px solid #f6ab2e;}
+.btn_contractend{border:1px solid #249195;}
+
+/* WEB01101, WEB01201, WEB01204 - 서비스 가입 > 등록기업 > 이용약관 동의 */
+.join_process_agree{width:1030px;margin:0 auto;}
+.join_process_agree .total_agree{padding:0 27px 20px;font-size:16px;}
+.join_process_agree .label_text{font-size:16px;}
+.join_process_agree .terms_wrap{padding: 0 20px 20px;margin: 0 27px 30px;border-top:1px solid #aaa;border-bottom:1px solid #aaa;}
+.join_process_agree .individual_agree:nth-child(1){padding-top:20px;}
+.join_process_agree .individual_agree{margin-bottom:10px;}
+.join_process_agree .terms_area{height:120px;overflow-y:auto;padding:10px;margin-bottom:20px;border:1px solid #ddd;background:#fff;font-size:14px;line-height:16px;}
+.join_process_agree .selective_agree .input_check + .input_check{margin-left:64px;}
+.join_process_agree .btn_wrap{font-size:0;text-align:center;}
+.join_process_agree .btn_wrap button + button{margin-left:20px;}
+
+/* WEB01102, WEB01202, WEB01205 - 서비스 가입 > 등록기업 > 입력폼 */
+.join_process_info{padding:12px 0 8px;margin-top:30px;margin-bottom:20px;text-align:center;}
+.join_process_info ul{display:inline-block;}
+.join_process_info li{float:left;position:relative;height:80px;padding-left:105px;background:url(../img/common/ico_join_navi.png) no-repeat;}
+.join_process_info li.on .txt_tit{font-size:18px;font-weight:700;color:#3348ae;}
+.join_process_info li.on .txt_desc{font-size:24px;font-weight:700;}
+.join_process_info li.on:nth-child(1)::before{background:#3348ae url(../img/common/ico_certifi_on.png) no-repeat 50%;}
+.join_process_info.invest li.on:nth-child(1)::before{background:#3348ae url(../img/common/ico_certifiinvest_on.png) no-repeat 50%;}
+.join_process_info li.on:nth-child(2)::before{background:#3348ae url(../img/common/ico_agree_on.png) no-repeat 55% 50%;}
+.join_process_info li.on:nth-child(3)::before{background:#3348ae url(../img/common/ico_infoinput_on.png) no-repeat 55% 50%;}
+.join_process_info li p{text-align:left;}
+.join_process_info li .txt_tit{margin-top:10px;font-size:16px;color:#555;letter-spacing:-0.25px;}
+.join_process_info li .txt_desc{margin-top:3px;font-size:20px;color:#333;}
+.join_process_info li::before{content:'';position:absolute;top:0;left:0;display:inline-block;width:80px;height:80px;border-radius:50%;}
+.join_process_info li:nth-child(1){padding-right:94px;background-position: 208px 50%;}
+.join_process_info li:nth-child(2){padding-right:107px;background-position:231px 50%;}
+.join_process_info li:last-child{background:none;}
+.join_process_info li:nth-child(1)::before{background:#f2f2f2 url(../img/common/ico_certifi_off.png) no-repeat 50%;}
+.join_process_info.invest li:nth-child(1)::before{background:#f2f2f2 url(../img/common/ico_certifiinvest_off.png) no-repeat 50%;}
+.join_process_info li:nth-child(2)::before{background:#f2f2f2 url(../img/common/ico_agree_off.png) no-repeat 55% 50%;}
+.join_process_info li:nth-child(3)::before{background:#f2f2f2 url(../img/common/ico_infoinput_off.png) no-repeat 55% 50%;}
+
+.join_process_info.type_shareholder_process{padding:20px 0;background:#f9f7f2;}
+.join_process_info.type_shareholder_process li:first-child{background-position: 280px 50%;}
+.join_process_info.type_shareholder_process li:first-child::before{background:url(../img/common/ico_shareholder_step1off.png) no-repeat 50%;}
+.join_process_info.type_shareholder_process li.on:first-child::before{background:url(../img/common/ico_shareholder_step1on.png) no-repeat 50%;}
+.join_process_info.type_shareholder_process li:last-child{padding-right:0;}
+.join_process_info.type_shareholder_process li:last-child::before{background:url(../img/common/ico_shareholder_step2off.png) no-repeat 50%;}
+.join_process_info.type_shareholder_process li.on:last-child::before{background:url(../img/common/ico_shareholder_step2on.png) no-repeat 50%;}
+
+.join_process_form fieldset{padding:15px 0;}   
+.join_process_form .tableform_wrap{border-top:1px solid #000;border-bottom:1px solid #aaa; background-color: #f2f2f2;} 
+.join_process_form .tableform_wrap.type_col3{background-color: #edeff3;padding-right:15px;}
+.join_process_form .tableform_wrap.type_col3 td{border-right:0;padding-right:0;}
+.join_process_form .tableform_wrap.type_col3.addrow_col3{border-top:0;padding: 12px 15px 12px 0;background:#fff;}
+.join_process_form .tableform_wrap.type_col3.addrow_col3 td .form_control.ar{background:#F8FAFE;}
+.join_process_form .tableform_wrap.type_col2 + .addrow_col3 {border-bottom:1px solid #aaa;}
+.join_process_form .tableform_wrap table{width:100%;border-collapse: collapse;border-spacing: 0;}
+.join_process_form .tableform_wrap table caption{position: absolute;font-size: 0;left: -99999px;}
+.join_process_form .tableform_wrap table th, .tableform_wrap table td{padding:7px 0;vertical-align:top;}
+.join_process_form .tableform_wrap table th label, .tableform_wrap table td label{height:36px;display:inline-block;line-height:36px;}
+.join_process_form .tableform_wrap table th{font-weight:400;text-align:center;}
+.join_process_form .tableform_wrap table td{padding-right:15px;border-right:1px solid #ddd;}
+.join_process_form .tableform_wrap table td:last-child{border-right:0;}
+.join_process_form .tableform_wrap table tr:nth-child(1) th, .tableform_wrap table tr:nth-child(1) td{padding-top:0;}
+.join_process_form .tableform_wrap table tr:last-child th, .tableform_wrap table tr:last-child td{padding-bottom:0;}
+.join_process_form .tableform_wrap.type_col2::after{content:'';display:block;clear:both;}
+
+
+.popup_button_wrap.radio_area{position:relative;width:569px;margin:20px auto 0;}
+.popup_button_wrap.radio_area .btn_did:nth-child(1){top:0;left:0;}
+.popup_button_wrap.radio_area .btn_did:nth-child(2){top:0;left:auto;right:0;}
+
+.longtxt_label{line-height:1.3 !important;}
+.td_col2{display:table;width:100%;}
+.td_col2 .btn_sm{height:36px;line-height:34px;}
+.td_col2 > div{display:table-cell;vertical-align:middle;}
+.td_col2 > div:nth-child(1){width:100%;}
+.td_col2 > div:nth-child(2), .td_col2 > div:nth-child(3){padding-left:5px;}
+.td_col2 + .td_col2, .td_col2 + .form_control{margin-top:15px;}
+.td_col2 input, .td_col2 select{display:inline-block;vertical-align:middle;}
+.td_col2 button{float:right;width:90px;padding:0;}
+.join_process_form .tableform_wrap .td_col2 div{vertical-align: top;}
+.join_process_form .tableform_wrap .td_col2 div button + button{margin-top:5px;}
+
+.td_col_phone li{float:left;height:40px;line-height:40px;vertical-align:middle;}
+.td_col_phone li .form_control{width:78px;}
+.td_col_phone li:nth-child(2), .td_col_phone li:nth-child(4){padding-left:7px;padding-right:7px;} 
+
+.td_col_email li{float:left;height:36px;line-height:36px;vertical-align:middle;}
+.td_col_email li .form_control{width:188px;}
+.td_col_email li:nth-child(2){padding-left:7px;padding-right:7px;}
+.td_col_email li:nth-child(4){width:100%;margin-top:5px;}
+.td_col_email li:nth-child(4) .form_control{width:403px;}
+
+.join_process_form .txt_info{margin-top:10px;margin-bottom:15px;font-size:14px;color:#555;}
+.join_process_form .ico_dot{position: relative; padding-left: 14px;} 
+.join_process_form .ico_dot:before{content: ''; display: block; position: absolute; top: 50%; left: 0; margin-top: -2px; width: 4px; height: 4px; background-color: #757575;} 
+.join_process_form .ico_essential{position: relative; padding-left: 10px;} 
+.join_process_form .ico_essential.ico_right{padding-left: 0; padding-right: 10px;} 
+.join_process_form .ico_essential:before{content: ''; display: block; position: absolute; top: 50%; left: 0; margin-top: -5px; width: 7px; height: 6px; background: url(../img/sub/ico_essential.png) no-repeat 0 0;}  
+.join_process_form .ico_essential.ico_right:before{left: auto; right: 0;}   
+ 
+
+.join_process_form .tableform_tit{position:relative;margin:30px 0 15px;font-size:24px;font-weight:700;line-height:24px;letter-spacing:-0.25px;}
+.join_process_form .tableform_tit::after{content:'';display:block;clear:both;}
+.join_process_form .tableform_tit>span{margin-left:10px;font-size:14px;font-weight:400;} 
+.txt_emphasis{color:#3348ae !important;}
+.join_process_form .tableform_tit .input_check{float:right;line-height: 24px;}
+
+.join_process_form .btn_wrap{font-size:0;text-align:center;margin-top:30px;} 
+.join_process_form .btn_wrap button + button{margin-left:10px;}
+
+#pop_logoupload .contents_wrap{padding-bottom:10px;}
+#pop_logoupload .button_wrap{margin-top:0;}
+#pop_logoupload .wrap_file{width:100%;}
+#pop_logoupload .wrap_file .upload_name{width:280px;}
+
+.tableform_tit .tooltip_area{float:right;margin:0 10px 0 3px;}
+.tableform_tit .tooltip_area.tooltip_inline dl{z-index:2;width:453px;padding-right:25px;padding-bottom:25px;}
+.tableform_tit .tooltip_area.tooltip_inline dl dd{font-size:14px;font-weight:400;line-height:20px;}
+.tableform_tit .tooltip_area .tooltip_close button{width:15px;height:15px;background-size:15px;}
+
+/* WEB02000 - 발행기업 > 투자정보관리 > 현황정보*/
+.company_status_info h5{position:relative;margin:30px 0 10px;font-size:24px;line-height:36px;color:#000;}
+.company_status_info h5> span{margin-left: 4px;font-size: 14px;font-weight: 400;}
+.company_status_info h5 p{font-size:15px;font-weight:400;line-height:25px;}
+.company_status_info h5 > .btn_wrap{position:absolute;top:50%;right:0;font-size:0;transform:translateY(-50%);}
+.company_status_info .shareholder_history{position:relative;margin-bottom:20px;padding:0px 30px 0;}
+.company_status_info .shareholder_history .shareholder_nodata{padding-top:130px;background-position-y:40px}
+.company_status_info .shareholder_history .swiper-container{position: static;}
+.company_status_info .shareholder_history .swiper-slide{position:relative;width:280px;height:162px;padding:12px 25px 0;border:1px solid #aaa;text-align:center;cursor:pointer;}
+.company_status_info .shareholder_history .swiper-slide:nth-child(1){border:1px solid #3348ae;}
+.company_status_info .shareholder_history .swiper-slide p{font-size:18px;letter-spacing:-0.25px;line-height:26px;}
+.company_status_info .shareholder_history .swiper-slide p a{border-bottom: 1px solid #333;}
+.company_status_info .shareholder_history .swiper-slide p:nth-child(1){overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:16px;height:25px;}
+.company_status_info .shareholder_history .swiper-slide .status_p{position:relative;}
+.company_status_info .shareholder_history .swiper-slide .status_p::before{content:'';display:block;width:12px;height:1px;background:#000;margin:10px auto;}
+.company_status_info .shareholder_history .swiper-slide .status_p a{display:inline-block;color:#3348ae;border-bottom:1px solid #3348ae;}
+.company_status_info .shareholder_history .swiper-slide p span{margin-left:10px;font-weight:700;}
+.company_status_info .shareholder_history .swiper-slide button{width:140px;margin-top:8px;border-color:#ccc;font-size:16px;}
+.company_status_info .shareholder_history .swiper-button-next{background:url(../img/sub/img_swiper_next.png) no-repeat 100% 50%;}
+.company_status_info .shareholder_history .swiper-button-prev{background:url(../img/sub/img_swiper_prev.png) no-repeat 0 50%;}
+.company_status_info > .btn_wrap{text-align:right;}
+.shareholder_history_nodata{background: url(../img/sub/ico_warning_table.png) no-repeat 50% 32px;text-align:center;border-top: 1px solid #000;}
+.shareholder_history_nodata p{padding:105px 0 20px;font-size: 18px;color: #555;}
+
+.sorting_button{display:inline-block;padding-right: 12px;border: 0;background: url(../img/common/ico_tablesort.png) no-repeat 100% 50%;cursor: pointer;text-align: left;} 
+.sorting_button.on{background-image: url(../img/common/ico_tablesort_on.png);}
+
+
+.major_shareholders_wrap{margin-bottom:30px;border-top:1px solid #000;border-bottom:1px solid #aaa;}
+.major_shareholders_wrap li{float:left;}
+.major_shareholders_wrap li > table{width:420px;border-collapse: collapse;border-spacing: 0;}
+.major_shareholders_wrap li > table caption{display:none;}
+.major_shareholders_wrap li > table th, .major_shareholders_wrap li table td{height:43px;border-bottom:1px solid #ddd;}
+.major_shareholders_wrap li > table tr:last-child th, .major_shareholders_wrap li table tr:last-child td{border:0;}
+.major_shareholders_wrap li > table th{width:150px;background:#edeff3;font-size:14px;font-weight:400;text-align:center;}
+.major_shareholders_wrap li > table td{text-align:right;font-size:14px;}
+.major_shareholders_wrap li:nth-child(2){padding:5px 16px 5px 30px;}
+.major_shareholders_wrap li .shareholder_nodata{width:380px;margin-top:20px;}
+.major_shareholders_wrap li dl{width:380px;padding-top:10px;}
+.major_shareholders_wrap li dl::after{content:'';display:block;clear:both;}
+.major_shareholders_wrap li dt{padding-left:33px;margin-bottom:10px;background:url(../img/sub/ico_major_shareholder.png) no-repeat 0 50%;font-size:18px;line-height:40px;}
+.major_shareholders_wrap li dt::after{content:'';display:block;clear:both;}
+.major_shareholders_wrap li dt .select_css{float:right;width:140px;}
+.major_shareholders_wrap li dd{float:left;width:50%;height:35px;line-height:35px;font-size:15px;}
+.major_shareholders_wrap li dd:nth-of-type(2n){padding-left:10px;}
+.major_shareholders_wrap li dd span{display:inline-block;}
+.major_shareholders_wrap li dd span:nth-child(1){position:relative;width:110px;padding-left:18px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;vertical-align:top;}
+.major_shareholders_wrap li dd span:nth-child(1)::before{content:'';position:absolute;top:50%;left:0;display:inline-block;width:8px;height:8px;margin-top:-3px;}
+.major_shareholders_wrap li dd.purple span:nth-child(1)::before{background:#6758F3;}
+.major_shareholders_wrap li dd.green span:nth-child(1)::before{background:#33AA44;}
+.major_shareholders_wrap li dd.orange span:nth-child(1)::before{background:#EB7425;}
+.major_shareholders_wrap li dd.lightblue span:nth-child(1)::before{background:#4FADED;}
+.major_shareholders_wrap li dd.yellow span:nth-child(1)::before{background:#F6AB2E;}
+.major_shareholders_wrap li dd.red span:nth-child(1)::before{background:#EB4625;}
+.major_shareholders_wrap li dd span:nth-child(2){padding-left:10px;padding-right:10px;}
+
+.company_status_wrap{font-size:0;padding-top:15px;}
+.company_box_status{position:relative;display:inline-block;width:49%;}
+.company_box_status a{display:block;height:120px;padding:25px 40px;border:1px solid #ddd;background:#f2f2f2;}
+.company_box_status dt{position:absolute;top:25px;left:40px;width:152px;padding-bottom:5px;background:url(../img/sub/img_status_tit.png) no-repeat 0 100%;font-size:20px;letter-spacing:-0.25px;color:#000;}
+.company_box_status dd{font-size:30px;color:#000;text-align:center;}
+.company_box_status dd span{font-size:54px;font-weight:700;}
+.company_box_status.order_status dd{background:url(../img/sub/img_status_order.png) no-repeat 100% 50%;}
+.company_box_status.contract_status dd{background:url(../img/sub/img_status_contract.png) no-repeat 100% 50%;}
+.company_box_status + .company_box_status{margin-left:1.8%;}
+
+.company_btn_ul{margin-top:20px;}
+.company_btn_ul li{float:left;width:32.258%;margin-right:1.6129%;position:relative;}
+.company_btn_ul li:nth-child(3n){margin-right:0;}
+.company_btn_ul li a{display:inline-block;width:100%;height:150px;padding:20px 30px 30px;border-top-right-radius:10px;border-bottom-left-radius:10px;}
+.company_btn_ul li:nth-child(1) a{background:#4c99cd url(../img/sub/img_company_infocontrol.png) no-repeat;background-position:calc(100% - 29px) calc(100% - 19px);}
+.company_btn_ul li:nth-child(2) a{background:#3ab2bf url(../img/sub/img_company_infonotice.png) no-repeat;background-position:calc(100% - 29px) calc(100% - 19px);}
+.company_btn_ul li:nth-child(3) a{margin-right:0;background:#6573d4 url(../img/sub/img_company_infodata.png) no-repeat;background-position:calc(100% - 29px) calc(100% - 19px);}
+.company_btn_ul li p:nth-child(1){margin-bottom:5px;font-size:22px;font-weight:700;color:#fff;}
+.company_btn_ul li p:nth-child(2){margin-bottom:6px;font-size:16px;color:#fff;max-width: 290px;text-overflow: ellipsis;white-space: nowrap;overflow:hidden;}
+.company_btn_ul li p:nth-child(3){font-size:14px;color:#fff;}
+.company_btn_ul .btn_md{position:absolute;top:50%;left:48%;margin-top:-22px;margin-left:-72px;background:transparent;border:1px solid #fff;color:#fff;}
+.company_btn_ul .btn_md:hover{background: transparent;}
+
+.shareholder_nodata{padding-top:93px;background:url(../img/sub/ico_warning_data.png) no-repeat 50% 0;text-align:center;font-size:18px;line-height:30px;}
+.shareholder_nodata p{margin-bottom:16px;}
+.chart_nodata{display:inline-block;width:210px;height:210px;background:url(../img/sub/img_chart_nodata.png) no-repeat 50%;text-indent:-9999px;}
+
+/* WEB02100 - 발행기업 > 투자정보관리 > 기업정보*/
+.txt_ellipsis{display:block !important;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+
+.companyinfo_chart{margin-top:40px;}
+.companyinfo_chart li{float:left;width:48%;border-top:1px solid #000;border-bottom:1px solid #aaa;font-size:0;}
+.companyinfo_chart li:nth-child(odd){margin-right:4%;}
+.companyinfo_chart li:nth-child(3), .companyinfo_chart li:nth-child(4){margin-top:30px;}
+.companyinfo_chart li > div{position:relative;display:inline-block;min-height:329px;vertical-align:middle;}
+.companyinfo_chart li > .td_row2 td{height:150px;}
+.companyinfo_chart li > div:nth-child(1){width:345px;;border-top:0 !important;border-bottom:0 !important;}
+.companyinfo_chart li > div:nth-child(1) th, .companyinfo_chart li > div:nth-child(1) td{border-right:1px solid #ddd;}
+.companyinfo_chart li table{font-size:14px;}
+.companyinfo_chart li table td{text-overflow:ellipsis;overflow:hidden;word-break:keep-all;}
+.companyinfo_chart li > div:nth-child(2){width:250px;}
+.companyinfo_chart li > div:nth-child(2) canvas{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+
+/* WEB02204 - 발행기업 > 주주명부관리 > 주주명부*/
+.company_status_info .tab_md{margin-top:40px;}
+.company_status_info .select_upload{background:#eff3f8;padding:10px 20px 10px 30px;margin-top:20px;border-top:1px solid #000;border-bottom:1px solid #aaa;}
+.company_status_info .select_upload li{float:left;line-height:40px;}
+.company_status_info .select_upload li:nth-child(1){font-size:16px;color:#333;}
+.company_status_info .select_upload li:nth-child(2){margin-left:50px;}
+.company_status_info .select_upload li:nth-child(3){float:right;}
+.companyinfo_table.th_tit_color th{background:#eff3f8;}
+.company_status_info .wrap_file{width:100%;}
+.company_status_info .wrap_file .form_control{width:calc(100% - 100px);}
+.company_status_info .shareholder_btn_wrap{margin-top:20px;font-size:0;text-align:right;}
+.company_status_info .shareholder_btn_wrap button{margin-left:10px;}
+
+.table_accordion.shareholder_table .group_title li:nth-child(1), .table_accordion.shareholder_table .group_desc dt .lst_title li:nth-child(1){width:80px;}
+.table_accordion.shareholder_table .group_title li:nth-child(2), .table_accordion.shareholder_table .group_desc dt .lst_title li:nth-child(2){width:135px;}
+.table_accordion.shareholder_table .group_title li:nth-child(3), .table_accordion.shareholder_table .group_desc dt .lst_title li:nth-child(3){width:110px;}
+.table_accordion.shareholder_table .group_title li:nth-child(4), .table_accordion.shareholder_table .group_desc dt .lst_title li:nth-child(4){width:145px;}
+.table_accordion.shareholder_table .group_title li:nth-child(5), .table_accordion.shareholder_table .group_desc dt .lst_title li:nth-child(5){width:110px;}
+.table_accordion.shareholder_table .group_title li:nth-child(6), .table_accordion.shareholder_table .group_desc dt .lst_title li:nth-child(6){width:125px;}
+.table_accordion.shareholder_table .group_title li:nth-child(7), .table_accordion.shareholder_table .group_desc dt .lst_title li:nth-child(7){width:125px;}
+.table_accordion.shareholder_table .group_title li:nth-child(8), .table_accordion.shareholder_table .group_desc dt .lst_title li:nth-child(8){width:410px;}
+.table_accordion.shareholder_table .group_desc dt .lst_title li{cursor:pointer;}
+.table_accordion.shareholder_table .group_desc dt .lst_title li:nth-child(3), .table_accordion.shareholder_table .group_desc dt .lst_title li:nth-child(8){overflow:hidden;text-overflow:ellipsis;word-break:keep-all;}
+.table_accordion.shareholder_table .group_desc dt .lst_title li:nth-child(8){padding-right:25px;background:url(../img/common/arrow_down.png) no-repeat;background-position:calc(100% - 9px) 50%;}
+.table_accordion.shareholder_table .group_desc dt.active .lst_title li:nth-child(8){background-image:url(../img/common/arrow_up.png);}
+.table_accordion.shareholder_table .group_desc dd{padding:20px 0;}
+.table_accordion.shareholder_table .group_desc dd table{width:100%;border-collapse: collapse;border-spacing: 0;table-layout:fixed;}
+.table_accordion.shareholder_table .group_desc dd table caption{position: absolute;font-size: 0;left: -99999px;}
+.table_accordion.shareholder_table .group_desc dd table th, .table_accordion.shareholder_table .group_desc dd table td{padding-top:8px;padding-bottom:8px;vertical-align:top;font-size:14px;}
+.table_accordion.shareholder_table .group_desc dd table th{padding-left:20px;font-weight:400;color:#333}
+.table_accordion.shareholder_table .group_desc dd table td[rowspan="2"]{border-right:1px solid #ddd;}
+.table_accordion.shareholder_table .group_desc dd table td{padding-right:20px;color:#555;}
+.table_accordion.shareholder_table .count_sum{height:70px;background:#F9F7F2;border-bottom:1px solid #aaa;line-height:70px;}
+.table_accordion.shareholder_table .count_sum li{float:left;}
+.table_accordion.shareholder_table .count_sum li:nth-child(1){width:580px;text-align:center;font-size:16px;}
+.table_accordion.shareholder_table .count_sum li:nth-child(2),.table_accordion.shareholder_table .count_sum li:nth-child(3){width:125px;font-size:14px;text-align:center;}
+.company_status_info .shareholder_btn_wrap2{margin:30px;font-size:0;text-align:center;}
+.company_status_info .shareholder_btn_wrap2 button:nth-child(1){margin-right:10px;}
+
+.modify_table .select_css{display:inline-block;width:200px;margin-left:30px;}
+.modify_table .input_check{margin-left:30px;}
+.modify_table .input_check:first-child{margin-left:0;}
+
+.radiochk_upload{display:none;}
+.radiochk_write{display:none;}
+.radiochk_upload.on, .radiochk_write.on{display:block;}
+
+/* WEB02205 - 발행기업 > 주주명부관리 > 주주명부*/
+.shareholder_table_write .group_title{height: 50px; border-top: 1px solid #000;}
+.shareholder_table_write .group_title li{float: left; line-height: 49px; text-align: center; font-size: 14px; color: #333;} 
+.shareholder_table_write .group_title li:nth-child(1), .shareholder_table_write .group_desc dt .lst_title li:nth-child(1){width:160px;}
+.shareholder_table_write .group_title li:nth-child(2), .shareholder_table_write .group_desc dt .lst_title li:nth-child(2){width:120px;}
+.shareholder_table_write .group_title li:nth-child(3), .shareholder_table_write .group_desc dt .lst_title li:nth-child(3){width:155px;}
+.shareholder_table_write .group_title li:nth-child(4), .shareholder_table_write .group_desc dt .lst_title li:nth-child(4){width:110px;}
+.shareholder_table_write .group_title li:nth-child(5), .shareholder_table_write .group_desc dt .lst_title li:nth-child(5){width:145px;}
+.shareholder_table_write .group_title li:nth-child(6), .shareholder_table_write .group_desc dt .lst_title li:nth-child(6){width:140px;}
+.shareholder_table_write .group_title li:nth-child(7), .shareholder_table_write .group_desc dt .lst_title li:nth-child(7){width:410px;}
+.shareholder_table_write .group_desc dt .lst_title li:nth-child(7){padding-right:35px;}
+.shareholder_open_btn{display:inline-block;position:absolute;top:0%;right:9px;width:14px;height:60px;background:url(../img/common/arrow_down.png) no-repeat 100% 50%;font-size:0;text-indent:-9999px;}
+.shareholder_open_btn.active{background-image:url(../img/common/arrow_up.png);}
+
+.shareholder_table_write .group_desc dt:first-child{border-top:0;}
+.shareholder_table_write .group_desc dt{position: relative;padding:0;border-top: 1px solid #ddd;-webkit-transition: box-shadow;transition: box-shadow;transition-duration: 0.2s;}
+.shareholder_table_write .group_desc dt .lst_title li{float: left;position: relative;height: 60px;padding:10px;text-align: center;font-size: 14px;color: #555;}
+.shareholder_table_write .group_desc dd{position: relative;padding:20px 0;text-align: left;background-color: #f2f2f2;}
+.shareholder_table_write .group_desc dd table{width:100%;border-collapse: collapse;border-spacing: 0;table-layout:fixed;}
+.shareholder_table_write .group_desc dd table caption{position: absolute;font-size: 0;left: -99999px;}
+.shareholder_table_write .group_desc dd table th, .table_accordion.shareholder_table .group_desc dd table td{padding-top:8px;padding-bottom:8px;vertical-align:top;font-size:14px;}
+.shareholder_table_write .group_desc dd table th{padding-left:20px;font-weight:400;color:#333}
+.shareholder_table_write .group_desc dd table td[rowspan="2"]{border-right:1px solid #ddd;}
+.shareholder_table_write .group_desc dd table td{padding-right:20px;color:#555;}
+.shareholder_table_write .count_sum{height:70px;margin-top:20px;background:#F9F7F2;border-top:1px solid #aaa;border-bottom:1px solid #aaa;line-height:70px;}
+.shareholder_table_write .count_sum li{float:left;}
+.shareholder_table_write .count_sum li:nth-child(1){width:114px;text-align:center;font-size:16px;}
+.shareholder_table_write .count_sum li:nth-child(2){margin-right:60px;}
+.shareholder_table_write .count_sum li .form_control{width:230px;margin-left:20px;}
+
+.shareholder_write_h5 .input_check{margin-left:36px;}
+
+/* WEB02305 */
+#pop_contract_detail .pop_wrap::after{content: '';display: block;height: 140px;position: absolute;bottom: -140px;left: 0;width: 100%;}
+#pop_contract_detail .pop_wrap{padding-bottom: 0;}
+#pop_contract_detail .pop_contract_flbox > div{float:left;}
+#pop_contract_detail .pop_contract_flbox > div:nth-child(1){width:284px;margin-right:16px;}
+#pop_contract_detail .pop_contract_flbox > div:nth-child(2){width:720px;height:475px;overflow-y:auto;border:1px solid #000;margin-top:-40px;}
+.pop_modal .message_box{margin-top:30px;}
+.pop_modal .message_tit + .message_box{margin-top:0;}
+.pop_modal .message_tit{font-size:19px;line-height:25px;color:#333;margin-top:30px;}
+.pop_modal .message_box .message_desc{margin-top:8px;margin-bottom:8px;font-size:14px;line-height:25px;color:#555;}
+.pop_modal .message_box .companyinfo_table{margin-bottom:10px;}
+.pop_modal .check_ul{margin-top:20px;}
+.pop_modal .check_ul .label_text{background-position: 0 3px;}
+.pop_modal .check_ul li{margin-top:15px;}
+.pop_modal .check_ul li:first-child{margin-top:0;}
+.pop_modal .button_wrap{margin-top:30px;text-align:center;}
+
+/* WEB2307 */
+#pop_deal_static .pop_wrap{padding-bottom:0;}
+#pop_deal_static .pop_wrap::after{content: '';display: block;height: 140px;position: absolute;bottom: -140px;left: 0;width: 100%;}
+
+/* WEB02311 */
+#pop_shareholder_list .pop_wrap::after{content: '';display: block;height: 140px;position: absolute;bottom: -140px;left: 0;width: 100%;}
+#pop_shareholder_list h5{text-align:center;margin-top:20px;}
+#pop_shareholder_list .sum td{background:#fff7f0;}
+#pop_shareholder_list .companyinfo_table tr:nth-last-of-type(2) td{border-bottom:1px solid #aaa;}
+#pop_shareholder_list .companyinfo_table ~ p{text-align:center;color:#555;}
+#pop_shareholder_list .txt_desc{margin-top:40px;font-size:16px;}
+#pop_shareholder_list .txt_date{margin-top:20px;font-size:15px;}
+#pop_shareholder_list .txt_ceo{margin-top:25px;font-size:18px;}
+#pop_shareholder_list .button_wrap{margin-top:20px;padding-top:30px;border-top:1px solid #ddd;}
+
+/* WEB2206 - 발행기업 > 주주명부 */
+.shareholder_detaildata{position:relative;height: 292px;border-top:1px solid #000;border-bottom:1px solid #aaa;}
+.shareholder_detaildata > div{float:left;position:relative;}
+.shareholder_detaildata > div:nth-child(1){width:760px;}
+.shareholder_detaildata > div:nth-child(2){width:calc(100% - 760px);height:100%;}
+.shareholder_detaildata > .tbl_chartdata_grid{width:calc(100% - 760px);height:100%;}
+.shareholder_detaildata canvas, .chart_nodata{position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);}
+
+.tbl_chartdata{position:relative;width:760px;padding-top:40px;}
+.tbl_chartdata caption {position: absolute;font-size: 0;left: -99999px;}
+.tbl_chartdata .inner_div{max-height:250px;overflow:auto;overflow-x:hidden;}
+.tbl_chartdata .inner_div table{width:100%;table-layout:fixed;border-spacing:0;border-collapse:collapse;}
+.tbl_chartdata .inner_div table thead tr{position:absolute;top:0;}
+.tbl_chartdata .inner_div table thead tr th{font-weight:normal;height:40px;font-size:14px;color:#333;background:#f2f2f2;border-right:1px solid #ddd;border-bottom:1px solid #aaa;}
+.tbl_chartdata .inner_div table thead tr th:last-child{border-right:0;}
+
+.tbl_chartdata .inner_div table thead tr th:nth-child(1){width: 190px;}
+.tbl_chartdata .inner_div table thead tr th:nth-child(2){width: 190px;}
+.tbl_chartdata .inner_div table thead tr th:nth-child(3){width: 190px;}
+.tbl_chartdata .inner_div table thead tr th:nth-child(4){width: 190px;}
+.tbl_chartdata .inner_div table thead tr th:nth-child(4), .tbl_chartdata .inner_div table tbody tr td:nth-child(4){padding-right:13px;}
+.tbl_chartdata .inner_div table thead tr th button{padding-right:18px;border:0;background:url(../img/common/ico_tablesort.png) no-repeat 100% 50%;cursor:pointer;text-align:left;}
+
+.tbl_chartdata .inner_div table td {text-align: center;height: 50px;border-top: 1px solid #ddd;border-right:1px solid #ddd;padding: 0 10px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap}
+.tbl_chartdata .inner_div table tbody tr:last-child td{border-bottom:1px solid #ddd;}
+.tbl_chartdata .inner_div td.blank_area{height: 249px; text-align: center; background-color: #fff;border-bottom:0 !important;}
+.tbl_chartdata .inner_div td.blank_area .txt_blank{padding: 69px 0 0; text-align: center; font-size: 18px; color: #333; background: url(../img/sub/ico_warning_table.png) no-repeat 50% 0;margin-bottom:20px;}   
+.tbl_chartdata .inner_div .sum td{background:#fff7f0;border-top:1px solid #aaa;}
+
+.w160{width:160px !important;}
+
+
+/* WEB02302 발행기업 > 마이페이지 > 거래현황관리 */
+.group_date_selectbox{display:inline-block;padding-right:40px;margin-right:40px;border-right:1px solid #ddd;font-size:0;}
+.group_date_selectbox .select_css{display:inline-block;width:190px;}
+.group_date_texttit{margin-right:20px;font-size:14px;color:#333;}
+.dealstop_wrap .board_deallist{width:100%;}
+
+/* WEB02309 - 발행기업 > 거래현황관리 > 거래정지처리 */
+.dealstop_wrap > li{float:left;width:535px;}
+.dealstop_wrap > li:nth-child(odd){margin-right:30px;}
+.dealstop_wrap > li:nth-child(3), .dealstop_wrap > li:nth-child(4){margin-top:40px;}
+.dealstop_wrap > li p{margin-bottom:10px;}
+.dealstop_wrap > li .select_deal{margin-bottom:9px;}
+.dealstop_wrap > li .select_deal li:nth-child(2){margin-top:7px;margin-right:0;}
+.dealstop_wrap > li .select_deal li:nth-child(2) .form_control{width:120px !important;}
+.dealstop_wrap > li .select_deal .option_button{display: inline-block;min-width: 50px; height: 30px; padding: 0 5px; border: 1px solid #000; background: #fff; font-size: 14px; font-weight: 400; color: #000; line-height: 28px; text-align: center; vertical-align: inherit; cursor: pointer;margin-left:15px;}
+.dealstop_wrap > li .board_cardlist{width:100%;height:429px;}
+.dealstop_wrap > li .board_cardlist > li{width:30.4%;margin-top:9px;}
+.dealstop_wrap > li .board_cardlist .nodata{width:100%;height:95%;}
+.dealstop_wrap > li .board_cardlist .nodata p{position:absolute;top:50%;left:50%;width:220px;height:100px;margin:-50px 0 0 -110px;padding-top:75px;background: url(../img/sub/ico_warning_table.png) no-repeat 50% 0;font-size:18px;color:#333;text-align:center;}
+
+.contract_cardlist{position:relative;width:100%;height:293px;overflow-y:scroll;}
+.contract_cardlist > li{float:left;width:31%;border:1px solid #ddd;margin-top:9px;margin-left:2%;}
+.contract_cardlist > li.nodata{width:100%;height:95%;}
+.contract_cardlist > li.nodata p{position:absolute;top:50%;left:50%;width:220px;height:100px;margin:-50px 0 0 -110px;padding-top:75px;background: url(../img/sub/ico_warning_table.png) no-repeat 50% 0;font-size:18px;color:#333;text-align:center;}
+.contract_cardlist > li:nth-child(1), .contract_cardlist > li:nth-child(2), .contract_cardlist > li:nth-child(3){margin-top:3px;}
+.contract_cardlist > li:first-child, .contract_cardlist > li:nth-child(3n+1){margin-left:0;}
+.contract_cardlist > li dl{padding:12px 9px;}
+.contract_cardlist > li dl dt, .contract_cardlist > li dl dd{vertical-align:middle;line-height:20px;margin-bottom:2px;}
+.contract_cardlist > li dl dt:last-of-type, .contract_cardlist > li dl dd:last-of-type{margin-bottom:0;}
+.contract_cardlist > li dl dt{display:inline-block;width:45px;margin-right:0;font-size:12px;color:#757575;}
+.contract_cardlist > li dl dd{overflow:hidden;text-overflow:ellipsis;display:inline-block;width:82px;font-size:14px;color:#333;word-break:keep-all;}
+
+.pop_modal.pop_xlg .pop_wrap .contents_wrap{padding:20px 40px 40px}
+.pop_modal.pop_xlg .pop_wrap h5{margin-bottom:9px;font-size:24px;font-weight:700;line-height:25px;color:#000;min-height:36px;}
+.pop_modal.pop_xlg .pop_wrap h5:first-child{margin-top:10px;}
+#pop_dealstop_play .contents_wrap{position:relative;}
+#pop_dealstop_play .datepicker_searchwrap, #pop_dealstop_play .date_btn_wrap{display:inline-block;vertical-align:middle;}
+#pop_dealstop_play .date_btn_wrap{margin-left:16px;font-size:0;}
+#pop_dealstop_play .date_btn_wrap button{margin-right:7px;}
+#pop_dealstop_play .select_css{display:inline-block;width:280px;}
+#pop_dealstop_play .select_css + .stock_num_p{display:inline-block;margin-left:75px;}
+#pop_dealstop_play .explain_ul{margin-top:18px;}
+#pop_dealstop_play .btn_sm.btn_blue{position:absolute;bottom:110px;right:40px;width:145px;height:36px;line-height:34px;}
+#pop_dealstop_play td, #pop_dealstop_play th{padding:5px 10px;}
+.explain_ul li{position:relative;padding-left:14px;font-size:14px;line-height:28px;color:#757575;}
+.explain_ul li::before{content:'';display:inline-block;position:absolute;top:12px;left:0;width:4px;height:4px;background:#757575;}
+
+.explain_ul.type_new{margin-top:-5px;margin-bottom:5px;}
+.explain_ul.type_new li{line-height:20px;}
+.explain_ul.type_new li::before{top:9px;}
+
+
+#pop_push_request .messageWrap{letter-spacing:-0.5px;}
+#pop_push_request .messageWrap .select_css{margin:20px auto 0;width:224px;}
+
+/* WEB02309_1 */
+#pop_printstatus_manage .pop_wrap{padding-bottom:0;margin-top:0 !important;top:140px !important;}
+#pop_printstatus_manage .pop_wrap::after{content: '';display: block;height: 140px;position: absolute;bottom: -140px;left: 0;width: 100%;}
+.table_accordion.submit_type .group_title li:nth-child(1){width: 40%;}
+.table_accordion.submit_type .group_title li:nth-child(2){width: 20%;}
+.table_accordion.submit_type .group_title li:nth-child(3){width: 20%;}
+.table_accordion.submit_type .group_title li:nth-child(4){width: 20%;}
+
+.table_accordion.submit_type .group_desc dt .lst_title li:nth-child(1){width: 40%;}
+.table_accordion.submit_type .group_desc dt .lst_title li:nth-child(2){text-align: center; width: 20%;}
+.table_accordion.submit_type .group_desc dt .lst_title li:nth-child(3){width: 20%;}
+.table_accordion.submit_type .group_desc dt .lst_title li:nth-child(4){width: 20%;}
+
+.table_accordion.submit_type .group_desc dd{padding:20px;}
+.table_accordion.submit_type .group_desc dd .message_box:first-of-type{margin-top:0;}
+.table_accordion.submit_type .message_box .message_desc{margin-top:0;font-size:16px;color:#3348ae;}
+.table_accordion.submit_type .message_box .companyinfo_table th{text-align:center;}
+.table_accordion.submit_type .message_box .companyinfo_table td{background:#fff;}
+
+
+/* WEB2401 마이페이지 > 증빙서류관리 */
+.text_link{display: inline-block;height: 29px;line-height: 29px;font-size: 14px;color: #3348ae !important;text-decoration: underline !important;}
+#pop_checkform_print .companyinfo_table.th_vertical th, #pop_checkform_print .companyinfo_table.th_vertical td{height:40px;padding:0 20px;}
+#pop_checkform_print .companyinfo_table.th_vertical td:nth-child(1){border-right:1px solid #ddd;}
+.certifi_explain{padding:28px 32px;border:1px solid #ddd;background:#FEFBFA;}
+
+/* WEB2308 거래현황관리 - 체결현황상세화면 */
+/* #pop_concolusion_detail .pop_wrap{height:1872px;} */
+#pop_concolusion_detail .pop_wrap::after{content: '';display: block;height: 140px;position: absolute;bottom: -140px;left: 0;width: 100%;}
+#pop_concolusion_detail h5:first-child{margin-top:0;}
+.table_accordion.shareholder_table.pop_accordion .group_title li:nth-child(1), .table_accordion.shareholder_table.pop_accordion .group_desc dt .lst_title li:nth-child(1){width:75px;}
+.table_accordion.shareholder_table.pop_accordion .group_title li:nth-child(2), .table_accordion.shareholder_table.pop_accordion .group_desc dt .lst_title li:nth-child(2){width:85px;}
+.table_accordion.shareholder_table.pop_accordion .group_title li:nth-child(3), .table_accordion.shareholder_table.pop_accordion .group_desc dt .lst_title li:nth-child(3){width:70px;}
+.table_accordion.shareholder_table.pop_accordion .group_title li:nth-child(4), .table_accordion.shareholder_table.pop_accordion .group_desc dt .lst_title li:nth-child(4){width:130px;}
+.table_accordion.shareholder_table.pop_accordion .group_title li:nth-child(5), .table_accordion.shareholder_table.pop_accordion .group_desc dt .lst_title li:nth-child(5){width:85px;}
+.table_accordion.shareholder_table.pop_accordion .group_title li:nth-child(6), .table_accordion.shareholder_table.pop_accordion .group_desc dt .lst_title li:nth-child(6){width:105px;}
+.table_accordion.shareholder_table.pop_accordion .group_title li:nth-child(7), .table_accordion.shareholder_table.pop_accordion .group_desc dt .lst_title li:nth-child(7){width:105px;}
+.table_accordion.shareholder_table.pop_accordion .group_title li:nth-child(8), .table_accordion.shareholder_table.pop_accordion .group_desc dt .lst_title li:nth-child(8){width:365px;}
+.pop_md_tit{margin-top:30px;font-size:28px;line-height:25px;color:#000;text-align:center;}
+
+/* WEB2202 주주명부관리 상세 */
+#pop_shareholder_detail .pop_wrap::after{content: '';display: block;height: 140px;position: absolute;bottom: -140px;left: 0;width: 100%;}
+#pop_shareholder_detail h5:first-child{margin-top:0;}
+.major_shareholders_wrap.pop_major_shareholders li > table{width:400px;}
+.major_shareholders_wrap.pop_major_shareholders li:nth-child(2){padding-left:25px;padding-right:25px;}
+.major_shareholders_wrap.pop_major_shareholders li dl{width:350px;}
+.major_shareholders_wrap.pop_major_shareholders li dd span:nth-child(1){width:86px;}
+.type_finace_table thead .form_control{width:150px;text-align:center;}
+.type_finace_table tbody .form_control{text-align:right;}
+.type_finace_table tbody td:first-child{padding-left:20px;}
+.type_finace_table tbody td:not(:first-child){text-align:right;}
+.tbl_personal_info tbody td .form_control{text-align:right;}
+.tbl_personal_info tbody td[rowspan="3"] .form_control{text-align:center;}
+.tbl_personal_info tbody tr:nth-child(3n) td:not(:first-child){text-align:right;padding-right:15px;}
+
+/* WEB2302 거래현황관리 > 주문현황 */
+.double_btnwrap{font-size:0;}
+.double_btnwrap button + button{margin-left:10px;}
+.group_date_srch .box{float:left;line-height:80px;}
+.group_date_srch .box dt, .group_date_srch .box dd{float:left;}
+.group_date_srch .box .input_check + .input_check{margin-left:30px;}
+.group_date_srch .box:nth-child(1){width:32%;border-right:1px solid #ddd;}
+.group_date_srch .box:nth-child(1) dt{padding:0 20px 0 40px;}
+.group_date_srch .box:nth-child(2){width:32%;border-right:1px solid #ddd;}
+.group_date_srch .box:nth-child(2) dt{padding:0 20px 0 40px;}
+.group_date_srch .box:nth-child(3){line-height:40px;}
+.group_date_srch .box:nth-child(3) dt{padding:0 20px 0 20px;line-height:80px;}
+.group_date_srch .box:nth-child(3) .date_btn_wrap{display:block;padding-right:0;}
+
+/* 팝업 */
+#pop_join_success .messageWrap{padding-top:60px;background:url(../img/sub/img_join_ok.png) no-repeat 50% 0;}
+
+#pop_address_find .contents_wrap{height:518px;}
+#pop_address_find table{width:100%;border-collapse: collapse;border-spacing: 0;}
+#pop_address_find table caption{position: absolute;font-size: 0;left: -99999px;}
+#pop_address_find .td_col2{margin-bottom:15px;}
+#pop_address_find .address_result{height:202px;overflow-y:auto;margin-top:15px;margin-bottom:15px;border:1px solid #ddd;padding:10px 20px;}
+#pop_address_find .address_result li{padding:10px;border-bottom:1px dotted #ddd;}
+#pop_address_find .address_result li:hover{background:#eff3f8;}
+#pop_address_find .address_result li a{position:relative;display:block;padding-left:50px;}
+#pop_address_find .address_result li a span{position:absolute;top:0;left:0;display:inline-block;}
+#pop_address_find .address_detail th{width:74px;font-weight:400;text-align:left;}
+#pop_address_find .address_detail .form_control{margin-top:7px;margin-bottom:7px;}
+#pop_address_find .address_detail .form_control.form_sm{width:150px;}
+#pop_address_find .address_detail:last-child .form_control{margin-bottom:0;}
+
+#pop_stanindu_find table{width:100%;border-collapse: collapse;border-spacing: 0;}
+#pop_stanindu_find table caption{position: absolute;font-size: 0;left: -99999px;}
+#pop_stanindu_find h5{font-size:16px;}
+#pop_stanindu_find .contents_wrap{padding-bottom:0;}
+#pop_stanindu_find .td_col2{margin-bottom:15px;}
+#pop_stanindu_find .address_result{height:202px;overflow-y:auto;margin-top:15px;margin-bottom:15px;border:1px solid #ddd;padding:10px 20px;}
+#pop_stanindu_find .address_result li{position:relative;border-bottom:1px dotted #ddd;margin-right:10px;}
+#pop_stanindu_find .address_result li a:hover{background:#eff3f8;}
+#pop_stanindu_find .address_result li a{display:block;padding:10px;}
+#pop_stanindu_find .address_result .btn_stanindu_delete{position:absolute;top:13px;right:-21px;display:inline-block;width:17px;height:17px;text-indent:-9999px;background:url(../img/common/ico_popclose_black.png) no-repeat 50% / 11px;border:1px solid #ddd;cursor:pointer;}
+#pop_stanindu_find .board_paging{position:relative;}
+#pop_stanindu_find .board_paging .btn_sm.btn_add{position:absolute;top:29px;right:0;height:36px;line-height:34px;}
+#pop_stanindu_find .companyinfo_table td{height:30px;}
+
+
+#pop_compnaykinds_find .contents_wrap{padding-bottom:0;}
+#pop_compnaykinds_find .table_search_wrap{margin-bottom:30px;padding:10px 0;border-top:1px solid #000;border-bottom:1px solid #aaa;background:#EDEFF3;font-size:0;}
+#pop_compnaykinds_find .table_search_wrap::after{content:'';display:block;clear:both;}
+#pop_compnaykinds_find .table_search_wrap table{float:left;width:85%;border-collapse: collapse;border-spacing: 0;}
+#pop_compnaykinds_find .table_search_wrap table th{font-weight:400;padding:5px 20px;font-size:14px;text-align:left;}
+#pop_compnaykinds_find .table_search_wrap table td{padding-top:5px;padding-bottom:5px;}
+#pop_compnaykinds_find .table_search_wrap caption{display:none;}
+#pop_compnaykinds_find .table_search_wrap .btn_wrap{float:left;width:15%;text-align:center;margin-top:54px;}
+
+/* WEB01200 */
+.pop_modal .qr_box > dl{float:left;width:249px;}
+.pop_modal .qr_box.bg_type{background:url(../img/sub/logo_sk.png) no-repeat 30px 88px / 33%;}
+.pop_modal .qr_box > dl dt{font-size:21px;letter-spacing:-0.25px;line-height:34px;}
+.pop_modal .qr_box > dl dd{font-size:15px;line-height:25px;}
+.pop_modal .pop_wrap .contents_wrap .qr_box .qr_area{float:left;margin:0;}
+#pop_qr2 .contents_wrap, #pop_qr3 .contents_wrap{padding-left:30px;padding-right:30px;}
+
+/* WEB01400 */
+.modal_info.pop_md .pop_wrap{padding-bottom:0;width:560px;}
+.modal_info .pop_wrap .contents_wrap{padding-left:30px;padding-right:30px;}
+.modal_info p{font-size:15px;line-height:25px;}
+.modal_info .btn_input_wrap{margin-top:20px;}
+.modal_info .btn_input_wrap *{vertical-align:middle;}
+.modal_info .btn_input_wrap label{margin-right:15px;}
+.modal_info .btn_input_wrap input.form_control{width:310px;}
+
+/* WEB01600 */
+.group_date_srch.type2{margin-top:30px;border-top:1px solid #000;border-bottom:1px solid #aaa;}
+.group_date_srch.type2 label{font-size:14px;color:#333;letter-spacing:-0.25px;margin-right:20px;}
+.group_date_srch.type2 input.form_control{width:410px;vertical-align:middle;}
+.group_date_srch.type2 .btn_sm{height:36px;color:#fff;background:#3348ae;border:0;line-height:36px;}
+.companyinfo_srchwrap.type3 > a{display:inline-block;padding-top:30px;width:23.5%;margin-right:2%;border-top-right-radius: 6px;border-bottom-left-radius: 6px;box-shadow:0px 3px 2px 0px rgba(0, 0, 0, 0.05)}
+.companyinfo_srchwrap.type3 > a:nth-child(3){margin-right:2%;}
+.companyinfo_srchwrap.type3 > a:nth-child(4){margin-right:0;}
+.companyinfo_srchwrap.type3 .box > p{font-size:16px;}
+.companyinfo_srchwrap.type3 .box .logo_wrap{margin:20px auto 40px;}
+
+
+/* WEB01601 */
+#pop_company_infodetail2 .pop_wrap::after{content: '';display: block;height: 140px;position: absolute;bottom: -140px;left: 0;width: 100%;}
+.btn_download2{display: inline-block;padding-left: 29px;height: 29px; line-height: 29px; font-size: 14px; color: #3348ae; text-decoration: underline; background: url(../img/common/ico_file.png) no-repeat 0 50%;}
+.stream_table.companyinfo_table{margin-top:20px;}
+.tr_sumtotal td{background:#f2f2f2;}
+.type_bordertop{position:relative;min-height:68px;margin-top:30px;padding-top:20px;border-top:1px solid #aaa;}
+.type_bordertop button{position:absolute;top:20px;right:0;}
+
+
+/* WEB01602 */
+.companyinfo_srchwrap.long_type .box{padding-top:20px;height:197px;margin-right:16px;width:248px;}
+.companyinfo_srchwrap.long_type .box:last-child{margin-right:0;}
+.companyinfo_srchwrap.long_type .box> .txt_date{margin-top:10px;font-size:15px;color:#555;}
+.companyinfo_srchwrap.long_type .box .logo_wrap{top:105px;}
+.companyinfo_srchwrap.long_type {margin: 0 auto;width: 1040px;}
+
+/* WEB01701 */
+.scroll_listadd{position:relative;display:block;width:100%;height:36px;line-height:34px;margin-top:20px;border:1px solid #ddd;background:#fff;font-size:14px;color:#555;text-align:center;cursor:pointer;}
+.scroll_listadd:hover{background:#f2f2f2;}
+.scroll_listadd::after{position:absolute;top:50%;left:50%;margin-left:25px;margin-top:0;content:'';display:inline-block;width:10px;height:5px;background:url(../img/sub/ico_lstadd.png) no-repeat 50%;}
+
+/* WEB03301 */
+.group_message.type2{position:relative;margin-top:20px;height:80px;line-height:78px;}
+.group_message.type2 p{text-align:left;padding-left:20px;font-size:15px;}
+.group_message.type2 .btn_blue{position:absolute;top:50%;right:20px;margin-top:-24px;}
+
+/* WEB03304 */
+.favorite_company_tit dt {float:left;width: calc(100% - 20px);}
+.favorite_company_tit dd {float:right;}
+
+.txt_linkempasis{display: inline-block;height: 29px; line-height: 29px; font-size: 14px; color: #3348ae; text-decoration: underline;}
+
+/* WEB02103 */
+.pop_sort_infotxt{height:60px;border:1px solid #ddd;background:#fefbfa;line-height:58px;font-size:16px;color:#333;text-align:center;}
+
+/* WEB02105 */
+#pop_excelupload_info .contents_wrap{padding-bottom:20px;}
+#pop_excelupload_info .ol_desc li{font-size:16px;color:#333;line-height:45px;}
+#pop_excelupload_info .ol_desc li p{font-size:14px;color:#757575;line-height:1.6;}
+.select_upload .btn_did{padding-left: 28px; height: 20px; line-height: 20px; font-size: 14px; color: #333; text-decoration: underline; background: url(../img/sub/ico_info.png) no-repeat 0 0;vertical-align:middle;margin-left:20px;}
+
+/* WEB2109 모바일화면 */
+.mobile_manage{position:relative;width:100%;height:100%;}
+.mobile_manage.bg_reverse{background:#F4F4F4;}
+.mobile_manage #container{padding-top:0;min-height:auto;}
+.mobile_manage .m_tit_wrap{padding:60px 16px 0;background:url(../img/sub/mobile/m_logo.png) no-repeat 95.6666% 28px / 100px 28px;}
+.mobile_manage .m_tit_wrap dt{margin-bottom:50px;font-size:30px;}
+.mobile_manage .m_tit_wrap dt.type_ok{background:url(../img/sub/mobile/m_btn_ok.png) no-repeat 70px center / contain;}
+.mobile_manage .m_tit_wrap dt.type_no{background:url(../img/sub/mobile/m_btn_no.png) no-repeat 70px center / contain;}
+.mobile_manage .m_tit_wrap dd::before{content:'';display:inline-block;position:absolute;top:145px;left:0;width:168px;height:2px;background: linear-gradient(to right, #6ED2C5, #575BB2)}
+.mobile_manage .m_tit_wrap dd{font-size:20px;line-height:25px;}
+.mobile_manage .m_desc_wrap{padding:20px 16px 70px;}
+.mobile_manage.bg_reverse .button_wrap{position:absolute;left:0;bottom:20px;width:100%;padding-left:16px;padding-right:16px;}
+.mobile_manage.bg_reverse .button_wrap .m_btn_lg{height:48px;padding-left:20px;background:#fff url(../img/sub/mobile/m_btn_srch.png) no-repeat calc(50% - 60px) 50% / 24px;border:1px solid #3348AE;border-top-right-radius:10px;border-bottom-left-radius:10px;color:#3348AE;font-size:16px;font-weight:700;}
+.mobile_manage .button_wrap.twoline_button::after{content:'';display:block;clear:both;}
+.mobile_manage .button_wrap.twoline_button button{float:left;cursor:pointer;}
+.mobile_manage .button_wrap.twoline_button button:nth-child(1){width:50%}
+.mobile_manage .button_wrap.twoline_button button:nth-child(2){width:50%;font-weight:700;}
+
+.mobile_manage .mobile_header{position:absolute;top:0;left:0;background:#fff;width:100%;height:44px;line-height:44px;padding:0 16px;box-shadow:0 1px 2px rgba(0,0,0,0.15);color:#000826;font-size:17px;font-weight:700;text-align:center;}
+.mobile_manage .shareholder_change_close{position:absolute;top:0;right:16px;width:24px;height:44px;background:url(../img/sub/mobile/m_img_popclose.png) no-repeat 50% / 14px;cursor:pointer;}
+.mobile_manage .shareholder_change_back{position:absolute;top:0;left:16px;width:24px;height:44px;background:url(../img/sub/mobile/m_img_popback.png) no-repeat 50% / 24px;cursor:pointer;}
+.mobile_manage .txt_center_wrap{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);padding-bottom:70px;font-size:20px;text-align:center;}
+
+.mobile_manage .mobile_shareholder_conts{padding:44px 0 0;}
+.mobile_manage .mobile_shareholder_conts.bg_reverse{background:#E6E8F4;}
+.mobile_manage .mobile_shareholder_conts.bg_reverse .section{background:#fff;padding: 10px 16px 15px;margin-top:10px;}
+.mobile_manage .mobile_shareholder_conts.bg_reverse .pw_section{margin-top:10px;padding:15px 16px 50px;background:#F4F4F4;}
+.mobile_manage .mobile_shareholder_conts.bg_reverse .pw_section > .info2{margin-bottom:15px;font-size:14px;letter-spacing: -0.25px;line-height:18px;color:#333;}
+.mobile_manage .mobile_shareholder_conts.bg_reverse .pw_section input{margin-bottom:10px;}
+
+.mobile_manage .m_h5_tit{margin:0 0 10px;font-size:16px;font-weight:700;}
+.mobile_manage .m_h5_tit span{font-size:14px;font-weight:400;margin-left:5px;}
+.mobile_manage .companyinfo_table th, .mobile_manage .companyinfo_table td{height:40px;padding: 0 10px;}
+.mobile_manage .companyinfo_table th{text-align:left;}
+.mobile_manage .companyinfo_table td{font-size:15px;}
+.mobile_manage .companyinfo_table td dl::after{content:'';display:block;clear:both;}
+.mobile_manage .companyinfo_table td dt, .mobile_manage .companyinfo_table td dd{float:left;height:29px;line-height:29px;}
+.mobile_manage .companyinfo_table td dt{width:80px;}
+.mobile_manage .companyinfo_table td dd{width:calc(100% - 80px);text-align:right;}
+.mobile_manage .companyinfo_table + .companyinfo_table{margin-top:10px;}
+
+.mobile_manage .form_control{height:48px;font-size:20px;font-weight:700;line-height:48px;}
+.mobile_manage textarea.form_control{height:177px;} 
+.mobile_manage .m_btn_md{display:block;width:100%;height:54px;line-height:54px;padding:0;border:0;background:#3348AE;font-size:18px;font-weight:700;color:#fff;cursor:pointer;border-top-right-radius:10px;border-bottom-left-radius:10px;}
+.mobile_manage .m_btn_lg{display:block;width:100%;height:44px;line-height:44px;padding:0;border:0;font-size:15px;letter-spacing:-0.25px;cursor:pointer;}
+.mobile_manage .m_btn_lg.btn_blue{background:#3348AE;color:#fff;}
+.mobile_manage .m_btn_lg.btn_gray{background:#fff;color:#333;border-top:1px solid #ccc;line-height:43px;}
+.mobile_manage .txt_info{font-size:14px;line-height:20px;color:#3348AE;}
+.mobile_manage .txt_info.fail{color:#E8055A;}
+.mobile_manage .txt_info span{display:block;padding-left:15px;}
+.mobile_manage .txt_info b{font-size:15px;font-weight:700;}
+
+.mobile_manage .reject_reason{padding:20px 16px 0;}
+.mobile_manage .reject_reason p{margin-bottom:20px;}
+.mobile_manage .reject_reason textarea{margin-bottom:10px;font-size:14px;line-height:24px;font-weight:400;}
+.mobile_manage .reject_reason button.m_btn_lg.btn_blue{height:48px;background:#fff;border:1px solid #ccc;border-top-right-radius:10px;border-bottom-left-radius:10px;color:#3348AE;font-size:16px;font-weight:700;}
+
+.pop_mobile .pop_wrap{width:298px;padding-top:30px;border-radius:8px;overflow:hidden;}
+.pop_mobile .pop_wrap .message_table{height:140px;}
+.pop_mobile .pop_wrap .messageWrap{background:url(../img/sub/mobile/m_img_alertcheck.png) no-repeat 50% 0 / 48px;padding-top:20px;}
+#pop_mobile_alert2 .pop_wrap .messageWrap{background-image: url(../img/sub/mobile/m_btn_no.png)}
+.pop_mobile .pop_wrap .button_wrap{margin-top:0;}
+.pop_mobile .pop_wrap .pop_btn_close{background:url(../img/sub/mobile/m_img_alertclose.png) no-repeat 50% 0 / 20px;}
+
+.mobile_manage .pwd_2th{height:40px;}
+
+/* 3000_1 계약서 팝업 */
+#pop_contract_alone .pop_wrap{padding-bottom:0;}
+#pop_contract_alone .pop_wrap .contents_wrap{padding:0;}
+#pop_contract_alone .box_contract .contract_main{width:679px;}
+#pop_contract_alone .box_contract .contract_aside{padding:10px 26px 0;width:270px;}
+#pop_contract_alone .box_contract .btn_pop_default.btn_blue{width:270px;}
+#pop_contract_alone .box_contract .contract_aside,
+#pop_contract_alone .box_contract .contract_main{height:600px;}
+#pop_contract_alone .box_contract .contract_main > div{height:550px;}
+#pop_contract_alone .box_contract{border-top: 1px solid #666A7C;border-right: 1px solid #666A7C;}
+
+/* print_wrap WEB03311 */
+#print_wrap{position:relative;}
+#print_wrap .btn_wrap{position:absolute;top:18px;left:50%;width:720px;margin-left:-365px;text-align:right;}
+
+@media print{
+    #print_wrap .btn_wrap{display:none;}
+    #print_wrap #amicuslex_container{padding:0 !important;}
+    #print_wrap #amicuslex_container > div{border:none !important;padding-left:40px !important;padding-right:40px !important;}
+}
+
+#print_wrap2 #pop_shareholder_list{display:block !important;}
+#print_wrap2 #pop_shareholder_list .pop_wrap{width:21cm;min-height:29.7cm;margin:auto;}
+#print_wrap2 #pop_shareholder_list .contents_wrap{padding:20px;}
+#print_wrap2 #pop_shareholder_list h5{margin-bottom:30px;}
+#print_wrap2 #pop_shareholder_list .pop_wrap::after{display:none;}
+@media print{
+    #print_wrap2 #pop_shareholder_list .button_wrap{display:none;}
+}
+
+/* ckeditor_wrap */
+.ckeditor_view img{max-width:100%;}
+.ckeditor_view{word-break: break-all;}
+
+.ico_expert{display: inline-block; position: relative; margin:0; width: 51px; height: 22px; vertical-align: middle; background: url(../img/sub/ico_expert.png) no-repeat 0 0;}
+.table_normalView_comment .ico_expert{margin-right: 5px;}
+.pqgrid_rowdatafl button{height:22px !important;line-height:22px !important;}
+.shareholder_write_grid .btn_sm.btn_darkblue.btn_address{vertical-align:middle;}
+
+/* WEB01513 */
+.security_info{padding:30px 0;border-top:1px solid #000;border-bottom:1px solid #aaa;background:#ecf0f4;text-align:center;}
+.security_info .txt_main{font-size:18px;line-height:25px;color:#333}
+.security_info .txt_desc1{margin-top:10px;font-size:16px;line-height:25px;color:#555;}
+.security_info .txt_desc2{margin-top:30px;font-size:15px;line-height:25px;color:#555;}
+.security_info .btn_blue{margin-top:30px;padding-left: 50px;background: #3348AE url(../img/sub/ico_security.png) no-repeat 45px 50%;}
+.security_info .btn_blue:hover{background: #324084 url(../img/sub/ico_security.png) no-repeat 45px 50%;}
+
+/* WEB01514 */
+.contents_intro .tab_md.type50 li{width:50%;}
+.certifi_info .section{padding:55px 0;}
+.certifi_info .section img{display:block;margin:0 auto;}
+.certifi_info .section.bg_gray{background:#ecf0f4;}
+.certifi_info .section.bg_gray2{background:#ecf0f4 url(../img/sub/bg_model_info3_1.png) no-repeat 50% 162px;}
+.certifi_info .section.bg_mobile_certify{background:url(../img/sub/bg_model_info4.png) no-repeat 48% 70%;padding-bottom:275px;}
+.certifi_info .info_tit{font-size:24px;font-weight:700;line-height:36px;color:#333;text-align:center;}
+.certifi_info .info_desc{margin-top:16px;font-size:16px;line-height:25px;color:#333;text-align:center;}
+.certifi_info .model_wrap{margin-top:30px;}
+.certifi_info .model_wrap > dl{width:50%;}
+.certifi_info .model_wrap > dl:nth-child(1){padding-right:10px;}
+.certifi_info .model_wrap > dl:nth-child(2){padding-left:10px;}
+.certifi_info .model_wrap dt{margin-bottom:10px;font-size:20px;font-weight:400;line-height:24px;color:#000;}
+.certifi_info .model_wrap dd p{position:relative;padding-left:10px;font-size:15px;line-height:25px;color:#555;}
+.certifi_info .model_wrap dd p::before{content:"";position:absolute;top:11px;left:0;display:inline-block;width:2px;height:2px;background:#555;}
+.certifi_info .circle_info_wrap{width:720px;margin:100px auto 0;font-size:18px;line-height:25px;color:#fff;}
+.certifi_info .circle_info_wrap::after{content:'';display:block;clear:both}
+.certifi_info .circle_info_wrap li{width:240px;text-align:center;float:left;}
+.certifi_info .circle_info_wrap li:nth-child(1){padding-top:10px;padding-left:20px;}
+.certifi_info .circle_info_wrap li:nth-child(3){padding-right:10px;}
+.certifi_info .mobile_certify{margin-top:140px;}
+.certifi_info .mobile_certify ul{display:inline-block;}
+.certifi_info .mobile_certify li{margin-bottom:40px;}
+.certifi_info .mobile_certify li:last-child{margin-bottom:0;}
+.certifi_info .mobile_certify li dt{display: inline-block; padding-right: 16px; font-size: 20px;line-height:36px;font-weight: 700; color: #3348ae;}
+.certifi_info .mobile_certify li dt:after{content: ''; display: block; margin-top: -20px; height: 13px; background-color: #ffec9e;}
+.certifi_info .mobile_certify li dd{position:relative;margin-top:10px;padding-left:15px;font-size:15px;line-height:25px;color:#444;}
+.certifi_info .mobile_certify li dd::before{content:'';position:absolute;top:11px;left:5px;display:inline-block;width:2px;height:2px;background:#444;}
+.certifi_info .mobile_qr{margin:0 auto;}
+.certifi_info .mobile_qr::after{content:'';display:block;clear:both;}
+.certifi_info .mobile_qr li{float:left;width:250px;text-align:center;padding-top:455px;padding-left:55px;font-size:20px;color:#333;}
+.certifi_info .mobile_qr li:nth-child(1){background:url(../img/sub/bg_model_info5_1.png) no-repeat 50%;}
+.certifi_info .mobile_qr li:nth-child(2){background:url(../img/sub/bg_model_info5_2.png) no-repeat 50%;}
+.certifi_info .mobile_qr li:nth-child(3){background:url(../img/sub/bg_model_info5_3.png) no-repeat 50%;}
+.certifi_info .mobile_qr li:nth-child(4){background:url(../img/sub/bg_model_info5_4.png) no-repeat 50%;}
+
+.certifi_info .total_wrap > div{width:50%;height:250px;line-height:250px;background: linear-gradient(to left, #4e4e9e, #4aac9f);text-align:center;}
+.certifi_info .total_wrap > div img{display:inline;}
+.certifi_info .info_tit_mini{font-size:16px;line-height:25px;color:#3348ae;text-align:center;}
+.certifi_info .info_desc_mini{font-size:14px;line-height:25px;color:#555;text-align:center;}
+.certifi_info .good_point li{float:left;position:relative;width:50%;height:120px;padding-left:150px;}
+.certifi_info .good_point li::before{content:'';position:absolute;top:0;left:0;display:inline-block;width:120px;height:120px;border-radius:50%;background:#fff url(../img/sub/bg_model_total4.png) no-repeat 50%;}
+.certifi_info .good_point li:nth-child(3), .certifi_info .good_point li:nth-child(4){margin-top:30px;}
+.certifi_info .good_point li:nth-child(2)::before{background-image:url(../img/sub/bg_model_total5.png);}
+.certifi_info .good_point li:nth-child(3)::before{background-image:url(../img/sub/bg_model_total6.png);}
+.certifi_info .good_point li:nth-child(4)::before{background-image:url(../img/sub/bg_model_total7.png);}
+.certifi_info .good_point li dt{display: inline-block; padding-right: 16px; font-size: 20px;line-height:36px;font-weight: 700; color: #3348ae;}
+.certifi_info .good_point li dt:after{content: ''; display: block; margin-top: -20px; height: 13px; background-color: #ffec9e;}
+.certifi_info .good_point li dd{position:relative;margin-top:10px;padding-left:15px;font-size:15px;line-height:25px;color:#444;}
+.certifi_info .good_point li dd::before{content:'';position:absolute;top:11px;left:5px;display:inline-block;width:2px;height:2px;background:#444;}
+.certifi_info .certify_app{width:941px;margin:0 auto;padding:65px 0 150px;background:url(../img/sub/bg_model_total8.png) no-repeat 50%;}
+.certifi_info .certify_app::after{content:'';display:block;clear:both}
+.certifi_info .certify_app li{float:left;width:250px;text-align:center;}
+.certifi_info .certify_app dl{margin-top:30px;}
+.certifi_info .certify_app dt{padding-top:30px;margin-bottom:10px;font-size:20px;font-weight:700;color:#3348ae;}
+.certifi_info .certify_app dd{font-size:15px;line-height:18px;color:#444;}
+.certifi_info .certify_app dd p{margin-bottom:10px;}
+.certifi_info .certify_app dd p:last-child{margin-bottom:0;}
+.certifi_info .certify_app li:nth-child(2){width:441px;}
+.certifi_info .certify_app li:nth-child(2) dl{margin-top:40px;}
+.certifi_info .certify_app li:nth-child(2) dt{position:relative;color:#fff;padding-top:40px;}
+.certifi_info .certify_app li:nth-child(2) dt::after{position:absolute;bottom:-14px;left:50%;margin-left:-14px;content:'';display:inline-block;width:27px;height:2px;background:#fff;}
+.certifi_info .certify_app li:nth-child(2) dd{padding-top:14px;color:#fff;line-height:25px;}
+
+.tbl_fixh td{height:73px !important;}

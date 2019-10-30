@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>  
+	<script src="../js/vendor/jquery-ui.min.js"></script> 
+
+	<!--PQ Grid files-->
+    <link rel="stylesheet" href="../css/vendor/pqgrid.min.css" />
+    <link rel="stylesheet" href="../css/vendor/pqgrid.ui.min.css" /> 
+    <!--bootstrap theme-->
+    <link rel='stylesheet' href='../css/vendor/themes/bootstrap/pqgrid.css' />  
+	<script src="../js/vendor/pqgrid.min.js"></script>  
+    <!--for localization and intellisense -->
+    <script src="../js/vendor/localize/pq-localize-en.js"></script>
+	<!--for touch devices-->
+    <script src="../js/vendor/pqtouch.min.js"></script>
+	<!--jsZip for zip and xlsx import/export--> 
+    <script src="../js/vendor/jszip.min.js"></script>
+
+
+	<script src="../js/common.js"></script>
+
+	<script> 
+		$(function () {
+		    var data = [
+		        { rank: 1, company: 'Exxon Mobil', revenues: 339938.0, profits: 36130.0 },
+		        { rank: 2, company: 'Wal-Mart Stores', revenues: 315654.0, profits: 11231.0 },
+		        { rank: 3, company: 'Royal Dutch Shell', revenues: 306731.0, profits: 25311.0 },
+		        { rank: 4, company: 'BP', revenues: 267600.0, profits: 22341.0 },
+		        { rank: 5, company: 'General Motors', revenues: 192604.0, profits: -10567.0 },
+		        { rank: 6, company: 'Chevron', revenues: 189481.0, profits: 14099.0 },
+		        { rank: 7, company: 'DaimlerChrysler', revenues: 186106.3, profits: 3536.3 },
+		        { rank: 8, company: 'Toyota Motor', revenues: 185805.0, profits: 12119.6 },
+		        { rank: 9, company: 'Ford Motor', revenues: 177210.0, profits: 2024.0 },
+		        { rank: 10, company: 'ConocoPhillips', revenues: 166683.0, profits: 13529.0 },
+		        { rank: 11, company: 'General Electric', revenues: 157153.0, profits: 16353.0 },
+		        { rank: 12, company: 'Total', revenues: 152360.7, profits: 15250.0 },
+		        { rank: 13, company: 'ING Group', revenues: 138235.3, profits: 8958.9 },
+		        { rank: 14, company: 'Citigroup', revenues: 131045.0, profits: 24589.0 },
+		        { rank: 15, company: 'AXA', revenues: 129839.2, profits: 5186.5 },
+		        { rank: 16, company: 'Allianz', revenues: 121406.0, profits: 5442.4 },
+		        { rank: 17, company: 'Volkswagen', revenues: 118376.6, profits: 1391.7 },
+		        { rank: 18, company: 'Fortis', revenues: 112351.4, profits: 4896.3 },
+		        { rank: 19, company: 'Crédit Agricole', revenues: 110764.6, profits: 7434.3 },
+		        { rank: 20, company: 'American Intl. Group', revenues: 108905.0, profits: 10477.0 }
+		    ];
+
+		    var obj = {
+		        numberCell:{resizable:true,title:"#",width:30,minWidth:30},
+		        editor: {type: 'textbox'},
+		        title: 'TEST!!', 
+		        resizable:true,
+		        menuIcon: true, 
+		        scrollModel:{autoFit:true}
+		    };
+
+		    obj.colModel = [
+		        { title: "Rank", width: 100, dataType: "integer", dataIndx: "rank" },
+		        { title: "Company", width: 200, dataType: "string", dataIndx: "company" },
+		        { title: "Revenues ($ millions)", width: 150, dataType: "float", format: '$#,###.00', dataIndx: "revenues" },
+		        { title: "Profits ($ millions)", width: 150, dataType: "float", format: '$#,###.00', dataIndx: "profits" }
+		    ]; 
+
+		    obj.dataModel = { data: data };
+
+		    var pqgrid = $("#grid_json").pqGrid(obj, {
+		    	rowHt: 55
+		    });
+
+
+
+		});
+
+	</script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>알림관리 </h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">Push 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">SMS관리</a></li>
+				<li><a href="javascript:void(0);">E-Mail 관리</a></li>
+				<li><a href="javascript:void(0);">채팅세션 관리<br>(Sendbird)</a></li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>SMS 관리</h4>
+				<div class="group_srch pt30">
+					<table class="tb_srch">
+						<tbody>
+							<tr>
+								<th scope="row">발송대상</th>
+								<td class="member_area">
+									<select class="select_css form_control">
+									    <option>전체회원</option>
+									</select>
+								</td>
+								<th scope="row">발송기간</th>
+								<td class="date_area">
+									<!-- 데이터피커 -->
+									<input type="text" class="datepicker form_control"> ~ 
+									<input type="text" class="datepicker form_control">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">검색어</th>
+								<td class="srch_area">
+									<select class="select_css form_control">
+									    <option>전체</option>
+									</select>
+									<input type="text" class="form_control">
+								</td>
+								<th scope="row"></th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="submit_area">
+						<button class="btn btn_md btn_default">초기화</button>
+						<button class="btn btn_md btn_submit">검색</button>
+					</div>
+				</div>	<!-- // group_search -->
+				
+				<div class="table-normalList pt50">
+					<div class="tableinfo_area">
+						<div class="boardTotalcount">총 <span>245</span>건</div>
+						<div class="print">
+							<span>출력수</span>
+							<select name="" id="" class="select_css form_control">
+								<option value="">10개</option>
+							</select>
+						</div>
+					</div>
+				    	
+				    <table>
+				        <caption>SMS 관리</caption>
+				        <colgroup>
+				            <col width="87">
+				            <col width="*">
+				            <col width="120">
+				            <col width="85">
+				            <col width="60">
+				            <col width="130">
+				            <col width="109">
+				        </colgroup>
+				        <thead>
+				        	<th>번호</th>
+				        	<th>내용</th>
+				        	<th>발송자</th>
+				        	<th>발송대상</th>
+				        	<th>발송인원</th>
+				        	<th>발송일시</th>
+				        	<th>성공여부</th>
+				        </thead>
+				        <tbody>
+				            <tr>
+				                <td>10</td>
+				                <td><a href="javascript:void(0);">[SIP] 문자 내용이 들어갑니다. 문자 내용이 들어갑니다. 문자 내용이 들어갑니다. 문자 내용이 들어갑니다. </a></td>
+				                <td>02-1234-1234</td>
+				                <td>전체회원</td>
+				                <td>250</td>
+				                <td>2019-06-27 00:00</td>
+				                <td>성공</td>
+				            </tr>
+				            <tr>
+				                <td>10</td>
+				                <td><a href="javascript:void(0);">[SIP] 문자 내용이 들어갑니다. 문자 내용이 들어갑니다. 문자 내용이 들어갑니다. 문자 내용이 들어갑니다. </a></td>
+				                <td>02-1234-1234</td>
+				                <td>전체회원</td>
+				                <td>250</td>
+				                <td>2019-06-27 00:00</td>
+				                <td>성공</td>
+				            </tr>
+				            <tr>
+				                <td>10</td>
+				                <td><a href="javascript:void(0);">[SIP] 문자 내용이 들어갑니다. 문자 내용이 들어갑니다. 문자 내용이 들어갑니다. 문자 내용이 들어갑니다. </a></td>
+				                <td>02-1234-1234</td>
+				                <td>전체회원</td>
+				                <td>250</td>
+				                <td>2019-06-27 00:00</td>
+				                <td>성공</td>
+				            </tr>
+				        </tbody>
+				    </table>
+
+				    <div class="boardPaging pt20">
+				        <ul>
+				            <li><a href="javascript:void(0);" class="pagingFirst">pagingFirst</a></li>
+				            <li><a href="javascript:void(0);" class="pagingPrev">pagingPrev</a></li>
+				            <li><a href="javascript:void(0);" class="active">1</a></li>
+				            <li><a href="javascript:void(0);">2</a></li>
+				            <li><a href="javascript:void(0);">3</a></li>
+				            <li><a href="javascript:void(0);">4</a></li>
+				            <li><a href="javascript:void(0);">5</a></li>
+				            <li><a href="javascript:void(0);" class="pagingNext">pagingNext</a></li>
+				            <li><a href="javascript:void(0);" class="pagingLast">pagingLast</a></li>
+				        </ul>
+				    </div>
+				</div>	<!-- // table-normalList -->
+
+				<h5 class="pt50">SMS 발송</h5>
+
+				<div class="table-normalWrite pt20">
+				    <table>
+				        <caption>SMS 발송</caption>
+				        <colgroup>
+				            <col width="140">
+				            <col width="*">
+				        </colgroup>
+				        <tbody>
+				            <tr>
+				                <th>수신자</th>
+				                <td class="srch_area">
+				                	<input type="text" class="form_control">
+				                	<button class="btn btn_in btn_outline">회원검색</button>
+				                </td>
+				            </tr>
+				            <tr>
+				                <th>발송자</th>
+				                <td><input type="text" class="form_control"></td>
+				            </tr>
+				            <tr>
+				                <th>입력방식</th>
+				                <td>
+				                	<select name="" id="" class="select_css form_control">
+				                		<option value="">수동입력</option>
+				                	</select>
+				                </td>
+				            </tr>
+				            <tr>
+				                <th>내용</th>
+				                <td class="text_area">
+				                	<textarea name="" id="" class="form_control"></textarea>
+				                	<span class="byte">0 Byte / 90 Byte</span>
+				                </td>
+				            </tr>
+				        </tbody>
+				    </table>
+				</div>
+
+				<div id="grid_json" class="mt40"></div>   
+
+				<div class="submit_area">
+					<button class="btn btn_lg btn_submit">발송하기</button>
+				</div>
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- ckeditor -->
+	<script src="../js/vendor/ckeditor/ckeditor.js"></script> 
+	<script>
+		$(document).ready(function() {
+			CKEDITOR.replace('ckeditor_write', {
+				height: 300, //editor height 높이 지정
+				resize_enabled: false //editor 크기조정 삭제
+				,fullPage : true //doctype과html까지나오기
+				,allowedContent: true
+			});
+
+			// 개별회원 클릭시 수신자행 표시
+			$(document).on('click', '.membertype_radiowrap .input_radio .label_text', function() {
+				var click_radio = $(this).closest('.input_radio');
+				if(click_radio.find('input[type="radio"]').hasClass('individaul_radio')) {
+					var add_tr ='<tr class="add_tr_search">'+
+									'<th>수신자</th>'+
+									'<td>'+
+										'<div class="td_col2">'+
+											'<div>'+
+												'<input type="text" class="form_control" readonly="">'+
+											'</div>'+
+											'<div>'+
+												'<button type="button" class="btn_sm btn_gray2" onclick="$(\'#pop_select_board\').neoModal();">회원검색</button>'+
+											'</div>'+
+										'</div>'
+									'</td>'
+								'</tr>';
+					if($('.add_tr_search').length < 1){
+						$(this).closest('tr').after(add_tr);
+					}
+				} else {
+					$('.add_tr_search').remove();
+				}
+			});
+
+			// thead 체크박스 클릭시 밑 체크박스 전부 선택
+			var _theadChkBox = 'thead input[type="checkbox"]';
+			var _tbodyChkBox = 'tbody input[type="checkbox"]';
+
+			$(document).on('click', '.table_normal_list thead input[type="checkbox"]', function() {
+				$(this).closest('table').find(_tbodyChkBox).prop('checked', this.checked);
+			});
+
+			$(document).on('click', '.table_normal_list tbody input[type="checkbox"]', function() {
+				var _$chkTable = $(this).closest('table');
+				if(_$chkTable.find(_tbodyChkBox).length === _$chkTable.find(_tbodyChkBox + ':checked').length) {
+					_$chkTable.find(_theadChkBox).prop('checked', true);
+				} else {
+					_$chkTable.find(_theadChkBox).prop('checked', false);
+				}
+			});
+		})
+		
+	</script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>알림 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">Push 관리</a></li>
+				<li><a href="javascript:void(0);">SMS 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">이메일발송 관리</a></li>
+				<li><a href="javascript:void(0);">자동입력 설정</a></li>
+				<li><a href="javascript:void(0);">채팅세션 관리<br>(Sendbird)</a></li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>이메일발송 관리</h4>
+
+				<!-- 리스트 등록 -->
+				<div class="companyinfo_table mt30 type_search">
+					<table>
+						<caption>이메일관리 등록</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>발송대상</th>
+								<td>
+									<div class="membertype_radiowrap">
+										<label class="input_radio" for="total_member">
+											<input type="radio" id="total_member" name="member_type" checked="">
+											<span class="label_text">전체회원</span>
+										</label>
+										<label class="input_radio" for="company_member">
+											<input type="radio" id="company_member" name="member_type">
+											<span class="label_text">등록기업</span>
+										</label>
+										<label class="input_radio" for="invest_member">
+											<input type="radio" id="invest_member" name="member_type">
+											<span class="label_text">투자자</span>
+										</label>
+										<label class="input_radio" for="individual_member">
+											<input type="radio" id="individual_member" name="member_type" class="individaul_radio">
+											<span class="label_text">개별회원</span>
+										</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>입력방식</th>
+								<td>
+									<select class="form_control select_css" style="width:300px;">
+										<option value="">수동입력</option>
+										<option value="">자동입력 분류명1</option>
+										<option value="">자동입력 분류명2</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>발송일시</th>
+								<td>
+									<div class="datepicker_alone_wrap">
+										<input type="text" class="datepicker form_control">
+										<input type="text" class="form_control">시
+										<input type="text" class="form_control">분
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>메일제목</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<textarea id="ckeditor_write">
+
+										<!-- S: 이메일 템플릿 -->
+										<!DOCTYPE html>
+										<html lang="ko">
+										<head>
+											<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+											<title>Be My Unicon</title>
+										</head>
+
+										<body>
+										<table width="750" border="0" cellspacing="0" cellpadding="0" align="center" style="border:1px solid #dddddd;border-top:1px solid #3348ae;">
+											<tbody>
+												<tr>
+													<td style="height:83px;vertical-align:bottom;">
+														<!-- header -->
+														<table width="100%" border="0" cellspacing="0" cellpadding="0">
+															<tr>
+																<td style="width:40px;"></td>
+																<td>
+																	<img src="../img/common/logo_gnb.png" width="137" height="37" style="vertical-align:bottom;" alt="" border="0" />
+																</td>
+															</tr>
+														</table>
+														<!-- //header -->
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<table width="100%" border="0" cellspacing="0" cellpadding="0">
+															<tbody>
+																<tr>
+																	<td style="height:25px;">&nbsp;</td>
+																</tr>
+																<tr>
+																	<td style="width:118px;">&nbsp;</td>
+																	<td>
+																		<!-- contents -->
+																		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																			<tbody>
+																				<tr>
+																					<td style="text-align:center;font-size:24px;line-height:44px;color:#333;">템플릿 제목이 들어갑니다</td>
+																				</tr>
+																				<tr>
+																					<td style="height:35px;">&nbsp;</td>
+																				</tr>
+																				<tr>
+																					<td style="font-size:15px;line-height:28px;color:#555;">
+																						<span style="color:#3348ae;font-size:18px;">홍길동</span> 회원님,<br><br>
+																						템플릿 내용이 들어갑니다.<br>
+																						템플릿 내용이 들어갑니다.템플릿 내용이 들어갑니다.<br>
+																						템플릿 내용이 들어갑니다.템플릿 내용이 들어갑니다.
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		<!-- //contents -->
+																	</td>
+																	<td style="width:118px;">&nbsp;</td>
+																</tr>
+																<tr>
+																	<td style="height:25px;">&nbsp;</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<!-- footer -->
+														<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f2f2f2">
+															<tbody>
+																<tr>
+																	<td style="height:20px;"></td>
+																</tr>
+																<tr>
+																	<td style="width:30px;"></td>
+																	<td style="font-size:14px;line-height:20px;color:#555;">
+																		본 메일은 발신전용 메일입니다. 궁금하신 점은 1:1 문의로 문의해주시기 바랍니다.<br>
+																		타인이 회원님의 이메일을 잘못 입력한 경우 메일이 발송될 수 있습니다.<br>
+																		잘못 수신될 메일이라면 고객센터를 이용해주시기 바랍니다.
+																	</td>
+																</tr>
+																<tr>
+																	<td style="height:15px;"></td>
+																</tr>
+																<tr>
+																	<td style="width:30px;"></td>
+																	<td style="font-size:13px;line-height:15px;color:#757575;">CORYRIGHT ⓒ 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</td>
+																</tr>
+																<tr>
+																	<td style="height:20px;"></td>
+																</tr>
+															</tbody>
+														</table>
+														<!-- //footer -->
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										</body>
+										</html>
+
+										<!-- E: 이메일 템플릿 -->
+
+									</textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="submit_area ar clearfix pt10">
+					<button type="button" class="btn_md btn_gray fl">삭제</button>
+					<button type="button" class="btn_md btn_white">등록</button>
+					<button type="button" class="btn_md btn_blue">전송</button>
+				</div>
+				<!-- // 리스트 등록 -->
+
+				<!-- 리스트 검색 -->
+				<div class="companyinfo_table mt30 type_search">
+					<table>
+						<caption>이메일 보내기</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>발송대상</th>
+								<td>
+									<select class="select_css form_control">
+										<option value="">전체</option>
+										<option value="">등록기업</option>
+										<option value="">투자자</option>
+										<option value="">개별회원</option>
+									</select>
+								</td>
+								<th>발송기간</th>
+								<td>
+									<ul class="datepicker_searchwrap clearfix">
+										<li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+										<li class="datepicker_connect">~</li>
+										<li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>발송상태</th>
+								<td>
+									<label class="input_radio" for="total_status">
+										<input type="radio" id="total_status" name="send_status" checked="">
+										<span class="label_text">전체</span>
+									</label>
+									<label class="input_radio" for="wait_status">
+										<input type="radio" id="wait_status" name="send_status">
+										<span class="label_text">대기</span>
+									</label>
+									<label class="input_radio" for="complete_status">
+										<input type="radio" id="complete_status" name="send_status">
+										<span class="label_text">완료</span>
+									</label>
+								</td>
+								<th>검색어</th>
+								<td>
+									<div class="td_col2">
+										<div  style="width:130px;">
+											<select class="select_css form_control">
+												<option value="">전체</option>
+												<option value="">발송자</option>
+												<option value="">내용</option>
+											</select>
+										</div>
+										<div>
+											<input type="text" class="form_control" maxlength="">
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="submit_area ac">
+					<button type="button" class="btn_md btn_white">초기화</button>
+					<button type="button" class="btn_md btn_blue">검색</button>
+				</div>
+				<!-- // 리스트 검색 -->
+
+				<!-- 리스트 -->
+				<div class="table_normal_list mt40">
+					<div class="group_tableinfo">
+						<span class="num_total">총 <em class="txt_sell_color">265</em>건</span>
+						<div class="srch_area">
+							<button type="button" class="btn_sm btn_blue">삭제</button>
+							<select class="select_css form_control page_num_width">
+								<option value="20">20</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
+						</div>
+					</div>
+
+					<table>
+						<caption>이메일 발송</caption>
+						<colgroup>
+							<col width="3%">
+							<col width="6%">
+							<col width="33%">
+							<col width="15%">
+							<col width="7%">
+							<col width="7%">
+							<col width="13%">
+							<col width="9%">
+							<col width="9%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</th>
+								<th>No</th>
+								<th>메일 제목</th>
+								<th>발송대상</th>
+								<th>발송인원</th>
+								<th>발송상태</th>
+								<th>발송일시</th>
+								<th>성공인원</th>
+								<th>실패인원</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 데이터없을때 -->
+							<!-- <tr>
+								<td class="blank_area" colspan="9">
+									<p class="txt_blank">데이터가 없습니다.</p>
+								</td>
+							</tr> -->
+							<tr class="check_tr">
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>10</td>
+								<td class="al">
+									메일 제목
+								</td>
+								<td>전체회원</td>
+								<td>250</td>
+								<td><span class="txt_buy_color">대기</span></td>
+								<td>2019-06-26 23:00</td>
+								<td>500</td>
+								<td><a href="javascript:void(0);" class="btn_link" onclick="$('#pop_fail_people').neoModal();">300</a></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>9</td>
+								<td class="al">
+									메일 제목
+								</td>
+								<td>발행기업</td>
+								<td>250</td>
+								<td>완료</td>
+								<td>2019-06-26 23:00</td>
+								<td>500</td>
+								<td>0</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="board_paging">
+						<ul>
+							<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+							<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+							<li><a href="javascript:void(0);" class="active">1</a></li>
+							<li><a href="javascript:void(0);">2</a></li>
+							<li><a href="javascript:void(0);">3</a></li>
+							<li><a href="javascript:void(0);">4</a></li>
+							<li><a href="javascript:void(0);">5</a></li>
+							<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+							<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- // 리스트 -->
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+<!-- 팝업 -->
+<!-- 회원검색 -->
+<div id="pop_select_board" class="pop_dim_wrap pop_modal pop_lg" tabindex="-1" style="background: rgba(0, 0, 0, 0.5); z-index: 99999; display: none;">
+	<div class="pop_wrap" style="position: absolute; top: 50%; left: 50%; margin-top: -436.5px; margin-left: -475px;">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			회원검색
+		</div>
+		<div class="contents_wrap">
+			<div class="companyinfo_table">
+				<table>
+					<caption>검색</caption>
+					<colgroup>
+						<col width="130">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>가입일</th>
+							<td>
+								<ul class="datepicker_searchwrap clearfix">
+									<li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+									<li class="datepicker_connect">~</li>
+									<li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>발송대상</th>
+							<td class="pop_search_tdwrap">
+								<select class="select_css form_control">
+									<option value="">전체회원</option>
+								</select>
+								<select class="select_css form_control">
+									<option value="">이름</option>
+								</select>
+								<input type="text" class="form_control" maxlength="">
+								<button type="button" class="btn_sm btn_darkblue">검색</button>
+								<label class="input_check">
+									<input type="checkbox" id="" name="check1">
+									<span class="label_text">수신거부 제외</span>
+								</label>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p class="deallist_total">게시물수 : <em class="txt_sell_color">245</em></p>
+
+			<div class="board_deallist2 type_selectboard mt20 type_col8">
+				<div class="inner_div">
+					<table>
+						<caption>게시물선택, 제목, 이메일, 등록기업, 등록일</caption>
+						<colgroup>
+							<col width="45">
+							<col width="80">
+							<col width="149">
+							<col width="105">
+							<col width="128">
+							<col width="200">
+							<col width="55">
+							<col width="108">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>선택</th>
+								<th>회원구분</th>
+								<th>회원명(기업명)</th>
+								<th>닉네임</th>
+								<th>휴대폰</th>
+								<th>이메일</th>
+								<th>수신동의</th>
+								<th>가입일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 데이터없을때 -->
+							<!-- <tr>
+								<td class="blank_area" colspan="8">
+									<p class="txt_blank">데이터가 없습니다</p>
+								</td>
+							</tr> -->
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr1">
+										<input type="radio" id="select_tr1" name="select_tr" checked="">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td>투자자</td>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>예</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr2">
+										<input type="radio" id="select_tr2" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td>등록기업</td>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>아니오</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr3">
+										<input type="radio" id="select_tr3" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td>등록기업</td>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>아니오</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr4">
+										<input type="radio" id="select_tr4" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td>등록기업</td>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>아니오</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr5">
+										<input type="radio" id="select_tr5" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td>등록기업</td>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>아니오</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr6">
+										<input type="radio" id="select_tr6" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td>등록기업</td>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>아니오</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr7">
+										<input type="radio" id="select_tr7" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td>등록기업</td>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>아니오</td>
+								<td>2019-06-27</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_radio pop_notext" for="select_tr8">
+										<input type="radio" id="select_tr8" name="select_tr">
+										<span class="label_text">라디오 체크</span>
+									</label>
+								</td>
+								<td>등록기업</td>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>아니오</td>
+								<td>2019-06-27</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_white">취소</button>
+			<button type="button" class="btn_md btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<!-- 실패인원 -->
+<div id="pop_fail_people" class="pop_dim_wrap pop_modal pop_md">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			실패인원
+		</div>
+		<div class="contents_wrap">
+			<p class="deallist_total mt0">실패 인원 : <em class="txt_sell_color">15</em></p>
+
+			<div class="board_deallist2 type_selectboard mt20 type_md2">
+				<div class="inner_div">
+					<table>
+						<caption>실패인원</caption>
+						<colgroup>
+							<col width="165">
+							<col width="104">
+							<col width="120">
+							<col width="190">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>회원명(기업명)</th>
+								<th>닉네임</th>
+								<th>휴대폰</th>
+								<th>이메일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 데이터없을때 -->
+							<!-- <tr>
+								<td class="blank_area" colspan="4">
+									<p class="txt_blank">데이터가 없습니다</p>
+								</td>
+							</tr> -->
+							<tr>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+							</tr>
+							<tr>
+								<td>뉴에코윈드</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+							</tr>
+							<tr>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+							</tr>
+							<tr>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+							</tr>
+							<tr>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+							</tr>
+							<tr>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+							</tr>
+							<tr>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+							</tr>
+							<tr>
+								<td>홍길동</td>
+								<td>메시</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_white">닫기</button>
+			<button type="button" class="btn_md btn_blue">재전송</button>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

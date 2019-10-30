@@ -1,0 +1,696 @@
+@charset "euc-kr";
+@import './sub2.css';
+ 
+/* ==========================================================================
+   custom styles
+   ========================================================================== */
+/* login */  
+.group_login{overflow: hidden; margin-top: 40px; border: 1px solid #E8E8E8; border-radius: 0 35px; background: #fff url(../img/sub/bg_login.png) no-repeat 100% 0;} 
+.group_login .box_outer{padding-top: 27px; width: 750px; border-right: 1px solid #ddd; background-color: #fff;}
+.group_login .title_area{position: relative; margin: 0 30px 0 30px; padding-left: 61px; height: 70px;}
+.group_login .title_area .txt_title{padding: 25px 0 19px 22px; line-height: 22px; font-size: 22px; font-weight: 700; color: #000; border-bottom: 1px dashed #ddd;} 
+.group_login .title_area .ico{overflow: hidden; display: block; position: absolute; left: 0; top: 0; width: 70px; height: 70px; border: 1px solid #ddd; border-radius: 50%; background: #fff url(../img/sub/ico_company_lg.png) no-repeat 50% 50%;}
+
+.group_login .box_outer{}
+.group_login .login_area{padding: 34px 0 0 30px;}
+.group_login .box_left{float: left; padding-right: 30px; width: 345px; height: 214px; border-right: 1px solid #ddd;}
+.group_login .box_left.companylogin_case{padding-top:120px;background: url(../img/sub/ico_certify_login.png) no-repeat 44% 20px;}
+.group_login .box_left.companylogin_case .txt_msg{display:none;}
+.group_login .txt_msg{padding: 0 0 97px; line-height: 23px; font-size: 14px; color: #555; letter-spacing: -0.25px; background: url(../img/sub/ico_certify_login.png) no-repeat 50% 45px;}
+.group_login .box_left button{width: 100%;}
+.group_login .box_right{float: left; padding-left: 30px; width: 345px;}
+.group_login .box_right button{width: 100%; margin-top: 10px;}
+.group_login .box_right label{display: block; margin-top: 10px;}
+.group_login .box_right label:first-child{margin-top: 0;}
+.group_login .box_right label input{height: 50px;}
+.group_login .box_right .pw_area{padding-top: 20px; text-align: right;}
+.group_login .box_right .btn_pw{font-size: 14px; color: #333; letter-spacing: -0.25px;}
+.group_login .etc_area{position: relative; height: 80px; background-color: #e5e5e9;}
+.group_login .etc_area{margin-top: 25px;}
+.group_login .etc_area p{padding: 18px 0 0 30px; line-height: 24px; font-size: 14px; color: #333; letter-spacing: -0.25px;}
+
+
+.group_login .etc_area button{position: absolute; top: 13px; right: 30px; padding-left: 60px; text-align: left; font-size: 14px; color: #333; background: #fff url(../img/sub/ico_company_sm.png) no-repeat 15px 50%;}
+.group_login .etc_area button:hover{background: #f2f2f2 url(../img/sub/ico_company_sm.png) no-repeat 15px 50%;}
+
+.group_login .radio_area{position: relative; padding: 11px 0 20px;}
+.group_login .input_radio{margin-left: 0; width: 155px; height: 55px;}
+.group_login .input_radio > .label_text{position: relative; padding: 0 0 0 38px; width: 155px; height: 55px; line-height: 53px; text-align: left; font-size: 15px; color: #333; z-index: 2; background: url(../img/sub/ico_check_login.png) no-repeat 10px 50%;}
+.group_login .input_radio > input[type="radio"]:checked + .label_text{background: url(../img/sub/ico_check_login_on.png) no-repeat 10px 50%; color: #3348AE;}
+
+.group_login .input_radio .bg_radio{display: block; position: absolute; top: 0; left: 0; width: 155px; height: 55px; border: 1px solid #ccc; border-radius: 0 10px; webkit-transition:box-shadow 0.5s ease;transition:box-shadow 0.5s ease;}
+.group_login .input_radio:hover .bg_radio{box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.27);}
+.group_login .input_radio:nth-child(1) .bg_radio{background: #fff url(../img/sub/ico_lock_login.png) no-repeat 119px 50%;}
+.group_login .input_radio:nth-child(2) .bg_radio{background: #fff url(../img/sub/ico_did_login.png) no-repeat 117px 50%;}
+.group_login .input_radio:nth-child(1) input[type="radio"]:checked ~ .bg_radio{background: #fff url(../img/sub/ico_lock_login_on.png) no-repeat 119px 50%;}
+.group_login .input_radio:nth-child(2) input[type="radio"]:checked ~ .bg_radio{background: #fff url(../img/sub/ico_did_login_on.png) no-repeat 117px 50%;}
+.group_login .input_radio  > input[type="radio"]:checked ~ .bg_radio{border: 1px solid #3348AE; box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.27);}
+
+.group_login.case2{padding-left: 348px; background: #fff url(../img/sub/bg_login2.png) no-repeat 0 0;}
+.group_login.case2 .box_outer{border-left: 1px solid #ddd; border-right: 0;}
+.group_login.case2 .login_area{padding-top: 0;}
+.group_login.case2 .box_left{height: 318px;}
+.group_login.case2 .title_area{margin: 0;}
+.group_login.case2 .box_right.investorlogin_case{padding-bottom:179px;position:relative;background: url(../img/sub/ico_certify_login.png) no-repeat 57% 105px;}
+.group_login.case2 .box_right.investorlogin_case .btn_blue.btn_lg{position:absolute;bottom:0;right:0;width:315px;}
+.group_login.case2 .box_right.investorlogin_case .txt_msg{display:none;}
+.group_login.case2 .box_left .title_area .ico{background-image: url(../img/sub/ico_user_lg.png);}
+.group_login.case2 .box_right .title_area .ico{background-image: url(../img/sub/ico_user2_lg.png);}
+.group_login.case2 .txt_msg{padding: 15px 0 86px; background-position: 50% 49px;}
+.group_login.case2 .box_left .txt_msg{padding: 15px 0 0; background: none;}
+.group_login.case2 .txt_help{margin-top: 14px; padding-left: 12px; font-size: 12px; color: #555; letter-spacing: -0.25px; background: url(../img/sub/ico_important.png) no-repeat 0 3px;}
+.group_login.case2 .box_right button{margin-top: 0;}
+
+.group_login.case2 .etc_area button{padding-left: 60px; background: #fff url(../img/sub/ico_user_sm.png) no-repeat 15px 50%;}
+.group_login.case2 .etc_area button:hover{background: #f2f2f2 url(../img/sub/ico_user_sm.png) no-repeat 15px 50%;}
+
+ /* join */
+.group_select{padding: 40px 0; text-align: center; background-color: #f2f2f2; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+.group_select .txt_title{font-size: 16px; font-weight: 400; color: #000;}
+.group_select .txt_title strong{font-size: 24px; font-weight: 700;}
+.group_select .txt_desc{padding: 20px 0 0px; font-size: 16px; color: #555;}
+.group_select .radio_area{position: relative; padding: 20px 0 0px;}
+
+.group_select .input_radio{width: 280px; height: 140px;}
+.group_select .input_radio > .label_text{position: relative; padding: 61px 0 0 150px; width: 280px; height: 140px; text-align: left; font-size: 24px; color: #333; z-index: 2; background: url(../img/sub/ico_check_join.png) no-repeat 19px 26px;}
+.group_select .input_radio > input[type="radio"]:checked + .label_text{font-weight: 700; background: url(../img/sub/ico_check_join_on.png) no-repeat 19px 26px; color: #3348AE;}
+
+.group_select .input_radio .bg_radio{display: block; position: absolute; top: 0; left: 0; width: 280px; height: 140px; border: 1px solid #ccc; border-radius: 0 20px; webkit-transition:box-shadow 0.5s ease;transition:box-shadow 0.5s ease;}
+.group_select .input_radio:hover .bg_radio{box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.27);}
+.group_select .input_radio:nth-child(1) .bg_radio{background: #fff url(../img/sub/ico_user_lg.png) no-repeat 85px 49px;}
+.group_select .input_radio:nth-child(2) .bg_radio{background: #fff url(../img/sub/ico_user2_lg.png) no-repeat 85px 48px;}
+.group_select .input_radio  > input[type="radio"]:checked ~ .bg_radio{border: 1px solid #3348AE; box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.27);}
+.group_select .btn_did{position: absolute; left: 917px; top: 52px; padding-left: 28px; height: 20px; line-height: 20px; font-size: 14px; color: #333; text-decoration: underline; background: url(../img/sub/ico_info.png) no-repeat 0 0;}
+
+.group_select.case2{margin: 0; border:0; background: none;}
+.group_select.case2 .input_radio{width: 280px; height: 80px;}
+.group_select.case2 .input_radio > .label_text{padding: 0 0 0 56px; width: 280px; height: 80px; line-height: 80px; font-size: 16px; color: #333; background-position: 19px 50%;}
+.group_select.case2 .input_radio > input[type="radio"]:checked + .label_text{font-weight: 400; color: #fff; background-image: url(../img/sub/ico_check_join_on2.png); background-position: 19px 50%;}
+.group_select.case2 .input_radio .bg_radio{width: 280px; height: 80px;}
+
+.group_select.case2 .input_radio:nth-child(1) .bg_radio{background: #fff url(../img/sub/ico_certify_join.png) no-repeat 214px 50%;}
+.group_select.case2 .input_radio:nth-child(1) input[type="radio"]:checked ~ .bg_radio{background: #3348ae url(../img/sub/ico_certify_join_on.png) no-repeat 214px 50%;}
+.group_select.case2 .input_radio:nth-child(2) .bg_radio{background: #fff url(../img/sub/ico_did_join.png) no-repeat 225px 50%;}
+.group_select.case2 .input_radio:nth-child(2) input[type="radio"]:checked ~ .bg_radio{background: #3348ae url(../img/sub/ico_did_join_on.png) no-repeat 225px 50%;}
+
+.group_info{margin: 40px auto 0; padding-top: 25px; width: 901px; height: 134px; border: 1px solid #ddd; background: #fff url(../img/sub/ico_did_info.png) no-repeat 702px 20px;}
+.group_info dt{padding: 0 0 0 52px; font-size: 18px; font-weight: 400; color: #333; background: url(../img/sub/ico_info.png) no-repeat 24px 50%;}
+.group_info dd{padding: 12px 0 0 52px; line-height: 26px; font-size: 16px; font-weight: 400; color: #555; letter-spacing: -0.25px;}
+
+.group_srch{position: relative; padding: 20px 0; text-align: center;border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; background-color: #edeff3;}
+.group_srch .txt_desc{padding-bottom: 40px; font-size: 16px; color: #555;} 
+.group_srch label{display: inline-block; padding-right: 5px; vertical-align: middle; font-size: 16px; color: #333;}
+.group_srch .form_control{padding-left: 10px;vertical-align: middle; width: 350px; height: 50px;}
+.group_srch .btn_md{vertical-align: middle; min-width: initial; width: 100px; height: 50px; border: 0; border-radius: 0;}
+.group_srch .btn_info{position: absolute; left: 920px; top: 35px; padding-left: 28px; height: 20px; line-height: 20px; font-size: 14px; color: #333; text-decoration: underline; background: url(../img/sub/ico_info.png) no-repeat 0 0;} 
+
+.group_desc{border-top: 1px solid #ddd; text-align: center;} 
+.group_desc dt{padding-top: 30px; font-size: 18px; color: #333; letter-spacing: -0.25px;}
+.group_desc dd{padding: 20px 0 40px; font-size: 14px; color: #555; letter-spacing: -0.25px; line-height:24px;}
+
+.contents_company .txt_desc{padding: 40px 0 20px; text-align: center; font-size: 14px; color: #555;}
+
+ 
+/* popup */
+.pop_modal.pop_find_pw .pop_wrap .contents_wrap label{display: block; margin-top: 30px;}
+.pop_modal .pop_wrap .contents_wrap .lst_info{margin-top: 30px;}
+.pop_modal .pop_wrap .contents_wrap .lst_info li{float: left; margin-left: 15px; width: 205px; height: 205px;} 
+.pop_modal .pop_wrap .contents_wrap .lst_info li:first-child{margin-left: 0;}
+.pop_modal .pop_wrap .contents_wrap .lst_info li a{display: block; height: 205px; background-color: #f2f2f2;}
+.pop_modal .pop_wrap .contents_wrap .img{text-align: center;}
+.pop_modal .pop_wrap .contents_wrap .qr_area{position: relative; margin: 30px auto 0; padding: 18px; width: 151px; height: 151px; border: 1px solid #707070;}  
+.pop_modal .pop_wrap .contents_wrap .qr_area .txt_title{position: absolute; bottom: -15px; left: 50%; margin-left: -45px; width: 91px; text-align: center; font-size: 16px; font-weight: 700; background-color: #fff;} 
+.pop_modal .pop_wrap .contents_wrap .txt_agree{padding-top: 30px; text-align: center; font-size: 15px; color: #555;}   
+
+.pop_alert .pop_wrap .messageWrap .txt_sm{padding-top: 10px; font-size: 14px; color: #555;}
+.pop_alert .pop_wrap .messageWrap .txt_email{text-decoration: underline; color: #3348ae;} 
+
+/* ==========================================================================
+   notice 
+   ========================================================================== */
+ 
+/* notice */
+.lst_lastest{padding-top: 40px;}
+.lst_lastest li{float: left; position: relative;width: 48.9%}
+.lst_lastest li a{display: block; padding: 30px 0 0 40px; width: 100%; height: 160px; border-radius: 0 15px; background: #3ab2bf url(../img/sub/ico_page.png) no-repeat 433px 84px; color: #fff; transition: box-shadow 0.2s;}
+.lst_lastest li a:hover{box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);}
+.lst_lastest li:nth-child(2){float: right;}
+.lst_lastest li:nth-child(2) a{background-color: #6573d4; background-image: url(../img/sub/ico_folder.png);}
+.lst_lastest li a .txt_title{display: block; height: 30px; line-height: 30px; font-size: 22px; font-weight: 700;}
+.lst_lastest li a .txt_desc{display: block; padding-top: 12px; font-size: 16px;}
+.lst_lastest li a .txt_date{display: block; padding-top: 10px; font-size: 14px;}
+
+.lst_lastest li a.blank{background-image: none;}
+.lst_lastest li a.blank .txt_blank{display: block; margin-top: 13px; padding: 10px 0 6px 77px; line-height: 24px; font-size: 16px; background: url(../img/sub/ico_warning_list.png) no-repeat 0 50%;}
+.lst_lastest li a .btn_write{position: absolute; top: 85px; left: 340px; width: 160px; background: transparent; border: 1px solid #fff; color: #fff;}
+.lst_lastest li a .btn_write:hover{background: transparent;} 
+
+
+/* ==========================================================================
+   company > deal management
+   ========================================================================== */
+
+.group_date_srch{padding: 10px 0; vertical-align: middle; text-align: center; border-top: 1px solid #aaa; border-bottom: 1px solid #ddd; background-color: #eff3f8;} 
+.group_date_srch .search_name{display: inline-block; position: relative; vertical-align: middle;} 
+.group_date_srch .search_name label{display: inline-block; padding: 0 20px 0 0; height: 36px; line-height: 36px;} 
+.group_date_srch .search_name .form_control{display: inline-block; width: 240px;} 
+.group_date_srch .datepicker_searchwrap{vertical-align: middle;} 
+.group_date_srch .date_btn_wrap{display: inline-block; padding: 0 20px 0 20px; vertical-align: middle;}  
+
+.group_date_srch .datepicker_searchwrap .datepicker_connect{height: 36px; line-height: 36px;} 
+.group_date_srch .datepicker_searchwrap label{display: inline-block; padding: 0 20px 0 40px;} 
+
+.group_date_srch .group_autocomplete{display: inline-block; position: relative; width: 400px; vertical-align: middle;}   
+.group_date_srch .group_autocomplete .form_control{width: 100%;}  
+.group_date_srch .group_autocomplete .autocomplete_area{width: 100%;}  
+.group_date_srch .btn_srch{display: inline-block;min-width: 90px;height: 36px; padding: 0 20px;border: 0;font-size: 15px;font-weight: 400;color: #333;line-height: 36px; text-align: center;vertical-align: middle;cursor: pointer;transition: all 0.2s ease-in-out; background: #3348AE;color: #fff;}   
+.group_date_srch .btn_srch:hover{background:#324084;}  
+  
+.table_list_detail{overflow: hidden; border-top: 1px solid #000; border-bottom: 1px solid #aaa;} 
+.table_list_detail table{margin-top: -1px; width: 100%; border-collapse: collapse;}  
+.table_list_detail table thead th{border-top: 1px solid #ddd; border-left: 1px solid #ddd; font-size: 14px; font-weight: 400; color: #333; height: 38px; background-color: #f2f2f2;}
+.table_list_detail table thead th:first-child{border-left: 0;}
+.table_list_detail table tbody td{padding: 0 20px; height: 60px; text-align: right; border-top: 1px solid #ddd; border-left: 1px solid #ddd; font-size: 14px; color: #555;}
+.table_list_detail table tbody tr td:first-child{border-left: 0;} 
+.table_list_detail tbody td.blank_area{height: 350px; text-align: center; background-color: #fff;}    
+.table_list_detail tbody td.blank_area .txt_blank{padding: 69px 0 0; text-align: center; font-size: 18px; color: #333; background: url(../img/sub/ico_warning_table.png) no-repeat 50% 0;}   
+ 
+.company_box_status dd p{position: relative; display: inline-block;} 
+.company_box_status dd p em{position: relative; z-index: 1;} 
+.company_box_status dd p:before{content:''; display: block; position: absolute; bottom: 9px; left: 0; width: 100%; height: 12px; background-color: rgba(235,70,37,0.5);}  
+
+  
+
+ 
+
+/* ==========================================================================
+   investor > my order
+   ========================================================================== */
+/* tab */
+.tab_md.tab_4ea{}
+.tab_md.tab_4ea li{width: 25%;}
+.tab_md.tab_4ea li a{display: block; width: auto;}
+
+/* search bar */
+.group_order_srch{border-top: 1px solid #000; border-bottom: 1px solid #aaa; background-color: #eff3f8;}
+.group_order_srch .row{padding: 15px 0;}
+.group_order_srch .row .col{float: left;}
+.group_order_srch .row .col .title{height: 30px; line-height: 30px; font-size: 14px; color: #333;} 
+.group_order_srch .row .col .desc{margin-top: 10px; height: 40px; line-height: 40px; font-size: 14px; color: #555;} 
+.group_order_srch .row .col_type{padding-left: 20px; width: 240px;} 
+.group_order_srch .row .col_lst{width: 247px;} 
+.group_order_srch .row .col_lst .form_control{width: 210px;} 
+.group_order_srch .row .col_state{width: 283px;}  
+.group_order_srch .row .col_date{width: 280px;}  
+.group_order_srch .row .col_date .title{line-height: 0;}  
+.group_order_srch .row .col_date label{float: left; display: inline-block; height: 30px; line-height: 30px; vertical-align: middle;}  
+.group_order_srch .row .col_date .date_btn_wrap{float: right; display: inline-block; vertical-align: middle;}
+
+/* count bar */
+.lst_count{padding-left: 40px; height: 61px; line-height: 59px; border: 1px solid #ddd;} 
+.lst_count dt{float: left; padding-left: 51px; font-size: 18px; color: #555;}
+.lst_count dt:first-child{padding: 0;} 
+.lst_count dd{float: left; padding-left: 16px; font-size: 24px; font-weight: 700; color: #3348ae;} 
+.lst_count dd.txt_cancel{color: #757575;} 
+.lst_count dd.txt_complete{color: #333;}
+  
+/* table */
+.table_list_order table td{padding: 0 20px;} 
+.table_list_order table td:nth-child(3){font-size: 15px; color: #333;}
+ 
+ /* table state */
+.table_list_order table td span.btn_state_dealwaitsell{cursor: default;}
+.table_list_order table td span.btn_state_dealwaitbuy{cursor: default;}
+.table_list_order table td span.btn_state_dealnego{cursor: default;}
+.table_list_order table td span.btn_state_cancel{display: inline-block; width: 64px; height: 28px; line-height: 28px; background-color: #757575; font-size: 14px; color: #fff;}  
+.table_list_order table td span.btn_state_complete{display: inline-block; width: 64px; height: 28px; line-height: 26px; border: 1px solid #ccc; background-color: #fff; font-size: 14px; color: #333;} 
+
+.table_list_order table td .state_order{display: inline-block; width: 106px; height: 28px; line-height: 26px; border: 1px solid #038085; border-radius: 14px; background-color: #fff; font-size: 14px; color: #555;}  
+.table_list_order table td .state_order.state_complete{border-color: #fff;}   
+.table_list_order table td .state_order.state_ask{border-color: #fff2e9; background-color: #fff2e9;}
+.table_list_order table td .state_order.state_asked{border-color: #E8055A; background-color: #fff;}    
+ 
+.table_list_order .ico_favorite_on{display: inline-block; position: relative; width: 15px; height: 14px; background: url(../img/common/ico_favorite_on.png) no-repeat 0 0;} 
+.table_list_order .ico_favorite_off{display: inline-block; position: relative; width: 15px; height: 14px; background: url(../img/common/ico_favorite_off.png) no-repeat 0 0;}    
+
+/* table button */
+.table_list_order table td .btn_xs.btn_darkgray{background-color: #757575; color: #fff; border: 1px solid #ccc;} 
+.table_list_order table td .btn_xs{height: 36px;}       
+
+.table_list_order table td .btn_xs.btn_blue{background-color: #3348AE; font-size: 14px; color: #fff; border:0;}       
+.table_list_order table td .btn_xs.btn_reject{width: 60px;}        
+.table_list_order table td .btn_xs.btn_confirm{width: 60px;}
+
+.table_list_order table td .btn_xs.btn_chat{width: 125px;}        
+.table_list_order table td .btn_xs.btn_cancel{width: 125px;}        
+  
+/* tab small */ 
+.tab_sm{display: table; width: 100%; border-collapse: collapse;}
+.tab_sm li{display: table-cell; position: relative; width: 25%; height: 50px; text-align: center; font-size: 17px; color: #555; background-color: #f5f5f5; border: 1px solid #d7d7d7;}  
+.tab_sm li a{display: block; height: 48px; line-height: 48px;}   
+.tab_sm li a.on{font-weight: 700; color: #000; background-color: #fff;}   
+.tab_sm li a.on:before{content: ''; display: block; position: absolute; top: -1px; width: 100%; height: 2px; background-color: #000; }    
+.tab_sm li a.on:after{content: ''; display: block; position: absolute; bottom: -1px; width: 100%; height: 2px; background-color: #fff; } 
+.tab_sm li a strong{font-size: 14px; font-weight: 700; color: #e8055a;}  
+ 
+.tab_contents{display: none;} 
+.tab_contents.on{display: block;}
+.tab_contents_order{display: none;}  
+.tab_contents_order.on{display: block;}
+
+/* ==========================================================================
+   investor > account manage
+   ========================================================================== */
+ 
+.msg_area{height: 100px; text-align: center; border: 1px solid #ddd;}
+.msg_area .txt_msg{display: inline-block; padding-left: 82px; height: 98px; line-height: 98px; font-size: 16px; color: #555; letter-spacing: -0.25px; background: url(../img/sub/ico_account.png) no-repeat 0 50%;}
+.msg_area .txt_msg span{color: #3348AE; text-decoration: underline;}
+
+.lst_help{}
+.lst_help li{position: relative; margin-top: 5px; padding-left: 12px; line-height: 19px; font-size: 14px; color: #757575;}
+.lst_help li span{color: #3348ae;} 
+.lst_help li:first-child{margin-top: 0;} 
+.lst_help li:before {content: '';display: block;position: absolute;top: 50%;left: 0;margin-top: -2px;width: 4px;height: 4px;background-color: #757575;} 
+.lst_help li.blank_icon:before {display: none;}
+
+.lst_help.type2 li{font-size: 13px; color: #555;}  
+.lst_help.type2 li:before{top: 8px; margin: 0;}   
+
+.lst_help.type3 li{font-size: 15px; color: #555;}   
+.lst_help.type3 li:before{top: 8px; margin: 0;}  
+ 
+.lst_help.case2{}     
+.lst_help.case2 li:before{display: none;}     
+.lst_help.case2 li{padding-left: 17px; background: url(../img/common/ico_warning.png) no-repeat 0 50%;}    
+
+/* ==========================================================================
+   investor > mypage > my cash 
+   ========================================================================== */
+  
+.tooltip_area.tooltip_inline{display: inline-block; margin-top: -3px;  vertical-align: middle;}  
+.tooltip_area.tooltip_inline dl{width: 279px;} 
+.tooltip_area.tooltip_inline dl dd{line-height: 24px; color: #555;}  
+
+/* ==========================================================================
+   investor > mypage > favorite company management
+   ========================================================================== */
+
+/*.group_countbox{height: 100px; line-height: 98px; border: 1px solid #ddd;}*/
+.group_countbox p{font-size: 16px; color: #555;}
+.group_countbox p span{color: #3348ae;}   
+.group_countbox p strong{font-size: 18px; font-weight: 700; color: #3348ae;}
+
+.group_message{height: 100px; line-height: 98px; border: 1px solid #ddd;}
+.group_message p{text-align: center; font-size: 16px; color: #555;}  
+.group_message p span{color: #3348ae;}   
+.group_message p strong{font-size: 18px; font-weight: 700; color: #3348ae;}  
+
+
+.info_table{margin-top: -20px; font-size: 15px; color: #757575;} 
+
+.companyinfo_table.table_favorite table thead tr th{padding: 0;}
+
+
+/* ==========================================================================
+   company > mypage > 1:1 qna
+   ========================================================================== */
+
+.table_normal_list .state{display: inline-block;min-width: 60px;height: 30px;padding: 0 15px;border: 0;font-size: 14px;font-weight: 400;color: #333;line-height: 28px;text-align: center;vertical-align: middle; border: 1px solid #ccc;} 
+.table_normal_list .state.state_n{color: #757575; background-color: #f4f4f4;} 
+.table_normal_list .board_paging{position: relative;} 
+.table_normal_list .board_paging .btn_right{position: absolute; right: 0; top: 30px;}  
+.table_normal_list .btn_move{display: inline-block; color: #3348ae;}   
+ 
+.companyinfo_table th.vt{padding: 10px 0; vertical-align: top;}  
+.companyinfo_table th.vt span{display: inline-block; line-height: 34px;}  
+.companyinfo_table td a.btn_download{display: inline-block; margin-left: 0px;padding-left: 29px;height: 29px;line-height: 29px;font-size: 14px;color: #3348ae;text-decoration: underline;background: url(../img/common/ico_file.png) no-repeat 0 50%;} 
+.companyinfo_table td .txt_contents{padding: 5px 0; min-height: 120px; line-height: 24px;}  
+
+.companyinfo_table td .search_form{position: relative; width: 100%; padding-right: 40px;}
+.companyinfo_table td .search_form .form_control{width: 100%;}   
+.companyinfo_table td .search_form .btn_search{position: absolute; right: 0; top: 0;}   
+   
+.companyinfo_table.table_orderinfo td{position: relative;}      
+.companyinfo_table.table_orderinfo td textarea{height: 126px;}
+.companyinfo_table.table_orderinfo td .btn_hint{display: inline-block; position: relative; top: -2px; margin: 0; width: 20px; height: 20px; vertical-align: middle; background: url(../img/common/ico_stock_tooltip.png) no-repeat 0 0;}     
+.companyinfo_table.table_orderinfo td .btn_hint:hover{background-image: url(../img/common/ico_stock_tooltip_on.png);}     
+.companyinfo_table.table_orderinfo td .txt_byte{position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #757575;}     
+
+.wrap_file.w100{position: relative; padding-right: 95px; width: 100%;} 
+.wrap_file.w100 .form_control{width: 100%;}  
+.wrap_file.w100 .btn_sm{position: absolute; right: 0; top: 0; padding: 0;}  
+
+.submit_area{position: relative; min-height: 45px;}
+.submit_area .lst_help li{font-size: 15px;} 
+/*.submit_area .btn_edit{position: absolute; right: 0; top: 0;}*/
+.submit_area .btn_list{position: absolute; left: 0; bottom: 0;}  
+
+/* ==========================================================================
+   company > mypage > service out
+   ========================================================================== */
+
+.sec_serviceout{position: relative; padding: 26px 0 20px; border-top: 1px solid #000; border-bottom: 1px solid #aaa;}   
+.sec_serviceout .txt_title_top{height: 39px; line-height: 39px; text-align: center; font-size: 20px; color: #333;} 
+.sec_serviceout .txt_title{height: 46px; line-height: 46px; text-align: center; font-size: 28px; color: #333;} 
+.sec_serviceout .txt_title span{color: #3348ae;}  
+.sec_serviceout .txt_title_help{margin-top: 26px; padding-left: 24px; height: 28px; line-height: 28px; font-size: 20px; color: #333; background: url(../img/sub/ico_check_service.png) no-repeat 0 50%;}  
+.sec_serviceout .lst_help{margin: 12px 0 0 25px;}   
+.sec_serviceout .lst_download{margin-top: 38px;}  
+.sec_serviceout .lst_download li{overflow: hidden; position: relative; margin:0 auto; width: 32.25%; height: 211px; border-radius: 0 15px; text-align: center;}  
+.sec_serviceout .lst_download li a{display: block; padding-top: 134px; height: 211px; font-size: 18px; color: #fff;}  
+.sec_serviceout .lst_download li a .ico_area{display: block; position: absolute; top: 20px; left: 50%; margin-left: -45px; width: 90px; height: 90px; border-radius: 45px; background-color: #fff;}  
+/* .sec_serviceout .lst_download li:first-child{margin-left: 0;}  */
+
+.sec_serviceout .lst_download li:nth-child(1){background-color: #4c99cd;}   
+.sec_serviceout .lst_download li:nth-child(2){background-color: #3ab2bf;}   
+.sec_serviceout .lst_download li:nth-child(3){background-color: #6573d4;}    
+
+.sec_serviceout .lst_download li:nth-child(1) .ico_area{background-color: #fff; background-image: url(../img/sub/ico_book.png); background-position: 50% 50%; background-repeat: no-repeat;}   
+.sec_serviceout .lst_download li:nth-child(2) .ico_area{background-color: #fff; background-image: url(../img/sub/ico_chart.png); background-position: 50% 50%; background-repeat: no-repeat;}   
+.sec_serviceout .lst_download li:nth-child(3) .ico_area{background-color: #fff; background-image: url(../img/sub/ico_write.png); background-position: 50% 50%; background-repeat: no-repeat;}   
+.sec_serviceout .input_check{margin-left: 0; margin-top: 20px;}   
+
+
+.sec_serviceout.type_investor{padding-bottom: 30px;}   
+.sec_serviceout.type_investor .lst_download{position: absolute; top: 132px; right: 0; margin-top: 0;}
+.sec_serviceout.type_investor .lst_download li{width:400px; height: 130px; background-color: #6573d4;} 
+.sec_serviceout.type_investor .lst_download li a{position: relative; padding: 0 0 0 165px; height: 130px; line-height: 130px; text-align: left;}       
+.sec_serviceout.type_investor + .input_check{margin: 30px 0 0;}     
+.sec_serviceout.type_investor + .input_check > .label_text{font-size: 14px; color: #555;}      
+.sec_serviceout.type_investor .lst_download li .ico_area{left: 47px; margin:0; background-image: url(../img/sub/ico_download.png);} 
+
+/* ==========================================================================
+   common > intro
+   ========================================================================== */
+.contents_intro{}
+.contents_intro .tab_md{margin-top: 30px;} 
+.contents_intro .tab_md li{width: 25%;}
+.contents_intro .tab_md li a{width: 100%;}  
+
+/*.contents_intro .tab_contents{margin-top: 40px;}    */
+/*.contents_intro .tab_contents .inner{overflow: hidden; padding: 40px 0 65px; border: 1px solid #ddd; border-radius: 0 30px;}   */
+
+.contents_intro .group_login {overflow: hidden; margin: 0 auto 0;border: 0;border-radius: 0;background: none;} 
+.contents_intro .group_login .title_area{margin: 0;}   
+.contents_intro .group_login .txt_msg{padding: 15px 0 0; background: none;} 
+.contents_intro .group_login .login_area{padding: 0;} 
+.contents_intro .group_login .box_outer{margin: 0 auto; padding: 0; width: 315px; border: 0;}   
+.contents_intro .group_login .box_outer .box_right{float: none; padding: 0; width: auto;}  
+
+.contents_intro .group_login.case2{padding: 0;}   
+.contents_intro .group_login.case2 .box_outer{width: 726px; border: 0;}   
+.contents_intro .group_login.case2 .box_left{width: 367px;}     
+.contents_intro .group_login.case2 .box_right{float: right; width: 315px;}    
+.contents_intro .group_login.case2 .box_right .txt_msg{padding: 15px 0 86px;line-height: 23px;font-size: 14px;color: #555;letter-spacing: -0.25px;background: url(../img/sub/ico_certify_login.png) no-repeat 50% 49px;} 
+
+.contents_intro .group_login.case2 .btn_white{border-color: #3348ae; color: #3348ae;} 
+
+.contents_intro .group_srch label{display: inline-block; margin: 0; width: 135px; text-align: left;} 
+.contents_intro .group_srch .form_control{width: 300px;}  
+
+/* ==========================================================================
+   common > privacy terms
+   ========================================================================== */
+.contents_terms{}
+.contents_terms .tab_md{margin-top: 30px;} 
+.contents_terms .tab_md li{width: 33.3333%;} 
+.contents_terms .tab_md li:first-child{width: 33.3334%;}
+.contents_terms .tab_md li a{width: 100%;} 
+
+.contents_terms .terms_area{position:relative;}
+.contents_terms .terms_area h4{padding-top: 40px; font-size: 24px; font-weight: 700; color: #000;}
+.contents_terms .terms_area h5{padding-top: 20px; font-size: 15px; font-weight: 700; color: #333;}
+.contents_terms .terms_area .h5_tit_lg{font-size:20px;}
+.contents_terms .terms_area .h5_desc{padding: 20px 0;line-height: 20px;font-size: 13px; font-weight: 400; color: #555;}
+.contents_terms .terms_area .h5_desc > li{line-height:25px;}
+.contents_terms .terms_area .h5_desc .h5_desc_in{padding-left:20px;}
+.contents_terms .terms_area table{width:100%;border-collapse: collapse;border-spacing:0;border-top:1px solid #000;}
+.contents_terms .terms_area table caption{text-align:left;}
+.contents_terms .terms_area table th, .contents_terms .terms_area table td{font-size:13px;font-weight:300;text-align:center;border-bottom:1px solid #ddd;border-right:1px solid #ddd;padding:5px 10px;word-break:keep-all;}
+.contents_terms .terms_area table th{background:#f2f2f2;}
+.contents_terms .terms_area table th:last-child,
+.contents_terms .terms_area table td:last-child{border-right:0;}
+.contents_terms .terms_area .terms_area_total{padding-top:20px;}
+.contents_terms .terms_area .terms_area_total::after{content:'';display:block;clear:both;}
+.contents_terms .terms_area .terms_area_total li{float:left;width:330px;border:1px solid #ccc;font-size:13px;color:#333;padding:5px 5px 5px 15px;margin: 0 10px 10px 0}
+.contents_terms .terms_area .terms_area_total li a:hover{text-decoration:underline;}
+.contents_terms .terms_area .terms_area_dow{border-top:1px solid #ccc;padding-top:20px;}
+.contents_terms .terms_area .terms_area_dow dl{position:relative;height:45px;line-height:45px;width:360px;margin-bottom:10px;}
+.contents_terms .terms_area .terms_area_dow dt, .contents_terms .terms_area .terms_area_dow dd{display:inline-block;}
+.contents_terms .terms_area .terms_area_dow dt{font-size:15px;color:#000;font-weight:700;}
+.contents_terms .terms_area .terms_area_dow dd{position:absolute;top:0;right:0;}
+
+/* WEB01801 이용약관 */
+.contents_terms .terms_area .sub_tab_select{position:absolute;top:40px;right:0;width:200px;}
+.contents_terms .terms_area .sub_tab{display:none;}
+.contents_terms .terms_area .sub_tab.on{display:block;}
+ 
+/* ==========================================================================
+   WEB03102
+   ========================================================================== */  
+.group_contract{border-top: 1px solid #000; border-bottom: 1px solid #aaa;}
+.group_contract>div{width: 50%; height: 388px; border-left: 1px solid #ddd;}   
+.group_contract>div.fl{padding: 20px;}    
+.group_contract>div.fl .txt_title{position: relative; margin-bottom: 20px; font-size: 15px; color: #000;}   
+.group_contract>div.fl .txt_unit{position: absolute; right: 0; top: 0; font-size: 12px; color: #666;}   
+.group_contract>div.fr{padding-left: 14px;}   
+.group_contract .group_search{margin-bottom: 5px; padding: 7px 20px; height: 50px; background-color: #f2f2f2;}   
+.group_contract .group_search .txt_count{line-height: 36px; font-size: 14px; color: #000;}   
+.group_contract .group_search .txt_count strong{font-weight: 700;}   
+.group_contract .group_search .fr select.form_control{width: 120px;}    
+ 
+.table_contract{overflow-y: auto; overflow-x: hidden; height: 332px;border-top:1px solid #ddd;} 
+.table_contract > li{float:left;width:50%;border-bottom:1px solid #ddd;}
+.table_contract > li dt, .table_contract > li dd{float:left;height: 30px;line-height:30px;}
+.table_contract > li dt{width:100px;font-size: 14px;color: #333; background-color: #f2f2f2;text-align:center;}
+.table_contract > li dd{width:calc(100% - 100px);color:#555;text-align:right;padding:0 10px;font-size:15px;}
+.table_contract > li dt:nth-of-type(1), .table_contract > li dd:nth-of-type(1){padding-top:5px;height:35px;}
+.table_contract > li dt:nth-of-type(4), .table_contract > li dd:nth-of-type(4){padding-bottom:5px;height:35px;}
+.table_contract li.blank_area{width:100%;height: 330px; text-align: center; background-color: #fff;border-bottom:0;}
+.table_contract li.blank_area .txt_blank{margin-top:120px;padding: 69px 0 0; text-align: center; font-size: 18px; color: #333; background: url(../img/sub/ico_warning_table.png) no-repeat 50% 0;}
+
+/* .table_contract table{width: 100%; border-collapse: collapse;} 
+.table_contract table tbody{border-top: 1px solid #ddd;} 
+.table_contract table tbody th{height: 30px; font-size: 14px; font-weight: 400; color: #333; background-color: #f2f2f2;}  
+.table_contract table tbody tr:first-child th, .table_contract table tbody tr:first-child td{padding-top: 9px;}  
+.table_contract table tbody tr:last-child th,.table_contract table tbody tr:last-child td{padding-bottom: 9px;}   
+.table_contract table tbody td{padding: 0 10px; text-align: right; height: 30px; font-size: 15px; color: #555;}
+  
+.table_contract tbody td.blank_area{height: 330px; text-align: center; background-color: #fff;}     
+.table_contract tbody td.blank_area .txt_blank{padding: 69px 0 0; text-align: center; font-size: 18px; color: #333; background: url(../img/sub/ico_warning_table.png) no-repeat 50% 0;}     */
+
+/* ==========================================================================
+   WEB03000 : investor order list WEB03000
+   ========================================================================== */ 
+.investor_deal_wrap.investor_main{}  
+.investor_deal_wrap.investor_main .title_area{position: relative;}   
+.investor_deal_wrap.investor_main .title_area h4{line-height: 34px;  font-size: 24px; font-weight: 700; color: #000826;}  
+.investor_deal_wrap.investor_main .title_area .btn_more{position: absolute; right: 0; top: 3px; width: 70px; height: 28px; line-height: 26px; text-align: center; border: 1px solid #ccc; font-size: 14px; color: #757575;}    
+.investor_deal_wrap.investor_main .status_wrap{margin-top: 10px;}
+.investor_deal_wrap.investor_main .select_deal{padding: 0 10px; height: 46px; line-height: 46px;}  
+.investor_deal_wrap.investor_main .select_deal li:nth-child(2){margin: 0; font-size: 14px; color: #000;}
+.investor_deal_wrap.investor_main .select_deal li:nth-child(2) span{font-size: 20px; font-weight: 700;}
+.investor_deal_wrap.investor_main .select_deal li:nth-child(2) em{font-size: 15px;} 
+.investor_deal_wrap.investor_main .board_cardlist{height: 263px;}
+
+.investor_deal_wrap.investor_main .order_concluded .title_area h4{font-size: 19px; font-weight: 400; color: #000;} 
+.investor_deal_wrap.investor_main .order_concluded table{margin-top: 10px;border-top: 1px solid #000826;}  
+.investor_deal_wrap.investor_main .order_concluded table tr td.blank_area{height: 278px;} 
+
+/* ==========================================================================
+   web03103 : detail popup 
+   ========================================================================== */
+.pop_modal .orderdetail_tabtit{margin-top: -40px; text-align: right;}  
+.pop_modal .orderdetail_tabtit li{width: 220px;}  
+.pop_modal .orderdetail_tabtit li a{width: 100%;} 
+
+.pop_modal .companyinfo_h5 .fr .form_control{width: 240px;}   
+.pop_modal .companyinfo_h5 .txt_num{display: inline-block; margin-right: 8px; padding: 0 3px; height: 22px; line-height: 22px; vertical-align: middle; font-size: 15px; font-weight: 400; background-color: #3348ae; color: #fff;}   
+.companyinfo_h6{margin:0; font-size: 19px; font-weight: 700; color: #000;}
+.companyinfo_h6 .txt_sm{padding-left: 10px; font-size: 15px; font-weight: 400; color: #555;} 
+ 
+.group_evaluation .fl{width: 420px;}    
+.group_evaluation .fr{width: 650px;}      
+.group_evaluation .chart_area{padding: 20px; height: 360px; border: 1px solid #ddd;} 
+.group_evaluation .ico_arrow_up{display: inline-block; width: 12px; height: 10px; background: url(../img/sub/arrow_up.png) no-repeat 0 0;}
+.group_evaluation .ico_arrow_down{display: inline-block; width: 12px; height: 10px; background: url(../img/sub/arrow_down.png) no-repeat 0 0;} 
+.group_evaluation .txt_lisk{display: inline-block; vertical-align: middle; line-height: 18px;}  
+ 
+.group_evaluation .ico_lisk{display: inline-block; margin-right: 10px; width: 15px; height: 15px; vertical-align: middle; border-radius: 50%;}   
+.group_evaluation .ico_lisk.type1{background-color: #1cac59;}  
+.group_evaluation .ico_lisk.type2{background-color: #ff0c34;}  
+.group_evaluation .ico_lisk.type3{background-color: #f6ab2e;}   
+.group_evaluation .editor_area{overflow-y: auto; padding: 10px 20px; max-height: 650px; border-top: 1px solid #000; border-bottom: 1px solid #aaa;}   
+ 
+.companyinfo_table table tr td .companyinfo_table table th,.companyinfo_table table tr td .companyinfo_table table td{border-bottom: 1px solid #ddd;} 
+.companyinfo_table table tr td .companyinfo_table table tfoot th,.companyinfo_table table tr td .companyinfo_table table tfoot td{background-color: #fff7f0; border-bottom: 0;} 
+
+.fr .select_css{width: 240px;}   
+
+.group_evaluation .detail_area{padding: 0 !important; height: auto; border-bottom: 0;}
+.group_evaluation .detail_area .table_detail{display: none;}          
+.group_evaluation .detail_area .table_detail.on{display: block;}               
+/*.group_evaluation .detail_area .table_detail table tbody tr:first-child td:nth-child(1),.group_evaluation .table_detail table tbody tr:first-child td:nth-child(3){border-bottom: 0;} */ 
+.group_evaluation .detail_area .table_detail table tbody tr td{border-bottom: 1px solid #ddd;} 
+
+.group_evaluation .btn_detail{display: block; height: 36px; line-height: 36px; background: url(../img/sub/ico_arrow_down_table.png) no-repeat 100% 50%;}
+.group_evaluation .btn_detail.on{background-image: url(../img/sub/ico_arrow_up_table.png);} 
+   
+/* ==========================================================================
+   WEB03200 
+   ========================================================================== */
+.swiper_company{position: relative;}
+.swiper_company .swiper-container{margin:0 auto; width: 1040px;}
+.swiper_company .swiper-button-next{right: 0; background: url(../img/sub/btn_next.png) no-repeat 100% 50%;}
+.swiper_company .swiper-button-prev{left: 0; background: url(../img/sub/btn_prev.png) no-repeat 0 50%;}  
+ 
+/* ==========================================================================
+   WEB03103 : expert organization table
+   ========================================================================== */ 
+.group_summary{border: 1px solid #ddd; border-top: 1px solid #000; border-bottom: 1px solid #aaa; background-color: #f2f2f2;}
+.group_summary dl{float: left; padding: 0 6px 20px; width: 437px; height: 530px; vertical-align: top; border-left: 1px solid #ddd; background-color: #eff3f8; text-align: right;}   
+.group_summary dl:first-child{border-left: 0;}   
+.group_summary dl dt{padding: 30px 0; text-align: center; font-size: 28px; font-weight: 700; color: #3348ae; text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);}     
+.group_summary dl dt span{font-size: 32px;}     
+.group_summary dl dd{display: inline-block; margin: 0 5px 12px; padding: 0; width: 200px; vertical-align: top; }  
+.group_summary dl dd p{position: relative; height: 40px; line-height: 40px; text-align: center; border-radius: 0 8px; font-size: 18px; color: #fff; background-color: #6573d4; z-index: 1;}  
+.group_summary dl dd:nth-of-type(1) p{background-color: #4c99cd;}
+.group_summary dl dd:nth-of-type(2) p{background-color: #6573d4;}   
+.group_summary dl dd:nth-of-type(3) p{background-color: #3ab2bf;}  
+.group_summary dl dd .lst_desc{min-height: 168px;  padding-top: 14px; margin-top: -8px; border: 1px solid #ddd; border-radius: 0 0 0 8px; background-color: #fff; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);}
+.group_summary dl dd .lst_desc li{padding-left: 20px; height: 25px; line-height: 25px; text-align: left; font-size: 15px; color: #757575;}
+.group_summary dl dd .lst_desc pre{padding-left: 20px; height: 25px; line-height: 25px; text-align: left; font-size: 15px; color: #757575;}
+  
+.group_summary dl.case2{width: 224px; background-color: #ecf8f2; text-align: center;}  
+.group_summary dl.case2 dt{color: #038085;}   
+.group_summary dl.case2 dd p{background-color: #379d46;}   
+
+.group_summary dl.case3{background-color: #fffaf6; text-align: left;}   
+.group_summary dl.case3 dt{color: #e8055a;}   
+.group_summary dl.case3 dd:nth-of-type(1) p{background-color: #f65e01;}    
+.group_summary dl.case3 dd:nth-of-type(2) p{background-color: #f63d46;}   
+.group_summary dl.case3 dd:nth-of-type(3) p{background-color: #eb256f;}      
+.group_summary dl.case4{padding-top: 12px; width: 100%; height: 225px; border-top: 1px solid #ddd; text-align: center; background-color: #f2f2f2;}       
+.group_summary dl.case4 dt{display: inline-block; width: 250px; color: #000826;}         
+.group_summary dl.case4 dd p{background-color: #4c5267;} 
+
+.group_summary .blank_area{padding-top: 70px; height: 350px;text-align: center;background-color: #f2f2f2;}
+.group_summary .blank_area .txt_blank {padding: 69px 0 24px;font-size: 18px;color: #555;background: url(../img/sub/ico_warning_table.png) no-repeat 50% 0;}  
+
+/* ==========================================================================
+   WEB03103 : 서비스소개_이용안내 / 서비스개요 화면
+   ========================================================================== */ 
+.contents_intro .tab_md{margin-top: 30px;} 
+.contents_intro .tab_md li{width: 25%;}
+.contents_intro .tab_md li a{width: 100%;}
+.contents_intro .tab_contents{padding-top: 30px;} 
+
+.contents_intro dl dt{margin-top: 60px; font-size: 24px; font-weight: 700; color: #000;}
+.contents_intro dl dt:first-child{margin-top: 0;}
+.contents_intro dl dt strong{color: #3348ae;}
+
+.contents_intro dl dd.service1{margin-top: 20px; padding-top: 30px; height: 447px; vertical-align: middle; text-align: center; background: linear-gradient(to left, #4e4e9e, #4aac9f);}
+.contents_intro dl dd.service2{line-height: 25px; font-size: 15px; color: #555;}
+.contents_intro dl dd.service2 p{padding-top: 20px;}
+.contents_intro dl dd.service3{margin-top: 20px; height: 209px; background-color: #ecf0f4;}
+.contents_intro dl dd.service3 .lst{padding: 30px 48px 0 30px;}
+.contents_intro dl dd.service3 .lst li{position: relative; padding-left: 120px; width: 50%;}
+.contents_intro dl dd.service3 .lst li:nth-child(1){float: left; width: 460px;}
+.contents_intro dl dd.service3 .lst li:nth-child(1) .ico{background: #fff url(../img/sub/intro_service2.png) no-repeat 50% 50%;}
+.contents_intro dl dd.service3 .lst li:nth-child(2){float: right; width: 505px;}
+.contents_intro dl dd.service3 .lst li:nth-child(2) .ico{background: #fff url(../img/sub/intro_service3.png) no-repeat 50% 50%;}
+.contents_intro dl dd.service3 .lst li .ico{position: absolute; left: 0; top: 0; width: 100px; height: 100px; background-color: #fff; border-radius: 50px;}
+.contents_intro dl dd.service3 .lst li strong{display: block; font-size: 18px; font-weight: 700; color: #333;}
+.contents_intro dl dd.service3 .lst li p{display: block; padding-top: 10px; line-height: 25px; font-size: 15px; color: #555;}
+
+.contents_intro dl dd.service4{} 
+.contents_intro dl dd.service4 .lst li{float: left; position: relative; margin-top: 30px; padding-left: 52px; width: 50%;} 
+.contents_intro dl dd.service4 .lst li:nth-child(3){margin-top: 5px;}    
+.contents_intro dl dd.service4 .lst li span{position: absolute; left: 0; top: 3px; width: 39px; height: 39px; line-height: 37px; text-align: center; border: 1px solid #3348ae; border-radius: 50%; font-size: 18px; color: #3348ae;} 
+.contents_intro dl dd.service4 .lst li .title{font-size: 18px; font-weight: 700; color: #333;} 
+.contents_intro dl dd.service4 .lst li .txt_sm{font-size: 14px; color: #555;} 
+
+.contents_intro .lst_process .process1{padding-top: 20px;} 
+.contents_intro .table_process{border-top: 1px solid #000; border-bottom: 1px solid #aaa;} 
+.contents_intro .table_process table{width: 100%; table-layout: fixed; border-collapse: collapse; border-spacing: 0;}  
+.contents_intro .table_process table thead tr th{height: 50px; font-size: 18px; font-weight: 400; color: #000;}   
+.contents_intro .table_process table thead tr th:nth-child(5){padding-right: 80px;}
+.contents_intro .table_process table tbody tr th,.contents_intro .table_process table tbody tr td{border-top: 1px solid #eee;}      
+.contents_intro .table_process table tbody tr:first-child th,.contents_intro .table_process table tbody tr:first-child td{border-top: 1px solid #aaa;}     
+.contents_intro .table_process table tbody tr th{padding-left: 30px; text-align: left; font-size: 18px; font-weight: 400; color: #4c4e9f; background-color: #f2f2f2; }       
+.contents_intro .table_process table tbody tr td{padding: 30px;} 
+.contents_intro .table_process table tbody tr td.process1_area{padding-left: 50px;}
+.contents_intro .table_process table tbody tr td.process2_area{padding-left: 80px;}
+  
+.contents_intro .lst_warning{float: left; margin-top: 40px; width: 500px;} 
+.contents_intro .lst_warning:nth-child(2n){float: right; width: 550px;}    
+.contents_intro .lst_warning dt{font-size: 24px; font-weight: 700; color: #3348ae;}
+.contents_intro .lst_warning dd{}   
+.contents_intro .lst_warning dd .lst li{position: relative; margin-top: 15px; padding-left: 16px; line-height: 25px; font-size: 15px; color: #444;} 
+.contents_intro .lst_warning dd .lst li:before{content: ''; position: absolute; left: 5px; top: 11px; width: 2px; height: 2px; background-color: #444;}
+.contents_intro .lst_warning.lst_etc{width: 100%;}       
+.contents_intro .lst_warning.lst_etc dd .lst{margin-top: 15px;}            
+.contents_intro .lst_warning.lst_etc dd .lst li{margin-top: 5px;}
+
+.contents_intro .lst_rule dt{position: relative; font-size: 24px; font-weight: 700; color: #3348ae;} 
+.contents_intro .lst_rule dt a{display: block; position: absolute; right: 0; top: 50%; margin-top: -18px; width: 100px; height: 36px; line-height: 34px; text-align: center; border: 1px solid #ccc; font-size: 15px; font-weight: 400; color: #333;} 
+.contents_intro .lst_rule dd{padding-top: 10px;} 
+.contents_intro .lst_rule dd .lst{border-top: 1px solid #000; border-bottom: 1px solid #aaa;} 
+.contents_intro .lst_rule dd .lst li{padding-left: 10px; height: 60px; line-height: 60px; border-top: 1px solid #ddd; font-size: 15px; color: #555;} 
+.contents_intro .lst_rule dd .lst li:first-child{border-top: 0;}
+
+/* ==========================================================================
+   WEB01504 : 서비스소개_등록기업 서비스 가이드  
+   ========================================================================== */ 
+.contents_guide{} 
+.contents_guide .tab_md{margin-top: 30px;}
+.contents_guide .tab_md li{width: 20%;}
+.contents_guide .tab_md li a{width: 100%;}
+.contents_guide .tab_contents{padding-top: 50px;} 
+
+.contents_guide .lst_guide{text-align: center;} 
+.contents_guide .lst_guide dt{font-size: 24px; font-weight: 700; color: #333;} 
+.contents_guide .lst_guide dd{position: relative;}  
+.contents_guide .lst_guide dd.desc_area{padding-top: 20px; line-height: 25px; font-size: 16px; color: #333;}   
+
+.contents_guide .lst_guide dd.step_area{padding-top: 30px;} 
+.contents_guide .lst_step li{display: inline-block; margin-left: 10px;vertical-align:top;}    
+.contents_guide .lst_step li:first-child{margin-left: 0;}     
+.contents_guide .lst_step li a{display: block; padding: 15px 0 0 12px; width: 196px; height: 105px; text-align: left; border: 1px solid #c1c8e7; border-radius: 10px; transition: all 0.2s;} 
+.contents_guide .lst_step li a.on{border-color: #3348ae; box-shadow: 0px 5px 10px 0 rgba(0,0,0,0.05);}       
+.contents_guide .lst_step li a .step{display: inline-block; padding-right: 16px; font-size: 18px; font-weight: 700; color: #3348ae; background: url(../img/sub/ico_step.png) no-repeat 100% 50%;}   
+.contents_guide .lst_step li a.on .step:after{content: ''; display: block; margin-top: -13px; height: 13px; background-color: #ffec9e;}    
+.contents_guide .lst_step li a .desc{display: block; padding-top: 7px; line-height: 22px; font-size: 16px; color: #555;}   
+
+.contents_guide .lst_guide dd.slide_area{padding-top: 40px; height: 420px;}    
+.contents_guide .lst_guide dd.slide_area:after{content: ''; display: block; position: absolute; top: 142px; width: 100%; height: 228px; background: linear-gradient(to left, #4e4e9e, #4aac9f); z-index: 1;}     
+.contents_guide .lst_guide dd.slide_area .notebook_area{position: absolute; top: 40px; left: 50%; padding: 17px 25px 0; margin-left: -304px; width: 609px; height: 380px; background: url(../img/sub/bg_notebook.png) no-repeat 0 0; z-index: 2;}              
+.contents_guide .lst_guide dd.slide_area .swiper_notebook{width: 484px; height: 302px;}           
+.contents_guide .lst_guide dd.slide_area .swiper-button-next{top: 186px; right: -38px; margin-top: 0; width: 56px; height: 56px; border-radius: 50%; box-shadow: 0 5px 10px 0 rgba(51,72,174,0.05); background: rgba(255,255,255,0.8) url(../img/sub/ico_next.png) no-repeat 50% 50%;}             
+.contents_guide .lst_guide dd.slide_area .swiper-button-prev{top: 186px; left: -38px; margin-top: 0; width: 56px; height: 56px; border-radius: 50%; box-shadow: 0 5px 10px 0 rgba(51,72,174,0.05); background: rgba(255,255,255,0.8) url(../img/sub/ico_prev.png) no-repeat 50% 50%;}  
+.contents_guide .lst_guide dd.slide_area .swiper-pagination{left: 0; bottom: 0; width: 100%;}                
+.contents_guide .lst_guide dd.slide_area .swiper-pagination .swiper-pagination-bullet{margin: 0 5px; width: 10px; height: 10px; background-color: #ccc; opacity: 1;}                 
+.contents_guide .lst_guide dd.slide_area .swiper-pagination .swiper-pagination-bullet-active{background-color: #3348ae;} 
+ 
+.contents_guide .lst_guide dd.desc_step{padding-top: 30px; height: 100px;}
+.contents_guide .lst_guide dd.desc_step .desc{display: none; position: absolute; left: 0; top: 30px; width: 100%;}     
+.contents_guide .lst_guide dd.desc_step .desc.on{display: block;}
+.contents_guide .lst_guide dd.desc_step .desc .title{font-size: 18px; font-weight: 700; color: #333;}
+.contents_guide .lst_guide dd.desc_step .desc .lst_desc{margin-top: 10px;}
+.contents_guide .lst_guide dd.desc_step .desc .lst_desc li{margin-top: 5px; font-size: 15px; color: #444;} 
+.contents_guide .lst_guide dd.desc_step .desc .lst_desc li:first-child{margin-top: 0;}
+.hr_divid{height:2px;margin-top:30px;margin-bottom:30px;border-top:1px dotted #ddd;}
+
+/* ==========================================================================
+   WEB01509 : 서비스소개_투자자 서비스 가이드
+   ========================================================================== */
+.contents_guide .lst_guide.lst_investor dd.slide_area .notebook_area{margin-left: -344px;}
+
+.contents_guide .lst_guide.lst_investor dd.slide_area .mobile_area{position: absolute; top: 108px; left: 50%; padding: 25px 0 0 62px; margin-left: 125px;   width: 207px; height: 337px; background: url(../img/sub/bg_mobile.png)   no-repeat 0 0; z-index: 3;}
+.contents_guide .lst_guide.lst_investor dd.slide_area .mobile_area::before{content:'';position:absolute;width:207px;height:337px;top:0;left:0;background:url(../img/sub/bg_mobile2.png) no-repeat 50%;z-index:2;}
+.contents_guide .lst_guide.lst_investor dd.slide_area .swiper_mobile{margin: 0; width: 126px;height: 276px;}
+
+.contents_guide .lst_guide.lst_investor dd.slide_area .swiper-button-next{right: -148px;}
+.contents_guide .lst_guide.lst_investor dd.slide_area .swiper-button-prev{left: -68px;}
+.contents_guide .lst_guide.lst_investor dd.slide_area .swiper-pagination{left: 30px;} 
+

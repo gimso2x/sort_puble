@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- ckeditor -->
+	<script src="../js/vendor/ckeditor/ckeditor.js"></script> 
+	<script>
+		$(document).ready(function() {
+			// thead 체크박스 클릭시 밑 체크박스 전부 선택
+			var _theadChkBox = 'thead input[type="checkbox"]';
+			var _tbodyChkBox = 'tbody input[type="checkbox"]';
+
+			$(document).on('click', '.table_normal_list thead input[type="checkbox"]', function() {
+				$(this).closest('table').find(_tbodyChkBox).prop('checked', this.checked);
+			});
+
+			$(document).on('click', '.table_normal_list tbody input[type="checkbox"]', function() {
+				var _$chkTable = $(this).closest('table');
+				if(_$chkTable.find(_tbodyChkBox).length === _$chkTable.find(_tbodyChkBox + ':checked').length) {
+					_$chkTable.find(_theadChkBox).prop('checked', true);
+				} else {
+					_$chkTable.find(_theadChkBox).prop('checked', false);
+				}
+			});
+		})
+		
+	</script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>알림 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">Push 관리</a></li>
+				<li><a href="javascript:void(0);">SMS 관리</a></li>
+				<li><a href="javascript:void(0);">이메일발송 관리</a></li>
+				<li><a href="javascript:void(0);">자동입력 설정</a></li>
+				<li><a href="javascript:void(0);" class="active">채팅세션 관리<br>(Sendbird)</a></li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>채팅세션 관리(Sendbird)</h4>
+
+				<!-- 리스트 검색 -->
+				<div class="companyinfo_table mt30 type_search">
+					<table>
+						<caption>채팅세션 관리(Sendbird)</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>거래상태</th>
+								<td>
+									<select class="select_css form_control">
+										<option value="">전체</option>
+										<option value="">협상</option>
+										<option value="">결렬</option>
+										<option value="">계약</option>
+										<option value="">체결</option>
+									</select>
+								</td>
+								<th>생성일자</th>
+								<td>
+									<ul class="datepicker_searchwrap clearfix">
+										<li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+										<li class="datepicker_connect">~</li>
+										<li><input type="text" autocomplete="off" class="datepicker form_control"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>검색어</th>
+								<td>
+									<div class="td_col2">
+										<div  style="width:130px;">
+											<select class="select_css form_control">
+												<option value="">전체</option>
+												<option value="">발송자</option>
+												<option value="">내용</option>
+											</select>
+										</div>
+										<div>
+											<input type="text" class="form_control" maxlength="">
+										</div>
+									</div>
+								</td>
+								<th></th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="submit_area ac">
+					<button type="button" class="btn_md btn_white">초기화</button>
+					<button type="button" class="btn_md btn_blue">검색</button>
+				</div>
+				<!-- // 리스트 검색 -->
+
+				<!-- 리스트 -->
+				<div class="table_normal_list mt40">
+					<div class="group_tableinfo">
+						<span class="num_total">총 <em class="txt_sell_color">265</em>건</span>
+						<div class="srch_area">
+							<button type="button" class="btn_sm btn_blue">삭제</button>
+							<select class="select_css form_control page_num_width">
+								<option value="20">20</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
+						</div>
+					</div>
+
+					<table>
+						<caption>채팅세션(Sendbird)</caption>
+						<colgroup>
+							<col width="4%">
+							<col width="4%">
+							<col width="25%">
+							<col width="10%">
+							<col width="10%">
+							<col width="10%">
+							<col width="14%">
+							<col width="14%">
+							<col width="8%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</th>
+								<th>No</th>
+								<th>채팅방</th>
+								<th>주문게시자</th>
+								<th>매도자</th>
+								<th>매수자</th>
+								<th>생성일자</th>
+								<th>마지막채팅 일자</th>
+								<th>거래상태</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 데이터없을때 -->
+							<!-- <tr>
+								<td class="blank_area" colspan="9">
+									<p class="txt_blank">데이터가 없습니다.</p>
+								</td>
+							</tr> -->
+							<tr class="check_tr">
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>10</td>
+								<td class="al">
+									뉴코에드윈드
+								</td>
+								<td>홍길동</td>
+								<td>홍길동</td>
+								<td>이수영</td>
+								<td>2019-06-26 23:00</td>
+								<td>2019-06-26 23:00</td>
+								<td>협상</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>9</td>
+								<td class="al">
+									뉴코에드윈드
+								</td>
+								<td>홍길동</td>
+								<td>홍길동</td>
+								<td>이수영</td>
+								<td>2019-06-26 23:00</td>
+								<td>2019-06-26 23:00</td>
+								<td>결렬</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>8</td>
+								<td class="al">
+									뉴코에드윈드
+								</td>
+								<td>홍길동</td>
+								<td>홍길동</td>
+								<td>이수영</td>
+								<td>2019-06-26 23:00</td>
+								<td>2019-06-26 23:00</td>
+								<td>계약</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>7</td>
+								<td class="al">
+									뉴코에드윈드
+								</td>
+								<td>홍길동</td>
+								<td>홍길동</td>
+								<td>이수영</td>
+								<td>2019-06-26 23:00</td>
+								<td>2019-06-26 23:00</td>
+								<td>체결</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="board_paging">
+						<ul>
+							<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+							<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+							<li><a href="javascript:void(0);" class="active">1</a></li>
+							<li><a href="javascript:void(0);">2</a></li>
+							<li><a href="javascript:void(0);">3</a></li>
+							<li><a href="javascript:void(0);">4</a></li>
+							<li><a href="javascript:void(0);">5</a></li>
+							<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+							<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- // 리스트 -->
+
+				<h5>채팅방 삭제 누적 기록</h5>
+				<div class="companyinfo_table th_vertical">
+					<table>
+						<caption>채팅방 삭제 누적 기록</caption>
+						<colgroup>
+							<col width="50%">
+							<col width="50%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>채팅방1인</th>
+								<th>거래완료</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>234</td>
+								<td>523</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+<!-- 팝업 -->
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script> 
+	<script src="../js/common.js"></script>
+	<script>
+		$(function(){
+			$('#pop_ask_print').neoModal();
+		});
+	</script>
+</head>
+<body class=""> 
+ 
+<div id="pop_ask_print" class="pop_dim_wrap pop_modal pop_ask_print"> 
+	<div class="pop_wrap"> 
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap al">주권미발행확인서 발급요청</div>
+		<div class="contents_wrap">
+			<div class="inner">
+				<label for="select_name">종목명</label>
+				<select name="" id="select_name" class="selectbox form_control">
+					<option value="">코스콤</option>
+				</select>
+				
+				<label for="input_count">보유수량(주)</label> 
+				<input type="text" maxlength="" id="input_count" class="form_control" value="100,000">
+				
+				<p class="msg">발급요청을 진행하시겠습니까?</p>
+			</div>
+		</div>
+
+		<div class="button_wrap clearfix"> 
+			<button type="button" class="btn_md btn_white fl" onclick="$('#pop_ask_print').neoModal('close');">아니오</button>
+			<button type="button" class="btn_md btn_blue fr" onclick="$('#pop_ask_print').neoModal('close');">예</button>
+		</div> 
+	</div> 
+</div>
+
+</body>
+</html>

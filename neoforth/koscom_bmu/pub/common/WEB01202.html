@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="euc-k">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 로그인전 -->
+	<div id="header">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb">
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li>
+					<li class="join_area"><a href="javascript:void(0);" class="active"><span>서비스 가입</span></a></li>
+					<li class="login_area"><a href="javascript:void(0);"><span>로그인</span></a></li> 
+				</ul>
+				<div class="bar"></div> 
+ 
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+					<ul class="nav_sub"> 
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>	<!-- // submenu_area -->
+			</div>	
+			
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+				</div>
+				<div class="group_nav join_area">
+					<a href="javascript:void(0);" class="title">서비스 가입</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+				</div> 
+				<div class="group_nav login_area"> 
+					<a href="javascript:void(0);" class="title">로그인</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="nav_page">
+			<div class="inner">
+				<ul class="lst_page clearfix">
+					<li><a href="/" class="btn_home sr_only">Home</a></li>
+					<li>
+						<a href="javascript:void(0);" class="btn_page">서비스 가입</a>
+						<ul class="nav_subpage clearfix">  
+							<li><a href="javascript:void(0);">서비스 소개</a></li>
+							<li><a href="javascript:void(0);">투자정보</a></li>
+							<li><a href="javascript:void(0);">고객센터</a></li>
+							<li><a href="javascript:void(0);">로그인</a></li>
+							<li><a href="javascript:void(0);" class="active">서비스 가입</a></li>
+						</ul>
+					</li> 
+					<li>
+						<ul class="lst_subpage clearfix">  
+							<li><a href="javascript:void(0);">등록기업</a></li>
+							<li><a href="javascript:void(0);" class="active">투자자</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>	<!-- // nav_page -->
+
+		<div class="section">
+			<div class="inner">
+				<div class="group_pageinfo">
+					<h3 class="txt_title">투자자 서비스 가입(개인)</h3>
+					<p class="txt_info">Platform 투자자 서비스 가입을 위해서는 인증, 약관동의, 정보입력을 완료하시면 서비스 가입이 완료됩니다.</p>
+				</div>	<!-- // group_title -->
+				
+				<div class="contents">
+					<!-- [D] 활성화 투자자일경우 class에 "invest" 추가 -->
+					<div class="join_process_info invest">
+						<!-- [D] 활성화 li는 class에 "on" 추가 -->
+						<ul class="clearfix">
+							<li>
+								<p class="txt_tit">STEP 01</p>
+								<p class="txt_desc">인증</p>
+							</li>
+							<li>
+								<p class="txt_tit">STEP 02</p>
+								<p class="txt_desc">약관 동의</p>
+							</li>
+							<li class="on">
+								<p class="txt_tit">STEP 03</p>
+								<p class="txt_desc">정보 입력</p>
+							</li>
+						</ul>
+					</div>
+
+					<form class="join_process_form">
+						<h5 class="tableform_tit">정보입력<span>모든 입력사항은 필수 사항입니다.</span></h5>
+						<fieldset class="tableform_wrap type_col2 lgtxt_type2">
+							<table>
+								<caption>정보입력 - 성명, 주민등록번호, 휴대폰번호, E-mail, 닉네임, 주소</caption>
+								<colgroup>
+									<!-- [resize] 190812 col width 변경 -->
+									<col width="130">
+									<col width="*">
+									<col width="130">
+									<col width="420">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><label for="investor_name" class="ico_essential ico_right">성명</label></th>
+										<td><input type="text" id="investor_name" class="form_control" maxlength=""></td>
+										<th><label for="investor_personalnum" class="ico_essential ico_right">주민등록번호</label></th>
+										<td><input type="text" id="investor_personalnum" class="form_control" maxlength=""></td>
+									</tr>
+									<tr>
+										<th><label for="investor_nickname" class="ico_essential ico_right">닉네임</label></th>
+										<td>
+											<div class="td_col2 td_col2_sm">
+												<div>
+													<input type="text" id="investor_nickname" class="form_control" maxlength="">
+												</div>
+												<div>
+													<button type="button" class="btn_sm btn_darkblue">중복확인</button>
+												</div>
+											</div>
+										</td>
+										<th><label for="investor_cellphone" class="ico_essential ico_right">휴대폰번호</label></th>
+										<td>
+											<ul class="td_col_phone clearfix">
+												<li><input type="text" id="investor_cellphone" class="form_control" maxlength=""></li>
+												<li>-</li>
+												<li><input type="text" class="form_control" maxlength=""></li>
+												<li>-</li>
+												<li><input type="text" class="form_control" maxlength=""></li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th><label for="investor_email" class="ico_essential ico_right">이메일</label></th>
+										<td>
+											<ul class="td_col_email clearfix">
+												<li>
+													<input type="text" id="investor_email" class="form_control" maxlength="">
+												</li>
+												<li>@</li>
+												<li>
+													<input type="text" id="" class="form_control" maxlength="">
+												</li>
+												<li>
+													<select class="select_css form_control">
+														<option value="">선택</option>
+													</select>
+												</li>
+											</ul>
+										</td>
+										<th><label for="investor_address" class="ico_essential ico_right">주소</label></th>
+										<td>
+											<div class="td_col2">
+												<div>
+													<input type="text" id="investor_address" class="form_control" maxlength="">
+												</div>
+												<div>
+													<button type="button" class="btn_sm btn_darkblue" onclick="$('#pop_address_find').neoModal();">주소검색</button>
+												</div>
+											</div>
+											<input type="text" id="" class="form_control" maxlength="">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</fieldset>
+						<p class="txt_info">※ 닉네임은 필수입력사항으로 기본적으로 성명으로 표시되지만 변경하실 수 있습니다. 변경 후 중복확인을 체크하여 주십시오.</p>
+
+						<h5 class="tableform_tit">추가정보입력<span>(선택사항)</span></h5>
+						<p class="txt_info">※ 증권매매를 하기 위한 입출금 계좌를 등록하여 주십시오. 등록하지 않은 경우 매매가 제한될 수 있습니다</p>
+						<fieldset class="tableform_wrap type_col2">
+							<table>
+								<caption>추가정보입력 - 은행, 계좌정보</caption>
+								<colgroup>
+									<!-- [resize] 190812 col width 변경 -->
+									<col width="130">
+									<col width="*">
+									<col width="130">
+									<col width="420">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><label for="investor_bank">은행</label></th>
+										<td>
+											<select id="investor_bank" class="form_control select_css">
+												<option value="">하늘은행</option>
+											</select>
+										</td>
+										<th><label for="investor_account">계좌번호</label></th>
+										<td>
+											<div class="td_col2">
+												<div>
+													<input type="text" id="investor_account" class="form_control" maxlength="">
+												</div>
+												<div>
+													<button type="button" class="btn_sm btn_darkblue">검증확인</button>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</fieldset>
+
+						<div class="btn_wrap">
+							<button type="button" class="btn_lg btn_white">취소</button>
+							<button type="button" class="btn_lg btn_blue">가입</button>
+						</div>
+					</form>
+
+				</div>	<!-- // contents -->
+			</div>
+		</div>
+	</div>	<!-- // container -->
+	
+	<!-- 로그인전 -->
+	<div id="footer">
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix"> 
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.koscom.co.kr">코스콤</option>
+					</select> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_member join">
+					<p>서비스 가입</p>
+					<ul>
+						<li><a href="javascript:void(0);">등록기업 서비스 가입</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가입</a></li>
+					</ul>
+				</div>
+				<div class="nav_member login">
+					<p>로그인</p>
+					<ul>
+						<li><a href="javascript:void(0);">등록기업 로그인</a></li>
+						<li><a href="javascript:void(0);">투자자 로그인</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a>
+	</div>	<!-- // footer --> 
+</div>
+
+<!-- 팝업 -->
+<div id="pop_input_cancle" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				입력한 내용이 모두 사라집니다.<br>
+				서비스가입을 취소하시겠습니까?
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_white w50" onclick="$('#pop_input_cancle').neoModal('close')">아니오</button>
+			<button type="button" class="btn_pop_default btn_blue w50">예</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_accountcheck" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				계좌검증을 완료하였습니다.<br>
+				매도 거래시 해당 계좌로 입금합니다.<br>
+				계좌변경은 My Page에서 가능합니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_accountcheck').neoModal('close')">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_accountcheck_false" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				입력한 정보로 계좌검증을 완료하지 못하였습니다.<br>
+				본인 계좌가 맞는지 다시 한번 확인하여 주십시오.<br>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_accountcheck_false').neoModal('close')">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_nick_doublecheck" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				닉네임 중복확인을 체크하여 주세요.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_nick_doublecheck').neoModal('close')">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_nick_check" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				'<span>00000</span>' 닉네임은<br>
+				사용하실 수 없습니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_nick_check').neoModal('close')">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_nick_check2" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				'<span>00000</span>' 닉네임은<br>
+				사용 가능합니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_nick_check2').neoModal('close')">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_join_success" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				서비스 가입이 완료되었습니다.<br>
+				<span class="txt_emphasis">로그인 페이지로 이동</span>합니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_input_must" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				필수 입력 사항이 모두 입력이 완료되어야 합니다.<br>
+				필수 입력 사항을 다시 한번 확인하여 주십시오.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<!-- 주소검색 -->
+<div id="pop_address_find" class="pop_dim_wrap pop_modal pop_md">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주소검색
+		</div>
+		<div class="contents_wrap">
+			<div>
+				<table>
+					<caption>주소검색 - 주소, 우편번호, 선택주소, 상세주소</caption>	
+					<tbody>
+						<tr>
+							<td colspan="2">
+								<div class="td_col2">
+									<div>
+										<input type="text" class="form_control" maxlength="">
+									</div>
+									<div>
+										<button type="button" class="btn_sm btn_darkblue">검색</button>
+									</div>
+								</div>
+								<p>
+									※ 지역명(지번주소): 동/읍/면/리 (예: 여의도동 3210, 역삼동 912, 화도읍)
+								</p>
+								<p>
+									※ 도로명주소(새주소):도로명 + 건물명 (예: 국제금융10, 상도로)
+								</p>
+								<ul class="address_result">
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr class="address_detail">
+							<th><label for="post_num">우편번호</label></th>
+							<td><input type="text" id="post_num" class="form_control form_sm" maxlength=""></td>
+						</tr>
+						<tr class="address_detail">
+							<th><label for="select_addr">선택주소</label></th>
+							<td><input type="text" id="select_addr" class="form_control" maxlength=""></td>
+						</tr>
+						<tr class="address_detail">
+							<th><label for="detail_addr">상세주소</label></th>
+							<td><input type="text" id="detail_addr" class="form_control" maxlength=""></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue" onclick="$('#pop_address_find').neoModal('close');">완료</button>
+		</div>
+	</div>
+</div>
+<!-- // 팝업 -->
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="../js/vendor/analytics.js" async></script>
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);" class="active">회원 관리</a></li>
+				<li><a href="javascript:void(0);">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>회원 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">해지관리</a></li>
+				<li><a href="javascript:void(0);">휴면조회</a></li>
+				<li><a href="javascript:void(0);">전문기관</a></li>
+				<li><a href="javascript:void(0);" class="active">화이트리스트</a></li>
+				<li><a href="javascript:void(0);">관리자</a></li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>화이트리스트</h4>
+				<div class="group_srch">
+					<table class="tb_srch">
+						<tbody>
+							<tr>
+								<td class="srch_area ac">
+									<label>검색</label>
+									<select class="select_css form_control">
+										<option>기업명</option>
+										<option>사업자등록번호</option>
+									</select>
+									<input type="text" class="form_control">
+									<button type="button" class="btn_sm btn_darkblue btn_srch">검색</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	<!-- // group_search -->
+
+				<div class="table_normal_list mt40">
+					<div class="group_tableinfo">
+						<span class="num_total">총 회원수 : <em class="txt_sell_color">15</em>건</span>
+						<div class="srch_area">
+							<select class="select_css form_control">
+								<option value="20">20</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
+						</div>
+					</div>
+
+					<table>
+						<caption>사용자 전환</caption>
+						<colgroup>
+							<col width="6%">
+							<col width="16%">
+							<col width="12%">
+							<col width="9%">
+							<col width="12%">
+							<col width="18%">
+							<col width="9%">
+							<col width="9%">
+							<col width="9%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th><a href="javascript:void(0);" class="sorting_button">기업명</a></th>
+								<th>사업자등록번호</th>
+								<th>담당자성명</th>
+								<th>담당자휴대폰</th>
+								<th>담당자이메일</th>
+								<th><a href="javascript:void(0);" class="sorting_button">등록일</a></th>
+								<th><a href="javascript:void(0);" class="sorting_button">회원가입일</a></th>
+								<th>승인여부</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 데이터없을때 -->
+							<!-- <tr>
+								<td class="blank_area" colspan="9">
+									<p class="txt_blank">데이터가 없습니다.</p>
+								</td>
+							</tr> -->
+							<tr>
+								<td>20</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>2019.07.03</td>
+								<td><a href="javascript:void(0);" class="btn_link">승인</a></td>
+							</tr>
+							<tr>
+								<td>19</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>N</td>
+								<td>2019.07.03</td>
+							</tr>
+							<tr>
+								<td>18</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>2019.07.03</td>
+								<td><a href="javascript:void(0);" class="btn_link">승인</a></td>
+							</tr>
+							<tr>
+								<td>17</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>N</td>
+								<td>2019.07.03</td>
+							</tr>
+							<tr>
+								<td>16</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>2019.07.03</td>
+								<td><a href="javascript:void(0);" class="btn_link">승인</a></td>
+							</tr>
+							<tr>
+								<td>15</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>N</td>
+								<td>2019.07.03</td>
+							</tr>
+							<tr>
+								<td>14</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>2019.07.03</td>
+								<td><a href="javascript:void(0);" class="btn_link">승인</a></td>
+							</tr>
+							<tr>
+								<td>13</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>N</td>
+								<td>2019.07.03</td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>2019.07.03</td>
+								<td><a href="javascript:void(0);" class="btn_link">승인</a></td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>N</td>
+								<td>2019.07.03</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>2019.07.03</td>
+								<td><a href="javascript:void(0);" class="btn_link">승인</a></td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>N</td>
+								<td>2019.07.03</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>2019.07.03</td>
+								<td><a href="javascript:void(0);" class="btn_link">승인</a></td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>N</td>
+								<td>2019.07.03</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>2019.07.03</td>
+								<td><a href="javascript:void(0);" class="btn_link">승인</a></td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>N</td>
+								<td>2019.07.03</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>2019.07.03</td>
+								<td><a href="javascript:void(0);" class="btn_link">승인</a></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>N</td>
+								<td>2019.07.03</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>2019.07.03</td>
+								<td><a href="javascript:void(0);" class="btn_link">승인</a></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td><a href="javascript:void(0);">뉴코에드윈드</a></td>
+								<td><a href="javascript:void(0);">111-11-11111</a></td>
+								<td>신길동</td>
+								<td>010-1234-1234</td>
+								<td>Khong459@gmail.com</td>
+								<td>2019.07.03</td>
+								<td>N</td>
+								<td>2019.07.03</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="board_paging">
+						<ul>
+							<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+							<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+							<li><a href="javascript:void(0);" class="active">1</a></li>
+							<li><a href="javascript:void(0);">2</a></li>
+							<li><a href="javascript:void(0);">3</a></li>
+							<li><a href="javascript:void(0);">4</a></li>
+							<li><a href="javascript:void(0);">5</a></li>
+							<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+							<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+						</ul>
+						<button type="button" class="btn_md btn_blue btn_right">등록</button>
+					</div>
+				</div>
+				
+				
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+
+</body>
+</html>

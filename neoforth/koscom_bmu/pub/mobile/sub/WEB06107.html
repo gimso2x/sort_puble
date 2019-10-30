@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script> 
+	<script src="../js/common.js"></script>
+</head>
+<body> 
+ 
+<div class="wrap_popup">
+	<div class="header_popup">
+		<h2>주소검색</h2>
+		<a href="javascript:void(0);" class="btn_close sr_only">닫기</a>
+	</div>
+
+	<div class="container_popup">
+		<div class="inner">
+			<div class="search_address mt20">
+				<label><input type="text" maxlength="" class="form_control" placeholder="지번/도로명을 입력해주세요." id="address_srch_text" onkeydown="enterSearch();" autocomplete="off"></label>
+				<button class="btn_srch" type="button" onclick="fnSearchAddress();">검색</button>
+			</div>
+
+			<ul class="explain_ul mt15">
+				<li>검색어 예 : 도로명(반포대로 58), 건물명(독립기념관), 지번(삼성동 25)</li>
+			</ul>
+
+			<div class="search_address_result mt10">
+				총 <span class="txt_sell_color">15</span>개의 검색 결과
+				<ul class="address_form">
+					<li>
+						<p class="ac" style="line-height: 36px;">도로명주소, 건물명 또는 지번명을 입력해주세요</p>
+					</li>
+				</ul>
+			</div>
+
+			<dl class="search_address_selected address_form">
+				<dt>
+					<p class="result_zipno"></p>
+					<p class="result_zipdetail"></p>
+				</dt>
+				<dd>
+					<input type="text" class="form_control" placeholder="상세주소를 입력해 주세요">
+				</dd>
+			</dl>
+
+		</div>
+	</div>
+
+	<div class="footer_popup">
+		<button class="btn_lg btn_blue btn_confirm"><span>확인</span></button>
+	</div> 
+</div>
+<script>
+	var fnSearchAddress = function() {
+		// 적용예 (api 호출 전에 검색어 체크)
+		if (!checkSearchedWord(document.getElementById('address_srch_text'))) {
+			return ;
+		}
+		// var jsonAjaxData = "currentPage=1&countPerPage=100&resultType=json&confmKey=TESTJUSOGOKR&keyword=" + document.getElementById('address_srch_text').value;
+		var jsonAjaxData = "currentPage=1&countPerPage=100&resultType=json&confmKey=U01TX0FVVEgyMDE5MDkyMzExMTAyNzEwOTA0MTI=&keyword=" + encodeURI(document.getElementById('address_srch_text').value) + "&encodingType=utf-8";
+		$.ajax({
+			url :"https://www.juso.go.kr/addrlink/addrLinkApiJsonp.do"  //인터넷망
+			,type:"post"
+			,data:jsonAjaxData
+			,dataType:"jsonp"
+			,crossDomain:true
+			,success:function(jsonStr){
+				var errCode = jsonStr.results.common.errorCode;
+				var errDesc = jsonStr.results.common.errorMessage;
+				if(errCode != "0"){
+					alert(errCode+"="+errDesc);
+				}else{
+					if(jsonStr != null){
+						makeListJson(jsonStr);
+					}
+				}
+			}
+			,error: function(xhr,status, error){
+				alert("에러발생");
+			}
+		});
+	}
+
+	//특수문자, 특정문자열(sql예약어의 앞뒤공백포함) 제거
+	function checkSearchedWord(obj){
+		if(obj.value.length >0){
+			//특수문자 제거
+			var expText = /[%=><]/ ;
+			if(expText.test(obj.value) == true){
+				alert("특수문자를 입력 할수 없습니다.") ;
+				obj.value = obj.value.split(expText).join(""); 
+				return false;
+			}
+			
+			//특정문자열(sql예약어의 앞뒤공백포함) 제거
+			var sqlArray = new Array(
+				//sql 예약어
+				"OR", "SELECT", "INSERT", "DELETE", "UPDATE", "CREATE", "DROP", "EXEC",
+						"UNION",  "FETCH", "DECLARE", "TRUNCATE" 
+			);
+			
+			var regex;
+			for(var i=0; i<sqlArray.length; i++){
+				regex = new RegExp( sqlArray[i] ,"gi") ;
+				
+				if (regex.test(obj.value) ) {
+					alert("\"" + sqlArray[i]+"\"와(과) 같은 특정문자로 검색할 수 없습니다.");
+					obj.value =obj.value.replace(regex, "");
+					return false;
+				}
+			}
+		}
+		return true ;
+	}
+
+	// 주소 선택시 input에 입력
+	function srch_address_select(zipno, zipdetail) {
+		$('.result_zipno').text(zipno);
+		$('.result_zipdetail').text(zipdetail);
+	}
+
+	function makeListJson(jsonStr){
+		var htmlLi = '';
+		$(jsonStr.results.juso).each(function(){
+			// var searchaddress = this.zipNo + ' ,\'' + this.roadAddr + '\'';
+			var searchaddress = String(this.zipNo) + ' ,' + String(this.roadAddr);
+			htmlLi += '<li onclick="srch_address_select(\''+String(this.zipNo) + '\' ,\'' + String(this.roadAddr)+'\')">' +
+						'<p>'+ this.zipNo + '</p>' +
+						'<p>'+ this.roadAddr + '</p>' +
+						// '<a href="javascript:srch_address_select(\''+String(this.zipNo) + '\' ,\'' + String(this.roadAddr)+'\')"><span>'+ this.zipNo +'</span>'+ this.roadAddr +'</a>' +
+					'</li>';
+		});
+		$('.search_address_result .address_form').html(htmlLi);
+	}
+
+	// 엔터키처리
+	function enterSearch() {
+		var evt_code = (window.netscape) ? ev.which : event.keyCode;
+		if (evt_code == 13) {
+			event.keyCode = 0;
+			fnSearchAddress(); //jsonp사용시 enter검색 
+		} 
+	}
+</script>
+</body>
+</html>

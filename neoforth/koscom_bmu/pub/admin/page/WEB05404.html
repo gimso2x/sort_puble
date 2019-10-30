@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- ckeditor -->
+	<script src="../js/vendor/ckeditor/ckeditor.js"></script> 
+	<script>
+		$(document).ready(function() {
+			CKEDITOR.replace('ckeditor_write', {
+				height: 300, //editor height 높이 지정
+				resize_enabled: false //editor 크기조정 삭제
+				,fullPage : true //doctype과html까지나오기
+				,allowedContent: true
+			});
+
+			// thead 체크박스 클릭시 밑 체크박스 전부 선택
+			var _theadChkBox = 'thead input[type="checkbox"]';
+			var _tbodyChkBox = 'tbody input[type="checkbox"]';
+
+			$(document).on('click', '.table_normal_list thead input[type="checkbox"]', function() {
+				$(this).closest('table').find(_tbodyChkBox).prop('checked', this.checked);
+			});
+
+			$(document).on('click', '.table_normal_list tbody input[type="checkbox"]', function() {
+				var _$chkTable = $(this).closest('table');
+				if(_$chkTable.find(_tbodyChkBox).length === _$chkTable.find(_tbodyChkBox + ':checked').length) {
+					_$chkTable.find(_theadChkBox).prop('checked', true);
+				} else {
+					_$chkTable.find(_theadChkBox).prop('checked', false);
+				}
+			});
+		})
+		
+	</script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);">회원 관리</a></li>
+				<li><a href="javascript:void(0);">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>알림 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">Push 관리</a></li>
+				<li><a href="javascript:void(0);">SMS 관리</a></li>
+				<li><a href="javascript:void(0);">이메일발송 관리</a></li>
+				<li><a href="javascript:void(0);" class="active">자동입력 설정</a></li>
+				<li><a href="javascript:void(0);">채팅세션 관리<br>(Sendbird)</a></li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>자동입력 설정</h4>
+
+				<!-- 리스트 등록 -->
+				<div class="companyinfo_table mt30 type_search">
+					<table>
+						<caption>자동입력설정</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>분류명</th>
+								<td colspan="3"><input type="text" class="form_control" maxlength=""></td>
+							</tr>
+							<tr>
+								<th>Push내용</th>
+								<td><textarea class="form_control"></textarea></td>
+								<th>SMS내용</th>
+								<td><textarea class="form_control"></textarea></td>
+							</tr>
+							<tr>
+								<th>메일제목</th>
+								<td colspan="3"><input type="text" class="form_control" maxlength=""></td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<textarea id="ckeditor_write">
+										<!-- S: 이메일 템플릿 -->
+										<!DOCTYPE html>
+										<html lang="ko">
+										<head>
+											<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+											<title>Be My Unicon</title>
+										</head>
+
+										<body>
+										<table width="750" border="0" cellspacing="0" cellpadding="0" align="center" style="border:1px solid #dddddd;border-top:1px solid #3348ae;">
+											<tbody>
+												<tr>
+													<td style="height:83px;vertical-align:bottom;">
+														<!-- header -->
+														<table width="100%" border="0" cellspacing="0" cellpadding="0">
+															<tr>
+																<td style="width:40px;"></td>
+																<td>
+																	<img src="../img/common/logo_gnb.png" width="137" height="37" style="vertical-align:bottom;" alt="" border="0" />
+																</td>
+															</tr>
+														</table>
+														<!-- //header -->
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<table width="100%" border="0" cellspacing="0" cellpadding="0">
+															<tbody>
+																<tr>
+																	<td style="height:25px;">&nbsp;</td>
+																</tr>
+																<tr>
+																	<td style="width:118px;">&nbsp;</td>
+																	<td>
+																		<!-- contents -->
+																		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																			<tbody>
+																				<tr>
+																					<td style="text-align:center;font-size:24px;line-height:44px;color:#333;">템플릿 제목이 들어갑니다</td>
+																				</tr>
+																				<tr>
+																					<td style="height:35px;">&nbsp;</td>
+																				</tr>
+																				<tr>
+																					<td style="font-size:15px;line-height:28px;color:#555;">
+																						<span style="color:#3348ae;font-size:18px;">홍길동</span> 회원님,<br><br>
+																						템플릿 내용이 들어갑니다.<br>
+																						템플릿 내용이 들어갑니다.템플릿 내용이 들어갑니다.<br>
+																						템플릿 내용이 들어갑니다.템플릿 내용이 들어갑니다.
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		<!-- //contents -->
+																	</td>
+																	<td style="width:118px;">&nbsp;</td>
+																</tr>
+																<tr>
+																	<td style="height:25px;">&nbsp;</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<!-- footer -->
+														<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f2f2f2">
+															<tbody>
+																<tr>
+																	<td style="height:20px;"></td>
+																</tr>
+																<tr>
+																	<td style="width:30px;"></td>
+																	<td style="font-size:14px;line-height:20px;color:#555;">
+																		본 메일은 발신전용 메일입니다. 궁금하신 점은 1:1 문의로 문의해주시기 바랍니다.<br>
+																		타인이 회원님의 이메일을 잘못 입력한 경우 메일이 발송될 수 있습니다.<br>
+																		잘못 수신될 메일이라면 고객센터를 이용해주시기 바랍니다.
+																	</td>
+																</tr>
+																<tr>
+																	<td style="height:15px;"></td>
+																</tr>
+																<tr>
+																	<td style="width:30px;"></td>
+																	<td style="font-size:13px;line-height:15px;color:#757575;">CORYRIGHT ⓒ 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</td>
+																</tr>
+																<tr>
+																	<td style="height:20px;"></td>
+																</tr>
+															</tbody>
+														</table>
+														<!-- //footer -->
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										</body>
+										</html>
+
+										<!-- E: 이메일 템플릿 -->
+									</textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="submit_area ac">
+					<button type="button" class="btn_md btn_blue">등록</button>
+				</div>
+				<!-- // 리스트 등록 -->
+
+				<!-- 리스트 -->
+				<div class="table_normal_list mt40">
+					<div class="group_tableinfo">
+						<span class="num_total">총 <em class="txt_sell_color">265</em>건</span>
+						<div class="srch_area">
+							<button type="button" class="btn_sm btn_blue">삭제</button>
+							<select class="select_css form_control page_num_width">
+								<option value="20">20</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
+						</div>
+					</div>
+
+					<table>
+						<caption>자동입력 관리</caption>
+						<colgroup>
+							<col width="10%">
+							<col width="10%">
+							<col width="80%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</th>
+								<th>No</th>
+								<th>분류명</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 데이터없을때 -->
+							<!-- <tr>
+								<td class="blank_area" colspan="3">
+									<p class="txt_blank">데이터가 없습니다.</p>
+								</td>
+							</tr> -->
+							<tr class="check_tr">
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>10</td>
+								<td>분류명2</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>10</td>
+								<td>분류명2</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="board_paging">
+						<ul>
+							<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+							<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+							<li><a href="javascript:void(0);" class="active">1</a></li>
+							<li><a href="javascript:void(0);">2</a></li>
+							<li><a href="javascript:void(0);">3</a></li>
+							<li><a href="javascript:void(0);">4</a></li>
+							<li><a href="javascript:void(0);">5</a></li>
+							<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+							<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- // 리스트 -->
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#pop_printstatus_manage').neoModal();
+		});
+	</script> 
+</head>
+<body>
+
+<div id="wrap">
+
+</div>
+
+
+<!-- 팝업 -->
+<div id="pop_printstatus_manage" class="pop_dim_wrap pop_modal pop_xlg">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주권미발행확인서 발급현황 및 관리
+		</div>
+		<div class="contents_wrap">
+			<h5>주권미발행확인서 발급현황 및 관리</h5>
+			<div class="table_accordion submit_type">
+				<ul class="group_title clearfix">
+					<li>주주명</li>
+					<li>요청일</li>
+					<li>처리상태</li>
+					<li>처리일</li>
+				</ul>
+				<dl class="group_desc">
+					<dt>
+						<ul class="lst_title clearfix">
+							<li>김대표</li>
+							<li>2019.07.15</li>
+							<li>미승인</li>
+							<li>-</li>
+						</ul>
+					</dt>
+					<dd>
+						<!-- 1. 승인 및 거부 전 상태 -->
+						<div class="message_box">
+							<p class="message_desc">※ 발급승인 또는 발급거부를 하실 수 있습니다.</p>
+							<div class="companyinfo_table">
+								<table>
+									<caption>발급요청일</caption>
+									<colgroup>
+										<col width="103">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>발급요청일</th>
+											<td>2019.06.15</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<ul class="explain_ul">
+								<li>발급승인 시 필수로 아래 2개항목에 체크하셔야 주권미발행확인서 발급승인이 가능합니다.</li>
+							</ul>
+	
+							<ul class="check_ul">
+								<li>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text">귀사 <span class="txt_buy_color">회사명</span>의 주주인 <span class="txt_buy_color">OOO</span>이 <span class="txt_buy_color">2019.11.29. 15:00</span> 현재 귀사의 보통주 주주로서 주식의 1,000주(바로 전 주주명부에 나타난 수량 전체)를 보유하고 있음에 대한 
+												확인 요청이 옴</span>
+									</label>
+								</li>
+								<li>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check2">
+										<span class="label_text">위 요청이 온 시점까지 위 <span class="txt_buy_color">OOO</span>주주의 보통주 1,000주에 대해 본 플랫폼 외에서 매매 등 처분 통지나 기타 질권설정 통지 등을 귀사가 받은 사실이 없는 등, 위 <span class="txt_buy_color">OOO</span>주주의 
+												보통주 1,000주에 대한 매도를 하는데 장애요소가 현재 발생한 사실이 없음</span>
+									</label>
+								</li>
+							</ul>
+	
+							<div class="button_wrap">
+								<button type="button" class="btn_md btn_blue">발급승인</button>
+							</div>
+						</div>
+	
+						<div class="message_box">
+							<ul class="explain_ul">
+								<li>발급거부 시 필수로 아래 1개 항목에 체크하셔야주권미발행확인서 발급거부가 가능합니다</li>
+							</ul>
+	
+							<ul class="check_ul">
+								<li>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text">위 요청이 온 시점까지 위 <span class="txt_buy_color">OOO</span>주주의 보통주 1,000주에 대해 본 플랫폼 외에서 매매 등 처분 통지나 기타 질권설정 통지 등을 회사가 받은 사실이 있어 주권미발행확인서 
+												발급을 해 줄 수 없음 </span>
+									</label>
+								</li>
+							</ul>
+	
+							<div class="button_wrap">
+								<button type="button" class="btn_md btn_blue">발급거부</button>
+							</div>
+						</div>
+					</dd>
+					<dt>
+						<ul class="lst_title clearfix">
+							<li>이이사</li>
+							<li>2019.07.15</li>
+							<li>승인</li>
+							<li>2019.08.05</li>
+						</ul>
+					</dt>
+					<dd>
+						<!-- 2. 승인 상태 -->
+						<div class="message_box">
+							<p class="message_desc">※ 발급승인을 하였습니다.</p>
+							<div class="companyinfo_table">
+								<table>
+									<caption>발급요청일</caption>
+									<colgroup>
+										<col width="103">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>발급요청일</th>
+											<td>2019.06.15</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+	
+							<ul class="check_ul">
+								<li>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked disabled>
+										<span class="label_text">귀사 <span class="txt_buy_color">회사명</span>의 주주인 <span class="txt_buy_color">OOO</span>이 <span class="txt_buy_color">2019.11.29. 15:00</span> 현재 귀사의 보통주 주주로서 주식의 1,000주(바로 전 주주명부에 나타난 수량 전체)를 보유하고 있음에 대한 
+												확인 요청이 옴</span>
+									</label>
+								</li>
+								<li>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check2" checked disabled>
+										<span class="label_text">위 요청이 온 시점까지 위 <span class="txt_buy_color">OOO</span>주주의 보통주 1,000주에 대해 본 플랫폼 외에서 매매 등 처분 통지나 기타 질권설정 통지 등을 귀사가 받은 사실이 없는 등, 위 <span class="txt_buy_color">OOO</span>주주의 
+												보통주 1,000주에 대한 매도를 하는데 장애요소가 현재 발생한 사실이 없음</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</dd>
+					<dt>
+						<ul class="lst_title clearfix">
+							<li>황대표</li>
+							<li>2019.07.15</li>
+							<li>거부</li>
+							<li>2018.0717</li>
+						</ul>
+					</dt>
+					<dd>
+						<!-- 3. 거부 상태 -->
+						<div class="message_box">
+							<p class="message_desc">※ 발급을 거부 하였습니다</p>
+							<div class="companyinfo_table">
+								<table>
+									<caption>발급요청일</caption>
+									<colgroup>
+										<col width="103">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>발급요청일</th>
+											<td>2019.06.15</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+	
+							<ul class="check_ul">
+								<li>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked disabled>
+										<span class="label_text">위 요청이 온 시점까지 위 <span class="txt_buy_color">OOO</span>주주의 보통주 1,000주에 대해 본 플랫폼 외에서 매매 등 처분 통지나 기타 질권설정 통지 등을 회사가 받은 사실이 있어 주권미발행확인서 
+												발급을 해 줄 수 없음 </span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</dd>
+					<!-- 내용없을때 -->
+					<!-- <dt class="blank_area">
+						<p class="txt_blank">현재 등록된 내용이 없습니다</p>
+					</dt> -->
+				</dl>
+			</div>
+
+			<div class="board_paging">
+				<ul>
+					<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+					<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+					<li><a href="javascript:void(0);" class="active">1</a></li>
+					<li><a href="javascript:void(0);">2</a></li>
+					<li><a href="javascript:void(0);">3</a></li>
+					<li><a href="javascript:void(0);">4</a></li>
+					<li><a href="javascript:void(0);">5</a></li>
+					<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+					<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- // 팝업 --> 
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+</body>
+</html>

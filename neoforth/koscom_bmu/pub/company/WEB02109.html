@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	
+</head>
+<body>
+
+<div id="mobile_wrap" class="mobile_manage bg_reverse">
+	<div id="container">
+		<dl class="m_tit_wrap">
+			<dt class="type_ok">확인</dt>
+			<dd>조회용 비밀번호를<br>입력해주세요</dd>
+		</dl>
+		<div class="m_desc_wrap">
+			<input type="password" class="form_control mb10">
+			<button type="button" class="m_btn_md mb15">인증</button>
+			<!-- 첫번째스탭 -->
+			<p class="txt_info">※ SMS에서 수신한 비밀번호가 조회용 비밀번호 입니다.</p>
+			<!-- 두번째스탭 -->
+			<!-- <p class="txt_info">※ <b>인증에 성공</b>하였습니다.<span>변경내용조회를 탭하여 주주명부를 승인하여 주세요.</span></p> -->
+			<!-- 세번째스탭 -->
+			<!-- <p class="txt_info fail">※ <b>인증에 실패</b>하였습니다.<span>정확한 인증번호를 입력하여 주십시오.</span></p> -->
+		</div>
+
+		<div class="button_wrap">
+			<button type="button" class="m_btn_lg btn_blue">변경내용 조회</button>
+		</div>
+	</div>	<!-- // container -->
+</div>
+
+<div id="pop_mobile_alert" class="pop_dim_wrap pop_alert pop_mobile">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				주주명부 수정 <b>승인</b>이<br>완료되었습니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_mobile_alert2" class="pop_dim_wrap pop_alert pop_mobile">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				주주명부 수정 <b>반려</b>가<br> 완료되었습니다.
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_mobile_alert2').neoModal('close')">확인</button>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

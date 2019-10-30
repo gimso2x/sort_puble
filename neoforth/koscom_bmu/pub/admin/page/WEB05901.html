@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		$(function(){
+			$('#pop_srch_tx').neoModal();
+		});
+	</script>
+</head> 
+<body>
+
+<!-- 팝업 -->
+<div id="pop_srch_tx" class="pop_dim_wrap pop_modal pop_md">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="title_wrap">
+            Tx 조회
+        </div>
+        <div class="contents_wrap">
+            <div class="companyinfo_table">
+			    <table>
+			        <caption>Tx 상세</caption>
+			        <colgroup>
+			            <col width="130">
+			            <col width="*">
+			        </colgroup>
+			        <tbody>
+			            <tr>
+			                <th>channelName</th>
+			                <td>채널명</td>
+			            </tr>
+			            <tr>
+			                <th>userName</th>
+			                <td>유저이름</td>
+			            </tr>
+			            <tr>
+			                <th>orgName</th>
+			                <td>기관명</td>
+			            </tr>
+			            <tr>
+			                <th>chaincodeName</th>
+			                <td>체인코드명</td>
+			            </tr>
+			            <tr>
+			                <th>chaincodeVersion</th>
+			                <td>체인코드버전</td>
+			            </tr>
+			            <tr>
+			                <th>invParam</th>
+			                <td>체인코드 입력 파라미터</td>
+			            </tr>
+			            <tr>
+			                <th>invResult</th>
+			                <td>체인코드 실행(Invoke)결과</td>
+			            </tr>
+			            <tr>
+			                <th>txId</th>
+			                <td>8999f39185584e6b8d2f71070a81ed0050724339920763a37097182a6561ed30</td>
+			            </tr>
+			            <tr>
+			                <th>invMessage</th>
+			                <td>체인코드 실행 결과 메세지(success / fail)</td>
+			            </tr>
+			            <tr>
+			                <th>invError</th>
+			                <td>체인코드 실행 오류 여부(true / false)</td> 
+			            </tr>
+			        </tbody>
+			    </table>
+			</div>
+        </div>
+        <div class="button_wrap">
+            <button type="button" class="btn_md btn_blue" onclick="$('#pop_srch_tx').neoModal('close');">닫기</button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform - Admin</title>
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head> 
+<body>
+
+<div id="wrap" class="">
+	<div id="header">
+		<div class="group_member">
+			<h1><a href="javascript:void(0);" class="sr_only">SIP</a></h1>
+			<ul class="nav_member clearfix">
+				<li><a href="javascript:void(0);">비밀번호변경</a></li>
+				<li><a href="javascript:void(0);">로그아웃</a></li>
+			</ul>
+		</div>
+		
+		<div class="group_gnb">
+			<h2>관리자 시스템</h2>
+			<ul class="nav_gnb clearfix">
+				<li><a href="javascript:void(0);">사용자 전환</a></li>
+				<li><a href="javascript:void(0);" class="active">회원 관리</a></li>
+				<li><a href="javascript:void(0);">컨텐츠 관리</a></li>
+				<li><a href="javascript:void(0);">알림 관리</a></li>
+				<li><a href="javascript:void(0);">고객센터 관리</a></li>
+				<li><a href="javascript:void(0);">정산 관리</a></li>
+				<li><a href="javascript:void(0);">통계 관리</a></li>
+				<li><a href="javascript:void(0);">메타 관리</a></li>
+				<li><a href="javascript:void(0);">블록체인 관리</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+
+	<div id="container">
+		<div class="group_lnb">
+			<h3>회원 관리</h3>
+			<ul class="nav_lnb">
+				<li><a href="javascript:void(0);">해지관리</a></li>
+				<li><a href="javascript:void(0);">휴면조회</a></li>
+				<li><a href="javascript:void(0);">전문기관</a></li>
+				<li><a href="javascript:void(0);" class="active">화이트리스트</a></li>
+				<li><a href="javascript:void(0);">관리자</a></li>
+			</ul>
+		</div>
+
+		<div id="contents">
+			<div class="inner">
+				<h4>화이트리스트</h4>
+				<!-- 회사정보 -->
+				<h5 class="section_tith5">회사정보</h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>회사정보</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>국문회사명</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+								<th>사업자등록번호</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+							</tr>
+							<tr>
+								<th>영문회사명</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+								<th>법인등록번호</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+							</tr>
+							<tr>
+								<th>대표자성명</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+								<th>직원수</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+							</tr>
+							<tr>
+								<th>설립일</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+								<th>결산월</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+							</tr>
+							<tr>
+								<th>주소</th>
+								<td>
+									<div class="td_col2">
+										<div>
+											<input type="text" id="comapny_address" class="form_control" maxlength="" readonly="">
+										</div>
+										<div>
+											<button type="button" class="btn_sm btn_darkblue" onclick="$('#pop_address_find').neoModal();">주소검색</button>
+										</div>
+									</div>
+								</td>
+								<th>회사로고</th>
+								<td>
+									<div class="td_col2">
+										<div>
+											<input type="text" class="form_control" readonly="">
+										</div>
+										<div>
+											<button type="button" class="btn_sm btn_darkblue" onclick="$('#pop_logoupload').neoModal();">파일찾기</button>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>홈페이지</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+								<th>Fax 번호</th>
+								<td>
+									<ul class="td_col_phone clearfix">
+										<li><input type="text" id="operator_tel" class="form_control" maxlength=""></li>
+										<li>-</li>
+										<li><input type="text" class="form_control" maxlength=""></li>
+										<li>-</li>
+										<li><input type="text" class="form_control" maxlength=""></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>투자자제공용<br>산업분류</th>
+								<td>
+									<div class="td_col2">
+										<div>
+											<input type="text" class="form_control" readonly="">
+										</div>
+										<div>
+											<button type="button" class="btn_sm btn_darkblue" onclick="$('#pop_investor_find').neoModal();">검색</button>
+										</div>
+									</div>
+								</td>
+								<th>표준산업분류</th>
+								<td>
+									<div class="td_col2">
+										<div>
+											<input type="text" class="form_control" readonly="">
+										</div>
+										<div>
+											<button type="button" class="btn_sm btn_darkblue" onclick="$('#pop_stanindu_find').neoModal();">검색</button>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 회사정보 -->
+
+				<!-- 업무담당자 정보 -->
+				<h5 class="section_tith5">업무담당자 정보</h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>업무담당자 정보</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>성명</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+								<th>전화번호</th>
+								<td>
+									<ul class="td_col_phone clearfix">
+										<li><input type="text" id="" class="form_control" maxlength=""></li>
+										<li>-</li>
+										<li><input type="text" class="form_control" maxlength=""></li>
+										<li>-</li>
+										<li><input type="text" class="form_control" maxlength=""></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>부서</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+								<th>핸드폰번호</th>
+								<td>
+									<ul class="td_col_phone clearfix">
+										<li><input type="text" id="" class="form_control" maxlength=""></li>
+										<li>-</li>
+										<li><input type="text" class="form_control" maxlength=""></li>
+										<li>-</li>
+										<li><input type="text" class="form_control" maxlength=""></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>직위</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+								<th>이메일</th>
+								<td>
+									<ul class="td_col_email clearfix">
+										<li>
+											<input type="text" id="exponent_email" class="form_control" maxlength="">
+										</li>
+										<li>@</li>
+										<li>
+											<input type="text" id="" class="form_control" maxlength="">
+										</li>
+										<li>
+											<select class="select_css form_control">
+												<option value="">선택</option>
+											</select>
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 업무담당자 정보 -->
+
+				<!-- 등록일 및 회원가입여부 -->
+				<h5 class="section_tith5">등록일 및 회원가입여부</h5>
+				<div class="companyinfo_table">
+					<table>
+						<caption>등록일 및 회원가입여부</caption>
+						<colgroup>
+							<col width="130">
+							<col width="*">
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>등록일</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+								<th>회원가입일</th>
+								<td><input type="text" class="form_control" maxlength=""></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 등록일 및 회원가입여부 -->
+
+				<div class="submit_area mt10 ac">
+					<button type="button" class="btn_md btn_gray" onclick="$('#pop_delete_pop').neoModal();">취소</button>
+					<button type="button" class="btn_md btn_blue" onclick="$('#pop_write_ok').neoModal();">완료</button> 
+				</div>
+				
+
+			</div>	<!-- // inner -->
+		</div>	<!-- // contents -->
+	</div>	<!-- // container -->
+	
+	<div id="footer">
+		CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.
+	</div>	<!-- // footer -->
+</div>
+
+<!-- 팝업 -->
+<div id="pop_delete_pop" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				입력된 내용이 있습니다.<br>
+				정말로 취소하시겠습니까?
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_white w50">아니오</button>
+			<button type="button" class="btn_pop_default btn_blue w50">예</button>
+		</div>
+	</div>
+</div>
+
+<div id="pop_write_ok" class="pop_dim_wrap pop_alert">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="message_table">
+			<div class="messageWrap">
+				화이트리스트 등록을 완료하였습니다
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_pop_default btn_blue">확인</button>
+		</div>
+	</div>
+</div>
+
+<!-- 주소검색 -->
+<div id="pop_address_find" class="pop_dim_wrap pop_modal pop_md">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주소검색
+		</div>
+		<div class="contents_wrap">
+			<div>
+				<table>
+					<caption>주소검색 - 주소, 우편번호, 선택주소, 상세주소</caption>	
+					<tbody>
+						<tr>
+							<td colspan="2">
+								<div class="td_col2">
+									<div>
+										<input type="text" id="address_srch_text" class="form_control" onkeydown="enterSearch();" placeholder="도로명주소, 건물명 또는 지번입력" autocomplete="off">
+									</div>
+									<div>
+										<button type="button" class="btn_sm btn_darkblue" onclick="fnSearchAddress();">검색</button>
+									</div>
+								</div>
+								<p>
+									※ 검색어 예 : 도로명(반포대로 58), 건물명(독립기념관), 지번(삼성동 25)
+								</p>
+								<ul class="address_result">
+									<li class="ac">
+										도로명주소, 건물명 또는 지번명을 입력해주세요
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr class="address_detail">
+							<th><label for="post_num">우편번호</label></th>
+							<td><input type="text" id="post_num" class="form_control form_sm" maxlength="" readonly></td>
+						</tr>
+						<tr class="address_detail">
+							<th><label for="select_addr">선택주소</label></th>
+							<td><input type="text" id="select_addr" class="form_control" maxlength="" readonly></td>
+						</tr>
+						<tr class="address_detail">
+							<th><label for="detail_addr">상세주소</label></th>
+							<td><input type="text" id="detail_addr" class="form_control" maxlength=""></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="button_wrap m0">
+			<button type="button" class="btn_md btn_blue" onclick="address_srch_complete();">완료</button>
+		</div>
+	</div>
+</div>
+
+<!-- 표준산업분류 검색 -->
+<div id="pop_stanindu_find" class="pop_dim_wrap pop_modal pop_md">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			표준산업분류 검색
+		</div>
+		<div class="contents_wrap">
+			<div>
+				<table>
+					<caption>표준산업분류 검색</caption>	
+					<tbody>
+						<tr>
+							<td colspan="2">
+								<div class="td_col2">
+									<div>
+										<input type="text" class="form_control" maxlength="">
+									</div>
+									<div>
+										<button type="button" class="btn_sm btn_darkblue">검색</button>
+									</div>
+								</div>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<ul class="explain_ul al">
+					<li>세세분류명으로 검색하여 검색목록에서 선택하여 추가하여주십시오.</li>
+					<li>정부에서 제공하는 가장 최근 차수의 표준산업분류가 적용됩니다.</li>
+				</ul>
+
+				<h5>표준산업분류</h5>
+				<div class="companyinfo_table th_vertical">
+					<table>
+						<caption>관계회사 현황 - 관계사명, 지분율</caption>
+						<colgroup>
+							<col width="40px">
+							<col width="19%">
+							<col width="19%">
+							<col width="19%">
+							<col width="19%">
+							<col width="19%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</th>
+								<th>대분류</th>
+								<th>중분류</th>
+								<th>소분류</th>
+								<th>세분류</th>
+								<th>세세분류명</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td>대분류</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="input_check pop_notext">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text"></span>
+									</label>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="board_paging">
+					<ul>
+						<li><a href="javascript:void(0);" class="paging_first">paging_first</a></li>
+						<li><a href="javascript:void(0);" class="paging_prev">paging_prev</a></li>
+						<li><a href="javascript:void(0);" class="active">1</a></li>
+						<li><a href="javascript:void(0);">2</a></li>
+						<li><a href="javascript:void(0);">3</a></li>
+						<li><a href="javascript:void(0);">4</a></li>
+						<li><a href="javascript:void(0);">5</a></li>
+						<li><a href="javascript:void(0);" class="paging_next">paging_next</a></li>
+						<li><a href="javascript:void(0);" class="paging_last">paging_last</a></li>
+					</ul>
+					<button type="button" class="btn_sm btn_add">추가</button>
+				</div>
+
+				<ul class="address_result">
+					<li>
+						<a href="javascript:void(0)">여의도동 3210</a>
+						<!-- // 19.09.23 추가
+						// 표준산업분류 삭제 -->
+						<button type="button" class="btn_stanindu_delete">표준산업분류 삭제</button>
+					</li>
+					<li>
+						<a href="javascript:void(0)">여의도동 3210</a>
+						<button type="button" class="btn_stanindu_delete">표준산업분류 삭제</button>
+					</li>
+					<li>
+						<a href="javascript:void(0)">여의도동 3210</a>
+						<button type="button" class="btn_stanindu_delete">표준산업분류 삭제</button>
+					</li>
+					<li>
+						<a href="javascript:void(0)">여의도동 3210</a>
+						<button type="button" class="btn_stanindu_delete">표준산업분류 삭제</button>
+					</li>
+					<li>
+						<a href="javascript:void(0)">여의도동 3210</a>
+						<button type="button" class="btn_stanindu_delete">표준산업분류 삭제</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue" onclick="$('#pop_address_find').neoModal('close');">완료</button>
+		</div>
+	</div>
+</div>
+
+<!-- 투자자제공용산업분류 -->
+<div id="pop_investor_find" class="pop_dim_wrap pop_modal pop_md">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			투자자제공용산업분류
+		</div>
+		<div class="contents_wrap">
+			<div class="companyinfo_table">
+				<table>
+					<caption>투자자제공용산언분류 - 1차분류, 2차분류</caption>
+					<colgroup>
+						<col width="80">
+						<col width="*">
+						<col width="80">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>1차분류</th>
+							<td>
+								<select class="select_css form_control">
+									<option value="">제조</option>
+								</select>
+							</td>
+							<th>2차분류</th>
+							<td>
+								<select class="select_css form_control">
+									<option value="">제조</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue">완료</button>
+		</div>
+	</div>
+</div>
+
+<!-- 회사로고 업로드 -->
+<div id="pop_logoupload" class="pop_dim_wrap pop_modal">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			회사로고 업로드
+		</div>
+		<div class="contents_wrap">
+			<div class="wrap_file">
+				<input class="upload_name form_control" value="" disabled="disabled">
+				<input type="file" id="ex_filename" class="upload_hidden">
+				<label for="ex_filename" class="btn_sm btn_darkblue">파일찾기</label>
+			</div>
+			<ul class="explain_ul mt20">
+				<li>로고이미지는 jpg, 사이즈는 0000*0000만 가능합니다</li>
+				<li>2M byte 이상의 파일은 업로드 불가 합니다</li>
+			</ul>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue">완료</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	// 19.09.23 추가
+	// 표준산업분류 삭제
+	$(document).on('click', '.btn_stanindu_delete', function(){
+		$(this).closest('li').remove();
+	});
+
+	/*=============================================
+		S: 주소검색API
+	=============================================*/
+	// 주소검색 팝업 오픈
+	var find_address_open = function() {
+		$('#pop_address_find').neoModal();
+		$('#pop_address_find .form_control').val('');
+		$('#pop_address_find .address_result').html('<li class="ac"> 도로명주소, 건물명 또는 지번명을 입력해주세요 </li>');
+	}
+	
+	var fnSearchAddress = function() {
+		// 적용예 (api 호출 전에 검색어 체크)
+		if (!checkSearchedWord(document.getElementById('address_srch_text'))) {
+			return ;
+		}
+		// var jsonAjaxData = "currentPage=1&countPerPage=100&resultType=json&confmKey=TESTJUSOGOKR&keyword=" + document.getElementById('address_srch_text').value;
+		var jsonAjaxData = "currentPage=1&countPerPage=100&resultType=json&confmKey=U01TX0FVVEgyMDE5MDkyMzExMTAyNzEwOTA0MTI=&keyword=" + encodeURI(document.getElementById('address_srch_text').value) + "&encodingType=utf-8";
+		$.ajax({
+			url :"https://www.juso.go.kr/addrlink/addrLinkApiJsonp.do"  //인터넷망
+			,type:"post"
+			,data:jsonAjaxData
+			,dataType:"jsonp"
+			,crossDomain:true
+			,success:function(jsonStr){
+				var errCode = jsonStr.results.common.errorCode;
+				var errDesc = jsonStr.results.common.errorMessage;
+				if(errCode != "0"){
+					alert(errCode+"="+errDesc);
+				}else{
+					if(jsonStr != null){
+						makeListJson(jsonStr);
+					}
+				}
+			}
+			,error: function(xhr,status, error){
+				alert("에러발생");
+			}
+		});
+	}
+
+	function makeListJson(jsonStr){
+		var htmlLi = '';
+		$(jsonStr.results.juso).each(function(){
+			// var searchaddress = this.zipNo + ' ,\'' + this.roadAddr + '\'';
+			var searchaddress = String(this.zipNo) + ' ,' + String(this.roadAddr);
+			htmlLi += '<li>' +
+						'<a href="javascript:srch_address_select(\''+String(this.zipNo) + '\' ,\'' + String(this.roadAddr)+'\')"><span>'+ this.zipNo +'</span>'+ this.roadAddr +'</a>' +
+					'</li>';
+		});
+		$('.address_result').html(htmlLi);
+	}
+	
+	//특수문자, 특정문자열(sql예약어의 앞뒤공백포함) 제거
+	function checkSearchedWord(obj){
+		if(obj.value.length >0){
+			//특수문자 제거
+			var expText = /[%=><]/ ;
+			if(expText.test(obj.value) == true){
+				alert("특수문자를 입력 할수 없습니다.") ;
+				obj.value = obj.value.split(expText).join(""); 
+				return false;
+			}
+			
+			//특정문자열(sql예약어의 앞뒤공백포함) 제거
+			var sqlArray = new Array(
+				//sql 예약어
+				"OR", "SELECT", "INSERT", "DELETE", "UPDATE", "CREATE", "DROP", "EXEC",
+						"UNION",  "FETCH", "DECLARE", "TRUNCATE" 
+			);
+			
+			var regex;
+			for(var i=0; i<sqlArray.length; i++){
+				regex = new RegExp( sqlArray[i] ,"gi") ;
+				
+				if (regex.test(obj.value) ) {
+					alert("\"" + sqlArray[i]+"\"와(과) 같은 특정문자로 검색할 수 없습니다.");
+					obj.value =obj.value.replace(regex, "");
+					return false;
+				}
+			}
+		}
+		return true ;
+	}
+
+	// 주소 선택시 input에 입력
+	function srch_address_select(zipno, zipdetail) {
+		$('#pop_address_find #post_num').val(zipno);
+		$('#pop_address_find #select_addr').val(zipdetail);
+	}
+
+	// 엔터키처리
+	function enterSearch() {
+		var evt_code = (window.netscape) ? ev.which : event.keyCode;
+		if (evt_code == 13) {
+			event.keyCode = 0;
+			fnSearchAddress(); //jsonp사용시 enter검색 
+		} 
+	}
+
+	//주소검색팝업닫기
+	function address_srch_complete() {
+		$('#pop_address_find').neoModal('close');
+		var zipno = $('.address_detail #post_num').val();
+		var zipdetail = $('.address_detail #select_addr').val();
+		var zipdetail2 = $('.address_detail #detail_addr').val();
+		address_srch_intopage(zipno, zipdetail, zipdetail2);
+	}
+
+	function address_srch_intopage(zipno, zipdetail, zipdetail2){
+		// console.log(zipno); //우편번호
+		// console.log(zipdetail) //선택주소
+		// console.log(zipdetail2) //상세주소
+	}
+	/*=============================================
+		E: 주소검색API
+	=============================================*/
+</script>
+</body>
+</html>

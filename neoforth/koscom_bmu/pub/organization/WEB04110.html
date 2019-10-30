@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+	<link rel="stylesheet" href="../css/expert.css"> 
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+ 
+<div id="wrap_group">
+	
+	<div id="header_group">
+		<div class="inner">
+			<h1 class="logo"><a href="javascript:void(0);">전문가진단 관리시스템</a></h1> 
+			<ul class="nav_gnb_group clearfix">
+				<li><a href="javascript:void(0);" class="active">관리현황</a></li>
+				<li><a href="javascript:void(0);">전문가진단등록</a></li>
+			</ul>
+			<ul class="nav_log clearfix">
+				<li><a href="javascript:void(0);" class="btn_setting">엑셀러레이터협회 김길동님</a></li>
+				<li><a href="javascript:void(0);" class="btn_logout">로그아웃</a></li>
+			</ul>
+		</div>
+	</div>	<!-- // header -->
+	
+	<div id="container_group">
+		<div class="inner">
+			<h2>추천기업정보</h2>
+			<div class="contents">
+				<h5 class="companyinfo_h5">회사정보입력</span></h5>  
+				<div class="companyinfo_table">  
+					<table>
+						<caption>추천기업 정보입력</caption>
+						<colgroup> 
+							<col width="130">
+							<col width="*"> 
+							<col width="130">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label for="company_name_kr">국문회사명</label></th>
+								<td><input type="text" id="company_name_kr" class="form_control" maxlength=""></td>
+								<th><label for="company_regnum2">사업자등록번호</label></th>
+								<td><input type="text" id="company_regnum2" class="form_control" maxlength="" readonly=""></td>
+							</tr>
+							<tr>
+								<th><label for="company_name_en">영문회사명</label></th>
+								<td><input type="text" id="company_name_en" class="form_control" maxlength=""></td>
+								<th><label for="coporate_regnum">법인등록번호</label></th>
+								<td><input type="text" id="coporate_regnum" class="form_control" maxlength="" readonly=""></td>
+							</tr>
+							<tr>
+								<th><label for="ceo_name">대표자 성명</label></th>
+								<td><input type="text" id="ceo_name" class="form_control" maxlength=""></td>
+								<th><label for="employees_num">직원수</label></th>
+								<td><input type="text" id="employees_num" class="form_control" maxlength=""></td>
+							</tr>
+							<tr>
+								<th><label for="created_date">설립일</label></th>
+								<td><input type="text" id="created_date" class="form_control" maxlength=""></td>
+								<th><label for="dec_year">결산월</label></th>
+								<td><input type="text" id="dec_year" class="form_control" maxlength=""></td>
+							</tr>
+							<tr>
+								<th rowspan="2"><label for="comapny_address">주소</label></th>
+								<td rowspan="2">
+									<div class="td_col2">
+										<div>
+											<input type="text" id="comapny_address" class="form_control" maxlength="" readonly="">
+										</div>
+										<div>
+											<button type="button" class="btn_sm btn_darkblue" onclick="$('#pop_address_find').neoModal();">주소검색</button>
+										</div>
+									</div>
+									<input type="text" id="" class="form_control" maxlength="">
+								</td>
+								<th><label for="company_homepage">홈페이지</label></th>
+								<td><input type="text" id="company_homepage" class="form_control" maxlength=""></td>
+							</tr>
+							<tr>
+								<th><label for="company_fax">FAX 번호</label></th>
+								<td>
+									<ul class="td_col_phone clearfix">
+										<li><input type="text" id="company_fax" class="form_control" maxlength=""></li>
+										<li>-</li>
+										<li><input type="text" class="form_control" maxlength=""></li>
+										<li>-</li>
+										<li><input type="text" class="form_control" maxlength=""></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th><label for="file_logo">회사로고</label></th>
+								<td colspan="3">
+									<div class="wrap_file w100">
+										<input id="file_logo" class="upload_name form_control" value="" disabled="disabled">
+										<input type="file" id="search_logo" class="upload_hidden">
+										<label for="search_logo" class="btn_sm btn_darkblue">파일찾기</label>
+									</div>
+								</td>
+							</tr>	
+							<tr>
+								<th><label for="type_industry" class="longtxt_label">투자자제공용<br>산업분류</label></th>
+								<td colspan="3">
+									<div class="td_col2">
+										<div>
+											<input type="text" id="type_industry" class="form_control" readonly="">
+										</div>
+										<div> 
+											<button type="button" class="btn_sm btn_darkblue" onclick="$('#pop_investor_find').neoModal();">검색</button>
+										</div>
+									</div>
+								</td>
+							</tr>	
+							<tr>
+								<th><label for="type_industry2" class="longtxt_label">표준산업분류</label></th>
+								<td colspan="3">
+									<div class="td_col2">
+										<div>
+											<input type="text" id="type_industry2" class="form_control" readonly="">
+										</div>
+										<div> 
+											<button type="button" class="btn_sm btn_darkblue" onclick="$('#pop_investor_find').neoModal();">검색</button>
+										</div>
+									</div>
+								</td>
+							</tr>	
+							<tr>
+								<th><label for="charge_name">성명</label></th>
+								<td><input type="text" id="charge_name" class="form_control" maxlength=""></td>
+								<th><label for="charge_phone">전화번호</label></th>
+								<td>
+									<ul class="td_col_phone clearfix">
+										<li><input type="text" id="charge_phone" class="form_control" maxlength=""></li>
+										<li>-</li>
+										<li><input type="text" class="form_control" maxlength=""></li>
+										<li>-</li>
+										<li><input type="text" class="form_control" maxlength=""></li>
+									</ul>
+								</td>
+							</tr>	
+							<tr>
+								<th><label for="department_name">부서</label></th>
+								<td><input type="text" id="department_name" class="form_control" maxlength=""></td>
+								<th><label for="charge_handphone">핸드폰번호</label></th>
+								<td>
+									<ul class="td_col_phone clearfix">
+										<li><input type="text" id="charge_handphone" class="form_control" maxlength=""></li>
+										<li>-</li>
+										<li><input type="text" class="form_control" maxlength=""></li>
+										<li>-</li>
+										<li><input type="text" class="form_control" maxlength=""></li>
+									</ul>
+								</td>
+							</tr>	
+							<tr>
+								<th class="vat"><label for="operator_rank" class="ico_essential ico_right">직급</label></th>
+								<td class="vat"><input type="text" id="operator_rank" class="form_control" maxlength=""></td>
+								<th class="vat"><label for="operator_email" class="ico_essential ico_right">이메일</label></th>
+								<td>
+									<ul class="td_col_email clearfix">
+										<li>
+											<input type="text" id="operator_email" class="form_control" maxlength="">
+										</li>
+										<li>@</li>
+										<li>
+											<input type="text" id="" class="form_control" maxlength="">
+										</li>
+										<li>
+											<select class="select_css form_control">
+												<option value="">선택</option>
+											</select>
+										</li>
+									</ul>
+								</td>
+							</tr>				
+						</tbody>
+					</table>
+				</div>
+				<div class="submit_area">
+					<button type="button" class="btn_md btn_white" onclick="$('#pop_cancel_write').neoModal();">취소</button> 
+					<button type="button" class="btn_md btn_blue" onclick="$('#pop_complete_write').neoModal();">완료</button> 
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer_group"> 
+		<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+	</div>	<!-- // footer -->
+</div>
+
+<!-- 주소검색 -->
+<div id="pop_address_find" class="pop_dim_wrap pop_modal pop_md">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			주소검색
+		</div>
+		<div class="contents_wrap">
+			<div>
+				<table>
+					<caption>주소검색 - 주소, 우편번호, 선택주소, 상세주소</caption>	
+					<tbody>
+						<tr>
+							<td colspan="2">
+								<div class="td_col2">
+									<div>
+										<input type="text" class="form_control" maxlength="">
+									</div>
+									<div>
+										<button type="button" class="btn_sm btn_darkblue">검색</button>
+									</div>
+								</div>
+								<p>
+									※ 지역명(지번주소): 동/읍/면/리 (예: 여의도동 3210, 역삼동 912, 화도읍)
+								</p>
+								<p>
+									※ 도로명주소(새주소):도로명 + 건물명 (예: 국제금융10, 상도로)
+								</p>
+								<ul class="address_result">
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">여의도동 3210</a>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr class="address_detail">
+							<th><label for="post_num">우편번호</label></th>
+							<td><input type="text" id="post_num" class="form_control form_sm" maxlength=""></td>
+						</tr>
+						<tr class="address_detail">
+							<th><label for="select_addr">선택주소</label></th>
+							<td><input type="text" id="select_addr" class="form_control" maxlength=""></td>
+						</tr>
+						<tr class="address_detail">
+							<th><label for="detail_addr">상세주소</label></th>
+							<td><input type="text" id="detail_addr" class="form_control" maxlength=""></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue" onclick="$('#pop_address_find').neoModal('close');">완료</button>
+		</div>
+	</div>
+</div>
+
+<!-- 투자자제공용산업분류 -->
+<div id="pop_investor_find" class="pop_dim_wrap pop_modal pop_md">
+	<div class="pop_wrap">
+		<button class="pop_btn_close">닫기</button>
+		<div class="title_wrap">
+			투자자제공용산업분류
+		</div>
+		<div class="contents_wrap">
+			<div class="companyinfo_table">
+				<table>
+					<caption>투자자제공용산언분류 - 1차분류, 2차분류</caption>
+					<colgroup>
+						<col width="80">
+						<col width="*">
+						<col width="80">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>1차분류</th>
+							<td>
+								<select class="select_css form_control">
+									<option value="">제조</option>
+								</select>
+							</td>
+							<th>2차분류</th>
+							<td>
+								<select class="select_css form_control">
+									<option value="">제조</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="button_wrap">
+			<button type="button" class="btn_md btn_blue">완료</button>
+		</div>
+	</div>
+</div>
+
+
+<div id="pop_complete_write" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap">
+                추천기업 등록을 완료하였습니다
+            </div>
+        </div>
+        <div class="button_wrap">
+            <button type="button" class="btn_pop_default btn_blue" onclick="$('#pop_complete_write').neoModal('close');">확인</button>
+        </div>
+    </div> 
+</div>
+ 
+<div id="pop_cancel_write" class="pop_dim_wrap pop_alert">
+    <div class="pop_wrap">
+        <button class="pop_btn_close">닫기</button>
+        <div class="message_table">
+            <div class="messageWrap">
+                입력된 내용이 있습니다.<br>
+                정말로 취소하시겠습니까?
+            </div>
+        </div>
+        <div class="button_wrap">
+            <button type="button" class="btn_pop_default btn_white w50" onclick="$('#pop_cancel_write').neoModal('close');">아니오</button>
+            <button type="button" class="btn_pop_default btn_blue w50" onclick="$('#pop_cancel_write').neoModal('close');">예</button>
+        </div>
+    </div>
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="../js/vendo/analytics.js" async></script>
+
+</body>
+</html>

@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Koscom OTC Market Platform</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/sub.css">
+
+	<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="../js/vendor/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- 계약서 아미쿠스렉스 -->
+	<script src="../js/vendor/amicuslex-1.0.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			// ==== S: 챗팅 팝업 스크립트 ====
+			var chat_wrap = $('#pop_nego_chat2');
+			var chat_content = $('#pop_nego_chat2 .section_chat');
+			var chat_width = '';
+			var chat_height = '';
+			var openChat_offset = $('.btn_chatting').offset();
+			$(window).scroll(function() {
+				openChat_offset = $('.btn_chatting').offset();
+			})
+
+			//채팅방 팝업 여는 스크립트
+			$('.btn_chatting').click(function() {
+				chat_wrap.show();
+				chat_width = 390;
+				chat_height = 620;
+
+				chat_content.css({ top: 322, left: openChat_offset.left, width: 0, height: 0, opacity: 0, position: 'absolute', transform: 'translate(-50%,-50%)'});
+				
+				chat_content.animate({ top: '50%', left: '50%', width: chat_width, height: chat_height, opacity: 1}, 300, "swing");
+				chat_content.draggable({ containment: "parent",
+					scroll: false,
+					handle: ".box_chat .pop_header, .box_contract .contract_header",
+					start: function() {
+						chat_content.css('transform', '');
+					}
+				});
+				chat_content.focus();
+			});
+
+			//검색창여는 스크립트
+			$(document).on('click', '#pop_nego_chat2 .btn_chat_search', function() {
+				$('#pop_nego_chat2 .srch_input_box').show();
+				$('#pop_nego_chat2 .srch_input').animate({
+					'width':237
+				},400)
+			});
+
+			$(document).on('click', '#pop_nego_chat2 .srch_input_box button', function() {
+				$('#pop_nego_chat2 .srch_input').animate({
+					'width':0
+				},400, function() {
+					$('#pop_nego_chat2 .srch_input_box').hide();
+				})
+			})
+
+			// ==== 채팅방일때 쓰는 스크립트
+			// 채팅방 닫는 스크립트
+			$('#pop_nego_chat2 .pop_btn_close').on('click', function() {
+				chat_content.animate({ top: 322, left: openChat_offset.left, height: 0, width: 0, opacity: 0 }, 500, function () {
+					chat_content.draggable('destroy');
+					chat_wrap.hide();
+					chat_content.removeAttr('style');
+					$('#pop_nego_chat2 .box_contract').hide();
+					$('.btn_chatting').focus();
+				});
+			});
+
+			//직전체결가부분 여닫기
+			$(document).on('click', '.ico_chat_dealinfo', function() {
+				var $tit_dl = $(this).closest('.tit_dl');
+				var $tit_dd = $tit_dl.find('dd');
+
+				if($tit_dl.hasClass('on')) {
+					$tit_dl.removeClass('on');
+					$tit_dd.slideUp();
+				} else {
+					$tit_dl.addClass('on');
+					$tit_dd.slideDown();
+				}
+			});
+
+			// 협상내용입력 여닫기
+			$(document).on('click', '.input_dl > dt', function() {
+				var $tit_dl = $(this).closest('.input_dl');
+				var $tit_dd = $tit_dl.children('dd');
+
+				if($tit_dl.hasClass('on')) {
+					$tit_dl.removeClass('on');
+					$tit_dd.slideUp('fast');
+				} else {
+					$tit_dl.addClass('on');
+					$tit_dd.slideDown();
+				}
+			});
+			$(document).on('click', '.input_dl .other_dd button', function() {
+				var $tit_dl = $(this).closest('.input_dl');
+				var $tit_dd = $tit_dl.children('dd');
+
+				$tit_dl.removeClass('on');
+				$tit_dd.slideUp('fast');
+			});
+
+
+			// 채팅방 옵션 열기
+			$(document).on('click', '.mainchat_area .btn_chat_menu.chat_on', function() {
+				$('.mainchat_area .chat_config_pop').fadeIn();
+				$('.mainchat_area .chat_config_pop > div').animate({
+					'right': 0,
+				}, 400)
+			});
+			// 채팅방 옵션닫기
+			$(document).on('click', '.config_close', function() {
+				$('.mainchat_area .chat_config_pop').fadeOut();
+				$('.mainchat_area .chat_config_pop > div').animate({
+					'right': '-100%',
+				}, 400)
+			})
+			// ==== // 채팅방일때 쓰는 스크립트
+
+			// ==== 목록일때 쓰는 스크립트
+			$(document).on('click', '.mainchat_area .btn_chat_menu.list_on', function() {
+				$('.list_align_tooltip').show();
+			});
+
+			$(document).on('click', '.mainchat_area .list_on_close', function() {
+				$('.list_align_tooltip').hide();
+			});
+			// ==== // 목록일때 쓰는 스크립트
+
+			// 계약서 열때 쓰는 스크립트
+			$('#contract_open').click(function() {
+				chat_content.css({ top: '50%', left:'50%', transform: 'translate(-50%,-50%)'});
+				chatReOpen(1090);
+				$('#pop_nego_chat2 > .section_chat .box_contract').fadeIn();
+			});
+
+			// 계약서 화면 닫는 스크립트
+			$('#pop_nego_chat2 .contract_btn_close').click(function() {
+				$('#pop_nego_chat2 .box_contract').hide();
+				chat_content.css({ top: '50%', left:'50%', transform: 'translate(-50%,-50%)'});
+				chatReOpen(390);
+			});
+
+			
+
+			var chatReOpen = function(chat_width) {
+				chat_content.draggable('destroy');
+				chat_content.css('width',chat_width);
+				chat_content.draggable({ containment: "parent",
+					scroll: false,
+					handle: ".box_chat .pop_header, .box_contract .contract_header",
+					start: function() {
+						chat_content.css('transform', '');
+					}
+				});
+			}
+
+
+			// 계약서 화면 탭
+			//종목검색팝업 탭 동작
+			// <!-- 19.09.06 변경부분 -->
+			var $tabMenu = $('.tabs.stock_serachtit li a');
+			var $tabContent = $('.contract_main > div');
+			var $tabOutside = $('.tab_outside_contents');
+
+			$tabMenu.on('click', function(e) {
+				e.preventDefault();
+				var idx = $tabMenu.index(this);
+				
+				$(this).addClass('on').closest('li').siblings().children('a').removeClass('on');
+				$tabContent.eq(idx).addClass('on').siblings().removeClass('on');
+				$tabOutside.eq(idx).addClass('on').siblings().removeClass('on');
+			});
+			//<!-- 19.09.06 변경부분 -->
+
+
+			// ==== E: 챗팅 팝업 스크립트 ====
+
+			
+			//퍼블 화면 띄우기용 개발 x
+			$('.btn_chatting').trigger('click');
+			setTimeout(function() {
+				$('#contract_open').trigger('click');
+			}, 300);
+		});
+	</script>
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 투자자로그인 로그인 시 class="case3" -->
+	<div id="header" class="case3">
+		<div class="nav_skip">
+			<a href="#container">본문 바로가기</a>
+			<a href="#footer">하단정보 바로가기</a>
+		</div>
+
+		<div class="inner">
+			<h1 class="logo_gnb"><a href="javascript:void(0);" class="sr_only">SIP-Ko</a></h1>
+			
+			<div class="group_gnb">
+				<ul class="nav_gnb clearfix">
+					<li><a href="javascript:void(0);" class="active">비상장주식거래</a></li>
+					<li><a href="javascript:void(0);">기업정보</a></li>
+					<li><a href="javascript:void(0);">서비스 소개</a></li>
+					<li><a href="javascript:void(0);">투자정보</a></li>
+					<li><a href="javascript:void(0);">고객센터</a></li>
+					<li class="mypage_area"><a href="javascript:void(0);"><span>마이페이지</span></a></li>
+					<li class="notice_area"><a href="javascript:void(0);" class="on"><span>2</span></a></li>  
+					<li class="logout_area"><a href="javascript:void(0);" class="sr_only">로그아웃</a></li>  
+				</ul>
+				<div class="bar"></div>
+
+				<div class="submenu_area">
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">주문현황</a></li>
+						<li><a href="javascript:void(0);">체결현황</a></li>
+						<li><a href="javascript:void(0);">전종목 거래현황</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보 조회</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+					<ul class="nav_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+					
+					<ul class="nav_sub"> 
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul>
+					<ul class="nav_sub" style="padding: 0; height: 0;"></ul>
+				</div>	<!-- // submenu_area -->
+			</div>
+
+			<a href="javascript:void(0);" class="btn_allmenu sr_only">전체메뉴</a>
+		</div>	<!-- // inner -->
+
+		<div class="nav_allmenu">
+			<div class="inner clearfix">
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">비상장주식거래</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">주문현황</a></li>
+						<li><a href="javascript:void(0);">체결현황</a></li>
+						<li><a href="javascript:void(0);">전종목 거래현황</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">기업정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보 조회</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">서비스 소개</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">투자정보</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">고객센터</a>
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul> 
+				</div>
+				<div class="group_nav">
+					<a href="javascript:void(0);" class="title">마이페이지</a> 
+					<ul class="lst_sub">
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li> 
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>
+		</div>	<!-- // nav_allmenu -->
+	</div>	<!-- // header -->
+
+	<div id="container" style="height:2000px;">
+		<div class="nav_page">
+			<div class="inner">
+				<ul class="lst_page clearfix"> 
+					<li><a href="/" class="btn_home sr_only">Home</a></li>
+					<li>
+						<a href="javascript:void(0);" class="btn_page">비상장주식거래</a>
+						<ul class="nav_subpage clearfix"> 
+							<li><a href="javascript:void(0);" class="active">비상장주식거래</a></li>
+							<li><a href="javascript:void(0);">기업정보</a></li>
+							<li><a href="javascript:void(0);">서비스 소개</a></li>
+							<li><a href="javascript:void(0);">투자정보</a></li>
+							<li><a href="javascript:void(0);">고객센터</a></li>
+							<li><a href="javascript:void(0);">마이페이지</a></li>  
+							<li><a href="javascript:void(0);">알림수신함</a></li>   
+							<li><a href="javascript:void(0);">로그아웃</a></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="lst_subpage clearfix">
+							<li><a href="javascript:void(0);" class="active">주문현황</a></li>
+							<li><a href="javascript:void(0);">체결현황</a></li>
+							<li><a href="javascript:void(0);">전종목 거래현황</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>	<!-- // nav_page -->
+
+		<div class="section">
+			<div class="inner">
+				<div class="group_pageinfo">
+					<h3 class="txt_title">주문현황</h3>
+				</div>	<!-- // group_title -->
+				
+				<div class="contents">
+					<h4>기업정보 및 주요주주현황</h4>
+				</div>	<!-- // contents --> 
+			</div>
+		</div>
+	</div>	<!-- // container -->
+	
+	<!-- 투자자로그인 로그인 시 class="case3" -->
+	<div id="footer" class="case3">
+		<div class="group_terms">
+			<div class="inner">
+				<ul class="nav_terms clearfix">
+					<li><a href="javascript:void(0);">이용약관</a></li>
+					<li><a href="javascript:void(0);">개인정보취급방침</a></li>
+					<li><a href="javascript:void(0);">저작권보호방침</a></li>
+				</ul>
+
+				<div class="selectbox select_family"> 
+					<label for="ex_select" class="placeholder">Family Site</label> 
+					<select id="ex_select"> 
+						<option selected>Family Site</option> 
+						<option value="http://www.naver.com">aaa</option> 
+						<option value="http://www.daum.net">bbb</option> 
+						<option value="https://www.kakaocorp.com">ccc</option>
+					</select> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="group_service">
+			<div class="inner fnav_area clearfix">
+				<div class="nav_footer">
+					<a href="javascript:void(0);">비상장주식거래</a>
+					<ul>
+						<li><a href="javascript:void(0);">주문현황</a></li>
+						<li><a href="javascript:void(0);">체결현황</a></li>
+						<li><a href="javascript:void(0);">전종목 거래현황</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">기업정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보 조회</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">서비스 소개</a>
+					<ul>
+						<li><a href="javascript:void(0);">이용안내</a></li>
+						<li><a href="javascript:void(0);">등록기업 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">투자자 서비스 가이드</a></li>
+						<li><a href="javascript:void(0);">보안모듈설치</a></li>
+						<li><a href="javascript:void(0);">인증방법안내</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">투자정보</a>
+					<ul>
+						<li><a href="javascript:void(0);">기업정보</a></li>
+						<li><a href="javascript:void(0);">기업알림 및 홍보자료</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">고객센터</a>
+					<ul>
+						<li><a href="javascript:void(0);">공지사항</a></li>
+						<li><a href="javascript:void(0);">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="nav_footer">
+					<a href="javascript:void(0);">마이페이지</a> 
+					<ul>
+						<li><a href="javascript:void(0);">알림수신함</a></li>
+						<li><a href="javascript:void(0);">가입정보관리</a></li>
+						<li><a href="javascript:void(0);">거래현황관리</a></li>
+						<li><a href="javascript:void(0);">증빙서류관리</a></li>
+						<li><a href="javascript:void(0);">1:1문의</a></li>  
+						<li><a href="javascript:void(0);">서비스해지</a></li> 
+					</ul>
+				</div>
+			</div>
+			
+			<div class="inner copyright_area">
+				<h3 class="logo_footer sr_only">koscom</h3>
+				<p class="txt_address">
+					<span>서울시 영등포구 여의나루로 76 (주)코스콤</span>
+					<span>대표전화 <em class="num">02-767-7114</em></span>
+				</p>
+				<p class="txt_copy">CORYRIGHT &copy; 2019 KOSCOM CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+
+		<a href="javascript:void(0);" class="btn_top sr_only">Top</a> 
+		<a href="javascript:void(0);" class="btn_chatting"><span>협상채팅</span></a>
+	</div>	<!-- // footer -->
+</div>
+
+<!-- 채팅팝업 -->
+<div id="pop_nego_chat2">
+	<div class="section_chat">
+		<!-- 계약서 부분 -->
+		<div class="box_contract">
+			<div class="contract_header">
+				계약서 확인 및 전자서명
+				<button class="contract_btn_close">채팅창 닫기</button>
+			</div>
+			<div class="contract_contents">
+				<div class="contract_aside">
+					<h4>계약 내용</h4>
+					<h5>계약자 정보</h5>
+					<div class="contract_table">
+						<table>
+							<caption>계약자 정보- 주문게시자, 협상대상자</caption>
+							<colgroup>
+								<col width="75">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>주문게시자</th>
+									<td>
+										<span>나야나(김희용)</span>
+										<i class="box_buy_info">매수</i>
+									</td>
+								</tr>
+								<tr>
+									<th>협상대상자</th>
+									<td>
+										<span>야나두(조정석)</span>
+										<i class="box_sell_info">매도</i>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h5>협상내역</h5>
+					<div class="contract_table">
+						<table>
+							<caption>협상내역 - 수량, 가격, 금액, 결제 마감일</caption>
+							<colgroup>
+								<col width="75">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>수량</th>
+									<td><b>2000</b>주</td>
+								</tr>
+								<tr>
+									<th>가격</th>
+									<td><b>2000</b>주</td>
+								</tr>
+								<tr>
+									<th>금액</th>
+									<td><b>2000</b>주</td>
+								</tr>
+								<tr>
+									<th>결제마감일</th>
+									<td><b class="txt_buy_color">2019.08.20</b></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 19.09.06 변경부분 -->
+					<!-- 계약서 일때 -->
+					<div class="tab_outside_contents on">
+						<ul class="contract_signstatus">
+							<li>
+								<p>상대방의 서명상태</p>
+								<div class="on">
+									서명 대기중<br>입니다
+								</div>
+							</li>
+							<li>
+								<p>상대방의 서명상태</p>
+								<div>
+									서명 대기중<br>입니다
+								</div>
+							</li>
+						</ul>
+						<button type="button" class="btn_pop_default btn_blue">전자서명</button>
+					</div>
+					<!-- // 계약서 일때 -->
+
+					<!-- 주권미발행서 확인일때 -->
+					<div class="tab_outside_contents">
+						<ul class="contract_info">
+							<li>매도자의 주주정합성은 등록기업에서 입력한 주주명부를 기반으로 진행되었습니다.</li>
+							<li>안전한 거래를 위해 등록기업으로 부터 매도자의 주권미발행 확인서를 발급받아 그 정합성을 체크하실 수 있습니다.</li>
+							<li>발급된 주권미발행확인서가 있더라도 발급일을 잘 확인하시고 전자서명을 진행하시기 바랍니다</li>
+						</ul>
+						<ul class="contract_info">
+							<li>매도자만 등록기업에 주권미발행확인서 발급요청을 할 수 있습니다.</li>
+							<li>아래 발급요청을 클릭 하시면 매도자에게 주권미발행확인서 확인요청이 가능합니다.</li>
+						</ul>
+						<button type="button" class="btn_pop_default btn_blue">발급요청</button>
+					</div>
+					<!-- // 주권미발행서 확인일때 -->
+					<!-- // 19.09.06 변경부분 -->
+				</div>
+				
+				<div class="contract_main">
+					<ul class="tabs stock_serachtit clearfix">
+						<li><a href="#amicus_contract" class="on">계약서</a></li>
+						<li><a href="#amicus_contract2">주권미발행확인서</a></li>
+					</ul>
+					<!-- 계약서 -->
+					<div class="on">
+						<div id="amicus_contract"></div>
+					</div>
+					<!-- 주권미발행확인서 -->
+					<div>
+						<div id="amicus_contract2"></div>
+
+						<!-- WEB03408-1 : 주권미발행확인서 발급전 (매수자) -->
+						<!-- <div class="txt_blank">
+							<p>등록기업에서 발급승인을 받은 주권미발행확인서가 없습니다</p>
+							<ul class="explain_ul">
+								<li>보유하고 있는 주식의 해당 회사에게 주권미발행확인서 발급요청이 가능합니다</li>
+								<li>발급요청 시 필수로 아래 1개 항목에 체크하셔야 주권미발행확인서 발급요청 가능합니다</li>
+							</ul>
+							<div class="check_wrap">
+								<label class="input_check">
+									<input type="checkbox" id="" name="" checked="">
+									<span class="label_text">귀하 <span class="txt_buy_color">OOO</span>(매도의향자)가 <span class="txt_buy_color">2019. 11. 29. 15:00</span> 현재 <span class="txt_buy_color">OO회사</span> 보통주 주식의 1,000주
+											(바로 전 주주명부에 나타난 수량 전체)에 대해 현재 별도 매매 등 처분을 하지
+											아니하여 1,000주 전체에 대해 보유하고 있음을 <span class="txt_buy_color">OO회사</span>에 확인요청을 하고자 함
+										</span>
+								</label>
+							</div>
+							<div class="button_wrap">
+								<button type="button" class="btn_md btn_blue">발급요청</button>
+							</div>
+						</div> -->
+
+						<!-- WEB03408-1 : 주권미발행확인서 발급전 (매수자) -->
+					<!-- 	<div class="txt_blank">
+							<p>등록기업에서 발급승인을 받은 주권미발행확인서가 없습니다</p>
+							<ul class="explain_ul">
+								<li>매도자의 주주정합성은 등록기업에서 입력한 주주명부를 기반으로 진행되었습니다
+								안전한 거래를 위해 등록기업으로 부터 매도자의 주권미발행 확인서를 발급 받아
+								그 정합성을 체크하실 수 있습니다
+								</li>
+								<li>매도자만 등록기업에 주권미바행확인서 발급요청을 할 수 있습니다. 아래 발급요청을
+									클릭 하시면 매도자에게 주권미발행확인서 확인요청이 가능합니다
+								</li>
+							</ul>
+							<div class="button_wrap">
+								<button type="button" class="btn_md btn_blue">발급요청</button>
+							</div>
+						</div> -->
+
+						<!-- WEB03411 : 주권미발행확인서 발급거부 -->
+						<!-- <div class="txt_blank">
+							<p>등록기업에서 주권미발행확인서 발급을 거부하였습니다</p>
+							<p class="al">위 요청이 온 시점까지, 위 <span class="txt_buy_color">OOO</span> 주주의 보통주 <span class="txt_buy_color">1,000주</span>에 대해 본 플랫폼 외에서 매매 등
+								처분 통지나 기타 질권설정 통지 등을 회사가 받은 사실이 있어 주권미발행확인서 발급을
+								거부하였습니다
+							</p>
+							<ul class="explain_ul">
+								<li>확인을 클릭 하시면 본 협상은 결렬로 종료되며 채팅방 또한 사라지게 됩니다</li>
+							</ul>
+							<div class="button_wrap">
+								<button type="button" class="btn_md btn_blue">확인</button>
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 채팅부분 -->
+		<div class="box_chat">
+			<div class="pop_header">
+				협상채팅
+				<button class="pop_btn_close">채팅창 닫기</button>
+			</div>
+			<div class="pop_contents">
+				<!-- 목록,채팅-->
+				<ul class="aside_area">
+					<li>
+						<button type="button" class="btn_list_init">목록</button>
+					</li>
+					<li class="on">
+						<button type="button" class="btn_chat_init">채팅</button>
+					</li>
+				</ul>
+
+				<!-- 채팅방 -->
+				<div class="mainchat_area">
+					<div class="tit">
+						<button type="button" class="btn_chat_back">뒤로가기</button>
+						<span>코스콤</span>
+						<div class="srch_input_box">
+							<button>검색닫기</button>
+							<input type="text" class="form_control srch_input" placeholder="검색어 입력">
+						</div>
+						<button type="button" class="btn_chat_search">검색</button>
+						<button type="button" class="btn_chat_menu chat_on">추가메뉴</button>
+					</div>
+
+					<!-- 채팅방일때 -->
+					<div class="mainchat_room">
+						<dl class="tit_dl">
+							<dt>직전체결가<span><b>4,900</b>원</span>
+								<button type="button" class="ico_chat_dealinfo">수량/가격/금액</button>
+							</dt>
+							<dd>
+								<ul>
+									<li>
+										<p>수량(주)</p>
+										<p>
+											<b>2,000</b>
+										</p>
+									</li>
+									<li>
+										<p>가격(원)</p>
+										<p>
+											<b>5,000</b>
+										</p>
+									</li>
+									<li>
+										<p>금액(원)</p>
+										<p>
+											<b>1,000,000</b>
+										</p>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+						
+						<!-- 채팅방 대화내용 -->
+						<div class="chat_talk_wrap">
+							<!-- [D] 채팅방 날짜표시-->
+							<div class="chat_date">2019년 6월 28일 금요일</div>
+
+							<!-- [D] 채팅방 안내말-->
+							<div class="chat_info"><span class="txt_sell_color"><b>닉네임(홍길동)</b>님</span>이 협상요청 수락을 하였습니다</div>
+
+							<!-- [D] 상대측 메시지-->
+							<div class="chat_msg_wrap">
+								<dl>
+									<dt>닉네임(홍길동)</dt>
+									<dd class="msg_contents">안녕하세요?<br>뉴코에드윈드 100주만 구입하고 싶습니다.</dd>
+									<dd class="msg_date">오전 11:40</dd>
+								</dl>
+							</div>
+
+							<!-- [D] 본인 메세지 my_chat 클래스 추가-->
+							<div class="chat_msg_wrap my_chat">
+								<dl>
+									<dd class="msg_contents">안녕하세요?</dd>
+									<dd class="msg_date">오전 11:40</dd>
+								</dl>
+							</div>
+
+							<!-- [D] 봇 메세지 bot 클래스 추가-->
+							<div class="chat_msg_wrap bot">
+								<dl>
+									<dt>챗봇</dt>
+									<dd class="msg_contents">
+										<p>협상 내역을 확인해 주세요.</p>
+										<ul>
+											<li>
+												<span class="txt_sell_color">매도자</span><em>홍**</em>
+											</li>
+											<li>
+												<span class="txt_buy_color">매수자</span><em>이수영</em>
+											</li>
+											<li>
+												<span>주문수량</span><em><b>100</b>주</em>
+											</li>
+											<li>
+												<span>단가</span><em><b>5,000</b>원</em>
+											</li>
+											<li>
+												<span>총금액</span><em><b>500,000</b>원</em>
+											</li>
+											<li>
+												<span>결재마감일</span><em><b>2019-06-15</b></em>
+											</li>
+										</ul>
+										<p>확인 버튼을 누르면, 계약서가<br>
+												생성됩니다. 계약서 생성<br> 후에는
+												취소가 불가합니다.</p>
+										<div class="botbutton_wrap">
+											<button type="button" class="btn_chatbot_cancle w50">취소</button>
+											<button type="button" class="btn_chatbot_confirm w50">확인</button>
+										</div>
+									</dd>
+									<dd class="msg_date">오전 11:40</dd>
+								</dl>
+							</div>
+
+							<!-- [D] 봇 메세지 bot 클래스 추가-->
+							<div class="chat_msg_wrap bot">
+								<dl>
+									<dt>챗봇</dt>
+									<dd class="msg_contents">
+										<p>계약서 내용을 확인하시고<br>전자서명을 진행해주세요.</p>
+										<p>모든 계약 당사자가<br>전자서명을 완료하면 계약이<br>완료됩니다.</p>
+										<div class="botbutton_wrap">
+											<button type="button" class="btn_chatbot_confirm" id="contract_open">계약서 확인</button>
+										</div>
+									</dd>
+									<dd class="msg_date">오전 11:40</dd>
+								</dl>
+							</div>
+
+							<!-- [D] 봇 메세지 bot 클래스 추가-->
+							<div class="chat_msg_wrap bot">
+								<dl>
+									<dt>챗봇</dt>
+									<dd class="msg_contents">
+										<p>주권미발행확인서가 발급<br>되었습니다.</p>
+										<div class="botbutton_wrap">
+											<button type="button" class="btn_chatbot_confirm">확인</button>
+										</div>
+									</dd>
+									<dd class="msg_date">오전 11:40</dd>
+								</dl>
+							</div>
+
+							<!-- [D] 봇 메세지 bot 클래스 추가 에스크로 팝업호출-->
+							<div class="chat_msg_wrap bot">
+								<dl>
+									<dt>챗봇</dt>
+									<dd class="msg_contents">
+										<p>계약서 내용을 확인하시고<br>
+											전자서명을 진행해주세요.<br><br>
+											모든 계약 당사자가<br>
+											전자서명을 완료하면 계약이<br>
+											완료됩니다.<br>
+										</p>
+										<div class="botbutton_wrap">
+											<button type="button" class="btn_chatbot_confirm" onclick="$('.mainchat_area .chat_escrow_pop').show();">에스크로 정보 확인</button>
+										</div>
+									</dd>
+									<dd class="msg_date">오전 11:40</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!-- //채팅방 대화내용 -->
+
+						<dl class="input_dl">
+							<dt>협상내역 입력<button class="ico_chat_input">협상내역 세부사항 열기</button></dt>
+							<dd>
+								<dl class="contract_deal">
+									<dt>수량</dt>
+									<dd>
+										<input type="text" class="form_control"><span>주</span>
+									</dd>
+									<dt>가격</dt>
+									<dd>
+										<input type="text" class="form_control"><span>원</span>
+									</dd>
+									<dt>결제마감일
+										<div class="tooltip_area">
+											<button type="button" class="btn_stockorder_tooltip">상태설명 툴팁</button>
+											<dl>
+												<dd class="tooltip_close"><button type="button">툴팁닫기</button></dd>
+												<dd>
+													결제 마감일은 매수자의<br>에스크로 입금 마감일입니다.
+												</dd>
+											</dl>
+										</div>
+									</dt>
+									<dd>
+										<input type="text" class="datepicker form_control" readonly><i>캘린더</i>
+									</dd>
+								</dl>
+							</dd>
+							<dd class="other_dd">
+								<p>
+									협상내용 입력 후 확인을 누르시면 상대방에게<br>계약서가 자동생성되어 전달됩니다.
+								</p>
+								<button type="button" class="btn_pop_default btn_white w50">취소</button>
+								<button type="button" class="btn_pop_default btn_blue w50">확인</button>
+							</dd>
+						</dl>
+						<div class="chat_input">
+							<div class="chat_fileupload_wrap">
+								<input type="file" id="chat_fileupload">
+								<label for="chat_fileupload"></label>
+							</div>
+							<textarea class="chat_textarea form_control"></textarea>
+							<button type="button" class="chat_send">전송</button>
+						</div>
+					</div>
+
+					<!-- 채팅방 추가메뉴 눌렀을시 화면 -->
+					<div class="chat_config_pop">
+						<div>
+							<div class="config_header">
+								채팅방 설정
+								<button type="button" class="config_close">채팅방설정 닫기</button>
+							</div>
+							<div class="config_contents">
+								<p class="config_tit">협상 상대</p>
+								<dl>
+									<dt>주문게시자<span class="box_buy_info">매수</span></dt>
+									<dd>나야나(김희응)</dd>
+								</dl>
+								<dl>
+									<dt>협상상대자<span class="box_sell_info">매수</span></dt>
+									<dd>야나두(조정석)</dd>
+								</dl>
+								<div class="config_desc">
+									<p>
+										※ 계약서 전자서명 이전에 
+										<span class="txt_buy_color">채팅방을 나가시면 협상이 결렬되며 
+										이전 채팅내용이 삭제됩니다.</span>
+									</p>
+									<button type="button" class="btn_chat_out">채팅방 나가기</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 에스크로 팝업 -->
+					<div class="chat_escrow_pop">
+						<div>
+							<div class="escrow_header">
+								에스크로 정보 안내
+								<button type="button" class="escrow_close" onclick="$('.mainchat_area .chat_escrow_pop').hide();">채팅방설정 닫기</button>
+							</div>
+							<div class="escrow_contents">
+								<p>입금 정보 확인 후 입금을 진행해주세요.</p>
+								<ul class="explain_ul">
+									<li>입금 마감일 :<b class="txt_buy_color">2019년 8월 22일</b></li>
+									<li>
+										에스크로 계좌정보<br>:<b class="txt_sell_color">하나은행 123-21-1234-123</b>
+									</li>
+									<li>상세내역
+										<div class="explain_tbl_wrap">
+											<table>
+												<caption>상세내역 - 총양수도대금, 플랫폼이용료, 합계 등</caption>
+												<colgroup>
+													<col width="113">
+													<col width="*">
+												</colgroup>
+												<tbody>
+													<tr>
+														<th>총 양수도 대금</th>
+														<td><b>100,000</b>원</td>
+													</tr>
+													<tr>
+														<th>플랫폼 이용료</th>
+														<td><b>200,000</b>원</td>
+													</tr>
+													<tr>
+														<th>항목3</th>
+														<td><b>100,000</b>원</td>
+													</tr>
+													<tr>
+														<th>항목4</th>
+														<td><b>100,000</b>원</td>
+													</tr>
+													<tr class="sum">
+														<th>합계</th>
+														<td><b>100,0000</b>원</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<button type="button" class="btn_pop_default btn_blue" onclick="$('.mainchat_area .chat_escrow_pop').hide();">확인</button>
+						</div>
+					</div>
+			
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- // 채팅팝업 -->
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+	window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+<!-- 아미쿠스렉스 -->
+<script>
+	(function() {
+		var result = Amicuslex.get_html(100, {
+			"seller_name" 			: "seller_name",
+			"seller_birthday" 		: "seller_birthday",
+			"seller_ssn" 			: "1234567",
+			"seller_address" 		: "서울시 서대문구 연희동 305번지 201호",
+			"buyer_name" 			: "buyer_name",
+			"buyer_birthday" 		: "buyer_birthday",
+			"buyer_ssn" 			: "7654321",
+			"buyer_address" 		: "서울시 강남구 역삼동 499-1번지 101호",
+			"company_name" 			: "company_name",
+			"company_address" 		: "company_address",
+			"stock_quantity" 		: "stock_quantity",
+			"stock_price" 			: "stock_price",
+			"total_cost"			: "20,0000,000",
+			"bank_name" 			: "우리은행",
+			"bank_account_number" 	: "1000-121-123123",
+			"transaction_end_date"	: "2019년 08월 21일 15:30",
+			"contract_date" 		: "2019 . 08 . 02"
+		});
+
+		if (result["code"] == 200) {
+			document.getElementById("amicus_contract").innerHTML = result["html"];
+		} else {
+			alert(result["code"] + " " + result["msg"]);
+		}
+
+		var result2 = Amicuslex.get_html(101, {
+			"company_name"          : 'company_name',
+			"company_ceo"           : "이재용",
+			"company_stock_type"    : "보통주(and/or 우선주)",
+			"company_stock_quantity": "40,000주 (보통주 30,000주/우선주 10,000주)",
+			"company_stock_price"   : "5,000원",
+			"owner_name"            : "유재석",
+			"owner_birthday"        : "701111",
+			"owner_ssn"             : "2345678",
+			"owner_address"         : "서울 영등포구 여의도동",
+			"owned_stock_type"      : "보통주",
+			"owned_stock_quantity"  : 'stock_quantity',
+			"stock_processed_date"  : "2019. 11. 30.",
+			"document_date"         : "2019년 11월 30일"
+		});
+
+		if (result2["code"] == 200) {
+			document.getElementById("amicus_contract2").innerHTML = result2["html"];
+		} else {
+			alert(result2["code"] + " " + result2["msg"]);
+		}
+	})();
+</script>
+</body>
+</html>
