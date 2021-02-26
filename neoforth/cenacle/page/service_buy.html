@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,  user-scalable=yes">
+    <title>CENACLE</title>
+    <link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+    <link rel="stylesheet" href="../css/vendor/swiper.min.css">
+    <link rel="stylesheet" href="../css/vendor/select2.min.css">
+    <link rel="stylesheet" href="../css/vendor/aos.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <script src="../js/vendor/jquery-3.4.1.min.js"></script>
+    <script src="../js/vendor/jquery-ui.min.js"></script>
+    <script src="../js/vendor/swiper.min.js"></script>
+    <script src="../js/vendor/select2.min.js"></script>
+    <script src="../js/vendor/aos.js"></script>
+    <script src="../js/vendor/parallax.min.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+    <div class="nav_skip">
+        <a href="#container">본문 바로가기</a>
+        <a href="#footer">하단정보 바로가기</a>
+    </div>
+    <div class="public_inner_wrap">
+        <h1>
+            <div class="img_change">
+                <a href="javascript:void(0);" class="hospital_link">마음속내과<span class="info_span">(승인중)</span>
+            </a>
+                <a href="javascript:void(0);" class="hospital_select"><span class="sr_only">병원 선택하기</span></a>
+            </div>
+        </h1>
+        <div class="pc_menu clearfix">
+    <ul class="depth1 fl clearfix">
+        <li><a href="javascript:void(0);">서비스 소개</a>
+        </li>
+        <li><a href="javascript:void(0);">구매</a>
+        </li>
+        <li><a href="javascript:void(0);">매뉴얼</a>
+        </li>
+        <li><a href="javascript:void(0);">내 계정</a>
+            <ul class="depth2 clearfix">
+                <li><a href="javascript:void(0);">계정정보</a></li>
+                <li><a href="javascript:void(0);">관리등급 및 권한</a></li>
+                <li><a href="javascript:void(0);">수정기록</a></li>
+                <li><a href="javascript:void(0);">기기관리</a></li>
+            </ul>
+        </li>
+        <li><a href="javascript:void(0);">내 병원</a>
+            <ul class="depth2 clearfix">
+                <li><a href="javascript:void(0);">병원정보</a></li>
+                <li><a href="javascript:void(0);">직원정보</a></li>
+                <li><a href="javascript:void(0);">접속기록</a></li>
+                <li><a href="javascript:void(0);">사용기록</a></li>
+                <li><a href="javascript:void(0);">크레딧/포인트</a></li> <!-- 21.01.27 메뉴 추가 -->
+                <li><a href="javascript:void(0);">결제예정금액</a></li>
+                <li><a href="javascript:void(0);">청구서</a></li>
+                <li><a href="javascript:void(0);">결제내역</a></li>
+                <li><a href="javascript:void(0);">결제관리</a></li>
+                <li><a href="javascript:void(0);">미납요금결제</a></li>
+                <li><a href="javascript:void(0);">상품변경</a></li>
+                <li><a href="javascript:void(0);">API인증키 관리</a></li> <!-- 21.02.02 메뉴 추가 -->
+            </ul>
+        </li>
+    </ul>
+
+    <div class="action_wrap fr ar">
+        <a href="javascript:void(0);" class="profile_wrap">
+            <div>
+                <img src="">
+            </div>
+            <span>홍길동님</span>
+        </a>
+        <button type="button" class="btn_logout_pc">로그아웃</button>
+        <button class="btn_sm btn_blue white_outline">EMR 실행</button>
+    </div>
+</div>
+
+        <div class="mobile_menu">
+    <a href="javascript:void(0);" class="menu_open"><span class="sr_only">메뉴열기</span></a>
+    <div class="dim_bg">
+        <div class="inner">
+            <div class="title">
+                <div class="profile_wrap">
+                    <img src="../img/mobile/profile@3x.png" alt="프로필 기본이미지" class="profile_img">
+                    <span class="profile_txt">홍길동님</span>
+                </div>
+                <a href="javascript:void(0);" class="close_button"><span class="sr_only">메뉴닫기</span></a>
+            </div>
+            <div class="section">
+                <div>내 계정</div>
+                <ul>
+                    <li><a href="javascript:void(0);">계정정보</a></li>
+                    <li><a href="javascript:void(0);">관리등급 및 권한</a></li>
+                    <li><a href="javascript:void(0);">수정기록</a></li>
+                    <li><a href="javascript:void(0);">기기관리</a></li>
+                </ul>
+            </div>
+            <div class="section">
+                <div>내 병원</div>
+                <ul>
+                    <li><a href="javascript:void(0);">병원정보</a></li>
+                    <li><a href="javascript:void(0);">직원정보</a></li>
+                    <li><a href="javascript:void(0);">접속기록</a></li>
+                    <li><a href="javascript:void(0);">사용기록</a></li>
+                    <li><a href="javascript:void(0);">크레딧/포인트</a></li> <!-- 21.01.27 메뉴 추가 -->
+                    <li><a href="javascript:void(0);">결제예정금액</a></li>
+                    <li><a href="javascript:void(0);">청구서</a></li>
+                    <li><a href="javascript:void(0);">결제내역</a></li>
+                    <li><a href="javascript:void(0);">결제관리</a></li>
+                    <li><a href="javascript:void(0);">미납요금결제</a></li>
+                    <li><a href="javascript:void(0);">API인증키 관리</a></li> <!-- 21.02.02 메뉴 추가 -->
+                </ul>
+            </div>
+            <div class="section">
+                <div>서비스</div>
+                <ul>
+                    <li><a href="javascript:void(0);">상품</a></li>
+                    <li><a href="javascript:void(0);">구성</a></li>
+                    <li><a href="javascript:void(0);">메뉴얼</a></li>
+                </ul>
+            </div>
+            <div class="logout_wrap ar">
+                <button type="button" class="btn_logout">로그아웃</button>
+            </div>
+            <div class="source">
+                <a class="txt_info" href="javascript:void(0);">by. 세나클소프트</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+		<div id="container">
+			<div class="bread_crumb">
+				<ul>
+					<li>구매</li>
+				</ul>
+			</div>
+			<div class="inner_wrap service_buy_wrap">
+				<div class="plan">
+					<p class="sub_title">PLAN</p>
+					<p class="title"><em>병원에 적합한 상품을</em> 찾아보세요.</p>
+					<p class="info">결제방식은 월, 연 결제 다 가능합니다.</p>
+					<div class="inner_semiTitle explain">결제방식은 언제든지 변경 가능합니다.</div>
+				</div>
+	
+				<div class="service_buy">
+					<!-- 상품설명탭 -->
+					<div class="find_wrap">
+
+						<!--<div class="mobile_title_wrap">
+							<div class="inner_title">병원에 적합한 상품을 찾아보세요.</div>
+							<div class="inner_semiTitle explain">결제방식은 언제든지 변경 가능합니다.</div>
+						</div>-->
+
+						<ul class="tab_item">
+							<li class="on"><a href="javascript:void(0);">월 결제</a></li>
+							<li><a href="javascript:void(0);">연 결제</a></li>
+						</ul>
+
+						<!-- Slider main container -->
+						<div class="swiper-container">
+							<!-- Additional required wrapper -->
+							<div class="swiper-wrapper">
+									<!-- Slides -->
+									<dl class="swiper-slide standard">
+										<dt>
+											<p class="goods_title">Standard</p>
+											<p class="goods_desc">상대적으로 규모가 작은 병원이거나<br>
+												기본적인 외래진료만 하시는 경우에 적합합니다.
+											</p>
+										</dt>
+										<dd>
+											<div class="price">
+												1인<span>10,000</span>원
+											</div>
+											<div class="sub_price">
+												(1인<span>120,000</span> 원/년 )
+											</div>
+											<ul class="explain_list">
+												<li>- 진료실 2개까지 지원(의사 2명 내외)</li>
+												<li>- 병원 직원 10명 내외</li>
+												<li>- 단순외래진료 목적</li>
+											</ul>
+										</dd>
+									</dl>
+									<dl class="swiper-slide plus">
+										<dt>
+											<p class="goods_title">Plus</p>
+											<p class="goods_desc">어느정도 규모가 있는 병원이면서 보다 더<br>다양한 기능을 제공
+											</p>
+										</dt>
+										<dd>
+											<div class="price">
+												1인 <span>18,333</span>원/월
+											</div>
+											<div class="sub_price">
+												(1인 <span>220,000</span> 원/월 )
+											</div>
+											<ul class="explain_list">
+												<li>- 진료실 3개 이상 지원(의사 3명 이상 수준)</li>
+												<li>- 병원 직원 20명 내외</li>
+												<li>- 외래진료 외 각종 검사, 검진 포함</li>
+											</ul>
+										</dd>
+									</dl>
+							</div>
+							<!-- If we need pagination -->
+							<div class="swiper-pagination"></div>
+						</div>
+
+						<p class="agree_explain">
+							'구매'를 클릭함으로써 <a href="javascript:void(0);" onclick="$('#pop_personal').dialog({});">상품구매 약관</a>에 동의하였음을 인정합니다.
+						</p>
+						<div class="responsive_btn_wrap">
+							<button class="btn_lg btn_blue btn_buy">구매하기</button>
+						</div>
+					</div>
+
+					<!-- 기능비교탭 -->
+					<div class="diff_wrap">
+						<div class="inner_title">기능비교</div>
+						<div class="inner_semiTitle explain">상품별 기능을 상세히 비교해보세요.</div>
+
+						<div class="diff_table_wrap">
+							<table>
+								<colgroup>
+									<col width="33.3333%">
+									<col width="33.3333%">
+									<col width="33.3333%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th></th>
+										<th>Standard</th>
+										<th>Plus</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>접수</th>
+										<td><span class="apply_img">적용기능</span></td>
+										<td><span class="apply_img">적용기능</span></td>
+									</tr>
+									<tr>
+										<th>예약</th>
+										<td><span class="apply_img">적용기능</span></td>
+										<td><span class="apply_img">적용기능</span></td>
+									</tr>
+									<tr>
+										<th>수납</th>
+										<td><span class="apply_img">적용기능</span></td>
+										<td><span class="apply_img">적용기능</span></td>
+									</tr>
+									<tr>
+										<th>CRM</th>
+										<td><span class="apply_img">적용기능</span></td>
+										<td><span class="apply_img">적용기능</span></td>
+									</tr>
+									<tr>
+										<th>메뉴명</th>
+										<td><span class="apply_img">적용기능</span></td>
+										<td><span class="apply_img">적용기능</span></td>
+									</tr>
+									<tr>
+										<th>메뉴명</th>
+										<td><span class="apply_img">적용기능</span></td>
+										<td><span class="apply_img">적용기능</span></td>
+									</tr>
+									<tr>
+										<th>메뉴명</th>
+										<td>-</td>
+										<td><span class="apply_img">적용기능</span></td>
+									</tr>
+									<tr>
+										<th>메뉴명</th>
+										<td>-</td>
+										<td><span class="apply_img">적용기능</span></td>
+									</tr>
+									<tr>
+										<th>메뉴명</th>
+										<td>-</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<th>메뉴명</th>
+										<td><span class="apply_img">적용기능</span></td>
+										<td><span class="apply_img">적용기능</span></td>
+									</tr>
+									<tr>
+										<th>메뉴명</th>
+										<td>-</td>
+										<td><span class="apply_img">적용기능</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+    <div class="public_inner_wrap">
+        <h4 class="footer_logo">
+            <a href="javascript:void(0);"><span class="sr_only">오름차트</span></a></h4>
+
+        <ul class="footer_contact">
+            <li><a href="tel:02-6203-1234" class="customer">02-6203-1234</a></li>
+            <li><a href="javascript:void(0);" class="online">온라인 문의하기</a></li>
+        </ul>
+
+        <ul class="footer_info clearfix">
+            <li><a href="https://www.cenacle.com/" target="_blank">회사소개</a></li>
+            <li><a href="javascript:void(0);">고객센터</a></li>
+            <li><a href="javascript:void(0);">이용약관</a></li>
+            <li><a href="javascript:void(0);">개인정보 보호방침</a></li>
+        </ul>
+
+        <ul class="company_info">
+            <li>사업자명: 세나클소프트(주)  /  대표자명: 위의석  /  사업자번호: 219-81-31353 / <span>사업장: 서울특별시 강남구 테헤란로 431 라이언타워 11층, 06159  /  대표전화: <a href="tel:02-6203-1234">02-6203-1234</a></span></li>
+        </ul>
+        <div class="copyright">
+            오름 © 2020 cenaclesoft, Inc
+        </div>
+    </div>
+</div>
+
+	</div>
+
+	<script>
+		var mySwiper = '';
+
+		mySwiper = new Swiper('.swiper-container', {
+			// Optional parameters
+			// loop: true,
+			allowTouchMove: true,
+			slidesPerView: 1,
+			spaceBetween: 10,
+
+			// If we need pagination
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			breakpoints: {
+				768: {
+					allowTouchMove: false,
+					slidesPerView: 2
+				}
+			}
+		})
+
+		// 월결제 연결제 클릭시
+		$('.tab_item li a').on('click', function() {
+			var idx = $('.tab_item li a').index($(this));
+			var standardPrice = {
+				monthPay: "10000",
+				yearPay: "9166"
+			}
+			var plusPrice = {
+				monthPay: "20000",
+				yearPay: "18333"
+			}
+			$(this).closest('li').addClass('on').siblings().removeClass('on');
+			//idx = 0 월 결제 // idx = 1 연 결제
+			if(idx) {
+				$('.standard .price span').text(numberWithCommas(standardPrice.yearPay));
+				$('.standard .sub_price span').text(numberWithCommas(standardPrice.yearPay * 12));
+				$('.plus .price span').text(numberWithCommas(plusPrice.yearPay));
+				$('.plus .sub_price span').text(numberWithCommas(plusPrice.yearPay * 12));
+			} else {
+				$('.standard .price span').text(numberWithCommas(standardPrice.monthPay));
+				$('.standard .sub_price span').text(numberWithCommas(standardPrice.monthPay * 12));
+				$('.plus .price span').text(numberWithCommas(plusPrice.monthPay));
+				$('.plus .sub_price span').text(numberWithCommas(plusPrice.monthPay * 12));
+			}
+
+		});
+
+		// 세자릿수 ',' 추가
+		function numberWithCommas(x) {
+			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
+	</script>
+
+	<div id="pop_personal" class="pop_wrap" title="상품구매 약관">
+		<div class="pop_contents">
+			<dl>
+				<dt>수집·이용 목적</dt>
+				<dd>문의내용 확인 및 답변을 위해 수집·이용됨</dd>
+				<dt>수집항목</dt>
+				<dd>이름, 휴대폰번호, 이메일</dd>
+				<dt>보유 및 이용 기간</dt>
+				<dd>3년간 보유 및 이용 이후 파기</dd>
+				<dt>동의거부 권리알림</dt>
+				<dd>개인정보 수집·이용에 대하여 동의를 거부할 수 있으며, 동의를 하지 않으면 서비스 관련 문의를 할 수 없습니다.</dd>
+			</dl>
+		</div>
+	</div>
+</body>
+</html>

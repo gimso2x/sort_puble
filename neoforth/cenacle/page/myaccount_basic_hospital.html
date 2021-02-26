@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,  user-scalable=yes">
+    <title>CENACLE</title>
+    <link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+    <link rel="stylesheet" href="../css/vendor/swiper.min.css">
+    <link rel="stylesheet" href="../css/vendor/select2.min.css">
+    <link rel="stylesheet" href="../css/vendor/aos.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <script src="../js/vendor/jquery-3.4.1.min.js"></script>
+    <script src="../js/vendor/jquery-ui.min.js"></script>
+    <script src="../js/vendor/swiper.min.js"></script>
+    <script src="../js/vendor/select2.min.js"></script>
+    <script src="../js/vendor/aos.js"></script>
+    <script src="../js/vendor/parallax.min.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+    <div class="nav_skip">
+        <a href="#container">본문 바로가기</a>
+        <a href="#footer">하단정보 바로가기</a>
+    </div>
+    <div class="public_inner_wrap">
+        <h1>
+            <div class="img_change">
+                <a href="javascript:void(0);" class="hospital_link">마음속내과<span class="info_span">(승인중)</span>
+            </a>
+                <a href="javascript:void(0);" class="hospital_select"><span class="sr_only">병원 선택하기</span></a>
+            </div>
+        </h1>
+        <div class="pc_menu clearfix">
+    <ul class="depth1 fl clearfix">
+        <li><a href="javascript:void(0);">서비스 소개</a>
+        </li>
+        <li><a href="javascript:void(0);">구매</a>
+        </li>
+        <li><a href="javascript:void(0);">매뉴얼</a>
+        </li>
+        <li><a href="javascript:void(0);">내 계정</a>
+            <ul class="depth2 clearfix">
+                <li><a href="javascript:void(0);">계정정보</a></li>
+                <li><a href="javascript:void(0);">관리등급 및 권한</a></li>
+                <li><a href="javascript:void(0);">수정기록</a></li>
+                <li><a href="javascript:void(0);">기기관리</a></li>
+            </ul>
+        </li>
+        <li><a href="javascript:void(0);">내 병원</a>
+            <ul class="depth2 clearfix">
+                <li><a href="javascript:void(0);">병원정보</a></li>
+                <li><a href="javascript:void(0);">직원정보</a></li>
+                <li><a href="javascript:void(0);">접속기록</a></li>
+                <li><a href="javascript:void(0);">사용기록</a></li>
+                <li><a href="javascript:void(0);">크레딧/포인트</a></li> <!-- 21.01.27 메뉴 추가 -->
+                <li><a href="javascript:void(0);">결제예정금액</a></li>
+                <li><a href="javascript:void(0);">청구서</a></li>
+                <li><a href="javascript:void(0);">결제내역</a></li>
+                <li><a href="javascript:void(0);">결제관리</a></li>
+                <li><a href="javascript:void(0);">미납요금결제</a></li>
+                <li><a href="javascript:void(0);">상품변경</a></li>
+                <li><a href="javascript:void(0);">API인증키 관리</a></li> <!-- 21.02.02 메뉴 추가 -->
+            </ul>
+        </li>
+    </ul>
+
+    <div class="action_wrap fr ar">
+        <a href="javascript:void(0);" class="profile_wrap">
+            <div>
+                <img src="">
+            </div>
+            <span>홍길동님</span>
+        </a>
+        <button type="button" class="btn_logout_pc">로그아웃</button>
+        <button class="btn_sm btn_blue white_outline">EMR 실행</button>
+    </div>
+</div>
+
+        <div class="mobile_menu">
+    <a href="javascript:void(0);" class="menu_open"><span class="sr_only">메뉴열기</span></a>
+    <div class="dim_bg">
+        <div class="inner">
+            <div class="title">
+                <div class="profile_wrap">
+                    <img src="../img/mobile/profile@3x.png" alt="프로필 기본이미지" class="profile_img">
+                    <span class="profile_txt">홍길동님</span>
+                </div>
+                <a href="javascript:void(0);" class="close_button"><span class="sr_only">메뉴닫기</span></a>
+            </div>
+            <div class="section">
+                <div>내 계정</div>
+                <ul>
+                    <li><a href="javascript:void(0);">계정정보</a></li>
+                    <li><a href="javascript:void(0);">관리등급 및 권한</a></li>
+                    <li><a href="javascript:void(0);">수정기록</a></li>
+                    <li><a href="javascript:void(0);">기기관리</a></li>
+                </ul>
+            </div>
+            <div class="section">
+                <div>내 병원</div>
+                <ul>
+                    <li><a href="javascript:void(0);">병원정보</a></li>
+                    <li><a href="javascript:void(0);">직원정보</a></li>
+                    <li><a href="javascript:void(0);">접속기록</a></li>
+                    <li><a href="javascript:void(0);">사용기록</a></li>
+                    <li><a href="javascript:void(0);">크레딧/포인트</a></li> <!-- 21.01.27 메뉴 추가 -->
+                    <li><a href="javascript:void(0);">결제예정금액</a></li>
+                    <li><a href="javascript:void(0);">청구서</a></li>
+                    <li><a href="javascript:void(0);">결제내역</a></li>
+                    <li><a href="javascript:void(0);">결제관리</a></li>
+                    <li><a href="javascript:void(0);">미납요금결제</a></li>
+                    <li><a href="javascript:void(0);">API인증키 관리</a></li> <!-- 21.02.02 메뉴 추가 -->
+                </ul>
+            </div>
+            <div class="section">
+                <div>서비스</div>
+                <ul>
+                    <li><a href="javascript:void(0);">상품</a></li>
+                    <li><a href="javascript:void(0);">구성</a></li>
+                    <li><a href="javascript:void(0);">메뉴얼</a></li>
+                </ul>
+            </div>
+            <div class="logout_wrap ar">
+                <button type="button" class="btn_logout">로그아웃</button>
+            </div>
+            <div class="source">
+                <a class="txt_info" href="javascript:void(0);">by. 세나클소프트</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+		<div id="container">
+			<div class="inner_wrap">
+				<div class="inner_title">기본병원 설정</div>
+				<div class="inner_semiTitle explain">병원목록에서 기본병원으로 설정할 병원을 선택하세요.</div>
+
+				<div class="hospital_basic">
+					<ul class="lst_data">
+						<li class="active">
+							<a href="javascript:void(0);">
+								<strong>마음속내과<span>(12345678)</span></strong>
+								<span>시흥시 정왕동 / 박기호 원장님</span>
+								<span class="complete_certify">기본병원</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<strong>세상에서 제일 긴 이름을 가진 병원명이 있다면 어느정도일까요 <span>(12345678)</span></strong>
+								<span>시흥시 정왕동 / 박기호 원장님</span>
+							</a>
+						</li>
+						<li class="disabled">
+							<a href="javascript:void(0);">
+								<strong>마음속내과<span>(12345678)</span></strong>
+								<span>시흥시 정왕동 / 박기호 원장님</span>
+								<span class="txt_alert">관리자 승인 필요</span>
+							</a>
+						</li>
+					</ul>
+
+					<div class="responsive_btn_wrap2">
+						<button class="btn_lg btn_blue">저장</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+    <div class="public_inner_wrap">
+        <h4 class="footer_logo">
+            <a href="javascript:void(0);"><span class="sr_only">오름차트</span></a></h4>
+
+        <ul class="footer_contact">
+            <li><a href="tel:02-6203-1234" class="customer">02-6203-1234</a></li>
+            <li><a href="javascript:void(0);" class="online">온라인 문의하기</a></li>
+        </ul>
+
+        <ul class="footer_info clearfix">
+            <li><a href="https://www.cenacle.com/" target="_blank">회사소개</a></li>
+            <li><a href="javascript:void(0);">고객센터</a></li>
+            <li><a href="javascript:void(0);">이용약관</a></li>
+            <li><a href="javascript:void(0);">개인정보 보호방침</a></li>
+        </ul>
+
+        <ul class="company_info">
+            <li>사업자명: 세나클소프트(주)  /  대표자명: 위의석  /  사업자번호: 219-81-31353 / <span>사업장: 서울특별시 강남구 테헤란로 431 라이언타워 11층, 06159  /  대표전화: <a href="tel:02-6203-1234">02-6203-1234</a></span></li>
+        </ul>
+        <div class="copyright">
+            오름 © 2020 cenaclesoft, Inc
+        </div>
+    </div>
+</div>
+
+	</div>
+</body>
+</html>

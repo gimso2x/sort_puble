@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - BUTTON</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../css/common.css">
+<!-- //style -->
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(webSnb);
+		$('.g-nav-snb ul li').eq(1).addClass("active");
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">BUTTON</h2>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">공통버튼</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<h3 class="g-tit-basic">xLarge(310 * 50)</h3>
+							<button class="btn_xlg btn_blue w100">완료</button>
+							<br><br>
+
+							<h3 class="g-tit-basic">Large(150 * 44)</h3>
+							<div class="submit_area" style="margin-top: 10px; margin-bottom: 10px;">
+								<button class="btn_lg btn_blue btn_outline w50">&lt; 이전</button>
+								<button class="btn_lg btn_blue w50">완료</button>
+							</div>
+							<div class="submit_area" style="margin-top: 10px; margin-bottom: 10px;">
+								<button class="btn_lg btn_blue btn_outline w50"><span class="btn_left">이전</span></button>
+								<button class="btn_lg btn_blue btn_outline w50"><span class="btn_right">다음</span></button>
+							</div>
+							<button class="btn_lg btn_blue opacity">구매하기</button>
+							<button class="btn_lg btn_darkblue">파일 선택하기</button>
+							<br><br>
+
+							<h3 class="g-tit-basic">Middle(76 * 40)</h3>
+							<div style="margin-bottom: 10px;">
+								<button class="btn_md btn_darkblue w100">본인확인</button>
+							</div>
+							<button class="btn_md btn_blue btn_write w100"><span>문의하기</span></button>
+							<div style="margin-top: 10px;">
+								<button class="btn_md btn_blue btn_outline">확인</button>
+								<button class="btn_md btn_blue btn_outline">관리</button>
+								<button class="btn_md btn_darkblue">조회</button>
+							</div>
+							<br><br>
+
+							<h3 class="g-tit-basic">Small(63 * 32)</h3>
+							<button class="btn_sm btn_darkblue btn_outline">기기해제</button>
+							<button class="btn_sm btn_darkblue btn_outline">수정</button>
+							<button class="btn_sm btn_darkblue">삭제</button>
+							<button class="btn_sm btn_blue btn_outline btn_change">연 결제로 변경</button>
+							<br><br>
+
+							<h3 class="g-tit-basic">xSmall(64 * 28)</h3>
+							<button class="btn_xs btn_blue btn_outline">로그인</button>
+							<br><br>
+
+							<h3 class="g-tit-basic">인증완료</h3>
+							<span class="complete_certify">인증완료</span>
+							<button class="btn_logout">다른 기기 모두 로그아웃</button>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<!-- xLarge(310 * 50) -->
+								<button class="btn_xlg btn_blue w100">완료</button>
+
+								<!-- Large(150 * 44) -->
+								<button class="btn_md btn_darkblue w100">본인확인</button>
+								<button class="btn_md btn_darkblue btn_write">문의하기</button>
+								<button class="btn_lg btn_blue btn_outline w50">&lt; 이전</button>
+								<button class="btn_lg btn_blue w50">완료</button>
+								<button class="btn_lg btn_darkblue">파일 선택하기</button>
+
+								<!-- Middle(76 * 40) -->
+								<button class="btn_md btn_blue btn_write w100"><span>문의하기</span></button>
+								<button class="btn_md btn_blue btn_outline">확인</button>
+								<button class="btn_md btn_blue btn_outline">관리</button>
+								<button class="btn_md btn_darkblue">조회</button>
+
+								<!-- Small(63 * 32) -->
+								<button class="btn_sm btn_darkblue btn_outline">기기해제</button>
+								<button class="btn_sm btn_darkblue btn_outline">수정</button>
+								<button class="btn_sm btn_darkblue">삭제</button>
+								<button class="btn_sm btn_blue btn_outline btn_change">연 결제로 변경</button>
+
+								<!-- xSmall(64 * 28) -->
+								<button class="btn_xs btn_blue btn_outline">로그인</button>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+		</div>
+	</div>
+</div>
+</body>
+</html>

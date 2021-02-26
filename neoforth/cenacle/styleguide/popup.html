@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - POPUP</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+<link rel="stylesheet" href="../css/common.css">
+<!-- //style -->
+<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../js/vendor/jquery-ui.min.js"></script>
+<script src="../js/common.js"></script>
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(webSnb);
+		$('.g-nav-snb ul li').eq(5).addClass("active");
+
+		// 버튼function
+
+		$('.info_view').on('click', function() {
+			$('#pop_infoview').dialog({
+				buttons: [
+					{
+						text: "닫기",
+						class: "btn_xlg btn_blue w100",
+						click: function() {
+							$( this ).dialog( "close" );
+						}
+					}
+				]
+			});
+		})
+
+		$('.job_set').on('click', function() {
+			$('#pop_job_set').dialog({
+				buttons: [
+					{
+						text: "취소",
+						class: "btn_xlg btn_darkblue btn_outline w50",
+						click: function() {
+							$( this ).dialog( "close" );
+						}
+					},
+					{
+						text: "저장",
+						class: "btn_xlg btn_blue w50",
+						click: function() {
+							$( this ).dialog( "close" );
+						}
+					}
+				]
+			});
+		})
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">POPUP</h2>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">개인정보 수집 및 이용안내</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+
+							<button  onclick="$('#pop_personal').dialog({});">개인정보 수집 및 이용 안내</button>
+							<!-- view -->
+							<div id="pop_personal" class="pop_wrap" title="개인정보 수집 및 이용 안내">
+								<div class="pop_contents">
+									<dl>
+										<dt>수집·이용 목적</dt>
+										<dd>문의내용 확인 및 답변을 위해 수집·이용됨</dd>
+										<dt>수집항목</dt>
+										<dd>이름, 휴대폰번호, 이메일</dd>
+										<dt>보유 및 이용 기간</dt>
+										<dd>3년간 보유 및 이용 이후 파기</dd>
+										<dt>동의거부 권리알림</dt>
+										<dd>개인정보 수집·이용에 대하여 동의를 거부할 수 있으며, 동의를 하지 않으면 서비스 관련 문의를 할 수 없습니다.</dd>
+									</dl>
+								</div>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+
+								<div id="pop_personal" class="pop_wrap" title="개인정보 수집 및 이용 안내">
+									<div class="pop_contents">
+										<dl>
+											<dt>수집·이용 목적</dt>
+											<dd>문의내용 확인 및 답변을 위해 수집·이용됨</dd>
+											<dt>수집항목</dt>
+											<dd>이름, 휴대폰번호, 이메일</dd>
+											<dt>보유 및 이용 기간</dt>
+											<dd>3년간 보유 및 이용 이후 파기</dd>
+											<dt>동의거부 권리알림</dt>
+											<dd>개인정보 수집·이용에 대하여 동의를 거부할 수 있으며, 동의를 하지 않으면 서비스 관련 문의를 할 수 없습니다.</dd>
+										</dl>
+									</div>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+
+							</pre>
+						</div>
+					</div>
+				</div>
+				<!-- //탭그룹 -->
+			</div>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">정보보기</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<button class="info_view">정보보기</button>
+
+							<div id="pop_infoview" class="pop_wrap" title="정보보기">
+								<div class="pop_contents">
+									<dl>
+										<dt>이름</dt>
+										<dd>홍길동</dd>
+									</dl>
+									<dl>
+										<dt>아이디</dt>
+										<dd>hong123</dd>
+									</dl>
+									<dl>
+										<dt>생년월일</dt>
+										<dd>1990.10.31</dd>
+									</dl>
+									<dl>
+										<dt>휴대폰번호</dt>
+										<dd>(SKT) 010-1234-1234</dd>
+									</dl>
+									<dl>
+										<dt>이메일</dt>
+										<dd>aaabbbccc12@gmail.com</dd>
+									</dl>
+									<dl>
+										<dt>관리등급</dt>
+										<dd>Admin</dd>
+									</dl>
+									<dl>
+										<dt>오피스</dt>
+										<dd>진료실1</dd>
+									</dl>
+									<dl>
+										<dt>직업 및 면허</dt>
+										<dd>
+											의사 (123456789) / 신경외과 (123456789) / 임상병리사 (12345678)
+										</dd>
+									</dl>
+
+								</div>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<div id="pop_infoview" class="pop_wrap" title="정보보기">
+									<div class="pop_contents">
+										<dl>
+											<dt>이름</dt>
+											<dd>홍길동</dd>
+										</dl>
+										<dl>
+											<dt>아이디</dt>
+											<dd>hong123</dd>
+										</dl>
+										<dl>
+											<dt>생년월일</dt>
+											<dd>1990.10.31</dd>
+										</dl>
+										<dl>
+											<dt>휴대폰번호</dt>
+											<dd>(SKT) 010-1234-1234</dd>
+										</dl>
+										<dl>
+											<dt>이메일</dt>
+											<dd>aaabbbccc12@gmail.com</dd>
+										</dl>
+										<dl>
+											<dt>관리등급</dt>
+											<dd>Admin</dd>
+										</dl>
+										<dl>
+											<dt>오피스</dt>
+											<dd>진료실1</dd>
+										</dl>
+										<dl>
+											<dt>직업 및 면허</dt>
+											<dd>
+												의사 (123456789) / 신경외과 (123456789) / 임상병리사 (12345678)
+											</dd>
+										</dl>
+
+									</div>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+
+							</pre>
+						</div>
+					</div>
+				</div>
+				<!-- //탭그룹 -->
+			</div>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">대표직업 설정</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<button class="job_set">대표직업 설정</button>
+
+							<div id="pop_job_set" class="pop_wrap" title="대표직업 설정">
+								<div class="pop_contents">
+									<ul>
+										<li>
+											<label class="input_radio" for="job1">
+											<input type="radio" id="job1" name="job" checked="">
+											<span class="label_text">의사 (12345678) / 내과 (12345678)</span>
+											</label>
+										</li>
+										<li>
+											<label class="input_radio" for="job2">
+												<input type="radio" id="job2" name="job">
+												<span class="label_text">의사 (12345678) / 외과 (12345678)</span>
+											</label>
+										</li>
+										<li>
+											<label class="input_radio" for="job3">
+												<input type="radio" id="job3" name="job">
+												<span class="label_text">임상병리사 (12345678)</span>
+											</label>
+										</li>
+										<li>
+											<label class="input_radio" for="job4">
+												<input type="radio" id="job4" name="job">
+												<span class="label_text">행정직 (12345678)</span>
+											</label>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+
+							</pre>
+						</div>
+					</div>
+				</div>
+				<!-- //탭그룹 -->
+			</div>
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">채팅방팝업</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+
+							</pre>
+						</div>
+					</div>
+				</div>
+				<!-- //탭그룹 -->
+			</div>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

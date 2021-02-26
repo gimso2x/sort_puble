@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>마크업가이드 - FORM</title>
+<!-- 가이드 css -->
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/shCoreDefault.css">
+<link rel="stylesheet" href="../css/common.css">
+
+<link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+<script src="../js/vendor/jquery-3.4.1.min.js"></script>
+<script src="../js/vendor/jquery-ui.min.js"></script>
+<script src="../js/common.js"></script>
+
+<script type="text/javascript" src=" ../common/js/shCore.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushXml.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushCss.js"></script>
+<script type="text/javascript" src=" ../common/js/shBrushJScript.js"></script>
+<script type="text/javascript" src=" ../common/js/guide.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	$(document).ready(function(){
+		$('.g-nav-snb').append(webSnb);
+		$('.g-nav-snb ul li').eq(3).addClass("active");
+	});
+</script>
+</head>
+<body>
+<div id="g-wrap" class="open-aside">
+	<!-- aside -->
+	<div id="g-aside">
+		<!-- # 좌측컨텐츠 # -->
+		<div class="wrap-aside">
+			<!-- 사용자정보영역 -->
+			<div class="box-info">
+			</div>
+			<!-- 네비게이션 : SNB -->
+			<div class="g-nav-snb guide"></div>
+		</div>
+		<!-- # 컨트롤 # -->
+		<div class="g-area-control">
+			<a href="#none">좌측영역 펼침/닫기</a>
+		</div>
+	</div>
+	<!-- //aside -->
+
+	<div class="g-content">
+		<div class="g-box-basic">
+			<h2 class="g-tit-basic">FORM</h2>
+			
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">INPUT BASIC</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<input type="text" class="form_control" maxlength="" placeholder="input basic">
+							<input type="text" class="form_control mt20" maxlength="" placeholder="input basic readonly" readonly="readonly">
+
+							<br><br>
+							<div class="wrap_form_control">
+								<label for=""><span class="require">이름</span></label>
+								<input type="text" class="form_control">
+							</div>
+							<div class="wrap_form_control">
+								<label for="">이름</label>
+								<input type="text" class="form_control">
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<input type="text" class="form_control" maxlength="" placeholder="input basic">
+								<input type="text" class="form_control mt20" maxlength="" placeholder="input basic readonly" readonly="readonly">
+
+								<div class="wrap_form_control">
+									<label for=""><span class="require">이름</span></label>
+									<input type="text" class="form_control">
+								</div>
+								<div class="wrap_form_control">
+									<label for="">이름</label>
+									<input type="text" class="form_control">
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.form_control {
+									width: 100%;
+									height: 40px;
+									line-height: 38px;
+									padding: 0 12px;
+									border: 1px solid #d8dadf;
+									-moz-border-radius: 4px;
+									border-radius: 4px;
+									font-size: 14px;
+									color: #1c2029;
+									vertical-align: middle;
+								}
+								
+								.form_control:disabled {
+									background-color: #f2f2f3;
+									color: #1c2029;
+								}
+								
+								input::-webkit-input-placeholder {
+									color: #9ea2ae;
+								}
+								
+								input:-ms-input-placeholder {
+									color: #9ea2ae;
+								}
+								
+								input:-moz-read-only {
+									background-color: #f2f2f3;
+									color: #f2f2f3;
+								}
+								
+								input:read-only {
+									background-color: #f2f2f3;
+									color: #f2f2f3;
+								}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">INPUT (radio,checkbox)</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<h3 class="g-tit-basic">텍스트 없는 체크박스</h3>
+							<div>
+								<label class="input_check pop_notext">
+									<input type="checkbox" id="" name="check1">
+									<span class="label_text">체크박스 체크해제</span>
+								</label>
+
+								<label class="input_check pop_notext">
+									<input type="checkbox" id="" name="check1" checked>
+									<span class="label_text">체크박스 체크</span>
+								</label>
+							</div>
+							<br>
+							
+							<h3 class="g-tit-basic">체크박스 Default</h3>
+							<div>
+								<label class="input_check">
+									<input type="checkbox" id="" name="">
+									<span class="label_text">체크박스 체크해제</span>
+								</label>
+								<label class="input_check">
+									<input type="checkbox" id="" name="" checked>
+									<span class="label_text">체크박스 체크</span>
+								</label>
+							</div>
+							<br>
+
+							<h3 class="g-tit-basic">텍스트 없는 라디오박스</h3>
+							<div>
+								<label class="input_radio pop_notext" for="rdoSolar2">
+									<input type="radio" id="rdoSolar2" name="birthday_type2" checked="">
+									<span class="label_text"></span>
+								</label>
+								<label class="input_radio pop_notext" for="rdoLunar2">
+									<input type="radio" id="rdoLunar2" name="birthday_type2">
+									<span class="label_text"></span>
+								</label>
+							</div>
+							<br>
+							<h3 class="g-tit-basic">라디오박스 Default</h3>
+							<div>
+								<label class="input_radio" for="rdoSolar">
+									<input type="radio" id="rdoSolar" name="birthday_type" checked="">
+									<span class="label_text">라디오 체크</span>
+								</label>
+								<label class="input_radio" for="rdoLunar">
+									<input type="radio" id="rdoLunar" name="birthday_type">
+									<span class="label_text">라디오 체크해제</span>
+								</label>
+							</div>
+							<br>
+
+							<h3 class="g-tit-basic">라디오박스 radius</h3>
+							<div>
+								<label class="input_radio radio_radius" for="radioCase1">
+									<input type="radio" id="radioCase1" name="radio_case" checked>
+									<span class="label_text">라디오박스 체크</span>
+								</label>
+								<label class="input_radio radio_radius" for="radioCase2">
+									<input type="radio" id="radioCase2" name="radio_case">
+									<span class="label_text">라디오박스 체크해제</span>
+								</label>
+							</div>
+							<br>
+							
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+								<pre class="syntax brush:html">
+								<!-- 텍스트 없는 체크박스 -->
+								<div>
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1">
+										<span class="label_text">체크박스 체크해제</span>
+									</label>
+
+									<label class="input_check">
+										<input type="checkbox" id="" name="check1" checked>
+										<span class="label_text">체크박스 체크</span>
+									</label>
+								</div>
+								
+								<!-- 체크박스 Default -->
+								<div>
+									<label class="input_check check_individual">
+										<input type="checkbox" id="" name="">
+										<span class="label_text">체크박스 체크해제</span>
+									</label>
+									<label class="input_check check_individual">
+										<input type="checkbox" id="" name="" checked>
+										<span class="label_text">체크박스 체크</span>
+									</label>
+								</div>
+
+								<!-- 텍스트 없는 라디오박스 -->
+								<div>
+									<label class="input_radio pop_notext" for="rdoSolar2">
+										<input type="radio" id="rdoSolar2" name="birthday_type2" checked="">
+										<span class="label_text"></span>
+									</label>
+									<label class="input_radio pop_notext" for="rdoLunar2">
+										<input type="radio" id="rdoLunar2" name="birthday_type2">
+										<span class="label_text"></span>
+									</label>
+								</div>
+
+								<!-- 라디오박스 Default -->
+								<div>
+									<label class="input_radio" for="rdoSolar">
+										<input type="radio" id="rdoSolar" name="birthday_type" checked="">
+										<span class="label_text">라디오 체크</span>
+									</label>
+									<label class="input_radio" for="rdoLunar">
+										<input type="radio" id="rdoLunar" name="birthday_type">
+										<span class="label_text">라디오 체크해제</span>
+									</label>
+								</div>
+								<br>
+
+								<!-- 라디오박스 radius -->
+								<div>
+									<label class="input_radio radio_radius" for="radioCase1">
+										<input type="radio" id="radioCase1" name="radio_case" checked>
+										<span class="label_text">라디오박스 체크</span>
+									</label>
+									<label class="input_radio radio_radius" for="radioCase2">
+										<input type="radio" id="radioCase2" name="radio_case">
+										<span class="label_text">라디오박스 체크해제</span>
+									</label>
+								</div>
+								
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.input_check {position: relative;display: inline-block;min-height: 20px;margin-left: 12px;line-height: 20px;color: #1c2029;font-size: 14px;font-weight: normal;vertical-align: middle;}								
+								.input_check:first-child {margin-left: 0;}
+								.input_check input[type="checkbox"] {position: absolute;top: 0;left: 0;height: auto;line-height: normal;opacity: 0;cursor: pointer;}								
+								.input_check input[type="checkbox"]:focus + .label_text {outline: 1px dotted;outline-color: #A6C7FF;outline: -webkit-focus-ring-color auto 5px;}								
+								.input_check input[type="checkbox"]:checked + .label_text {background-image: url("../img/mobile/ico_check_on.png");}								
+								.input_check .label_text {display: inline-block;padding-left: 20px;background: url("../img/mobile/ico_check_off.png") no-repeat 0 50%/14px;vertical-align: top;cursor: pointer;}
+
+								.input_check.pop_notext .label_text{padding-left:0;width:14px;height:20px;text-indent:-9999px;vertical-align: middle;}
+								
+								.check_lg{min-height:30px;line-height:30px;color:#333;font-size:18px;}
+								.check_lg > .label_text{padding-left:40px;background-image:url("/static/img/pc/ico_check_lg.png"); background-size: 30px;}
+								.check_lg > input[type="checkbox"]:checked + .label_text{background-image:url("/static/img/pc/ico_check_lg_on.png")}
+								.input_check.check_radius > .label_text{background:url(../img/mobile/check_radius_off.png) no-repeat 50%/14px; background-size: 14px;vertical-align: middle;}
+								.input_check.check_radius > input[type="checkbox"]:checked + .label_text{background-image:url(../img/mobile/check_radius_on.png);}
+								
+								
+								/* radio */
+								.input_radio{position:relative;display:inline-block;min-height:20px;line-height:20px;margin-left:12px;color:#666;font-size:14px;font-weight:normal;vertical-align:middle}
+								.input_radio:first-child{margin-left:0}
+								.input_radio > input[type="radio"]{position:absolute;top:0;left:0;height:auto;line-height:normal;opacity:0;/* visibility:hidden; */}
+								.input_radio > input[type="radio"]:focus + .label_text{outline: 1px dotted;outline-color: #A6C7FF;outline:-webkit-focus-ring-color auto 5px;}
+								.input_radio > .label_text{display:inline-block;padding-left:19px;background:url(../img/mobile/ico_radio_off.png) no-repeat 0 50% / 14px;font-size:14px;color:#1c2029;vertical-align:top;cursor:pointer;}
+								.input_radio > input[type="radio"]:checked + .label_text{background-image:url(../img/mobile/ico_radio_on.png)}
+								
+								.input_radio.pop_notext .label_text{padding-left:0;width:14px;height:20px;text-indent:-9999px; vertical-align: middle;}
+								.input_radio.radio_radius > .label_text{background:url(../img/mobile/check_radius_off.png) no-repeat 50%/14px; background-size: 14px; padding-left:0;width:16px;height:20px;text-indent:-9999px;vertical-align: middle;}
+								.input_radio.radio_radius > input[type="radio"]:checked + .label_text{background-image:url(../img/mobile/check_radius_on.png);}								
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">select css(IE 10 ~)</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<select class="form_control">
+								<option>This is a native select element</option>
+								<option>Apples</option>
+								<option>Bananas</option>
+								<option>Grapes</option>
+								<option>Oranges</option>
+							</select>
+
+							<select class="form_control mt20" disabled>
+								<option>This is a native select element</option>
+								<option>Apples</option>
+								<option>Bananas</option>
+								<option>Grapes</option>
+								<option>Oranges</option>
+							</select>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<select class="form_control">
+									<option>This is a native select element</option>
+									<option>Apples</option>
+									<option>Bananas</option>
+									<option>Grapes</option>
+									<option>Oranges</option>
+								</select>
+
+								<select class="form_control" disabled>
+									<option>This is a native select element</option>
+									<option>Apples</option>
+									<option>Bananas</option>
+									<option>Grapes</option>
+									<option>Oranges</option>
+								</select>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								select{
+									-webkit-appearance: none;
+									-moz-appearance: none;
+									appearance: none;
+									background-image: url(../img/mobile/select_dropdown_arrow.png);
+									background-repeat: no-repeat;
+									background-position: calc(100% - 12px) 50%;
+									background-size: 12px;
+								}
+								select::-ms-expand { display: none; }
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">FILE Upload</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="wrap_file">
+							    <input id="input_copy" class="upload_name form_control" value="" disabled="disabled">
+							    <input type="file" id="input_upload_copy" class="upload_hidden">
+							    <label for="input_upload_copy" class="btn_md btn_blue btn_outline">파일찾기</label>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<div class="wrap_file">
+									<input id="input_copy" class="upload_name form_control" value="" disabled="disabled">
+									<input type="file" id="input_upload_copy" class="upload_hidden">
+									<label for="input_upload_copy" class="btn_md btn_blue btn_outline">파일찾기</label>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.wrap_file {position:relative;display:inline-block;width:100%;}
+								.wrap_file.w100 {width:100%;}
+								.wrap_file input[type="file"]{position:absolute;overflow:hidden;width:1px;height:1px;padding:0;margin:-1px;border:0;opacity:0}
+								.wrap_file .upload_name{display:inline-block;vertical-align:middle;background-color:#fff;-webkit-appearance:none;-moz-appearance:none;appearance:none}
+								.wrap_file .btn{position: absolute; right: 0; top: -2px;}
+								.outline{outline: 1px dotted;outline-color: #A6C7FF;outline:-webkit-focus-ring-color auto 5px;}
+								 
+								.btn_fileuploade_close{display:inline-block;position:absolute;top:0;right:90px;width:36px;height:36px;padding:0;border:0;background: url(../img/common/btn_delete_search.png) no-repeat 50% 50%;text-indent:-9999px;cursor:pointer;}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">input + search form</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="group_search">
+								<input type="text" maxlength="" class="form_control" placeholder="검색어를 입력하세요">
+								<a href="javascript:void(0);" class="btn_del">삭제</a>
+							</div>
+
+							<div class="group_search mt20">
+								<div class="search_form">
+									<input type="text" maxlength="" class="form_control" placeholder="검색어를 입력하세요">
+									<a href="javascript:void(0);" class="btn_del">삭제</a>
+									<button class="btn_md btn_darkblue btn_right">검색</button>
+								</div>
+							</div>
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<div class="group_search">
+									<input type="text" maxlength="" class="form_control" placeholder="검색어를 입력하세요">
+									<a href="javascript:void(0);" class="btn_del">삭제</a>
+								</div>
+	
+								<div class="group_search mt20">
+									<div class="search_form">
+										<input type="text" maxlength="" class="form_control" placeholder="검색어를 입력하세요">
+										<a href="javascript:void(0);" class="btn_del">삭제</a>
+										<button class="btn_md btn_darkblue btn_right">검색</button>
+									</div>
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.group_search {
+									position: relative;
+								}
+								
+								.group_search .form_control {
+									padding-left: 32px;
+									background-image: url(../img/mobile/input_search.png);
+									-moz-background-size: 15px;
+									background-size: 15px;
+									background-position: 12px 50%;
+									background-repeat: no-repeat;
+								}
+								
+								.group_search .btn_del {
+									display: none;
+									position: absolute;
+									right: 12px;
+									top: 50%;
+									margin-top: -7px;
+									width: 14px;
+									height: 14px;
+									background: url(../img/mobile/ico_del.png) no-repeat 0 0/14px;
+									font-size: 0;
+								}
+								
+								.group_search .btn_del.on {
+									display: inline-block;
+								}
+								
+								.group_search .search_form {
+									position: relative;
+									display: block;
+									padding-right: 61px;
+								}
+								
+								.group_search .search_form .btn_del {
+									right: 76px;
+								}
+								
+								.group_search .search_form .btn_right {
+									position: absolute;
+									right: 0;
+									top: 0;
+									min-width: 56px;
+								}						
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+			<!-- 탭그룹 -->
+			<div class="row">
+				<h3 class="g-tit-basic">input + join form</h3>
+				<div class="tab-wrap g-tab-sample ui-tab">
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<!-- view -->
+							<div class="group_info mt30">
+								<!-- 주소 -->
+								<p class="title essential">주소</p>
+								<div class="wrap_info">
+									<input type="text" maxlength="" class="form_control" placeholder="" disabled="">
+									<button class="btn_md btn_blue btn_outline btn_right">우편번호</button>
+								</div>
+								<input type="text" maxlength="" class="form_control" placeholder="주소 입력">
+								<input type="text" maxlength="" class="form_control" placeholder="나머지 주소 입력">
+								<!-- // 주소 -->
+
+								<!-- 세금 계산서 발급 이메일 -->
+								<p class="title essential">세금계산서 발급 이메일</p>
+								<div class="wrap_info">
+									<input type="text" maxlength="" class="form_control" placeholder="">
+									<button class="btn_md btn_blue btn_outline btn_right">인증요청</button>
+								</div>
+								<div class="wrap_info">
+									<input type="text" maxlength="" class="form_control" placeholder="">
+									<button class="btn_md btn_blue btn_outline btn_right">확인</button>
+									<span class="time">03:00</span>
+								</div>
+								<!-- // 세금계산서 발급 이메일 -->
+							</div>
+							
+							<!-- //view -->
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="g-tab-inner">
+							<p class="on">HTML</p>
+							<pre class="syntax brush:html">
+								<div class="group_info mt30">
+									<!-- 주소 -->
+									<p class="title essential">주소</p>
+									<div class="wrap_info">
+										<input type="text" maxlength="" class="form_control" placeholder="" disabled="">
+										<button class="btn_md btn_blue btn_outline btn_right">우편번호</button>
+									</div>
+									<input type="text" maxlength="" class="form_control" placeholder="주소 입력">
+									<input type="text" maxlength="" class="form_control" placeholder="나머지 주소 입력">
+									<!-- // 주소 -->
+	
+									<!-- 세금 계산서 발급 이메일 -->
+									<p class="title essential">세금계산서 발급 이메일</p>
+									<div class="wrap_info">
+										<input type="text" maxlength="" class="form_control" placeholder="">
+										<button class="btn_md btn_blue btn_outline btn_right">인증요청</button>
+									</div>
+									<div class="wrap_info">
+										<input type="text" maxlength="" class="form_control" placeholder="">
+										<button class="btn_md btn_blue btn_outline btn_right">확인</button>
+										<span class="time">03:00</span>
+									</div>
+									<!-- // 세금계산서 발급 이메일 -->
+								</div>
+							</pre>
+							<p>CSS</p>
+							<pre class="syntax brush:css">
+								.group_info .title {
+									margin: 12px 0 0;
+									line-height: 24px;
+									color: #656a79;
+									font-weight: 400;
+								}
+								
+								.group_info .title.essential::after {
+									content: '*';
+									color: #2e5bdb;
+									font-weight: 700;
+								}
+								
+								.group_info .form_control {
+									margin-top: 5px;
+								}
+								
+								.group_info .wrap_file {
+									margin-top: 5px;
+								}
+								
+								.group_info .wrap_file .form_control {
+									margin-top: 0;
+								}
+								
+								.group_info .wrap_info {
+									position: relative;
+									display: block;
+									padding-right: 91px;
+									margin-top: 5px;
+								}
+								
+								.group_info .wrap_info .form_control {
+									margin-top: 0;
+								}
+								
+								.group_info .wrap_info .btn_right {
+									position: absolute;
+									right: 0;
+									top: 0;
+								}
+								
+								.group_info .wrap_info .time {
+									position: absolute;
+									right: 103px;
+									top: 50%;
+									line-height: 20px;
+									margin-top: -10px;
+									color: #2e5bdb;
+									font-size: 12px;
+								}							
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //탭그룹 -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>
